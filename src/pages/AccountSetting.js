@@ -167,6 +167,9 @@ return errors;
 				<li className="nav-item">
 				  <Link className="nav-link" data-bs-toggle="pill" to="#menu5">Billing Information</Link>
 				</li>
+				<li className="nav-item">
+				  <Link className="nav-link" data-bs-toggle="pill" to="#menu6">Credits</Link>
+				</li>
 				
 			  </ul>
 	  </div>
@@ -480,8 +483,11 @@ return errors;
 					  
 					</div>
 					<div id="menu5" className="container tab-pane fade">
+
+						
 					
 					 <div className="table-responsive">
+				
     <table className="table table-bordered">
       <thead>
         <tr>
@@ -519,6 +525,176 @@ return errors;
           <td>5000</td>
           <td>hIRE 1</td>
           <td>Edit | Delete</td>
+          
+         
+        </tr>
+      </tbody>
+    </table>
+  </div>
+					
+					</div>
+
+
+
+
+
+					<div id="menu6" className="container tab-pane fade">
+      <div className='payment-gateway'>                      
+<button type="button" className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal">Make Payment</button>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+       <div className='row'>
+		<div className='col-md-6'>
+		<p>Main Account</p>
+			<h2>First Savings Account</h2>
+			<p>**********0344</p>
+
+		
+
+		</div>
+		<div className='col-md-6 text-end'>
+		<p>Available Funds</p>
+			<h2>68.789,<span>56</span><b>$</b></h2>
+		</div>
+	   </div>
+
+	   <div className='row align-items-center'>
+				<div className='col-md-4 d-flex align-items-center'>
+					<button className='btn btn-primary px-3 py-2 text-white fw-bolder me-3 fs-4'>↑</button>
+					<div>
+					<h3 className='m-0'>$ 5555.55</h3>
+					<p className='m-0'>Income</p>
+					</div>
+
+				</div>
+				<div className='col-md-4 d-flex align-items-center'>
+				<button className='btn btn-primary px-3 py-2 text-white fw-bolder me-3 fs-4'>↓</button>
+				<div>
+				<h3 className='m-0'>$ 5555.55</h3>
+					<p className='m-0'>Expense</p>
+					</div>
+				</div>
+				<div className='col-md-4 Transfer-Money text-end'>
+		<button className='btn btn-primary'>Transfer Money</button>
+		</div>
+			</div>
+     
+
+      </div>
+      <div class="modal-footer payment-model-footer ">
+        {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+        <button type="button" class="btn btn-primary w-100">Proceed</button>
+      </div>
+    </div>
+  </div>
+</div>
+				
+					 <div className="table-responsive">
+					 <table className="table text-white credt-total mb-3">
+							<thead>
+								<tr>
+									<th>Transaction History</th>
+									<th className='w-50 text-end'>Total: $<span>94.67</span></th>
+								</tr>
+							</thead>
+						</table>
+    <table className="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Date</th>
+          <th>Transactions ID</th>
+		  <th>Description</th>
+          <th>Amount</th>
+		
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>29 Nov 2022<span> 12:52pm</span></td>
+          <td>**********0344</td>
+          <td>Your Payment has been successful.</td>
+          <td>-20 USD</td>
+          
+         
+        </tr>
+		 <tr>
+          <td>2</td>
+		  <td>29 Nov 2022<span> 12:52pm</span></td>
+          <td>**********0344</td>
+          <td>Your Payment has been successful.</td>
+          <td>-20 USD</td>
+          
+         
+        </tr>
+		 <tr>
+          <td>2</td>
+          <td>29 Nov 2022<span> 12:52pm</span></td>
+          <td>**********0344</td>
+          <td>Your Payment has been successful.</td>
+          <td>-20 USD</td>
+          
+         
+        </tr>
+      </tbody>
+    </table>
+
+
+				 <table className="table text-white credt-total mb-3">
+							<thead>
+								<tr>
+									<th>Credit History</th>
+									<th className='w-50 text-end'>Total: $<span>100</span></th>
+								</tr>
+							</thead>
+						</table>
+    <table className="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Date</th>
+         
+		  <th>Description</th>
+          <th>Amount</th>
+		
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>29 Nov 2022<span> 12:52pm</span></td>
+         
+          <td>Your Payment has been successful.</td>
+          <td>-20 USD</td>
+          
+         
+        </tr>
+		 <tr>
+          <td>2</td>
+		  <td>29 Nov 2022<span> 12:52pm</span></td>
+         
+          <td>Your Payment has been successful.</td>
+          <td>-20 USD</td>
+          
+         
+        </tr>
+		 <tr>
+          <td>2</td>
+          <td>29 Nov 2022<span> 12:52pm</span></td>
+         
+          <td>Your Payment has been successful.</td>
+          <td>-20 USD</td>
           
          
         </tr>

@@ -2027,6 +2027,38 @@ th{    border: 1px solid #00000012; padding: 10px 10px 12px 10px !important;}
     color: #0000009c;
 }
 
+.credt-total{
+	background: #029A9F;
+}
+
+.payment-gateway button{
+	background: #029A9F;
+border: none;
+width: 20%;
+height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
+font-weight: 500;
+border-radius: 5px;
+}
+
+.payment-model-footer button{
+	background: #029A9F;;
+}
+.btn-primary:active{
+	background-color: none;
+}
+
+.btn-primary:focus{
+	box-shadow: none;
+	background: #029A9F;
+}
+
+.Transfer-Money button{
+	background: #029A9F;
+}
 
 .out-cart{
 	background: #f9fbff;

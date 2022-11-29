@@ -1,5 +1,5 @@
 import React from 'react'
-import { json, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 
 import { useState, useEffect } from 'react'
@@ -18,19 +18,19 @@ const Register = () => {
 	const [User, setUser] = useState(initialValues);
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
-	const [state, setState] = useState('')
+	// const [state, setState] = useState('')
 
 	const handleChange = (e) =>{
 		const  {name, value } = e.target;
 		setUser({...User, [name]: value});
 	};
 
-	useEffect(() => {
-		console.log(state);
-		if(Object.keys(state).length === 0 && isSubmit) {
-			console.log(User);
-		}
-	},[state])
+	// useEffect(() => {
+	// 	console.log(state);
+	// 	if(Object.keys(state).length === 0 && isSubmit) {
+	// 		console.log(User);
+	// 	}
+	// },[state])
 
 
 	const handleSubmit = (e) => {
@@ -66,19 +66,19 @@ const Register = () => {
 		.catch(err => {
 		  console.log(err);
 		});
-		setState(valid(json.message));
+		// setState(valid(json.message));
 		setFormErrors(validate(User));
 		setIsSubmit(true); 
 	};
 
-	const valid = (e) => {
-		const error = {};
+	// const valid = (e) => {
+	// 	const error = {};
 
-		if (!e.message) {
-			error.message = "!'your account does not found'"
-		}
+	// 	if (!e.message) {
+	// 		error.message = "!'your account does not found'"
+	// 	}
 		
-	}
+	// }
 
 
 	useEffect(() => {
@@ -245,8 +245,8 @@ return errors;
 			  
 			 <button type="submit"  className="reg_btn-1">Register</button>
 			  <Link to="/Login"><button type="button" className="reg_btn-2">Login</button></Link>
-			   {Object.keys(formErrors, state).length === 0 && isSubmit ? (
-							<h3 className='Success'>{state.message}</h3>) :('')}
+			   {Object.keys(formErrors).length === 0 && isSubmit ? (
+							<h3 className='Success'>Registeration is Succesfull</h3>) :('')}
 		</form>
 		
 	</div>
