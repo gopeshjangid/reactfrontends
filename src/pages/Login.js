@@ -1,15 +1,13 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { Axios } from 'axios'
 // import Header from '../Components/Header'
 // import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
 
-
-
-
-
 const Login = () => {
+
 	const initialValues = {
 		username: "",
 		password: "",
@@ -19,6 +17,9 @@ const Login = () => {
 	const navigate = useNavigate();
 
 	const [User, setUser] = useState(initialValues);
+
+	const [data, setData] = useState();
+	const [message, setMessage] = useState();
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
 
@@ -26,58 +27,60 @@ const Login = () => {
 		const { name, value } = e.target;
 		setUser({ ...User, [name]: value });
 	};
-	// useEffect(() =>{
-	// 	if(
-	// 		localStorage.getItem('message')){
-	// 			navigate('/')
-	// 		}
-	// })
-
 
 	const handleSubmit = (e) => {
+
 		e.preventDefault();
-		const {username, password} = User
+		const { username, password } = User
+
+		const object = {
+			username : username.trim(),
+			password : password.trim()
+		}
+
+		setFormErrors(validate(User));
 		// add entity - POST
 		// e.preventDefault();
 		// creates entity
 		fetch("http://localhost:5000/login", {
-		  method: "POST",
-		  mode: "cors", 
-		  body: JSON.stringify({
-			username, password
-		  }),
-		  headers: {
-			'Content-type': 'application/json',
-			'Accept': 'application/json'
-		  }
-	
-		})		// .then((res) => res.json())
+			method: "POST",
+			mode: "cors",
+			body: JSON.stringify(object),
+			headers: {
+				'Content-type': 'application/json',
+				'Accept': 'application/json'
+			}
 
-		  .then(response => response.json(
-			setUser({
-			  User: response
-			})))
-	
-		  .then(json => {
-			if(json.message==="successfully login"){
+		}).then(response => response.json(
+			console.log(response)
+		)).then(json => {
+			setData({
+				User: json
+			})
+			if (json.message === "Successfully login") {
 				navigate('/AccountSetting');
 			}
-			
 			console.log(json)
-		  })
-		  .catch(err => {
+		})
+		.catch(err => {
 			console.log(err);
-		  });
-	
-		setFormErrors(validate(User));
+		});
+
+
 		setIsSubmit(true);
 	};
 
 
 	useEffect(() => {
+	   const res = data?.User?.error;
+		setMessage(res);
+	}, [data])
+
+
+	useEffect(() => {
 		console.log(formErrors);
 		if (Object.keys(formErrors).length === 0 && isSubmit) {
-			console.log(User);
+			console.log(data);
 		}
 	}, [formErrors])
 
@@ -99,65 +102,6 @@ const Login = () => {
 
 		return errors;
 	};
-	
-
-
-// 		e.preventDefault();  
-// 		const { email, password} = initialValues;
-// 		const res = await fetch("http://localhost:5000/login", {
-// 			method:"POST",
-// 			headers:{
-// 				"Content-Type" : "application/json",
-// 				"Accept": "application/json"
-// 			},
-// 			body: JSON.stringify({
-// 				email,
-//                 password
-// 					})
-// 		}).then((res)=>res.json(email,password))
-// 		.then((data) => {
-// 			console.log(data, "userLogin")
-// 		})
-// 		const data = await res.json();
-
-// 		if (data.status === 422	|| !data) {
-// 			window.alert("Invalid Registration");
-// 			console.log("Invalid Registration")
-// 		} else {
-// 			window.alert("Registration is Succesfull");
-// 			console.log("Registration is Succesfull")
-// 		}
-// }
-
-	
-	// const [email, setEmail] = ("");
-	// const [password, setPassword] = ("");
-
-	// const navigate = useNavigate();
-	// useEffect(() => {
-	// 	if (localStorage.getItem('user-info')) {
-	// 		navigate.push("/add?${queryString}")
-	// 	}
-	// }, [])
-
-	// async function login() {
-	// 	console.log(email, password)
-	// 	let item = { email, password };
-	// 	let result = await fetch("/login", {
-	// 		method: 'POST',
-	// 		headers: {
-	// 			"Content-Type": "application/json",
-	// 			"Accept": 'application/json'
-	// 		},
-	// 		body: JSON.stringify(item)
-	// 	});
-	// 	result = await result.json();
-	// 	console.log(result)
-	// 	localStorage.setItem("user-info",JSON.stringify(result))
-	// 	navigate.push("/add")
-	
-
-
 
 	return (
 		<div>
@@ -168,8 +112,8 @@ const Login = () => {
 
 						<form method='POST' className="login-form" onSubmit={handleSubmit}>
 							<label className="reg-lbl" > Username or E-mail </label>
-							<input type="text" autoComplete="username" id="fname" name="username" placeholder="Name" onChange={handleChange}  className="text_set" />
-					        <p style={{color: "red"}}>{formErrors.username}</p>
+							<input type="text" autoComplete="username" id="fname" name="username" placeholder="Name" onChange={handleChange} className="text_set" />
+							<p style={{ color: "red" }}>{formErrors.username}</p>
 
 							<label className="reg-lbl">Password</label>
 							<input type="password" autoComplete="current-password" placeholder="password" name='password' onChange={handleChange} className="ct_text-set1" />
@@ -180,7 +124,7 @@ const Login = () => {
 
 							<Link to="/Register"><button type="button" className="reg_btn-1">Register</button></Link>
 							<button type="submit" className="reg_btn-2">Login</button> {Object.keys(formErrors).length === 0 && isSubmit ? (
-								<h3 className='Success'>Login is Successfull</h3>) : ('')};
+								<h3 className='Success'>{message}</h3>) : ('')}
 
 							<Link className="forgot_p" to="/Forgot">Forgot Your Password?</Link>
 						</form>
