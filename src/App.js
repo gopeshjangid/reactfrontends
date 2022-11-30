@@ -24,8 +24,6 @@ import Terms from './pages/Terms';
 import AddTocart from './pages/AddTocart';
 import ViewDetails from './pages/ViewDetails';
 
-
-
 function App() {
   return(
     
