@@ -68,8 +68,6 @@ console.log("this.props.User", this.state.User)
 						<button type="submit" className="samp_sec-btn">search</button>
 						<button type="submit" className="samp_sec-btn1">show All</button>
 					</form>
-
-
 						
 						<h2 className="samp_sec-h2">Work Sample</h2>
 
