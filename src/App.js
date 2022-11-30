@@ -51,8 +51,7 @@ function App() {
       <Route path="/Terms" element={<Terms />}/>
       <Route path="/AddTocart" element={<AddTocart />}/>
       <Route path="/ViewDetails" element={<ViewDetails />}/>
-  
-     
+       
   </Routes>
   <Footer/>
   </BrowserRouter>
