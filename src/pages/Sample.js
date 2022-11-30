@@ -78,7 +78,7 @@ console.log("this.props.User", this.state.User)
 							content that gets people up at night</p>
 							{ this.state.User && this.state.User.map((friend, value) => {
 					return(	
-					<div className="col-md-3" key={friend._id}>
+					<div className="col-md-3" key={value.toString()}>
 							<div className="samp_box">
 								<img src={friend.image} className="samp_box-img" />
 								<h3 className="samp_box-h3">{friend.title}</h3>
