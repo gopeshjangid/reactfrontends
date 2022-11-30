@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 import { useState, useEffect } from 'react'
 // import axios from 'axios'
@@ -18,6 +19,8 @@ const Register = () => {
 	const [User, setUser] = useState(initialValues);
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
+	const [message, setMessage] = useState()
+	
 	// const [state, setState] = useState('')
 
 	const handleChange = (e) =>{
@@ -25,17 +28,19 @@ const Register = () => {
 		setUser({...User, [name]: value});
 	};
 
-	// useEffect(() => {
-	// 	console.log(state);
-	// 	if(Object.keys(state).length === 0 && isSubmit) {
-	// 		console.log(User);
-	// 	}
-	// },[state])
+		// useEffect(() => {
+		// 	console.log(message);
+		// 	if(Object.keys(message).length === 0 && isSubmit) {
+		// 		console.log(User);
+				
+				
+		// 	}
+		// },[])
 
-
-	const handleSubmit = (e) => {
+	
+	  const handleSubmit = (e) => {
 		e.preventDefault();
-		const {username, email, password} = User
+		const {username, email, password, confirmPassword} = User
 		// add entity - POST
 		// e.preventDefault();
 		// creates entity
@@ -43,7 +48,7 @@ const Register = () => {
 		  method: "POST",
 		  mode: "cors", 
 		  body: JSON.stringify({
-			username, email, password
+			username, email, password, confirmPassword
 		}),
 		  headers: {
 			'Content-type': 'application/json',
@@ -52,41 +57,39 @@ const Register = () => {
 	
 		})	
 		.then(response => response.json(
-		  setUser({
+		  setUser(
 			 response
-		  })))
+		)))
   
 		 
 		.then(json => {
-			if(json.message==="successfully register"){
+			if(json.message === "successfully register"){
 				navigate('/AccountSetting');
 			}
+				
+	setMessage(json.message)
 		  console.log(json)
 		})
 		.catch(err => {
 		  console.log(err);
 		});
 		// setState(valid(json.message));
+	
+		
 		setFormErrors(validate(User));
 		setIsSubmit(true); 
 	};
 
-	// const valid = (e) => {
-	// 	const error = {};
-
-	// 	if (!e.message) {
-	// 		error.message = "!'your account does not found'"
-	// 	}
-		
-	// }
 
 
 	useEffect(() => {
 		console.log(formErrors);
 		if(Object.keys(formErrors).length === 0 && isSubmit) {
 			console.log(User);
+			// fetchData()
+			
 		}
-	},[formErrors])
+	},[])
 
 	const validate = (values) => {
 const errors = {};
@@ -114,6 +117,8 @@ if (!values.password) {
 // 	errors["password"] = "Confirm password is Not Matched";
 //   }
 // }
+
+
 if (!values.confirmPassword) {
 	errors.confirmPassword = "!'Please Enter ConfirmPassword'"
 }
@@ -245,8 +250,8 @@ return errors;
 			  
 			 <button type="submit"  className="reg_btn-1">Register</button>
 			  <Link to="/Login"><button type="button" className="reg_btn-2">Login</button></Link>
-			   {Object.keys(formErrors).length === 0 && isSubmit ? (
-							<h3 className='Success'>Registeration is Succesfull</h3>) :('')}
+			   {Object.keys(formErrors, message).length === 0 && isSubmit ? (
+							<h3 className='Success'>{message}</h3>) :('')}
 		</form>
 		
 	</div>

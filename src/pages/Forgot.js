@@ -12,6 +12,8 @@ const Forgot = () => {
 	const [formValues, setFormValues] = useState(initialValues);
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
+	const [message, setMessage] = useState()
+	const [error, setError] = useState()
 
 	const handleChange = (e) =>{
 		const  {name, value } = e.target;
@@ -26,7 +28,7 @@ const Forgot = () => {
 		// add entity - POST
 		// e.preventDefault();
 		// creates entity
-		fetch("http://localhost:5000//password-reset", {
+		fetch("http://localhost:5000/password-reset", {
 		  method: "POST",
 		  mode: "cors", 
 		  body: JSON.stringify({
@@ -45,9 +47,12 @@ const Forgot = () => {
 			})))
 	
 		  .then(json => {
-			if(json.message==="successfully login"){
+			if(json.message==="mail have sent successfully"){
 				navigate('/login');
 			}
+
+			setMessage(json.message)
+			setError(json.error)
 			
 			console.log(json)
 		  })
@@ -59,6 +64,7 @@ const Forgot = () => {
 		setIsSubmit(true); 
 	}; 
 
+	
 
 	useEffect(() => {
 		console.log(formErrors);
@@ -101,8 +107,8 @@ return errors;
             <p style={{color: "red"}}>{formErrors.email}</p>
             <Link className="fp-link" to="#">Try another way</Link>
             <button type="submit" className="fp-btn">Next</button>
-            {Object.keys(formErrors).length === 0 && isSubmit ? (
-							<span className='Success text-dark fs-6 fw-normal'>Sent Your Email !</span>) :('')}
+            {Object.keys(formErrors, message).length === 0 && isSubmit ? (
+							<span className='Success text-dark fs-6 fw-normal'>{message} {error}</span>) :('')}
           </form>
 		</div>
 </div>
