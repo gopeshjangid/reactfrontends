@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { Axios } from 'axios'
+
 // import Header from '../Components/Header'
 // import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
@@ -17,7 +17,7 @@ const Login = () => {
 	const navigate = useNavigate();
 
 	const [User, setUser] = useState(initialValues);
-
+	const [error, setError] = useState();
 	const [data, setData] = useState();
 	const [message, setMessage] = useState();
 	const [formErrors, setFormErrors] = useState({});
@@ -38,6 +38,8 @@ const Login = () => {
 			password : password.trim()
 		}
 
+		localStorage.setItem("userLoginToken", JSON.stringify({User}));
+
 		setFormErrors(validate(User));
 		// add entity - POST
 		// e.preventDefault();
@@ -45,7 +47,7 @@ const Login = () => {
 		fetch("http://localhost:5000/login", {
 			method: "POST",
 			mode: "cors",
-			body: JSON.stringify(object),
+			body: JSON.stringify(object, {username, password }),
 			headers: {
 				'Content-type': 'application/json',
 				'Accept': 'application/json'
@@ -54,10 +56,10 @@ const Login = () => {
 		}).then(response => response.json(
 			console.log(response)
 		)).then(json => {
-			setData({
-				User: json
-			})
-			if (json.message === "Successfully login") {
+			setData(
+				 json
+			)
+			if (json.message === "successfully login") {
 				navigate('/AccountSetting');
 			}
 			console.log(json)
@@ -65,22 +67,32 @@ const Login = () => {
 		.catch(err => {
 			console.log(err);
 		});
+		
+		
+	
 
 
 		setIsSubmit(true);
 	};
 
+	useEffect(() => {
+		const res = data?.User?.error;
+		 setError(res);
+		 
+	 }, [])
+
 
 	useEffect(() => {
-	   const res = data?.User?.error;
+	   const res = data?.User?.message;
 		setMessage(res);
-	}, [data])
+		
+	}, [])
 
 
 	useEffect(() => {
 		console.log(formErrors);
 		if (Object.keys(formErrors).length === 0 && isSubmit) {
-			console.log(data);
+			console.log(User);
 		}
 	}, [formErrors])
 
@@ -124,7 +136,7 @@ const Login = () => {
 
 							<Link to="/Register"><button type="button" className="reg_btn-1">Register</button></Link>
 							<button type="submit" className="reg_btn-2">Login</button> {Object.keys(formErrors).length === 0 && isSubmit ? (
-								<h3 className='Success'>{message}</h3>) : ('')}
+								<h3 className='Success'>{message} {error}</h3>) : ('')}
 
 							<Link className="forgot_p" to="/Forgot">Forgot Your Password?</Link>
 						</form>
