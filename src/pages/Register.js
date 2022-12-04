@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 
 import { useState, useEffect } from 'react'
 // import axios from 'axios'
@@ -20,6 +20,7 @@ const Register = () => {
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
 	const [message, setMessage] = useState()
+	const [data, setData] = useState()
 	
 	// const [state, setState] = useState('')
 
@@ -41,15 +42,24 @@ const Register = () => {
 	  const handleSubmit = (e) => {
 		e.preventDefault();
 		const {username, email, password, confirmPassword} = User
+
+		const object = {
+			username : username.trim(),
+			email : email.trim(),
+			password : password.trim(),
+			confirmPassword : confirmPassword.trim()
+		}
+
+		setFormErrors(validate(User));
+		
 		// add entity - POST
 		// e.preventDefault();
 		// creates entity
+
 	 fetch("http://localhost:5000/register", {
 		  method: "POST",
 		  mode: "cors", 
-		  body: JSON.stringify({
-			username, email, password, confirmPassword
-		}),
+		  body: JSON.stringify(object),
 		  headers: {
 			'Content-type': 'application/json',
 			'Accept': 'application/json'
@@ -57,17 +67,19 @@ const Register = () => {
 	
 		})	
 		.then(response => response.json(
-		  setUser(
-			 response
-		)))
+			console.log(response)
+		 ))
   
 		 
 		.then(json => {
+			setData({
+				User: json
+			})
 			if(json.message === "successfully register"){
-				navigate('/AccountSetting');
+				navigate('/login');
 			}
 				
-	setMessage(json.message)
+	// setMessage(json.message)
 		  console.log(json)
 		})
 		.catch(err => {
@@ -76,9 +88,15 @@ const Register = () => {
 		// setState(valid(json.message));
 	
 		
-		setFormErrors(validate(User));
+		
 		setIsSubmit(true); 
 	};
+
+	
+	useEffect(() => {
+		const res = data?.User?.message;
+		 setMessage(res);
+	 }, [data])
 
 
 
@@ -110,13 +128,6 @@ if (!values.password) {
 	errors.password = "!'Please Enter Your Password'"
 }
 
-// if (typeof values["password"] !== "undefined" && typeof values["confirmPassword"] !== "undefined") {
-
-//   if (values["password"] != values["confirm_password"]) {
-// 	isValid = false;
-// 	errors["password"] = "Confirm password is Not Matched";
-//   }
-// }
 
 
 if (!values.confirmPassword) {
@@ -125,81 +136,6 @@ if (!values.confirmPassword) {
 return errors;
 	};
 
-	// const register = async (e) => {
-	// 	e.preventDefault();
-		
-		
-	// }	
-	// .then((res) => res.json())
-
-		// const data = await res.json();
-
-		// if(!data) {
-		// 	console.log("messsage not send")
-		// }else{
-		// 	console.log(User);
-		// 	setUser({User: data})
-		// }
-		
-
-	
-	
-
-
-
-
-	// const navigate = useNavigate();
-	
-	// const register = () => {
-	
-	// 	const {username,email,password,confirmPassword} = User;
-
-	// 	if(username && email && password && (password === confirmPassword)){
-	// 		axios.post("http://localhost:5000/register",{
-	// 			method: "POST",
-  
-	// 			body: JSON.stringify(User),
-	// 			headers: {
-	// 				'Content-type': 'application/json'
-	// 				// 'Accept': "*/*"
-	// 			  }
-	// 		})
-	// 		.then( res => console.log(res.data.message))
-			
-	// 	}else {
-	// 		console.log("invalid input")
-	// 	}
-	// }
-
-		
-// 		const res = await fetch("/register", {
-// 			method:"POST",
-// 			headers:{
-// 				"Content-Type" : "application/json",
-// 				"Accept":  "application/json"
-// 			},
-// 			body: JSON.stringify({
-// 			username,
-// 			email,password,confirmPassword
-// 					})
-				
-// 		}).then((res)=>res.json())
-// 		.then((data) => {
-// 			console.log(data, "userRegister")
-// 		})
-
-// 		const data = await res.json();
-		
-
-// 		if (data.status === 422	|| !data) {
-// 			window.alert("Invalid Registration");
-// 			console.log("Invalid Registration")
-// 		} else {
-// 			window.alert("Registration is Succesfull");
-// 			console.log("Registration is Succesfull");
-// 			navigate.push("/login")
-// 		}
-// }
 
 
 

@@ -24,8 +24,6 @@ import Terms from './pages/Terms';
 import AddTocart from './pages/AddTocart';
 import ViewDetails from './pages/ViewDetails';
 
-
-
 function App() {
   return(
     
@@ -34,7 +32,6 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/About" element={<About />}/>
-      <Route path="/AccountSetting" element={<AccountSetting />}/>
       <Route path="/Author" element={<Author />}/>
       <Route path="/Blog" element={<Blog />}/>
       <Route path="/Career" element={<Career />}/>
@@ -53,17 +50,14 @@ function App() {
       <Route path="/Terms" element={<Terms />}/>
       <Route path="/AddTocart" element={<AddTocart />}/>
       <Route path="/ViewDetails" element={<ViewDetails />}/>
-  
-     
+       
   </Routes>
   <Footer/>
   </BrowserRouter>
 
 
   );     
-    
-   
-   
+  
 }
 
 export default App;

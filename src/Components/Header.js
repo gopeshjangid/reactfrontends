@@ -1,15 +1,16 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-// import { useState } from 'react';
+import React, { useEffect } from 'react'
+import { Link, useNavigate} from 'react-router-dom'
+import { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 
 
 const Header = () => {
-  const navigate = useNavigate();
 
-//   const [isLoggedin, setIsLoggedin] = useState(false);
+const navigate = useNavigate();
+  const [isLoggedin, setIsLoggedin] = useState(false);
 
 
-//   localStorage.setItem('message', JSON.stringify());
+//   localStorage.setItem('userLoginToken', JSON.stringify());
 //   setIsLoggedin(true);
 //  navigate('/');
 
@@ -19,22 +20,39 @@ const Header = () => {
 //     setIsLoggedin(false);
 //   };
 
+useEffect(() =>{
+  if (localStorage.getItem("userLoginToken")) {
+    setIsLoggedin(true);
+   
+  } else {
+    setIsLoggedin(false);
+  }
+
+}, [])
+
+
+
 
 
 // HANDLE LOGOUT EVENT
-const logout = (e) => {
-  e.preventDefault();
+const logout = () => {
 
-  console.log('Logout');
-  
+console.log(isLoggedin)
+ 
+    localStorage.removeItem("userLoginToken");
+    setIsLoggedin(false);
+    navigate('/Login')
+    
+  };
         // CLEAR DATA FROM STORAGE
-        localStorage.clear();
-        sessionStorage.clear();
-        navigate("/");
+      
         // console.log(arr)
 
-}
 
+        // if (!isLoggedin) {
+        //   // user is not authenticated
+        //   return <Navigate to="/login" />;
+        // }  
  
   return (
     <div>
@@ -71,23 +89,25 @@ const logout = (e) => {
 		    <li><Link className="dropdown-item" to="/cart">Cart</Link></li>
         {/* <li><Link className="dropdown-item"  to="/Login">Login</Link></li> */}
 
-        {/* {!isLoggedin ? ( */}
+         {!isLoggedin ? ( 
+          <>
             <li><Link className="dropdown-item" to="/register">Register</Link></li>
            
-        {/* ):( */}
+        
            
             <li><Link className="dropdown-item" to="/Login">Login</Link></li>
-
+            </>
+            ):( 
            <li><Link 
               className="dropdown-item" 
-              to="#" 
+              to="/" 
               onClick={logout}
 			>
              Logout
 			</Link></li>
            
-            {/* )
-        } */}
+            )
+        } 
           </ul>
         </li>
       </ul>

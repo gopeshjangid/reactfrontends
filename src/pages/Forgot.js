@@ -107,8 +107,9 @@ return errors;
             <p style={{color: "red"}}>{formErrors.email}</p>
             <Link className="fp-link" to="#">Try another way</Link>
             <button type="submit" className="fp-btn">Next</button>
+			<br />
             {Object.keys(formErrors, message).length === 0 && isSubmit ? (
-							<span className='Success text-dark fs-6 fw-normal'>{message} {error}</span>) :('')}
+							<span className='Success'>{message}</span>) :('')}
           </form>
 		</div>
 </div>
