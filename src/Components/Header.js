@@ -69,6 +69,12 @@ console.log(isLoggedin)
     <div className="collapse navbar-collapse" id="collapsibleNavbar">
       <ul className="navbar-nav">
         <li className="nav-item pad">
+          <Link className="nav-link set" to="/join">Join</Link>
+        </li>
+        <li className="nav-item pad">
+          <Link className="nav-link set" to="/chat">Chat</Link>
+        </li>
+        <li className="nav-item pad">
           <Link className="nav-link set" to="/Services">Services</Link>
         </li>
         <li className="nav-item pad">

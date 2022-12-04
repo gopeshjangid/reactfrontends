@@ -24,19 +24,20 @@ import Terms from './pages/Terms';
 import AddTocart from './pages/AddTocart';
 import ViewDetails from './pages/ViewDetails';
 import React from 'react'
-import { useState, useEffect } from 'react'
+import Join from './pages/Join/Join';
+import Chat from "./pages/Chat/Chat";
+
+
 
 function App() {
-
-
-
-
-
   return(
     
      <BrowserRouter>
       <Header/>
     <Routes>
+
+      <Route path="/join" element={<Join/>}/>
+      <Route path="/chat" element={<Chat/>}/>
       <Route path="/" element={<Home />}/>
       <Route path="/About" element={<About />}/>
       <Route path="/AccountSetting" element={<AccountSetting />}/>
