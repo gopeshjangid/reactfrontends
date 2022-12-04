@@ -23,6 +23,11 @@ import Services from './pages/Services';
 import Terms from './pages/Terms';
 import AddTocart from './pages/AddTocart';
 import ViewDetails from './pages/ViewDetails';
+import React from 'react'
+import Join from './pages/Join/Join';
+import Chat from "./pages/Chat/Chat";
+
+
 
 function App() {
   return(
@@ -30,8 +35,12 @@ function App() {
      <BrowserRouter>
       <Header/>
     <Routes>
+
+      <Route path="/join" element={<Join/>}/>
+      <Route path="/chat" element={<Chat/>}/>
       <Route path="/" element={<Home />}/>
       <Route path="/About" element={<About />}/>
+      <Route path="/AccountSetting" element={<AccountSetting />}/>
       <Route path="/Author" element={<Author />}/>
       <Route path="/Blog" element={<Blog />}/>
       <Route path="/Career" element={<Career />}/>

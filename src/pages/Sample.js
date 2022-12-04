@@ -37,9 +37,6 @@ class Sample extends Component{
 			this.setState({isError:true,isLoading:false})
 		}
 	};
-
-	
-
 	render(){
 		const {User, isLoading, isError} = this.state
 
@@ -76,12 +73,12 @@ console.log("this.props.User", this.state.User)
 							content that gets people up at night</p>
 							{ this.state.User && this.state.User.map((friend, value) => {
 					return(	
-					<div className="col-md-3" key={value.toString()}>
+						<div className="col-md-3" key={value.toString()}>
 							<div className="samp_box">
-								<img src={urlApi+"/image/"+friend.image} className="samp_box-img" />
+								<img alt="images" src={urlApi+"/image/"+friend.image} className="samp_box-img" />
 								<h3 className="samp_box-h3">{friend.title}</h3>
 								<p className="samp_box-p">{friend.dec}</p>
-								<a type="button" href={urlApi+"/upload-pdf/"+friend.pdf} download target="_blank" className="samp_box-btn"> <i className="fa fa-download samp-icon"></i>Download</a>
+								<a type="button" rel="noreferrer" href={urlApi+"/upload-pdf/"+friend.pdf} download target="_blank" className="samp_box-btn"> <i className="fa fa-download samp-icon"></i>Download</a>
 							</div>
 						</div>
 						)

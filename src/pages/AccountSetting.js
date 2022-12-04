@@ -1,9 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { useState,useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+// import Login from './Login'
 
 
 const AccountSetting = () => {
+	const navigate = useNavigate ()
+
+	
+	useEffect(() =>{
+		const getToken = localStorage.getItem('token');
+		if (getToken == null) {
+			navigate('/login')
+			 
+		}
+	  }, [])
+	
 
 
   const initialValues = {
@@ -130,10 +142,25 @@ return errors;
 	
 	return error;
 		};
+
+	
+
+		// const token = localStorage.getItem("token")
+
+		// let isLoggedin = true
+		// if (token == null){
+		// 	isLoggedin = false
+		// }
+
+	
 	
 
 
-
+		
+		//   if(!isLoggedin){
+		// 	return<Login setIsLoggedin={setIsLoggedin} />
+		// }
+		  
 
         return(
         <div>
@@ -256,7 +283,7 @@ return errors;
 						  </div>
   
                    
-    				 <div className="card card_box">
+    				 {/* <div className="card card_box">
 					     <p className="chat_idp text-center"><b>Order Id:</b> 45578  | <b>Title:</b> Package tutorial one</p>
 						
 						<div className="card-header text-center h1">Discuss About This Assignment Using Below Message Box</div>
@@ -332,7 +359,7 @@ return errors;
 						<div className="fileDiv btn btn-info btn-flat" id="upload-btn-chat"> <i className="fa fa-upload"></i> 
                         <input type="file" name="file" className="upload_attachmentfile"/></div>
 					  </div>
-						
+						 */}
   
   
 					  
@@ -542,14 +569,14 @@ return errors;
       <div className='payment-gateway'>                      
 <button type="button" className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal">Make Payment</button>
 </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header ">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog modal-lg">
+    <div className="modal-content">
+      <div className="modal-header ">
+        <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div className="modal-body">
 
        <div className='row'>
 		<div className='col-md-6'>
@@ -589,9 +616,9 @@ return errors;
      
 
       </div>
-      <div class="modal-footer payment-model-footer ">
-        {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
-        <button type="button" class="btn btn-primary w-100">Proceed</button>
+      <div className="modal-footer payment-model-footer ">
+        {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+        <button type="button" className="btn btn-primary w-100">Proceed</button>
       </div>
     </div>
   </div>

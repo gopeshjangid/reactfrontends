@@ -21,7 +21,7 @@ const navigate = useNavigate();
 //   };
 
 useEffect(() =>{
-  if (localStorage.getItem("userLoginToken")) {
+  if (localStorage.getItem("token")) {
     setIsLoggedin(true);
    
   } else {
@@ -30,16 +30,19 @@ useEffect(() =>{
 
 }, [])
 
+console.log("check ====",isLoggedin)
+
 
 
 
 
 // HANDLE LOGOUT EVENT
-const logout = () => {
+const logout = (e) => {
+  e.preventDefault();
 
 console.log(isLoggedin)
  
-    localStorage.removeItem("userLoginToken");
+    localStorage.removeItem("token");
     setIsLoggedin(false);
     navigate('/Login')
     
@@ -66,6 +69,12 @@ console.log(isLoggedin)
     <div className="collapse navbar-collapse" id="collapsibleNavbar">
       <ul className="navbar-nav">
         <li className="nav-item pad">
+          <Link className="nav-link set" to="/join">Join</Link>
+        </li>
+        <li className="nav-item pad">
+          <Link className="nav-link set" to="/chat">Chat</Link>
+        </li>
+        <li className="nav-item pad">
           <Link className="nav-link set" to="/Services">Services</Link>
         </li>
         <li className="nav-item pad">
@@ -89,7 +98,7 @@ console.log(isLoggedin)
 		    <li><Link className="dropdown-item" to="/cart">Cart</Link></li>
         {/* <li><Link className="dropdown-item"  to="/Login">Login</Link></li> */}
 
-         {!isLoggedin ? ( 
+         {isLoggedin==false ? ( 
           <>
             <li><Link className="dropdown-item" to="/register">Register</Link></li>
            

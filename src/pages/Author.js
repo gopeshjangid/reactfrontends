@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 import React, {Component} from "react"
+let urlApi = "http://localhost:5000";
 
 
 class Author extends Component{
@@ -76,7 +77,7 @@ console.log("this.props.User", this.state.User)
 			<div className="col-md-3" key={friend._id}>
 				<div className="author_box">
 					
-					<img src={friend.image} className="author_sec-img"/>
+					<img src={urlApi+"/image/"+friend.image} className="author_sec-img"/>
 					<h4 className="author_Sec-h2">{friend.title}</h4>
 					<p className="author_Sec-p">{friend.dec}</p>
 					
