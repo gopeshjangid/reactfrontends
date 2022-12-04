@@ -21,7 +21,7 @@ const navigate = useNavigate();
 //   };
 
 useEffect(() =>{
-  if (localStorage.getItem("userLoginToken")) {
+  if (localStorage.getItem("token")) {
     setIsLoggedin(true);
    
   } else {
@@ -30,16 +30,19 @@ useEffect(() =>{
 
 }, [])
 
+console.log("check ====",isLoggedin)
+
 
 
 
 
 // HANDLE LOGOUT EVENT
-const logout = () => {
+const logout = (e) => {
+  e.preventDefault();
 
 console.log(isLoggedin)
  
-    localStorage.removeItem("userLoginToken");
+    localStorage.removeItem("token");
     setIsLoggedin(false);
     navigate('/Login')
     
@@ -89,7 +92,7 @@ console.log(isLoggedin)
 		    <li><Link className="dropdown-item" to="/cart">Cart</Link></li>
         {/* <li><Link className="dropdown-item"  to="/Login">Login</Link></li> */}
 
-         {!isLoggedin ? ( 
+         {isLoggedin==false ? ( 
           <>
             <li><Link className="dropdown-item" to="/register">Register</Link></li>
            

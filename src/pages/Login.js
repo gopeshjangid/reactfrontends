@@ -17,11 +17,13 @@ const Login = () => {
 	const navigate = useNavigate();
 
 	const [User, setUser] = useState(initialValues);
-	const [error, setError] = useState();
+	// const [error, setError] = useState();
 	const [data, setData] = useState();
 	const [message, setMessage] = useState();
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
+	
+	const [isLoggedin, setIsLoggedin] = useState(false);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -38,7 +40,7 @@ const Login = () => {
 			password : password.trim()
 		}
 
-		localStorage.setItem("userLoginToken", JSON.stringify({User}));
+		
 
 		setFormErrors(validate(User));
 		// add entity - POST
@@ -55,13 +57,22 @@ const Login = () => {
 
 		}).then(response => response.json(
 			console.log(response)
+			
 		)).then(json => {
 			setData(
-				 json
+				{
+				User: json
+			}
 			)
 			if (json.message === "successfully login") {
+			  localStorage.setItem('token',JSON.stringify(json.token))
+                  setIsLoggedin(true);
+                
 				navigate('/AccountSetting');
 			}
+			
+		
+			
 			console.log(json)
 		})
 		.catch(err => {
@@ -75,18 +86,18 @@ const Login = () => {
 		setIsSubmit(true);
 	};
 
-	useEffect(() => {
-		const res = data?.User?.error;
-		 setError(res);
+	// useEffect(() => {
+	// 	const res = data?.User?.error;
+	// 	 setError(res);
 		 
-	 }, [])
+	//  }, [])
 
 
 	useEffect(() => {
 	   const res = data?.User?.message;
 		setMessage(res);
 		
-	}, [])
+	}, [data])
 
 
 	useEffect(() => {
@@ -135,8 +146,9 @@ const Login = () => {
 							<p style={{ color: "red" }}>{formErrors.checkbox}</p>
 
 							<Link to="/Register"><button type="button" className="reg_btn-1">Register</button></Link>
-							<button type="submit" className="reg_btn-2">Login</button> {Object.keys(formErrors).length === 0 && isSubmit ? (
-								<h3 className='Success'>{message} {error}</h3>) : ('')}
+							<button type="submit" className="reg_btn-2">Login</button> 
+							{Object.keys(formErrors, message).length === 0 && isSubmit ? (
+								<h3 className='Success'>{message}</h3>) : ('')}
 
 							<Link className="forgot_p" to="/Forgot">Forgot Your Password?</Link>
 						</form>

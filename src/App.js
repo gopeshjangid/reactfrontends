@@ -23,8 +23,15 @@ import Services from './pages/Services';
 import Terms from './pages/Terms';
 import AddTocart from './pages/AddTocart';
 import ViewDetails from './pages/ViewDetails';
+import React from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
+
+
+
+
+
   return(
     
      <BrowserRouter>
@@ -32,6 +39,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/About" element={<About />}/>
+      <Route path="/AccountSetting" element={<AccountSetting />}/>
       <Route path="/Author" element={<Author />}/>
       <Route path="/Blog" element={<Blog />}/>
       <Route path="/Career" element={<Career />}/>

@@ -37,9 +37,6 @@ class Sample extends Component{
 			this.setState({isError:true,isLoading:false})
 		}
 	};
-
-	
-
 	render(){
 		const {User, isLoading, isError} = this.state
 
