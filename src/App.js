@@ -23,8 +23,15 @@ import Services from './pages/Services';
 import Terms from './pages/Terms';
 import AddTocart from './pages/AddTocart';
 import ViewDetails from './pages/ViewDetails';
+import React from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
+
+
+
+
+
   return(
     
      <BrowserRouter>
