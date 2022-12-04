@@ -283,7 +283,7 @@ return errors;
 						  </div>
   
                    
-    				 <div className="card card_box">
+    				 {/* <div className="card card_box">
 					     <p className="chat_idp text-center"><b>Order Id:</b> 45578  | <b>Title:</b> Package tutorial one</p>
 						
 						<div className="card-header text-center h1">Discuss About This Assignment Using Below Message Box</div>
@@ -359,7 +359,7 @@ return errors;
 						<div className="fileDiv btn btn-info btn-flat" id="upload-btn-chat"> <i className="fa fa-upload"></i> 
                         <input type="file" name="file" className="upload_attachmentfile"/></div>
 					  </div>
-						
+						 */}
   
   
 					  
