@@ -1,7 +1,7 @@
 
 import React, {Component} from "react"
 
-
+let urlApi = "http://localhost:5000";
 
 
 class Sample extends Component{
@@ -78,10 +78,10 @@ console.log("this.props.User", this.state.User)
 					return(	
 					<div className="col-md-3" key={value.toString()}>
 							<div className="samp_box">
-								<img src={friend.image} className="samp_box-img" />
+								<img src={urlApi+"/image/"+friend.image} className="samp_box-img" />
 								<h3 className="samp_box-h3">{friend.title}</h3>
 								<p className="samp_box-p">{friend.dec}</p>
-								<button type="button" className="samp_box-btn"> <i className="fa fa-download samp-icon"></i>Download</button>
+								<a type="button" href={urlApi+"/upload-pdf/"+friend.pdf} download target="_blank" className="samp_box-btn"> <i className="fa fa-download samp-icon"></i>Download</a>
 							</div>
 						</div>
 						)
