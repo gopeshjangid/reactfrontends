@@ -54,23 +54,18 @@ const Login = () => {
 			}
 
 		}).then(response => response.json(
-			console.log(response)
+			console.log(response,"first login")
 		)).then(json => {
-			setData(
-				 json
-			)
+			setData( json )
 			if (json.message === "successfully login") {
 				navigate('/AccountSetting');
 			}
-			console.log(json)
+			console.log(json,"second login")
+			setMessage(json.error);
 		})
 		.catch(err => {
 			console.log(err);
 		});
-		
-		
-	
-
 
 		setIsSubmit(true);
 	};
@@ -136,7 +131,7 @@ const Login = () => {
 
 							<Link to="/Register"><button type="button" className="reg_btn-1">Register</button></Link>
 							<button type="submit" className="reg_btn-2">Login</button> {Object.keys(formErrors).length === 0 && isSubmit ? (
-								<h3 className='Success'>{message} {error}</h3>) : ('')}
+								<h3 className='Success'>{message} {error} </h3>) : ('')}
 
 							<Link className="forgot_p" to="/Forgot">Forgot Your Password?</Link>
 						</form>
