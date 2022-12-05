@@ -32,7 +32,7 @@ class Services extends Component {
     });
     if (response.ok) {
       const User = await response.json();
-      console.log(User);
+      // console.log(User);
       this.setState({ ...this.state, User: User.data, isLoading: false });
     } else {
       this.setState({ isError: true, isLoading: false });
@@ -50,8 +50,8 @@ class Services extends Component {
         headers: headers,
       })
       .then((response) => {
-        console.log("cart items ---------------",response.data);
-        this.setState({ ...this.state, cartItems: response.data.message });
+        console.log("cart items ---------------", response.data);
+        this.setState({ ...this.state, cartItems: response.data });
       })
       .catch((error) => {
         console.log(error);
@@ -63,15 +63,17 @@ class Services extends Component {
     console.log(this.state.cartItems);
     console.log(id);
     console.log(
-      this.state.cartItems?.filter((item, index) => item.productId._id === id)
+      this.state.cartItems.message?.filter(
+        (item, index) => item.productId._id === id
+      )
     );
 
     let quantity = 1;
-    if (this.state.cartItems.length > 0) {
-      quantity = this.state.cartItems?.filter(
+    if (this.state.cartItems.message.length > 0) {
+      quantity = this.state.cartItems.message?.filter(
         (item, index) => item.productId._id === id
       )[0]
-        ? this.state.cartItems?.filter(
+        ? this.state.cartItems.message?.filter(
             (item, index) => item.productId._id === id
           )[0].quantity + 1
         : 1;
@@ -91,7 +93,7 @@ class Services extends Component {
       .then((response) => {
         console.log(response.data.message);
         this.viewCart();
-        this.setState({ ...this.state, cartItems: response.data.message });
+        // this.setState({ ...this.state, cartItems: response.data.message });
       })
       .catch((error) => {
         console.log(error);
@@ -131,7 +133,7 @@ class Services extends Component {
     if (User.length < 0) {
       return User.length > 0;
     }
-    console.log("this.props.User", this.state.User);
+    // console.log("this.props.User", this.state.User);
     return (
       <div>
         <section className="services_sec">
@@ -205,8 +207,27 @@ class Services extends Component {
             </div>
           </div>
         </section>
-        <div style={{width: '100%', height: '100px', position: 'absolute', bottom: '0', left: '0', padding: '20px' }}>
-                {/* {this.c} */}
+        <div
+          style={{
+            width: "100%",
+            height: "100px",
+            position: "absolute",
+            bottom: "0",
+            left: "0",
+            padding: "20px",
+            position: "fixed",
+            backgroundColor: "blue",
+            color: "white",
+            zIndex: 999,
+          }}
+        >
+          <div>totalPrice - {this.state.cartItems.totalPrice}</div>
+          <div>totalItems - {this.state.cartItems.totalItems}</div>
+          <div>
+            <Link style={{ color: "white" }} to={"/AddTocart"}>
+              View cart
+            </Link>
+          </div>
         </div>
       </div>
     );
