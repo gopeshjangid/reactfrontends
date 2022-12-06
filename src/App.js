@@ -21,7 +21,7 @@ import Review from './pages/Review';
 import Sample from './pages/Sample';
 import Services from './pages/Services';
 import Terms from './pages/Terms';
-import AddTocart from './pages/AddTocart';
+import ViewCart from './pages/ViewCart';
 import ViewDetails from './pages/ViewDetails';
 import React from 'react'
 import Join from './pages/Join/Join';
@@ -57,7 +57,7 @@ function App() {
       <Route path="/Sample" element={<Sample />}/>
       <Route path="/Services" element={<Services />}/>
       <Route path="/Terms" element={<Terms />}/>
-      <Route path="/AddTocart" element={<AddTocart />}/>
+      <Route path="/ViewCart" element={<ViewCart />}/>
       <Route path="/ViewDetails" element={<ViewDetails />}/>
        
   </Routes>

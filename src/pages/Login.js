@@ -22,7 +22,7 @@ const Login = () => {
 	const [message, setMessage] = useState();
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
-	
+
 	const [isLoggedin, setIsLoggedin] = useState(false);
 
 	const handleChange = (e) => {
@@ -36,11 +36,11 @@ const Login = () => {
 		const { username, password } = User
 
 		const object = {
-			username : username.trim(),
-			password : password.trim()
+			username: username.trim(),
+			password: password.trim()
 		}
 
-		
+
 
 		setFormErrors(validate(User));
 		// add entity - POST
@@ -49,7 +49,7 @@ const Login = () => {
 		fetch("http://localhost:5000/login", {
 			method: "POST",
 			mode: "cors",
-			body: JSON.stringify(object, {username, password }),
+			body: JSON.stringify(object, { username, password }),
 			headers: {
 				'Content-type': 'application/json',
 				'Accept': 'application/json'
@@ -57,30 +57,30 @@ const Login = () => {
 
 		}).then(response => response.json(
 			console.log(response)
-			
+
 		)).then(json => {
 			setData(
 				{
-				User: json
-			}
+					User: json
+				}
 			)
 			if (json.message === "successfully login") {
-			  localStorage.setItem('token',JSON.stringify(json.token))
-                  setIsLoggedin(true);
-                
+				localStorage.setItem('token', json.token)
+				setIsLoggedin(true);
+
 				navigate('/AccountSetting');
 			}
-			
-		
-			
+
+
+
 			console.log(json)
 		})
-		.catch(err => {
-			console.log(err);
-		});
-		
-		
-	
+			.catch(err => {
+				console.log(err);
+			});
+
+
+
 
 
 		setIsSubmit(true);
@@ -88,15 +88,15 @@ const Login = () => {
 
 	useEffect(() => {
 		const res = data?.User?.error;
-		 setError(res);
-		 
-	 }, [])
+		setError(res);
+
+	}, [])
 
 
 	useEffect(() => {
-	   const res = data?.User?.message;
+		const res = data?.User?.message;
 		setMessage(res);
-		
+
 	}, [data])
 
 
@@ -146,7 +146,7 @@ const Login = () => {
 							<p style={{ color: "red" }}>{formErrors.checkbox}</p>
 
 							<Link to="/Register"><button type="button" className="reg_btn-1">Register</button></Link>
-							<button type="submit" className="reg_btn-2">Login</button> 
+							<button type="submit" className="reg_btn-2">Login</button>
 							{Object.keys(formErrors, message, error).length === 0 && isSubmit ? (
 								<h3 className='Success'>{message} {error}</h3>) : ('')}
 

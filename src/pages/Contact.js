@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
 const Contact = () => {
-	
 	const initialValues = {
 		fullName: "",
 		email: "",
@@ -13,76 +12,76 @@ const Contact = () => {
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
 
-	const handleChange = (e) =>{
-		const  {name, value } = e.target;
-		setUser({...User, [name]: value});
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setUser({ ...User, [name]: value });
 	};
 
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const {	fullName, email, subject, message} = User
+		const { fullName, email, subject, message } = User
 		// add entity - POST
 		// e.preventDefault();
 		// creates entity
 		fetch("http://localhost:5000/contact-us", {
-		  method: "POST",
-		  mode: "cors", 
-		  body: JSON.stringify({
-			fullName, email, subject, message
-		  }),
-		  headers: {
-			'Content-type': 'application/json',
-			'Accept': 'application/json'
-		  }
-	
+			method: "POST",
+			mode: "cors",
+			body: JSON.stringify({
+				fullName, email, subject, message
+			}),
+			headers: {
+				'Content-type': 'application/json',
+				'Accept': 'application/json'
+			}
+
 		}).then(response => response.json(
-			setUser({ 
+			setUser({
 				response
 			})))
-	
-		  .then(json => {
-	
-			console.log(json)
-		  })
-		  .catch(err => {
-			console.log(err);
-		  });
+
+			.then(json => {
+
+				console.log(json)
+			})
+			.catch(err => {
+				console.log(err);
+			});
 		setFormErrors(validate(User));
-		setIsSubmit(true); 
-	}; 
+		setIsSubmit(true);
+	};
 
 
 	useEffect(() => {
 		console.log(formErrors);
-		if(Object.keys(formErrors).length === 0 && isSubmit) {
+		if (Object.keys(formErrors).length === 0 && isSubmit) {
 			console.log(User);
 		}
-	},[formErrors])
+	}, [formErrors])
 
 	const validate = (values) => {
-const errors = {}
-const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-if (!values.fullName) {
-	errors.fullName = "!'Please Enter Your Name'"
-}
-if (!values.email) {
-	errors.email = "!'Please Enter Your Email'"
-} else if(!regex.test(values.email)) {
-	errors.email = "!'This is not Email Format'"
-}
-if (!values.subject) {
-	errors.subject = "!'Please Enter Your Subject'"
-}
-if (!values.message) {
-	errors.message = "!'Please Enter Your Message'"
-}
-return errors;
+		const errors = {}
+		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+		if (!values.fullName) {
+			errors.fullName = "!'Please Enter Your Name'"
+		}
+		if (!values.email) {
+			errors.email = "!'Please Enter Your Email'"
+		} else if (!regex.test(values.email)) {
+			errors.email = "!'This is not Email Format'"
+		}
+		if (!values.subject) {
+			errors.subject = "!'Please Enter Your Subject'"
+		}
+		if (!values.message) {
+			errors.message = "!'Please Enter Your Message'"
+		}
+		return errors;
 	};
 
 
 
-	
+
 
 
 
@@ -137,28 +136,28 @@ return errors;
 					<div className="row">
 						<h2 className="jot_sec-h2">Send Us Message</h2>
 						<span className="writing_sec-spa"><i className="fa-light fa-horizontal-rule"></i> <i className="fa-solid fa-arrows-left-right"></i> <i className="fa-thin fa-horizontal-rule"></i></span>
-{/* <pre>{JSON.stringify(User, undefined, 2)}</pre> */}
+						{/* <pre>{JSON.stringify(User, undefined, 2)}</pre> */}
 						<form method='POST' onSubmit={handleSubmit}>
 							<div className='d-flex space-between'>
-                          <div className='Name'>
-							<input type="text" id="fname" name="fullName" placeholder="fullName" onChange={handleChange} className="ct_text-set" />
-							<p style={{color: "red"}}>{formErrors.fullName}</p>
-							</div>
+								<div className='Name'>
+									<input type="text" id="fname" name="fullName" placeholder="fullName" onChange={handleChange} className="ct_text-set" />
+									<p style={{ color: "red" }}>{formErrors.fullName}</p>
+								</div>
 
-							<div className='Name'>
-							<input type="text" id="fname" placeholder="Email" name='email' onChange={handleChange} className="ct_text-set" />
-							<p style={{color: "red"}}>{formErrors.email}</p>
-							</div>
+								<div className='Name'>
+									<input type="text" id="fname" placeholder="Email" name='email' onChange={handleChange} className="ct_text-set" />
+									<p style={{ color: "red" }}>{formErrors.email}</p>
+								</div>
 							</div>
 							<input type="text" id="fname" placeholder="Subject" name='subject' onChange={handleChange} className="ct_text-set1" />
-							<p style={{color: "red"}}>{formErrors.subject}</p>
+							<p style={{ color: "red" }}>{formErrors.subject}</p>
 							<textarea className="form-control form-area ct_text-set1" rows="8" onChange={handleChange} id="message"
 								placeholder="Message" name="message"></textarea>
-								<p style={{color: "red"}}>{formErrors.message}</p>
+							<p style={{ color: "red" }}>{formErrors.message}</p>
 							<button type="submit" className="ct_btn-set">Submit</button> {Object.keys(formErrors).length === 0 && isSubmit ? (
-							<span className='Success'>Submitted is Successfull</span>) :('')}
-								
-							
+								<span className='Success'>Submitted is Successfull</span>) : ('')}
+
+
 						</form>
 
 					</div>

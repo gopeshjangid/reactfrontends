@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
-const AddTocart = () => {
-  const [num, setNum] = useState(0);
+const ViewCart = () => {
+  // const [num, setNum] = useState(0);
 
-  const [nums, setNums] = useState(0);
+  // const [nums, setNums] = useState(0);
   const [cartItems, setCartItems] = useState({});
   const [isAddLoading, setIsAddLoading] = useState(false);
 
@@ -47,8 +48,8 @@ const AddTocart = () => {
         (item, index) => item.productId._id === id
       )[0]
         ? cartItems.message?.filter(
-            (item, index) => item.productId._id === id
-          )[0].quantity + 1
+          (item, index) => item.productId._id === id
+        )[0].quantity + 1
         : 1;
     } else {
       quantity = 1;
@@ -87,8 +88,8 @@ const AddTocart = () => {
         cartItems.message?.filter((item, index) => item.productId._id === id)[0]
           .quantity > 1
           ? cartItems.message?.filter(
-              (item, index) => item.productId._id === id
-            )[0].quantity - 1
+            (item, index) => item.productId._id === id
+          )[0].quantity - 1
           : 0;
     } else {
       quantity = 1;
@@ -122,7 +123,7 @@ const AddTocart = () => {
 
     setIsAddLoading(true);
     await axios
-      .post(`http://localhost:5000/deleteCart/${id}`, {},{
+      .post(`http://localhost:5000/deleteCart/${id}`, {}, {
         headers: headers,
       })
       .then((response) => {
@@ -191,7 +192,7 @@ const AddTocart = () => {
                     </th>
                     <th scope="col" className="p-0 text-center">
                       <div className="quantity d-flex align-items-center justify-content-between w-50 m-auto">
-                        <span
+                        <span style={{ cursor: "pointer" }}
                           className="cursor-pointer"
                           data-action-type="minus"
                           onClick={() => {
@@ -201,8 +202,8 @@ const AddTocart = () => {
                           -
                         </span>
                         <h3> {item.quantity}</h3>
-                        <span
-                          className
+                        <span style={{ cursor: "pointer" }}
+                          className="cursor-pointer"
                           data-action-type="plus"
                           onClick={() => {
                             addTocarthandler(item.productId._id);
@@ -228,17 +229,50 @@ const AddTocart = () => {
           <div className="coupon-wrap">
             <div className="coupon-inner">
               <div className="coupon">
-                <input
+                {/* <input
                   type="text"
                   className="bg-transparent border-0"
                   placeholder="Coupon Code"
-                />
-                <button>Apply Coupon</button>
+                /> */}
+
+
+                <button type="button" class="btn Coupons btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  View available Coupons
+                </button>
+
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+                {/* 
+                <button>Apply Coupon</button> */}
               </div>
-              <a href="#">
+              <Link to="/Services">
                 <i aria-hidden="true" className="fas fa-chevron-left" />
                 Continue Shopping
-              </a>
+              </Link>
             </div>
             <div className="cart-collaterals">
               <div className="eael-cart-update-btn">
@@ -278,12 +312,12 @@ const AddTocart = () => {
                   </tbody>
                 </table>
                 <div className="wc-proceed-to-checkout">
-                  <a
-                    href="https://getprowriter.com/checkout/"
+                  <Link
+                    to="https://getprowriter.com/checkout/"
                     className="checkout-button button alt wc-forward"
                   >
                     <button>Proceed to Checkout </button>{" "}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -294,4 +328,4 @@ const AddTocart = () => {
   );
 };
 
-export default AddTocart;
+export default ViewCart;

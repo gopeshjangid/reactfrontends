@@ -2110,6 +2110,7 @@ padding: 30px 15px!important;
 .coupon-inner{
 	width: 100%;
 	max-width: 400px;
+	padding-left: 8%;
 } 
 
 .coupon-inner a{
@@ -2121,15 +2122,10 @@ padding: 30px 15px!important;
 	display: inline-block;
 }
 
-.coupon-wrap .coupon{
-	border: solid 1px #d7dfef;
-	padding: 7px;
-	border-radius: 5px;
-	display: flex;
-	justify-content: space-between;
-}
+/* .coupon-wrap .coupon{
+} */
 
-.coupon-wrap .coupon button{
+.coupon-wrap .coupon .Coupons{
 	background-color: #6557ff;
 	border: none;
 	font-size: 18px;

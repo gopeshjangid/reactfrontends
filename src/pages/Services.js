@@ -74,8 +74,8 @@ class Services extends Component {
         (item, index) => item.productId._id === id
       )[0]
         ? this.state.cartItems.message?.filter(
-            (item, index) => item.productId._id === id
-          )[0].quantity + 1
+          (item, index) => item.productId._id === id
+        )[0].quantity + 1
         : 1;
     } else {
       quantity = 1;
@@ -136,7 +136,7 @@ class Services extends Component {
     // console.log("this.props.User", this.state.User);
     return (
       <div>
-        <section className="services_sec">
+        <section className="services_sec position-relative">
           <div className="container">
             <div className="row">
               <h2 className="services_sec-h2">
@@ -182,15 +182,15 @@ class Services extends Component {
                           </li>
                         </ol>
                         <div className="text-center">
-                          
-                            {/* <Link to="/AddTocart">Add to Cart</Link> */}
-                            <button type="button" className="services-btn1"
-                              disabled={this.state.isAddLoading}
-                              onClick={() => this.addTocarthandler(friend._id)}
-                            >
-                              Add to Cart
-                            </button>
-                          
+
+                          {/* <Link to="/AddTocart">Add to Cart</Link> */}
+                          <button type="button" className="services-btn1"
+                            disabled={this.state.isAddLoading}
+                            onClick={() => this.addTocarthandler(friend._id)}
+                          >
+                            Add to Cart
+                          </button>
+
                           <br />
                           <button type="button" className="services-btn2">
                             SUBSCRIBE
@@ -206,40 +206,41 @@ class Services extends Component {
                 })}
             </div>
           </div>
-        </section>
-        <div 
-          style={{
-            width: "100%",
-            height: "100px",
-            position: "absolute",
-            bottom: "0",
-            left: "0",
-            padding: "20px",
-            position: "fixed",
-            backgroundColor: "#03979C",
-            color: "white",
-            zIndex: 999,
-          }}
-        >
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-md-8">
-                        <h4 >Total-Price =<span>></span> {this.state.cartItems.totalPrice}</h4>
-          <h4>Total-Items =<span>></span> {this.state.cartItems.totalItems}</h4>
-          </div>
-          
-         
-          <div className="col-md-4 text-end">
-            <Link style={{ color: "white", fontSize:"20px", }} className="viewCart text-decoration-none" to={"/AddTocart"}>
-              View cart
-            </Link>
-            </div>
-            </div>
+          <div
+            style={{
+              width: "100%",
+              height: "100px",
+              bottom: "0",
+              left: "0",
+              display: "flex",
+              alignItems: "center",
+              position: "sticky",
+              backgroundColor: "#03979C",
+              color: "white",
+              zIndex: 999,
+            }}
+          >
+            <div className="container">
+              <div className="row align-items-center">
+                <div className="col-md-8">
+                  <h5 className="fw-normal">Total-Price =<span>></span> {this.state.cartItems.totalPrice}</h5>
+                  <h5 className="fw-normal">Total-Items =<span>></span> {this.state.cartItems.totalItems}</h5>
+                </div>
+
+
+                <div className="col-md-4 text-end">
+                  <Link style={{ color: "white", fontSize: "20px", }} className="viewCart text-decoration-none" to={"/ViewCart"}>
+                    View cart
+                  </Link>
+                </div>
+              </div>
 
             </div>
-            </div>
           </div>
-       
+        </section>
+
+      </div>
+
 
     );
   }

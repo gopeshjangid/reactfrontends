@@ -113,54 +113,54 @@ const AccountSetting = () => {
 		const object = {
 			currentPassword: currentPassword.trim(),
 			newPassword: newPassword.trim(),
-		  confirmPassword: confirmPassword.trim(),
+			confirmPassword: confirmPassword.trim(),
 		};
-	
+
 		setFormError(valide(User));
 		// add entity - POST
 		// e.preventDefault();
 		// creates entity
 		fetch("http://localhost:5000/changePassword", {
-		  method: "POST",
-		  mode: "cors",
-		  body: JSON.stringify(object, { currentPassword, newPassword, confirmPassword  }),
-		  headers: {
-			"Content-type": "application/json",
-			Authorization: `${tokenID}`,
-		  },
+			method: "POST",
+			mode: "cors",
+			body: JSON.stringify(object, { currentPassword, newPassword, confirmPassword }),
+			headers: {
+				"Content-type": "application/json",
+				Authorization: `${tokenID}`,
+			},
 		})
-		  .then((response) => response.json(console.log(response)))
-		  .then((json) => {
-			setData({
-			  User: json,
+			.then((response) => response.json(console.log(response)))
+			.then((json) => {
+				setData({
+					User: json,
+				});
+				// if (json.message === "successfully login") {
+				//   localStorage.setItem("token", json.token);
+				//   setIsLoggedin(true);
+
+				//   navigate("/AccountSetting");
+				// }
+
+				console.log(json);
+			})
+			.catch((err) => {
+				console.log(err);
 			});
-			// if (json.message === "successfully login") {
-			//   localStorage.setItem("token", json.token);
-			//   setIsLoggedin(true);
-	
-			//   navigate("/AccountSetting");
-			// }
-	
-			console.log(json);
-		  })
-		  .catch((err) => {
-			console.log(err);
-		  });
-	
-		  setInSubmit(true);
-	
-	
-	
-			
-	
-	
-		};
-	
-		useEffect(() => {
-			const res = data?.User?.message;
-			setMessage(res);
-		  }, [data]);
-	
+
+		setInSubmit(true);
+
+
+
+
+
+
+	};
+
+	useEffect(() => {
+		const res = data?.User?.message;
+		setMessage(res);
+	}, [data]);
+
 
 
 	useEffect(() => {
