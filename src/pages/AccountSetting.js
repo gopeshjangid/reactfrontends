@@ -28,19 +28,19 @@ const AccountSetting = () => {
 		check: ""
 	}
 
-	const [formValues, setFormValues] = useState(initialValues);
+	const [Users, setUsers] = useState(initialValues);
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		setFormValues({ ...formValues, [name]: value });
+		setUsers({ ...Users, [name]: value });
 	};
 
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setFormErrors(validate(formValues));
+		setFormErrors(validate(Users));
 		setIsSubmit(true);
 	};
 
@@ -48,7 +48,7 @@ const AccountSetting = () => {
 	useEffect(() => {
 		console.log(formErrors);
 		if (Object.keys(formErrors).length === 0 && isSubmit) {
-			console.log(formValues);
+			console.log(Users);
 		}
 	}, [formErrors])
 
@@ -89,31 +89,84 @@ const AccountSetting = () => {
 
 	const initialValue = {
 		currentPassword: "",
-		password: "",
+		newPassword: "",
 		confirmPassword: ""
 	}
 
-	const [formValue, setFormValue] = useState(initialValue);
+	const [User, setUser] = useState(initialValue);
 	const [formError, setFormError] = useState({});
 	const [inSubmit, setInSubmit] = useState(false);
+	const [data, setData] = useState()
+	const [message, setMessage] = useState()
 
 	const inputChange = (e) => {
 		const { name, value } = e.target;
-		setFormValue({ ...formValue, [name]: value });
+		setUser({ ...User, [name]: value });
 	};
 
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		setFormError(valide(formValue));
-		setInSubmit(true);
-	};
+		const tokenID = localStorage.getItem("token");
+		const { currentPassword, newPassword, confirmPassword } = User;
+
+		const object = {
+			currentPassword: currentPassword.trim(),
+			newPassword: newPassword.trim(),
+		  confirmPassword: confirmPassword.trim(),
+		};
+	
+		setFormError(valide(User));
+		// add entity - POST
+		// e.preventDefault();
+		// creates entity
+		fetch("http://localhost:5000/changePassword", {
+		  method: "POST",
+		  mode: "cors",
+		  body: JSON.stringify(object, { currentPassword, newPassword, confirmPassword  }),
+		  headers: {
+			"Content-type": "application/json",
+			Authorization: `${tokenID}`,
+		  },
+		})
+		  .then((response) => response.json(console.log(response)))
+		  .then((json) => {
+			setData({
+			  User: json,
+			});
+			// if (json.message === "successfully login") {
+			//   localStorage.setItem("token", json.token);
+			//   setIsLoggedin(true);
+	
+			//   navigate("/AccountSetting");
+			// }
+	
+			console.log(json);
+		  })
+		  .catch((err) => {
+			console.log(err);
+		  });
+	
+		  setInSubmit(true);
+	
+	
+	
+			
+	
+	
+		};
+	
+		useEffect(() => {
+			const res = data?.User?.message;
+			setMessage(res);
+		  }, [data]);
+	
 
 
 	useEffect(() => {
 		console.log(formError);
 		if (Object.keys(formError).length === 0 && inSubmit) {
-			console.log(formValue);
+			console.log(User);
 		}
 	}, [formError])
 
@@ -125,8 +178,8 @@ const AccountSetting = () => {
 		}
 
 
-		if (!value.password) {
-			error.password = "!'Please Enter New Your password'"
+		if (!value.newPassword) {
+			error.newPassword = "!'Please Enter New Your newPassword'"
 		}
 		//  else if(!value.confirmPassword  && value !== !value.password) {
 		// 	error.password = "!'This is not Same'"
@@ -396,7 +449,7 @@ const AccountSetting = () => {
 
 
 											<label className="as-lbl">New Password</label>
-											<input type="password" id="fname" name="password" onChange={inputChange} className="as-text_set" />
+											<input type="password" id="fname" name="newPassword" onChange={inputChange} className="as-text_set" />
 											<p style={{ color: "red" }}>{formError.password}</p>
 
 											<label className="as-lbl">Confirm Password</label>
@@ -406,8 +459,8 @@ const AccountSetting = () => {
 
 											<button type="submit" className="as-btn_set" style={{ marginLeft: '40%' }}>Update</button>
 											<br />
-											{Object.keys(formError).length === 0 && inSubmit ? (
-												<h5 className='Success text-dark text-center mt-2'>Thanks!</h5>) : ('')}
+											{Object.keys(formError, message).length === 0 && inSubmit ? (
+												<h5 className='Success text-dark text-center mt-2'>{message}</h5>) : ('')}
 
 										</form>
 

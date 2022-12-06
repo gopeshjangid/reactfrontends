@@ -1881,6 +1881,19 @@ th{    border: 1px solid #00000012; padding: 10px 10px 12px 10px !important;}
 				}
 
 
+				.viewCart {
+					background: rgb(3 151 155);
+					box-shadow: -1px 2px 4px #000;
+					padding: 10px 20px;
+					
+					transform: translate(0px, 0px);
+				}
+
+				.viewCart:active{
+					transform: translate(-2px, 2px);
+				}
+
+
 .faq1{margin-top: 13%;}
 .fp_sec {
 			background: #f9f3f3;

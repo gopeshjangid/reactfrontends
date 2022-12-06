@@ -1,6 +1,56 @@
-import React from 'react'
+import React, {Component} from 'react'
+import { Link } from 'react-router-dom';
 
-const Career = () => {
+class Career extends Component{
+	constructor(props){
+		super(props)
+		this.state = {
+			User:[],
+			isLoading:false,
+			isError:false,
+         
+		}
+
+        this.componentDidMount = this.componentDidMount.bind(this);
+	};
+
+
+	async componentDidMount(){
+		this.setState({isLoading:true})
+		const response = await fetch("http://localhost:5000/getcareers",{
+			method: "GET",
+						mode: "cors",
+						headers: {
+							'Content-type': 'application/json',
+							'Accept': 'application/json'
+		}
+	}
+		);
+		if(response.ok){
+			const User = await response.json()
+			console.log(User)
+			this.setState({...this.state,User: User.data,isLoading:false})
+		}else{
+			this.setState({isError:true,isLoading:false})
+		}
+	};
+
+	render(){
+
+		const {User, isLoading, isError} = this.state
+
+		if(isLoading){
+			return <div>Loading...</div>
+		}
+		
+		if(isError){
+			return <div>Error...</div>
+		}
+        
+	if(User.length < 0){
+        return User.length > 0
+    }
+console.log("this.props.User", this.state.User)
   return (
     <div>
       <section className="ab_sec">
@@ -37,12 +87,22 @@ const Career = () => {
 	
 		<div className="jot_sec-box">
 					<li className="jot_list">Senior Content Writer</li>
-					<li className="jot_list2">Editorial Content Writer</li>
-					<li className="jot_list2">Copywriters</li>
-					<li className="jot_list2">Script Writers & Etc</li>
+					{ this.state.User && this.state.User.map((friend) => {
+
+return(
+	<>
+	
+					<li className="jot_list2">{friend.careerName}</li>
+					</>
 					
-					<button type="button" className="jot_sec-btn">Join Our Team Today!</button>
+					)
+})
+}
+					
+					<Link to="/AccountSetting"><button type="button" className="jot_sec-btn">Join Our Team Today!</button></Link>
 		</div>
+
+
 	
 </div>
 </div>
@@ -118,6 +178,7 @@ const Career = () => {
 
     </div>
   )
+}
 }
 
 export default Career

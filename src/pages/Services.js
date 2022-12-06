@@ -182,15 +182,15 @@ class Services extends Component {
                           </li>
                         </ol>
                         <div className="text-center">
-                          <button type="button" className="services-btn1">
+                          
                             {/* <Link to="/AddTocart">Add to Cart</Link> */}
-                            <button
+                            <button type="button" className="services-btn1"
                               disabled={this.state.isAddLoading}
                               onClick={() => this.addTocarthandler(friend._id)}
                             >
                               Add to Cart
                             </button>
-                          </button>
+                          
                           <br />
                           <button type="button" className="services-btn2">
                             SUBSCRIBE
@@ -207,7 +207,7 @@ class Services extends Component {
             </div>
           </div>
         </section>
-        <div
+        <div 
           style={{
             width: "100%",
             height: "100px",
@@ -216,20 +216,31 @@ class Services extends Component {
             left: "0",
             padding: "20px",
             position: "fixed",
-            backgroundColor: "blue",
+            backgroundColor: "#03979C",
             color: "white",
             zIndex: 999,
           }}
         >
-          <div>totalPrice - {this.state.cartItems.totalPrice}</div>
-          <div>totalItems - {this.state.cartItems.totalItems}</div>
-          <div>
-            <Link style={{ color: "white" }} to={"/AddTocart"}>
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-md-8">
+                        <h4 >Total-Price =<span>></span> {this.state.cartItems.totalPrice}</h4>
+          <h4>Total-Items =<span>></span> {this.state.cartItems.totalItems}</h4>
+          </div>
+          
+         
+          <div className="col-md-4 text-end">
+            <Link style={{ color: "white", fontSize:"20px", }} className="viewCart text-decoration-none" to={"/AddTocart"}>
               View cart
             </Link>
+            </div>
+            </div>
+
+            </div>
+            </div>
           </div>
-        </div>
-      </div>
+       
+
     );
   }
 }
