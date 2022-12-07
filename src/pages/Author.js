@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom'
-
+// import axios from 'axios';
 
 import React, { Component } from "react"
 let urlApi = "http://localhost:5000";
@@ -20,6 +20,10 @@ class Author extends Component {
 	};
 
 
+
+
+
+
 	async componentDidMount() {
 		this.setState({ isLoading: true })
 		const response = await fetch("http://localhost:5000/getAuthors", {
@@ -31,6 +35,10 @@ class Author extends Component {
 			}
 		}
 		);
+
+		
+		
+
 		if (response.ok) {
 			const User = await response.json()
 			console.log(User)
@@ -39,6 +47,25 @@ class Author extends Component {
 			this.setState({ isError: true, isLoading: false })
 		}
 	};
+
+
+
+
+	
+	// async componentDidUpdate(prevProps) {
+	// 	if (this.props.id !== prevProps.id) {
+	// 	  let data = await axios
+	// 	  .get(`http://localhost:5000/author/${friend._id}`)
+	// 	  .then(function(response) {
+	// 		return response;
+	// 	  })
+	// 	  .catch(function(error) {
+	// 		console.log(error);
+	// 	  });
+	// 	  this.setState({ todo: data.data });
+	// 	}
+	//   };
+
 
 
 	render() {
@@ -81,7 +108,7 @@ class Author extends Component {
 										<h4 className="author_Sec-h2">{friend.title}</h4>
 										<p className="author_Sec-p">{friend.dec}</p>
 
-										<Link to="/ViewDetails"><button type="button" className="author-btn">View Details</button></Link>
+										<Link to={`/author/${friend._id}`} ><button type="button" className="author-btn">View Details</button></Link>
 
 									</div>
 								</div>

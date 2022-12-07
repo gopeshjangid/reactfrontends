@@ -10,14 +10,14 @@ const Login = () => {
 
 	const initialValues = {
 		username: "",
-		password: "",
-		checkbox: ""
+		password: ""
+		
 	}
 
 	const navigate = useNavigate();
 
 	const [User, setUser] = useState(initialValues);
-	const [error, setError] = useState();
+	
 	const [data, setData] = useState();
 	const [message, setMessage] = useState();
 	const [formErrors, setFormErrors] = useState({});
@@ -30,9 +30,9 @@ const Login = () => {
 		setUser({ ...User, [name]: value });
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = event => {
 
-		e.preventDefault();
+		event.preventDefault();
 		const { username, password } = User
 
 		const object = {
@@ -67,6 +67,7 @@ const Login = () => {
 			if (json.message === "successfully login") {
 				localStorage.setItem('token', json.token)
 				setIsLoggedin(true);
+				
 
 				navigate('/AccountSetting');
 			}
@@ -86,11 +87,7 @@ const Login = () => {
 		setIsSubmit(true);
 	};
 
-	useEffect(() => {
-		const res = data?.User?.error;
-		setError(res);
 
-	}, [])
 
 
 	useEffect(() => {
@@ -119,10 +116,7 @@ const Login = () => {
 		if (!values.password) {
 			errors.password = "!'Please Enter Your Password'"
 		}
-		if (!values.checkbox) {
-			errors.checkbox = "!'Please Select Checkbox'"
-		}
-
+	
 		return errors;
 	};
 
@@ -142,13 +136,17 @@ const Login = () => {
 							<input type="password" autoComplete="current-password" placeholder="password" name='password' onChange={handleChange} className="ct_text-set1" />
 							<p style={{ color: "red" }}>{formErrors.password}</p>
 
-							<label className="reg-lbl"><input type="checkbox" name='checkbox' onChange={handleChange} className="reg_check" /> Keep me signed in</label>
-							<p style={{ color: "red" }}>{formErrors.checkbox}</p>
+						
 
 							<Link to="/Register"><button type="button" className="reg_btn-1">Register</button></Link>
+							
+							
 							<button type="submit" className="reg_btn-2">Login</button>
-							{Object.keys(formErrors, message, error).length === 0 && isSubmit ? (
-								<h3 className='Success'>{message} {error}</h3>) : ('')}
+
+						
+
+							{Object.keys(formErrors, message).length === 0 && isSubmit ? (
+								<h3 className='Success'>{message}</h3>) : ('')}
 
 							<Link className="forgot_p" to="/Forgot">Forgot Your Password?</Link>
 						</form>

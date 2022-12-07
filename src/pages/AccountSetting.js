@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import ViewProfile from './ViewProfile'
 // import Login from './Login'
 
 
@@ -8,9 +9,15 @@ const AccountSetting = () => {
 	const navigate = useNavigate()
 
 
+	
+
+
 	useEffect(() => {
+
 		const getToken = localStorage.getItem('token');
+		
 		if (getToken == null) {
+			
 			navigate('/login')
 
 		}
@@ -18,74 +25,7 @@ const AccountSetting = () => {
 
 
 
-	const initialValues = {
-		firstname: "",
-		lastname: "",
-		birth: "",
-		email: "",
-		number: "",
-		school: "",
-		check: ""
-	}
 
-	const [Users, setUsers] = useState(initialValues);
-	const [formErrors, setFormErrors] = useState({});
-	const [isSubmit, setIsSubmit] = useState(false);
-
-	const handleChange = (e) => {
-		const { name, value } = e.target;
-		setUsers({ ...Users, [name]: value });
-	};
-
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		setFormErrors(validate(Users));
-		setIsSubmit(true);
-	};
-
-
-	useEffect(() => {
-		console.log(formErrors);
-		if (Object.keys(formErrors).length === 0 && isSubmit) {
-			console.log(Users);
-		}
-	}, [formErrors])
-
-	const validate = (values) => {
-		const errors = {}
-		const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-		if (!values.firstname) {
-			errors.firstname = "!'Please Enter Your FirstName'"
-		}
-		if (!values.lastname) {
-			errors.lastname = "!'Please Enter Your LastName'"
-		}
-
-		if (!values.birth) {
-			errors.birth = "!'Please Enter Your Birth'"
-		}
-		if (!values.email) {
-			errors.email = "!'Please Enter Your Email'"
-		} else if (!regex.test(values.email)) {
-			errors.email = "!'This is not Email Format'"
-		}
-		if (!values.number) {
-			errors.number = "!'Please Enter Your Number'"
-		} else if (values.number.length < 10) {
-			errors.number = "!'Please Enter Your Correct Number"
-		}
-		else if (values.number.length > 10) {
-			errors.number = "!'Please Enter Your Correct Number"
-		}
-		if (!values.school) {
-			errors.school = "!'Please Enter Sch. / Univ.'"
-		}
-		if (!values.check) {
-			errors.check = "!'Please Select Male/Female'"
-		}
-		return errors;
-	};
 
 	const initialValue = {
 		currentPassword: "",
@@ -120,6 +60,7 @@ const AccountSetting = () => {
 		// add entity - POST
 		// e.preventDefault();
 		// creates entity
+	
 		fetch("http://localhost:5000/changePassword", {
 			method: "POST",
 			mode: "cors",
@@ -129,6 +70,7 @@ const AccountSetting = () => {
 				Authorization: `${tokenID}`,
 			},
 		})
+
 			.then((response) => response.json(console.log(response)))
 			.then((json) => {
 				setData({
@@ -155,6 +97,32 @@ const AccountSetting = () => {
 
 
 	};
+
+
+	// componentDidMount() {
+	// 	// get all entities - GET
+	// 	fetch("https://fairestdb.p.rapidapi.com/friend/friendModel", {
+	// 	  "method": "GET",
+	// 	  "headers": {
+	// 		"x-rapidapi-host": "fairestdb.p.rapidapi.com",
+	// 		"x-rapidapi-key": API_KEY
+	// 	  }
+	// 	})
+	// 	.then(response => response.json())
+	// 	.then(response => {
+	// 	  this.setState({
+	// 		friends: response
+	// 	  })
+	// 	})
+	// 	.catch(err => { console.log(err); 
+	// 	});
+	//   }
+
+
+
+
+
+
 
 	useEffect(() => {
 		const res = data?.User?.message;
@@ -195,6 +163,100 @@ const AccountSetting = () => {
 
 		return error;
 	};
+
+
+
+
+
+
+
+
+// const initialValu = {
+// 		username: "",
+// 		password: "",
+// 		checkbox: ""
+// 	}
+
+	// const nav = useNavigate();
+
+	// const [Use, setUse] = useState(initialValues);
+	// const [error, setError] = useState();
+	// const [data, setData] = useState();
+	// const [message, setMessage] = useState();
+	// const [formErrors, setFormErrors] = useState({});
+	// const [isSubmit, setIsSubmit] = useState(false);
+
+	// const [isLoggedin, setIsLoggedin] = useState(false);
+
+	// const handleChange = (e) => {
+	// 	const { name, value } = e.target;
+	// 	setUser({ ...User, [name]: value });
+	// };
+
+	// componentDidMount() {
+
+		
+	// 	const { firstname, email } = User
+
+	// 	const object = {
+	// 		firstname: firstname.trim(),
+	// 		email: email.trim()
+	// 	}
+
+
+
+	
+	// 	// add entity - POST
+	// 	// e.preventDefault();
+	// 	// creates entity
+	// 	 fetch("http://localhost:5000/viewProfile", {
+	// 		method: "GET",
+	// 		mode: "cors",
+	// 		body: JSON.stringify(object, { firstname, email }),
+	// 		headers: {
+	// 			'Content-type': 'application/json',
+	// 			'Accept': 'application/json'
+	// 		}
+
+	// 	}).then(response => response.json(
+	// 		console.log(response)
+
+	// 	)).then(json => {
+	// 		setData(
+	// 			{
+	// 				Use: json
+	// 			}
+	// 		)
+	// 		if (json.message === "successfully login") {
+	// 			localStorage.setItem('token', json.token)
+	// 			setIsLoggedin(true);
+
+	// 			nav('/AccountSetting');
+	// 		}
+
+
+
+	// 		console.log(json)
+	// 	})
+	// 		.catch(err => {
+	// 			console.log(err);
+	// 		});
+
+
+
+
+
+	
+	// };
+
+
+
+
+
+
+
+
+
 
 
 
@@ -364,75 +426,7 @@ const AccountSetting = () => {
 										</div>
 
 										<div className="col-md-7">
-											<form onSubmit={handleSubmit}>
-
-												<div className='d-flex space-between'>
-													<div className='me-3'>
-														<label className="as-lbl">FirstName</label>
-														<input type="text" id="fname" name="firstname" onChange={handleChange} className="as-text_set" />
-														<p style={{ color: "red" }}>{formErrors.firstname}</p>
-
-													</div>
-
-
-													<div>
-														<label className="as-lbl">LastName</label>
-														<input type="text" name='lastname' onChange={handleChange} className="as-text_set" />
-														<p style={{ color: "red" }}>{formErrors.lastname}</p>
-
-													</div>
-
-
-												</div>
-
-
-
-												<div className='d-flex space-between'>
-													<div className='me-3'>
-														<label className="as-lbl">Date Of Birth</label>
-														<input type="date" name="birth" onChange={handleChange} className="as-text_set" />
-														<p style={{ color: "red" }}>{formErrors.birth}</p>
-
-													</div>
-
-													<div>
-														<label className="as-lbl">Email Id</label>
-														<input type="email" id="fname" name="email" onChange={handleChange} className="as-text_set" />
-														<p style={{ color: "red" }}>{formErrors.email}</p>
-
-													</div>
-
-												</div>
-
-												<div className='d-flex justify-content-between'>
-													<div className='me-3'>
-														<label className="as-lbl">Phone Number</label>
-														<input type="number" name="number" onChange={handleChange} className="as-text_set" />
-														<p style={{ color: "red" }}>{formErrors.number}</p>
-
-													</div>
-
-													<div>
-														<label className="as-lbl">School/University</label>
-														<input type="text" id="fname" name="school" onChange={handleChange} className="as-text_set" />
-														<p style={{ color: "red" }}>{formErrors.school}</p>
-
-													</div>
-												</div>
-
-												<label className="as-lbl">Male</label>
-												<input type="radio" id="male" name="check" onChange={handleChange} defaultValue="male" />
-												&nbsp;
-												<label className="as-lbl">Female</label>
-												<input type="radio" id="Female" name="check" onChange={handleChange} defaultValue="Female" />
-												&nbsp;
-												<p style={{ color: "red" }}>{formErrors.check}</p>
-												<br />
-												{Object.keys(formErrors).length === 0 && isSubmit ? (
-													<h5 className='Success'>Your Account is Udated</h5>) : ('')}
-
-												<button type="submit" className="as-btn_set m-auto">Update</button>
-											</form>
+											<ViewProfile />
 										</div>
 
 
@@ -548,7 +542,7 @@ const AccountSetting = () => {
 									<div className='payment-gateway'>
 										<button type="button" className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#exampleModal">Make Payment</button>
 									</div>
-									<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 										<div className="modal-dialog modal-lg">
 											<div className="modal-content">
 												<div className="modal-header ">

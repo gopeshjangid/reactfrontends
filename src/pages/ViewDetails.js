@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-
 let urlApi = "http://localhost:5000";
 
 class viewDetails extends Component {
@@ -18,7 +17,7 @@ class viewDetails extends Component {
 
 	async componentDidMount() {
 		this.setState({ isLoading: true })
-		const response = await fetch("http://localhost:5000/getAuthors", {
+		const response = await fetch('http://localhost:5000/getAuthors', {
 			method: "GET",
 			mode: "cors",
 			headers: {
@@ -27,6 +26,9 @@ class viewDetails extends Component {
 			}
 		}
 		);
+	
+	
+
 		if (response.ok) {
 			const User = await response.json()
 			console.log(User)

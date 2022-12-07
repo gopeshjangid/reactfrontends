@@ -13,7 +13,7 @@ const Forgot = () => {
 	const [formErrors, setFormErrors] = useState({});
 	const [isSubmit, setIsSubmit] = useState(false);
 	const [message, setMessage] = useState()
-	const [error, setError] = useState()
+	// const [error, setError] = useState()
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -52,7 +52,7 @@ const Forgot = () => {
 				}
 
 				setMessage(json.message)
-				setError(json.error)
+				// setError(json.error)
 
 				console.log(json)
 			})

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+let urlApi = "http://localhost:5000";
 
 class Blog extends Component {
 	constructor(props) {
@@ -63,7 +64,7 @@ class Blog extends Component {
 									return (
 										<div className="term_sec-9" key={number.toString()}>
 
-											<img src={friend.image} className="blog_sec-img" />
+											<img src={urlApi + "/image/" + friend.image} className="blog_sec-img" />
 											<h2 className="blog_sec-h2">{friend.title} </h2>
 											<h3><span className="blog-span1">{friend.name} </span> <span className="blog-span2">September 08,2022</span></h3>
 											<p className="blog_sec-p">{friend.dec} </p>

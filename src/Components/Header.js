@@ -37,8 +37,8 @@ const Header = () => {
 
 
   // HANDLE LOGOUT EVENT
-  const logout = (e) => {
-    e.preventDefault();
+  const logout = event => {
+    event.preventDefault();
 
     console.log(isLoggedin)
 
@@ -95,7 +95,7 @@ const Header = () => {
                 <li className="nav-item dropdown pad">
                   <Link className="nav-link dropdown-toggle set" to="/" role="button" data-bs-toggle="dropdown">My Account</Link>
                   <ul className="dropdown-menu">
-                    <li><Link className="dropdown-item" to="/cart">Cart</Link></li>
+                    <li><Link className="dropdown-item" to="/cart">ViewCart</Link></li>
                     {/* <li><Link className="dropdown-item"  to="/Login">Login</Link></li> */}
 
                     {isLoggedin == false ? (
@@ -107,13 +107,25 @@ const Header = () => {
                         <li><Link className="dropdown-item" to="/Login">Login</Link></li>
                       </>
                     ) : (
-                      <li><Link
+                      <>
+
+                        <li><Link
+                        className="dropdown-item"
+                        to="/AccountSetting"
+                        
+                      >
+                        AccountSetting
+                      </Link></li>
+
+                       <li><Link
                         className="dropdown-item"
                         to="/"
                         onClick={logout}
                       >
                         Logout
                       </Link></li>
+                      </>
+
 
                     )
                     }
