@@ -6,7 +6,7 @@ import ViewProfile from './ViewProfile'
 
 
 const AccountSetting = () => {
-	const navigate = useNavigate()
+	// const navigate = useNavigate()
 
 
 	
