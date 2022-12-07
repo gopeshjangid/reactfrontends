@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useState } from 'react';
 // import { Navigate } from 'react-router-dom';
 
@@ -20,6 +20,8 @@ const Header = () => {
   //     setIsLoggedin(false);
   //   };
 
+  const location = useLocation();
+
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setIsLoggedin(true);
@@ -28,7 +30,7 @@ const Header = () => {
       setIsLoggedin(false);
     }
 
-  }, [])
+  }, [location.pathname])
 
   console.log("check ====", isLoggedin)
 
