@@ -41,6 +41,7 @@ class Services extends Component {
 
   viewCart = async () => {
     const tokenID = localStorage.getItem("token");
+    console.log(tokenID);
     const headers = {
       "Content-Type": "application/json",
       Authorization: `${tokenID}`,
