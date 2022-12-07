@@ -8,10 +8,13 @@ const ViewCart = () => {
 
   // const [nums, setNums] = useState(0);
   const [cartItems, setCartItems] = useState({});
+  const [coupons, setCoupons] = useState([]);
+  const [couponApplied, setCouponApplied] = useState("");
   const [isAddLoading, setIsAddLoading] = useState(false);
 
   useEffect(() => {
     viewCart();
+    getCoupons();
   }, []);
 
   const viewCart = async () => {
@@ -34,6 +37,18 @@ const ViewCart = () => {
       });
   };
 
+  const getCoupons = async () => {
+    await axios
+      .get("http://localhost:5000/getCoupon")
+      .then((response) => {
+        console.log("coupons ++++++++++++++++++", response.data.data);
+        setCoupons(response.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const addTocarthandler = async (id) => {
     const tokenID = localStorage.getItem("token");
     console.log(cartItems);
@@ -48,8 +63,8 @@ const ViewCart = () => {
         (item, index) => item.productId._id === id
       )[0]
         ? cartItems.message?.filter(
-          (item, index) => item.productId._id === id
-        )[0].quantity + 1
+            (item, index) => item.productId._id === id
+          )[0].quantity + 1
         : 1;
     } else {
       quantity = 1;
@@ -88,8 +103,8 @@ const ViewCart = () => {
         cartItems.message?.filter((item, index) => item.productId._id === id)[0]
           .quantity > 1
           ? cartItems.message?.filter(
-            (item, index) => item.productId._id === id
-          )[0].quantity - 1
+              (item, index) => item.productId._id === id
+            )[0].quantity - 1
           : 0;
     } else {
       quantity = 1;
@@ -123,9 +138,13 @@ const ViewCart = () => {
 
     setIsAddLoading(true);
     await axios
-      .post(`http://localhost:5000/deleteCart/${id}`, {}, {
-        headers: headers,
-      })
+      .post(
+        `http://localhost:5000/deleteCart/${id}`,
+        {},
+        {
+          headers: headers,
+        }
+      )
       .then((response) => {
         console.log(response.data.message);
         viewCart();
@@ -192,7 +211,8 @@ const ViewCart = () => {
                     </th>
                     <th scope="col" className="p-0 text-center">
                       <div className="quantity d-flex align-items-center justify-content-between w-50 m-auto">
-                        <span style={{ cursor: "pointer" }}
+                        <span
+                          style={{ cursor: "pointer" }}
                           className="cursor-pointer"
                           data-action-type="minus"
                           onClick={() => {
@@ -202,7 +222,8 @@ const ViewCart = () => {
                           -
                         </span>
                         <h3> {item.quantity}</h3>
-                        <span style={{ cursor: "pointer" }}
+                        <span
+                          style={{ cursor: "pointer" }}
                           className="cursor-pointer"
                           data-action-type="plus"
                           onClick={() => {
@@ -235,36 +256,74 @@ const ViewCart = () => {
                   placeholder="Coupon Code"
                 /> */}
 
-
-                <button type="button" class="btn Coupons btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button
+                  type="button"
+                  class="btn Coupons btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
                   View available Coupons
                 </button>
 
-
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          Modal title
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
                       </div>
                       <div class="modal-body">
-                        ...
+                        {coupons?.map((item, index) => (
+                          <div
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                            }}
+                          >
+                            <div>{item.couponName}</div>
+                            <div>
+                              {item.couponType !== "Flat"
+                                ? `${item.offAmount} %`
+                                : `Rs. ${item.offAmount}`}
+                            </div>
+                            <div
+                              onClick={() => setCouponApplied(item._id)}
+                              data-bs-dismiss="modal"
+                            >
+                              Apply Coupon
+                            </div>
+                          </div>
+                        ))}
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Save changes
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
-
-
-
-
-
-
-
 
                 {/* 
                 <button>Apply Coupon</button> */}
@@ -294,6 +353,32 @@ const ViewCart = () => {
                         </span>
                       </td>
                     </tr>
+                    {couponApplied.trim() !== "" ? (
+                      <tr className="cart-subtotal">
+                        <th scope="col">Coupon Discount</th>
+                        <td data-title="Subtotal">
+                          <span className="woocommerce-Price-amount amount">
+                            <bdi>
+                              <span className="woocommerce-Price-currencySymbol">
+                                ₹
+                              </span>
+                              {coupons.filter(
+                                (item, index) => item._id === couponApplied
+                              )[0].couponType === "Flat"
+                                ? coupons.filter(
+                                    (item, index) => item._id === couponApplied
+                                  )[0].offAmount
+                                : (cartItems.totalPrice *
+                                    coupons.filter(
+                                      (item, index) =>
+                                        item._id === couponApplied
+                                    )[0].offAmount) /
+                                  100}
+                            </bdi>
+                          </span>
+                        </td>
+                      </tr>
+                    ) : null}
                     <tr className="order-total">
                       <th scope="col">Total</th>
                       <td data-title="Total">
@@ -303,7 +388,24 @@ const ViewCart = () => {
                               <span className="woocommerce-Price-currencySymbol">
                                 ₹
                               </span>
-                              {cartItems.totalPrice}
+                              {couponApplied.trim() === ""
+                                ? cartItems.totalPrice
+                                : coupons.filter(
+                                    (item, index) => item._id === couponApplied
+                                  )[0].couponType === "Flat"
+                                ? cartItems.totalPrice -
+                                  coupons.filter(
+                                    (item, index) => item._id === couponApplied
+                                  )[0].offAmount
+                                : (
+                                    cartItems.totalPrice -
+                                    (cartItems.totalPrice *
+                                      coupons.filter(
+                                        (item, index) =>
+                                          item._id === couponApplied
+                                      )[0].offAmount) /
+                                      100
+                                  ).toFixed(2)}
                             </bdi>
                           </span>
                         </strong>{" "}
