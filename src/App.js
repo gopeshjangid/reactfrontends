@@ -26,6 +26,7 @@ import ViewDetails from './pages/ViewDetails';
 import React from 'react'
 import Join from './pages/Join/Join';
 import Chat from "./pages/Chat/Chat";
+import Success from './pages/Success';
 
 
 
@@ -58,6 +59,7 @@ function App() {
       <Route path="/Services" element={<Services />}/>
       <Route path="/Terms" element={<Terms />}/>
       <Route path="/ViewCart" element={<ViewCart />}/>
+      <Route path="/success" element={<Success />}/>
       <Route path="/ViewDetails" element={<ViewDetails />}/>
        
   </Routes>
