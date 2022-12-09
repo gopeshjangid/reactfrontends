@@ -662,30 +662,7 @@ const Home = () => {
 
 
 
-									{/* <div className="faq-item bg_set">
-										<h3 className="faq_item-h3">
-											<span className="faq-plus">+
-												Can I own content copyright with my order?</span>
-										</h3>
-										<div className="faq-body pera">
-											Yes, you have exclusive copyright as soon as We’ve turned in the document and you pay for it.
-											After We’ve handed over the documents, it’s up to you to decide what to do with the information.
-											You can re-distribute it, alter it, truncate it, or just remove it (although this would be
-											heartbreaking and discouraging).
-										</div>
-									</div>
-
-
-									<div className="faq-item bg_set">
-										<h3 className="faq_item-h3">
-											<span className="faq-plus">+
-												Do you check contents on Copyscape or other related software?</span>
-										</h3>
-										<div className="faq-body pera">
-											We analyze articles for grammatical correctness using our Copyscape VIP account. All of the content
-											we create is delivered by our editorial team.
-										</div>
-									</div> */}
+						
 
 								</div>
 							</section>

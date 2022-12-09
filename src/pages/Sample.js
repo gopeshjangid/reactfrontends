@@ -107,6 +107,7 @@ class Sample extends Component {
                             src={urlApi + "/image/" + friend.image}
                             className="samp_box-img"
                           />
+
                           <h3 className="samp_box-h3">{friend.title}</h3>
                           <p className="samp_box-p">{friend.dec}</p>
                           <a
@@ -128,11 +129,13 @@ class Sample extends Component {
                     return (
                       <div className="col-md-3" key={value.toString()}>
                         <div className="samp_box">
-                          <img
-                            alt="images"
-                            src={urlApi + "/image/" + friend.image}
-                            className="samp_box-img"
-                          />
+                          <div className="samp_box-img1">
+                            <img
+                              alt="images"
+                              src={urlApi + "/image/" + friend.image}
+                              className="samp_box-img"
+                            />
+                          </div>
                           <h3 className="samp_box-h3">{friend.title}</h3>
                           <p className="samp_box-p">{friend.dec}</p>
                           <a

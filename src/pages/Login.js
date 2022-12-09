@@ -92,7 +92,7 @@ const Login = () => {
     const errors = {};
     // const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.username) {
-      errors.username = "!'Please Enter Your Email/id'";
+      errors.username = "!'Please Enter Your Email / Username'";
     } // else if(!regex.test(values.username)) {
     // 	errors.username = "!'This is not Email Format'"
     // }

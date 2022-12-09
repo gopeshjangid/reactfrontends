@@ -27,7 +27,7 @@ const AccountSetting = () => {
   const [inSubmit, setInSubmit] = useState(false);
   const [data, setData] = useState();
   const [message, setMessage] = useState();
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
 
   const inputChange = (e) => {
     const { name, value } = e.target;
@@ -140,93 +140,15 @@ const AccountSetting = () => {
 
   const walletRecharge = () => {
     axios
-      .post("http://localhost:5000/payment", { wallet: amount})
+      .post("http://localhost:5000/payment", { wallet: amount })
       .then((response) => {
-        sessionStorage.setItem("wallet", amount)
+        sessionStorage.setItem("wallet", amount);
         console.log(response);
         sessionStorage.setItem("pay_id", response.data.id);
         window.open(response.data.url, "_self");
       })
       .catch((error) => console.log(error));
   };
-
-  // const initialValu = {
-  // 		username: "",
-  // 		password: "",
-  // 		checkbox: ""
-  // 	}
-
-  // const nav = useNavigate();
-
-  // const [Use, setUse] = useState(initialValues);
-  // const [error, setError] = useState();
-  // const [data, setData] = useState();
-  // const [message, setMessage] = useState();
-  // const [formErrors, setFormErrors] = useState({});
-  // const [isSubmit, setIsSubmit] = useState(false);
-
-  // const [isLoggedin, setIsLoggedin] = useState(false);
-
-  // const handleChange = (e) => {
-  // 	const { name, value } = e.target;
-  // 	setUser({ ...User, [name]: value });
-  // };
-
-  // componentDidMount() {
-
-  // 	const { firstname, email } = User
-
-  // 	const object = {
-  // 		firstname: firstname.trim(),
-  // 		email: email.trim()
-  // 	}
-
-  // 	// add entity - POST
-  // 	// e.preventDefault();
-  // 	// creates entity
-  // 	 fetch("http://localhost:5000/viewProfile", {
-  // 		method: "GET",
-  // 		mode: "cors",
-  // 		body: JSON.stringify(object, { firstname, email }),
-  // 		headers: {
-  // 			'Content-type': 'application/json',
-  // 			'Accept': 'application/json'
-  // 		}
-
-  // 	}).then(response => response.json(
-  // 		console.log(response)
-
-  // 	)).then(json => {
-  // 		setData(
-  // 			{
-  // 				Use: json
-  // 			}
-  // 		)
-  // 		if (json.message === "successfully login") {
-  // 			localStorage.setItem('token', json.token)
-  // 			setIsLoggedin(true);
-
-  // 			nav('/AccountSetting');
-  // 		}
-
-  // 		console.log(json)
-  // 	})
-  // 		.catch(err => {
-  // 			console.log(err);
-  // 		});
-
-  // };
-
-  // const token = localStorage.getItem("token")
-
-  // let isLoggedin = true
-  // if (token == null){
-  // 	isLoggedin = false
-  // }
-
-  //   if(!isLoggedin){
-  // 	return<Login setIsLoggedin={setIsLoggedin} />
-  // }
 
   return (
     <div>
@@ -553,7 +475,7 @@ const AccountSetting = () => {
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
                   >
-                    <div className="modal-dialog modal-lg">
+                    <div className="modal-dialog">
                       <div className="modal-content">
                         <div className="modal-header ">
                           <h1
@@ -569,50 +491,11 @@ const AccountSetting = () => {
                             aria-label="Close"
                           ></button>
                         </div>
-                        {/* <div className="modal-body">
-                          <div className="row">
-                            <div className="col-md-6">
-                              <p>Main Account</p>
-                              <h2>First Savings Account</h2>
-                              <p>**********0344</p>
-                            </div>
-                            <div className="col-md-6 text-end">
-                              <p>Available Funds</p>
-                              <h2>
-                                68.789,<span>56</span>
-                                <b>$</b>
-                              </h2>
-                            </div>
-                          </div>
 
-                          <div className="row align-items-center">
-                            <div className="col-md-4 d-flex align-items-center">
-                              <button className="btn btn-primary px-3 py-2 text-white fw-bolder me-3 fs-4">
-                                ↑
-                              </button>
-                              <div>
-                                <h3 className="m-0">$ 5555.55</h3>
-                                <p className="m-0">Income</p>
-                              </div>
-                            </div>
-                            <div className="col-md-4 d-flex align-items-center">
-                              <button className="btn btn-primary px-3 py-2 text-white fw-bolder me-3 fs-4">
-                                ↓
-                              </button>
-                              <div>
-                                <h3 className="m-0">$ 5555.55</h3>
-                                <p className="m-0">Expense</p>
-                              </div>
-                            </div>
-                            <div className="col-md-4 Transfer-Money text-end">
-                              <button className="btn btn-primary">
-                                Transfer Money
-                              </button>
-                            </div>
-                          </div>
-                        </div> */}
-                        <div>
+                        <div className="modal-body">
                           <input
+                            className="w-100 px-1 py-3"
+                            placeholder="0"
                             type="number"
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}

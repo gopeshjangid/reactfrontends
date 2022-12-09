@@ -7,7 +7,7 @@ const ViewCart = () => {
   // const [num, setNum] = useState(0);
 
   // const [nums, setNums] = useState(0);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [cartItems, setCartItems] = useState({});
   const [coupons, setCoupons] = useState([]);
   const [couponApplied, setCouponApplied] = useState({});
@@ -213,8 +213,8 @@ const ViewCart = () => {
       )
       .then((response) => {
         console.log(response.data);
-        navigate('/puchaseSuccess')
-      })  
+        navigate("/PurchaseSuccess");
+      })
       .catch((error) => {
         console.log(error);
       });
@@ -315,101 +315,31 @@ const ViewCart = () => {
           <div className="coupon-wrap">
             <div className="coupon-inner">
               <div className="coupon">
-                {/* <input
+                <input
                   type="text"
+                  value={couponText}
+                  onChange={(e) => setCouponText(e.target.value)}
                   className="bg-transparent border-0"
                   placeholder="Coupon Code"
-                /> */}
+                />
 
-                <div style={{ display: "flex" }}>
-                  <input
-                    type="text"
-                    value={couponText}
-                    onChange={(e) => setCouponText(e.target.value)}
-                  />
-                  <button
-                    type="button"
-                    class="btn Coupons btn-primary"
-                    // data-bs-toggle="modal"
-                    // data-bs-target="#exampleModal"
-                    onClick={() => checkCoupon()}
-                  >
-                    Apply
-                  </button>
-                </div>
-
-                {/* <div
-                  class="modal fade"
-                  id="exampleModal"
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
+                <button
+                  type="button"
+                  class="btn Coupons btn-primary mb-0"
+                  // data-bs-toggle="modal"
+                  // data-bs-target="#exampleModal"
+                  onClick={() => checkCoupon()}
                 >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
-                          Modal title
-                        </h1>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                      <div class="modal-body">
-                        {coupons?.map((item, index) => (
-                          <div
-                            style={{
-                              display: "flex",
-                              justifyContent: "space-between",
-                              alignItems: "center",
-                            }}
-                          >
-                            <div>{item.couponName}</div>
-                            <div>
-                              {item.couponType !== "Flat"
-                                ? `${item.offAmount} %`
-                                : `Rs. ${item.offAmount}`}
-                            </div>
-                            <div
-                              onClick={() => setCouponApplied(item._id)}
-                              data-bs-dismiss="modal"
-                            >
-                              Apply Coupon
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-secondary"
-                          data-bs-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                          Save changes
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
-
-                {/* 
-                <button>Apply Coupon</button> */}
+                  Apply Coupon
+                </button>
               </div>
+
               <Link to="/Services">
                 <i aria-hidden="true" className="fas fa-chevron-left" />
                 Continue Shopping
               </Link>
             </div>
             <div className="cart-collaterals">
-              <div className="eael-cart-update-btn">
-                <button>Update Cart</button>
-              </div>
               <div className="cart_totals ">
                 <table className="shop_table shop_table_responsive">
                   <tbody>
@@ -470,14 +400,14 @@ const ViewCart = () => {
                     </tr>
                   </tbody>
                 </table>
-                <div className="wc-proceed-to-checkout">
+                <div className="wc-proceed-to-checkout   eael-cart-update-btn">
                   <button
                     className="checkout-button button alt wc-forward"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                   >
-                    <button>Proceed to Checkout </button>{" "}
-                  </button>
+                    Proceed to Checkout
+                  </button>{" "}
                 </div>
                 <div
                   class="modal fade"
@@ -490,7 +420,7 @@ const ViewCart = () => {
                     <div class="modal-content">
                       <div class="modal-header">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">
-                          Modal title
+                          Amount Details
                         </h1>
                         <button
                           type="button"
@@ -575,7 +505,7 @@ const ViewCart = () => {
                           </tbody>
                         </table>
                       </div>
-                      <div class="modal-footer">
+                      <div class="">
                         <button
                           type="button"
                           class="btn btn-secondary"
