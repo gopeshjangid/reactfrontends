@@ -142,6 +142,7 @@ const AccountSetting = () => {
     axios
       .post("http://localhost:5000/payment", { wallet: amount})
       .then((response) => {
+        sessionStorage.setItem("wallet", amount)
         console.log(response);
         sessionStorage.setItem("pay_id", response.data.id);
         window.open(response.data.url, "_self");

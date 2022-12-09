@@ -4,11 +4,13 @@ import React, { useEffect } from "react";
 const Success = () => {
   const tokenID = localStorage.getItem("token");
   const pay_id = sessionStorage.getItem("pay_id");
+  const amount = sessionStorage.getItem("wallet");
   const headers = {
     "Content-Type": "application/json",
     Authorization: `${tokenID}`,
   };
-  const data = { wallet: 12334, pay_id };
+  
+  const data = { wallet: parseInt(amount), pay_id };
 
   useEffect(() => {
     axios
