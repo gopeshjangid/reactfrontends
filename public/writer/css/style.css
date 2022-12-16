@@ -562,7 +562,6 @@
 }
 .bg_set {
   background: #029a99;
-  padding-top: 8px;
   margin-bottom: 22px;
 }
 .faq_item-h3 {
@@ -1324,7 +1323,8 @@
 }
 
 .samp_box-img1 {
-  height: 20%;
+  height: 250px;
+  overflow: hidden;
 }
 
 .samp_box {
@@ -1336,7 +1336,7 @@
 }
 .samp_box-img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 .samp_box-h3 {
   padding: 10px;
@@ -1723,7 +1723,6 @@ th {
 }
 .blog_sec-img {
   width: 100%;
-  height: 400px;
 }
 .blog_sec-h2 {
   font-family: ", sans-serif";

@@ -1,9 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-// import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from "react-router-dom";
 
 const ViewProfile = () => {
-  // const navigate = useNavigate()
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const getToken = localStorage.getItem("token");
@@ -25,12 +25,13 @@ const ViewProfile = () => {
 
   const [Users, setUsers] = useState(initialValues);
   const [Data, setData] = useState([]);
+  const [userName, setUserName] = useState("");
+  const [message, setMessage] = useState();
 
   // const [value, setValue] = useState();
-  const [message, setMessage] = useState();
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
-  const [userName, setUserName] = useState("");
+  // const [formErrors, setFormErrors] = useState({});
+  // const [isSubmit, setIsSubmit] = useState(false);
+
   // const [isLoggedin, setIsLoggedin] = useState(false);
 
   useEffect(() => {
@@ -73,22 +74,23 @@ const ViewProfile = () => {
 
   // console.log("sonu",Data.json.data)
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setData({ ...Users, [name]: value });
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setData({ ...Users, [name]: value });
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormErrors(validate(Users));
-    const tokenID = localStorage.getItem("token");
+    // setFormErrors(validate(Users));
+    const tokenId = localStorage.getItem("token");
+    console.log("namastey", tokenId);
     fetch("http://localhost:5000/updateProfile", {
       method: "POST",
       mode: "cors",
       body: JSON.stringify({ NewUserName: userName }),
       headers: {
         "Content-type": "application/json",
-        Authorization: `${tokenID}`,
+        Authorization: `${tokenId}`,
       },
     })
       .then((response) => response.json(console.log(response)))
@@ -96,20 +98,18 @@ const ViewProfile = () => {
         setData({
           json,
         });
-        // if (json.message === "successfully login") {
-        // 	localStorage.setItem('token', json.token)
-        // 	setIsLoggedin(true);
-
-        // 	navigate('/AccountSetting');
+        // if (json.message === "successfully updated") {
+        //   // navigate("/AccountSetting");
         // }
+        setMessage(json.data);
 
-        console.log(json);
+        console.log(json.data);
       })
       .catch((err) => {
         console.log(err);
       });
 
-    setIsSubmit(true);
+    // setIsSubmit(true);
   };
 
   // useEffect(() => {
@@ -118,36 +118,29 @@ const ViewProfile = () => {
 
   // }, [Data])
 
-  useEffect(() => {
-    const res = Data?.Users?.message;
-    setMessage(res);
-  }, [Data]);
+  // useEffect(() => {
+  //   const res = Data?.data?.message;
+  //   setMessage(res);
+  // }, [Data]);
+  console.log(message);
 
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(Users);
-    }
-  }, [formErrors]);
+  // useEffect(() => {
+  //   console.log(formErrors);
+  //   if (Object.keys(formErrors).length === 0 && isSubmit) {
+  //     console.log(Users);
+  //   }
+  // }, [formErrors]);
+  // console.log(Users);
 
-  const validate = (values) => {
-    const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.username) {
-      errors.username = "!'Please Enter Your username'";
-    }
+  // const validate = (values) => {
+  //   const errors = {};
 
-    if (!values.email) {
-      errors.email = "!'Please Enter Your Email'";
-    } else if (!regex.test(values.email)) {
-      errors.email = "!'This is not Email Format'";
-    }
+  //   if (!values.username) {
+  //     errors.username = "!'Please Change Your username'";
+  //   }
 
-    if (!values.password) {
-      errors.password = "!'Please Enter Your password'";
-    }
-    return errors;
-  };
+  //   return errors;
+  // };
 
   console.log("--------------", Data.data);
 
@@ -163,7 +156,7 @@ const ViewProfile = () => {
           className="as-text_set"
           value={userName}
         />
-        <p style={{ color: "red" }}>{formErrors.username}</p>
+        {/* <p style={{ color: "red" }}>{formErrors.username}</p> */}
       </div>
 
       <div className="me-3">
@@ -176,31 +169,19 @@ const ViewProfile = () => {
           className="as-text_set"
           value={Data?.data?.email}
         />
-        <p style={{ color: "red" }}>{formErrors.email}</p>
-      </div>
 
-      <div className="me-3">
-        <label className="as-lbl">password</label>
-        <input
-          type="password"
-          name="password"
-          //   onChange={handleChange}
-          className="as-text_set"
-          value={Data?.data?.password}
-        />
-        <p style={{ color: "red" }}>{formErrors.password}</p>
+        {/* <p style={{ color: "red" }}>{formErrors.email}</p> */}
       </div>
+      {/* {Object.keys(formErrors, message).length === 0 && isSubmit ? ( */}
 
-      <br />
-      {Object.keys(formErrors, message).length === 0 && isSubmit ? (
-        <h5 className="Success text-center">{message}</h5>
-      ) : (
+      {/* ) : (
         ""
-      )}
+      )} */}
 
-      <button type="submit" className="as-btn_set m-auto">
+      <button type="submit" className="as-btn_set m-auto me-1">
         Update
       </button>
+      <span className="Success">{message}</span>
     </form>
   );
 };

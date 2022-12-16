@@ -29,6 +29,7 @@ import Chat from "./pages/Chat/Chat";
 import Success from "./pages/Success";
 import Failed from "./pages/Failed";
 import PurchaseSuccess from "./pages/PurchaseSuccess";
+import OnlineManagement from "./pages/OnlineManagement";
 
 function App() {
   return (
@@ -58,9 +59,10 @@ function App() {
         <Route path="/Terms" element={<Terms />} />
         <Route path="/ViewCart" element={<ViewCart />} />
         <Route path="/success" element={<Success />} />
-        <Route path="/ViewDetails" element={<ViewDetails />} />
+        <Route path="/viewdetails/:id" element={<ViewDetails />} />
         <Route path="/Failed" element={<Failed />} />
         <Route path="/PurchaseSuccess" element={<PurchaseSuccess />} />
+        <Route path="/OnlineManagement/:id" element={<OnlineManagement />} />
       </Routes>
       <Footer />
     </BrowserRouter>

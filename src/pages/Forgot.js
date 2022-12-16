@@ -24,44 +24,50 @@ const Forgot = () => {
     e.preventDefault();
 
     const { email } = formValues;
+    const object = {
+      email: email.trim(),
+    };
+    setFormErrors(validate(formValues));
     // add entity - POST
     // e.preventDefault();
     // creates entity
-    fetch("http://localhost:5000/password-reset", {
-      method: "POST",
-      mode: "cors",
-      body: JSON.stringify({
-        email,
-      }),
-      headers: {
-        "Content-type": "application/json",
-        Accept: "application/json",
-      },
-    }) // .then((res) => res.json())
-      .then((response) =>
-        response.json(
-          setFormValues({
-            response,
-          })
+    const regex1 = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    if (email.trim() === "" || regex1.test(email.trim()) === false) {
+      return;
+    } else {
+      fetch("http://localhost:5000/password-reset", {
+        method: "POST",
+        mode: "cors",
+        body: JSON.stringify(object),
+        headers: {
+          "Content-type": "application/json",
+          Accept: "application/json",
+        },
+      }) // .then((res) => res.json())
+        .then((response) =>
+          response.json(
+            setFormValues({
+              response,
+            })
+          )
         )
-      )
 
-      .then((json) => {
-        if (json.message === "mail have sent successfully") {
-          navigate("/login");
-        }
+        .then((json) => {
+          if (json.message === "mail have sent successfully") {
+            navigate("/login");
+          }
 
-        setMessage(json.message);
-        // setError(json.error)
+          setMessage(json.message);
+          // setError(json.error)
 
-        console.log(json);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+          console.log(json);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
 
-    setFormErrors(validate(formValues));
-    setIsSubmit(true);
+      setIsSubmit(true);
+    }
   };
 
   useEffect(() => {
@@ -107,7 +113,15 @@ const Forgot = () => {
                   placeholder=" Enter email address"
                   className="fp-text"
                 />
-                <p style={{ color: "red" }}>{formErrors.email}</p>
+                <br />
+                {Object.keys(formErrors, message).length === 0 && isSubmit ? (
+                  <span className="Success ms-4">{message}</span>
+                ) : (
+                  ""
+                )}
+                <p style={{ color: "red" }} className="ms-4">
+                  {formErrors.email}
+                </p>
                 <Link className="fp-link" to="#">
                   Try another way
                 </Link>
@@ -115,11 +129,6 @@ const Forgot = () => {
                   Next
                 </button>
                 <br />
-                {Object.keys(formErrors, message).length === 0 && isSubmit ? (
-                  <span className="Success">{message}</span>
-                ) : (
-                  ""
-                )}
               </form>
             </div>
           </div>

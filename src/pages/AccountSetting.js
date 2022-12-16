@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ViewProfile from "./ViewProfile";
 import axios from "axios";
+import TransactionHistory from "./TransactionHistory";
+import ViewOrder from "./ViewOrder";
 // import Login from './Login'
 
 const AccountSetting = () => {
@@ -50,58 +52,44 @@ const AccountSetting = () => {
     // e.preventDefault();
     // creates entity
 
-    fetch("http://localhost:5000/changePassword", {
-      method: "POST",
-      mode: "cors",
-      body: JSON.stringify(object, {
-        currentPassword,
-        newPassword,
-        confirmPassword,
-      }),
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `${tokenID}`,
-      },
-    })
-      .then((response) => response.json(console.log(response)))
-      .then((json) => {
-        setData({
-          User: json,
-        });
-        // if (json.message === "successfully login") {
-        //   localStorage.setItem("token", json.token);
-        //   setIsLoggedin(true);
-
-        //   navigate("/AccountSetting");
-        // }
-
-        console.log(json);
+    if (
+      currentPassword.trim() === "" ||
+      newPassword.trim() === "" ||
+      confirmPassword.trim() === ""
+    ) {
+      return;
+    } else {
+      fetch("http://localhost:5000/changePassword", {
+        method: "POST",
+        mode: "cors",
+        body: JSON.stringify(object, {
+          currentPassword,
+          newPassword,
+          confirmPassword,
+        }),
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `${tokenID}`,
+        },
       })
-      .catch((err) => {
-        console.log(err);
-      });
+        .then((response) => response.json(console.log(response)))
+        .then((json) => {
+          setData({
+            User: json,
+          });
+          if (json.message === "password successfully changed") {
+            navigate("/AccountSetting");
+          }
 
-    setInSubmit(true);
+          console.log(json);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      setInSubmit(true);
+    }
   };
-
-  // componentDidMount() {
-  // 	// get all entities - GET
-  // 	fetch("https://fairestdb.p.rapidapi.com/friend/friendModel", {
-  // 	  "method": "GET",
-  // 	  "headers": {
-  // 		"x-rapidapi-host": "fairestdb.p.rapidapi.com",
-  // 		"x-rapidapi-key": API_KEY
-  // 	  }
-  // 	})
-  // 	.then(response => response.json())
-  // 	.then(response => {
-  // 	  this.setState({
-  // 		friends: response
-  // 	  })
-  // 	})
-  // 	.catch(err => { console.log(err);
-  // 	});
-  //   }
 
   useEffect(() => {
     const res = data?.User?.message;
@@ -215,79 +203,150 @@ const AccountSetting = () => {
                 </h5>
                 <div id="home" className="container tab-pane active">
                   <br />
-                  <div className="row">
-                    <div className="col-sm-5">
-                      <div className="input-group mb-3">
-                        <span className="input-group-text user_ser">
-                          <i className="fa-solid fa-magnifying-glass"></i>
-                        </span>
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Username"
-                          name="usrname"
-                        />
-                      </div>
+
+                  <ViewOrder />
+
+                  <div className="card card_box">
+                    <p className="chat_idp text-center">
+                      <b>Order Id:</b> 45578 | <b>Title:</b> Package tutorial
+                      one
+                    </p>
+
+                    <div className="card-header text-center h1">
+                      Discuss About This Assignment Using Below Message Box
                     </div>
-                    <div className="col-sm-5">
-                      <select className="form-select">
-                        <option>All Orders</option>
-                        <option>Unpaid Orders</option>
-                        <option>Cancelled Orders</option>
-                        <option>Order in Process</option>
-                        <option>Completed Orders</option>
-                        <option>Subscriptions</option>
-                      </select>
+                    <div className="card-body chatbox">
+                      <div className="box-li-view fl_l">
+                        <ul>
+                          <li className="userm_li ">
+                            <span className="userm_li_span2">Mod_Alex</span>
+                            <span className="whats_chat_time">
+                              <sub>July 27, 2022, 7:24 pm</sub>
+                            </span>
+                            <br />
+                            <span className="user_li_text ">Hi</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="box-li-view fl_l">
+                        <ul>
+                          <li className="userm_li ">
+                            <span className="userm_li_span2">Mod_Alex</span>
+                            <span className="whats_chat_time">
+                              <sub>July 27, 2022, 7:24 pm</sub>
+                            </span>
+                            <br />
+                            <span className="user_li_text ">Hi</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="box-li-view fl_r">
+                        <ul>
+                          <li className="userm_li1">
+                            <span className="userm_li_span">
+                              ankitpgoyal.115@gmail.com
+                            </span>
+                            <span className="whats_chat_time">
+                              <sub>July 27, 2022, 7:25 pm</sub>
+                            </span>
+                            <br />
+                            <span className="user_li_text ">
+                              hello, my name is here there lorem spum can see
+                              there ot visival can see.
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="box-li-view fl_l">
+                        <ul>
+                          <li className="userm_li ">
+                            <span className="userm_li_span2">Mod_Alex</span>
+                            <span className="whats_chat_time">
+                              <sub>July 27, 2022, 7:24 pm</sub>
+                            </span>
+                            <br />
+                            <span className="user_li_text ">Hi</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="box-li-view fl_l">
+                        <ul>
+                          <li className="userm_li ">
+                            <span className="userm_li_span2">Mod_Alex</span>
+                            <span className="whats_chat_time">
+                              <sub>July 27, 2022, 7:24 pm</sub>
+                            </span>
+                            <br />
+                            <span className="user_li_text ">Hi</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="box-li-view fl_r">
+                        <ul>
+                          <li className="userm_li1">
+                            <span className="userm_li_span">
+                              ankitpgoyal.115@gmail.com
+                            </span>
+                            <span className="whats_chat_time">
+                              <sub>July 27, 2022, 7:25 pm</sub>
+                            </span>
+                            <br />
+                            <span className="user_li_text ">
+                              hello, my name is here there lorem spum can see
+                              there ot visival can see.
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="box-li-view fl_r">
+                        <ul>
+                          <li className="userm_li1">
+                            <span className="userm_li_span">
+                              ankitpgoyal.115@gmail.com
+                            </span>
+                            <span className="whats_chat_time">
+                              <sub>July 27, 2022, 7:25 pm</sub>
+                            </span>
+                            <br />
+                            <span className="user_li_text ">
+                              hello, my name is here there lorem spum can see
+                              there ot visival can see.
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="table-responsive">
-                    <table className="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Order Id</th>
-                          <th>Date</th>
-                          <th>Title</th>
-                          <th>No. of words</th>
-                          <th>Amount</th>
-                          <th>Chat</th>
-                          <th>Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>45785</td>
-                          <td>04/010/2022 6:35 est</td>
-                          <td>Package 1</td>
-                          <td>5000</td>
-                          <td>250</td>
-                          <td>Chat</td>
-                          <td>Unpaid</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>78995</td>
-                          <td>04/010/2022 6:35 est</td>
-                          <td>Package 1</td>
-                          <td>5000</td>
-                          <td>250</td>
-                          <td>Chat</td>
-                          <td>Processing</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>78995</td>
-                          <td>04/010/2022 6:35 est</td>
-                          <td>Package 1</td>
-                          <td>5000</td>
-                          <td>250</td>
-                          <td>Female</td>
-                          <td>Completed</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <div className="chat_msg">
+                    <textarea
+                      className="form-control chat_cm"
+                      rows="3"
+                      id="comment"
+                      placeholder="type here...."
+                      name="text"
+                    ></textarea>
+                    <button
+                      type="submit"
+                      className="btn btn-primary chat_s_btn"
+                    >
+                      Submit
+                    </button>
+                    <div
+                      className="fileDiv btn btn-info btn-flat"
+                      id="upload-btn-chat"
+                    >
+                      {" "}
+                      <i className="fa fa-upload"></i>
+                      <input
+                        type="file"
+                        name="file"
+                        className="upload_attachmentfile"
+                      />
+                    </div>
                   </div>
                 </div>
 
@@ -337,7 +396,6 @@ const AccountSetting = () => {
                       <label className="as-lbl">Current Password</label>
                       <input
                         type="password"
-                        id="fname"
                         name="currentPassword"
                         onChange={inputChange}
                         className="as-text_set"
@@ -349,17 +407,15 @@ const AccountSetting = () => {
                       <label className="as-lbl">New Password</label>
                       <input
                         type="password"
-                        id="fname"
                         name="newPassword"
                         onChange={inputChange}
                         className="as-text_set"
                       />
-                      <p style={{ color: "red" }}>{formError.password}</p>
+                      <p style={{ color: "red" }}>{formError.newPassword}</p>
 
                       <label className="as-lbl">Confirm Password</label>
                       <input
                         type="password"
-                        id="fname"
                         name="confirmPassword"
                         onChange={inputChange}
                         className="as-text_set"
@@ -378,9 +434,7 @@ const AccountSetting = () => {
                       <br />
                       {Object.keys(formError, message).length === 0 &&
                       inSubmit ? (
-                        <h5 className="Success text-dark text-center mt-2">
-                          {message}
-                        </h5>
+                        <h5 className="Success text-center mt-2">{message}</h5>
                       ) : (
                         ""
                       )}
@@ -482,7 +536,7 @@ const AccountSetting = () => {
                             className="modal-title fs-5"
                             id="exampleModalLabel"
                           >
-                            Modal title
+                            Add Wallet
                           </h1>
                           <button
                             type="button"
@@ -516,107 +570,7 @@ const AccountSetting = () => {
                   </div>
 
                   <div className="table-responsive">
-                    <table className="table text-white credt-total mb-3">
-                      <thead>
-                        <tr>
-                          <th>Transaction History</th>
-                          <th className="w-50 text-end">
-                            Total: $<span>94.67</span>
-                          </th>
-                        </tr>
-                      </thead>
-                    </table>
-                    <table className="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Date</th>
-                          <th>Transactions ID</th>
-                          <th>Description</th>
-                          <th>Amount</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>
-                            29 Nov 2022<span> 12:52pm</span>
-                          </td>
-                          <td>**********0344</td>
-                          <td>Your Payment has been successful.</td>
-                          <td>-20 USD</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>
-                            29 Nov 2022<span> 12:52pm</span>
-                          </td>
-                          <td>**********0344</td>
-                          <td>Your Payment has been successful.</td>
-                          <td>-20 USD</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>
-                            29 Nov 2022<span> 12:52pm</span>
-                          </td>
-                          <td>**********0344</td>
-                          <td>Your Payment has been successful.</td>
-                          <td>-20 USD</td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <table className="table text-white credt-total mb-3">
-                      <thead>
-                        <tr>
-                          <th>Credit History</th>
-                          <th className="w-50 text-end">
-                            Total: $<span>100</span>
-                          </th>
-                        </tr>
-                      </thead>
-                    </table>
-                    <table className="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Date</th>
-
-                          <th>Description</th>
-                          <th>Amount</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>
-                            29 Nov 2022<span> 12:52pm</span>
-                          </td>
-
-                          <td>Your Payment has been successful.</td>
-                          <td>-20 USD</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>
-                            29 Nov 2022<span> 12:52pm</span>
-                          </td>
-
-                          <td>Your Payment has been successful.</td>
-                          <td>-20 USD</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>
-                            29 Nov 2022<span> 12:52pm</span>
-                          </td>
-
-                          <td>Your Payment has been successful.</td>
-                          <td>-20 USD</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <TransactionHistory />
                   </div>
                 </div>
               </div>

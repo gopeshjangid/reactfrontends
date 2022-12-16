@@ -145,7 +145,7 @@ const Login = () => {
               </button>
 
               {Object.keys(formErrors, message).length === 0 && isSubmit ? (
-                <h3 className="Success">{message}</h3>
+                <h3 className="Success text-center">{message}</h3>
               ) : (
                 ""
               )}

@@ -1,118 +1,65 @@
-import React, { Component } from "react"
+import React from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 let urlApi = "http://localhost:5000";
 
-class viewDetails extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			User: [],
-			isLoading: false,
-			isError: false,
+const ViewDetails = () => {
+  const { id } = useParams();
+  console.log(id, "id");
 
-		}
+  const [post, SetPost] = useState([]);
+  useEffect(() => {
+    console.log("id", id);
+    const fetch = async () => {
+      try {
+        const { data } = await axios.get(
+          `http://localhost:5000/getAuthor/${id}`
+        );
+        SetPost(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetch();
+  }, []);
 
-		this.componentDidMount = this.componentDidMount.bind(this);
-	};
+  console.log(post);
 
+  return (
+    <section className="team_sec">
+      <div className="container">
+        <div className="row">
+          <h2 className="team_sec-h2">Meet our Authors</h2>
+          <p className="team_sec-p">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Lor
+          </p>
 
-	async componentDidMount() {
-		this.setState({ isLoading: true })
-		const response = await fetch('http://localhost:5000/getAuthors', {
-			method: "GET",
-			mode: "cors",
-			headers: {
-				'Content-type': 'application/json',
-				'Accept': 'application/json'
-			}
-		}
-		);
-	
-	
+          <div className="row">
+            <div className="container">
+              <div className="col-md-4">
+                <div className="author_box">
+                  <img
+                    src={urlApi + "/image/" + post?.data?.image}
+                    className="author_sec-img"
+                  />
+                  <h4 className="author_Sec-h2">{post?.data?.title}</h4>
+                  <p className="author_Sec-p">{post?.data?.dec}</p>
+                  <p className="author_Sec-p">{post?.data?.longDec}</p>
+                </div>
+              </div>
+              <div className="col-md-8">
+                <h1 className="author_Sec-h2 text-start display-4u">
+                  {post?.data?.title}
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-		if (response.ok) {
-			const User = await response.json()
-			console.log(User)
-			this.setState({ ...this.state, User: User.data, isLoading: false })
-		} else {
-			this.setState({ isError: true, isLoading: false })
-		}
-	};
-
-
-	render() {
-
-		const { User, isLoading, isError } = this.state
-
-		if (isLoading) {
-			return <div>Loading...</div>
-		}
-
-		if (isError) {
-			return <div>Error...</div>
-		}
-
-		if (User.length < 0) {
-			return User.length > 0
-		}
-		console.log("this.props.User", this.state.User)
-
-		return (
-
-
-
-
-			<section className="team_sec">
-				<div className="container">
-					<div className="row">
-						<h2 className="team_sec-h2">Meet our Authors</h2>
-						<p className="team_sec-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-							ullamcorper mattis, pulvinar dapibus leo.Lor</p>
-						{this.state.User && this.state.User.map((friend) => {
-
-							return (
-								<div className="row">
-									<div className="col-md-3" key={friend._id}>
-										<div className="author_box">
-
-											<img src={urlApi + "/image/" + friend.image} className="author_sec-img" />
-											<h4 className="author_Sec-h2">{friend.title}</h4>
-											<p className="author_Sec-p">{friend.dec}</p>
-											<p className="author_Sec-p">{friend.longDec}</p>
-
-											{/* <button type="button" className="author-btn">View Details</button> */}
-
-										</div>
-									</div>
-									<div className='col-md-9'>
-										<h1 className="author_Sec-h2 text-start display-4u">{friend.title}</h1>
-									</div>
-								</div>
-
-							)
-						})
-						}
-
-				
-
-					</div>
-
-
-
-				</div>
-			</section>
-
-
-
-
-
-
-
-
-
-		);
-	}
-}
-
-
-
-export default viewDetails
+export default ViewDetails;

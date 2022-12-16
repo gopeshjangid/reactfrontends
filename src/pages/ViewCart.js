@@ -107,8 +107,9 @@ const ViewCart = () => {
       .post(`http://localhost:5000/addCart/${id}`, data, {
         headers: headers,
       })
+
       .then((response) => {
-        console.log(response.data.message);
+        console.log("qwertyuioiuyfd", response.data.message);
         viewCart();
       })
       .catch((error) => {
@@ -198,22 +199,37 @@ const ViewCart = () => {
 
   const walletUpdateHandler = async (newTotal) => {
     const tokenID = localStorage.getItem("token");
+    console.log(tokenID);
+
+    console.log(newTotal);
+
     const headers = {
       "Content-Type": "application/json",
       Authorization: `${tokenID}`,
     };
 
+    const totalAmount = newTotal;
+    const couponAmount = 50;
+    const couponName = "swiigy";
+
     await axios
       .post(
         `http://localhost:5000/useWallet/`,
-        { value: newTotal },
+        {
+          totalAmount,
+          couponAmount,
+          couponName,
+        },
+
         {
           headers: headers,
         }
       )
       .then((response) => {
         console.log(response.data);
-        navigate("/PurchaseSuccess");
+        if (response.data.data === "order Placed") {
+          navigate("/PurchaseSuccess");
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -262,7 +278,7 @@ const ViewCart = () => {
                       <i
                         onClick={() => deleteCartItem(item.productId._id)}
                         aria-hidden="true"
-                        class="fas fa-times"
+                        className="fas fa-times"
                       ></i>
                     </th>
                     <th scope="col">{item.productId.title}</th>
@@ -325,7 +341,7 @@ const ViewCart = () => {
 
                 <button
                   type="button"
-                  class="btn Coupons btn-primary mb-0"
+                  className="btn Coupons btn-primary mb-0"
                   // data-bs-toggle="modal"
                   // data-bs-target="#exampleModal"
                   onClick={() => checkCoupon()}
@@ -410,26 +426,26 @@ const ViewCart = () => {
                   </button>{" "}
                 </div>
                 <div
-                  class="modal fade"
+                  className="modal fade"
                   id="exampleModal"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
+                  aria-hidden="false"
                 >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">
                           Amount Details
                         </h1>
                         <button
                           type="button"
-                          class="btn-close"
+                          className="btn-close"
                           data-bs-dismiss="modal"
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">
+                      <div className="modal-body">
                         <table className="shop_table shop_table_responsive">
                           <tbody>
                             <tr className="cart-subtotal">
@@ -505,14 +521,14 @@ const ViewCart = () => {
                           </tbody>
                         </table>
                       </div>
-                      <div class="">
+                      <div className="">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          className="btn btn-secondary"
                           data-bs-dismiss="modal"
                         >
                           Close
-                        </button>
+                        </button>{" "}
                         <button
                           onClick={() =>
                             walletUpdateHandler(
@@ -528,10 +544,11 @@ const ViewCart = () => {
                             )
                           }
                           type="button"
-                          class="btn btn-primary"
+                          className="btn btn-primary"
+                          data-bs-dismiss="modal"
                         >
                           Checkout with wallet money
-                        </button>
+                        </button>{" "}
                       </div>
                     </div>
                   </div>
