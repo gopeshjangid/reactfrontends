@@ -15,7 +15,6 @@ const ViewCart = () => {
   const [couponText, setCouponText] = useState("");
   const [currentWalletData, setCurrentWalletData] = useState({});
   const [orderErrorMessage, setOrderErrorMessage] = useState("");
-  
 
   useEffect(() => {
     viewCart();
@@ -120,7 +119,6 @@ const ViewCart = () => {
       .finally(() => setIsAddLoading(false));
   };
 
-
   const deleteFromcarthandler = async (id) => {
     const tokenID = localStorage.getItem("token");
     console.log(cartItems);
@@ -206,14 +204,30 @@ const ViewCart = () => {
 
     console.log(newTotal);
 
+    console.log(
+      couponApplied?.message
+        ? couponApplied?.message?.couponType === "Flat"
+          ? couponApplied.message.offAmount
+          : (cartItems.totalPrice * couponApplied.message.offAmount) / 100
+        : 0
+    );
+
+    console.log(couponApplied?.message ? couponApplied.message.couponName : "");
+
     const headers = {
       "Content-Type": "application/json",
       Authorization: `${tokenID}`,
     };
 
     const totalAmount = newTotal;
-    const couponAmount = 50;
-    const couponName = "swiigy";
+    const couponAmount = couponApplied?.message
+      ? couponApplied?.message?.couponType === "Flat"
+        ? couponApplied.message.offAmount
+        : (cartItems.totalPrice * couponApplied.message.offAmount) / 100
+      : 0;
+    const couponName = couponApplied?.message
+      ? couponApplied.message.couponName
+      : "";
 
     await axios
       .post(
