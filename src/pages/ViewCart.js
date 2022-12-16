@@ -14,6 +14,8 @@ const ViewCart = () => {
   const [isAddLoading, setIsAddLoading] = useState(false);
   const [couponText, setCouponText] = useState("");
   const [currentWalletData, setCurrentWalletData] = useState({});
+  const [orderErrorMessage, setOrderErrorMessage] = useState("");
+  
 
   useEffect(() => {
     viewCart();
@@ -117,6 +119,7 @@ const ViewCart = () => {
       })
       .finally(() => setIsAddLoading(false));
   };
+
 
   const deleteFromcarthandler = async (id) => {
     const tokenID = localStorage.getItem("token");
@@ -229,6 +232,8 @@ const ViewCart = () => {
         console.log(response.data);
         if (response.data.data === "order Placed") {
           navigate("/PurchaseSuccess");
+        } else {
+          setOrderErrorMessage(response.data.data);
         }
       })
       .catch((error) => {
@@ -518,6 +523,7 @@ const ViewCart = () => {
                                 </span>
                               </td>
                             </tr>
+                            <tr>{orderErrorMessage}</tr>
                           </tbody>
                         </table>
                       </div>
@@ -545,7 +551,9 @@ const ViewCart = () => {
                           }
                           type="button"
                           className="btn btn-primary"
-                          data-bs-dismiss="modal"
+                          data-bs-dismiss={
+                            orderErrorMessage.trim() === 0 ? "modal" : "modaaal"
+                          }
                         >
                           Checkout with wallet money
                         </button>{" "}

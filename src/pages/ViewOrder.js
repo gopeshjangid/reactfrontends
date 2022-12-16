@@ -23,7 +23,7 @@ class ViewOrder extends Component {
 
     if (response.ok) {
       const User = await response.json();
-      console.log(User);
+      console.log("-----------order history---------",User.data);
       this.setState({ ...this.state, User: User.data });
     }
   }
@@ -91,7 +91,7 @@ class ViewOrder extends Component {
                       <td>{friend.datetime}</td>
                       {/* <td>{friend.datetime}</td> */}
 
-                      <td>{friend.couponAmount}</td>
+                      <td>{friend.totalAmoumt}</td>
                       <td>Chat</td>
                       <td>{friend.status}</td>
                     </tr>
