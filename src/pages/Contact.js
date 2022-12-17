@@ -46,7 +46,7 @@ const Contact = () => {
       fetch("http://localhost:5000/contact-us", {
         method: "POST",
         mode: "cors",
-        body: JSON.stringify(object, fullName, email, subject, message),
+        body: JSON.stringify(object, { fullName, email, subject, message }),
         headers: {
           "Content-type": "application/json",
           Accept: "application/json",

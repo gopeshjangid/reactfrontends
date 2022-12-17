@@ -34,9 +34,9 @@ const Success = () => {
             <form className="fp_form m-0 w-100 h-100">
               {/* <<onSubmit={handleSubmit} */}
               <span className=" p-0 fs-1 fw-bold">Payment Successfully</span>
-              <p className="fp-p p-0">Your Payment Successfully Send.</p>
+              <p className="fp-p p-0">Your Payment Successfully Add.</p>
 
-              <Link className="" to="/AccountSetting">
+              <Link className="" to="/accountSetting">
                 <button type="submit" className="fp-btn px-5  m-0">
                   Go Back
                 </button>

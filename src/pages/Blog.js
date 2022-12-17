@@ -7,8 +7,6 @@ class Blog extends Component {
     super(props);
     this.state = {
       User: [],
-      isLoading: false,
-      isError: false,
       searchText: "",
       startSearch: false,
     };
@@ -17,7 +15,6 @@ class Blog extends Component {
   }
 
   async componentDidMount() {
-    this.setState({ isLoading: true });
     const response = await fetch("http://localhost:5000/getBlog", {
       method: "GET",
       mode: "cors",
@@ -29,22 +26,12 @@ class Blog extends Component {
     if (response.ok) {
       const User = await response.json();
       console.log(User);
-      this.setState({ ...this.state, User: User.data, isLoading: false });
-    } else {
-      this.setState({ isError: true, isLoading: false });
+      this.setState({ ...this.state, User: User.data });
     }
   }
 
   render() {
-    const { User, isLoading, isError } = this.state;
-
-    if (isLoading) {
-      return <div>Loading...</div>;
-    }
-
-    if (isError) {
-      return <div>Error...</div>;
-    }
+    const { User } = this.state;
 
     if (User.length < 0) {
       return User.length > 0;
@@ -90,15 +77,17 @@ class Blog extends Component {
                             className="blog_sec-img"
                           />
                           <h2 className="blog_sec-h2">{friend.title} </h2>
-                          <h3>
-                            <span className="blog-span1">{friend.name} </span>{" "}
-                            <span className="blog-span2">
+                          <h3 className="row">
+                            <span className=" col-md-6 blog-span1 ps-5 pe-0 m-0">
+                              {friend.name}{" "}
+                            </span>{" "}
+                            <span className=" col-md-6 text-end pe-5 blog-span2 m-0">
                               September 08,2022
                             </span>
                           </h3>
                           <p className="blog_sec-p">{friend.dec} </p>
 
-                          <Link to={`/OnlineManagement/${friend._id}`}>
+                          <Link to={`/onlineManagement/${friend._id}`}>
                             <button type="button" className="blog_sec-btn">
                               Read More{" "}
                             </button>

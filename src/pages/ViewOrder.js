@@ -23,7 +23,7 @@ class ViewOrder extends Component {
 
     if (response.ok) {
       const User = await response.json();
-      console.log("-----------order history---------",User.data);
+      console.log("-----------order history---------", User.data);
       this.setState({ ...this.state, User: User.data });
     }
   }
@@ -66,9 +66,9 @@ class ViewOrder extends Component {
 
         <div
           className="table-responsive"
-          // style={{ overflow: "auto", height: "200px" }}
+          style={{ overflow: "auto", height: "200px" }}
         >
-          <table className="table table-bordered">
+          <table className="table table-bordered mb-0">
             <thead>
               <tr>
                 <th>#</th>

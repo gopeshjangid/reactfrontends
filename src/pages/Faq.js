@@ -5,8 +5,6 @@ class Faq extends Component {
     super(props);
     this.state = {
       User: [],
-      isLoading: false,
-      isError: false,
       visibility: false,
     };
     this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
@@ -14,7 +12,6 @@ class Faq extends Component {
   }
 
   async componentDidMount() {
-    this.setState({ isLoading: true });
     const response = await fetch("http://localhost:5000/getFaqs", {
       method: "GET",
       mode: "cors",
@@ -27,8 +24,6 @@ class Faq extends Component {
       const User = await response.json();
       console.log(User);
       this.setState({ ...this.state, User: User.data, isLoading: false });
-    } else {
-      this.setState({ isError: true, isLoading: false });
     }
   }
 
@@ -41,15 +36,7 @@ class Faq extends Component {
   }
 
   render() {
-    const { User, isLoading, isError } = this.state;
-
-    if (isLoading) {
-      return <div>Loading...</div>;
-    }
-
-    if (isError) {
-      return <div>Error...</div>;
-    }
+    const { User } = this.state;
 
     if (User.length < 0) {
       return User.length > 0;
@@ -84,7 +71,7 @@ class Faq extends Component {
                           id={friend._id}
                         >
                           <button
-                            className="faq-plus size accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                            className="faq-plus size fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target={"#" + "s" + friend._id}

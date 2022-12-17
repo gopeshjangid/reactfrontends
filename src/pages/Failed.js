@@ -17,7 +17,7 @@ const Failed = () => {
                   Your Payment Failed. Please try again later!
                 </p>
 
-                <Link className="" to="/AccountSetting">
+                <Link className="" to="/accountSetting">
                   <button type="submit" className="fp-btn px-5 bg-danger m-0">
                     Try Again!
                   </button>

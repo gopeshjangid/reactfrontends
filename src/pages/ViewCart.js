@@ -66,17 +66,17 @@ const ViewCart = () => {
       });
   };
 
-  const getCoupons = async () => {
-    await axios
-      .get("http://localhost:5000/getCoupon")
-      .then((response) => {
-        console.log("coupons ++++++++++++++++++", response.data.data);
-        setCoupons(response.data.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  // const getCoupons = async () => {
+  //   await axios
+  //     .get("http://localhost:5000/getCoupon")
+  //     .then((response) => {
+  //       console.log("coupons ++++++++++++++++++", response.data.data);
+  //       setCoupons(response.data.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   const addTocarthandler = async (id) => {
     const tokenID = localStorage.getItem("token");
@@ -189,9 +189,10 @@ const ViewCart = () => {
     await axios
       .post("http://localhost:5000/getCoupon", { applyCouponName: couponText })
       .then((response) => {
-        console.log("coupons ++++++++++++++++++", response.data);
+        console.log("coupons ++++++++++++++++++", response.data.message);
         setCoupons(response.data);
         setCouponApplied(response.data);
+        console.log(coupons.message);
       })
       .catch((error) => {
         console.log(error);
@@ -368,8 +369,14 @@ const ViewCart = () => {
                   Apply Coupon
                 </button>
               </div>
+              {/* <span>{coupons.message}</span> */}
+              <span>
+                {coupons?.message?.offAmount}
+                {coupons?.message?.couponType}
+              </span>
+              <br />
 
-              <Link to="/Services">
+              <Link to="/services">
                 <i aria-hidden="true" className="fas fa-chevron-left" />
                 Continue Shopping
               </Link>
@@ -438,141 +445,127 @@ const ViewCart = () => {
                 <div className="wc-proceed-to-checkout   eael-cart-update-btn">
                   <button
                     className="checkout-button button alt wc-forward"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasScrolling"
+                    aria-controls="offcanvasScrolling"
                   >
                     Proceed to Checkout
                   </button>{" "}
                 </div>
+
                 <div
-                  className="modal fade"
-                  id="exampleModal"
-                  tabIndex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="false"
+                  class="offcanvas offcanvas-start"
+                  data-bs-scroll="true"
+                  data-bs-backdrop="false"
+                  tabindex="-1"
+                  id="offcanvasScrolling"
+                  aria-labelledby="offcanvasScrollingLabel"
                 >
-                  <div className="modal-dialog">
-                    <div className="modal-content">
-                      <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="exampleModalLabel">
-                          Amount Details
-                        </h1>
-                        <button
-                          type="button"
-                          className="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                      <div className="modal-body">
-                        <table className="shop_table shop_table_responsive">
-                          <tbody>
-                            <tr className="cart-subtotal">
-                              <th scope="col">Subtotal</th>
-                              <td data-title="Subtotal">
-                                <span className="woocommerce-Price-amount amount">
-                                  <bdi>
-                                    <span className="woocommerce-Price-currencySymbol">
-                                      ₹
-                                    </span>
-                                    {cartItems.totalPrice}
-                                  </bdi>
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
+                      Amount Details
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close text-reset"
+                      data-bs-dismiss="offcanvas"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <table className="shop_table shop_table_responsive">
+                      <tbody>
+                        <tr className="cart-subtotal">
+                          <th scope="col">Subtotal</th>
+                          <td data-title="Subtotal">
+                            <span className="woocommerce-Price-amount amount">
+                              <bdi>
+                                <span className="woocommerce-Price-currencySymbol">
+                                  ₹
                                 </span>
-                              </td>
-                            </tr>
-                            {couponApplied?.message?.offAmount ? (
-                              <tr className="cart-subtotal">
-                                <th scope="col">Coupon Discount</th>
-                                <td data-title="Subtotal">
-                                  <span className="woocommerce-Price-amount amount">
-                                    <bdi>
-                                      <span className="woocommerce-Price-currencySymbol">
-                                        ₹
-                                      </span>
-                                      {couponApplied.message.couponType ===
+                                {cartItems.totalPrice}
+                              </bdi>
+                            </span>
+                          </td>
+                        </tr>
+                        {couponApplied?.message?.offAmount ? (
+                          <tr className="cart-subtotal">
+                            <th scope="col">Coupon Discount</th>
+                            <td data-title="Subtotal">
+                              <span className="woocommerce-Price-amount amount">
+                                <bdi>
+                                  <span className="woocommerce-Price-currencySymbol">
+                                    ₹
+                                  </span>
+                                  {couponApplied.message.couponType === "Flat"
+                                    ? couponApplied.message.offAmount
+                                    : (cartItems.totalPrice *
+                                        couponApplied.message.offAmount) /
+                                      100}
+                                </bdi>
+                              </span>
+                            </td>
+                          </tr>
+                        ) : null}
+                        <tr className="order-total">
+                          <th scope="col">Total</th>
+                          <td data-title="Total">
+                            <strong>
+                              <span className="woocommerce-Price-amount amount">
+                                <bdi>
+                                  <span className="woocommerce-Price-currencySymbol">
+                                    ₹
+                                  </span>
+                                  {couponApplied?.message?.offAmount
+                                    ? couponApplied.message.couponType ===
                                       "Flat"
-                                        ? couponApplied.message.offAmount
-                                        : (cartItems.totalPrice *
-                                            couponApplied.message.offAmount) /
-                                          100}
-                                    </bdi>
-                                  </span>
-                                </td>
-                              </tr>
-                            ) : null}
-                            <tr className="order-total">
-                              <th scope="col">Total</th>
-                              <td data-title="Total">
-                                <strong>
-                                  <span className="woocommerce-Price-amount amount">
-                                    <bdi>
-                                      <span className="woocommerce-Price-currencySymbol">
-                                        ₹
-                                      </span>
-                                      {couponApplied?.message?.offAmount
-                                        ? couponApplied.message.couponType ===
-                                          "Flat"
-                                          ? cartItems.totalPrice -
-                                            couponApplied.message.offAmount
-                                          : cartItems.totalPrice -
-                                            (cartItems.totalPrice *
-                                              couponApplied.message.offAmount) /
-                                              100
-                                        : cartItems.totalPrice}
-                                    </bdi>
-                                  </span>
-                                </strong>{" "}
-                              </td>
-                            </tr>
-                            <tr className="cart-subtotal">
-                              <th scope="col">Available Amount in Wallet</th>
-                              <td data-title="Subtotal">
-                                <span className="woocommerce-Price-amount amount">
-                                  <bdi>
-                                    <span className="woocommerce-Price-currencySymbol">
-                                      ₹
-                                    </span>
-                                    {currentWalletData?.wallet}
-                                  </bdi>
+                                      ? cartItems.totalPrice -
+                                        couponApplied.message.offAmount
+                                      : cartItems.totalPrice -
+                                        (cartItems.totalPrice *
+                                          couponApplied.message.offAmount) /
+                                          100
+                                    : cartItems.totalPrice}
+                                </bdi>
+                              </span>
+                            </strong>{" "}
+                          </td>
+                        </tr>
+                        <tr className="cart-subtotal">
+                          <th scope="col">Available Amount in Wallet</th>
+                          <td data-title="Subtotal">
+                            <span className="woocommerce-Price-amount amount">
+                              <bdi>
+                                <span className="woocommerce-Price-currencySymbol">
+                                  ₹
                                 </span>
-                              </td>
-                            </tr>
-                            <tr>{orderErrorMessage}</tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div className="">
-                        <button
-                          type="button"
-                          className="btn btn-secondary"
-                          data-bs-dismiss="modal"
-                        >
-                          Close
-                        </button>{" "}
-                        <button
-                          onClick={() =>
-                            walletUpdateHandler(
-                              couponApplied?.message?.offAmount
-                                ? couponApplied.message.couponType === "Flat"
-                                  ? cartItems.totalPrice -
-                                    couponApplied.message.offAmount
-                                  : cartItems.totalPrice -
-                                    (cartItems.totalPrice *
-                                      couponApplied.message.offAmount) /
-                                      100
-                                : cartItems.totalPrice
-                            )
-                          }
-                          type="button"
-                          className="btn btn-primary"
-                          data-bs-dismiss={
-                            orderErrorMessage.trim() === 0 ? "modal" : "modaaal"
-                          }
-                        >
-                          Checkout with wallet money
-                        </button>{" "}
-                      </div>
-                    </div>
+                                {currentWalletData?.wallet}
+                              </bdi>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr style={{ color: "red" }}>{orderErrorMessage}</tr>
+                      </tbody>
+                    </table>
+                    <button
+                      onClick={() =>
+                        walletUpdateHandler(
+                          couponApplied?.message?.offAmount
+                            ? couponApplied.message.couponType === "Flat"
+                              ? cartItems.totalPrice -
+                                couponApplied.message.offAmount
+                              : cartItems.totalPrice -
+                                (cartItems.totalPrice *
+                                  couponApplied.message.offAmount) /
+                                  100
+                            : cartItems.totalPrice
+                        )
+                      }
+                      type="button"
+                      className="btn Pay"
+                    >
+                      Pay with Wallet
+                    </button>{" "}
                   </div>
                 </div>
               </div>

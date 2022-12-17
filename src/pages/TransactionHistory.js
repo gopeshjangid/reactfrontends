@@ -9,16 +9,12 @@ class TransactionHistory extends Component {
       debit: [],
       totalCredit: "",
       totalDebit: "",
-
-      isLoading: false,
-      isError: false,
     };
 
     this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   async componentDidMount() {
-    this.setState({ isLoading: true });
     const tokenID = localStorage.getItem("token");
     const response = await fetch(
       "http://localhost:5000/walletTransactionHistory",
@@ -41,35 +37,12 @@ class TransactionHistory extends Component {
         debit: credit.debit,
         totalCredit: credit.totalCredit,
         totalDebit: credit.totalDebit,
-
-        isLoading: false,
       });
       console.log("this.props.User", this.state.credit);
-    } else {
-      this.setState({ isError: true, isLoading: false });
     }
   }
 
   render() {
-    const { isLoading, isError } = this.state;
-
-    if (isLoading) {
-      return (
-        <div style={{}}>
-          <i class="fa-solid fa-arrow-rotate-left"></i>
-        </div>
-      );
-    }
-
-    if (isError) {
-      return (
-        <div>
-          {" "}
-          <i class="fa-solid fa-arrow-rotate-right"></i>
-        </div>
-      );
-    }
-
     // if (User.length < 0) {
     //   return User.length > 0;
     // }

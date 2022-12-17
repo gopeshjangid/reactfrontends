@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const Order = () => {
+const PlaceYourOrder = () => {
   const initialValues = {
     username: "",
     email: "",
@@ -359,4 +359,4 @@ const Order = () => {
   );
 };
 
-export default Order;
+export default PlaceYourOrder;

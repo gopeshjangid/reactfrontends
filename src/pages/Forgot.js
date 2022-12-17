@@ -122,9 +122,7 @@ const Forgot = () => {
                 <p style={{ color: "red" }} className="ms-4">
                   {formErrors.email}
                 </p>
-                <Link className="fp-link" to="#">
-                  Try another way
-                </Link>
+
                 <button type="submit" className="fp-btn px-5 ">
                   Next
                 </button>

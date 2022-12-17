@@ -206,7 +206,7 @@ const AccountSetting = () => {
 
                   <ViewOrder />
 
-                  <div className="card card_box">
+                  <div className="card card_box mt-5">
                     <p className="chat_idp text-center">
                       <b>Order Id:</b> 45578 | <b>Title:</b> Package tutorial
                       one

@@ -7,8 +7,6 @@ class Sample extends Component {
     super(props);
     this.state = {
       User: [],
-      isLoading: false,
-      isError: false,
       searchText: "",
       startSearch: false,
     };
@@ -17,7 +15,6 @@ class Sample extends Component {
   }
 
   async componentDidMount() {
-    this.setState({ isLoading: true });
     const response = await fetch("http://localhost:5000/getworkSamples", {
       method: "GET",
       mode: "cors",
@@ -29,21 +26,11 @@ class Sample extends Component {
     if (response.ok) {
       const User = await response.json();
       console.log(User);
-      this.setState({ ...this.state, User: User.data, isLoading: false });
-    } else {
-      this.setState({ isError: true, isLoading: false });
+      this.setState({ ...this.state, User: User.data });
     }
   }
   render() {
-    const { User, isLoading, isError } = this.state;
-
-    if (isLoading) {
-      return <div>Loading...</div>;
-    }
-
-    if (isError) {
-      return <div>Error...</div>;
-    }
+    const { User } = this.state;
 
     if (User.length < 0) {
       return User.length > 0;
