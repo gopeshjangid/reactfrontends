@@ -189,10 +189,15 @@ const ViewCart = () => {
     await axios
       .post("http://localhost:5000/getCoupon", { applyCouponName: couponText })
       .then((response) => {
-        console.log("coupons ++++++++++++++++++", response.data.message);
+        console.log("coupons ++++++++++++++++++", response.data);
         setCoupons(response.data);
         setCouponApplied(response.data);
-        console.log(coupons.message);
+        // if (response.message) {
+        //   // localStorage.setItem("token", json.token);
+        //   // setIsLoggedin(true);
+        // }
+        console.log("----", coupons.message);
+        console.log("-----", couponApplied.message);
       })
       .catch((error) => {
         console.log(error);
@@ -369,13 +374,13 @@ const ViewCart = () => {
                   Apply Coupon
                 </button>
               </div>
-              {/* <span>{coupons.message}</span> */}
-              <span>
-                {coupons?.message?.offAmount}
-                {coupons?.message?.couponType}
-              </span>
-              <br />
-
+              {/* {couponApplied?.message ? (
+                <span>please apply right coupon code</span>
+              ) : null} */}
+              <p>
+                {couponApplied?.message?.offAmount}
+                {couponApplied?.message?.couponType}
+              </p>
               <Link to="/services">
                 <i aria-hidden="true" className="fas fa-chevron-left" />
                 Continue Shopping
@@ -454,25 +459,28 @@ const ViewCart = () => {
                 </div>
 
                 <div
-                  class="offcanvas offcanvas-start"
+                  className="offcanvas offcanvas-start"
                   data-bs-scroll="true"
                   data-bs-backdrop="false"
-                  tabindex="-1"
+                  tabIndex="-1"
                   id="offcanvasScrolling"
                   aria-labelledby="offcanvasScrollingLabel"
                 >
-                  <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
+                  <div className="offcanvas-header">
+                    <h5
+                      className="offcanvas-title"
+                      id="offcanvasScrollingLabel"
+                    >
                       Amount Details
                     </h5>
                     <button
                       type="button"
-                      class="btn-close text-reset"
+                      className="btn-close text-reset"
                       data-bs-dismiss="offcanvas"
                       aria-label="Close"
                     ></button>
                   </div>
-                  <div class="offcanvas-body">
+                  <div className="offcanvas-body">
                     <table className="shop_table shop_table_responsive">
                       <tbody>
                         <tr className="cart-subtotal">

@@ -54,6 +54,7 @@ class Services extends Component {
       });
   };
 
+  // if(response.data.message) {
   addTocarthandler = async (id) => {
     const tokenID = localStorage.getItem("token");
     console.log(this.state.cartItems);
@@ -89,6 +90,7 @@ class Services extends Component {
       .then((response) => {
         console.log(response.data.message);
         this.viewCart();
+
         // this.setState({ ...this.state, cartItems: response.data.message });
       })
       .catch((error) => {
