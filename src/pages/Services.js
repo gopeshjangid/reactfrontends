@@ -231,15 +231,15 @@ class Services extends Component {
                     </h5>
                   </div>
 
-
-                <div className="col-md-4 text-end">
-                  <Link
-                    style={{ color: "white", fontSize: "20px" }}
-                    className="viewCart text-decoration-none"
-                    to={"/viewCart"}
-                  >
-                    View cart
-                  </Link>
+                  <div className="col-md-4 text-end">
+                    <Link
+                      style={{ color: "white", fontSize: "20px" }}
+                      className="viewCart text-decoration-none"
+                      to={"/viewCart"}
+                    >
+                      View cart
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
