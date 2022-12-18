@@ -82,9 +82,9 @@ class Sample extends Component {
                 you’re probably looking for tips on how to write better content
                 that gets people up at night
               </p>
-              {this.state.User && this.state.startSearch
-                ? this.state.User.filter(
-                    (item, index) => item.title === this.state.searchText
+              {this.state.User && this.state.searchText
+                ? this.state.User.filter((item, index) =>
+                    item.title.includes(this.state.searchText)
                   ).map((friend, value) => {
                     return (
                       <div className="col-md-3" key={value.toString()}>

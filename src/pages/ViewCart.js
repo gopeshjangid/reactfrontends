@@ -234,7 +234,6 @@ const ViewCart = () => {
     const couponName = couponApplied?.message
       ? couponApplied.message.couponName
       : "";
-
     await axios
       .post(
         `http://localhost:5000/useWallet/`,
@@ -374,14 +373,10 @@ const ViewCart = () => {
                   Apply Coupon
                 </button>
               </div>
-              {/* {couponApplied?.message ? (
-                <span>please apply right coupon code</span>
-              ) : null} */}
-              <p>
-                {couponApplied?.message?.offAmount}
-                {couponApplied?.message?.couponType}
-              </p>
-              <Link to="/services">
+              <div>{coupons.message === null && "Invalid Coupon"}</div>
+
+              <Link to="/Services">
+
                 <i aria-hidden="true" className="fas fa-chevron-left" />
                 Continue Shopping
               </Link>
@@ -409,6 +404,9 @@ const ViewCart = () => {
                         <td data-title="Subtotal">
                           <span className="woocommerce-Price-amount amount">
                             <bdi>
+                              {couponApplied.message.couponType === "Flat"
+                                ? "Flat "
+                                : `(${couponApplied.message.offAmount}%) `}
                               <span className="woocommerce-Price-currencySymbol">
                                 ₹
                               </span>
@@ -547,33 +545,57 @@ const ViewCart = () => {
                                 <span className="woocommerce-Price-currencySymbol">
                                   ₹
                                 </span>
-                                {currentWalletData?.wallet}
-                              </bdi>
-                            </span>
-                          </td>
-                        </tr>
-                        <tr style={{ color: "red" }}>{orderErrorMessage}</tr>
-                      </tbody>
-                    </table>
-                    <button
-                      onClick={() =>
-                        walletUpdateHandler(
-                          couponApplied?.message?.offAmount
-                            ? couponApplied.message.couponType === "Flat"
-                              ? cartItems.totalPrice -
-                                couponApplied.message.offAmount
-                              : cartItems.totalPrice -
-                                (cartItems.totalPrice *
-                                  couponApplied.message.offAmount) /
-                                  100
-                            : cartItems.totalPrice
-                        )
-                      }
-                      type="button"
-                      className="btn Pay"
-                    >
-                      Pay with Wallet
-                    </button>{" "}
+
+                              </td>
+                            </tr>
+                            <tr>
+                              {orderErrorMessage}{" "}
+                              {orderErrorMessage && (
+                                <button
+                                  className="btn btn-secondary"
+                                  data-bs-dismiss="modal"
+                                  onClick={() => navigate("/AccountSetting")}
+                                >
+                                  Add now!
+                                </button>
+                              )}
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div className="">
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>{" "}
+                        <button
+                          onClick={() =>
+                            walletUpdateHandler(
+                              couponApplied?.message?.offAmount
+                                ? couponApplied.message.couponType === "Flat"
+                                  ? cartItems.totalPrice -
+                                    couponApplied.message.offAmount
+                                  : cartItems.totalPrice -
+                                    (cartItems.totalPrice *
+                                      couponApplied.message.offAmount) /
+                                      100
+                                : cartItems.totalPrice
+                            )
+                          }
+                          type="button"
+                          className="btn btn-primary"
+                          data-bs-dismiss={
+                            orderErrorMessage.trim() === 0 ? "modal" : "modaaal"
+                          }
+                        >
+                          Checkout with wallet money
+                        </button>{" "}
+                      </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
