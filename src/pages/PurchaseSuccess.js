@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 const PurchaseSuccess = () => {
-
   return (
     <div>
       <section className="fp_sec bg-transparent ">
@@ -21,7 +20,7 @@ const PurchaseSuccess = () => {
                   tracking info
                 </p>
 
-                <Link className="" to="/ViewCart">
+                <Link className="" to="/services">
                   <button type="submit" className="fp-btn px-5 m-0">
                     Continue Shopping
                   </button>

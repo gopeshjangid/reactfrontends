@@ -7,8 +7,6 @@ class Services extends Component {
     super(props);
     this.state = {
       User: [],
-      isLoading: false,
-      isError: false,
       isAddLoading: false,
       cartItems: [],
       noUser: false,
@@ -21,7 +19,6 @@ class Services extends Component {
   }
 
   async componentDidMount() {
-    this.setState({ isLoading: true });
     this.viewCart();
 
     const response = await fetch("http://localhost:5000/getServices", {
@@ -35,9 +32,7 @@ class Services extends Component {
     if (response.ok) {
       const User = await response.json();
       // console.log(User);
-      this.setState({ ...this.state, User: User.data, isLoading: false });
-    } else {
-      this.setState({ isError: true, isLoading: false });
+      this.setState({ ...this.state, User: User.data });
     }
   }
 
@@ -61,6 +56,7 @@ class Services extends Component {
       });
   };
 
+  // if(response.data.message) {
   addTocarthandler = async (id) => {
     const tokenID = localStorage.getItem("token");
 
@@ -101,6 +97,7 @@ class Services extends Component {
       .then((response) => {
         console.log(response.data.message);
         this.viewCart();
+
         // this.setState({ ...this.state, cartItems: response.data.message });
       })
       .catch((error) => {
@@ -128,15 +125,7 @@ class Services extends Component {
   // 	});
   // };
   render() {
-    const { User, isLoading, isError } = this.state;
-
-    if (isLoading) {
-      return <div>Loading...</div>;
-    }
-
-    if (isError) {
-      return <div>Error...</div>;
-    }
+    const { User } = this.state;
 
     if (User.length < 0) {
       return User.length > 0;
@@ -168,6 +157,13 @@ class Services extends Component {
 
                         <p className="services_box-p">1 Guest Posts</p>
 
+                        <li className="ol_li">
+                          <span className="fs-3 justify-content-center d-flex align-items-center ">
+                            <span className="fs-5">Price:</span>
+                            {friend.price}
+                          </span>
+                        </li>
+
                         <h4 className="services_box-h4">{friend.shortTitle}</h4>
 
                         <ol className="p-0">
@@ -179,15 +175,6 @@ class Services extends Component {
                               ></i>
                             </span>
                             <span>{friend.dec}</span>
-                          </li>
-                          <li className="ol_li">
-                            <span className="ol_li-spa1">
-                              <i
-                                aria-hidden="true"
-                                className="fas fa-check"
-                              ></i>
-                            </span>
-                            <span>{friend.price}</span>
                           </li>
                         </ol>
                         <div className="text-center">
@@ -244,15 +231,15 @@ class Services extends Component {
                     </h5>
                   </div>
 
-                  <div className="col-md-4 text-end">
-                    <Link
-                      style={{ color: "white", fontSize: "20px" }}
-                      className="viewCart text-decoration-none"
-                      to={"/ViewCart"}
-                    >
-                      View cart
-                    </Link>
-                  </div>
+
+                <div className="col-md-4 text-end">
+                  <Link
+                    style={{ color: "white", fontSize: "20px" }}
+                    className="viewCart text-decoration-none"
+                    to={"/viewCart"}
+                  >
+                    View cart
+                  </Link>
                 </div>
               </div>
             </div>

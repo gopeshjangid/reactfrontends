@@ -204,7 +204,7 @@ const Register = () => {
                 <input
                   type="password"
                   autoComplete="new-password"
-                  placeholder=""
+                  placeholder="Password"
                   name="password"
                   onChange={handleChange}
                   className="ct_text-set1"
@@ -225,7 +225,7 @@ const Register = () => {
                 <button type="submit" className="reg_btn-1">
                   Register
                 </button>
-                <Link to="/Login">
+                <Link to="/login">
                   <button type="button" className="reg_btn-2">
                     Login
                   </button>

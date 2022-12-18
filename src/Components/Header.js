@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { useState } from 'react';
+import React, { useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import "../styles/style.css";
+import Logo from "../pages/images/logo-img.png";
 // import { Navigate } from 'react-router-dom';
 
-
 const Header = () => {
-
   const navigate = useNavigate();
   const [isLoggedin, setIsLoggedin] = useState(false);
-
 
   //   localStorage.setItem('userLoginToken', JSON.stringify());
   //   setIsLoggedin(true);
   //  navigate('/');
-
 
   //   const logout = () => {
   //     localStorage.removeItem('message');
@@ -25,39 +23,31 @@ const Header = () => {
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setIsLoggedin(true);
-
     } else {
       setIsLoggedin(false);
     }
+  }, [location.pathname]);
 
-  }, [location.pathname])
-
-  console.log("check ====", isLoggedin)
-
-
-
-
+  console.log("check ====", isLoggedin);
 
   // HANDLE LOGOUT EVENT
-  const logout = event => {
+  const logout = (event) => {
     event.preventDefault();
 
-    console.log(isLoggedin)
+    console.log(isLoggedin);
 
     localStorage.removeItem("token");
     setIsLoggedin(false);
-    navigate('/Login')
-
+    navigate("/Login");
   };
   // CLEAR DATA FROM STORAGE
 
   // console.log(arr)
 
-
   // if (!isLoggedin) {
   //   // user is not authenticated
   //   return <Navigate to="/login" />;
-  // }  
+  // }
 
   return (
     <div>
@@ -65,7 +55,7 @@ const Header = () => {
         <nav className="navbar navbar-expand-sm  navbar-dark">
           <div className="container">
             <Link className="navbar-brand logo pe-0" to="/">
-              <img src="writer/img/logo/logo-img.png" />
+              <img src={Logo} />
             </Link>
             <button
               className="navbar-toggler"
@@ -78,22 +68,12 @@ const Header = () => {
             <div className="collapse navbar-collapse" id="collapsibleNavbar">
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item pad">
-                  <Link className="nav-link set" to="/join">
-                    Join
-                  </Link>
-                </li>
-                <li className="nav-item pad">
-                  <Link className="nav-link set" to="/chat">
-                    Chat
-                  </Link>
-                </li>
-                <li className="nav-item pad">
-                  <Link className="nav-link set" to="/Services">
+                  <Link className="nav-link set" to="/services">
                     Services
                   </Link>
                 </li>
                 <li className="nav-item pad">
-                  <Link className="nav-link set" to="/Prices">
+                  <Link className="nav-link set" to="/prices">
                     Prices
                   </Link>
                 </li>
@@ -103,17 +83,17 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="nav-item pad">
-                  <Link className="nav-link set" to="/HowItwork">
+                  <Link className="nav-link set" to="/howitwork">
                     How It Works
                   </Link>
                 </li>
                 <li className="nav-item pad">
-                  <Link className="nav-link set" to="/Review">
+                  <Link className="nav-link set" to="/review">
                     Reviews
                   </Link>
                 </li>
                 <li className="nav-item pad">
-                  <Link className="nav-link set" to="/Order">
+                  <Link className="nav-link set" to="/placeyourorder">
                     Place Your Order
                   </Link>
                 </li>
@@ -128,13 +108,13 @@ const Header = () => {
                   </Link>
                   <ul className="dropdown-menu">
                     <li>
-                      <Link className="dropdown-item" to="/ViewCart">
+                      <Link className="dropdown-item" to="/viewCart">
                         ViewCart
                       </Link>
                     </li>
                     {/* <li><Link className="dropdown-item"  to="/Login">Login</Link></li> */}
 
-                    {isLoggedin == false ? (
+                    {isLoggedin === false ? (
                       <>
                         <li>
                           <Link className="dropdown-item" to="/register">
@@ -143,7 +123,7 @@ const Header = () => {
                         </li>
 
                         <li>
-                          <Link className="dropdown-item" to="/Login">
+                          <Link className="dropdown-item" to="/login">
                             Login
                           </Link>
                         </li>
@@ -151,7 +131,7 @@ const Header = () => {
                     ) : (
                       <>
                         <li>
-                          <Link className="dropdown-item" to="/AccountSetting">
+                          <Link className="dropdown-item" to="/accountSetting">
                             AccountSetting
                           </Link>
                         </li>
@@ -176,7 +156,6 @@ const Header = () => {
       </section>
     </div>
   );
-}
+};
 
-
-export default Header
+export default Header;

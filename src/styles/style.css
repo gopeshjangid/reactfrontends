@@ -848,7 +848,6 @@
 }
 .author_box {
   background: white;
-  height: 355px;
   box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 24%);
   border-top: 5px solid #00a7a6;
 }
@@ -1656,7 +1655,7 @@
 }
 td {
   border: 1px solid #00000012;
-  padding: 13px 0px 13px 12px !important;
+  padding: 13px 13px 13px 12px !important;
 }
 th {
   border: 1px solid #00000012;

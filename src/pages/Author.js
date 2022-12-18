@@ -69,7 +69,7 @@ class Author extends Component {
               );
             })}
 
-            <nav aria-label="...">
+            <nav aria-label="..." className="mt-5">
               <ul className="pagination">
                 <li className="page-item disabled">
                   <Link className="page-link" to="" tabIndex="-1">

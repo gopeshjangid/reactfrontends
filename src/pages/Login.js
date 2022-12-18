@@ -134,7 +134,7 @@ const Login = () => {
               />
               <p style={{ color: "red" }}>{formErrors.password}</p>
 
-              <Link to="/Register">
+              <Link to="/register">
                 <button type="button" className="reg_btn-1">
                   Register
                 </button>
@@ -150,7 +150,7 @@ const Login = () => {
                 ""
               )}
 
-              <Link className="forgot_p" to="/Forgot">
+              <Link className="forgot_p" to="/forgot">
                 Forgot Your Password?
               </Link>
             </form>

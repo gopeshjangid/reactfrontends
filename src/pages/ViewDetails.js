@@ -1,4 +1,4 @@
-import '../styles/style.css'
+import "../styles/style.css";
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -31,31 +31,25 @@ const ViewDetails = () => {
     <section className="team_sec">
       <div className="container">
         <div className="row">
-          <h2 className="team_sec-h2">Meet our Authors</h2>
-          <p className="team_sec-p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Lor
-          </p>
-
-          <div className="row">
-            <div className="container">
-              <div className="col-md-4">
-                <div className="author_box">
-                  <img
-                    src={urlApi + "/image/" + post?.data?.image}
-                    className="author_sec-img"
-                  />
-                  <h4 className="author_Sec-h2">{post?.data?.title}</h4>
-                  <p className="author_Sec-p">{post?.data?.dec}</p>
-                  <p className="author_Sec-p">{post?.data?.longDec}</p>
-                </div>
-              </div>
-              <div className="col-md-8">
-                <h1 className="author_Sec-h2 text-start display-4u">
-                  {post?.data?.title}
-                </h1>
-              </div>
+          <div className="col-md-4">
+            <div
+              className="author_box text-center"
+              style={{ border: "1px solid #029A99" }}
+            >
+              <img
+                src={urlApi + "/image/" + post?.data?.image}
+                className="author_sec-img ms-0"
+                style={{ border: "5px solid #029A99" }}
+              />
+              <h4 className="author_Sec-h2 fs-1">{post?.data?.title}</h4>
+              <p className="author_Sec-p fs-3">{post?.data?.dec}</p>
+              <p className="author_Sec-p ">{post?.data?.longDec}</p>
             </div>
+          </div>
+          <div className="col-md-8">
+            <h2 className="author_Sec-h2 text-start ">
+              Articles by {post?.data?.title}
+            </h2>
           </div>
         </div>
       </div>
