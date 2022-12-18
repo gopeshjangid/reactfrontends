@@ -15,6 +15,7 @@ const ViewCart = () => {
   const [couponText, setCouponText] = useState("");
   const [currentWalletData, setCurrentWalletData] = useState({});
   const [orderErrorMessage, setOrderErrorMessage] = useState("");
+  const [amount, setAmount] = useState({});
 
   useEffect(() => {
     viewCart();
@@ -260,6 +261,23 @@ const ViewCart = () => {
       });
   };
 
+  const payWithStrip = () => {
+    axios
+      .post("http://localhost:5000/orderStripe", { totalAmount: amount })
+      .then((response) => {
+        sessionStorage.setItem("TotalAmount", amount);
+        console.log(response);
+        // sessionStorage.setItem("pay_id", response.data.id);
+        window.open(response.data.url, "_self");
+        setAmount({
+          response,
+        });
+      })
+
+      .catch((error) => console.log(error));
+  };
+  console.log(amount);
+
   return (
     <div className="Cart">
       <div className="container">
@@ -373,7 +391,9 @@ const ViewCart = () => {
                   Apply Coupon
                 </button>
               </div>
-              <div>{coupons.message === null && "Invalid Coupon"}</div>
+              <div className=" text-danger">
+                {coupons.message === null && "!'Invalid Coupon'"}
+              </div>
 
               <Link to="/Services">
                 <i aria-hidden="true" className="fas fa-chevron-left" />
@@ -563,37 +583,43 @@ const ViewCart = () => {
                         </tr>
                       </tbody>
                     </table>
-                  </div>
-                  <div className="">
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>{" "}
-                    <button
-                      onClick={() =>
-                        walletUpdateHandler(
-                          couponApplied?.message?.offAmount
-                            ? couponApplied.message.couponType === "Flat"
-                              ? cartItems.totalPrice -
-                                couponApplied.message.offAmount
-                              : cartItems.totalPrice -
-                                (cartItems.totalPrice *
-                                  couponApplied.message.offAmount) /
-                                  100
-                            : cartItems.totalPrice
-                        )
-                      }
-                      type="button"
-                      className="btn btn-primary"
-                      data-bs-dismiss={
-                        orderErrorMessage.trim() === 0 ? "modal" : "modaaal"
-                      }
-                    >
-                      Checkout with wallet money
-                    </button>{" "}
+                    <div className="">
+                      <button
+                        onClick={() =>
+                          walletUpdateHandler(
+                            couponApplied?.message?.offAmount
+                              ? couponApplied.message.couponType === "Flat"
+                                ? cartItems.totalPrice -
+                                  couponApplied.message.offAmount
+                                : cartItems.totalPrice -
+                                  (cartItems.totalPrice *
+                                    couponApplied.message.offAmount) /
+                                    100
+                              : cartItems.totalPrice
+                          )
+                        }
+                        type="button"
+                        className="btn Pay"
+                        data-bs-dismiss={
+                          orderErrorMessage.trim() === 0 ? "modal" : "modaaal"
+                        }
+                      >
+                        Pay with Wallet
+                      </button>{" "}
+                      <button
+                        type="button"
+                        onClick={() => payWithStrip()}
+                        className="btn Pay"
+                      >
+                        Pay with Striip
+                      </button>
+                      <button type="button" className="btn Pay">
+                        Pay with PayPal
+                      </button>
+                      <button type="button" className="btn Pay">
+                        Pay with Reserve Pay
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

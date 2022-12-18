@@ -505,7 +505,6 @@
 }
 .btn:hover {
   background: black;
-  border: 3px solid white;
 }
 .down_p {
   color: white;
@@ -2053,12 +2052,16 @@ th {
   background: #029a9f;
 }
 
+.payment-gateway {
+  display: flex;
+  align-items: center;
+}
+
 .payment-gateway button {
   background: #029a9f;
   border: none;
-  width: 20%;
-  height: 50px;
   display: flex;
+  margin-right: 20px;
   justify-content: center;
   align-items: center;
   color: #fff;

@@ -40,7 +40,7 @@ const AccountSetting = () => {
         // }
 
         setData1(json.data);
-        console.log('*******&&&&&&&&&&&&&',json.data);
+        console.log("*******&&&&&&&&&&&&&", json.data);
 
         // setError(json.error)
       })
@@ -557,11 +557,17 @@ const AccountSetting = () => {
                     >
                       Make Payment
                     </button>
+                    <p className="d-flex align-items-center fw-bold fs-5">
+                      Wallet Balance:&nbsp;&nbsp;
+                      <span
+                        className="fw-bold fs-4"
+                        style={{ color: "#029a9f" }}
+                      >
+                        ₹{Data1?.wallet}
+                      </span>
+                    </p>
                   </div>
-                  <>
-                    Current wallet
-                    <div>{Data1?.wallet}</div>
-                  </>
+
                   <div
                     className="modal fade"
                     id="exampleModal"

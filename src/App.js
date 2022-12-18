@@ -28,6 +28,7 @@ import Success from "./pages/Success";
 import Failed from "./pages/Failed";
 import PurchaseSuccess from "./pages/PurchaseSuccess";
 import OnlineManagement from "./pages/OnlineManagement";
+import Ordersuccess from "./pages/Ordersuccess";
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<about />} />
+        <Route path="/about" element={<About />} />
         <Route path="/accountSetting" element={<AccountSetting />} />
         <Route path="/author" element={<Author />} />
         <Route path="/blog" element={<Blog />} />
@@ -59,6 +60,7 @@ function App() {
         <Route path="/failed" element={<Failed />} />
         <Route path="/purchaseSuccess" element={<PurchaseSuccess />} />
         <Route path="/onlineManagement/:id" element={<OnlineManagement />} />
+        <Route path="/ordersuccess" element={<Ordersuccess />} />
       </Routes>
       <Footer />
     </BrowserRouter>
