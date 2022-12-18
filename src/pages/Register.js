@@ -222,19 +222,24 @@ const Register = () => {
                 />
                 <p style={{ color: "red" }}>{formErrors.confirmPassword}</p>
 
-                <button type="submit" className="reg_btn-1">
+                <button
+                  type="submit"
+                  className="reg_btn-1 d-flex justify-content-center m-0 mt-4 m-auto"
+                >
                   Register
                 </button>
-                <Link to="/login">
-                  <button type="button" className="reg_btn-2">
-                    Login
-                  </button>
-                </Link>
+                <br />
                 {Object.keys(formErrors, message).length === 0 && isSubmit ? (
                   <h3 className="Success text-center">{message}</h3>
                 ) : (
                   ""
                 )}
+                <p className="text-center m-0 fs-6 mb-1">
+                  <span>Have already an account?</span>
+                  <Link to="/login" className="signup">
+                    LogIn!
+                  </Link>
+                </p>
               </form>
             </div>
           </div>

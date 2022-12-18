@@ -53,12 +53,13 @@ class Sample extends Component {
                     this.setState({ ...this.state, searchText: e.target.value })
                   }
                 />
+                &nbsp; &nbsp;
                 <button
                   type="button"
                   onClick={() =>
                     this.setState({ ...this.state, startSearch: true })
                   }
-                  className="samp_sec-btn"
+                  className="samp_sec-btn "
                 >
                   search
                 </button>

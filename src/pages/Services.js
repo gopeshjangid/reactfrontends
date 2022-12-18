@@ -244,7 +244,11 @@ class Services extends Component {
               </div>
             </div>
           )}
-          {this.state.noUser && <div>Please Login First</div>}
+          {this.state.noUser && (
+            <div className="text-center text-danger fs-1 mb-3">
+              Please Login First
+            </div>
+          )}
         </section>
       </div>
     );

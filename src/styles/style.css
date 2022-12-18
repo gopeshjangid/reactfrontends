@@ -1292,7 +1292,7 @@
   color: white;
   font-size: 17px;
   font-weight: 500;
-  border-radius: 6px;
+  border-radius: 6px 0px 0px 6px;
 }
 .samp_sec-btn1 {
   background: red;
@@ -1301,7 +1301,7 @@
   color: white;
   font-size: 17px;
   font-weight: 500;
-  border-radius: 6px;
+  border-radius: 0px 6px 6px 0px;
 }
 .samp_sec-h2 {
   color: #3a3a3a;
@@ -1616,7 +1616,7 @@
   color: #000000a1;
 }
 .forgot_p:hover {
-  color: #0d6efd;
+  color: #000;
   text-decoration: underline;
 }
 .content_sec {
@@ -1624,6 +1624,15 @@
   margin: 5% 0px 4% 0px;
   padding-bottom: 5%;
   border-bottom: 1px solid #0000003d;
+}
+
+.signup {
+  text-decoration: none;
+  color: #03989f;
+}
+.signup:hover {
+  color: #000;
+  text-decoration: underline;
 }
 .content_sec-p {
   color: #3a3a3a;

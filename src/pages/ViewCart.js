@@ -261,7 +261,7 @@ const ViewCart = () => {
       });
   };
 
-  const payWithStrip = () => {
+  const payWithStrip = (amount) => {
     axios
       .post("http://localhost:5000/orderStripe", { totalAmount: amount })
       .then((response) => {
@@ -600,15 +600,24 @@ const ViewCart = () => {
                         }
                         type="button"
                         className="btn Pay"
-                        data-bs-dismiss={
-                          orderErrorMessage.trim() === 0 ? "modal" : "modaaal"
-                        }
                       >
                         Pay with Wallet
                       </button>{" "}
                       <button
                         type="button"
-                        onClick={() => payWithStrip()}
+                        onClick={() =>
+                          payWithStrip(
+                            couponApplied?.message?.offAmount
+                              ? couponApplied.message.couponType === "Flat"
+                                ? cartItems.totalPrice -
+                                  couponApplied.message.offAmount
+                                : cartItems.totalPrice -
+                                  (cartItems.totalPrice *
+                                    couponApplied.message.offAmount) /
+                                    100
+                              : cartItems.totalPrice
+                          )
+                        }
                         className="btn Pay"
                       >
                         Pay with Striip

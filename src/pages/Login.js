@@ -134,15 +134,13 @@ const Login = () => {
               />
               <p style={{ color: "red" }}>{formErrors.password}</p>
 
-              <Link to="/register">
-                <button type="button" className="reg_btn-1">
-                  Register
-                </button>
-              </Link>
-
-              <button type="submit" className="reg_btn-2">
+              <button
+                type="submit"
+                className="reg_btn-1 d-flex justify-content-center m-0 mt-4 m-auto"
+              >
                 Login
               </button>
+              <br />
 
               {Object.keys(formErrors, message).length === 0 && isSubmit ? (
                 <h3 className="Success text-center">{message}</h3>
@@ -150,9 +148,18 @@ const Login = () => {
                 ""
               )}
 
-              <Link className="forgot_p" to="/forgot">
-                Forgot Your Password?
-              </Link>
+              <p className="text-center m-0 fs-6 mb-1">
+                <span>Not a member?</span>
+                <Link to="/register" className="signup">
+                  SignUp!
+                </Link>
+              </p>
+
+              <p className="text-center m-0 fs-6">
+                <Link className="forgot_p p-0" to="/forgot">
+                  Forget Password?
+                </Link>
+              </p>
             </form>
           </div>
         </div>
