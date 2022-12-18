@@ -10,8 +10,43 @@ import ViewOrder from "./ViewOrder";
 const AccountSetting = () => {
   const navigate = useNavigate();
 
+  const [Data1, setData1] = useState([]);
+  const [Users, setUsers] = useState({});
+
   useEffect(() => {
     const getToken = localStorage.getItem("token");
+    const tokenID = localStorage.getItem("token");
+    console.log("hello+++++++++++", tokenID);
+    fetch("http://localhost:5000/viewProfile", {
+      method: "GET",
+      mode: "cors",
+
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${tokenID}`,
+      },
+    }) // .then((res) => res.json())
+      .then((response) =>
+        response.json(
+          setUsers({
+            response,
+          })
+        )
+      )
+
+      .then((json) => {
+        // if (json.message === "mail have sent successfully") {
+        // 	navigate('/login');
+        // }
+
+        setData1(json.data);
+        console.log('*******&&&&&&&&&&&&&',json.data);
+
+        // setError(json.error)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
     if (getToken == null) {
       navigate("/login");
@@ -93,6 +128,7 @@ const AccountSetting = () => {
 
   useEffect(() => {
     const res = data?.User?.message;
+    console.log(res);
     setMessage(res);
   }, [data]);
 
@@ -522,6 +558,10 @@ const AccountSetting = () => {
                       Make Payment
                     </button>
                   </div>
+                  <>
+                    Current wallet
+                    <div>{Data1?.wallet}</div>
+                  </>
                   <div
                     className="modal fade"
                     id="exampleModal"

@@ -228,7 +228,6 @@ const ViewCart = () => {
     const couponName = couponApplied?.message
       ? couponApplied.message.couponName
       : "";
-
     await axios
       .post(
         `http://localhost:5000/useWallet/`,
@@ -368,6 +367,7 @@ const ViewCart = () => {
                   Apply Coupon
                 </button>
               </div>
+              <div>{coupons.message === null && "Invalid Coupon"}</div>
 
               <Link to="/Services">
                 <i aria-hidden="true" className="fas fa-chevron-left" />
@@ -397,6 +397,9 @@ const ViewCart = () => {
                         <td data-title="Subtotal">
                           <span className="woocommerce-Price-amount amount">
                             <bdi>
+                              {couponApplied.message.couponType === "Flat"
+                                ? "Flat "
+                                : `(${couponApplied.message.offAmount}%) `}
                               <span className="woocommerce-Price-currencySymbol">
                                 ₹
                               </span>
@@ -537,7 +540,18 @@ const ViewCart = () => {
                                 </span>
                               </td>
                             </tr>
-                            <tr>{orderErrorMessage}</tr>
+                            <tr>
+                              {orderErrorMessage}{" "}
+                              {orderErrorMessage && (
+                                <button
+                                  className="btn btn-secondary"
+                                  data-bs-dismiss="modal"
+                                  onClick={() => navigate("/AccountSetting")}
+                                >
+                                  Add now!
+                                </button>
+                              )}
+                            </tr>
                           </tbody>
                         </table>
                       </div>

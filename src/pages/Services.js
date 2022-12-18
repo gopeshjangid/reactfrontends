@@ -11,6 +11,7 @@ class Services extends Component {
       isError: false,
       isAddLoading: false,
       cartItems: [],
+      noUser: false,
       // details : {
       //     name: "gopesh"
       // }
@@ -22,6 +23,7 @@ class Services extends Component {
   async componentDidMount() {
     this.setState({ isLoading: true });
     this.viewCart();
+
     const response = await fetch("http://localhost:5000/getServices", {
       method: "GET",
       mode: "cors",
@@ -61,6 +63,11 @@ class Services extends Component {
 
   addTocarthandler = async (id) => {
     const tokenID = localStorage.getItem("token");
+
+    if (!tokenID) {
+      this.setState({ ...this.state, noUser: true });
+      return;
+    }
     console.log(this.state.cartItems);
     console.log(id);
     console.log(
@@ -209,45 +216,48 @@ class Services extends Component {
                 })}
             </div>
           </div>
-          <div
-            style={{
-              width: "100%",
-              height: "100px",
-              bottom: "0",
-              left: "0",
-              display: "flex",
-              alignItems: "center",
-              position: "sticky",
-              backgroundColor: "#03979C",
-              color: "white",
-              zIndex: 999,
-            }}
-          >
-            <div className="container">
-              <div className="row align-items-center">
-                <div className="col-md-8">
-                  <h5 className="fw-normal">
-                    Total-Price =<span>></span>{" "}
-                    {this.state.cartItems.totalPrice}
-                  </h5>
-                  <h5 className="fw-normal">
-                    Total-Items =<span>></span>{" "}
-                    {this.state.cartItems.totalItems}
-                  </h5>
-                </div>
+          {this.state?.cartItems?.totalPrice > 0 && (
+            <div
+              style={{
+                width: "100%",
+                height: "100px",
+                bottom: "0",
+                left: "0",
+                display: "flex",
+                alignItems: "center",
+                position: "sticky",
+                backgroundColor: "#03979C",
+                color: "white",
+                zIndex: 999,
+              }}
+            >
+              <div className="container">
+                <div className="row align-items-center">
+                  <div className="col-md-8">
+                    <h5 className="fw-normal">
+                      Total-Price =<span>></span>{" "}
+                      {this.state.cartItems.totalPrice}
+                    </h5>
+                    <h5 className="fw-normal">
+                      Total-Items =<span>></span>{" "}
+                      {this.state.cartItems.totalItems}
+                    </h5>
+                  </div>
 
-                <div className="col-md-4 text-end">
-                  <Link
-                    style={{ color: "white", fontSize: "20px" }}
-                    className="viewCart text-decoration-none"
-                    to={"/ViewCart"}
-                  >
-                    View cart
-                  </Link>
+                  <div className="col-md-4 text-end">
+                    <Link
+                      style={{ color: "white", fontSize: "20px" }}
+                      className="viewCart text-decoration-none"
+                      to={"/ViewCart"}
+                    >
+                      View cart
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
+          {this.state.noUser && <div>Please Login First</div>}
         </section>
       </div>
     );
