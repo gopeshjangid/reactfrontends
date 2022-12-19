@@ -70,7 +70,7 @@ const ViewProfile = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [Users]);
 
   // console.log("sonu",Data.json.data)
 
@@ -162,7 +162,7 @@ const ViewProfile = () => {
       <div className="me-3">
         <label className="as-lbl">Email Id</label>
         <input
-          type="email"
+          type="text"
           id="fname2"
           name="email"
           //   onChange={handleChange}

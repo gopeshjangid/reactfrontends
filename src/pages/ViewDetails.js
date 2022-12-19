@@ -33,7 +33,7 @@ const ViewDetails = () => {
         <div className="row">
           <div className="col-md-4">
             <div
-              className="author_box text-center"
+              className="author_box p-3 text-center"
               style={{ border: "1px solid #029A99" }}
             >
               <img
@@ -41,15 +41,22 @@ const ViewDetails = () => {
                 className="author_sec-img ms-0"
                 style={{ border: "5px solid #029A99" }}
               />
-              <h4 className="author_Sec-h2 fs-1">{post?.data?.title}</h4>
-              <p className="author_Sec-p fs-3">{post?.data?.dec}</p>
+              <h4 className="author_Sec-h2 fs-2">{post?.data?.title}</h4>
+              <br />
+              <p className="author_Sec-p fs-4">
+                Designation:{" "}
+                <span className="text-dark">{post?.data?.dec}</span>
+              </p>
               <p className="author_Sec-p ">{post?.data?.longDec}</p>
             </div>
           </div>
           <div className="col-md-8">
-            <h2 className="author_Sec-h2 text-start ">
+            <h2 className="author_Sec-h2 article  text-start ">
               Articles by {post?.data?.title}
             </h2>
+            <p className="author_Sec-p text-start fs-6 mt-4">
+              Sorry there is no article found for this author....!
+            </p>
           </div>
         </div>
       </div>

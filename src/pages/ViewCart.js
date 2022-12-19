@@ -16,6 +16,7 @@ const ViewCart = () => {
   const [currentWalletData, setCurrentWalletData] = useState({});
   const [orderErrorMessage, setOrderErrorMessage] = useState("");
   const [amount, setAmount] = useState({});
+  // const [paypal, setPaypal] = useState({});
 
   useEffect(() => {
     viewCart();
@@ -263,10 +264,9 @@ const ViewCart = () => {
 
   const payWithStrip = (amount) => {
     axios
-      .post("http://localhost:5000/orderStripe", { totalAmount: amount })
+      .post("http://localhost:5000/orderStripe", { TotalAmount: amount })
       .then((response) => {
         sessionStorage.setItem("TotalAmount", amount);
-        console.log(response);
         // sessionStorage.setItem("pay_id", response.data.id);
         window.open(response.data.url, "_self");
         setAmount({
@@ -277,6 +277,22 @@ const ViewCart = () => {
       .catch((error) => console.log(error));
   };
   console.log(amount);
+
+  // const payWithPaypal = (paypal) => {
+  //   axios
+  //     .post("http://localhost:5000/orderStripe", { TotalAmount: paypal })
+  //     .then((response) => {
+  //       sessionStorage.setItem("TotalAmount", paypal);
+  //       // sessionStorage.setItem("pay_id", response.data.id);
+  //       window.open(response.data.url, "_self");
+  //       setPaypal({
+  //         response,
+  //       });
+  //     })
+
+  //     .catch((error) => console.log(error));
+  // };
+  // console.log(paypal);
 
   return (
     <div className="Cart">
@@ -569,21 +585,22 @@ const ViewCart = () => {
                             </span>
                           </td>
                         </tr>
-                        <tr>
-                          {orderErrorMessage}{" "}
-                          {orderErrorMessage && (
-                            <button
-                              className="btn btn-secondary"
-                              data-bs-dismiss="modal"
-                              onClick={() => navigate("/AccountSetting")}
-                            >
-                              Add now!
-                            </button>
-                          )}
-                        </tr>
                       </tbody>
                     </table>
                     <div className="">
+                      <div className="text-danger mb-3 text-center">
+                        <p className="mb-0">{orderErrorMessage}</p>
+                        {orderErrorMessage && (
+                          <span
+                            className="signup "
+                            style={{ cursor: "pointer" }}
+                            data-bs-dismiss="modal"
+                            onClick={() => navigate("/AccountSetting")}
+                          >
+                            Add now!
+                          </span>
+                        )}
+                      </div>
                       <button
                         onClick={() =>
                           walletUpdateHandler(
@@ -620,13 +637,27 @@ const ViewCart = () => {
                         }
                         className="btn Pay"
                       >
-                        Pay with Striip
+                        Pay with Stripe
                       </button>
                       <button type="button" className="btn Pay">
+                        {/* onClick=
+                        {() =>
+                          payWithPaypal(
+                            couponApplied?.message?.offAmount
+                              ? couponApplied.message.couponType === "Flat"
+                                ? cartItems.totalPrice -
+                                  couponApplied.message.offAmount
+                                : cartItems.totalPrice -
+                                  (cartItems.totalPrice *
+                                    couponApplied.message.offAmount) /
+                                    100
+                              : cartItems.totalPrice
+                          )
+                        } */}
                         Pay with PayPal
                       </button>
                       <button type="button" className="btn Pay">
-                        Pay with Reserve Pay
+                        Pay with Razor Pay
                       </button>
                     </div>
                   </div>

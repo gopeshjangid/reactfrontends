@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+// import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 const PurchaseSuccess = () => {
   return (
     <div>
@@ -12,9 +12,7 @@ const PurchaseSuccess = () => {
                 <span className=" p-0 fs-1 fw-bold">
                   Thank You For Your Purchase
                 </span>
-                <p className="fp-p p-0">
-                  Your Order Number is : <b>000000002989</b>
-                </p>
+
                 <p className="fp-p p-0">
                   We'll Email You an Order Confirmation With Details and
                   tracking info

@@ -89,10 +89,9 @@ class ViewOrder extends Component {
                       <td>{index + 1}</td>
                       <td>{friend.transactionId}</td>
                       <td>{friend.datetime}</td>
-                      {/* <td>{friend.datetime}</td> */}
-
-                      <td>{friend.totalAmoumt}</td>
+                      <td>{friend.totalAmount}</td>
                       <td>Chat</td>
+
                       <td>{friend.status}</td>
                     </tr>
                   );

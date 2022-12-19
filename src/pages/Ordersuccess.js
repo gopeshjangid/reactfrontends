@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 const Ordersuccess = () => {
   const tokenID = localStorage.getItem("token");
-  //   const pay_id = sessionStorage.getItem("pay_id");
+  const pay_id = sessionStorage.getItem("pay_id");
   const amount = sessionStorage.getItem("TotalAmount");
   const headers = {
     "Content-Type": "application/json",
     Authorization: `${tokenID}`,
   };
 
-  const data = { TotalAmount: parseInt(amount) };
+  const data = { totalAmount: parseInt(amount), pay_id };
 
   useEffect(() => {
     axios
@@ -34,9 +34,9 @@ const Ordersuccess = () => {
             <form className="fp_form m-0 w-100 h-100">
               {/* <<onSubmit={handleSubmit} */}
               <span className=" p-0 fs-1 fw-bold">Payment Successfully</span>
-              <p className="fp-p p-0">Your Payment Successfully Add.</p>
+              <p className="fp-p p-0"></p>
 
-              <Link className="" to="/viewcart">
+              <Link className="" to="/services">
                 <button type="submit" className="fp-btn px-5  m-0">
                   Go Back
                 </button>
