@@ -468,11 +468,23 @@ const AccountSetting = () => {
                         Update
                       </button>
                       <br />
-                      {Object.keys(formError, message).length === 0 &&
-                      inSubmit ? (
-                        <h5 className="Success text-center mt-2">{message}</h5>
+                      {Object.keys(formError).length === 0 && inSubmit ? (
+                        <h3 className="Success text-center"></h3>
                       ) : (
                         ""
+                      )}
+
+                      {message === "password successfully changed" ? (
+                        <h3
+                          className="Success text-center"
+                          style={{ color: "#03979c" }}
+                        >
+                          {message}
+                        </h3>
+                      ) : (
+                        <h3 className="Success text-danger text-center">
+                          {message}
+                        </h3>
                       )}
                     </form>
 

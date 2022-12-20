@@ -51,7 +51,7 @@ class Author extends Component {
             {this.state.User.map((friend) => {
               return (
                 <div className="col-md-3" key={friend._id}>
-                  <div className="author_box text-center">
+                  <div className="author_box p-4 text-center">
                     <img
                       src={urlApi + "/image/" + friend.image}
                       className="author_sec-img m-0"

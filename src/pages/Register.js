@@ -229,10 +229,21 @@ const Register = () => {
                   Register
                 </button>
                 <br />
-                {Object.keys(formErrors, message).length === 0 && isSubmit ? (
-                  <h3 className="Success text-center">{message}</h3>
+                {Object.keys(formErrors).length === 0 && isSubmit ? (
+                  <h3 className="Success text-center"></h3>
                 ) : (
                   ""
+                )}
+
+                {message === "successfully register" ? (
+                  <h3
+                    className="Success text-center"
+                    style={{ color: "#03979c" }}
+                  >
+                    {message}
+                  </h3>
+                ) : (
+                  <h3 className="Success text-danger text-center">{message}</h3>
                 )}
                 <p className="text-center m-0 fs-6 mb-1">
                   <span>Have already an account?</span>

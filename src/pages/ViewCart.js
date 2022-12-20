@@ -16,7 +16,7 @@ const ViewCart = () => {
   const [currentWalletData, setCurrentWalletData] = useState({});
   const [orderErrorMessage, setOrderErrorMessage] = useState("");
   const [amount, setAmount] = useState({});
-  // const [paypal, setPaypal] = useState({});
+  const [paypal, setPaypal] = useState({});
 
   useEffect(() => {
     viewCart();
@@ -267,7 +267,7 @@ const ViewCart = () => {
       .post("http://localhost:5000/orderStripe", { TotalAmount: amount })
       .then((response) => {
         sessionStorage.setItem("TotalAmount", amount);
-        // sessionStorage.setItem("pay_id", response.data.id);
+        sessionStorage.setItem("pay_id", response.data.id);
         window.open(response.data.url, "_self");
         setAmount({
           response,
@@ -278,21 +278,21 @@ const ViewCart = () => {
   };
   console.log(amount);
 
-  // const payWithPaypal = (paypal) => {
-  //   axios
-  //     .post("http://localhost:5000/orderStripe", { TotalAmount: paypal })
-  //     .then((response) => {
-  //       sessionStorage.setItem("TotalAmount", paypal);
-  //       // sessionStorage.setItem("pay_id", response.data.id);
-  //       window.open(response.data.url, "_self");
-  //       setPaypal({
-  //         response,
-  //       });
-  //     })
+  const payWithPaypal = (paypal) => {
+    axios
+      .post("http://localhost:5000/PaypalPayment", { TotalAmount: paypal })
+      .then((response) => {
+        sessionStorage.setItem("TotalAmount", paypal);
+        // sessionStorage.setItem("pay_id", response.data.id);
+        window.open(response.data.url, "_self");
+        setPaypal({
+          response,
+        });
+      })
 
-  //     .catch((error) => console.log(error));
-  // };
-  // console.log(paypal);
+      .catch((error) => console.log(error));
+  };
+  console.log(paypal);
 
   return (
     <div className="Cart">
@@ -601,64 +601,81 @@ const ViewCart = () => {
                           </span>
                         )}
                       </div>
-                      <button
-                        onClick={() =>
-                          walletUpdateHandler(
-                            couponApplied?.message?.offAmount
-                              ? couponApplied.message.couponType === "Flat"
-                                ? cartItems.totalPrice -
-                                  couponApplied.message.offAmount
-                                : cartItems.totalPrice -
-                                  (cartItems.totalPrice *
-                                    couponApplied.message.offAmount) /
-                                    100
-                              : cartItems.totalPrice
-                          )
-                        }
-                        type="button"
-                        className="btn Pay"
-                      >
-                        Pay with Wallet
-                      </button>{" "}
-                      <button
-                        type="button"
-                        onClick={() =>
-                          payWithStrip(
-                            couponApplied?.message?.offAmount
-                              ? couponApplied.message.couponType === "Flat"
-                                ? cartItems.totalPrice -
-                                  couponApplied.message.offAmount
-                                : cartItems.totalPrice -
-                                  (cartItems.totalPrice *
-                                    couponApplied.message.offAmount) /
-                                    100
-                              : cartItems.totalPrice
-                          )
-                        }
-                        className="btn Pay"
-                      >
-                        Pay with Stripe
-                      </button>
-                      <button type="button" className="btn Pay">
-                        {/* onClick=
-                        {() =>
-                          payWithPaypal(
-                            couponApplied?.message?.offAmount
-                              ? couponApplied.message.couponType === "Flat"
-                                ? cartItems.totalPrice -
-                                  couponApplied.message.offAmount
-                                : cartItems.totalPrice -
-                                  (cartItems.totalPrice *
-                                    couponApplied.message.offAmount) /
-                                    100
-                              : cartItems.totalPrice
-                          )
-                        } */}
-                        Pay with PayPal
-                      </button>
-                      <button type="button" className="btn Pay">
-                        Pay with Razor Pay
-                      </button>
+
+                      <div className="row mb-3">
+                        <div className="col-md-6 text-start ps-4">
+                          <button
+                            type="button"
+                            className="btn w-100 justify-content-center d-flex align-items-center Pay me-3"
+                            onClick={() =>
+                              walletUpdateHandler(
+                                couponApplied?.message?.offAmount
+                                  ? couponApplied.message.couponType === "Flat"
+                                    ? cartItems.totalPrice -
+                                      couponApplied.message.offAmount
+                                    : cartItems.totalPrice -
+                                      (cartItems.totalPrice *
+                                        couponApplied.message.offAmount) /
+                                        100
+                                  : cartItems.totalPrice
+                              )
+                            }
+                          >
+                            Wallet
+                            {/* <i class="fa-solid fa-wallet end-0 ps-2"></i> */}
+                          </button>{" "}
+                        </div>
+                        <div className="col-md-6">
+                          <button
+                            type="button"
+                            onClick={() =>
+                              payWithStrip(
+                                couponApplied?.message?.offAmount
+                                  ? couponApplied.message.couponType === "Flat"
+                                    ? cartItems.totalPrice -
+                                      couponApplied.message.offAmount
+                                    : cartItems.totalPrice -
+                                      (cartItems.totalPrice *
+                                        couponApplied.message.offAmount) /
+                                        100
+                                  : cartItems.totalPrice
+                              )
+                            }
+                            className="btn w-100 Pay"
+                          >
+                            Stripe
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="row">
+                        <div className="col-md-6 text-start ps-4">
+                          <button
+                            type="button"
+                            className="btn w-100 Pay me-3"
+                            onClick={() =>
+                              payWithPaypal(
+                                couponApplied?.message?.offAmount
+                                  ? couponApplied.message.couponType === "Flat"
+                                    ? cartItems.totalPrice -
+                                      couponApplied.message.offAmount
+                                    : cartItems.totalPrice -
+                                      (cartItems.totalPrice *
+                                        couponApplied.message.offAmount) /
+                                        100
+                                  : cartItems.totalPrice
+                              )
+                            }
+                          >
+                            PayPal
+                          </button>
+                        </div>
+                        <div className="col-md-6">
+                          <button type="button" className="btn w-100 Pay">
+                            RazorPay
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

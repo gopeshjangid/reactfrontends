@@ -64,13 +64,13 @@ const ViewProfile = () => {
 
         setData(json);
         setUserName(json.data.username);
-
+        console.log(Users);
         // setError(json.error)
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [Users]);
+  }, []);
 
   // console.log("sonu",Data.json.data)
 
@@ -108,39 +108,9 @@ const ViewProfile = () => {
       .catch((err) => {
         console.log(err);
       });
-
-    // setIsSubmit(true);
   };
 
-  // useEffect(() => {
-  // 	const res = Data?.Users?.data;
-  // 	setMessage(res);
-
-  // }, [Data])
-
-  // useEffect(() => {
-  //   const res = Data?.data?.message;
-  //   setMessage(res);
-  // }, [Data]);
   console.log(message);
-
-  // useEffect(() => {
-  //   console.log(formErrors);
-  //   if (Object.keys(formErrors).length === 0 && isSubmit) {
-  //     console.log(Users);
-  //   }
-  // }, [formErrors]);
-  // console.log(Users);
-
-  // const validate = (values) => {
-  //   const errors = {};
-
-  //   if (!values.username) {
-  //     errors.username = "!'Please Change Your username'";
-  //   }
-
-  //   return errors;
-  // };
 
   console.log("--------------", Data.data);
 
@@ -165,23 +135,21 @@ const ViewProfile = () => {
           type="text"
           id="fname2"
           name="email"
-          //   onChange={handleChange}
           className="as-text_set"
           value={Data?.data?.email}
         />
-
-        {/* <p style={{ color: "red" }}>{formErrors.email}</p> */}
       </div>
-      {/* {Object.keys(formErrors, message).length === 0 && isSubmit ? ( */}
-
-      {/* ) : (
-        ""
-      )} */}
 
       <button type="submit" className="as-btn_set m-auto me-1">
         Update
       </button>
-      <span className="Success">{message}</span>
+      {message === "successfully updated" ? (
+        <span className="Success" style={{ color: "#03979c" }}>
+          {message}
+        </span>
+      ) : (
+        <span className="Success text danger">{message}</span>
+      )}
     </form>
   );
 };

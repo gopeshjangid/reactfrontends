@@ -54,7 +54,7 @@ class Blog extends Component {
                             src={urlApi + "/image/" + friend.image}
                             className="blog_sec-img"
                           />
-                          <h2 className="blog_sec-h2">{friend.title} </h2>
+                          <h2 className="blog_sec-h2 p-0">{friend.title} </h2>
                           <h3>
                             <span className="blog-span1">{friend.name} </span>{" "}
                             <span className="blog-span2">
@@ -76,22 +76,29 @@ class Blog extends Component {
                             src={urlApi + "/image/" + friend.image}
                             className="blog_sec-img"
                           />
-                          <h2 className="blog_sec-h2">{friend.title} </h2>
-                          <h3 className="row">
-                            <span className=" col-md-6 blog-span1 ps-5 pe-0 m-0">
-                              {friend.name}{" "}
-                            </span>{" "}
-                            <span className=" col-md-6 text-end pe-5 blog-span2 m-0">
-                              September 08,2022
-                            </span>
-                          </h3>
-                          <p className="blog_sec-p">{friend.dec} </p>
+                          <div className="p-4">
+                            <h2 className="blog_sec-h2 p-0">{friend.title} </h2>
 
-                          <Link to={`/onlineManagement/${friend._id}`}>
-                            <button type="button" className="blog_sec-btn">
-                              Read More{" "}
-                            </button>
-                          </Link>
+                            <div className="row">
+                              <span className=" col-md-6 blog-span1  m-0">
+                                {friend.name}{" "}
+                              </span>{" "}
+                              <span className=" col-md-6 text-end  blog-span2 m-0">
+                                September 08,2022
+                              </span>
+                            </div>
+
+                            <p className="blog_sec-p p-0">{friend.dec} </p>
+
+                            <Link to={`/onlineManagement/${friend._id}`}>
+                              <button
+                                type="button"
+                                className="blog_sec-btn m-0"
+                              >
+                                Read More{" "}
+                              </button>
+                            </Link>
+                          </div>
                         </div>
                       );
                     })}

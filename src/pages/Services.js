@@ -150,12 +150,14 @@ class Services extends Component {
                           {friend.title} <span className="h3-spa">POSTS</span>
                         </h3>
 
-                        <ul className="services_ul">
-                          <li className="services_li-1"></li>
-                          <li className="services_li-2"></li>
+                        <ul className="services_ul justify-content-center p-0">
+                          <li className="services_li-1 ms-0"></li>
+                          <li className="services_li-2 me-0 d-block"></li>
                         </ul>
 
-                        <p className="services_box-p">1 Guest Posts</p>
+                        <p className="services_box-p p-0 text-center">
+                          1 Guest Posts
+                        </p>
 
                         <li className="ol_li">
                           <span className="fs-3 justify-content-center d-flex align-items-center ">

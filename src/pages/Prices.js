@@ -77,86 +77,111 @@ const Prices = () => {
     <div>
       <section className="place_sec">
         <div className="container">
-          <div className="row">
-            <h1 className="place_sec-h1">
-              Services,
-              <br />
-              Pricing & Products
-            </h1>
+          <div className="row align-items-center">
+            <div className="col-md-6">
+              <h1 className="place_sec-h1 p-0">
+                Services,
+                <br />
+                Pricing & Products
+              </h1>
+            </div>
+
+            <div className="col-md-6">
+              <section className="form_sec">
+                <form
+                  style={{ padding: "4%" }}
+                  className="text-center"
+                  onSubmit={handleSubmit}
+                >
+                  <h2 className="form_sec-h2">
+                    Get In <span className="spa">Touch </span>
+                  </h2>
+                  <div className="d-flex space-between">
+                    <div className="Home-Name">
+                      <input
+                        type="text"
+                        id="fname"
+                        name="username"
+                        placeholder="Name"
+                        onChange={inputChange}
+                        className="text_set ms-0"
+                      />
+                      <p style={{ color: "red" }}>{formErrors.username}</p>
+                    </div>
+
+                    <div className="Home-Name">
+                      <input
+                        type="text"
+                        id="fname"
+                        name="email"
+                        placeholder="Email"
+                        onChange={inputChange}
+                        className="text_set ms-0"
+                      />
+                      <p style={{ color: "red" }}>{formErrors.email}</p>
+                    </div>
+                  </div>
+                  <div className="d-flex space-between">
+                    <div className="Home-Name">
+                      <input
+                        type="number"
+                        id="fname"
+                        name="number"
+                        placeholder="Exp:+91 7665092627"
+                        onChange={inputChange}
+                        className="text_set ms-0"
+                      />
+                      <p style={{ color: "red" }}>{formErrors.number}</p>
+                    </div>
+                    <div className="Home-Name">
+                      <select className="text_set ms-0">
+                        <option>Content Type</option>
+
+                        <option>Ghost Writing</option>
+                        <option>Blog Writing</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="d-flex space-between">
+                    <div className="Home-Name">
+                      <input
+                        type="text"
+                        id="fname"
+                        name="deadline"
+                        placeholder="Deadline"
+                        onChange={inputChange}
+                        className="text_set ms-0"
+                      />
+                      <p style={{ color: "red" }}>{formErrors.deadline}</p>
+                    </div>
+
+                    <div className="Home-Name">
+                      <select className="text_set ms-0">
+                        <option>Expert Level</option>
+
+                        <option>Expert</option>
+                        <option>Premium</option>
+                        <option>Enterprice</option>
+                      </select>
+                    </div>
+                  </div>
+                  <button type="submit" className="btn_set1 ms-0">
+                    Register
+                  </button>{" "}
+                  {Object.keys(formErrors).length === 0 && isSubmit ? (
+                    <h3 className="Success t-center" style={{ color: "#fff" }}>
+                      Register is Successfull
+                    </h3>
+                  ) : (
+                    ""
+                  )}
+                  {/* <Link to="/Login"><button type="button" className="btn_set2" onClick={(e) => this.create(e)}>Login</button></Link> */}
+                </form>
+              </section>
+            </div>
           </div>
         </div>
       </section>
-      <div className="container">
-        <div className="row">
-          <section className="place_form-sec">
-            <form style={{ padding: "4%" }} onSubmit={handleSubmit}>
-              <h2 className="form_sec-h2">
-                Get In <span className="spa">Touch </span>
-              </h2>
-              <input
-                type="text"
-                id="fname"
-                name="username"
-                placeholder="Name"
-                onChange={inputChange}
-                className="text_set"
-              />
-              <p style={{ color: "red" }}>{formErrors.username}</p>
-              <input
-                type="text"
-                id="fname"
-                name="email"
-                placeholder="Email"
-                onChange={inputChange}
-                className="text_set"
-              />
-              <p style={{ color: "red" }}>{formErrors.email}</p>
-              <input
-                type="number"
-                id="fname"
-                name="number"
-                placeholder="Exp:+91 7665092627"
-                onChange={inputChange}
-                className="text_set"
-              />
-              <p style={{ color: "red" }}>{formErrors.number}</p>
-              <select className="text_set">
-                <option>Content Type</option>
-
-                <option>Ghost Writing</option>
-                <option>Blog Writing</option>
-              </select>
-              <input
-                type="text"
-                id="fname"
-                name="deadline"
-                placeholder="Deadline"
-                onChange={inputChange}
-                className="text_set"
-              />
-              <p style={{ color: "red" }}>{formErrors.deadline}</p>
-              <select className="text_set">
-                <option>Expert Level</option>
-
-                <option>Expert</option>
-                <option>Premium</option>
-                <option>Enterprice</option>
-              </select>
-              <button type="submit" className="btn_set1">
-                Register
-              </button>{" "}
-              {Object.keys(formErrors).length === 0 && isSubmit ? (
-                <h3 className="Success t-center" style={{ color: "#fff" }}>
-                  Register is Successfull
-                </h3>
-              ) : (
-                ""
-              )}
-              {/* <Link to="/Login"><button type="button" className="btn_set2">Login</button></Link> */}
-            </form>
-          </section>
-        </div>
-      </div>
 
       <section className="content_sec">
         <div className="container">

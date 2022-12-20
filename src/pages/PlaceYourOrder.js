@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const PlaceYourOrder = () => {
   const initialValues = {
@@ -108,94 +108,121 @@ const PlaceYourOrder = () => {
     <div>
       <section className="place_sec">
         <div className="container">
-          <div className="row">
-            <h1 className="place_sec-h1">Place Your Order</h1>
+          <div className="row align-items-center">
+            <div className="col-md-6">
+              <h1 className="place_sec-h1 p-0">Place Your Order</h1>
+            </div>
+
+            <div className="col-md-6">
+              <section className="form_sec">
+                <form
+                  style={{ padding: "4%" }}
+                  className="text-center"
+                  onSubmit={handleSubmit}
+                >
+                  <h2 className="form_sec-h2">
+                    Get In <span className="spa">Touch </span>
+                  </h2>
+                  <div className="d-flex space-between">
+                    <div className="Home-Name">
+                      <input
+                        type="text"
+                        id="fname"
+                        name="username"
+                        placeholder="Name"
+                        onChange={handleChange}
+                        className="text_set ms-0"
+                      />
+                      <p style={{ color: "red" }}>{formErrors.username}</p>
+                    </div>
+
+                    <div className="Home-Name">
+                      <input
+                        type="text"
+                        id="fname"
+                        name="email"
+                        placeholder="Email"
+                        onChange={handleChange}
+                        className="text_set ms-0"
+                      />
+                      <p style={{ color: "red" }}>{formErrors.email}</p>
+                    </div>
+                  </div>
+                  <div className="d-flex space-between">
+                    <div className="Home-Name">
+                      <input
+                        type="number"
+                        id="fname"
+                        name="number"
+                        placeholder="Exp:+91 7665092627"
+                        onChange={handleChange}
+                        className="text_set ms-0"
+                      />
+                      <p style={{ color: "red" }}>{formErrors.number}</p>
+                    </div>
+                    <div className="Home-Name">
+                      <select className="text_set ms-0">
+                        <option>Content Type</option>
+
+                        <option>Ghost Writing</option>
+                        <option>Blog Writing</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="d-flex space-between">
+                    <div className="Home-Name">
+                      <input
+                        type="text"
+                        id="fname"
+                        name="deadline"
+                        placeholder="Deadline"
+                        onChange={handleChange}
+                        className="text_set ms-0"
+                      />
+                      <p style={{ color: "red" }}>{formErrors.deadline}</p>
+                    </div>
+
+                    <div className="Home-Name">
+                      <select className="text_set ms-0">
+                        <option>Expert Level</option>
+
+                        <option>Expert</option>
+                        <option>Premium</option>
+                        <option>Enterprice</option>
+                      </select>
+                    </div>
+                  </div>
+                  <button type="submit" className="btn_set1 ms-0">
+                    Register
+                  </button>{" "}
+                  {Object.keys(formErrors).length === 0 && isSubmit ? (
+                    <h3 className="Success t-center" style={{ color: "#fff" }}>
+                      Register is Successfull
+                    </h3>
+                  ) : (
+                    ""
+                  )}
+                  {/* <Link to="/Login"><button type="button" className="btn_set2" onClick={(e) => this.create(e)}>Login</button></Link> */}
+                </form>
+              </section>
+            </div>
           </div>
         </div>
       </section>
-      <div className="container">
-        <div className="row">
-          <section className="place_form-sec">
-            <form style={{ padding: "4%" }} onSubmit={handleSubmit}>
-              <h2 className="form_sec-h2">
-                Get In <span className="spa">Touch </span>
-              </h2>
-              <input
-                type="text"
-                id="fname"
-                name="username"
-                placeholder="Name"
-                onChange={inputChange}
-                className="text_set"
-              />
-              <p style={{ color: "red" }}>{formErrors.username}</p>
-              <input
-                type="text"
-                id="fname"
-                name="email"
-                placeholder="Email"
-                onChange={inputChange}
-                className="text_set"
-              />
-              <p style={{ color: "red" }}>{formErrors.email}</p>
-              <input
-                type="number"
-                id="fname"
-                name="number"
-                placeholder="Exp:+91 7665092627"
-                onChange={inputChange}
-                className="text_set"
-              />
-              <p style={{ color: "red" }}>{formErrors.number}</p>
-              <select className="text_set">
-                <option>Content Type</option>
 
-                <option>Ghost Writing</option>
-                <option>Blog Writing</option>
-              </select>
-              <input
-                type="text"
-                id="fname"
-                name="deadline"
-                placeholder="Deadline"
-                onChange={inputChange}
-                className="text_set"
-              />
-              <p style={{ color: "red" }}>{formErrors.deadline}</p>
-              <select className="text_set">
-                <option>Expert Level</option>
-
-                <option>Expert</option>
-                <option>Premium</option>
-                <option>Enterprice</option>
-              </select>
-              <button type="submit" className="btn_set">
-                Register
-              </button>{" "}
-              {Object.keys(formErrors).length === 0 && isSubmit ? (
-                <h3 className="Success t-center" style={{ color: "#fff" }}>
-                  Register is Successfull
-                </h3>
-              ) : (
-                ""
-              )}
-              {/* <Link to="/Login"><button type="button" className="btn_set2">Login</button></Link> */}
-            </form>
-          </section>
-
-          <h2 className="writing_sec-h2">
-            Content That You Can Get With GetProWriter
-          </h2>
-          <span className="writing_sec-spa">
-            {" "}
-            <i className="fa-solid fa-arrows-left-right"></i>{" "}
-            <i className="fa-thin fa-horizontal-rule"></i>
-          </span>
-          <p className="writing_sec-p">
-            GetProWriter is a website specifically designed to help you create
-            content to attract and convert visitors into leads.
-          </p>
-        </div>
+      <div className="text-center">
+        <h2 className="writing_sec-h2">
+          Content That You Can Get With GetProWriter
+        </h2>
+        <span className="writing_sec-spa">
+          {" "}
+          <i className="fa-solid fa-arrows-left-right"></i>{" "}
+          <i className="fa-thin fa-horizontal-rule"></i>
+        </span>
+        <p className="writing_sec-p">
+          GetProWriter is a website specifically designed to help you create
+          content to attract and convert visitors into leads.
+        </p>
       </div>
 
       <section className="place_Sec-2">
@@ -256,29 +283,31 @@ const PlaceYourOrder = () => {
             <div className="col-md-6">
               <section className="faq_section accordion" id="accordionExample">
                 <div className="faq-inner">
-                  <div
-                    className="faq-item bg_set accordion-header"
-                    id="headingOne"
-                  >
-                    <h3
-                      className="faq_item-h3 accordion-button bg-transparent text-white shadow-none"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
+                  <div className="faq-item p-0 bg_set accordion-item">
+                    <h2
+                      className="faq_item-h3 p-0 accordion-header"
+                      id="headingOne"
                     >
-                      <span className="faq-plus">
+                      <button
+                        className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="false"
+                        aria-controls="collapseOne"
+                      >
                         + Why use a Content Writing Agency?
-                      </span>
-                    </h3>
+                      </button>
+                    </h2>
+
                     <div
-                      className=" pera accordion-collapse collapse "
+                      className="bg-white accordion-collapse collapse"
                       id="collapseOne"
                       aria-labelledby="headingOne"
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
+                        {" "}
                         The reason is straightforward: they understand how to
                         develop SEO-friendly, well-researched, and high-quality
                         content. They will supply a content writer who has prior
@@ -291,28 +320,31 @@ const PlaceYourOrder = () => {
                     </div>
                   </div>
 
-                  <div
-                    className="faq-item bg_set accordion-header"
-                    id="headingTwo"
-                  >
-                    <h3
-                      className="faq_item-h3 accordion-button bg-transparent text-white shadow-none"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo"
+                  <div className="faq-item p-0 bg_set accordion-item">
+                    <h2
+                      className="faq_item-h3 p-0 accordion-header"
+                      id="headingTwo"
                     >
-                      <span className="faq-plus">
+                      <button
+                        className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
                         + Why should I hire a content writer?
-                      </span>
-                    </h3>
+                      </button>
+                    </h2>
+
                     <div
-                      className=" pera accordion-collapse collapse"
+                      className="bg-white accordion-collapse collapse"
                       id="collapseTwo"
                       aria-labelledby="headingTwo"
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
+                        {" "}
                         To obtain the best, highest quality, and SEO-friendly
                         content for different kind of content needs. A content
                         writer understands how to write for both humans and
@@ -321,32 +353,35 @@ const PlaceYourOrder = () => {
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div
-                    className="faq-item bg_set accordion-header"
+                <div className="faq-item p-0 bg_set accordion-item">
+                  <h2
+                    className="faq_item-h3 p-0 accordion-header"
                     id="headingThree"
                   >
-                    <h3
-                      className="faq_item-h3 accordion-button bg-transparent text-white shadow-none"
+                    <button
+                      className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                      type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseThree"
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      <span className="faq-plus ">
-                        + Do I own the Content written by you?
-                      </span>
-                    </h3>
-                    <div
-                      className="pera accordion-collapse collapse"
-                      id="collapseThree"
-                      aria-labelledby="headingThree"
-                      data-bs-parent="#accordionExample"
-                    >
-                      <div className="accordion-body">
-                        Yes, you have absolute ownership after the content is
-                        given by our end. You are free to modify it as you like.
-                      </div>
+                      + Do I own the Content written by you?
+                    </button>
+                  </h2>
+
+                  <div
+                    className="bg-white accordion-collapse collapse"
+                    id="collapseThree"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div className="accordion-body">
+                      {" "}
+                      Yes, you have absolute ownership after the content is
+                      given by our end. You are free to modify it as you like.
                     </div>
                   </div>
                 </div>

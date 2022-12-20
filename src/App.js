@@ -29,6 +29,7 @@ import Failed from "./pages/Failed";
 import PurchaseSuccess from "./pages/PurchaseSuccess";
 import OnlineManagement from "./pages/OnlineManagement";
 import Ordersuccess from "./pages/Ordersuccess";
+import Payplesuccess from "./pages/Payplesuccess";
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
         <Route path="/purchaseSuccess" element={<PurchaseSuccess />} />
         <Route path="/onlineManagement/:id" element={<OnlineManagement />} />
         <Route path="/ordersuccess" element={<Ordersuccess />} />
+        <Route path="/payplesuccess" element={<Payplesuccess />} />
       </Routes>
       <Footer />
     </BrowserRouter>

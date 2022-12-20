@@ -64,9 +64,9 @@ const Home = () => {
     <div>
       <section className="top_sec">
         <div className="container">
-          <div className="row">
+          <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1">Add fire to your content!</h1>
+              <h1 className="top_Sec-h1 p-0">Add fire to your content!</h1>
               <h2 className="top_Sec-h2">Product Description Writing</h2>
               <p className="top_Sec-p">
                 Get Quality Content For Your Business - Every Time: Hire a
@@ -77,7 +77,11 @@ const Home = () => {
 
             <div className="col-md-6">
               <section className="form_sec">
-                <form style={{ padding: "4%" }} onSubmit={handleSubmit}>
+                <form
+                  style={{ padding: "4%" }}
+                  className="text-center"
+                  onSubmit={handleSubmit}
+                >
                   <h2 className="form_sec-h2">
                     Get In <span className="spa">Touch </span>
                   </h2>
@@ -89,7 +93,7 @@ const Home = () => {
                         name="username"
                         placeholder="Name"
                         onChange={handleChange}
-                        className="text_set"
+                        className="text_set ms-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.username}</p>
                     </div>
@@ -101,7 +105,7 @@ const Home = () => {
                         name="email"
                         placeholder="Email"
                         onChange={handleChange}
-                        className="text_set"
+                        className="text_set ms-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.email}</p>
                     </div>
@@ -114,12 +118,12 @@ const Home = () => {
                         name="number"
                         placeholder="Exp:+91 7665092627"
                         onChange={handleChange}
-                        className="text_set"
+                        className="text_set ms-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.number}</p>
                     </div>
                     <div className="Home-Name">
-                      <select className="text_set">
+                      <select className="text_set ms-0">
                         <option>Content Type</option>
 
                         <option>Ghost Writing</option>
@@ -135,13 +139,13 @@ const Home = () => {
                         name="deadline"
                         placeholder="Deadline"
                         onChange={handleChange}
-                        className="text_set"
+                        className="text_set ms-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.deadline}</p>
                     </div>
 
                     <div className="Home-Name">
-                      <select className="text_set">
+                      <select className="text_set ms-0">
                         <option>Expert Level</option>
 
                         <option>Expert</option>
@@ -150,7 +154,7 @@ const Home = () => {
                       </select>
                     </div>
                   </div>
-                  <button type="submit" className="btn_set1">
+                  <button type="submit" className="btn_set1 ms-0">
                     Register
                   </button>{" "}
                   {Object.keys(formErrors).length === 0 && isSubmit ? (
@@ -836,30 +840,31 @@ const Home = () => {
             <div className="col-md-6">
               <section className="faq_section accordion" id="accordionExample">
                 <div className="faq-inner">
-                  <div
-                    className="faq-item bg_set accordion-header"
-                    id="headingOne"
-                  >
-                    <h3
-                      className="faq_item-h3 accordion-button bg-transparent text-white shadow-none"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
+                  <div className="faq-item p-0 bg_set accordion-item">
+                    <h2
+                      className="faq_item-h3 p-0 accordion-header"
+                      id="headingOne"
                     >
-                      <span>+</span>&nbsp;
-                      <span className="faq-plus">
-                        How does your content writing process work?
-                      </span>
-                    </h3>
+                      <button
+                        className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="false"
+                        aria-controls="collapseOne"
+                      >
+                        + How does your content writing process work?
+                      </button>
+                    </h2>
+
                     <div
-                      className=" pera accordion-collapse collapse "
+                      className="bg-white accordion-collapse collapse"
                       id="collapseOne"
                       aria-labelledby="headingOne"
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
+                        {" "}
                         We will analyse your project requirements and
                         specifications once you have completed the online order
                         submission and payment procedure. This normally takes
@@ -869,29 +874,31 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <div
-                    className="faq-item bg_set accordion-header"
-                    id="headingTwo"
-                  >
-                    <h3
-                      className="faq_item-h3 accordion-button bg-transparent text-white shadow-none"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo"
+                  <div className="faq-item p-0 bg_set accordion-item">
+                    <h2
+                      className="faq_item-h3 p-0 accordion-header"
+                      id="headingTwo"
                     >
-                      <span>+</span>&nbsp;
-                      <span className="faq-plus">
-                        Can I own content copyright with my order?
-                      </span>
-                    </h3>
+                      <button
+                        className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        + Can I own content copyright with my order?
+                      </button>
+                    </h2>
+
                     <div
-                      className=" pera accordion-collapse collapse"
+                      className="bg-white accordion-collapse collapse"
                       id="collapseTwo"
                       aria-labelledby="headingTwo"
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
+                        {" "}
                         Yes, you have exclusive copyright as soon as We’ve
                         turned in the document and you pay for it. After We’ve
                         handed over the documents, it’s up to you to decide what
@@ -901,36 +908,37 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div
-                    className="faq-item bg_set accordion-header"
+                <div className="faq-item p-0 bg_set accordion-item">
+                  <h2
+                    className="faq_item-h3 p-0 accordion-header"
                     id="headingThree"
                   >
-                    <h3
-                      className="faq_item-h3 accordion-button bg-transparent text-white shadow-none"
-                      style={{ alignItems: "baseline" }}
+                    <button
+                      className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                      type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseThree"
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      <span>+</span>&nbsp;
-                      <span className="faq-plus ">
-                        Do you check contents on Copyscape or other related
-                        software?
-                      </span>
-                    </h3>
-                    <div
-                      className="pera accordion-collapse collapse"
-                      id="collapseThree"
-                      aria-labelledby="headingThree"
-                      data-bs-parent="#accordionExample"
-                    >
-                      <div className="accordion-body">
-                        We analyze articles for grammatical correctness using
-                        our Copyscape VIP account. All of the content we create
-                        is delivered by our editorial team.
-                      </div>
+                      + Do you check contents on Copyscape or other related
+                      software?
+                    </button>
+                  </h2>
+
+                  <div
+                    className="bg-white accordion-collapse collapse"
+                    id="collapseThree"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div className="accordion-body">
+                      {" "}
+                      We analyze articles for grammatical correctness using our
+                      Copyscape VIP account. All of the content we create is
+                      delivered by our editorial team.
                     </div>
                   </div>
                 </div>

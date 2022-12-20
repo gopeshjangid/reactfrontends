@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Review = () => {
   const initialValues = {
@@ -58,11 +58,13 @@ const Review = () => {
 
   return (
     <div>
-      <section className="top_sec">
+      <section className="top_sec p-0">
         <div className="container">
-          <div className="row">
+          <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1">Stunning Review Writing Service!</h1>
+              <h1 className="top_Sec-h1 p-0">
+                Stunning Review Writing Service!
+              </h1>
               <h2 className="top_Sec-h2">Best Online Review Writing|</h2>
               <p className="top_Sec-p">
                 GetProWriter is a leading name that offers competitive online
@@ -75,51 +77,69 @@ const Review = () => {
 
             <div className="col-md-6">
               <section className="form_sec">
-                <form style={{ padding: "4%" }} onSubmit={handleSubmit}>
+                <form
+                  style={{ padding: "4%" }}
+                  className="text-center"
+                  onSubmit={handleSubmit}
+                >
                   <h2 className="form_sec-h2">
                     Get In <span className="spa">Touch </span>
                   </h2>
-                  <input
-                    type="text"
-                    id="fname"
-                    name="username"
-                    placeholder="Name"
-                    onChange={inputChange}
-                    className="text_set"
-                  />
-                  <p style={{ color: "red" }}>{formErrors.username}</p>
-                  <input
-                    type="text"
-                    id="fname"
-                    name="email"
-                    placeholder="Email"
-                    onChange={inputChange}
-                    className="text_set"
-                  />
-                  <p style={{ color: "red" }}>{formErrors.email}</p>
-                  <input
-                    type="number"
-                    id="fname"
-                    name="number"
-                    placeholder="Phone"
-                    onChange={inputChange}
-                    className="text_set"
-                  />
-                  <p style={{ color: "red" }}>{formErrors.number}</p>
-                  <select className="text_set">
-                    <option>Select Service</option>
-                    <option>Content Writing</option>
-                  </select>
+                  <div className="d-flex space-between">
+                    <div className="Home-Name">
+                      <input
+                        type="text"
+                        id="fname"
+                        name="username"
+                        placeholder="Name"
+                        onChange={inputChange}
+                        className="text_set ms-0"
+                      />
+                      <p style={{ color: "red" }}>{formErrors.username}</p>
+                    </div>
+
+                    <div className="Home-Name">
+                      <input
+                        type="text"
+                        id="fname"
+                        name="email"
+                        placeholder="Email"
+                        onChange={inputChange}
+                        className="text_set ms-0"
+                      />
+                      <p style={{ color: "red" }}>{formErrors.email}</p>
+                    </div>
+                  </div>
+                  <div className="d-flex space-between">
+                    <div className="Home-Name">
+                      <input
+                        type="number"
+                        id="fname"
+                        name="number"
+                        placeholder="Phone"
+                        onChange={inputChange}
+                        className="text_set ms-0"
+                      />
+                      <p style={{ color: "red" }}>{formErrors.number}</p>
+                    </div>
+
+                    <div className="Home-Name">
+                      <select className="text_set ms-0">
+                        <option>Select Service</option>
+                        <option>Content Writing</option>
+                      </select>
+                    </div>
+                  </div>
                   <textarea
-                    className="form-control form-area text_set-area"
-                    rows="8"
+                    className="form-control form-area ms-0 text_set-area"
+                    rows="5"
                     id="message"
                     placeholder="Message"
                     onChange={inputChange}
                     name="message"
                   ></textarea>
                   <p style={{ color: "red" }}>{formErrors.message}</p>
-                  <button type="submit" className="btn_set">
+                  <button type="submit" className="btn_set ms-0">
                     Submit
                   </button>{" "}
                   {Object.keys(formErrors).length === 0 && isSubmit ? (
@@ -806,103 +826,105 @@ const Review = () => {
             <div className="col-md-6">
               <section className="faq_section accordion" id="accordionExample">
                 <div className="faq-inner">
-                  <div
-                    className="faq-item bg_set accordion-header"
-                    id="headingOne"
-                  >
-                    <h3
-                      className="faq_item-h3 accordion-button bg-transparent text-white shadow-none"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
+                  <div className="faq-item p-0 bg_set accordion-item">
+                    <h2
+                      className="faq_item-h3 p-0 accordion-header"
+                      id="headingOne"
                     >
-                      <span className="faq-plus">
-                        + Can we get good review writers from GetProWriter?
-                      </span>
-                    </h3>
+                      <button
+                        className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="false"
+                        aria-controls="collapseOne"
+                      >
+                        + How does your content writing process work?
+                      </button>
+                    </h2>
+
                     <div
-                      className=" pera accordion-collapse collapse "
+                      className="bg-white accordion-collapse collapse"
                       id="collapseOne"
                       aria-labelledby="headingOne"
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        Yes. GetProWriter has among the best review writers in
-                        the industry. We hire only the most talented people and
-                        we have a rigorous hiring process to ensure that we only
-                        hire people with the highest levels of skill and talent.
-                        Our writers attend excellent training programs so that
-                        they are always improving themselves and their work.
+                        {" "}
+                        We will analyse your project requirements and
+                        specifications once you have completed the online order
+                        submission and payment procedure. This normally takes
+                        one to two days, depending on the complexity and
+                        requirements of your project.
                       </div>
                     </div>
                   </div>
 
-                  <div
-                    className="faq-item bg_set accordion-header"
-                    id="headingTwo"
-                  >
-                    <h3
-                      className="faq_item-h3 accordion-button bg-transparent text-white shadow-none"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo"
+                  <div className="faq-item p-0 bg_set accordion-item">
+                    <h2
+                      className="faq_item-h3 p-0 accordion-header"
+                      id="headingTwo"
                     >
-                      <span className="faq-plus">
-                        + Which is the best platform to get the best online
-                        reviews for my business?
-                      </span>
-                    </h3>
+                      <button
+                        className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        + Can I own content copyright with my order?
+                      </button>
+                    </h2>
+
                     <div
-                      className=" pera accordion-collapse collapse"
+                      className="bg-white accordion-collapse collapse"
                       id="collapseTwo"
                       aria-labelledby="headingTwo"
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        We can confidently say that GetProWriter is in the
-                        league of best platforms to get online reviews for any
-                        business. We have a team of experts who are working hard
-                        to make sure that our clients get the best quality
-                        content at competitive prices. Our writers are motivated
-                        by the passion for writing and helping people out. They
-                        have an excellent command of the English language and
-                        can write on any subject matter with ease.
+                        {" "}
+                        Yes, you have exclusive copyright as soon as We’ve
+                        turned in the document and you pay for it. After We’ve
+                        handed over the documents, it’s up to you to decide what
+                        to do with the information. You can re-distribute it,
+                        alter it, truncate it, or just remove it (although this
+                        would be heartbreaking and discouraging).
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div
-                    className="faq-item bg_set accordion-header"
+                <div className="faq-item p-0 bg_set accordion-item">
+                  <h2
+                    className="faq_item-h3 p-0 accordion-header"
                     id="headingThree"
                   >
-                    <h3
-                      className="faq_item-h3 accordion-button bg-transparent text-white shadow-none"
+                    <button
+                      className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                      type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseThree"
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      <span className="faq-plus ">
-                        + Do you have writers from America?
-                      </span>
-                    </h3>
-                    <div
-                      className="pera accordion-collapse collapse"
-                      id="collapseThree"
-                      aria-labelledby="headingThree"
-                      data-bs-parent="#accordionExample"
-                    >
-                      <div className="accordion-body">
-                        Yes, we have writers from America. In fact, the writers
-                        in our company are hired from across the globe. We’re
-                        very proud of our international team and their ability
-                        to come together to create such a diverse and exciting
-                        portfolio of work. This is what makes GetProWriter stand
-                        out among its competitors in the domain.
-                      </div>
+                      + Do you check contents on Copyscape or other related
+                      software?
+                    </button>
+                  </h2>
+
+                  <div
+                    className="bg-white accordion-collapse collapse"
+                    id="collapseThree"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div className="accordion-body">
+                      {" "}
+                      We analyze articles for grammatical correctness using our
+                      Copyscape VIP account. All of the content we create is
+                      delivered by our editorial team.
                     </div>
                   </div>
                 </div>
