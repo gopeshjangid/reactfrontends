@@ -65,6 +65,7 @@ const AccountSetting = () => {
   const [data, setData] = useState();
   const [message, setMessage] = useState();
   const [amount, setAmount] = useState("");
+  const [paypal, setPaypal] = useState("");
 
   const inputChange = (e) => {
     const { name, value } = e.target;
@@ -174,6 +175,22 @@ const AccountSetting = () => {
       .catch((error) => console.log(error));
   };
 
+  const payWithPaypal = () => {
+    axios
+      .post("http://localhost:5000/PaypalPayment", { wallet: paypal })
+      .then((response) => {
+        sessionStorage.setItem("wallet", paypal);
+        console.log(response);
+        sessionStorage.setItem("pay_id", response.data.id);
+        window.open(response.data.url, "_self");
+        // setPaypal({
+        //   response,
+        // });
+      })
+
+      .catch((error) => console.log(error));
+  };
+  console.log(paypal);
   return (
     <div>
       <section className="reg_sec">
@@ -560,29 +577,141 @@ const AccountSetting = () => {
                 </div>
 
                 <div id="menu6" className="container tab-pane fade">
-                  <div className="payment-gateway">
+                  <p className="d-flex justify-content-center align-items-center fw-bold fs-5">
+                    Wallet Balance:&nbsp;&nbsp;
+                    <span className="fw-bold fs-4" style={{ color: "#029a9f" }}>
+                      ₹{Data1?.wallet}
+                    </span>
+                  </p>
+                  <p className="text-secondary text-center fs-4">
+                    you can add a wallet in three ways
+                  </p>
+                  <div className="payment-gateway justify-content-center">
                     <button
                       type="button"
                       className="btn btn-primary"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal"
                     >
-                      Make Payment
+                      Wallet with Stripe
                     </button>
-                    <p className="d-flex align-items-center fw-bold fs-5">
-                      Wallet Balance:&nbsp;&nbsp;
-                      <span
-                        className="fw-bold fs-4"
-                        style={{ color: "#029a9f" }}
-                      >
-                        ₹{Data1?.wallet}
-                      </span>
-                    </p>
+
+                    <div
+                      className="modal fade"
+                      id="exampleModal"
+                      tabIndex="-1"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog">
+                        <div className="modal-content">
+                          <div className="modal-header ">
+                            <h1
+                              className="modal-title fs-5"
+                              id="exampleModalLabel"
+                            >
+                              Add Wallet with Stripe
+                            </h1>
+                            <button
+                              type="button"
+                              className="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+
+                          <div className="modal-body">
+                            <input
+                              className="w-100 px-1 py-3"
+                              placeholder="0"
+                              type="number"
+                              value={amount}
+                              onChange={(e) => setAmount(e.target.value)}
+                            />
+                          </div>
+                          <div className="modal-footer payment-model-footer ">
+                            {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+                            <button
+                              type="button"
+                              className="btn btn-primary w-100"
+                              onClick={() => walletRecharge()}
+                            >
+                              Proceed
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal2"
+                    >
+                      Wallet with PayPal
+                    </button>
+
+                    <div
+                      className="modal fade"
+                      id="exampleModal2"
+                      tabIndex="-1"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div className="modal-dialog">
+                        <div className="modal-content">
+                          <div className="modal-header ">
+                            <h1
+                              className="modal-title fs-5"
+                              id="exampleModalLabel"
+                            >
+                              Add Wallet with PayPal
+                            </h1>
+                            <button
+                              type="button"
+                              className="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+
+                          <div className="modal-body">
+                            <input
+                              className="w-100 px-1 py-3"
+                              placeholder="0"
+                              type="number"
+                              value={paypal}
+                              onChange={(e) => setPaypal(e.target.value)}
+                            />
+                          </div>
+                          <div className="modal-footer payment-model-footer ">
+                            {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+                            <button
+                              type="button"
+                              className="btn btn-primary w-100"
+                              onClick={() => payWithPaypal()}
+                            >
+                              Proceed
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal3"
+                    >
+                      Wallet with RazorPay
+                    </button>
                   </div>
 
                   <div
                     className="modal fade"
-                    id="exampleModal"
+                    id="exampleModal3"
                     tabIndex="-1"
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
@@ -594,7 +723,7 @@ const AccountSetting = () => {
                             className="modal-title fs-5"
                             id="exampleModalLabel"
                           >
-                            Add Wallet
+                            Add Wallet with RazorPay
                           </h1>
                           <button
                             type="button"

@@ -652,7 +652,7 @@ const ViewCart = () => {
                         <div className="col-md-6 text-start ps-4">
                           <button
                             type="button"
-                            className="btn w-100 Pay me-3"
+                            className="btn w-100 Pay me-3 disable"
                             onClick={() =>
                               payWithPaypal(
                                 couponApplied?.message?.offAmount

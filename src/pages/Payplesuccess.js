@@ -1,31 +1,47 @@
 // import axios from "axios";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useSearchParams } from "react-router-dom";
 
 const Payplesuccess = () => {
-  //   const tokenID = localStorage.getItem("token");
-  //   const pay_id = sessionStorage.getItem("pay_id");
-  //   const amount = sessionStorage.getItem("TotalAmount");
-  //   const headers = {
-  //     "Content-Type": "application/json",
-  //     Authorization: `${tokenID}`,
-  //   };
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  //   const data = { totalAmount: parseInt(amount), pay_id };
+  const tokenID = localStorage.getItem("token");
+  const pay_id = sessionStorage.getItem("pay_id");
+  const paypal = sessionStorage.getItem("wallet");
+  const headers = {
+    "Content-Type": "application/json",
+    Authorization: `${tokenID}`,
+  };
 
-  //   useEffect(() => {
-  //     axios
-  //       .post("http://localhost:5000/orderStripeSuccess", data, {
-  //         headers: headers,
-  //       })
-  //       .then((res) => {
-  //         console.log(res);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   }, []);
+  const data = { wallet: parseInt(paypal), pay_id };
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!sessionStorage.getItem("wallet")) {
+      navigate("/");
+    } else {
+      let a = searchParams.get("paymentId");
+      let b = searchParams.get("PayerID");
+      console.log("a=====", a);
+      console.log("b=====", b);
+      axios
+        .post("http://localhost:5000/payplesuccess", data, {
+          headers: headers,
+        })
+        .then((res) => {
+          console.log(res);
+
+          sessionStorage.removeItem("pay_id");
+          sessionStorage.removeItem("wallet");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, []);
   return (
     <section className="fp_sec bg-transparent ">
       <div className="container">

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const Ordersuccess = () => {
@@ -12,18 +13,25 @@ const Ordersuccess = () => {
   };
 
   const data = { totalAmount: parseInt(amount), pay_id };
+  const navigate = useNavigate();
 
   useEffect(() => {
-    axios
-      .post("http://localhost:5000/orderStripeSuccess", data, {
-        headers: headers,
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (!sessionStorage.getItem("TotalAmount")) {
+      navigate("/");
+    } else {
+      axios
+        .post("http://localhost:5000/orderStripeSuccess", data, {
+          headers: headers,
+        })
+        .then((res) => {
+          console.log(res);
+          sessionStorage.removeItem("pay_id");
+          sessionStorage.removeItem("TotalAmount");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }, []);
 
   return (

@@ -17,21 +17,21 @@ const Success = () => {
   useEffect(() => {
     if (!sessionStorage.getItem("wallet")) {
       navigate("/");
+    } else {
+      axios
+        .post("http://localhost:5000/rechargeWallet", data, {
+          headers: headers,
+        })
+        .then((res) => {
+          console.log(res);
+
+          sessionStorage.removeItem("pay_id");
+          sessionStorage.removeItem("wallet");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
-
-    axios
-      .post("http://localhost:5000/rechargeWallet", data, {
-        headers: headers,
-      })
-      .then((res) => {
-        console.log(res);
-
-        sessionStorage.removeItem("pay_id");
-        sessionStorage.removeItem("wallet");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   }, []);
 
   return (

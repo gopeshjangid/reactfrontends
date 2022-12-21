@@ -217,104 +217,122 @@ const Home = () => {
               Prepare to ace your content writing by hiring our top-notch
               content writers.
             </p>
-            <div className="col-md-3">
+            <div className="col-md-3 text-center">
               <div className="box">
-                <i aria-hidden="true" className="fas fa-ghost box_icon"></i>
+                <i
+                  aria-hidden="true"
+                  className="fas fa-ghost box_icon ms-0 "
+                ></i>
                 <h3 className="box-h3">Ghost Writing</h3>
               </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-md-3 text-center">
               <div className="box">
                 <i
                   aria-hidden="true"
-                  className="fas fa-file-signature box_icon"
+                  className="fas fa-file-signature box_icon ms-0"
                 ></i>
                 <h3 className="box-h3">Review Writing</h3>
               </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-md-3 text-center">
               <div className="box">
-                <i aria-hidden="true" className="fas fa-blog box_icon"></i>
+                <i
+                  aria-hidden="true"
+                  className="fas fa-blog box_icon ms-0 "
+                ></i>
                 <h3 className="box-h3">Blog Writing</h3>
               </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-md-3 text-center">
               <div className="box">
                 <i
                   aria-hidden="true"
-                  className="fas fa-pencil-alt box_icon"
+                  className="fas fa-pencil-alt box_icon ms-0"
                 ></i>
                 <h3 className="box-h3">Freelance Writing</h3>
               </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-md-3 text-center">
               <div className="box">
                 <i
                   aria-hidden="true"
-                  className="fas fa-pen-square  box_icon"
+                  className="fas fa-pen-square  box_icon ms-0"
                 ></i>
                 <h3 className="box-h3">Product Writing</h3>
               </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-md-3 text-center">
               <div className="box">
                 <i
                   aria-hidden="true"
-                  className="fas fa-copyright  box_icon"
+                  className="fas fa-copyright  box_icon ms-0"
                 ></i>
                 <h3 className="box-h3">Copywriting</h3>
               </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-md-3 text-center">
               <div className="box">
-                <i aria-hidden="true" className="far fa-file-word box_icon"></i>
+                <i
+                  aria-hidden="true"
+                  className="far fa-file-word box_icon ms-0 "
+                ></i>
                 <h3 className="box-h3">Content Writing</h3>
               </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-md-3 text-center">
               <div className="box">
                 <i
                   aria-hidden="true"
-                  className="fas fa-laptop-code box_icon"
+                  className="fas fa-laptop-code box_icon ms-0"
                 ></i>
                 <h3 className="box-h3">Article Writing</h3>
               </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-md-3 text-center">
               <div className="box">
-                <i aria-hidden="true" className="far fa-file-alt box_icon"></i>
+                <i
+                  aria-hidden="true"
+                  className="far fa-file-alt box_icon ms-0 "
+                ></i>
                 <h3 className="box-h3">SEO Writing</h3>
               </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-md-3 text-center">
               <div className="box">
-                <i aria-hidden="true" className="fas fa-pen-fancy box_icon"></i>
+                <i
+                  aria-hidden="true"
+                  className="fas fa-pen-fancy box_icon ms-0 "
+                ></i>
                 <h3 className="box-h3">Other Content Writing</h3>
               </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-md-3 text-center">
               <div className="box">
                 <i
                   aria-hidden="true"
-                  className="fas fa-quote-left box_icon"
+                  className="fas fa-quote-left box_icon ms-0"
                 ></i>
                 <h3 className="box-h3">Testimonials Writing</h3>
               </div>
             </div>
 
-            <div className="col-md-3">
+            <div className="col-md-3 text-center">
               <div className="box">
-                <i aria-hidden="true" className="fas fa-envelope box_icon"></i>
+                <i
+                  aria-hidden="true"
+                  className="fas fa-envelope box_icon ms-0 "
+                ></i>
                 <h3 className="box-h3">Email Writing</h3>
               </div>
             </div>
@@ -424,8 +442,11 @@ const Home = () => {
               <i className="fa-thin fa-horizontal-rule"></i>
             </span>
             <div className="col-md-4">
-              <div className="content-box">
-                <i aria-hidden="true" className="far fa-sun content-icon"></i>
+              <div className="content-box text-center">
+                <i
+                  aria-hidden="true"
+                  className="far fa-sun content-icon ms-0"
+                ></i>
                 <h3 className="content-h3">The SEO Factor</h3>
                 <p className="content-p">
                   When it comes to writing, your success on search engines
@@ -437,10 +458,10 @@ const Home = () => {
             </div>
 
             <div className="col-md-4">
-              <div className="content-box">
+              <div className="content-box text-center">
                 <i
                   aria-hidden="true"
-                  className="fas fa-hands-helping content-icon"
+                  className="fas fa-hands-helping content-icon ms-0"
                 ></i>
                 <h3 className="content-h3">Brand Tone</h3>
                 <p className="content-p">
@@ -453,10 +474,10 @@ const Home = () => {
             </div>
 
             <div className="col-md-4">
-              <div className="content-box">
+              <div className="content-box text-center">
                 <i
                   aria-hidden="true"
-                  className="fas fa-shipping-fast content-icon"
+                  className="fas fa-shipping-fast content-icon ms-0"
                 ></i>
                 <h3 className="content-h3">Fast Turnaround</h3>
                 <p className="content-p">
@@ -468,8 +489,11 @@ const Home = () => {
             </div>
 
             <div className="col-md-4">
-              <div className="content-box">
-                <i aria-hidden="true" className="fas fa-medal content-icon"></i>
+              <div className="content-box text-center">
+                <i
+                  aria-hidden="true"
+                  className="fas fa-medal content-icon ms-0"
+                ></i>
                 <h3 className="content-h3">Subject Matter Focus</h3>
                 <p className="content-p">
                   We have skilled writers with an eye for detail. Each of the
@@ -480,10 +504,10 @@ const Home = () => {
             </div>
 
             <div className="col-md-4">
-              <div className="content-box">
+              <div className="content-box text-center">
                 <i
                   aria-hidden="true"
-                  className="fas fa-book-open content-icon"
+                  className="fas fa-book-open content-icon ms-0"
                 ></i>
                 <h3 className="content-h3">Professionally-Written Content</h3>
                 <p className="content-p">
@@ -495,10 +519,10 @@ const Home = () => {
             </div>
 
             <div className="col-md-4">
-              <div className="content-box">
+              <div className="content-box text-center">
                 <i
                   aria-hidden="true"
-                  className="far fa-check-circle content-icon"
+                  className="far fa-check-circle content-icon ms-0"
                 ></i>
                 <h3 className="content-h3">Strict Quality Check</h3>
                 <p className="content-p">

@@ -52,8 +52,8 @@ const Header = () => {
   return (
     <div>
       <section>
-        <nav className="navbar navbar-expand-sm  navbar-dark">
-          <div className="container">
+        <div className="container">
+          <nav className="navbar navbar-expand-sm  navbar-dark">
             <Link className="navbar-brand logo pe-0" to="/">
               <img src={Logo} />
             </Link>
@@ -151,8 +151,8 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </section>
     </div>
   );
