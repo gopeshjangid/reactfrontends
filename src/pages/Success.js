@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Success = () => {
   const tokenID = localStorage.getItem("token");
@@ -12,14 +12,22 @@ const Success = () => {
   };
 
   const data = { wallet: parseInt(amount), pay_id };
+  const navigate = useNavigate();
 
   useEffect(() => {
+    if (!sessionStorage.getItem("wallet")) {
+      navigate("/");
+    }
+
     axios
       .post("http://localhost:5000/rechargeWallet", data, {
         headers: headers,
       })
       .then((res) => {
         console.log(res);
+
+        sessionStorage.removeItem("pay_id");
+        sessionStorage.removeItem("wallet");
       })
       .catch((err) => {
         console.log(err);
