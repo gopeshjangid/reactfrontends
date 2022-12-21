@@ -14,6 +14,10 @@ const AccountSetting = () => {
   const [Users, setUsers] = useState({});
 
   useEffect(() => {
+  
+    sessionStorage.removeItem('wallet')
+    sessionStorage.removeItem('pay_id')
+
     const getToken = localStorage.getItem("token");
     const tokenID = localStorage.getItem("token");
     console.log("hello+++++++++++", tokenID);
