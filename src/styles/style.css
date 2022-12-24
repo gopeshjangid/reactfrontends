@@ -403,7 +403,6 @@
   background-color: #f6fbfb;
   padding: 30px 20px 10px 20px;
   border-radius: 10px;
-  height: 420px;
   transition: 0.5s;
 }
 .get_sec-box:hover {
@@ -2413,7 +2412,6 @@ th {
   }
   .btn {
     width: 60%;
-    margin-left: 21%;
   }
   .img-box {
     width: 100%;
@@ -2637,12 +2635,6 @@ th {
   border-radius: 11px;
 }
 
-.fl_l {
-  float: left;
-}
-.fl_r {
-  float: right;
-}
 .form-control:focus {
   color: #212529;
   background-color: #fff;
@@ -2654,4 +2646,22 @@ th {
   border-color: #ced4da;
   outline: 0;
   box-shadow: none;
+}
+
+.right {
+  background: white;
+  width: 60% !important;
+  padding: 10px;
+  border-radius: 10px;
+  float: right;
+  margin-bottom: 10px;
+}
+.left {
+   background: rgb(255, 192, 192);
+  width: 60% !important;
+  padding: 10px;
+  border-radius: 10px;
+  float: left;
+  margin-bottom: 10px;
+  color: #000;
 }

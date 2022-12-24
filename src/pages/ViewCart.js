@@ -23,6 +23,8 @@ const ViewCart = () => {
     // getCoupons();
   }, []);
   useEffect(() => {
+    sessionStorage.removeItem("wallet");
+    sessionStorage.removeItem("pay_id");
     // add entity - POST
     // e.preventDefault();
     // creates entity
@@ -652,7 +654,7 @@ const ViewCart = () => {
                         <div className="col-md-6 text-start ps-4">
                           <button
                             type="button"
-                            className="btn w-100 Pay me-3 disable"
+                            className="btn w-100 Pay me-3 "
                             onClick={() =>
                               payWithPaypal(
                                 couponApplied?.message?.offAmount
