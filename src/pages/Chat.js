@@ -4,11 +4,14 @@ import React, { useEffect, useState } from "react";
 import socketIO from "socket.io-client";
 import Message from "./Message";
 import ReactScrollToBoottome from "react-scroll-to-bottom";
+import axios from "axios";
 const ENDPOINT = "http://localhost:5000/";
 let socket;
 const Chat = () => {
   const [id, setId] = useState("");
   const [messages, setMessages] = useState([]);
+  const [chatId, setChatId] = useState("");
+  const [messageText, setMessageText] = useState("");
 
   const send = () => {
     const token = localStorage.getItem("token");
@@ -57,6 +60,117 @@ const Chat = () => {
     };
   }, [messages]);
 
+  const fetchChats = async () => {
+    const token = localStorage.getItem("token");
+
+    var config = {
+      method: "get",
+      url: "http://localhost:5000/chat",
+      headers: {
+        authorization: token,
+      },
+    };
+
+    await axios(config)
+      .then(function (response) {
+        console.log("***********************", response.data[0]);
+        setChatId(response.data[0]._id);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  const accessChat = async () => {
+    const token = localStorage.getItem("token");
+
+    var config = {
+      method: "post",
+      url: "http://localhost:5000/chat",
+      headers: {
+        authorization: token,
+      },
+    };
+
+    await axios(config)
+      .then(function (response) {
+        console.log(
+          "**********accessed the chat with admin**********",
+          response.data
+        );
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  const fetchMessages = async () => {
+    if (!chatId) {
+      return;
+    }
+    const token = localStorage.getItem("token");
+
+    var config = {
+      method: "get",
+      url: `http://localhost:5000/message/${chatId}`,
+      headers: {
+        Authorization: token,
+      },
+    };
+
+    await axios(config)
+      .then(function (response) {
+        console.log("%%%%%%%%%%%%%%%%%%%%", response.data);
+        setMessages(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    accessChat();
+    fetchChats();
+    fetchMessages();
+  }, []);
+
+  useEffect(() => {
+    fetchMessages();
+  }, [chatId]);
+
+  const messageSendHandler = () => {
+    const token = localStorage.getItem("token");
+
+    var data = JSON.stringify({
+      chatId: chatId,
+      content: messageText,
+    });
+
+    var config = {
+      method: "post",
+      url: "http://localhost:5000/message",
+      headers: {
+        authorization: token,
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(response.data);
+        setMessages([...messages, response.data]);
+        setMessageText("");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  const handleChange = (e) => {
+    setMessageText(e.target.value);
+  };
+
   return (
     <>
       <div className="card card_box mt-5">
@@ -73,9 +187,9 @@ const Chat = () => {
               <ReactScrollToBoottome className="chatBox">
                 {messages.map((item, i) => (
                   <Message
-                    user={item.id === id ? "" : item.user}
-                    message={item.message}
-                    classs={item.id ? "left" : "right"}
+                    user={item.sender.username + " "}
+                    message={item.content}
+                    classs={item.sender.email === 'getproadmin000@gmail.com' ? "left" : "right"}
                   />
                 ))}
               </ReactScrollToBoottome>
@@ -162,12 +276,11 @@ const Chat = () => {
           id="chatInput"
           placeholder="type here...."
           name="text"
-          // value={newMessage}
-          // onChange={handleNewMessageChange}
+          value={messageText}
+          onChange={handleChange}
         ></textarea>
         <button
-          type="submit"
-          onClick={send}
+          onClick={messageSendHandler}
           className="btn btn-primary chat_s_btn"
         >
           Submit
