@@ -8,11 +8,67 @@ import ViewOrder from "./ViewOrder";
 import Chat from "./Chat";
 // import Login from './Login'
 
+function loadScript(src) {
+  return new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = () => {
+      resolve(true);
+    };
+    script.onerror = () => {
+      resolve(false);
+    };
+    document.body.appendChild(script);
+  });
+}
+
 const AccountSetting = () => {
   const navigate = useNavigate();
 
   const [Data1, setData1] = useState([]);
   const [Users, setUsers] = useState({});
+
+    async function showRazorpay() {
+      const res = await loadScript(
+        "https://checkout.razorpay.com/v1/checkout.js"
+      );
+
+      if (!res) {
+        alert("Razorpay SDK failed to load. Are you online?");
+        return;
+      }
+
+      const data = await fetch("http://localhost:5000/razorpayPayment", {
+        method: "POST",
+      }).then((t) => t.json());
+
+      console.log(data);
+
+      const options = {
+        key: "rzp_test_KiBn8QyRFCYQnw",
+        currency: data.order.currency,
+        amount: data.order.amount.toString(),
+        order_id: data.order.d,
+        name: "Donation",
+        callback_url: "/razorpay-is-completed",
+        description: "Thank you for nothing. Please give us some money",
+        handler: function (response) {
+          // alert(response.razorpay_payment_id);
+          // alert(response.razorpay_order_id);
+          // alert(response.razorpay_signature);
+
+          alert("Transaction successful");
+        },
+        prefill: {
+          name: "Rajat",
+          email: "rajat@rajat.com",
+          phone_number: "9899999999",
+        },
+      };
+      const paymentObject = new window.Razorpay(options);
+      paymentObject.open();
+    }
+
 
   useEffect(() => {
     sessionStorage.removeItem("wallet");
@@ -609,7 +665,7 @@ const AccountSetting = () => {
                           <button
                             type="button"
                             className="btn btn-primary w-100"
-                            onClick={() => walletRecharge()}
+                            onClick={() => showRazorpay()}
                           >
                             Proceed
                           </button>
