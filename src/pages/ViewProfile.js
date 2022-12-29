@@ -35,9 +35,6 @@ const ViewProfile = () => {
   // const [isLoggedin, setIsLoggedin] = useState(false);
 
   useEffect(() => {
-    // add entity - POST
-    // e.preventDefault();
-    // creates entity
     const tokenID = localStorage.getItem("token");
     console.log("hello", tokenID);
     fetch("http://localhost:5000/viewProfile", {
@@ -48,7 +45,7 @@ const ViewProfile = () => {
         "Content-type": "application/json",
         Authorization: `${tokenID}`,
       },
-    }) // .then((res) => res.json())
+    })
       .then((response) =>
         response.json(
           setUsers({
@@ -56,16 +53,10 @@ const ViewProfile = () => {
           })
         )
       )
-
       .then((json) => {
-        // if (json.message === "mail have sent successfully") {
-        // 	navigate('/login');
-        // }
-
         setData(json);
         setUserName(json.data.username);
         console.log(Users);
-        // setError(json.error)
       })
       .catch((err) => {
         console.log(err);

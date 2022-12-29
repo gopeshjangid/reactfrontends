@@ -5,13 +5,19 @@ import socketIO from "socket.io-client";
 import Message from "./Message";
 import ReactScrollToBoottome from "react-scroll-to-bottom";
 import axios from "axios";
-const ENDPOINT = "http://localhost:5000/";
-let socket;
-const Chat = () => {
+import io from "socket.io-client";
+
+const ENDPOINT = "http://localhost:5000";
+var socket, selectedChatCompare;
+
+const Chat = ({ orderId, orderName }) => {
   const [id, setId] = useState("");
   const [messages, setMessages] = useState([]);
   const [chatId, setChatId] = useState("");
   const [messageText, setMessageText] = useState("");
+  const [selectedChat, setSelectedChat] = useState({});
+  const [socketConnected, setSocketConnected] = useState(false);
+  const [userData, setUserData] = useState({});
 
   const send = () => {
     const token = localStorage.getItem("token");
@@ -74,7 +80,7 @@ const Chat = () => {
     await axios(config)
       .then(function (response) {
         console.log("***********************", response.data[0]);
-        setChatId(response.data[0]._id);
+        setChatId(response?.data[0]?._id);
       })
       .catch(function (error) {
         console.log(error);
@@ -82,7 +88,11 @@ const Chat = () => {
   };
 
   const accessChat = async () => {
+    var data = JSON.stringify({
+      orderId: orderId,
+    });
     const token = localStorage.getItem("token");
+    console.log("chat acces function called");
 
     var config = {
       method: "post",
@@ -90,6 +100,7 @@ const Chat = () => {
       headers: {
         authorization: token,
       },
+      data: { orderId: orderId },
     };
 
     await axios(config)
@@ -98,9 +109,12 @@ const Chat = () => {
           "**********accessed the chat with admin**********",
           response.data
         );
+
+        setSelectedChat(response.data);
+        setChatId(response?.data?._id);
       })
       .catch(function (error) {
-        console.log(error);
+        console.log("kjhdkhdkdhkdjdhk", error);
       });
   };
 
@@ -109,6 +123,7 @@ const Chat = () => {
       return;
     }
     const token = localStorage.getItem("token");
+    console.log("!!!!!!!!!!!!!", chatId);
 
     var config = {
       method: "get",
@@ -122,21 +137,78 @@ const Chat = () => {
       .then(function (response) {
         console.log("%%%%%%%%%%%%%%%%%%%%", response.data);
         setMessages(response.data);
+
+        socket.emit("join chat", selectedChat._id);
       })
       .catch(function (error) {
         console.log(error);
       });
   };
 
+  const getUser = async () => {
+    const tokenID = localStorage.getItem("token");
+    console.log("hello", tokenID);
+    fetch("http://localhost:5000/viewProfile", {
+      method: "GET",
+      mode: "cors",
+
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${tokenID}`,
+      },
+    })
+      .then((response) => console.log(response))
+      .then((json) => {
+        setUserData(json);
+        setUserName(json.data.username);
+        console.log(Users);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect(() => {
-    accessChat();
-    fetchChats();
-    fetchMessages();
+    getUser();
+
+    socket = io(ENDPOINT);
+    socket.emit("setup", userData);
+    socket.on("connected", () => setSocketConnected(true));
+    socket.on("typing", () => setIsTyping(true));
+    socket.on("stop typing", () => setIsTyping(false));
+
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
+    console.log(":::::");
+    socket.on("emitText", (test) => concole.log(test));
+
+    socket.on("message recieved", (newMessageRecieved) => {
+      console.log("NEW MESSAGE", newMessageRecieved);
+      if (
+        !selectedChatCompare ||
+        selectedChatCompare._id !== newMessageRecieved.chat._id
+      ) {
+        console.log(newMessageRecieved);
+      } else {
+        console.log(newMessageRecieved);
+        setMessages([...messages, newMessageRecieved]);
+      }
+    });
+  });
+
+  useEffect(() => {
+    accessChat();
+    // fetchChats();
+    socket.on("emitText", (test) => concole.log(test));
+  }, [orderId]);
+
+  useEffect(() => {
     fetchMessages();
-  }, [chatId]);
+
+    selectedChatCompare = selectedChat;
+  }, [chatId, selectedChat]);
 
   const messageSendHandler = () => {
     const token = localStorage.getItem("token");
@@ -159,6 +231,7 @@ const Chat = () => {
     axios(config)
       .then(function (response) {
         console.log(response.data);
+        socket.emit("new message", response.data);
         setMessages([...messages, response.data]);
         setMessageText("");
       })
@@ -175,7 +248,7 @@ const Chat = () => {
     <>
       <div className="card card_box mt-5">
         <p className="chat_idp text-center">
-          <b>Order Id:</b> 45578 | <b>Title:</b> Package tutorial one
+          <b>Order Id:</b> {orderId} | <b>Title:</b> {orderName}
         </p>
 
         <div className="card-header text-center h1">
@@ -187,9 +260,13 @@ const Chat = () => {
               <ReactScrollToBoottome className="chatBox">
                 {messages.map((item, i) => (
                   <Message
-                    user={item.sender.username + " "}
+                    user={item.sender.username + ": "}
                     message={item.content}
-                    classs={item.sender.email === 'getproadmin000@gmail.com' ? "left" : "right"}
+                    classs={
+                      item.sender.email === "getproadmin000@gmail.com"
+                        ? "left"
+                        : "right"
+                    }
                   />
                 ))}
               </ReactScrollToBoottome>

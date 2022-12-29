@@ -27,48 +27,50 @@ const AccountSetting = () => {
 
   const [Data1, setData1] = useState([]);
   const [Users, setUsers] = useState({});
+  const [showChat, setShowChat] = useState(false);
+  const [orderId, setOrderId] = useState("");
+  const [orderName, setOrderName] = useState("");
 
-    async function showRazorpay() {
-      const res = await loadScript(
-        "https://checkout.razorpay.com/v1/checkout.js"
-      );
+  async function showRazorpay() {
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
 
-      if (!res) {
-        alert("Razorpay SDK failed to load. Are you online?");
-        return;
-      }
-
-      const data = await fetch("http://localhost:5000/razorpayPayment", {
-        method: "POST",
-      }).then((t) => t.json());
-
-      console.log(data);
-
-      const options = {
-        key: "rzp_test_KiBn8QyRFCYQnw",
-        currency: data.order.currency,
-        amount: data.order.amount.toString(),
-        order_id: data.order.d,
-        name: "Donation",
-        callback_url: "/razorpay-is-completed",
-        description: "Thank you for nothing. Please give us some money",
-        handler: function (response) {
-          // alert(response.razorpay_payment_id);
-          // alert(response.razorpay_order_id);
-          // alert(response.razorpay_signature);
-
-          alert("Transaction successful");
-        },
-        prefill: {
-          name: "Rajat",
-          email: "rajat@rajat.com",
-          phone_number: "9899999999",
-        },
-      };
-      const paymentObject = new window.Razorpay(options);
-      paymentObject.open();
+    if (!res) {
+      alert("Razorpay SDK failed to load. Are you online?");
+      return;
     }
 
+    const data = await fetch("http://localhost:5000/razorpayPayment", {
+      method: "POST",
+    }).then((t) => t.json());
+
+    console.log(data);
+
+    const options = {
+      key: "rzp_test_KiBn8QyRFCYQnw",
+      currency: data.order.currency,
+      amount: data.order.amount.toString(),
+      order_id: data.order.d,
+      name: "Donation",
+      callback_url: "/razorpay-is-completed",
+      description: "Thank you for nothing. Please give us some money",
+      handler: function (response) {
+        // alert(response.razorpay_payment_id);
+        // alert(response.razorpay_order_id);
+        // alert(response.razorpay_signature);
+
+        alert("Transaction successful");
+      },
+      prefill: {
+        name: "Rajat",
+        email: "rajat@rajat.com",
+        phone_number: "9899999999",
+      },
+    };
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  }
 
   useEffect(() => {
     sessionStorage.removeItem("wallet");
@@ -251,6 +253,9 @@ const AccountSetting = () => {
       .catch((error) => console.log(error));
   };
   console.log(paypal);
+
+  console.log(orderId);
+
   return (
     <div>
       <section className="reg_sec">
@@ -317,8 +322,13 @@ const AccountSetting = () => {
                 <div id="home" className="container tab-pane active">
                   <br />
 
-                  <ViewOrder />
-                  <Chat />
+                  <ViewOrder
+                    setOrderId={setOrderId}
+                    setOrderName={setOrderName}
+                    setShowChat={setShowChat}
+                  />
+
+                 <Chat orderId={orderId} orderName={orderName}  />
                 </div>
 
                 <div id="menu1" className="container tab-pane fade">
