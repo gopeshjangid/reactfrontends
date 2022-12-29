@@ -90,7 +90,19 @@ class ViewOrder extends Component {
                       <td>{friend.transactionId}</td>
                       <td>{friend.datetime}</td>
                       <td>{friend.totalAmount}</td>
-                      <td>Chat</td>
+                      <td
+                        onClick={() => {
+                          this.props.setOrderId(friend._id);
+                          this.props.setOrderName(
+                            friend.products.map((product) =>
+                              (product.p_title + " ")
+                            )
+                          );
+                          this.props.setShowChat(true);
+                        }}
+                      >
+                        Chat
+                      </td>
 
                       <td>{friend.status}</td>
                     </tr>

@@ -37,6 +37,7 @@ const Header = () => {
     console.log(isLoggedin);
 
     localStorage.removeItem("token");
+    localStorage.removeItem("userInfo");
     setIsLoggedin(false);
     navigate("/Login");
   };
