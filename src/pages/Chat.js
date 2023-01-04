@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 //import { user } from "./Join";
 
 import socketIO from "socket.io-client";
 import Message from "./Message";
 import ReactScrollToBoottome from "react-scroll-to-bottom";
 import axios from "axios";
-import io from "socket.io-client";
 
 const ENDPOINT = "http://localhost:5000";
 var socket, selectedChatCompare;
@@ -19,78 +18,33 @@ const Chat = ({ orderId, orderName }) => {
   const [socketConnected, setSocketConnected] = useState(false);
   const [userData, setUserData] = useState({});
 
-  const send = () => {
-    const token = localStorage.getItem("token");
-    console.log(token);
-    console.log("iddd", id);
-    const message = document.getElementById("chatInput").value;
-    setMessages([...messages, { message: message }]);
-    socket.emit("message", { message, id, token });
-    document.getElementById("chatInput").value = "";
-  };
+  const socket = useRef();
 
   useEffect(() => {
-    socket = socketIO(ENDPOINT, { transports: ["websocket"] });
+    socket.current = socketIO(ENDPOINT, { transports: ["websocket"] });
 
-    socket.on("connect", () => {
-      setId(socket.id);
+    socket.current.on("receive-user", (data) => {
+      console.log("data", data);
     });
-    // socket.emit("joined", { user });
-    // socket.on("welcome", (data) => {
-    //   setMessages([...messages, data]);
-    //   console.log(data.user, data.message);
-    // });
-    socket.on("userJoined", (data) => {
+    socket.current.on("message2", (newMessage) => {
+      console.log("NEW MESSAGE ----------", newMessage);
+      setMessages([...messages, newMessage]);
+    });
+    socket.current.on("userJoined", (data) => {
       setMessages([...messages, data]);
       console.log(data.user, data.message);
     });
-    socket.on("leave", (data) => {
+    socket.current.on("leave", (data) => {
       setMessages([...messages, data]);
       console.log(data.user, data.message);
     });
     return () => {
-      socket.disconnect();
-      socket.off();
+      socket.current.disconnect();
+      socket.current.off();
     };
-  }, []);
-
-  useEffect(() => {
-    socket.on("sendMessage", (data) => {
-      console.log("data,", data);
-      setMessages([...messages, data]);
-      console.log(data.user, data.message, data.id);
-    });
-
-    return () => {
-      socket.off();
-    };
-  }, [messages]);
-
-  const fetchChats = async () => {
-    const token = localStorage.getItem("token");
-
-    var config = {
-      method: "get",
-      url: "http://localhost:5000/chat",
-      headers: {
-        authorization: token,
-      },
-    };
-
-    await axios(config)
-      .then(function (response) {
-        console.log("***********************", response.data[0]);
-        setChatId(response?.data[0]?._id);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+  });
 
   const accessChat = async () => {
-    var data = JSON.stringify({
-      orderId: orderId,
-    });
     const token = localStorage.getItem("token");
     console.log("chat acces function called");
 
@@ -110,8 +64,10 @@ const Chat = ({ orderId, orderName }) => {
           response.data
         );
 
+        socket.current.emit("message", response?.data?._id);
         setSelectedChat(response.data);
         setChatId(response?.data?._id);
+        // socket.current.emit("chatId", response?.data?._id);
       })
       .catch(function (error) {
         console.log("kjhdkhdkdhkdjdhk", error);
@@ -137,8 +93,6 @@ const Chat = ({ orderId, orderName }) => {
       .then(function (response) {
         console.log("%%%%%%%%%%%%%%%%%%%%", response.data);
         setMessages(response.data);
-
-        socket.emit("join chat", selectedChat._id);
       })
       .catch(function (error) {
         console.log(error);
@@ -160,8 +114,6 @@ const Chat = ({ orderId, orderName }) => {
       .then((response) => console.log(response))
       .then((json) => {
         setUserData(json);
-        setUserName(json.data.username);
-        console.log(Users);
       })
       .catch((err) => {
         console.log(err);
@@ -171,37 +123,47 @@ const Chat = ({ orderId, orderName }) => {
   useEffect(() => {
     getUser();
 
-    socket = io(ENDPOINT);
-    socket.emit("setup", userData);
-    socket.on("connected", () => setSocketConnected(true));
-    socket.on("typing", () => setIsTyping(true));
-    socket.on("stop typing", () => setIsTyping(false));
+    // socket = io(ENDPOINT);
+    // socket.current.emit("setup", userData);
+    // socket.on("connected", () => setSocketConnected(true));
+    // socket.on("typing", () => setIsTyping(true));
+    // socket.on("stop typing", () => setIsTyping(false));
 
     // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
-    console.log(":::::");
-    socket.on("emitText", (test) => concole.log(test));
+    if (chatId) socket.current.emit("room", chatId);
+  }, [chatId]);
 
-    socket.on("message recieved", (newMessageRecieved) => {
-      console.log("NEW MESSAGE", newMessageRecieved);
-      if (
-        !selectedChatCompare ||
-        selectedChatCompare._id !== newMessageRecieved.chat._id
-      ) {
-        console.log(newMessageRecieved);
-      } else {
-        console.log(newMessageRecieved);
-        setMessages([...messages, newMessageRecieved]);
-      }
+  useEffect(() => {
+    console.log(":::::");
+
+    socket.current.on("message2", (newMessage) => {
+      console.log("NEW MESSAGE ----------", newMessage);
+      setMessages([...messages, newMessage]);
     });
-  });
+
+    // socket.current.on("message2", (newMessageRecieved) => {
+    //   console.log("NEW MESSAGE", newMessageRecieved);
+    //   if (
+    //     !selectedChatCompare ||
+    //     selectedChatCompare._id !== newMessageRecieved.chat._id
+    //   ) {
+    //     console.log(newMessageRecieved);
+    //   } else {
+    //     console.log(newMessageRecieved);
+    //     setMessages([...messages, newMessageRecieved]);
+    //   }
+    // });
+  }, []);
 
   useEffect(() => {
     accessChat();
+    socket.current.emit("messgae-recieved", orderId);
+
     // fetchChats();
-    socket.on("emitText", (test) => concole.log(test));
+    // socket.current.on("emitText", (test) => concole.log(test));
   }, [orderId]);
 
   useEffect(() => {
@@ -231,7 +193,7 @@ const Chat = ({ orderId, orderName }) => {
     axios(config)
       .then(function (response) {
         console.log(response.data);
-        socket.emit("new message", response.data);
+        socket.current.emit("new message", response.data);
         setMessages([...messages, response.data]);
         setMessageText("");
       })
