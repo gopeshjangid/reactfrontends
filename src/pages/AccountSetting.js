@@ -30,8 +30,11 @@ const AccountSetting = () => {
   const [showChat, setShowChat] = useState(false);
   const [orderId, setOrderId] = useState("");
   const [orderName, setOrderName] = useState("");
+  const [amount, setAmount] = useState("");
 
   async function showRazorpay() {
+    const tokenID = localStorage.getItem("token");
+
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
     );
@@ -40,9 +43,13 @@ const AccountSetting = () => {
       alert("Razorpay SDK failed to load. Are you online?");
       return;
     }
+    var payload = JSON.stringify({
+      amount: amount,
+    });
 
     const data = await fetch("http://localhost:5000/razorpayPayment", {
       method: "POST",
+      data: payload,
     }).then((t) => t.json());
 
     console.log(data);
@@ -51,21 +58,39 @@ const AccountSetting = () => {
       key: "rzp_test_KiBn8QyRFCYQnw",
       currency: data.order.currency,
       amount: data.order.amount.toString(),
-      order_id: data.order.d,
+      order_id: data.order.id,
       name: "Donation",
       callback_url: "/razorpay-is-completed",
       description: "Thank you for nothing. Please give us some money",
-      handler: function (response) {
+      handler: async function (response) {
         // alert(response.razorpay_payment_id);
         // alert(response.razorpay_order_id);
         // alert(response.razorpay_signature);
+        var data = JSON.stringify({
+          razorpay_payment_id: response.razorpay_payment_id,
+        });
 
-        alert("Transaction successful");
-      },
-      prefill: {
-        name: "Rajat",
-        email: "rajat@rajat.com",
-        phone_number: "9899999999",
+        var config = {
+          method: "post",
+          url: "http://localhost:5000/razorpay-is-completed",
+          headers: {
+            Authorization: tokenID,
+            "Content-Type": "application/json",
+          },
+          data: data,
+        };
+
+        await axios(config)
+          .then(function (response) {
+            console.log(response.data);
+            window.location.reload(true);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+        console.log(response);
+        // alert("Transaction successful");
       },
     };
     const paymentObject = new window.Razorpay(options);
@@ -126,7 +151,6 @@ const AccountSetting = () => {
   const [inSubmit, setInSubmit] = useState(false);
   const [data, setData] = useState();
   const [message, setMessage] = useState();
-  const [amount, setAmount] = useState("");
   const [paypal, setPaypal] = useState("");
 
   const inputChange = (e) => {
@@ -328,7 +352,7 @@ const AccountSetting = () => {
                     setShowChat={setShowChat}
                   />
 
-                 <Chat orderId={orderId} orderName={orderName}  />
+                  {showChat && <Chat orderId={orderId} orderName={orderName} />}
                 </div>
 
                 <div id="menu1" className="container tab-pane fade">
