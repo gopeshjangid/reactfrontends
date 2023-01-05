@@ -49,23 +49,22 @@ const AccountSetting = () => {
 
     const data = await fetch("http://localhost:5000/razorpayPayment", {
       method: "POST",
-      data: payload,
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${tokenID}`,
+      },
+      body: payload,
     }).then((t) => t.json());
-
     console.log(data);
-
     const options = {
       key: "rzp_test_KiBn8QyRFCYQnw",
       currency: data.order.currency,
-      amount: data.order.amount.toString(),
+      amount: data.amount.toString(),
       order_id: data.order.id,
       name: "Donation",
       callback_url: "/razorpay-is-completed",
       description: "Thank you for nothing. Please give us some money",
       handler: async function (response) {
-        // alert(response.razorpay_payment_id);
-        // alert(response.razorpay_order_id);
-        // alert(response.razorpay_signature);
         var data = JSON.stringify({
           razorpay_payment_id: response.razorpay_payment_id,
         });
@@ -595,14 +594,14 @@ const AccountSetting = () => {
                       </div>
                     </div>
 
-                    <button
+                    {/* <button
                       type="button"
                       className="btn btn-primary"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal2"
                     >
                       Wallet with PayPal
-                    </button>
+                    </button> */}
 
                     <div
                       className="modal fade"

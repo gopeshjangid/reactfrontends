@@ -3,6 +3,20 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+function loadScript(src) {
+  return new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = () => {
+      resolve(true);
+    };
+    script.onerror = () => {
+      resolve(false);
+    };
+    document.body.appendChild(script);
+  });
+}
+
 const ViewCart = () => {
   // const [num, setNum] = useState(0);
 
@@ -17,6 +31,83 @@ const ViewCart = () => {
   const [orderErrorMessage, setOrderErrorMessage] = useState("");
   const [amount, setAmount] = useState({});
   const [paypal, setPaypal] = useState({});
+
+  async function showRazorpay(amount) {
+    const tokenID = localStorage.getItem("token");
+
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+
+    if (!res) {
+      alert("Razorpay SDK failed to load. Are you online?");
+      return;
+    }
+
+    const couponAmount = couponApplied?.message
+      ? couponApplied?.message?.couponType === "Flat"
+        ? couponApplied.message.offAmount
+        : (cartItems.totalPrice * couponApplied.message.offAmount) / 100
+      : 0;
+    const couponName = couponApplied?.message
+      ? couponApplied.message.couponName
+      : "";
+
+    var payload = JSON.stringify({
+      amount: amount,
+    });
+
+    const data = await fetch("http://localhost:5000/orderRazorpay", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${tokenID}`,
+      },
+      body: payload,
+    }).then((t) => t.json());
+    console.log(data);
+    const options = {
+      key: "rzp_test_KiBn8QyRFCYQnw",
+      currency: data.order.currency,
+      amount: data.amount.toString(),
+      order_id: data.order.id,
+      name: "Order",
+      callback_url: "/razorpay-is-completed",
+      description: "Thank you for nothing. Please give us some money",
+      handler: async function (response) {
+        var data = JSON.stringify({
+          razorpay_payment_id: response.razorpay_payment_id,
+          couponAmount: couponAmount,
+          couponName: couponName,
+        });
+
+        var config = {
+          method: "post",
+          url: "http://localhost:5000/orderRazorpaySuccess",
+          headers: {
+            Authorization: tokenID,
+            "Content-Type": "application/json",
+          },
+          data: data,
+        };
+
+        await axios(config)
+          .then(function (response) {
+            console.log(response.data);
+            // window.location.reload(true);
+            navigate("/PurchaseSuccess");
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+        console.log(response);
+        // alert("Transaction successful");
+      },
+    };
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  }
 
   useEffect(() => {
     viewCart();
@@ -210,19 +301,6 @@ const ViewCart = () => {
 
   const walletUpdateHandler = async (newTotal) => {
     const tokenID = localStorage.getItem("token");
-    console.log(tokenID);
-
-    console.log(newTotal);
-
-    console.log(
-      couponApplied?.message
-        ? couponApplied?.message?.couponType === "Flat"
-          ? couponApplied.message.offAmount
-          : (cartItems.totalPrice * couponApplied.message.offAmount) / 100
-        : 0
-    );
-
-    console.log(couponApplied?.message ? couponApplied.message.couponName : "");
 
     const headers = {
       "Content-Type": "application/json",
@@ -673,7 +751,23 @@ const ViewCart = () => {
                           </button>
                         </div>
                         <div className="col-md-6">
-                          <button type="button" className="btn w-100 Pay">
+                          <button
+                            onClick={() =>
+                              showRazorpay(
+                                couponApplied?.message?.offAmount
+                                  ? couponApplied.message.couponType === "Flat"
+                                    ? cartItems.totalPrice -
+                                      couponApplied.message.offAmount
+                                    : cartItems.totalPrice -
+                                      (cartItems.totalPrice *
+                                        couponApplied.message.offAmount) /
+                                        100
+                                  : cartItems.totalPrice
+                              )
+                            }
+                            type="button"
+                            className="btn w-100 Pay"
+                          >
                             RazorPay
                           </button>
                         </div>
