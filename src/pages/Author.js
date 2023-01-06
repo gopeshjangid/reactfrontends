@@ -1,4 +1,9 @@
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Pagination } from "swiper";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
 // import axios from 'axios';
 
 import React, { Component } from "react";
@@ -15,21 +20,32 @@ class Author extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch("http://localhost:5000/getAuthors", {
+    fetch("http://localhost:5000/getAuthors", {
       method: "GET",
       mode: "cors",
       headers: {
         "Content-type": "application/json",
         Accept: "application/json",
       },
-    });
-
-    if (response.ok) {
-      const User = await response.json();
-      console.log(User);
-      this.setState({ ...this.state, User: User.data });
-    }
+    })
+      .then(async (response) => {
+        const User = await response.json();
+        if (response.ok) {
+          console.log(User);
+          this.setState({ ...this.state, User: User.data });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
+
+  // const pagination = {
+  //     clickable: true,
+  //     renderBullet: function (index, className) {
+  //       return '<span class="' + className + '">' + (index + 1) + "</span>";
+  //     },
+  //   };
 
   render() {
     const { User } = this.state;
@@ -48,26 +64,55 @@ class Author extends Component {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
               tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Lor
             </p>
-            {this.state.User.map((friend) => {
-              return (
-                <div className="col-md-3" key={friend._id}>
-                  <div className="author_box p-4 text-center">
-                    <img
-                      src={urlApi + "/image/" + friend.image}
-                      className="author_sec-img m-0"
-                    />
-                    <h4 className="author_Sec-h2">{friend.title}</h4>
-                    <p className="author_Sec-p">{friend.dec}</p>
+            <Swiper
+              freeMode={true}
+              // loop={true}
 
-                    <Link to={`/viewdetails/${friend._id}`}>
-                      <button type="button" className="author-btn m-0">
-                        View Details
-                      </button>
-                    </Link>
+              grabCursor={true}
+              modules={[FreeMode, Pagination]}
+              className="mySwiper"
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                480: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 15,
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 15,
+                },
+              }}
+            >
+              {this.state.User.map((friend) => {
+                return (
+                  <div className="col-md-3" key={friend._id}>
+                    <SwiperSlide>
+                      <div className="author_box p-4 text-center">
+                        <img
+                          src={urlApi + "/image/" + friend.image}
+                          className="author_sec-img m-0"
+                        />
+                        <h4 className="author_Sec-h2">{friend.title}</h4>
+                        <p className="author_Sec-p">{friend.dec}</p>
+
+                        <Link to={`/viewdetails/${friend._id}`}>
+                          <button type="button" className="author-btn m-0">
+                            View Details
+                          </button>
+                        </Link>
+                      </div>
+                    </SwiperSlide>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </Swiper>
 
             <nav aria-label="..." className="mt-5">
               <ul className="pagination">

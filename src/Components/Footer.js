@@ -4,66 +4,57 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div>
-      <section className="footer_sec">
-        <nav className="navbar navbar-expand-sm f_menu  navbar-dark">
+      <section className="footer_sec py-4">
+        <nav className=" navbar-expand-sm f_menunavbar-dark">
           <div className="container">
-            <span className="navbar copyright" to="/">
-              Copyright © 2022 Get Pro Writer All Right Reserved
-            </span>
-            <button
-              className="navbar-toggler fm"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapsibleNavbar"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div
-              className="collapse navbar-collapse fgg"
-              id="collapsibleNavbar"
-            >
-              <ul className="navbar-nav">
-                <li className="nav-item pad">
-                  <Link className="nav-link set1" to="/blog">
-                    Blog
-                  </Link>
-                </li>
-                <li className="nav-item pad">
-                  <Link className="nav-link set1" to="/terms">
-                    Terms
-                  </Link>
-                </li>
-                <li className="nav-item pad">
-                  <Link className="nav-link set1" to="/privacy">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li className="nav-item pad">
-                  <Link className="nav-link set1" to="/faq">
-                    FAQ
-                  </Link>
-                </li>
-                <li className="nav-item pad">
-                  <Link className="nav-link set1" to="/about">
-                    About
-                  </Link>
-                </li>
-                <li className="nav-item pad">
-                  <Link className="nav-link set1" to="/author">
-                    Authors
-                  </Link>
-                </li>
-                <li className="nav-item pad">
-                  <Link className="nav-link set1" to="/career">
-                    Career
-                  </Link>
-                </li>
-                <li className="nav-item pad">
-                  <Link className="nav-link set1" to="/contact">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
+            <div className="row align-items-center ">
+              <span className="col-lg-6 copyright" to="/">
+                Copyright © 2022 Get Pro Writer All Right Reserved
+              </span>
+              <div className=" col-lg-6">
+                <ul className="navbar-nav">
+                  <li className="nav-item pad">
+                    <Link className="nav-link set1" to="/blog">
+                      Blog
+                    </Link>
+                  </li>
+                  <li className="nav-item pad">
+                    <Link className="nav-link set1" to="/terms">
+                      Terms
+                    </Link>
+                  </li>
+                  <li className="nav-item pad">
+                    <Link className="nav-link set1" to="/privacy">
+                      Privacy Policy
+                    </Link>
+                  </li>
+                  <li className="nav-item pad">
+                    <Link className="nav-link set1" to="/faq">
+                      FAQ
+                    </Link>
+                  </li>
+                  <li className="nav-item pad">
+                    <Link className="nav-link set1" to="/about">
+                      About
+                    </Link>
+                  </li>
+                  <li className="nav-item pad">
+                    <Link className="nav-link set1" to="/author">
+                      Authors
+                    </Link>
+                  </li>
+                  <li className="nav-item pad">
+                    <Link className="nav-link set1" to="/career">
+                      Career
+                    </Link>
+                  </li>
+                  <li className="nav-item pad">
+                    <Link className="nav-link set1" to="/contact">
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </nav>

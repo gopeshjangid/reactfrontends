@@ -5,35 +5,40 @@ class Faq extends Component {
     super(props);
     this.state = {
       User: [],
-      visibility: false,
+      // visibility: false,
     };
-    this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
+    // this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   async componentDidMount() {
-    const response = await fetch("http://localhost:5000/getFaqs", {
+    fetch("http://localhost:5000/getFaqs", {
       method: "GET",
       mode: "cors",
       headers: {
         "Content-type": "application/json",
         Accept: "application/json",
       },
-    });
-    if (response.ok) {
-      const User = await response.json();
-      console.log(User);
-      this.setState({ ...this.state, User: User.data, isLoading: false });
-    }
+    })
+      .then(async (response) => {
+        const User = await response.json();
+        if (response.ok) {
+          console.log(User);
+          this.setState({ ...this.state, User: User.data });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
-  handleToggleVisibility() {
-    this.setState((prevState) => {
-      return {
-        visibility: !prevState.visibility,
-      };
-    });
-  }
+  // handleToggleVisibility() {
+  //   this.setState((prevState) => {
+  //     return {
+  //       visibility: !prevState.visibility,
+  //     };
+  //   });
+  // }
 
   render() {
     const { User } = this.state;
@@ -63,7 +68,7 @@ class Faq extends Component {
                     return (
                       <div
                         className="faq-item p-0 bg_set accordion-item"
-                        onClick={this.handleToggleVisibility}
+                        // onClick={this.handleToggleVisibility}
                         key={friend._id}
                       >
                         <h2

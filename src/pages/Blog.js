@@ -15,19 +15,24 @@ class Blog extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch("http://localhost:5000/getBlog", {
+    fetch("http://localhost:5000/getBlog", {
       method: "GET",
       mode: "cors",
       headers: {
         "Content-type": "application/json",
         Accept: "application/json",
       },
-    });
-    if (response.ok) {
-      const User = await response.json();
-      console.log(User);
-      this.setState({ ...this.state, User: User.data });
-    }
+    })
+      .then(async (response) => {
+        const User = await response.json();
+        if (response.ok) {
+          console.log(User);
+          this.setState({ ...this.state, User: User.data });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   render() {
@@ -44,9 +49,9 @@ class Blog extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-9">
-                {this.state.User && this.state.startSearch
-                  ? this.state.User.filter(
-                      (item, index) => item.title === this.state.searchText
+                {this.state.User && this.state.searchText
+                  ? this.state.User.filter((item, index) =>
+                      item.title.includes(this.state.searchText)
                     ).map((friend, value) => {
                       return (
                         <div className="term_sec-9">
@@ -54,18 +59,22 @@ class Blog extends Component {
                             src={urlApi + "/image/" + friend.image}
                             className="blog_sec-img"
                           />
-                          <h2 className="blog_sec-h2 p-0">{friend.title} </h2>
-                          <h3>
-                            <span className="blog-span1">{friend.name} </span>{" "}
-                            <span className="blog-span2">
-                              September 08,2022
-                            </span>
-                          </h3>
-                          <p className="blog_sec-p">{friend.dec} </p>
+                          <div className="p-4">
+                            <h2 className="blog_sec-h2 p-0">{friend.title} </h2>
+                            <div className="row">
+                              <span className=" col-md-6 blog-span1 m-0">
+                                {friend.name}{" "}
+                              </span>{" "}
+                              <span className="  col-md-6 text-end blog-span2">
+                                September 08,2022
+                              </span>
+                            </div>
+                            <p className="blog_sec-p">{friend.dec} </p>
 
-                          <button type="button" className="blog_sec-btn">
-                            Read More{" "}
-                          </button>
+                            <button type="button" className="blog_sec-btn">
+                              Read More{" "}
+                            </button>
+                          </div>
                         </div>
                       );
                     })

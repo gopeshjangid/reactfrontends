@@ -46,12 +46,18 @@ const OnlineManagement = () => {
                   src={urlApi + "/image/" + post?.data?.image}
                   className="blog_sec-img"
                 />
-                <h2 className="blog_sec-h2">{post?.data?.title} </h2>
-                <h3>
-                  <span className="blog-span1">{post?.data?.name} </span>
-                  <span className="blog-span2">September 08,2022</span>
-                </h3>
-                <p className="blog_sec-p">{post?.data?.dec} </p>
+                <div className="p-4">
+                  <h2 className="blog_sec-h2 p-0">{post?.data?.title} </h2>
+                  <div className="row">
+                    <span className=" col-md-6 blog-span1  m-0">
+                      {post?.data?.name}{" "}
+                    </span>
+                    <span className=" col-md-6 text-end  blog-span2 m-0">
+                      September 08,2022
+                    </span>
+                  </div>
+                  <p className="blog_sec-p p-0">{post?.data?.dec} </p>
+                </div>
               </div>
             </div>
 

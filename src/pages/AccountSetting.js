@@ -284,8 +284,8 @@ const AccountSetting = () => {
       <section className="reg_sec">
         <div className="container mt-3">
           <div className="row">
-            <div className="col-sm-3">
-              <h2>
+            <div className="col-lg-3">
+              <h2 className="text-center">
                 <img src="writer/img/logo/logo-img.png" className="as-img" />
               </h2>
               <br />
@@ -337,7 +337,7 @@ const AccountSetting = () => {
               </ul>
             </div>
 
-            <div className="col-sm-9">
+            <div className="col-lg-9">
               <div className="tab-content">
                 <h5 className="user_tab1">
                   Welcome to <span className="user_ach">User</span>
@@ -594,14 +594,14 @@ const AccountSetting = () => {
                       </div>
                     </div>
 
-                    {/* <button
+                    <button
                       type="button"
                       className="btn btn-primary"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal2"
                     >
                       Wallet with PayPal
-                    </button> */}
+                    </button>
 
                     <div
                       className="modal fade"

@@ -109,7 +109,7 @@ const Login = () => {
       {/* <Header /> */}
       <section className="reg_sec">
         <div className="container">
-          <div className="row">
+          <div className="row justify-content-center">
             <form method="POST" className="login-form" onSubmit={handleSubmit}>
               <label className="reg-lbl"> Username or E-mail </label>
               <input

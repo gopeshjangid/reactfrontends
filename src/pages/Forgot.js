@@ -94,12 +94,12 @@ const Forgot = () => {
     <div>
       <section className="fp_sec">
         <div className="container">
-          <div className="row">
+          <div className="row forget align-items-center bg-white">
             <div className="col-md-6">
               <img src="writer/img/forgot-password.jpg" className="fp-img" />
             </div>
 
-            <div className="col-md-6">
+            <div className="col-md-6 p-4">
               <form className="fp_form" onSubmit={handleSubmit}>
                 <h3 className="fp-h3">Forgot Password</h3>
                 <p className="fp-p">

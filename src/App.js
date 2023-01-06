@@ -39,7 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/accountSetting" element={<AccountSetting />} />
+        <Route path="/accountsetting" element={<AccountSetting />} />
         <Route path="/author" element={<Author />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/career" element={<Career />} />
@@ -60,8 +60,8 @@ function App() {
         <Route path="/success" element={<Success />} />
         <Route path="/viewdetails/:id" element={<ViewDetails />} />
         <Route path="/failed" element={<Failed />} />
-        <Route path="/purchaseSuccess" element={<PurchaseSuccess />} />
-        <Route path="/onlineManagement/:id" element={<OnlineManagement />} />
+        <Route path="/purchasesuccess" element={<PurchaseSuccess />} />
+        <Route path="/onlinemanagement/:id" element={<OnlineManagement />} />
         <Route path="/ordersuccess" element={<Ordersuccess />} />
         <Route path="/payplesuccess" element={<Payplesuccess />} />
         {/* <Route path="/join" element={<Join />} /> */}
