@@ -2267,6 +2267,36 @@ th {
   border-left: 3px solid #02999b;
 }
 
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  cursor: pointer;
+}
+
+.pagination a {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #00a7a6;
+  color: #00a7a6;
+}
+
+.pagination__link {
+  font-weight: bold;
+}
+
+.pagination__link--active a {
+  color: #fff;
+  border: solid 1px #00a7a6;
+  background: #00a7a6;
+}
+
+.pagination__link--disabled a {
+  text-decoration: none;
+  color: rgb(198, 197, 202);
+  border: 1px solid rgb(198, 197, 202);
+}
+
 @media (max-width: 1024px) {
   .container {
     max-width: 90%;
