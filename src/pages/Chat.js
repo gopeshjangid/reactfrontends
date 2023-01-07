@@ -224,6 +224,7 @@ const Chat = ({ orderId, orderName }) => {
                   <Message
                     user={item.sender.username + ": "}
                     message={item.content}
+                    type={item.type}
                     classs={
                       item.sender.email === "getproadmin000@gmail.com"
                         ? "left"
