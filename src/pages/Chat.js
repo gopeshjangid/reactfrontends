@@ -17,6 +17,9 @@ const Chat = ({ orderId, orderName }) => {
   const [selectedChat, setSelectedChat] = useState({});
   const [socketConnected, setSocketConnected] = useState(false);
   const [userData, setUserData] = useState({});
+  const [selectedImage, setSelectedImage] = useState(false);
+  const [pdfselected, setPdfselected] = useState(false);
+  const [docsSelected, setDocsSelected] = useState(false);
 
   const socket = useRef();
 
@@ -177,7 +180,27 @@ const Chat = ({ orderId, orderName }) => {
 
     var data = JSON.stringify({
       chatId: chatId,
-      content: messageText,
+      content: selectedImage
+        ? "https://res.cloudinary.com/practicaldev/image/fetch/s--sQ19Mqmd--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/928773/24ac3701-8eee-48c5-99fb-2efcf5f88bc9.png"
+        : pdfselected
+        ? "https://www.africau.edu/images/default/sample.pdf"
+        : docsSelected
+        ? "https://docs.google.com/document/d/14DO6AtLYLtvvwh3gjkJ8Xb6ESs0YDdQpjRvq_XvoZdM/edit#heading=h.x8fm1uorkbaw"
+        : messageText,
+      type: selectedImage
+        ? "image"
+        : pdfselected
+        ? "pdf"
+        : docsSelected
+        ? "docs"
+        : "message",
+      name: selectedImage
+        ? null
+        : pdfselected
+        ? docsSelected
+          ? "abc.docs"
+          : "resume.pdf"
+        : null,
     });
 
     var config = {
@@ -195,6 +218,8 @@ const Chat = ({ orderId, orderName }) => {
         console.log(response.data);
         socket.current.emit("new message", response.data);
         setMessages([...messages, response.data]);
+        setSelectedImage(false);
+        setPdfselected(false);
         setMessageText("");
       })
       .catch(function (error) {
@@ -204,6 +229,30 @@ const Chat = ({ orderId, orderName }) => {
 
   const handleChange = (e) => {
     setMessageText(e.target.value);
+  };
+
+  const selectImage = (e) => {
+    console.log(e?.target?.files[0].type.includes("pdf"));
+
+    if (e?.target?.files[0].type.includes("image")) {
+      console.log(e?.target?.files[0].type.includes("image"));
+      setPdfselected(false);
+      setSelectedImage(true);
+    } else if (e?.target?.files[0].type.includes("pdf")) {
+      console.log(e?.target?.files[0].type.includes("pdf"));
+
+      selectImage(false);
+      setPdfselected(true);
+    } else if (
+      e?.target?.files[0].type.includes("doc") ||
+      e?.target?.files[0].type.includes("docx")
+    ) {
+      console.log(e?.target?.files[0].type.includes("docs"));
+
+      selectImage(false);
+      setPdfselected(false);
+      setDocsSelected(true);
+    }
   };
 
   return (
@@ -235,77 +284,6 @@ const Chat = ({ orderId, orderName }) => {
               </ReactScrollToBoottome>
             </ul>
           </div>
-
-          {/* <div className="box-li-view fl_r">
-            <ul>
-              <li className="userm_li1">
-                <span className="userm_li_span">ankitpgoyal.115@gmail.com</span>
-                <span className="whats_chat_time">
-                  <sub>July 27, 2022, 7:25 pm</sub>
-                </span>
-                <br />
-                <span className="user_li_text ">
-                  hello, my name is here there lorem spum can see there ot
-                  visival can see.
-                </span>
-              </li>
-            </ul>
-          </div> */}
-
-          {/* <div className="box-li-view fl_l">
-            <ul>
-              <li className="userm_li ">
-                <span className="userm_li_span2">Mod_Alex</span>
-                <span className="whats_chat_time">
-                  <sub>July 27, 2022, 7:24 pm</sub>
-                </span>
-                <br />
-                <span className="user_li_text ">Hi</span>
-              </li>
-            </ul>
-          </div> */}
-          {/* <div className="box-li-view fl_l">
-            <ul>
-              <li className="userm_li ">
-                <span className="userm_li_span2">Mod_Alex</span>
-                <span className="whats_chat_time">
-                  <sub>July 27, 2022, 7:24 pm</sub>
-                </span>
-                <br />
-                <span className="user_li_text ">Hi</span>
-              </li>
-            </ul>
-          </div> */}
-          {/* <div className="box-li-view fl_r">
-            <ul>
-              <li className="userm_li1">
-                <span className="userm_li_span">ankitpgoyal.115@gmail.com</span>
-                <span className="whats_chat_time">
-                  <sub>July 27, 2022, 7:25 pm</sub>
-                </span>
-                <br />
-                <span className="user_li_text ">
-                  hello, my name is here there lorem spum can see there ot
-                  visival can see.
-                </span>
-              </li>
-            </ul>
-          </div> */}
-          {/* <div className="box-li-view fl_r">
-            <ul>
-              <li className="userm_li1">
-                <span className="userm_li_span">ankitpgoyal.115@gmail.com</span>
-                <span className="whats_chat_time">
-                  <sub>July 27, 2022, 7:25 pm</sub>
-                </span>
-                <br />
-                <span className="user_li_text ">
-                  hello, my name is here there lorem spum can see there ot
-                  visival can see.
-                </span>
-              </li>
-            </ul>
-          </div> */}
         </div>
       </div>
 
@@ -328,7 +306,12 @@ const Chat = ({ orderId, orderName }) => {
         <div className="fileDiv btn btn-info btn-flat" id="upload-btn-chat">
           {" "}
           <i className="fa fa-upload"></i>
-          <input type="file" name="file" className="upload_attachmentfile" />
+          <input
+            onChange={(e) => selectImage(e)}
+            type="file"
+            name="file"
+            className="upload_attachmentfile"
+          />
         </div>
       </div>
     </>

@@ -27,12 +27,40 @@
 // export default ChatRoom;
 
 import React from "react";
+import { VscFilePdf } from "react-icons/vsc";
+import { Router, useNavigate } from "react-router-dom";
 
 const Message = ({ user, message, classs, type }) => {
+  const navigate = useNavigate();
+  // const onButtonClick = () => {
+  //   // using Java Script method to get PDF file
+  //   fetch(message).then((response) => {
+  //     response.blob().then((blob) => {
+  //       // Creating new object of PDF file
+  //       const fileURL = window.URL.createObjectURL(blob);
+  //       // Setting various property values
+  //       let alink = document.createElement("a");
+  //       alink.href = fileURL;
+  //       alink.download = message;
+  //       alink.click();
+  //     });
+  //   });
+  // };
+
   if (user && type == "image") {
     return (
       <div className={`messageBox ${classs}`}>
         {`${user}:`} <img src={`${message}`} />
+      </div>
+    );
+  } else if ((user && type == "pdf") || (user && type == "docs")) {
+    return (
+      <div className={`messageBox ${classs}`}>
+        {" "}
+        {`${user}:`}{" "}
+        <button onClick={() => navigate(`//${message}`)}>
+          <VscFilePdf />
+        </button>
       </div>
     );
   } else {
