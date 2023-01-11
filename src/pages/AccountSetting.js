@@ -78,7 +78,7 @@ const AccountSetting = () => {
           },
           data: data,
         };
-
+        console.log("log");
         await axios(config)
           .then(function (response) {
             console.log(response.data);
@@ -540,7 +540,7 @@ const AccountSetting = () => {
                   <div className="payment-gateway justify-content-center">
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className="btn payment-walllet"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal"
                     >
@@ -596,7 +596,7 @@ const AccountSetting = () => {
 
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className="btn  payment-walllet"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal2"
                     >
@@ -652,7 +652,7 @@ const AccountSetting = () => {
 
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className="btn payment-walllet"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal3"
                     >

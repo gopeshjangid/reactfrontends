@@ -2,6 +2,20 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+function loadScript(src) {
+  return new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = () => {
+      resolve(true);
+    };
+    script.onerror = () => {
+      resolve(false);
+    };
+    document.body.appendChild(script);
+  });
+}
+
 class Services extends Component {
   constructor(props) {
     super(props);
@@ -106,6 +120,104 @@ class Services extends Component {
       .finally(() => this.setState({ ...this.state, isAddLoading: false }));
   };
 
+  async showRazorpay(e) {
+    const tokenID = localStorage.getItem("token");
+
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+
+    if (!res) {
+      alert("Razorpay SDK failed to load. Are you online?");
+      return;
+    }
+    // var payload = JSON.stringify({
+    //   amount: amount,
+    // });
+
+    const data = await fetch(
+      "http://localhost:5000/razorpayCreateSubscription",
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `${tokenID}`,
+        },
+      }
+    ).then((t) => t.json());
+    console.log("ddddd", data);
+    const options = {
+      key: "rzp_test_KiBn8QyRFCYQnw",
+      subscription_id: data.message.id,
+      name: "Acme Corp.",
+      description: "Monthly Test Plan",
+      callback_url: "/verifySubscriptionPayment",
+      handler: function (response) {
+        console.log("resss", response);
+        console.log(response.razorpay_payment_id);
+        console.log(response.razorpay_subscription_id);
+        console.log(response.razorpay_signature);
+        var data = JSON.stringify({
+          razorpay_payment_id: response.razorpay_payment_id,
+          razorpay_subscription_id: response.razorpay_subscription_id,
+          razorpay_signature: response.razorpay_signature,
+        });
+
+        var config = {
+          method: "post",
+          url: "http://localhost:5000/verifySubscriptionPayment",
+          headers: {
+            Authorization: `${tokenID}`,
+            "Content-Type": "application/json",
+          },
+          data: data,
+        };
+        console.log("log", data);
+        axios(config)
+          .then(function (res) {
+            console.log("finalRes", res);
+            // window.location.reload(true);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      },
+      prefill: {
+        name: "Gaurav Kumar",
+        email: "gaurav.kumar@example.com",
+        contact: "+919876543210",
+      },
+      notes: {
+        note_key_1: "Tea. Earl Grey. Hot",
+        note_key_2: "Make it so.",
+      },
+    };
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  }
+
+  //     key: "key_id",
+  //     subscription_id: "sub_00000000000001",
+  //     name: "Acme Corp.",
+  //     description: "Monthly Test Plan",
+  //     // handler: function(response) {
+  //     //   // alert(response.razorpay_payment_id)
+  //     //   // alert(response.razorpay_subscription_id)      alert(response.razorpay_signature)
+  //     // },
+  //     prefill: {
+  //       name: "Gaurav Kumar",
+  //       email: "gaurav.kumar@example.com",
+  //       contact: "+919876543210",
+  //     },
+  //     notes: {
+  //       note_key_1: "Tea. Earl Grey. Hot",
+  //       note_key_2: "Make it so.",
+  //     },
+  //     theme: {
+  //       color: "#F37254",
+  //     },
+  //   };
+
   // renderTableHeader = () =>{
   // 	return Object.keys(this.state.User[0]).map(attr => <th key={attr}>
   // 		{attr.toUpperCase()}
@@ -191,7 +303,11 @@ class Services extends Component {
                           </button>
 
                           <br />
-                          <button type="button" className="services-btn2">
+                          <button
+                            type="button"
+                            onClick={(e) => this.showRazorpay(e)}
+                            className="services-btn2"
+                          >
                             SUBSCRIBE
                           </button>
                           <br />

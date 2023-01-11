@@ -19,7 +19,7 @@ const Chat = ({ orderId, orderName }) => {
   const [userData, setUserData] = useState({});
   const [selectedImage, setSelectedImage] = useState(false);
   const [pdfselected, setPdfselected] = useState(false);
-  const [docsSelected, setDocsSelected] = useState(false);
+  const [docsSelected, setdocsSelected] = useState(false);
 
   const socket = useRef();
 
@@ -192,17 +192,18 @@ const Chat = ({ orderId, orderName }) => {
         : pdfselected
         ? "pdf"
         : docsSelected
-        ? "docs"
+        ? "docx" || "doc" || "docs"
         : "message",
       name: selectedImage
         ? null
         : pdfselected
-        ? docsSelected
-          ? "abc.docs"
-          : "resume.pdf"
+        ? "resume.pdf"
+        : docsSelected
+        ? "abc.docs"
         : null,
     });
-
+    console.log("wewdf", data);
+    console.log("wewddfgsdf", docsSelected);
     var config = {
       method: "post",
       url: "http://localhost:5000/message",
@@ -215,12 +216,14 @@ const Chat = ({ orderId, orderName }) => {
 
     axios(config)
       .then(function (response) {
-        console.log(response.data);
+        console.log("qwertyuiopoiuytr", response.data);
         socket.current.emit("new message", response.data);
         setMessages([...messages, response.data]);
         setSelectedImage(false);
         setPdfselected(false);
+        setdocsSelected(false);
         setMessageText("");
+        console.log(messages);
       })
       .catch(function (error) {
         console.log(error);
@@ -233,25 +236,29 @@ const Chat = ({ orderId, orderName }) => {
 
   const selectImage = (e) => {
     console.log(e?.target?.files[0].type.includes("pdf"));
+    console.log(e?.target?.files[0].type.includes("docs"));
 
     if (e?.target?.files[0].type.includes("image")) {
-      console.log(e?.target?.files[0].type.includes("image"));
+      console.log("imageeee", e?.target?.files[0].type.includes("image"));
+
       setPdfselected(false);
       setSelectedImage(true);
     } else if (e?.target?.files[0].type.includes("pdf")) {
-      console.log(e?.target?.files[0].type.includes("pdf"));
+      console.log("====pdfff", e?.target?.files[0].type.includes("pdf"));
 
+      setdocsSelected(false);
       selectImage(false);
       setPdfselected(true);
     } else if (
-      e?.target?.files[0].type.includes("doc") ||
-      e?.target?.files[0].type.includes("docx")
+      e?.target?.files[0].type.includes("docx") ||
+      e?.target?.files[0].type.includes("doc")
     ) {
-      console.log(e?.target?.files[0].type.includes("docs"));
+      console.log("-----dpoccc", e?.target?.files[0].type.includes("docx"));
 
       selectImage(false);
       setPdfselected(false);
-      setDocsSelected(true);
+      setdocsSelected(true);
+      console.log("qwertyuiopoiuytr", docsSelected);
     }
   };
 
@@ -274,6 +281,7 @@ const Chat = ({ orderId, orderName }) => {
                     user={item.sender.username + ": "}
                     message={item.content}
                     type={item.type}
+                    name={item.name}
                     classs={
                       item.sender.email === "getproadmin000@gmail.com"
                         ? "left"

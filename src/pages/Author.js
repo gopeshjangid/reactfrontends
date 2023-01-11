@@ -256,7 +256,7 @@ function Author() {
             {currentPageData}
           </Swiper>
 
-          <nav aria-label="..." className="mt-5 w-25">
+          <nav aria-label="..." className="mt-5">
             <ReactPaginate
               previousLabel="< previous"
               nextLabel="next >"
@@ -264,8 +264,8 @@ function Author() {
               onPageChange={handleClick}
               // pageRangeDisplayed={5}
               containerClassName={"pagination page"}
-              previousLinkClassName={"pagination_link"}
-              nextLinkClassName={"pagination_link"}
+              previousLinkClassName={"pagination__link"}
+              nextLinkClassName={"pagination__link"}
               disabledClassName={".pagination__link--disabled "}
               activeClassName={"pagination__link--active"}
               // renderOnZeroPageCount={null}

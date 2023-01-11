@@ -1,5 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Autoplay } from "swiper";
+import "swiper/css";
+import "swiper/css/free-mode";
 // import { Link } from "react-router-dom";
 
 const Review = () => {
@@ -85,7 +89,7 @@ const Review = () => {
                   <h2 className="form_sec-h2">
                     Get In <span className="spa">Touch </span>
                   </h2>
-                  <div className="d-flex space-between">
+                  <div className="form-inputs d-flex space-between">
                     <div className="Home-Name">
                       <input
                         type="text"
@@ -110,7 +114,7 @@ const Review = () => {
                       <p style={{ color: "red" }}>{formErrors.email}</p>
                     </div>
                   </div>
-                  <div className="d-flex space-between">
+                  <div className="form-inputs d-flex space-between">
                     <div className="Home-Name">
                       <input
                         type="number"
@@ -508,167 +512,137 @@ const Review = () => {
             <h2 className="writing_sec-h2">Some of our esteemed key Clients</h2>
             <span className="writing_sec-spa">* * * * *</span>
 
-            <div id="demo" className="carousel slide" data-bs-ride="carousel">
-              <div className="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#demo"
-                  data-bs-slide-to="0"
-                  className="active"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#demo"
-                  data-bs-slide-to="1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#demo"
-                  data-bs-slide-to="2"
-                ></button>
-              </div>
-
-              <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <div className="row">
-                    <div className="col-md-3">
-                      <div className="img-box">
-                        <img
-                          src="writer/img/testimonial/lego.webp"
-                          alt="Los Angeles"
-                          className="d-block img-box_image"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-3">
-                      <div className="img-box">
-                        <img
-                          src="writer/img/testimonial/Allianz.webp"
-                          alt="Chicago"
-                          className="d-block img-box_image"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-3">
-                      <div className="img-box">
-                        <img
-                          src="writer/img/testimonial/Citi.webp"
-                          alt="Chicago"
-                          className="d-block img-box_image"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-3">
-                      <div className="img-box">
-                        <img
-                          src="writer/img/testimonial/zara-logo.webp"
-                          alt="Los Angeles"
-                          className="d-block img-box_image"
-                        />
-                      </div>
-                    </div>
-                  </div>
+            <Swiper
+              freeMode={true}
+              loop={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              grabCursor={true}
+              modules={[Autoplay, FreeMode]}
+              className="mySwiper"
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                480: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 15,
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 15,
+                },
+              }}
+            >
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="writer/img/testimonial/lego.webp"
+                    alt="Los Angeles"
+                    className="d-block img-box_image"
+                  />
                 </div>
-
-                <div className="carousel-item">
-                  <div className="row">
-                    <div className="col-md-3">
-                      <div className="img-box">
-                        <img
-                          src="writer/img/testimonial/espn-logo.webp"
-                          alt="Los Angeles"
-                          className="d-block img-box_image"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-3">
-                      <div className="img-box">
-                        <img
-                          src="writer/img/testimonial/gillette-logo.webp"
-                          alt="Chicago"
-                          className="d-block img-box_image"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-3">
-                      <div className="img-box">
-                        <img
-                          src="writer/img/testimonial/loreal-logo.webp"
-                          alt="Chicago"
-                          className="d-block img-box_image"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-3">
-                      <div className="img-box">
-                        <img
-                          src="writer/img/testimonial/sap-logo.webp"
-                          alt="Los Angeles"
-                          className="d-block img-box_image"
-                        />
-                      </div>
-                    </div>
-                  </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="writer/img/testimonial/Allianz.webp"
+                    alt="Chicago"
+                    className="d-block img-box_image"
+                  />
                 </div>
-                <div className="carousel-item">
-                  <div className="row">
-                    <div className="col-md-3">
-                      <div className="img-box">
-                        <img
-                          src="writer/img/testimonial/att-logo.webp"
-                          alt="Los Angeles"
-                          className="d-block img-box_image"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-3">
-                      <div className="img-box">
-                        <img
-                          src="writer/img/testimonial/toyota-logo.webp"
-                          alt="Chicago"
-                          className="d-block img-box_image"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-3">
-                      <div className="img-box">
-                        <img
-                          src="writer/img/testimonial/ikea-logo.webp"
-                          alt="Chicago"
-                          className="d-block img-box_image"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-3">
-                      <div className="img-box">
-                        <img
-                          src="writer/img/testimonial/Allianz.webp"
-                          alt="Los Angeles"
-                          className="d-block img-box_image"
-                        />
-                      </div>
-                    </div>
-                  </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="writer/img/testimonial/Citi.webp"
+                    alt="Chicago"
+                    className="d-block img-box_image"
+                  />
                 </div>
-              </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="writer/img/testimonial/zara-logo.webp"
+                    alt="Los Angeles"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
 
-              <button
-                className="carousel-control-prev"
-                type="button"
-                data-bs-target="#demo"
-                data-bs-slide="prev"
-              >
-                <span className="carousel-control-prev-icon"></span>
-              </button>
-              <button
-                className="carousel-control-next"
-                type="button"
-                data-bs-target="#demo"
-                data-bs-slide="next"
-              >
-                <span className="carousel-control-next-icon"></span>
-              </button>
-            </div>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="writer/img/testimonial/loreal-logo.webp"
+                    alt="Chicago"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="writer/img/testimonial/gillette-logo.webp"
+                    alt="Chicago"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="writer/img/testimonial/sap-logo.webp"
+                    alt="Los Angeles"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="writer/img/testimonial/att-logo.webp"
+                    alt="Los Angeles"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="writer/img/testimonial/toyota-logo.webp"
+                    alt="Chicago"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="writer/img/testimonial/ikea-logo.webp"
+                    alt="Chicago"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
       </section>
@@ -683,7 +657,7 @@ const Review = () => {
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
               <div className="box-ol">
-                <ol>
+                <ol className="m-0 d-flex align-items-center p-0">
                   <li className="in_li">
                     <span className="right_span">
                       <i aria-hidden="true" className="fas fa-check-circle"></i>
@@ -697,7 +671,7 @@ const Review = () => {
             </div>
             <div className="col-md-4">
               <div className="box-ol">
-                <ol>
+                <ol className="m-0 d-flex align-items-center p-0">
                   <li className="in_li">
                     <span className="right_span">
                       <i aria-hidden="true" className="fas fa-check-circle"></i>
@@ -713,7 +687,7 @@ const Review = () => {
             </div>
             <div className="col-md-4">
               <div className="box-ol">
-                <ol>
+                <ol className="m-0 d-flex align-items-center p-0">
                   <li className="in_li">
                     <span className="right_span">
                       <i aria-hidden="true" className="fas fa-check-circle"></i>
@@ -795,12 +769,24 @@ const Review = () => {
                 </div>
               </div>
             </div>
-            <button type="button" className="btn btn-outline-dark btn">
-              All Testimonials
-            </button>
-            <p className="down_p">
-              45.2 <span className="down_p-spa">*****</span> | 940 Customers
-              Reviwes
+            <h6 className="text-center">
+              <button type="button" className="btn btn-outline-dark btn">
+                All Testimonials
+              </button>
+            </h6>
+
+            <p class="down_p">
+              45.2{" "}
+              <span class="down_p-spa">
+                <span class="writing_sec-spa">
+                  <i class="fa-sharp fa-solid fa-star star_r"></i>
+                  <i class="fa-sharp fa-solid fa-star star_r"></i>
+                  <i class="fa-sharp fa-solid fa-star star_r"></i>
+                  <i class="fa-sharp fa-solid fa-star star_r"></i>
+                  <i class="fa-sharp fa-solid fa-star star_r"></i>
+                </span>
+              </span>{" "}
+              | 940 Customers Reviwes
             </p>
           </div>
         </div>

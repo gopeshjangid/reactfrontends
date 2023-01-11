@@ -41,7 +41,7 @@ class Sample extends Component {
       <div>
         <section className="samp_sec">
           <div className="container">
-            <div className="row">
+            <div className="row text-center">
               <div>
                 <input
                   type="text"
@@ -74,7 +74,7 @@ class Sample extends Component {
                 </button>
               </div>
 
-              <h2 className="samp_sec-h2">Work Sample</h2>
+              <h2 className="samp_sec-h2 m-auto">Work Sample</h2>
 
               <p className="samp_sec-p">
                 You’re probably looking for ways to get people to pay attention
@@ -89,7 +89,7 @@ class Sample extends Component {
                   ).map((friend, value) => {
                     return (
                       <div className="col-md-3" key={value.toString()}>
-                        <div className="samp_box">
+                        <div className="samp_box text-center">
                           <img
                             alt="images"
                             src={urlApi + "/image/" + friend.image}
@@ -97,7 +97,7 @@ class Sample extends Component {
                           />
 
                           <h3 className="samp_box-h3">{friend.title}</h3>
-                          <p className="samp_box-p">{friend.dec}</p>
+                          <p className="samp_box-p text-center">{friend.dec}</p>
                           <a
                             type="button"
                             rel="noreferrer"

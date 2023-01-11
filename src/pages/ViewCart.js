@@ -344,7 +344,10 @@ const ViewCart = () => {
 
   const payWithStrip = (amount) => {
     axios
-      .post("http://localhost:5000/orderStripe", { TotalAmount: amount })
+      .post("http://localhost:5000/orderStripe", {
+        TotalAmount: amount,
+        subscriptionType: "subscription",
+      })
       .then((response) => {
         sessionStorage.setItem("TotalAmount", amount);
         sessionStorage.setItem("pay_id", response.data.id);

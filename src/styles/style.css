@@ -2271,7 +2271,9 @@ th {
   display: flex;
   justify-content: space-between;
   list-style: none;
+  margin: auto;
   cursor: pointer;
+  width: 25%;
 }
 
 .pagination a {
@@ -2285,15 +2287,25 @@ th {
   font-weight: bold;
 }
 
+.pagination__link:hover {
+  background: #00a7a6;
+  color: #fff !important;
+}
+
 .pagination__link--active a {
   color: #fff;
   border: solid 1px #00a7a6;
   background: #00a7a6;
 }
 
+.pagination__link--disabled {
+  background: #000;
+}
+
 .pagination__link--disabled a {
   text-decoration: none;
   color: rgb(198, 197, 202);
+  background: #000;
   border: 1px solid rgb(198, 197, 202);
 }
 

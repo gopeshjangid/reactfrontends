@@ -27,10 +27,10 @@
 // export default ChatRoom;
 
 import React from "react";
-import { VscFilePdf } from "react-icons/vsc";
+// import { VscFilePdf } from "react-icons/vsc";
 import { Router, useNavigate } from "react-router-dom";
 
-const Message = ({ user, message, classs, type }) => {
+const Message = ({ user, message, classs, type, name }) => {
   const navigate = useNavigate();
   // const onButtonClick = () => {
   //   // using Java Script method to get PDF file
@@ -47,24 +47,64 @@ const Message = ({ user, message, classs, type }) => {
   //   });
   // };
 
-  if (user && type == "image") {
+  if (user && type === "image") {
     return (
       <div className={`messageBox ${classs}`}>
-        {`${user}:`} <img src={`${message}`} />
+        <p className="fw-bold mb-2">{`${user}`}</p>
+        <img src={`${message}`} />
       </div>
     );
-  } else if ((user && type == "pdf") || (user && type == "docs")) {
+  } else if (user && type === "pdf") {
     return (
       <div className={`messageBox ${classs}`}>
         {" "}
-        {`${user}:`}{" "}
-        <button onClick={() => navigate(`//${message}`)}>
-          <VscFilePdf />
+        <p className="fw-bold mb-2">{`${user}`}</p>
+        <button
+          onClick={() => window.open(`${message}`)}
+          className="border-0 p-2 rounded"
+          style={{ background: "#029a99" }}
+        >
+          {/* <VscFilePdf /> */}
+
+          {user && type === "pdf" ? (
+            <i className="fa-solid fa-file-pdf fs-3 text-white"></i>
+          ) : (
+            ""
+          )}
         </button>
+        <span className="ms-3"> {`${name}`}</span>
+      </div>
+    );
+  } else if ((user && type === "docx") || (user && type === "doc")) {
+    return (
+      <div className={`messageBox ${classs}`}>
+        {" "}
+        <p className="fw-bold mb-2">{`${user}`}</p>
+        <button
+          onClick={() => navigate(`//${message}`)}
+          className="border-0 p-2 rounded"
+          style={{ background: "#029a99" }}
+        >
+          {/* <VscFilePdf /> */}
+
+          {(user && type === "docx") || (user && type === "doc") ? (
+            // <i class="fa-solid fa-file-pdf "></i>
+            <i className="fa-solid fa-file fs-3 text-white"></i>
+          ) : (
+            ""
+          )}
+        </button>
+        <span className="ms-3"> {`${name}`}</span>
       </div>
     );
   } else {
-    return <div className={`messageBox ${classs}`}>{`${user}:${message}`}</div>;
+    return (
+      <div className={`messageBox ${classs}`}>
+        {" "}
+        <p className="fw-bold mb-2">{`${user}`}</p>
+        {`${message}`}
+      </div>
+    );
   }
 };
 

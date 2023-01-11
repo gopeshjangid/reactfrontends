@@ -54,13 +54,16 @@ const Register = () => {
     // add entity - POST
     // e.preventDefault();
     // creates entity
+
+    const passwordLength1 = /^.{6,}$/;
     const regex1 = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (
       username.trim() === "" ||
       email.trim() === "" ||
       password.trim() === "" ||
       confirmPassword.trim() === "" ||
-      regex1.test(email.trim()) === false
+      regex1.test(email.trim()) === false ||
+      passwordLength1.test(password.trim()) === false
     ) {
       return;
     } else {
@@ -116,7 +119,7 @@ const Register = () => {
 
   const validate = (values) => {
     const errors = {};
-
+    const passwordLength = /^.{6,}$/;
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.username) {
       errors.username = "!'Please Enter Your Name'";
@@ -128,6 +131,8 @@ const Register = () => {
     }
     if (!values.password) {
       errors.password = "!'Please Enter Your Password'";
+    } else if (!passwordLength.test(values.password)) {
+      errors.password = "!'Please enter maximum 6 character'";
     }
 
     if (!values.confirmPassword) {
