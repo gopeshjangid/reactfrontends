@@ -192,14 +192,14 @@ const Chat = ({ orderId, orderName }) => {
         : pdfselected
         ? "pdf"
         : docsSelected
-        ? "docs"
+        ? "docx"
         : "message",
       name: selectedImage
         ? null
         : pdfselected
-        ? docsSelected
-          ? "abc.docs"
-          : "resume.pdf"
+        ? "resume.pdf"
+        : docsSelected
+        ? "abc.docs"
         : null,
     });
 
@@ -232,7 +232,7 @@ const Chat = ({ orderId, orderName }) => {
   };
 
   const selectImage = (e) => {
-    console.log(e?.target?.files[0].type.includes("pdf"));
+    console.log(e?.target?.files[0]);
 
     if (e?.target?.files[0].type.includes("image")) {
       console.log(e?.target?.files[0].type.includes("image"));
@@ -245,9 +245,11 @@ const Chat = ({ orderId, orderName }) => {
       setPdfselected(true);
     } else if (
       e?.target?.files[0].type.includes("doc") ||
-      e?.target?.files[0].type.includes("docx")
+      e?.target?.files[0].type.includes("docx") ||
+      e?.target?.files[0].type.includes("msword") ||
+      e?.target?.files[0].type.includes("txt")
     ) {
-      console.log(e?.target?.files[0].type.includes("docs"));
+      console.log(e?.target?.files[0].type.includes("msword"));
 
       selectImage(false);
       setPdfselected(false);

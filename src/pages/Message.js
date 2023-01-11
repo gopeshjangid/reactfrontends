@@ -53,7 +53,13 @@ const Message = ({ user, message, classs, type }) => {
         {`${user}:`} <img src={`${message}`} />
       </div>
     );
-  } else if ((user && type == "pdf") || (user && type == "docs")) {
+  } else if (
+    (user && type == "pdf") ||
+    (user && type == "docx") ||
+    (user && type == "msword") ||
+    (user && type == "docs") ||
+    (user && type == "txt")
+  ) {
     return (
       <div className={`messageBox ${classs}`}>
         {" "}
