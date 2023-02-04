@@ -1,70 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
+import GetinTouch from "./GetinTouch";
 
-// import ReactDOM from "react-dom";
-// import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from "react";
-// import axios from 'axios';
-// import { dispatch } from 'react';
 
 const Home = () => {
-  const initialValues = {
-    username: "",
-    email: "",
-    number: "",
-    deadline: "",
-  };
-
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setFormErrors(validate(formValues));
-    setIsSubmit(true);
-  };
-
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(formValues);
-    }
-  }, [formErrors]);
-
-  const validate = (values) => {
-    const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.username) {
-      errors.username = "!'Please Enter Your Name'";
-    }
-    if (!values.email) {
-      errors.email = "!'Please Enter Your Email'";
-    } else if (!regex.test(values.email)) {
-      errors.email = "!'This is not Email Format'";
-    }
-    if (!values.number) {
-      errors.number = "!'Please Enter Your Number'";
-    } else if (values.number.length < 10) {
-      errors.number = "!'Please Enter 10 Character'";
-    } else if (values.number.length > 10) {
-      errors.number = "!'Please Enter 10 Character'";
-    }
-    if (!values.deadline) {
-      errors.deadline = "!'Please Enter Your deadline'";
-    }
-    return errors;
-  };
-
   return (
     <div>
       <section className="top_sec">
@@ -82,95 +25,7 @@ const Home = () => {
 
             <div className="col-md-6">
               <section className="form_sec">
-                <form
-                  style={{ padding: "4%" }}
-                  className="text-center"
-                  onSubmit={handleSubmit}
-                >
-                  <h2 className="form_sec-h2">
-                    Get In <span className="spa">Touch </span>
-                  </h2>
-                  <div className="form-inputs d-flex space-between">
-                    <div className="Home-Name">
-                      <input
-                        type="text"
-                        id="fname"
-                        name="username"
-                        placeholder="Name"
-                        onChange={handleChange}
-                        className="text_set ms-0"
-                      />
-                      <p style={{ color: "red" }}>{formErrors.username}</p>
-                    </div>
-
-                    <div className="Home-Name">
-                      <input
-                        type="text"
-                        id="fname"
-                        name="email"
-                        placeholder="Email"
-                        onChange={handleChange}
-                        className="text_set ms-0"
-                      />
-                      <p style={{ color: "red" }}>{formErrors.email}</p>
-                    </div>
-                  </div>
-                  <div className="form-inputs d-flex space-between">
-                    <div className="Home-Name">
-                      <input
-                        type="number"
-                        id="fname"
-                        name="number"
-                        placeholder="Exp:+91 7665092627"
-                        onChange={handleChange}
-                        className="text_set ms-0"
-                      />
-                      <p style={{ color: "red" }}>{formErrors.number}</p>
-                    </div>
-                    <div className="Home-Name">
-                      <select className="text_set ms-0">
-                        <option>Content Type</option>
-
-                        <option>Ghost Writing</option>
-                        <option>Blog Writing</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className="form-inputs d-flex space-between">
-                    <div className="Home-Name">
-                      <input
-                        type="text"
-                        id="fname"
-                        name="deadline"
-                        placeholder="Deadline"
-                        onChange={handleChange}
-                        className="text_set ms-0"
-                      />
-                      <p style={{ color: "red" }}>{formErrors.deadline}</p>
-                    </div>
-
-                    <div className="Home-Name">
-                      <select className="text_set ms-0">
-                        <option>Expert Level</option>
-
-                        <option>Expert</option>
-                        <option>Premium</option>
-                        <option>Enterprice</option>
-                      </select>
-                    </div>
-                  </div>
-                  <button type="submit" className="btn_set1 ms-0">
-                    Register
-                  </button>{" "}
-                  {Object.keys(formErrors).length === 0 && isSubmit ? (
-                    <h3 className="Success t-center" style={{ color: "#fff" }}>
-                      Register is Successfull
-                    </h3>
-                  ) : (
-                    ""
-                  )}
-                  {/* <Link to="/Login"><button type="button" className="btn_set2" onClick={(e) => this.create(e)}>Login</button></Link> */}
-                </form>
+                <GetinTouch />
               </section>
             </div>
           </div>
@@ -181,25 +36,41 @@ const Home = () => {
         <div className="container">
           <div className="row overlep_sec">
             <div className="col-md-3 overlep_sec1">
-              <img src="writer/img/gpw-img1.png" className="overlep_sec-img" />
+              <img
+                src="writer/img/gpw-img1.png"
+                alt="gpw"
+                className="overlep_sec-img"
+              />
               <h3 className="overlep_sec-h3">GPW REVIEWS</h3>
               <p className="overlep_sec-p">05 / 05</p>
             </div>
 
             <div className="col-md-3 overlep_sec2">
-              <img src="writer/img/gpw-img2.png" className="overlep_sec-img" />
+              <img
+                src="writer/img/gpw-img2.png"
+                alt="gpw-img2"
+                className="overlep_sec-img"
+              />
               <h3 className="overlep_sec-h3">TRUSTPILOT</h3>
               <p className="overlep_sec-p">4.9 / 05</p>
             </div>
 
             <div className="col-md-3 overlep_sec3">
-              <img src="writer/img/gpw-img3.png" className="overlep_sec-img" />
+              <img
+                src="writer/img/gpw-img3.png"
+                alt="gpw-img3"
+                className="overlep_sec-img"
+              />
               <h3 className="overlep_sec-h3">SITEJABBER</h3>
               <p className="overlep_sec-p">05 / 05</p>
             </div>
 
             <div className="col-md-3 overlep_sec4">
-              <img src="writer/img/gpw-img4.png" className="overlep_sec-img" />
+              <img
+                src="writer/img/gpw-img4.png"
+                alt="gpw-img4"
+                className="overlep_sec-img"
+              />
               <h3 className="overlep_sec-h3">GOOGLE REVIEW</h3>
               <p className="overlep_sec-p">4.9 / 05</p>
             </div>
@@ -426,10 +297,14 @@ const Home = () => {
                 the attention of customers and make you look good.
               </p>
               <div className="video">
-                <img src="writer/img/Getprowriter.jpg" className="count-img" />
+                <img
+                  src="writer/img/Getprowriter.jpg"
+                  alt="Getprowriter"
+                  className="count-img"
+                />
 
                 <a href="https://www.youtube.com/embed/rlcoakSMvOQ?controls=1&rel=0&playsinline=0&modestbranding=0&autoplay=0&end=141.2&enablejsapi=1&origin=https%3A%2F%2Fgetprowriter.com&widgetid=1">
-                  <i class="fa fa-play-circle-o count-img-icon"></i>
+                  <i className="fa fa-play-circle-o count-img-icon"></i>
                 </a>
               </div>
             </div>
@@ -566,6 +441,7 @@ const Home = () => {
                 <h3 className="get_sec-box_h3">Make a request</h3>
                 <img
                   src="writer/img/istockphoto.jpg"
+                  alt="istockphoto"
                   className="get_sec-box_img"
                 />
                 <p className="get_sec-box_p">
@@ -579,7 +455,11 @@ const Home = () => {
               <div className="get_sec-box">
                 <h2 className="get_sec-box_h2">STEP 2</h2>
                 <h3 className="get_sec-box_h3">Let us write your content</h3>
-                <img src="writer/img/team.jpg" className="get_sec-box_img" />
+                <img
+                  src="writer/img/team.jpg"
+                  alt="team"
+                  className="get_sec-box_img"
+                />
                 <p className="get_sec-box_p">
                   Our team of skilled writers can produce effective and
                   innovative content that appeals to your intended audience.
@@ -591,7 +471,11 @@ const Home = () => {
               <div className="get_sec-box">
                 <h2 className="get_sec-box_h2">STEP 3</h2>
                 <h3 className="get_sec-box_h3">Get your content copy</h3>
-                <img src="writer/img/deliver.jpg" className="get_sec-box_img" />
+                <img
+                  src="writer/img/deliver.jpg"
+                  alt="deliver"
+                  className="get_sec-box_img"
+                />
                 <p className="get_sec-box_p">
                   We’ll promptly deliver your content via e-mail to the address
                   associated with your purchase.
@@ -647,7 +531,7 @@ const Home = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/lego.webp"
-                    alt="Los Angeles"
+                    alt="lego"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -657,7 +541,7 @@ const Home = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/Allianz.webp"
-                    alt="Chicago"
+                    alt="Allianz"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -667,7 +551,7 @@ const Home = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/Citi.webp"
-                    alt="Chicago"
+                    alt="Citi"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -677,7 +561,7 @@ const Home = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/zara-logo.webp"
-                    alt="Los Angeles"
+                    alt="zara"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -688,7 +572,7 @@ const Home = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/loreal-logo.webp"
-                    alt="Chicago"
+                    alt="loreal-logo"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -698,7 +582,7 @@ const Home = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/gillette-logo.webp"
-                    alt="Chicago"
+                    alt="gillette-logo"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -708,7 +592,7 @@ const Home = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/sap-logo.webp"
-                    alt="Los Angeles"
+                    alt="sap-logo"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -718,7 +602,7 @@ const Home = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/att-logo.webp"
-                    alt="Los Angeles"
+                    alt="att-logo"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -728,7 +612,7 @@ const Home = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/toyota-logo.webp"
-                    alt="Chicago"
+                    alt="toyota-logo"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -738,7 +622,7 @@ const Home = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/ikea-logo.webp"
-                    alt="Chicago"
+                    alt="ikea-logo"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -771,6 +655,7 @@ const Home = () => {
                 <div className="t_sels">
                   <img
                     src="writer/img/Katy-Wong.webp"
+                    alt="Katy-Wong"
                     className="testi_box-img"
                   />
                   <h3 className="testi_box-h3"> Katy Wong</h3>
@@ -793,6 +678,7 @@ const Home = () => {
                 <div className="t_sels">
                   <img
                     src="writer/img/technical-writer.jpg"
+                    alt="technical-writer"
                     className="testi_box-img"
                   />
                   <h3 className="testi_box-h3">John Paul Sims</h3>

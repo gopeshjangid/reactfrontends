@@ -6,6 +6,7 @@ import axios from "axios";
 import TransactionHistory from "./TransactionHistory";
 import ViewOrder from "./ViewOrder";
 import Chat from "./Chat";
+import ExtraCredit from "./ExtraCredit";
 // import Login from './Login'
 
 function loadScript(src) {
@@ -26,7 +27,7 @@ const AccountSetting = () => {
   const navigate = useNavigate();
 
   const [Data1, setData1] = useState([]);
-  const [Users, setUsers] = useState({});
+  const [Users, setUsers] = useState([]);
   const [showChat, setShowChat] = useState(false);
   const [orderId, setOrderId] = useState("");
   const [orderName, setOrderName] = useState("");
@@ -65,8 +66,11 @@ const AccountSetting = () => {
       callback_url: "/razorpay-is-completed",
       description: "Thank you for nothing. Please give us some money",
       handler: async function (response) {
+        console.log(response);
         var data = JSON.stringify({
           razorpay_payment_id: response.razorpay_payment_id,
+          razorpay_order_id: response.razorpay_order_id,
+          razorpay_signature: response.razorpay_signature,
         });
 
         var config = {
@@ -116,7 +120,8 @@ const AccountSetting = () => {
         response.json(
           setUsers({
             response,
-          })
+          }),
+          console.log(Users)
         )
       )
 
@@ -137,7 +142,7 @@ const AccountSetting = () => {
     if (getToken == null) {
       navigate("/login");
     }
-  }, []);
+  }, [navigate]);
 
   const initialValue = {
     currentPassword: "",
@@ -148,7 +153,7 @@ const AccountSetting = () => {
   const [User, setUser] = useState(initialValue);
   const [formError, setFormError] = useState({});
   const [inSubmit, setInSubmit] = useState(false);
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [message, setMessage] = useState();
   const [paypal, setPaypal] = useState("");
 
@@ -173,10 +178,13 @@ const AccountSetting = () => {
     // e.preventDefault();
     // creates entity
 
+    const passwordLength1 = /^.{6,}$/;
+
     if (
       currentPassword.trim() === "" ||
       newPassword.trim() === "" ||
-      confirmPassword.trim() === ""
+      confirmPassword.trim() === "" ||
+      passwordLength1.test(newPassword.trim()) === false
     ) {
       return;
     } else {
@@ -223,23 +231,25 @@ const AccountSetting = () => {
     if (Object.keys(formError).length === 0 && inSubmit) {
       console.log(User);
     }
-  }, [formError]);
+  }, [User, formError, inSubmit]);
 
   const valide = (value) => {
     const error = {};
-    // const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const passwordLength = /^.{6,}$/;
     if (!value.currentPassword) {
       error.currentPassword = "!'Please Enter Your currentPassword'";
     }
 
     if (!value.newPassword) {
       error.newPassword = "!'Please Enter New Your newPassword'";
+    } else if (!passwordLength.test(value.newPassword)) {
+      error.newPassword = "!'Please Enter Maximum 6 Character'";
     }
-    //  else if(!value.confirmPassword  && value !== !value.password) {
-    // 	error.password = "!'This is not Same'"
-    // }
-
     if (!value.confirmPassword) {
+      //  else if(!value.confirmPassword  && value !== !value.password) {
+      // 	error.password = "!'This is not Same'"
+      // }
+
       error.confirmPassword = "!'Please Enter Your confirmPassword'";
     } //  else if(!value.password && value !== !value.confirmPassword) {
     // 	error.confirmPassword = "!'This is not Same'"
@@ -252,7 +262,7 @@ const AccountSetting = () => {
     axios
       .post("http://localhost:5000/payment", { wallet: amount })
       .then((response) => {
-        sessionStorage.setItem("wallet", amount);
+        // sessionStorage.setItem("wallet", amount);
         console.log(response);
         sessionStorage.setItem("pay_id", response.data.id);
         window.open(response.data.url, "_self");
@@ -268,9 +278,9 @@ const AccountSetting = () => {
         console.log(response);
         sessionStorage.setItem("pay_id", response.data.id);
         window.open(response.data.url, "_self");
-        // setPaypal({
-        //   response,
-        // });
+        setPaypal({
+          response,
+        });
       })
 
       .catch((error) => console.log(error));
@@ -279,6 +289,14 @@ const AccountSetting = () => {
 
   console.log(orderId);
 
+  // const accountsettingId = {
+  //   id: menu1,
+  //   id2: menu2,
+  //   id3: menu3,
+  //   id4: menu4,
+  //   id5: menu5,
+  // };
+
   return (
     <div>
       <section className="reg_sec">
@@ -286,7 +304,11 @@ const AccountSetting = () => {
           <div className="row">
             <div className="col-lg-3">
               <h2 className="text-center">
-                <img src="writer/img/logo/logo-img.png" className="as-img" />
+                <img
+                  src="writer/img/logo/logo-img.png"
+                  alt="logo-img"
+                  className="as-img"
+                />
               </h2>
               <br />
 
@@ -339,10 +361,10 @@ const AccountSetting = () => {
 
             <div className="col-lg-9">
               <div className="tab-content">
-                <h5 className="user_tab1">
+                <h5 className="user_tab1 mb-2">
                   Welcome to <span className="user_ach">User</span>
                 </h5>
-                <div id="home" className="container tab-pane active">
+                <div id="home" className="container tab-pane px-0 active">
                   <br />
 
                   <ViewOrder
@@ -378,6 +400,7 @@ const AccountSetting = () => {
                     <div className="col-md-4 text-center">
                       <img
                         src="writer/img/Mira-Whedon.webp"
+                        alt="Mira-Whedon"
                         className="team_sec-img"
                       />
                       <p className="">
@@ -407,7 +430,6 @@ const AccountSetting = () => {
                       <p style={{ color: "red" }}>
                         {formError.currentPassword}
                       </p>
-
                       <label className="as-lbl">New Password</label>
                       <input
                         type="password"
@@ -416,7 +438,6 @@ const AccountSetting = () => {
                         className="as-text_set"
                       />
                       <p style={{ color: "red" }}>{formError.newPassword}</p>
-
                       <label className="as-lbl">Confirm Password</label>
                       <input
                         type="password"
@@ -427,7 +448,6 @@ const AccountSetting = () => {
                       <p style={{ color: "red" }}>
                         {formError.confirmPassword}
                       </p>
-
                       <button
                         type="submit"
                         className="as-btn_set"
@@ -436,12 +456,6 @@ const AccountSetting = () => {
                         Update
                       </button>
                       <br />
-                      {Object.keys(formError).length === 0 && inSubmit ? (
-                        <h3 className="Success text-center"></h3>
-                      ) : (
-                        ""
-                      )}
-
                       {message === "password successfully changed" ? (
                         <h3
                           className="Success text-center"
@@ -489,7 +503,7 @@ const AccountSetting = () => {
                   </div>
                 </div>
                 <div id="menu5" className="container tab-pane fade">
-                  <div className="table-responsive">
+                  <div className="table-responsive viewOrdertable ">
                     <table className="table table-bordered">
                       <thead>
                         <tr>
@@ -500,7 +514,7 @@ const AccountSetting = () => {
                           <th>Actions</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody className="viewOrderbody">
                         <tr>
                           <td>1</td>
                           <td>Package</td>
@@ -534,9 +548,7 @@ const AccountSetting = () => {
                       ₹{Data1?.wallet}
                     </span>
                   </p>
-                  <p className="text-secondary text-center fs-4">
-                    you can add a wallet in three ways
-                  </p>
+                  <ExtraCredit />
                   <div className="payment-gateway justify-content-center">
                     <button
                       type="button"
@@ -707,9 +719,7 @@ const AccountSetting = () => {
                     </div>
                   </div>
 
-                  <div className="table-responsive">
-                    <TransactionHistory />
-                  </div>
+                  <TransactionHistory />
                 </div>
               </div>
             </div>

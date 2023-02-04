@@ -775,15 +775,15 @@ const Review = () => {
               </button>
             </h6>
 
-            <p class="down_p">
+            <p className="down_p">
               45.2{" "}
-              <span class="down_p-spa">
-                <span class="writing_sec-spa">
-                  <i class="fa-sharp fa-solid fa-star star_r"></i>
-                  <i class="fa-sharp fa-solid fa-star star_r"></i>
-                  <i class="fa-sharp fa-solid fa-star star_r"></i>
-                  <i class="fa-sharp fa-solid fa-star star_r"></i>
-                  <i class="fa-sharp fa-solid fa-star star_r"></i>
+              <span className="down_p-spa">
+                <span className="writing_sec-spa">
+                  <i className="fa-sharp fa-solid fa-star star_r"></i>
+                  <i className="fa-sharp fa-solid fa-star star_r"></i>
+                  <i className="fa-sharp fa-solid fa-star star_r"></i>
+                  <i className="fa-sharp fa-solid fa-star star_r"></i>
+                  <i className="fa-sharp fa-solid fa-star star_r"></i>
                 </span>
               </span>{" "}
               | 940 Customers Reviwes

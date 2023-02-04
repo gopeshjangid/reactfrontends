@@ -31,10 +31,14 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const { username, password } = User;
-
+    let getAllProduct = JSON.parse(localStorage.getItem("product"));
+    if (getAllProduct === null) {
+      getAllProduct = [];
+    }
     const object = {
       username: username.trim(),
       password: password.trim(),
+      getAllProduct,
     };
 
     setFormErrors(validate(User));
@@ -48,7 +52,7 @@ const Login = () => {
       fetch("http://localhost:5000/login", {
         method: "POST",
         mode: "cors",
-        body: JSON.stringify(object, { username, password }),
+        body: JSON.stringify(object),
         headers: {
           "Content-type": "application/json",
           Accept: "application/json",
@@ -62,7 +66,7 @@ const Login = () => {
           if (json.message === "successfully login") {
             localStorage.setItem("token", json.token);
             setIsLoggedin(true);
-
+            localStorage.removeItem("product");
             navigate("/AccountSetting");
           }
 
@@ -142,10 +146,15 @@ const Login = () => {
               </button>
               <br />
 
-              {Object.keys(formErrors, message).length === 0 && isSubmit ? (
-                <h3 className="Success text-center">{message}</h3>
+              {message === "successfully login" ? (
+                <h3
+                  className="Success text-center"
+                  style={{ color: "#03979c" }}
+                >
+                  {message}
+                </h3>
               ) : (
-                ""
+                <h3 className="Success text-danger text-center">{message}</h3>
               )}
 
               <p className="text-center m-0 fs-6 mb-1">

@@ -18,7 +18,7 @@ const PurchaseSuccess = () => {
                   tracking info
                 </p>
 
-                <Link className="" to="/services">
+                <Link className="" to="/accountSetting">
                   <button type="submit" className="fp-btn px-5 m-0">
                     Continue Shopping
                   </button>

@@ -1,38 +1,43 @@
 import axios from "axios";
-import React, { useEffect } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Success = () => {
   const tokenID = localStorage.getItem("token");
   const pay_id = sessionStorage.getItem("pay_id");
-  const amount = sessionStorage.getItem("wallet");
+  const email = sessionStorage.getItem("email");
   const headers = {
     "Content-Type": "application/json",
     Authorization: `${tokenID}`,
   };
-
-  const data = { wallet: parseInt(amount), pay_id };
+  //wallet: parseInt(amount),
+  console.log("QWERGWEGRG", email);
+  const data = { pay_id, email };
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!sessionStorage.getItem("wallet")) {
-      navigate("/");
-    } else {
+  useEffect(
+    () => {
+      // if (!sessionStorage.getItem("wallet")) {
+      //   navigate("/");
+      // } else {
       axios
         .post("http://localhost:5000/rechargeWallet", data, {
           headers: headers,
         })
         .then((res) => {
           console.log(res);
+          console.log("weewq", res.data.data);
 
           sessionStorage.removeItem("pay_id");
-          sessionStorage.removeItem("wallet");
+          // sessionStorage.removeItem("wallet");
         })
         .catch((err) => {
           console.log(err);
         });
-    }
-  }, []);
+    },
+    // if(!sessionStorage.getItem("wallet"))
+    []
+  );
 
   return (
     <section className="fp_sec bg-transparent ">
@@ -42,6 +47,7 @@ const Success = () => {
             <form className="fp_form m-0 w-100 h-100">
               {/* <<onSubmit={handleSubmit} */}
               <span className=" p-0 fs-1 fw-bold">Payment Successfully</span>
+
               <p className="fp-p p-0">Your Payment Successfully Add.</p>
 
               <Link className="" to="/accountSetting">

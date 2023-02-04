@@ -10,16 +10,18 @@ const ENDPOINT = "http://localhost:5000";
 var socket, selectedChatCompare;
 
 const Chat = ({ orderId, orderName }) => {
-  const [id, setId] = useState("");
+  console.log("orderid", orderId);
+  // const [id, setId] = useState("");
   const [messages, setMessages] = useState([]);
   const [chatId, setChatId] = useState("");
   const [messageText, setMessageText] = useState("");
   const [selectedChat, setSelectedChat] = useState({});
-  const [socketConnected, setSocketConnected] = useState(false);
+  // const [socketConnected, setSocketConnected] = useState(false);
   const [userData, setUserData] = useState({});
+  // const [file, setFile] = useState({});
   const [selectedImage, setSelectedImage] = useState(false);
   const [pdfselected, setPdfselected] = useState(false);
-  const [docsSelected, setdocsSelected] = useState(false);
+  const [docsSelected, setDocsSelected] = useState(false);
 
   const socket = useRef();
 
@@ -70,7 +72,8 @@ const Chat = ({ orderId, orderName }) => {
         socket.current.emit("message", response?.data?._id);
         setSelectedChat(response.data);
         setChatId(response?.data?._id);
-        // socket.current.emit("chatId", response?.data?._id);
+        // console.log(response?.)
+        socket.current.emit("chatId", response?.data?._id);
       })
       .catch(function (error) {
         console.log("kjhdkhdkdhkdjdhk", error);
@@ -117,6 +120,7 @@ const Chat = ({ orderId, orderName }) => {
       .then((response) => console.log(response))
       .then((json) => {
         setUserData(json);
+        console.log(userData);
       })
       .catch((err) => {
         console.log(err);
@@ -167,7 +171,7 @@ const Chat = ({ orderId, orderName }) => {
 
     // fetchChats();
     // socket.current.on("emitText", (test) => concole.log(test));
-  }, [orderId]);
+  }, []);
 
   useEffect(() => {
     fetchMessages();
@@ -177,6 +181,12 @@ const Chat = ({ orderId, orderName }) => {
 
   const messageSendHandler = () => {
     const token = localStorage.getItem("token");
+
+    // if (!file) {
+    //   return;
+    // }
+
+    // console.log("qwertyujhedefghjiuytrdsdfghutrd", file);
 
     var data = JSON.stringify({
       chatId: chatId,
@@ -192,18 +202,18 @@ const Chat = ({ orderId, orderName }) => {
         : pdfselected
         ? "pdf"
         : docsSelected
-        ? "docx" || "doc" || "docs"
+        ? "docx"
         : "message",
       name: selectedImage
         ? null
         : pdfselected
-        ? "resume.pdf"
+        ? pdfselected
         : docsSelected
-        ? "abc.docs"
+        ? docsSelected
         : null,
     });
-    console.log("wewdf", data);
-    console.log("wewddfgsdf", docsSelected);
+    console.log(pdfselected);
+
     var config = {
       method: "post",
       url: "http://localhost:5000/message",
@@ -213,17 +223,19 @@ const Chat = ({ orderId, orderName }) => {
       },
       data: data,
     };
+    console.log("name", data);
+    console.log("pdf", pdfselected);
+
+    console.log("doc", docsSelected);
 
     axios(config)
       .then(function (response) {
-        console.log("qwertyuiopoiuytr", response.data);
+        console.log(response.data);
         socket.current.emit("new message", response.data);
         setMessages([...messages, response.data]);
         setSelectedImage(false);
         setPdfselected(false);
-        setdocsSelected(false);
         setMessageText("");
-        console.log(messages);
       })
       .catch(function (error) {
         console.log(error);
@@ -235,30 +247,32 @@ const Chat = ({ orderId, orderName }) => {
   };
 
   const selectImage = (e) => {
-    console.log(e?.target?.files[0].type.includes("pdf"));
-    console.log(e?.target?.files[0].type.includes("docs"));
+    // if (e.target.files) {
+    //   setFile(e.target.files[0]);
+    // }
+    // console.log("12345678i90", file);
+    console.log(e.target?.files[0]);
 
     if (e?.target?.files[0].type.includes("image")) {
-      console.log("imageeee", e?.target?.files[0].type.includes("image"));
-
+      console.log(e?.target?.files[0].type.includes("image"));
       setPdfselected(false);
       setSelectedImage(true);
     } else if (e?.target?.files[0].type.includes("pdf")) {
-      console.log("====pdfff", e?.target?.files[0].type.includes("pdf"));
+      console.log(e?.target?.files[0].type.includes("pdf"));
 
-      setdocsSelected(false);
       selectImage(false);
-      setPdfselected(true);
+      setPdfselected(e.target.files[0].name);
     } else if (
+      e?.target?.files[0].type.includes("doc") ||
       e?.target?.files[0].type.includes("docx") ||
-      e?.target?.files[0].type.includes("doc")
+      e?.target?.files[0].type.includes("msword") ||
+      e?.target?.files[0].type.includes("txt")
     ) {
-      console.log("-----dpoccc", e?.target?.files[0].type.includes("docx"));
+      console.log(e?.target?.files[0].type.includes("msword"));
 
       selectImage(false);
       setPdfselected(false);
-      setdocsSelected(true);
-      console.log("qwertyuiopoiuytr", docsSelected);
+      setDocsSelected(e.target.files[0].name);
     }
   };
 
@@ -278,8 +292,11 @@ const Chat = ({ orderId, orderName }) => {
               <ReactScrollToBoottome className="chatBox">
                 {messages.map((item, i) => (
                   <Message
+                    key={i}
+                    id={item._id}
                     user={item.sender.username + ": "}
                     message={item.content}
+                    orderId={item.chat.orderId}
                     type={item.type}
                     name={item.name}
                     classs={
@@ -309,7 +326,7 @@ const Chat = ({ orderId, orderName }) => {
           onClick={messageSendHandler}
           className="btn btn-primary chat_s_btn"
         >
-          Submit
+          SEND
         </button>
         <div className="fileDiv btn btn-info btn-flat" id="upload-btn-chat">
           {" "}

@@ -33,6 +33,10 @@ const OnlineManagement = () => {
     fetch();
   }, []);
 
+  const RenderHTML = (props) => (
+    <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>
+  );
+
   console.log(post);
 
   return (
@@ -56,7 +60,7 @@ const OnlineManagement = () => {
                       September 08,2022
                     </span>
                   </div>
-                  <p className="blog_sec-p p-0">{post?.data?.dec} </p>
+                  <RenderHTML HTML={post?.data?.dec} />
                 </div>
               </div>
             </div>

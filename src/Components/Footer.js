@@ -13,42 +13,42 @@ const Footer = () => {
               </span>
               <div className=" col-lg-6">
                 <ul className="navbar-nav">
-                  <li className="nav-item pad">
+                  <li className="nav-item pad-footer">
                     <Link className="nav-link set1" to="/blog">
                       Blog
                     </Link>
                   </li>
-                  <li className="nav-item pad">
+                  <li className="nav-item pad-footer">
                     <Link className="nav-link set1" to="/terms">
                       Terms
                     </Link>
                   </li>
-                  <li className="nav-item pad">
+                  <li className="nav-item pad-footer">
                     <Link className="nav-link set1" to="/privacy">
                       Privacy Policy
                     </Link>
                   </li>
-                  <li className="nav-item pad">
+                  <li className="nav-item pad-footer">
                     <Link className="nav-link set1" to="/faq">
                       FAQ
                     </Link>
                   </li>
-                  <li className="nav-item pad">
+                  <li className="nav-item pad-footer">
                     <Link className="nav-link set1" to="/about">
                       About
                     </Link>
                   </li>
-                  <li className="nav-item pad">
+                  <li className="nav-item pad-footer">
                     <Link className="nav-link set1" to="/author">
                       Authors
                     </Link>
                   </li>
-                  <li className="nav-item pad">
+                  <li className="nav-item pad-footer">
                     <Link className="nav-link set1" to="/career">
                       Career
                     </Link>
                   </li>
-                  <li className="nav-item pad">
+                  <li className="nav-item pad-footer">
                     <Link className="nav-link set1" to="/contact">
                       Contact
                     </Link>

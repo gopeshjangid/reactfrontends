@@ -234,11 +234,11 @@ const Register = () => {
                   Register
                 </button>
                 <br />
-                {Object.keys(formErrors).length === 0 && isSubmit ? (
+                {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
                   <h3 className="Success text-center"></h3>
                 ) : (
                   ""
-                )}
+                )} */}
 
                 {message === "successfully register" ? (
                   <h3

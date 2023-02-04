@@ -1,3 +1,4 @@
+// import DOMPurify from "dompurify";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 let urlApi = "http://localhost:5000";
@@ -37,6 +38,9 @@ class Blog extends Component {
 
   render() {
     const { User } = this.state;
+    const RenderHTML = (props) => (
+      <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>
+    );
 
     if (User.length < 0) {
       return User.length > 0;
@@ -69,7 +73,7 @@ class Blog extends Component {
                                 September 08,2022
                               </span>
                             </div>
-                            <p className="blog_sec-p">{friend.dec} </p>
+                            <RenderHTML HTML={friend.dec} />
 
                             <button type="button" className="blog_sec-btn">
                               Read More{" "}
@@ -87,7 +91,6 @@ class Blog extends Component {
                           />
                           <div className="p-4">
                             <h2 className="blog_sec-h2 p-0">{friend.title} </h2>
-
                             <div className="row">
                               <span className=" col-md-6 blog-span1  m-0">
                                 {friend.name}{" "}
@@ -96,9 +99,16 @@ class Blog extends Component {
                                 September 08,2022
                               </span>
                             </div>
-
-                            <p className="blog_sec-p p-0">{friend.dec} </p>
-
+                            {/* <p
+                              className="blog_sec-p p-0"
+                              dangerouslySetInnerHTML={{
+                                __html: `${friend.dec}`,
+                              }}
+                              // dangerouslySetInnerHTML={{
+                              //   __html: DOMPurify.sanitize(`${friend.dec}`),
+                              // }}
+                            ></p> */}
+                            <RenderHTML HTML={friend.dec} />
                             <Link to={`/onlineManagement/${friend._id}`}>
                               <button
                                 type="button"

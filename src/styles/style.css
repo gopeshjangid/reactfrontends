@@ -19,8 +19,15 @@
   padding-left: 15px !important;
   font-weight: 500;
 }
+.pad-footer {
+  border-bottom: solid 1px #000;
+}
+
+.pad-footer:hover {
+  border-bottom: solid 1px #2ab8d3;
+}
 .pad {
-  padding: -1px;
+  border-bottom: solid 1px #fff;
 }
 .pad:hover {
   border-bottom: 1px solid #2ab8d3;
@@ -56,7 +63,7 @@
 }
 .text_set {
   border: 1px solid #0000001c;
-  width: 97%;
+  width: 100%;
   margin-top: 20px;
   padding: 11px 10px 11px 12px;
   margin-left: 7px;
@@ -79,6 +86,7 @@
 
 .Home-Name {
   width: 100%;
+  margin-top: 20px;
 }
 .spa {
   color: black;
@@ -1680,7 +1688,6 @@
   color: white;
 }
 td {
-  border: 1px solid #00000012;
   padding: 13px 13px 13px 12px !important;
 }
 th {
@@ -2267,14 +2274,13 @@ th {
   border-left: 3px solid #02999b;
 }
 
-.pagination {
+/* .pagination {
   display: flex;
   justify-content: space-between;
   list-style: none;
   margin: auto;
   cursor: pointer;
-  width: 25%;
-}
+} */
 
 .pagination a {
   padding: 10px;
@@ -2307,6 +2313,21 @@ th {
   color: rgb(198, 197, 202);
   background: #000;
   border: 1px solid rgb(198, 197, 202);
+}
+
+.viewOrderbody td:hover {
+  background: rgb(220, 252, 252);
+}
+
+.viewOrder td:hover {
+  background: #fff;
+}
+
+.react-tel-input .form-control {
+  padding: 10.5px 14px 10.5px 60px !important;
+  margin-top: 20px;
+  width: 100% !important;
+  border-radius: 0 !important;
 }
 
 @media (max-width: 1024px) {
@@ -2544,7 +2565,7 @@ th {
     display: none;
   }
   .text_set {
-    width: 98%;
+    width: 100%;
   }
   .overlep_sec1 {
     margin-top: 4%;
@@ -2820,7 +2841,7 @@ th {
   margin-bottom: 10px;
 }
 .left {
-  background: rgb(255, 192, 192);
+  background: rgb(198 255 255);
   width: 60% !important;
   padding: 10px;
   border-radius: 10px;

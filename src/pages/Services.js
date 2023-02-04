@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+
 import axios from "axios";
 
 function loadScript(src) {
@@ -16,6 +17,8 @@ function loadScript(src) {
   });
 }
 
+// const navigate = useNavigate();
+
 class Services extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +26,10 @@ class Services extends Component {
       User: [],
       isAddLoading: false,
       cartItems: [],
+      stripeSubscription: [],
       noUser: false,
+      razorpaSubscription: [],
+      // navigate: useNavigate(),
       // details : {
       //     name: "gopesh"
       // }
@@ -31,9 +37,12 @@ class Services extends Component {
 
     this.componentDidMount = this.componentDidMount.bind(this);
   }
+  // var navigate =  useNavigate()
 
   async componentDidMount() {
     this.viewCart();
+
+    const tokenID = localStorage.getItem("token");
 
     const response = await fetch("http://localhost:5000/getServices", {
       method: "GET",
@@ -45,8 +54,29 @@ class Services extends Component {
     });
     if (response.ok) {
       const User = await response.json();
-      // console.log(User);
-      this.setState({ ...this.state, User: User.data });
+      console.log(User);
+      if (!tokenID) {
+        let getAllProduct = JSON.parse(localStorage.getItem("product"));
+        if (getAllProduct === null) {
+          getAllProduct = [];
+        }
+        let totalPrice = 0;
+        let totalItems = 0;
+        for (let i = 0; i < getAllProduct.length; i++) {
+          totalPrice += getAllProduct[i].price * getAllProduct[i].quantity;
+          totalItems += getAllProduct[i].quantity;
+        }
+        this.setState({
+          ...this.state,
+          getAllProduct,
+          totalPrice: totalPrice,
+          totalItems: totalItems,
+        });
+      }
+      this.setState({
+        ...this.state,
+        User: User.data,
+      });
     }
   }
 
@@ -62,8 +92,9 @@ class Services extends Component {
         headers: headers,
       })
       .then((response) => {
-        console.log("cart items ---------------", response.data);
+        console.log("cart items ---------------", response);
         this.setState({ ...this.state, cartItems: response.data });
+        console.log("sdertyuytre", this.state.User);
       })
       .catch((error) => {
         console.log(error);
@@ -76,15 +107,90 @@ class Services extends Component {
 
     if (!tokenID) {
       this.setState({ ...this.state, noUser: true });
+      //  console.log(this.state.User);
+
+      const localStorageProduct = await this.state.User?.filter(
+        (item, index) => item._id === id
+      )[0];
+
+      console.log(localStorageProduct);
+
+      localStorageProduct.quantity = 1;
+      let getAllProduct = JSON.parse(localStorage.getItem("product"));
+      this.setState({ ...this.state, getAllProduct });
+
+      let findOneProduct = getAllProduct?.filter(
+        (item, index) => item._id === id
+      );
+      if (findOneProduct === undefined) {
+        findOneProduct = [];
+      }
+      console.log(findOneProduct);
+      if (findOneProduct.length > 0) {
+        console.log(findOneProduct[0]._id);
+        const Indexobj = getAllProduct.findIndex((obj) => obj._id === id);
+        //   findOneProduct[0].quantity
+        console.log(Indexobj);
+        getAllProduct[Indexobj].quantity = getAllProduct[Indexobj].quantity + 1;
+
+        localStorage.setItem("product", JSON.stringify(getAllProduct));
+        console.log(getAllProduct);
+        let totalPrice = 0;
+        let totalItems = 0;
+        for (let i = 0; i < getAllProduct.length; i++) {
+          totalPrice += getAllProduct[i].price * getAllProduct[i].quantity;
+          totalItems += getAllProduct[i].quantity;
+        }
+        console.log(totalPrice);
+        this.setState({ totalPrice: totalPrice, totalItems: totalItems });
+        console.log(this.state.totalPrice);
+      } else {
+        if (getAllProduct === null) {
+          console.log("pro null condition true");
+          getAllProduct = [];
+          getAllProduct.push(localStorageProduct);
+          localStorage.setItem("product", JSON.stringify(getAllProduct));
+          let getNewAllProduct = JSON.parse(localStorage.getItem("product"));
+          let totalPrice = 0;
+          let totalItems = 0;
+          for (let i = 0; i < getNewAllProduct.length; i++) {
+            totalPrice +=
+              getNewAllProduct[i].price * getNewAllProduct[i].quantity;
+            totalItems += getNewAllProduct[i].quantity;
+          }
+          console.log(totalPrice);
+          this.setState({ totalPrice: totalPrice, totalItems: totalItems });
+        } else {
+          console.log("pro null condition false");
+          getAllProduct.push(localStorageProduct);
+          console.log(getAllProduct);
+          localStorage.setItem("product", JSON.stringify(getAllProduct));
+          console.log(
+            this.state.User?.filter((item, index) => item._id === id)[0]
+          );
+          let totalPrice = 0;
+          let totalItems = 0;
+          for (let i = 0; i < getAllProduct.length; i++) {
+            totalPrice += getAllProduct[i].price * getAllProduct[i].quantity;
+            totalItems += getAllProduct[i].quantity;
+          }
+          console.log(totalPrice);
+          this.setState({ totalPrice: totalPrice, totalItems: totalItems });
+        }
+      }
+      console.log(findOneProduct);
+
+      // localStorage.setItem("", JSON.stringify());
       return;
     }
-    console.log(this.state.cartItems);
+
+    console.log(this.state.cartItems.message);
     console.log(id);
-    console.log(
-      this.state.cartItems.message?.filter(
-        (item, index) => item.productId._id === id
-      )
-    );
+    // console.log(
+    //   this.state.cartItems.message?.filter(
+    //     (item, index) => item.productId._id === id
+    //   )
+    // );
 
     let quantity = 1;
     if (this.state.cartItems.message.length > 0) {
@@ -112,7 +218,7 @@ class Services extends Component {
         console.log(response.data.message);
         this.viewCart();
 
-        // this.setState({ ...this.state, cartItems: response.data.message });
+        this.setState({ ...this.state, cartItems: response.data.message });
       })
       .catch((error) => {
         console.log(error);
@@ -120,9 +226,9 @@ class Services extends Component {
       .finally(() => this.setState({ ...this.state, isAddLoading: false }));
   };
 
-  async showRazorpay(e) {
+  showRazorpay = async (id) => {
     const tokenID = localStorage.getItem("token");
-
+    console.log("iiiiiddddd", id);
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
     );
@@ -136,7 +242,7 @@ class Services extends Component {
     // });
 
     const data = await fetch(
-      "http://localhost:5000/razorpayCreateSubscription",
+      `http://localhost:5000/razorpayCreateSubscription/${id}`,
       {
         method: "POST",
         headers: {
@@ -175,8 +281,12 @@ class Services extends Component {
         console.log("log", data);
         axios(config)
           .then(function (res) {
-            console.log("finalRes", res);
-            // window.location.reload(true);
+            console.log("finalRes", res.data.message);
+            // this.setState({ ...this.state, razorpaSubscription: res.data });
+            // if (res.data.message === "subscriptiion successfull") {
+            //   this.props.navigate("/PurchaseSuccess");
+            // }
+            window.location.reload(true);
           })
           .catch(function (error) {
             console.log(error);
@@ -194,54 +304,42 @@ class Services extends Component {
     };
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
-  }
+  };
 
-  //     key: "key_id",
-  //     subscription_id: "sub_00000000000001",
-  //     name: "Acme Corp.",
-  //     description: "Monthly Test Plan",
-  //     // handler: function(response) {
-  //     //   // alert(response.razorpay_payment_id)
-  //     //   // alert(response.razorpay_subscription_id)      alert(response.razorpay_signature)
-  //     // },
-  //     prefill: {
-  //       name: "Gaurav Kumar",
-  //       email: "gaurav.kumar@example.com",
-  //       contact: "+919876543210",
-  //     },
-  //     notes: {
-  //       note_key_1: "Tea. Earl Grey. Hot",
-  //       note_key_2: "Make it so.",
-  //     },
-  //     theme: {
-  //       color: "#F37254",
-  //     },
-  //   };
+  StripeSubscription = async (id) => {
+    const token = localStorage.getItem("token");
+    // console.log("qwertyuiuytrewetui", id);
+    console.log("token", token);
+    axios
+      .post(
+        `http://localhost:5000/stripeSubscription/${id}`,
+        {},
 
-  // renderTableHeader = () =>{
-  // 	return Object.keys(this.state.User[0]).map(attr => <th key={attr}>
-  // 		{attr.toUpperCase()}
-  // 	</th>)
-  // }
+        {
+          headers: {
+            Authorization: `${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        sessionStorage.setItem("id", response.data.id);
+        window.open(response.data.url, "_self");
+        console.log("stripesubscription", response);
+      })
 
-  // renderTableRows = () => {
-  // 	return this.state.User.map(user => {
-  // 		return(
-  // 			<tr key={user.id}>
-  // 				<td>{user.id}</td>
-  // 				<td>{user.title}</td>
-  // 				<td>{user.dic}</td>
-  // 				<td><image src={user.image} /></td>
-  // 			</tr>
-  // 		)
-  // 	});
-  // };
+      .catch((error) => console.log(error));
+  };
+  // console.log(amount);
   render() {
     const { User } = this.state;
 
     if (User.length < 0) {
       return User.length > 0;
     }
+    const RenderHTML = (props) => (
+      <span dangerouslySetInnerHTML={{ __html: props.HTML }}></span>
+    );
 
     // console.log("this.props.User", this.state.User);
     return (
@@ -281,14 +379,14 @@ class Services extends Component {
                         <h4 className="services_box-h4">{friend.shortTitle}</h4>
 
                         <ol className="p-0">
-                          <li className="ol_li">
-                            <span className="ol_li-spa1">
+                          <li className="ol_li d-flex justify-content-center">
+                            <span className="ol_li-spa1 me-2">
                               <i
                                 aria-hidden="true"
                                 className="fas fa-check"
                               ></i>
                             </span>
-                            <span>{friend.dec}</span>
+                            <RenderHTML HTML={friend.dec} />
                           </li>
                         </ol>
                         <div className="text-center">
@@ -305,11 +403,67 @@ class Services extends Component {
                           <br />
                           <button
                             type="button"
-                            onClick={(e) => this.showRazorpay(e)}
                             className="services-btn2"
+                            data-bs-toggle="modal"
+                            data-bs-target={`${"#payment_id" + friend._id}`}
                           >
                             SUBSCRIBE
                           </button>
+
+                          <div
+                            className="modal fade"
+                            id={`${"payment_id" + friend._id}`}
+                            data-bs-backdrop="static"
+                            data-bs-keyboard="false"
+                            tabIndex="-1"
+                            aria-labelledby="exampleModalLabel"
+                            aria-hidden="true"
+                          >
+                            <div className="modal-dialog">
+                              <div className="modal-content border-0">
+                                <div
+                                  className="modal-header border-0"
+                                  style={{ background: "rgb(3, 151, 156)" }}
+                                >
+                                  <h1
+                                    className="modal-title fs-5 text-white"
+                                    id="exampleModalLabel"
+                                  >
+                                    Choose Subscription method ?
+                                  </h1>
+                                  <button
+                                    type="button"
+                                    className="bg-transparent border-0"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  >
+                                    <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                                  </button>
+                                </div>
+                                <div className="modal-body py-5">
+                                  {" "}
+                                  <button
+                                    type="button"
+                                    onClick={() =>
+                                      this.showRazorpay(friend._id)
+                                    }
+                                    className="services-btn2 me-2 mb-0"
+                                  >
+                                    Razorpay
+                                  </button>
+                                  <button
+                                    type="button"
+                                    onClick={() =>
+                                      this.StripeSubscription(friend._id)
+                                    }
+                                    className="services-btn2 ms-2 mb-0"
+                                  >
+                                    Stripe
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                           <br />
                           <button type="button" className="services-btn3">
                             BUY NOW
@@ -340,11 +494,11 @@ class Services extends Component {
                 <div className="row align-items-center">
                   <div className="col-md-8">
                     <h5 className="fw-normal">
-                      Total-Price =<span>></span>{" "}
+                      Total-Price =<span>&nbsp;</span>{" "}
                       {this.state.cartItems.totalPrice}
                     </h5>
                     <h5 className="fw-normal">
-                      Total-Items =<span>></span>{" "}
+                      Total-Items =<span>&nbsp;</span>{" "}
                       {this.state.cartItems.totalItems}
                     </h5>
                   </div>
@@ -362,9 +516,44 @@ class Services extends Component {
               </div>
             </div>
           )}
-          {this.state.noUser && (
-            <div className="text-center text-danger fs-1 mb-3">
-              Please Login First
+
+          {this.state.getAllProduct?.length > 0 && (
+            <div
+              style={{
+                width: "100%",
+                height: "100px",
+                bottom: "0",
+                left: "0",
+                display: "flex",
+                alignItems: "center",
+                position: "sticky",
+                backgroundColor: "#03979C",
+                color: "white",
+                zIndex: 999,
+              }}
+            >
+              <div className="container">
+                <div className="row align-items-center">
+                  <div className="col-md-8">
+                    <h5 className="fw-normal">
+                      Total-Price =<span>&nbsp;</span> {this.state.totalPrice}
+                    </h5>
+                    <h5 className="fw-normal">
+                      Total-Items =<span>&nbsp;</span> {this.state.totalItems}
+                    </h5>
+                  </div>
+
+                  <div className="col-md-4 text-end">
+                    <Link
+                      style={{ color: "white", fontSize: "20px" }}
+                      className="viewCart text-decoration-none"
+                      to={"/viewCart"}
+                    >
+                      View cart
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           )}
         </section>

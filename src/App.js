@@ -30,6 +30,13 @@ import PurchaseSuccess from "./pages/PurchaseSuccess";
 import OnlineManagement from "./pages/OnlineManagement";
 import Ordersuccess from "./pages/Ordersuccess";
 import Payplesuccess from "./pages/Payplesuccess";
+// import WorkSampleroute from "./pages/routes/WorkSampleroute";
+// import BlogRoute from "./pages/routes/BlogRoute";
+import StripeSubscription from "./pages/StripeSubscription";
+// import AuthorRoute from "./pages/routes/AuthorRoute";
+import StripeGuestPaymentSuccess from "./pages/StripeGuestPaymentSuccess";
+import GuestPayment from "./pages/GuestPayment";
+import PendingPaymentStripeSuccess from "./pages/PendingPaymentStripeSuccess";
 // import Join from "./pages/Join";
 
 function App() {
@@ -64,7 +71,20 @@ function App() {
         <Route path="/onlinemanagement/:id" element={<OnlineManagement />} />
         <Route path="/ordersuccess" element={<Ordersuccess />} />
         <Route path="/payplesuccess" element={<Payplesuccess />} />
-        {/* <Route path="/join" element={<Join />} /> */}
+        {/* <Route path="/WorkSampleroute" element={<WorkSampleroute />} /> */}
+        <Route path="/StripeSubscription" element={<StripeSubscription />} />
+
+        {/* <Route path="/BlogRoute" element={<BlogRoute />} />
+        <Route path="/AuthorRoute" element={<AuthorRoute />} /> */}
+        <Route
+          path="/stripeGuestPaymentSuccess"
+          element={<StripeGuestPaymentSuccess />}
+        />
+        <Route path="/GuestPayment" element={<GuestPayment />} />
+        <Route
+          path="/pendingPaymentStripeSuccess"
+          element={<PendingPaymentStripeSuccess />}
+        />
       </Routes>
       <Footer />
     </BrowserRouter>

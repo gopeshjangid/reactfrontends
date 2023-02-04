@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "../styles/style.css";
-import Logo from "../pages/images/logo-img.png";
+import Logo from "../pages/images/gp-writer-complete.png";
 // import { Navigate } from 'react-router-dom';
 
 const Header = () => {
@@ -55,8 +55,12 @@ const Header = () => {
       <section>
         <div className="container">
           <nav className="navbar navbar-expand-sm  navbar-dark">
-            <Link className="navbar-brand logo pe-0" to="/">
-              <img src={Logo} />
+            <Link
+              className="navbar-brand logo pe-0 "
+              style={{ width: "25%" }}
+              to="/"
+            >
+              <img src={Logo} style={{ width: "100%" }} />
             </Link>
             <button
               className="navbar-toggler"
@@ -111,6 +115,11 @@ const Header = () => {
                     <li>
                       <Link className="dropdown-item" to="/viewCart">
                         ViewCart
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/guestpayment">
+                        GuestPayment
                       </Link>
                     </li>
                     {/* <li><Link className="dropdown-item"  to="/Login">Login</Link></li> */}

@@ -31,6 +31,9 @@ class Sample extends Component {
   }
   render() {
     const { User } = this.state;
+    const RenderHTML = (props) => (
+      <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>
+    );
 
     if (User.length < 0) {
       return User.length > 0;
@@ -97,7 +100,8 @@ class Sample extends Component {
                           />
 
                           <h3 className="samp_box-h3">{friend.title}</h3>
-                          <p className="samp_box-p text-center">{friend.dec}</p>
+
+                          <RenderHTML HTML={friend.dec} />
                           <a
                             type="button"
                             rel="noreferrer"
@@ -125,7 +129,7 @@ class Sample extends Component {
                             />
                           </div>
                           <h3 className="samp_box-h3">{friend.title}</h3>
-                          <p className="samp_box-p">{friend.dec}</p>
+                          <RenderHTML HTML={friend.dec} />
                           <a
                             type="button"
                             rel="noreferrer"
