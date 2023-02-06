@@ -4,7 +4,7 @@ const ExtraCredit = () => {
   const [ExtraCredit, setExtracredit] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getextracredit", {
+    fetch("https://getprowriter.onrender.com/getextracredit", {
       method: "GET",
       headers: {
         "Content-type": "application/json",

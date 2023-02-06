@@ -1,7 +1,7 @@
 // import DOMPurify from "dompurify";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-let urlApi = "http://localhost:5000";
+let urlApi = "https://getprowriter.onrender.com";
 
 class Blog extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class Blog extends Component {
   }
 
   async componentDidMount() {
-    fetch("http://localhost:5000/getBlog", {
+    fetch("https://getprowriter.onrender.com/getBlog", {
       method: "GET",
       mode: "cors",
       headers: {

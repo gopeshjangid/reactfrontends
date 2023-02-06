@@ -18,9 +18,13 @@ const StripeGuestPaymentSuccess = () => {
   useEffect(
     () => {
       axios
-        .post("http://localhost:5000/stripeGuestPaymentSuccess", data, {
-          headers: headers,
-        })
+        .post(
+          "https://getprowriter.onrender.com/stripeGuestPaymentSuccess",
+          data,
+          {
+            headers: headers,
+          }
+        )
         .then((res) => {
           console.log(res);
           console.log("weewq", res.data.data);

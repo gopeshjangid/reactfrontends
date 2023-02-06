@@ -21,7 +21,7 @@ const Success = () => {
       //   navigate("/");
       // } else {
       axios
-        .post("http://localhost:5000/rechargeWallet", data, {
+        .post("https://getprowriter.onrender.com/rechargeWallet", data, {
           headers: headers,
         })
         .then((res) => {

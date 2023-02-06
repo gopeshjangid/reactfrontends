@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
-let urlApi = "http://localhost:5000";
+let urlApi = "https://getprowriter.onrender.com";
 
 const OnlineManagement = () => {
   const { id } = useParams();
@@ -17,7 +17,7 @@ const OnlineManagement = () => {
     const fetch = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/readmoreblog/${id}`,
+          `https://getprowriter.onrender.com/readmoreblog/${id}`,
           {
             headers: {
               "Content-type": "application/json",

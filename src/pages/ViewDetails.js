@@ -15,7 +15,7 @@ const ViewDetails = () => {
     const fetch = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/getAuthor/${id}`
+          `https://getprowriter.onrender.com/getAuthor/${id}`
         );
         SetPost(data);
       } catch (err) {

@@ -44,14 +44,17 @@ class Services extends Component {
 
     const tokenID = localStorage.getItem("token");
 
-    const response = await fetch("http://localhost:5000/getServices", {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Content-type": "application/json",
-        Accept: "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://getprowriter.onrender.com/getServices",
+      {
+        method: "GET",
+        mode: "cors",
+        headers: {
+          "Content-type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
     if (response.ok) {
       const User = await response.json();
       console.log(User);
@@ -88,7 +91,7 @@ class Services extends Component {
       Authorization: `${tokenID}`,
     };
     await axios
-      .get("http://localhost:5000/viewCart", {
+      .get("https://getprowriter.onrender.com/viewCart", {
         headers: headers,
       })
       .then((response) => {
@@ -211,7 +214,7 @@ class Services extends Component {
     const data = { quantity: quantity };
     this.setState({ ...this.state, isAddLoading: true });
     await axios
-      .post(`http://localhost:5000/addCart/${id}`, data, {
+      .post(`https://getprowriter.onrender.com/addCart/${id}`, data, {
         headers: headers,
       })
       .then((response) => {
@@ -242,7 +245,7 @@ class Services extends Component {
     // });
 
     const data = await fetch(
-      `http://localhost:5000/razorpayCreateSubscription/${id}`,
+      `https://getprowriter.onrender.com/razorpayCreateSubscription/${id}`,
       {
         method: "POST",
         headers: {
@@ -271,7 +274,7 @@ class Services extends Component {
 
         var config = {
           method: "post",
-          url: "http://localhost:5000/verifySubscriptionPayment",
+          url: "https://getprowriter.onrender.com/verifySubscriptionPayment",
           headers: {
             Authorization: `${tokenID}`,
             "Content-Type": "application/json",
@@ -312,7 +315,7 @@ class Services extends Component {
     console.log("token", token);
     axios
       .post(
-        `http://localhost:5000/stripeSubscription/${id}`,
+        `https://getprowriter.onrender.com/stripeSubscription/${id}`,
         {},
 
         {

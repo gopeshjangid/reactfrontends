@@ -75,7 +75,7 @@ const AccountSetting = () => {
 
         var config = {
           method: "post",
-          url: "http://localhost:5000/razorpay-is-completed",
+          url: "https://getprowriter.onrender.com/razorpay-is-completed",
           headers: {
             Authorization: tokenID,
             "Content-Type": "application/json",
@@ -107,7 +107,7 @@ const AccountSetting = () => {
     const getToken = localStorage.getItem("token");
     const tokenID = localStorage.getItem("token");
     console.log("hello+++++++++++", tokenID);
-    fetch("http://localhost:5000/viewProfile", {
+    fetch("https://getprowriter.onrender.com/viewProfile", {
       method: "GET",
       mode: "cors",
 
@@ -188,7 +188,7 @@ const AccountSetting = () => {
     ) {
       return;
     } else {
-      fetch("http://localhost:5000/changePassword", {
+      fetch("https://getprowriter.onrender.com/changePassword", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object, {
@@ -260,7 +260,7 @@ const AccountSetting = () => {
 
   const walletRecharge = () => {
     axios
-      .post("http://localhost:5000/payment", { wallet: amount })
+      .post("https://getprowriter.onrender.com/payment", { wallet: amount })
       .then((response) => {
         // sessionStorage.setItem("wallet", amount);
         console.log(response);
@@ -272,7 +272,9 @@ const AccountSetting = () => {
 
   const payWithPaypal = () => {
     axios
-      .post("http://localhost:5000/PaypalPayment", { wallet: paypal })
+      .post("https://getprowriter.onrender.com/PaypalPayment", {
+        wallet: paypal,
+      })
       .then((response) => {
         sessionStorage.setItem("wallet", paypal);
         console.log(response);

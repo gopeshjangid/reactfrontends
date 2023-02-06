@@ -67,7 +67,7 @@ const Register = () => {
     ) {
       return;
     } else {
-      fetch("http://localhost:5000/register", {
+      fetch("https://getprowriter.onrender.com/register", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),

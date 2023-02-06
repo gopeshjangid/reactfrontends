@@ -28,7 +28,7 @@ const Payplesuccess = () => {
       console.log("a=====", a);
       console.log("b=====", b);
       axios
-        .post("http://localhost:5000/payplesuccess", data, {
+        .post("https://getprowriter.onrender.com/payplesuccess", data, {
           headers: headers,
         })
         .then((res) => {

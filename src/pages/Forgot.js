@@ -35,7 +35,7 @@ const Forgot = () => {
     if (email.trim() === "" || regex1.test(email.trim()) === false) {
       return;
     } else {
-      fetch("http://localhost:5000/password-reset", {
+      fetch("https://getprowriter.onrender.com/password-reset", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),

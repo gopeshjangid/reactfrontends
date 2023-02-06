@@ -39,7 +39,7 @@ const GetinTouch = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/getAllExpertLevel", {
+    fetch("https://getprowriter.onrender.com/getAllExpertLevel", {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -59,7 +59,7 @@ const GetinTouch = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getAllContentType", {
+    fetch("https://getprowriter.onrender.com/getAllContentType", {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -84,7 +84,7 @@ const GetinTouch = () => {
   // 	}
   // },[])
   useEffect(() => {
-    fetch("http://localhost:5000/getCountryCode", {
+    fetch("https://getprowriter.onrender.com/getCountryCode", {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -148,7 +148,7 @@ const GetinTouch = () => {
     ) {
       return;
     } else {
-      fetch("http://localhost:5000/getInTouch", {
+      fetch("https://getprowriter.onrender.com/getInTouch", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),

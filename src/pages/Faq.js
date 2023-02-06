@@ -12,7 +12,7 @@ class Faq extends Component {
   }
 
   async componentDidMount() {
-    fetch("http://localhost:5000/getFaqs", {
+    fetch("https://getprowriter.onrender.com/getFaqs", {
       method: "GET",
       mode: "cors",
       headers: {
