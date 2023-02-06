@@ -185,7 +185,7 @@ const ViewProfile = () => {
   useEffect(() => {
     const tokenID = localStorage.getItem("token");
     console.log("hello", tokenID);
-    fetch("http://localhost:5000/viewProfile", {
+    fetch("https://getprowriter.onrender.com/viewProfile", {
       method: "GET",
       mode: "cors",
 
@@ -223,7 +223,7 @@ const ViewProfile = () => {
     // setFormErrors(validate(Users));
     const tokenId = localStorage.getItem("token");
     console.log("namastey", tokenId);
-    fetch("http://localhost:5000/updateProfile", {
+    fetch("https://getprowriter.onrender.com/updateProfile", {
       method: "POST",
       mode: "cors",
       body: JSON.stringify({ NewUserName: userName }),

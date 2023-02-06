@@ -20,7 +20,7 @@ const Ordersuccess = () => {
       navigate("/");
     } else {
       axios
-        .post("http://localhost:5000/orderStripeSuccess", data, {
+        .post("https://getprowriter.onrender.com/orderStripeSuccess", data, {
           headers: headers,
         })
         .then((res) => {

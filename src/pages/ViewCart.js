@@ -60,14 +60,17 @@ const ViewCart = () => {
       amount: amount,
     });
 
-    const data = await fetch("http://localhost:5000/orderRazorpay", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `${tokenID}`,
-      },
-      body: payload,
-    }).then((t) => t.json());
+    const data = await fetch(
+      "https://getprowriter.onrender.com/orderRazorpay",
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `${tokenID}`,
+        },
+        body: payload,
+      }
+    ).then((t) => t.json());
     console.log(data);
     const options = {
       key: "rzp_test_KiBn8QyRFCYQnw",
@@ -88,7 +91,7 @@ const ViewCart = () => {
 
         var config = {
           method: "post",
-          url: "http://localhost:5000/orderRazorpaySuccess",
+          url: "https://getprowriter.onrender.com/orderRazorpaySuccess",
           headers: {
             Authorization: tokenID,
             "Content-Type": "application/json",
@@ -126,7 +129,7 @@ const ViewCart = () => {
     // creates entity
     const tokenID = localStorage.getItem("token");
     console.log("hello", tokenID);
-    fetch("http://localhost:5000/viewProfile", {
+    fetch("https://getprowriter.onrender.com/viewProfile", {
       method: "GET",
       mode: "cors",
 
@@ -147,7 +150,7 @@ const ViewCart = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getServices", {
+    fetch("https://getprowriter.onrender.com/getServices", {
       method: "GET",
       mode: "cors",
 
@@ -200,7 +203,7 @@ const ViewCart = () => {
         Authorization: `${tokenID}`,
       };
       await axios
-        .get("http://localhost:5000/viewCart", {
+        .get("https://getprowriter.onrender.com/viewCart", {
           headers: headers,
         })
         .then((response) => {
@@ -242,7 +245,7 @@ const ViewCart = () => {
     const data = { quantity: quantity };
     setIsAddLoading(true);
     await axios
-      .post(`http://localhost:5000/addCart/${id}`, data, {
+      .post(`https://getprowriter.onrender.com/addCart/${id}`, data, {
         headers: headers,
       })
 
@@ -283,7 +286,7 @@ const ViewCart = () => {
     const data = { quantity: quantity };
     setIsAddLoading(true);
     await axios
-      .post(`http://localhost:5000/addCart/${id}`, data, {
+      .post(`https://getprowriter.onrender.com/addCart/${id}`, data, {
         headers: headers,
       })
       .then((response) => {
@@ -306,7 +309,7 @@ const ViewCart = () => {
     setIsAddLoading(true);
     await axios
       .post(
-        `http://localhost:5000/deleteCart/${id}`,
+        `https://getprowriter.onrender.com/deleteCart/${id}`,
         {},
         {
           headers: headers,
@@ -324,7 +327,9 @@ const ViewCart = () => {
 
   const checkCoupon = async () => {
     await axios
-      .post("http://localhost:5000/getCoupon", { applyCouponName: couponText })
+      .post("https://getprowriter.onrender.com/getCoupon", {
+        applyCouponName: couponText,
+      })
       .then((response) => {
         console.log("coupons ++++++++++++++++++", response.data);
         setCoupons(response.data);
@@ -360,7 +365,7 @@ const ViewCart = () => {
       : "";
     await axios
       .post(
-        `http://localhost:5000/useWallet/`,
+        `https://getprowriter.onrender.com/useWallet/`,
         {
           totalAmount,
           couponAmount,
@@ -386,7 +391,7 @@ const ViewCart = () => {
 
   const payWithStrip = (amount) => {
     axios
-      .post("http://localhost:5000/orderStripe", {
+      .post("https://getprowriter.onrender.com/orderStripe", {
         TotalAmount: amount,
       })
       .then((response) => {
@@ -404,7 +409,9 @@ const ViewCart = () => {
 
   const payWithPaypal = (paypal) => {
     axios
-      .post("http://localhost:5000/PaypalPayment", { TotalAmount: paypal })
+      .post("https://getprowriter.onrender.com/PaypalPayment", {
+        TotalAmount: paypal,
+      })
       .then((response) => {
         sessionStorage.setItem("TotalAmount", paypal);
         // sessionStorage.setItem("pay_id", response.data.id);
@@ -502,7 +509,7 @@ const ViewCart = () => {
       : "";
     await axios
       .post(
-        `http://localhost:5000/withoutPaymentOrder/`,
+        `https://getprowriter.onrender.com/withoutPaymentOrder/`,
         {
           totalAmount,
           couponAmount,

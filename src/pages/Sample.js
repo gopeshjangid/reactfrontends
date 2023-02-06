@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-let urlApi = "http://localhost:5000";
+let urlApi = "https://getprowriter.onrender.com";
 
 class Sample extends Component {
   constructor(props) {
@@ -15,14 +15,17 @@ class Sample extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch("http://localhost:5000/getworkSamples", {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Content-type": "application/json",
-        Accept: "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://getprowriter.onrender.com/getworkSamples",
+      {
+        method: "GET",
+        mode: "cors",
+        headers: {
+          "Content-type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
     if (response.ok) {
       const User = await response.json();
       console.log(User);

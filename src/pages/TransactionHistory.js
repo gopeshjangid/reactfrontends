@@ -17,7 +17,7 @@ class TransactionHistory extends Component {
   async componentDidMount() {
     const tokenID = localStorage.getItem("token");
     const response = await fetch(
-      "http://localhost:5000/walletTransactionHistory",
+      "https://getprowriter.onrender.com/walletTransactionHistory",
       {
         method: "GET",
         mode: "cors",

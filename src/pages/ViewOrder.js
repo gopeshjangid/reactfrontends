@@ -11,7 +11,7 @@ const ViewOrder = ({ setOrderId, setOrderName, setShowChat }) => {
   //   console.log(searchText);
   const tokenID = localStorage.getItem("token");
   useEffect(() => {
-    fetch("http://localhost:5000/viewOrder", {
+    fetch("https://getprowriter.onrender.com/viewOrder", {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -43,7 +43,7 @@ const ViewOrder = ({ setOrderId, setOrderName, setShowChat }) => {
     console.log("pay_method", pay_method);
     axios
       .post(
-        "http://localhost:5000/CancelStripeSubcription",
+        "https://getprowriter.onrender.com/CancelStripeSubcription",
         JSON.stringify({
           sub_id: id,
           mainOrderId: mainOrderId,

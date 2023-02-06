@@ -19,9 +19,13 @@ const PendingPaymentStripeSuccess = () => {
   useEffect(
     () => {
       axios
-        .post("http://localhost:5000/PendingPaymentStripeSuccess", data, {
-          headers: headers,
-        })
+        .post(
+          "https://getprowriter.onrender.com/PendingPaymentStripeSuccess",
+          data,
+          {
+            headers: headers,
+          }
+        )
         .then((res) => {
           console.log(res);
           console.log("weewq", res.data.data);
