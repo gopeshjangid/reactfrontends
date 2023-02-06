@@ -55,7 +55,7 @@ const Chat = ({ orderId, orderName }) => {
 
     var config = {
       method: "post",
-      url: "https://getprowriter.onrender.comt",
+      url: `https://getprowriter.onrender.com/message/${chatId}`,
       headers: {
         authorization: token,
       },
