@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-let urlApi = "https://getprowriter.onrender.com";
+let urlApi = "http://localhost:5000";
 
 class Sample extends Component {
   constructor(props) {
@@ -15,17 +15,14 @@ class Sample extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch(
-      "https://getprowriter.onrender.com/getworkSamples",
-      {
-        method: "GET",
-        mode: "cors",
-        headers: {
-          "Content-type": "application/json",
-          Accept: "application/json",
-        },
-      }
-    );
+    const response = await fetch("http://localhost:5000/getworkSamples", {
+      method: "GET",
+      mode: "cors",
+      headers: {
+        "Content-type": "application/json",
+        Accept: "application/json",
+      },
+    });
     if (response.ok) {
       const User = await response.json();
       console.log(User);
@@ -34,9 +31,6 @@ class Sample extends Component {
   }
   render() {
     const { User } = this.state;
-    const RenderHTML = (props) => (
-      <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>
-    );
 
     if (User.length < 0) {
       return User.length > 0;
@@ -47,7 +41,7 @@ class Sample extends Component {
       <div>
         <section className="samp_sec">
           <div className="container">
-            <div className="row text-center">
+            <div className="row">
               <div>
                 <input
                   type="text"
@@ -80,7 +74,7 @@ class Sample extends Component {
                 </button>
               </div>
 
-              <h2 className="samp_sec-h2 m-auto">Work Sample</h2>
+              <h2 className="samp_sec-h2">Work Sample</h2>
 
               <p className="samp_sec-p">
                 You’re probably looking for ways to get people to pay attention
@@ -95,7 +89,7 @@ class Sample extends Component {
                   ).map((friend, value) => {
                     return (
                       <div className="col-md-3" key={value.toString()}>
-                        <div className="samp_box text-center">
+                        <div className="samp_box">
                           <img
                             alt="images"
                             src={urlApi + "/image/" + friend.image}
@@ -103,8 +97,7 @@ class Sample extends Component {
                           />
 
                           <h3 className="samp_box-h3">{friend.title}</h3>
-
-                          <RenderHTML HTML={friend.dec} />
+                          <p className="samp_box-p">{friend.dec}</p>
                           <a
                             type="button"
                             rel="noreferrer"
@@ -132,7 +125,7 @@ class Sample extends Component {
                             />
                           </div>
                           <h3 className="samp_box-h3">{friend.title}</h3>
-                          <RenderHTML HTML={friend.dec} />
+                          <p className="samp_box-p">{friend.dec}</p>
                           <a
                             type="button"
                             rel="noreferrer"

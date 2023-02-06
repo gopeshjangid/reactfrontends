@@ -43,7 +43,7 @@ const Contact = () => {
     ) {
       return;
     } else {
-      fetch("https://getprowriter.onrender.com/contact-us", {
+      fetch("http://localhost:5000/contact-us", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object, { fullName, email, subject, message }),

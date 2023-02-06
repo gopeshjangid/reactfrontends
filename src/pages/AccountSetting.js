@@ -6,7 +6,6 @@ import axios from "axios";
 import TransactionHistory from "./TransactionHistory";
 import ViewOrder from "./ViewOrder";
 import Chat from "./Chat";
-import ExtraCredit from "./ExtraCredit";
 // import Login from './Login'
 
 function loadScript(src) {
@@ -27,7 +26,7 @@ const AccountSetting = () => {
   const navigate = useNavigate();
 
   const [Data1, setData1] = useState([]);
-  const [Users, setUsers] = useState([]);
+  const [Users, setUsers] = useState({});
   const [showChat, setShowChat] = useState(false);
   const [orderId, setOrderId] = useState("");
   const [orderName, setOrderName] = useState("");
@@ -66,23 +65,20 @@ const AccountSetting = () => {
       callback_url: "/razorpay-is-completed",
       description: "Thank you for nothing. Please give us some money",
       handler: async function (response) {
-        console.log(response);
         var data = JSON.stringify({
           razorpay_payment_id: response.razorpay_payment_id,
-          razorpay_order_id: response.razorpay_order_id,
-          razorpay_signature: response.razorpay_signature,
         });
 
         var config = {
           method: "post",
-          url: "https://getprowriter.onrender.com/razorpay-is-completed",
+          url: "http://localhost:5000/razorpay-is-completed",
           headers: {
             Authorization: tokenID,
             "Content-Type": "application/json",
           },
           data: data,
         };
-        console.log("log");
+
         await axios(config)
           .then(function (response) {
             console.log(response.data);
@@ -107,7 +103,7 @@ const AccountSetting = () => {
     const getToken = localStorage.getItem("token");
     const tokenID = localStorage.getItem("token");
     console.log("hello+++++++++++", tokenID);
-    fetch("https://getprowriter.onrender.com/viewProfile", {
+    fetch("http://localhost:5000/viewProfile", {
       method: "GET",
       mode: "cors",
 
@@ -120,8 +116,7 @@ const AccountSetting = () => {
         response.json(
           setUsers({
             response,
-          }),
-          console.log(Users)
+          })
         )
       )
 
@@ -142,7 +137,7 @@ const AccountSetting = () => {
     if (getToken == null) {
       navigate("/login");
     }
-  }, [navigate]);
+  }, []);
 
   const initialValue = {
     currentPassword: "",
@@ -153,7 +148,7 @@ const AccountSetting = () => {
   const [User, setUser] = useState(initialValue);
   const [formError, setFormError] = useState({});
   const [inSubmit, setInSubmit] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
   const [message, setMessage] = useState();
   const [paypal, setPaypal] = useState("");
 
@@ -178,17 +173,14 @@ const AccountSetting = () => {
     // e.preventDefault();
     // creates entity
 
-    const passwordLength1 = /^.{6,}$/;
-
     if (
       currentPassword.trim() === "" ||
       newPassword.trim() === "" ||
-      confirmPassword.trim() === "" ||
-      passwordLength1.test(newPassword.trim()) === false
+      confirmPassword.trim() === ""
     ) {
       return;
     } else {
-      fetch("https://getprowriter.onrender.com/changePassword", {
+      fetch("http://localhost:5000/changePassword", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object, {
@@ -231,25 +223,23 @@ const AccountSetting = () => {
     if (Object.keys(formError).length === 0 && inSubmit) {
       console.log(User);
     }
-  }, [User, formError, inSubmit]);
+  }, [formError]);
 
   const valide = (value) => {
     const error = {};
-    const passwordLength = /^.{6,}$/;
+    // const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!value.currentPassword) {
       error.currentPassword = "!'Please Enter Your currentPassword'";
     }
 
     if (!value.newPassword) {
       error.newPassword = "!'Please Enter New Your newPassword'";
-    } else if (!passwordLength.test(value.newPassword)) {
-      error.newPassword = "!'Please Enter Maximum 6 Character'";
     }
-    if (!value.confirmPassword) {
-      //  else if(!value.confirmPassword  && value !== !value.password) {
-      // 	error.password = "!'This is not Same'"
-      // }
+    //  else if(!value.confirmPassword  && value !== !value.password) {
+    // 	error.password = "!'This is not Same'"
+    // }
 
+    if (!value.confirmPassword) {
       error.confirmPassword = "!'Please Enter Your confirmPassword'";
     } //  else if(!value.password && value !== !value.confirmPassword) {
     // 	error.confirmPassword = "!'This is not Same'"
@@ -260,9 +250,9 @@ const AccountSetting = () => {
 
   const walletRecharge = () => {
     axios
-      .post("https://getprowriter.onrender.com/payment", { wallet: amount })
+      .post("http://localhost:5000/payment", { wallet: amount })
       .then((response) => {
-        // sessionStorage.setItem("wallet", amount);
+        sessionStorage.setItem("wallet", amount);
         console.log(response);
         sessionStorage.setItem("pay_id", response.data.id);
         window.open(response.data.url, "_self");
@@ -272,17 +262,15 @@ const AccountSetting = () => {
 
   const payWithPaypal = () => {
     axios
-      .post("https://getprowriter.onrender.com/PaypalPayment", {
-        wallet: paypal,
-      })
+      .post("http://localhost:5000/PaypalPayment", { wallet: paypal })
       .then((response) => {
         sessionStorage.setItem("wallet", paypal);
         console.log(response);
         sessionStorage.setItem("pay_id", response.data.id);
         window.open(response.data.url, "_self");
-        setPaypal({
-          response,
-        });
+        // setPaypal({
+        //   response,
+        // });
       })
 
       .catch((error) => console.log(error));
@@ -291,14 +279,6 @@ const AccountSetting = () => {
 
   console.log(orderId);
 
-  // const accountsettingId = {
-  //   id: menu1,
-  //   id2: menu2,
-  //   id3: menu3,
-  //   id4: menu4,
-  //   id5: menu5,
-  // };
-
   return (
     <div>
       <section className="reg_sec">
@@ -306,11 +286,7 @@ const AccountSetting = () => {
           <div className="row">
             <div className="col-lg-3">
               <h2 className="text-center">
-                <img
-                  src="writer/img/logo/logo-img.png"
-                  alt="logo-img"
-                  className="as-img"
-                />
+                <img src="writer/img/logo/logo-img.png" className="as-img" />
               </h2>
               <br />
 
@@ -363,10 +339,10 @@ const AccountSetting = () => {
 
             <div className="col-lg-9">
               <div className="tab-content">
-                <h5 className="user_tab1 mb-2">
+                <h5 className="user_tab1">
                   Welcome to <span className="user_ach">User</span>
                 </h5>
-                <div id="home" className="container tab-pane px-0 active">
+                <div id="home" className="container tab-pane active">
                   <br />
 
                   <ViewOrder
@@ -402,7 +378,6 @@ const AccountSetting = () => {
                     <div className="col-md-4 text-center">
                       <img
                         src="writer/img/Mira-Whedon.webp"
-                        alt="Mira-Whedon"
                         className="team_sec-img"
                       />
                       <p className="">
@@ -432,6 +407,7 @@ const AccountSetting = () => {
                       <p style={{ color: "red" }}>
                         {formError.currentPassword}
                       </p>
+
                       <label className="as-lbl">New Password</label>
                       <input
                         type="password"
@@ -440,6 +416,7 @@ const AccountSetting = () => {
                         className="as-text_set"
                       />
                       <p style={{ color: "red" }}>{formError.newPassword}</p>
+
                       <label className="as-lbl">Confirm Password</label>
                       <input
                         type="password"
@@ -450,6 +427,7 @@ const AccountSetting = () => {
                       <p style={{ color: "red" }}>
                         {formError.confirmPassword}
                       </p>
+
                       <button
                         type="submit"
                         className="as-btn_set"
@@ -458,6 +436,12 @@ const AccountSetting = () => {
                         Update
                       </button>
                       <br />
+                      {Object.keys(formError).length === 0 && inSubmit ? (
+                        <h3 className="Success text-center"></h3>
+                      ) : (
+                        ""
+                      )}
+
                       {message === "password successfully changed" ? (
                         <h3
                           className="Success text-center"
@@ -505,7 +489,7 @@ const AccountSetting = () => {
                   </div>
                 </div>
                 <div id="menu5" className="container tab-pane fade">
-                  <div className="table-responsive viewOrdertable ">
+                  <div className="table-responsive">
                     <table className="table table-bordered">
                       <thead>
                         <tr>
@@ -516,7 +500,7 @@ const AccountSetting = () => {
                           <th>Actions</th>
                         </tr>
                       </thead>
-                      <tbody className="viewOrderbody">
+                      <tbody>
                         <tr>
                           <td>1</td>
                           <td>Package</td>
@@ -550,11 +534,13 @@ const AccountSetting = () => {
                       ₹{Data1?.wallet}
                     </span>
                   </p>
-                  <ExtraCredit />
+                  <p className="text-secondary text-center fs-4">
+                    you can add a wallet in three ways
+                  </p>
                   <div className="payment-gateway justify-content-center">
                     <button
                       type="button"
-                      className="btn payment-walllet"
+                      className="btn btn-primary"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal"
                     >
@@ -610,7 +596,7 @@ const AccountSetting = () => {
 
                     <button
                       type="button"
-                      className="btn  payment-walllet"
+                      className="btn btn-primary"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal2"
                     >
@@ -666,7 +652,7 @@ const AccountSetting = () => {
 
                     <button
                       type="button"
-                      className="btn payment-walllet"
+                      className="btn btn-primary"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal3"
                     >
@@ -721,7 +707,9 @@ const AccountSetting = () => {
                     </div>
                   </div>
 
-                  <TransactionHistory />
+                  <div className="table-responsive">
+                    <TransactionHistory />
+                  </div>
                 </div>
               </div>
             </div>

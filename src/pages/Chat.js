@@ -6,12 +6,12 @@ import Message from "./Message";
 import ReactScrollToBoottome from "react-scroll-to-bottom";
 import axios from "axios";
 
-const ENDPOINT = "https://getprowriter.onrender.com";
+const ENDPOINT = "http://localhost:5000";
 var socket, selectedChatCompare;
 
 const Chat = ({ orderId, orderName }) => {
   console.log("orderid", orderId);
-
+  // const [id, setId] = useState("");
   const [messages, setMessages] = useState([]);
   const [chatId, setChatId] = useState("");
   const [messageText, setMessageText] = useState("");
@@ -55,7 +55,7 @@ const Chat = ({ orderId, orderName }) => {
 
     var config = {
       method: "post",
-      url: `https://getprowriter.onrender.com/message/${chatId}`,
+      url: "http://localhost:5000/chat",
       headers: {
         authorization: token,
       },
@@ -89,7 +89,7 @@ const Chat = ({ orderId, orderName }) => {
 
     var config = {
       method: "get",
-      url: `https://getprowriter.onrender.com/message/${chatId}`,
+      url: `http://localhost:5000/message/${chatId}`,
       headers: {
         Authorization: token,
       },
@@ -108,7 +108,7 @@ const Chat = ({ orderId, orderName }) => {
   const getUser = async () => {
     const tokenID = localStorage.getItem("token");
     console.log("hello", tokenID);
-    fetch("https://getprowriter.onrender.com/viewProfile", {
+    fetch("http://localhost:5000/viewProfile", {
       method: "GET",
       mode: "cors",
 
@@ -216,7 +216,7 @@ const Chat = ({ orderId, orderName }) => {
 
     var config = {
       method: "post",
-      url: "https://getprowriter.onrender.com/message",
+      url: "http://localhost:5000/message",
       headers: {
         authorization: token,
         "Content-Type": "application/json",

@@ -17,7 +17,7 @@ class TransactionHistory extends Component {
   async componentDidMount() {
     const tokenID = localStorage.getItem("token");
     const response = await fetch(
-      "https://getprowriter.onrender.com/walletTransactionHistory",
+      "http://localhost:5000/walletTransactionHistory",
       {
         method: "GET",
         mode: "cors",
@@ -39,7 +39,6 @@ class TransactionHistory extends Component {
         totalDebit: credit.totalDebit,
       });
       console.log("this.props.User", this.state.credit);
-      console.log("this.props.debit", this.state.debit);
     }
   }
 
@@ -49,7 +48,7 @@ class TransactionHistory extends Component {
     // }
     console.log("oooooooo", this.state.totalCredit);
     return (
-      <div className="table-responsive">
+      <div>
         <table
           className="table text-white credt-total mb-3"
           data-bs-spy="scroll"
@@ -70,7 +69,6 @@ class TransactionHistory extends Component {
                 <th>#</th>
                 <th>Date</th>
                 <th>Transactions ID</th>
-                <th>Type</th>
                 <th>Status</th>
                 <th>Amount</th>
               </tr>
@@ -79,12 +77,11 @@ class TransactionHistory extends Component {
               {this.state.credit &&
                 this.state.credit.map((item, index) => {
                   return (
-                    <tr key={item._id}>
+                    <tr key={index}>
                       <td>{index + 1}</td>
                       <td>{item.datetime}</td>
                       <td>{item.transactionId}</td>
                       <td>{item.pay_type}</td>
-                      <td>{item.pay_transaction}</td>
                       <td style={{ color: "green", fontWeight: "700" }}>
                         +{item.wallet}
                       </td>
@@ -112,8 +109,7 @@ class TransactionHistory extends Component {
               <tr>
                 <th>#</th>
                 <th>Date</th>
-                <th>TransactionId</th>
-                <th>Type</th>
+
                 <th>Status</th>
                 <th>Amount</th>
               </tr>
@@ -122,12 +118,11 @@ class TransactionHistory extends Component {
               {this.state.debit &&
                 this.state.debit.map((items, index) => {
                   return (
-                    <tr key={items._id}>
+                    <tr key={index}>
                       <td>{index + 1}</td>
                       <td>{items.datetime}</td>
-                      <td>{items.transactionId}</td>
+                      {/* <td>{items.transactionId}</td> */}
                       <td>{items.pay_type}</td>
-                      <td>{items.pay_transaction}</td>
                       <td style={{ color: "red", fontWeight: "700" }}>
                         -{items.wallet}
                       </td>

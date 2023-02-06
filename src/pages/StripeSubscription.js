@@ -19,13 +19,9 @@ const StripeSubscription = () => {
       navigate("/");
     } else {
       axios
-        .post(
-          "https://getprowriter.onrender.com/StripeSubscriptionSuccess",
-          data,
-          {
-            headers: headers,
-          }
-        )
+        .post("http://localhost:5000/StripeSubscriptionSuccess", data, {
+          headers: headers,
+        })
         .then((res) => {
           console.log(res);
 

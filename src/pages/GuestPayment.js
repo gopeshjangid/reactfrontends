@@ -105,17 +105,14 @@ const GuestPayment = () => {
       email: email,
     });
 
-    const data = await fetch(
-      "https://getprowriter.onrender.com/razorpayPayment",
-      {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-          // Authorization: `${tokenID}`,
-        },
-        body: payload,
-      }
-    ).then((t) => t.json());
+    const data = await fetch("http://localhost:5000/razorpayPayment", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        // Authorization: `${tokenID}`,
+      },
+      body: payload,
+    }).then((t) => t.json());
     console.log(data);
     const options = {
       key: "rzp_test_KiBn8QyRFCYQnw",
@@ -137,7 +134,7 @@ const GuestPayment = () => {
 
         const config = {
           method: "post",
-          url: "https://getprowriter.onrender.com/razorpayGuestPaymentSuccess",
+          url: "http://localhost:5000/razorpayGuestPaymentSuccess",
           headers: {
             // Authorization: tokenID,
             "Content-Type": "application/json",
@@ -170,7 +167,7 @@ const GuestPayment = () => {
     const email = user.email;
     console.log(email);
     axios
-      .post("https://getprowriter.onrender.com/stripeGuestPayment", {
+      .post("http://localhost:5000/stripeGuestPayment", {
         wallet: amount,
         email: email,
       })

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
 
-let urlApi = "https://getprowriter.onrender.com";
+let urlApi = "http://localhost:5000";
 const PER_PAGE = 4;
 function Author() {
   const [images, setImages] = useState([]);
@@ -25,7 +25,7 @@ function Author() {
   const pageCount = Math.ceil(images.length / PER_PAGE);
 
   useEffect(() => {
-    fetch("https://getprowriter.onrender.com/getAuthors", {
+    fetch("http://localhost:5000/getAuthors", {
       method: "GET",
       mode: "cors",
     })

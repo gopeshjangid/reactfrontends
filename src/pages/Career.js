@@ -6,7 +6,7 @@ const Career = () => {
   const [career, setCareer] = useState([]);
 
   useEffect(() => {
-    fetch("https://getprowriter.onrender.com/getcareers", {
+    fetch("http://localhost:5000/getcareers", {
       method: "GET",
       headers: {
         "Content-type": "application/json",

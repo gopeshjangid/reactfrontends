@@ -29,7 +29,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
   const [PendingStatus, setPendingStatus] = useState(true);
   if (type === "link") {
     const tokenID = localStorage.getItem("token");
-    fetch("https://getprowriter.onrender.com/viewOrder", {
+    fetch("http://localhost:5000/viewOrder", {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -74,17 +74,14 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
       amount: message,
     });
 
-    const data = await fetch(
-      "https://getprowriter.onrender.com0/PendingPaymentRazorpay",
-      {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `${tokenID}`,
-        },
-        body: payload,
-      }
-    ).then((t) => t.json());
+    const data = await fetch("http://localhost:5000/PendingPaymentRazorpay", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${tokenID}`,
+      },
+      body: payload,
+    }).then((t) => t.json());
     console.log(data);
     const options = {
       key: "rzp_test_KiBn8QyRFCYQnw",
@@ -105,7 +102,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
 
         var config = {
           method: "post",
-          url: "https://getprowriter.onrender.com/PendingPaymentRazorpaySuccess",
+          url: "http://localhost:5000/PendingPaymentRazorpaySuccess",
           headers: {
             Authorization: tokenID,
             "Content-Type": "application/json",
@@ -143,7 +140,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
 
     await axios
       .post(
-        `https://getprowriter.onrender.com/PendingPaymentStripe/`,
+        `http://localhost:5000/PendingPaymentStripe/`,
         {
           totalAmount: message,
           orderId,

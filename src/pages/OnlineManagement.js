@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
-let urlApi = "https://getprowriter.onrender.com";
+let urlApi = "http://localhost:5000";
 
 const OnlineManagement = () => {
   const { id } = useParams();
@@ -17,7 +17,7 @@ const OnlineManagement = () => {
     const fetch = async () => {
       try {
         const { data } = await axios.get(
-          `https://getprowriter.onrender.com/readmoreblog/${id}`,
+          `http://localhost:5000/readmoreblog/${id}`,
           {
             headers: {
               "Content-type": "application/json",
@@ -32,10 +32,6 @@ const OnlineManagement = () => {
     };
     fetch();
   }, []);
-
-  const RenderHTML = (props) => (
-    <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>
-  );
 
   console.log(post);
 
@@ -60,7 +56,7 @@ const OnlineManagement = () => {
                       September 08,2022
                     </span>
                   </div>
-                  <RenderHTML HTML={post?.data?.dec} />
+                  <p className="blog_sec-p p-0">{post?.data?.dec} </p>
                 </div>
               </div>
             </div>

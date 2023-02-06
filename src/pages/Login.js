@@ -49,7 +49,7 @@ const Login = () => {
     if (username.trim() === "" || password.trim() === "") {
       return;
     } else {
-      fetch("https://getprowriter.onrender.com/login", {
+      fetch("http://localhost:5000/login", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),

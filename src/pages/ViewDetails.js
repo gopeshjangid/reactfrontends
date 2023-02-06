@@ -15,7 +15,7 @@ const ViewDetails = () => {
     const fetch = async () => {
       try {
         const { data } = await axios.get(
-          `https://getprowriter.onrender.com/getAuthor/${id}`
+          `http://localhost:5000/getAuthor/${id}`
         );
         SetPost(data);
       } catch (err) {
@@ -26,10 +26,6 @@ const ViewDetails = () => {
   }, []);
 
   console.log(post);
-
-  const RenderHTML = (props) => (
-    <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>
-  );
 
   return (
     <section className="team_sec">
@@ -51,8 +47,7 @@ const ViewDetails = () => {
                 Designation:{" "}
                 <span className="text-dark">{post?.data?.dec}</span>
               </p>
-              <RenderHTML HTML={post?.data?.longDec} />
-              <p className=""></p>
+              <p className="author_Sec-p ">{post?.data?.longDec}</p>
             </div>
           </div>
           <div className="col-md-8">
