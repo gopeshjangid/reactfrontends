@@ -11,7 +11,7 @@ var socket, selectedChatCompare;
 
 const Chat = ({ orderId, orderName }) => {
   console.log("orderid", orderId);
-  // const [id, setId] = useState("");
+
   const [messages, setMessages] = useState([]);
   const [chatId, setChatId] = useState("");
   const [messageText, setMessageText] = useState("");
