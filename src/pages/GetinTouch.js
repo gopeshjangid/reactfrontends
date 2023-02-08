@@ -277,13 +277,15 @@ const GetinTouch = () => {
           </p>
         </div>
       </div>
-      <input
-        type="password"
-        name="password"
-        placeholder="password"
-        onChange={handleChange}
-        className="text_set ms-0 "
-      />
+      <div className="Home-Name">
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          onChange={handleChange}
+          className="text_set ms-0 mt-0"
+        />
+      </div>
       <p className="mb-0" style={{ color: "red" }}>
         {formErrors.password}
       </p>

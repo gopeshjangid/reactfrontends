@@ -104,7 +104,7 @@ const Prices = () => {
                         name="username"
                         placeholder="Name"
                         onChange={inputChange}
-                        className="text_set ms-0"
+                        className="text_set ms-0 me-1 mt-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.username}</p>
                     </div>
@@ -116,7 +116,7 @@ const Prices = () => {
                         name="email"
                         placeholder="Email"
                         onChange={inputChange}
-                        className="text_set ms-0"
+                        className="text_set ms-1 me-0 mt-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.email}</p>
                     </div>
@@ -129,12 +129,12 @@ const Prices = () => {
                         name="number"
                         placeholder="Exp:+91 7665092627"
                         onChange={inputChange}
-                        className="text_set ms-0"
+                        className="text_set ms-0 me-1 mt-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.number}</p>
                     </div>
                     <div className="Home-Name">
-                      <select className="text_set ms-0">
+                      <select className="text_set me-0 ms-1 mt-0">
                         <option>Content Type</option>
 
                         <option>Ghost Writing</option>
@@ -150,13 +150,13 @@ const Prices = () => {
                         name="deadline"
                         placeholder="Deadline"
                         onChange={inputChange}
-                        className="text_set ms-0"
+                        className="text_set ms-0 me-1 mt-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.deadline}</p>
                     </div>
 
                     <div className="Home-Name">
-                      <select className="text_set ms-0">
+                      <select className="text_set ms-1 me-0 mt-0">
                         <option>Expert Level</option>
 
                         <option>Expert</option>

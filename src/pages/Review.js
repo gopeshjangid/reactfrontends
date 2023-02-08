@@ -97,7 +97,7 @@ const Review = () => {
                         name="username"
                         placeholder="Name"
                         onChange={inputChange}
-                        className="text_set ms-0"
+                        className="text_set ms-0 me-1 mt-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.username}</p>
                     </div>
@@ -109,7 +109,7 @@ const Review = () => {
                         name="email"
                         placeholder="Email"
                         onChange={inputChange}
-                        className="text_set ms-0"
+                        className="text_set ms-1 me-0 mt-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.email}</p>
                     </div>
@@ -122,20 +122,20 @@ const Review = () => {
                         name="number"
                         placeholder="Phone"
                         onChange={inputChange}
-                        className="text_set ms-0"
+                        className="text_set ms-0 me-1 mt-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.number}</p>
                     </div>
 
                     <div className="Home-Name">
-                      <select className="text_set ms-0">
+                      <select className="text_set ms-1 me-0 mt-0">
                         <option>Select Service</option>
                         <option>Content Writing</option>
                       </select>
                     </div>
                   </div>
                   <textarea
-                    className="form-control form-area ms-0 text_set-area"
+                    className="form-control rounded-0 form-area ms-0 text_set-area"
                     rows="5"
                     id="message"
                     placeholder="Message"
@@ -308,12 +308,17 @@ const Review = () => {
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <img src="writer/img/No-match-review.webp" className="rws-img" />
+              <img
+                src="writer/img/No-match-review.webp"
+                alt="No-match-review"
+                className="rws-img"
+              />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <img
                 src="writer/img/Expertimental-review.webp"
+                alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
@@ -361,12 +366,17 @@ const Review = () => {
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <img src="writer/img/Online-review.webp" className="rws-img" />
+              <img
+                src="writer/img/Online-review.webp"
+                alt="Online-review"
+                className="rws-img"
+              />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <img
                 src="writer/img/Grow-your-business.webp"
+                alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
@@ -417,12 +427,17 @@ const Review = () => {
             <div className="col-md-6 rws_Sec-6">
               <img
                 src="writer/img/Real-review-writer.webp"
+                alt="Real-review-writer"
                 className="rws-img"
               />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <img src="writer/img/Expertise.webp" className="rws-img" />
+              <img
+                src="writer/img/Expertise.webp"
+                alt="Expertise"
+                className="rws-img"
+              />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
@@ -464,6 +479,7 @@ const Review = () => {
                 <h3 className="get_sec-box_h3">Make a request</h3>
                 <img
                   src="writer/img/Make-a-request.webp"
+                  alt="Make-a-request"
                   className="get_sec-box_img"
                 />
                 <p className="get_sec-box_p">
@@ -479,6 +495,7 @@ const Review = () => {
                 <h3 className="get_sec-box_h3">Let us write your content</h3>
                 <img
                   src="writer/img/Let-us-write-your-content.webp"
+                  alt="Let-us-write-your-content"
                   className="get_sec-box_img"
                 />
                 <p className="get_sec-box_p">
@@ -494,6 +511,7 @@ const Review = () => {
                 <h3 className="get_sec-box_h3">Get your content copy</h3>
                 <img
                   src="writer/img/Get-your-content-copy.webp"
+                  alt="Get-your-content-copy"
                   className="get_sec-box_img"
                 />
                 <p className="get_sec-box_p">
@@ -546,7 +564,7 @@ const Review = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/lego.webp"
-                    alt="Los Angeles"
+                    alt="lego"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -556,7 +574,7 @@ const Review = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/Allianz.webp"
-                    alt="Chicago"
+                    alt="Allianz"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -566,7 +584,7 @@ const Review = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/Citi.webp"
-                    alt="Chicago"
+                    alt="Citi"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -576,7 +594,7 @@ const Review = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/zara-logo.webp"
-                    alt="Los Angeles"
+                    alt="zara"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -587,7 +605,7 @@ const Review = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/loreal-logo.webp"
-                    alt="Chicago"
+                    alt="loreal"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -597,7 +615,7 @@ const Review = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/gillette-logo.webp"
-                    alt="Chicago"
+                    alt="gillette"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -607,7 +625,7 @@ const Review = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/sap-logo.webp"
-                    alt="Los Angeles"
+                    alt="sap"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -617,7 +635,7 @@ const Review = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/att-logo.webp"
-                    alt="Los Angeles"
+                    alt="att"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -627,7 +645,7 @@ const Review = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/toyota-logo.webp"
-                    alt="Chicago"
+                    alt="toyota"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -637,7 +655,7 @@ const Review = () => {
                 <div className="img-box">
                   <img
                     src="writer/img/testimonial/ikea-logo.webp"
-                    alt="Chicago"
+                    alt="ikea"
                     className="d-block img-box_image"
                   />
                 </div>
@@ -741,6 +759,7 @@ const Review = () => {
                 <div className="t_sels">
                   <img
                     src="writer/img/Carmen-Mendez-Istillarte.webp"
+                    alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
                   <h3 className="testi_box-h3"> Carmen Mendez Istillarte</h3>
@@ -762,6 +781,7 @@ const Review = () => {
                 <div className="t_sels">
                   <img
                     src="writer/img/Marcela-Vella.webp"
+                    alt="Marcela-Vella"
                     className="testi_box-img"
                   />
                   <h3 className="testi_box-h3">Marcela Vella</h3>

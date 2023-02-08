@@ -130,8 +130,8 @@ const PlaceYourOrder = () => {
                         id="fname"
                         name="username"
                         placeholder="Name"
-                        onChange={handleChange}
-                        className="text_set ms-0"
+                        onChange={inputChange}
+                        className="text_set ms-0 me-1 mt-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.username}</p>
                     </div>
@@ -142,8 +142,8 @@ const PlaceYourOrder = () => {
                         id="fname"
                         name="email"
                         placeholder="Email"
-                        onChange={handleChange}
-                        className="text_set ms-0"
+                        onChange={inputChange}
+                        className="text_set ms-1 me-0 mt-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.email}</p>
                     </div>
@@ -155,13 +155,13 @@ const PlaceYourOrder = () => {
                         id="fname"
                         name="number"
                         placeholder="Exp:+91 7665092627"
-                        onChange={handleChange}
-                        className="text_set ms-0"
+                        onChange={inputChange}
+                        className="text_set ms-0 me-1 mt-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.number}</p>
                     </div>
                     <div className="Home-Name">
-                      <select className="text_set ms-0">
+                      <select className="text_set me-0 ms-1 mt-0">
                         <option>Content Type</option>
 
                         <option>Ghost Writing</option>
@@ -176,14 +176,14 @@ const PlaceYourOrder = () => {
                         id="fname"
                         name="deadline"
                         placeholder="Deadline"
-                        onChange={handleChange}
-                        className="text_set ms-0"
+                        onChange={inputChange}
+                        className="text_set ms-0 me-1 mt-0"
                       />
                       <p style={{ color: "red" }}>{formErrors.deadline}</p>
                     </div>
 
                     <div className="Home-Name">
-                      <select className="text_set ms-0">
+                      <select className="text_set ms-1 me-0 mt-0">
                         <option>Expert Level</option>
 
                         <option>Expert</option>
