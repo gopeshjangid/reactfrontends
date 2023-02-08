@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import env from "react-dotenv";
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -105,7 +106,7 @@ const GuestPayment = () => {
       email: email,
     });
 
-    const data = await fetch("http://localhost:5000/razorpayPayment", {
+    const data = await fetch(`${env.REACT_APP_APIURL}/razorpayPayment`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -134,7 +135,7 @@ const GuestPayment = () => {
 
         const config = {
           method: "post",
-          url: "http://localhost:5000/razorpayGuestPaymentSuccess",
+          url: `${env.REACT_APP_APIURL}/razorpayGuestPaymentSuccess`,
           headers: {
             // Authorization: tokenID,
             "Content-Type": "application/json",
@@ -167,7 +168,7 @@ const GuestPayment = () => {
     const email = user.email;
     console.log(email);
     axios
-      .post("http://localhost:5000/stripeGuestPayment", {
+      .post(`${env.REACT_APP_APIURL}/stripeGuestPayment`, {
         wallet: amount,
         email: email,
       })

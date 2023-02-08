@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 //import { user } from "./Join";
+import env from "react-dotenv";
 
 import socketIO from "socket.io-client";
 import Message from "./Message";
 import ReactScrollToBoottome from "react-scroll-to-bottom";
 import axios from "axios";
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = `${env.REACT_APP_APIURL}`;
 var socket, selectedChatCompare;
 
 const Chat = ({ orderId, orderName }) => {
@@ -55,7 +56,7 @@ const Chat = ({ orderId, orderName }) => {
 
     var config = {
       method: "post",
-      url: "http://localhost:5000/chat",
+      url: `${env.REACT_APP_APIURL}/chat`,
       headers: {
         authorization: token,
       },
@@ -89,7 +90,7 @@ const Chat = ({ orderId, orderName }) => {
 
     var config = {
       method: "get",
-      url: `http://localhost:5000/message/${chatId}`,
+      url: `${env.REACT_APP_APIURL}/message/${chatId}`,
       headers: {
         Authorization: token,
       },
@@ -108,7 +109,7 @@ const Chat = ({ orderId, orderName }) => {
   const getUser = async () => {
     const tokenID = localStorage.getItem("token");
     console.log("hello", tokenID);
-    fetch("http://localhost:5000/viewProfile", {
+    fetch(`${env.REACT_APP_APIURL}/viewProfile`, {
       method: "GET",
       mode: "cors",
 
@@ -163,7 +164,7 @@ const Chat = ({ orderId, orderName }) => {
     //     setMessages([...messages, newMessageRecieved]);
     //   }
     // });
-  }, []);
+  }, [messages]);
 
   useEffect(() => {
     accessChat();
@@ -171,7 +172,7 @@ const Chat = ({ orderId, orderName }) => {
 
     // fetchChats();
     // socket.current.on("emitText", (test) => concole.log(test));
-  }, []);
+  }, [orderId]);
 
   useEffect(() => {
     fetchMessages();
@@ -216,7 +217,7 @@ const Chat = ({ orderId, orderName }) => {
 
     var config = {
       method: "post",
-      url: "http://localhost:5000/message",
+      url: `${env.REACT_APP_APIURL}/message`,
       headers: {
         authorization: token,
         "Content-Type": "application/json",
@@ -342,5 +343,4 @@ const Chat = ({ orderId, orderName }) => {
     </>
   );
 };
-
 export default Chat;

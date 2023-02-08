@@ -3,7 +3,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-let urlApi = "http://localhost:5000";
+import env from "react-dotenv";
+let urlApi = `${env.REACT_APP_APIURL}`;
 
 const ViewDetails = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const ViewDetails = () => {
     const fetch = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/getAuthor/${id}`
+          `${env.REACT_APP_APIURL}/getAuthor/${id}`
         );
         SetPost(data);
       } catch (err) {

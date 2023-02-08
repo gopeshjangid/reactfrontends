@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
+import env from "react-dotenv";
 
 const Payplesuccess = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -28,7 +29,7 @@ const Payplesuccess = () => {
       console.log("a=====", a);
       console.log("b=====", b);
       axios
-        .post("http://localhost:5000/payplesuccess", data, {
+        .post(`${env.REACT_APP_APIURL}/payplesuccess`, data, {
           headers: headers,
         })
         .then((res) => {
@@ -52,7 +53,7 @@ const Payplesuccess = () => {
               <span className=" p-0 fs-1 fw-bold">Payment Successfully</span>
               <p className="fp-p p-0">Your PayPal Payment Successfull</p>
 
-              <Link className="" to="/accountSetting">
+              <Link className="" to="/transactionhistory">
                 <button type="submit" className="fp-btn px-5  m-0">
                   Go Back
                 </button>
@@ -70,6 +71,7 @@ const Payplesuccess = () => {
           <div className="col-md-4">
             <img
               src="writer/img/Completed-pana.png"
+              alt="Completed-pana"
               className="fp-img m-0 w-100"
             />
           </div>

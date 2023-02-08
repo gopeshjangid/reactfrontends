@@ -5,7 +5,6 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import AccountSetting from "./pages/AccountSetting";
 import Author from "./pages/Author";
 import Blog from "./pages/Blog";
 import Career from "./pages/Career";
@@ -38,6 +37,13 @@ import StripeGuestPaymentSuccess from "./pages/StripeGuestPaymentSuccess";
 import GuestPayment from "./pages/GuestPayment";
 import PendingPaymentStripeSuccess from "./pages/PendingPaymentStripeSuccess";
 // import Join from "./pages/Join";
+import TransactionHistory from "./pages/TransactionHistory";
+import Dashboard from "./pages/Dashboard";
+import ViewProfile from "./pages/ViewProfile";
+import AccountSettingServices from "./pages/AccountSettingServices";
+import AccountSettingSubscriptions from "./pages/AccountSettingSubscriptions";
+import AccountSettingPaymentMethod from "./pages/AccountSettingPaymentMethod";
+import AccountSettingBillingInfo from "./pages/AccountSettingBillingInfo";
 
 function App() {
   return (
@@ -46,7 +52,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/accountsetting" element={<AccountSetting />} />
         <Route path="/author" element={<Author />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/career" element={<Career />} />
@@ -84,6 +89,26 @@ function App() {
         <Route
           path="/pendingPaymentStripeSuccess"
           element={<PendingPaymentStripeSuccess />}
+        />
+
+        <Route path="/transactionhistory" element={<TransactionHistory />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/viewprofile" element={<ViewProfile />} />
+        <Route
+          path="/accountsettingservices"
+          element={<AccountSettingServices />}
+        />
+        <Route
+          path="accountsettingsubscriptions"
+          element={<AccountSettingSubscriptions />}
+        />
+        <Route
+          path="accountsettingpaymentmethod"
+          element={<AccountSettingPaymentMethod />}
+        />
+        <Route
+          path="accountsettingbillinginfo"
+          element={<AccountSettingBillingInfo />}
         />
       </Routes>
       <Footer />

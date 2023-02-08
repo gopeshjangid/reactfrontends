@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 // import "react-phone-input-2/lib/bootstrap.css";
 
 import { useState, useEffect } from "react";
+import env from "react-dotenv";
 // import axios from 'axios'
 
 const GetinTouch = () => {
@@ -39,7 +40,7 @@ const GetinTouch = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/getAllExpertLevel", {
+    fetch(`${env.REACT_APP_APIURL}/getAllExpertLevel`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -59,7 +60,7 @@ const GetinTouch = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getAllContentType", {
+    fetch(`${env.REACT_APP_APIURL}/getAllContentType`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -84,7 +85,7 @@ const GetinTouch = () => {
   // 	}
   // },[])
   useEffect(() => {
-    fetch("http://localhost:5000/getCountryCode", {
+    fetch(`${env.REACT_APP_APIURL}/getCountryCode`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -148,7 +149,7 @@ const GetinTouch = () => {
     ) {
       return;
     } else {
-      fetch("http://localhost:5000/getInTouch", {
+      fetch(`${env.REACT_APP_APIURL}/getInTouch`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),

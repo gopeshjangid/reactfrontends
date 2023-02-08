@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
+import env from "react-dotenv";
 
 const Career = () => {
   const [career, setCareer] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getcareers", {
+    fetch(`${env.REACT_APP_APIURL}/getcareers`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",

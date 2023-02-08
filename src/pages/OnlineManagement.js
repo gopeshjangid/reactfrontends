@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
-let urlApi = "http://localhost:5000";
+import env from "react-dotenv";
+let urlApi = "`${env.REACT_APP_APIURL}";
 
 const OnlineManagement = () => {
   const { id } = useParams();
@@ -17,7 +18,7 @@ const OnlineManagement = () => {
     const fetch = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/readmoreblog/${id}`,
+          `${env.REACT_APP_APIURL}/readmoreblog/${id}`,
           {
             headers: {
               "Content-type": "application/json",

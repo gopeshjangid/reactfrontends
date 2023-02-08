@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import env from "react-dotenv";
 
 // import Header from '../Components/Header'
 // import axios from 'axios'
@@ -32,6 +33,7 @@ const Login = () => {
     event.preventDefault();
     const { username, password } = User;
     let getAllProduct = JSON.parse(localStorage.getItem("product"));
+    console.log(getAllProduct);
     if (getAllProduct === null) {
       getAllProduct = [];
     }
@@ -49,7 +51,7 @@ const Login = () => {
     if (username.trim() === "" || password.trim() === "") {
       return;
     } else {
-      fetch("http://localhost:5000/login", {
+      fetch(`${env.REACT_APP_APIURL}/login`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),
@@ -67,7 +69,7 @@ const Login = () => {
             localStorage.setItem("token", json.token);
             setIsLoggedin(true);
             localStorage.removeItem("product");
-            navigate("/AccountSetting");
+            navigate("/dashboard");
           }
 
           console.log(json);

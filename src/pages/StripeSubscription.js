@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import env from "react-dotenv";
 
 const StripeSubscription = () => {
   const tokenID = localStorage.getItem("token");
@@ -19,7 +20,7 @@ const StripeSubscription = () => {
       navigate("/");
     } else {
       axios
-        .post("http://localhost:5000/StripeSubscriptionSuccess", data, {
+        .post(`${env.REACT_APP_APIURL}/StripeSubscriptionSuccess`, data, {
           headers: headers,
         })
         .then((res) => {

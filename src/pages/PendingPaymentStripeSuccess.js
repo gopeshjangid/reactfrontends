@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import env from "react-dotenv";
 
 const PendingPaymentStripeSuccess = () => {
   const tokenID = localStorage.getItem("token");
@@ -19,7 +20,7 @@ const PendingPaymentStripeSuccess = () => {
   useEffect(
     () => {
       axios
-        .post("http://localhost:5000/PendingPaymentStripeSuccess", data, {
+        .post(`${env.REACT_APP_APIURL}/PendingPaymentStripeSuccess`, data, {
           headers: headers,
         })
         .then((res) => {
@@ -48,7 +49,7 @@ const PendingPaymentStripeSuccess = () => {
 
               <p className="fp-p p-0">Your Payment Successfully Add.</p>
 
-              <Link className="" to="/accountSetting">
+              <Link className="" to="/transactionhistory">
                 <button type="submit" className="fp-btn px-5  m-0">
                   Go Back
                 </button>
@@ -66,6 +67,7 @@ const PendingPaymentStripeSuccess = () => {
           <div className="col-md-4">
             <img
               src="writer/img/Completed-pana.png"
+              alt="Completed-pana"
               className="fp-img m-0 w-100"
             />
           </div>

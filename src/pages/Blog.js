@@ -1,7 +1,8 @@
 // import DOMPurify from "dompurify";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-let urlApi = "http://localhost:5000";
+import env from "react-dotenv";
+let urlApi = `${env.REACT_APP_APIURL}`;
 
 class Blog extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Blog extends Component {
   }
 
   async componentDidMount() {
-    fetch("http://localhost:5000/getBlog", {
+    fetch(`${env.REACT_APP_APIURL}/getBlog`, {
       method: "GET",
       mode: "cors",
       headers: {

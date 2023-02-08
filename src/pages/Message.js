@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import { VscFilePdf } from "react-icons/vsc";
 // import { Router, useNavigate } from "react-router-dom";
 import axios from "axios";
+import env from "react-dotenv";
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -29,7 +30,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
   const [PendingStatus, setPendingStatus] = useState(true);
   if (type === "link") {
     const tokenID = localStorage.getItem("token");
-    fetch("http://localhost:5000/viewOrder", {
+    fetch(`${env.REACT_APP_APIURL}/viewOrder`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -74,7 +75,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
       amount: message,
     });
 
-    const data = await fetch("http://localhost:5000/PendingPaymentRazorpay", {
+    const data = await fetch(`${env.REACT_APP_APIURL}/PendingPaymentRazorpay`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -102,7 +103,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
 
         var config = {
           method: "post",
-          url: "http://localhost:5000/PendingPaymentRazorpaySuccess",
+          url: `${env.REACT_APP_APIURL}/PendingPaymentRazorpaySuccess`,
           headers: {
             Authorization: tokenID,
             "Content-Type": "application/json",
@@ -140,7 +141,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
 
     await axios
       .post(
-        `http://localhost:5000/PendingPaymentStripe/`,
+        `${env.REACT_APP_APIURL}/PendingPaymentStripe/`,
         {
           totalAmount: message,
           orderId,

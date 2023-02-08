@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import env from "react-dotenv";
 
-let urlApi = "http://localhost:5000";
+let urlApi = `${env.REACT_APP_APIURL}`;
 
 class Sample extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Sample extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch("http://localhost:5000/getworkSamples", {
+    const response = await fetch(`${env.REACT_APP_APIURL}/getworkSamples`, {
       method: "GET",
       mode: "cors",
       headers: {
@@ -31,6 +32,9 @@ class Sample extends Component {
   }
   render() {
     const { User } = this.state;
+    const RenderHTML = (props) => (
+      <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>
+    );
 
     if (User.length < 0) {
       return User.length > 0;
@@ -41,7 +45,7 @@ class Sample extends Component {
       <div>
         <section className="samp_sec">
           <div className="container">
-            <div className="row">
+            <div className="row text-center">
               <div>
                 <input
                   type="text"
@@ -74,7 +78,7 @@ class Sample extends Component {
                 </button>
               </div>
 
-              <h2 className="samp_sec-h2">Work Sample</h2>
+              <h2 className="samp_sec-h2 m-auto">Work Sample</h2>
 
               <p className="samp_sec-p">
                 You’re probably looking for ways to get people to pay attention
@@ -89,7 +93,7 @@ class Sample extends Component {
                   ).map((friend, value) => {
                     return (
                       <div className="col-md-3" key={value.toString()}>
-                        <div className="samp_box">
+                        <div className="samp_box text-center">
                           <img
                             alt="images"
                             src={urlApi + "/image/" + friend.image}
@@ -97,7 +101,8 @@ class Sample extends Component {
                           />
 
                           <h3 className="samp_box-h3">{friend.title}</h3>
-                          <p className="samp_box-p">{friend.dec}</p>
+
+                          <RenderHTML HTML={friend.dec} />
                           <a
                             type="button"
                             rel="noreferrer"
@@ -125,7 +130,7 @@ class Sample extends Component {
                             />
                           </div>
                           <h3 className="samp_box-h3">{friend.title}</h3>
-                          <p className="samp_box-p">{friend.dec}</p>
+                          <RenderHTML HTML={friend.dec} />
                           <a
                             type="button"
                             rel="noreferrer"

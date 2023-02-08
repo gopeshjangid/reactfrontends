@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import env from "react-dotenv";
 
 import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
 
-let urlApi = "http://localhost:5000";
+let urlApi = `${env.REACT_APP_APIURL}`;
 const PER_PAGE = 4;
 function Author() {
   const [images, setImages] = useState([]);
@@ -25,7 +26,7 @@ function Author() {
   const pageCount = Math.ceil(images.length / PER_PAGE);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getAuthors", {
+    fetch(`${env.REACT_APP_APIURL}/getAuthors`, {
       method: "GET",
       mode: "cors",
     })

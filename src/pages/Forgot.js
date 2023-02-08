@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { useState, useEffect } from "react";
+import env from "react-dotenv";
 
 const Forgot = () => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const Forgot = () => {
     if (email.trim() === "" || regex1.test(email.trim()) === false) {
       return;
     } else {
-      fetch("http://localhost:5000/password-reset", {
+      fetch(`${env.REACT_APP_APIURL}/password-reset`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),

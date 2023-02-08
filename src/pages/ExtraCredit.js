@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import env from "react-dotenv";
 
 const ExtraCredit = () => {
   const [ExtraCredit, setExtracredit] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/getextracredit", {
+    fetch(`${env.REACT_APP_APIURL}/getextracredit `, {
       method: "GET",
       headers: {
         "Content-type": "application/json",

@@ -18,7 +18,7 @@ const PurchaseSuccess = () => {
                   tracking info
                 </p>
 
-                <Link className="" to="/accountSetting">
+                <Link className="" to="/transactionhistory">
                   <button type="submit" className="fp-btn px-5 m-0">
                     Continue Shopping
                   </button>
@@ -36,6 +36,7 @@ const PurchaseSuccess = () => {
             <div className="col-md-5">
               <img
                 src="writer/img/Successful-purchase.gif"
+                alt="Successful-purchase"
                 className="fp-img m-0 w-100"
               />
             </div>

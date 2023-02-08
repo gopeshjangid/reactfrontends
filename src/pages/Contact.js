@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import env from "react-dotenv";
 
 const Contact = () => {
   const initialValues = {
@@ -43,7 +44,7 @@ const Contact = () => {
     ) {
       return;
     } else {
-      fetch("http://localhost:5000/contact-us", {
+      fetch(`${env.REACT_APP_APIURL}/contact-us`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object, { fullName, email, subject, message }),

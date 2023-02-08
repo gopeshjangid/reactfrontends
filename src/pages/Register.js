@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import env from "react-dotenv";
 // import axios from 'axios';
 
 import { useState, useEffect } from "react";
@@ -64,7 +65,7 @@ const Register = () => {
     ) {
       return;
     } else {
-      fetch("http://localhost:5000/register", {
+      fetch(`${env.REACT_APP_APIURL}/register`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),

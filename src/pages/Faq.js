@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import env from "react-dotenv";
 
 class Faq extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class Faq extends Component {
   }
 
   async componentDidMount() {
-    fetch("http://localhost:5000/getFaqs", {
+    fetch(`${env.REACT_APP_APIURL}/getFaqs `, {
       method: "GET",
       mode: "cors",
       headers: {

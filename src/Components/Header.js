@@ -60,7 +60,11 @@ const Header = () => {
               style={{ width: "25%" }}
               to="/"
             >
-              <img src={Logo} style={{ width: "100%" }} />
+              <img
+                src={Logo}
+                alt="gp-writer-complete"
+                style={{ width: "100%" }}
+              />
             </Link>
             <button
               className="navbar-toggler"
@@ -141,8 +145,8 @@ const Header = () => {
                     ) : (
                       <>
                         <li>
-                          <Link className="dropdown-item" to="/accountSetting">
-                            AccountSetting
+                          <Link className="dropdown-item" to="/dashboard">
+                            Dashboard
                           </Link>
                         </li>
 
