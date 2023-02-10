@@ -289,14 +289,14 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
           className="px-3 text-white py-2 mb-0"
           style={{ background: "#029a99", cursor: "pointer" }}
           data-bs-toggle="modal"
-          data-bs-target="#exampleModalGuest"
+          data-bs-target={"#customize" + id}
         >
           Pay
           <b className="float-end">{`${message}`}</b>
         </p>
         <div
           class="modal fade"
-          id="exampleModalGuest"
+          id={"customize" + id}
           tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"

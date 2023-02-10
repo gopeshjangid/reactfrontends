@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import env from "react-dotenv";
 // import axios from 'axios'
 
-const GetinTouch = () => {
+const PricesGetintouch = () => {
   const initialValues = {
     username: "",
     email: "",
@@ -166,7 +166,7 @@ const GetinTouch = () => {
           });
           if (json.message === "successfully login and order") {
             localStorage.setItem("token", json.token);
-            navigate("/dashboard");
+            navigate("/accountSetting");
           }
 
           // setMessage(json.message)
@@ -424,4 +424,4 @@ const GetinTouch = () => {
   );
 };
 
-export default GetinTouch;
+export default PricesGetintouch;

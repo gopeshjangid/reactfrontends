@@ -9,14 +9,14 @@ import { useState, useEffect } from "react";
 import env from "react-dotenv";
 // import axios from 'axios'
 
-const GetinTouch = () => {
+const ReviewGetintouch = () => {
   const initialValues = {
     username: "",
     email: "",
     number: "",
     password: "",
-    deadline: "",
-    expertLevel: "",
+    message: "",
+
     contentType: "",
     countryCode: "",
   };
@@ -38,26 +38,6 @@ const GetinTouch = () => {
     const { name, value } = e.target;
     setUser({ ...User, [name]: value });
   };
-
-  useEffect(() => {
-    fetch(`${env.REACT_APP_APIURL}/getAllExpertLevel`, {
-      method: "GET",
-      headers: {
-        "Content-type": "application/json",
-      },
-    })
-      .then((res) => {
-        return res.json(console.log(res));
-      })
-      .then((response) => {
-        setExpertlevel(response.message);
-
-        console.log(response.message);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
 
   useEffect(() => {
     fetch(`${env.REACT_APP_APIURL}/getAllContentType`, {
@@ -109,9 +89,9 @@ const GetinTouch = () => {
       email,
       password,
       number,
-      deadline,
+      message,
       contentType,
-      expertLevel,
+
       countryCode,
     } = User;
 
@@ -121,9 +101,9 @@ const GetinTouch = () => {
 
       password: password.trim(),
       number: number.trim(),
-      deadline: deadline.trim(),
+      message: message.trim(),
       contentType: contentType.trim(),
-      expertLevel: expertLevel.trim(),
+
       countryCode: countryCode.trim(),
     };
 
@@ -140,9 +120,8 @@ const GetinTouch = () => {
       email.trim() === "" ||
       password.trim() === "" ||
       number.trim() === "" ||
-      deadline.trim() === "" ||
+      message.trim() === "" ||
       contentType.trim() === "" ||
-      expertLevel.trim() === "" ||
       countryCode.trim() === "" ||
       regex1.test(email.trim()) === false ||
       passwordLength1.test(password.trim()) === false
@@ -166,7 +145,7 @@ const GetinTouch = () => {
           });
           if (json.message === "successfully login and order") {
             localStorage.setItem("token", json.token);
-            navigate("/dashboard");
+            navigate("/accountSetting");
           }
 
           // setMessage(json.message)
@@ -228,8 +207,8 @@ const GetinTouch = () => {
     // } else if (values.number.length > 10) {
     //   errors.number = "!'Please Enter 10 Character'";
     // }
-    if (!values.deadline) {
-      errors.deadline = "!'Please Enter Your deadline'";
+    if (!values.message) {
+      errors.message = "!'Please Enter Your message'";
     }
     if (!values.expertLevel) {
       errors.expertLevel = "!'Please Choose your Expert Level'";
@@ -372,40 +351,17 @@ const GetinTouch = () => {
       </div>
       <div className="form-inputs d-flex space-between">
         <div className="Home-Name">
-          <input
-            type="text"
-            name="deadline"
-            placeholder="Deadline"
+          <textarea
+            className="form-control rounded-0 form-area ms-0 text_set-area"
+            rows="5"
+            id="message"
+            placeholder="Message"
             onChange={handleChange}
-            className="text_set ms-0 me-1 mt-0"
-          />
-          <p className="mb-0" style={{ color: "red" }}>
-            {formErrors.deadline}
-          </p>
-        </div>
-
-        <div className="Home-Name">
-          <select
-            aria-label="Default select example"
-            className="form-select rounded-0 text_set ms-1 mt-0"
-            onChange={handleChange}
-            name="expertLevel"
-            style={{
-              cursor: "pointer",
-            }}
-          >
-            {/* <option selected>Expert Level</option> */}
-            {expertlevel?.map((expertlevelItem, value) => {
-              return (
-                <>
-                  <option value={value}>{expertlevelItem.expertLevel}</option>
-                </>
-              );
-            })}
-          </select>
+            name="message"
+          ></textarea>
 
           <p className="mb-0" style={{ color: "red" }}>
-            {formErrors.expertLevel}
+            {formErrors.message}
           </p>
         </div>
       </div>
@@ -424,4 +380,4 @@ const GetinTouch = () => {
   );
 };
 
-export default GetinTouch;
+export default ReviewGetintouch;

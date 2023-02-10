@@ -4,7 +4,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import env from "react-dotenv";
 import Chat from "./Chat";
-
 const Dashboard = () => {
   const [viewOrder, setViewOrder] = useState([]);
   const [Cancelled, setCancelled] = useState("");
@@ -12,11 +11,13 @@ const Dashboard = () => {
   const [showChat, setShowChat] = useState(false);
   const [orderId, setOrderId] = useState("");
   const [orderName, setOrderName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   // const navigate = useNavigate();
   // console.log("qwertyui",orderId)
   //   console.log(searchText);
   const tokenID = localStorage.getItem("token");
   useEffect(() => {
+    setIsLoading(true);
     fetch(`${env.REACT_APP_APIURL}/viewOrder`, {
       method: "GET",
       headers: {
@@ -27,6 +28,7 @@ const Dashboard = () => {
       .then((res) => res.json(console.log(res)))
       .then((response) => {
         setViewOrder(response.data);
+        setIsLoading(false);
 
         console.log(response.data);
       })
@@ -83,9 +85,9 @@ const Dashboard = () => {
           <div className="col-lg-3">
             <h2 className="text-center">
               <img
-                src="writer/img/logo/logo-img.png"
+                src="writer/img/logo/gp-writer-complete.png"
                 alt="logo-img"
-                className="as-img"
+                className="as-img w-100"
               />
             </h2>
             <br />
@@ -164,84 +166,102 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <div
-              className="table-responsive text-nowrap"
-              style={{ height: "200px" }}
-            >
-              <table className="table   table-bordered mb-0">
-                <thead className="text-white" style={{ background: "#029a99" }}>
-                  <tr>
-                    <th>#</th>
-                    <th>Order Id</th>
-                    <th>Date</th>
-                    <th>Pay-Method</th>
-                    <th>Type</th>
-                    <th>Amount</th>
-                    <th>Chat</th>
-                    <th>Status</th>
-                    <th>Sub. Cancel</th>
-                    <th>OrderDetails</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {viewOrder?.map((friend, index) => {
-                    return (
-                      <>
-                        {friend.sub_status === "Active" ? (
-                          <tr key={index} className="viewOrderbody">
-                            <td>{index + 1}</td>
-                            <td>{friend.transactionId}</td>
-                            <td>{friend.datetime}</td>
-                            <td>{friend.pay_method}</td>
-                            <td>{friend.type}</td>
-                            <td>{friend.totalAmount}</td>
-                            <td
-                              onClick={() => {
-                                setOrderId(friend._id);
-                                setOrderName(
-                                  friend.products.map(
-                                    (product) => product.p_title + " "
-                                  )
-                                );
-                                setShowChat(true);
-                              }}
-                              style={{ cursor: "pointer" }}
-                            >
-                              Chat
-                            </td>
-                            <td>{friend.status}</td>
+            {/* <div className="loader">
+              {" "}
+              <img
+                src="writer/img/logo/gp-writer-loader.png"
+                alt="logo-loader"
+                className="as-img"
+              />
+            </div> */}
 
-                            <td
-                              data-bs-toggle="modal"
-                              data-bs-target="#exampleModal"
-                              style={{ cursor: "pointer" }}
-                            >
-                              {friend.sub_status}
-                            </td>
+            {isLoading ? (
+              <div>
+                <h1>Sonu</h1>
+              </div>
+            ) : (
+              <div
+                className="table-responsive text-nowrap"
+                style={{ height: "200px" }}
+              >
+                <table className="table   table-bordered mb-0">
+                  <thead
+                    className="text-white"
+                    style={{ background: "#029a99" }}
+                  >
+                    <tr>
+                      <th>#</th>
+                      <th>Order Id</th>
+                      <th>Date</th>
+                      <th>Pay-Method</th>
+                      <th>Type</th>
+                      <th>Amount</th>
+                      <th>Chat</th>
+                      <th>Status</th>
+                      <th>Sub. Cancel</th>
+                      <th>OrderDetails</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {viewOrder?.map((friend, index) => {
+                      return (
+                        <>
+                          {friend.sub_status === "Active" ? (
+                            <tr key={index} className="viewOrderbody">
+                              <td>{index + 1}</td>
+                              <td>{friend.transactionId}</td>
+                              <td>{friend.datetime}</td>
+                              <td>{friend.pay_method}</td>
+                              <td>{friend.type}</td>
+                              <td>{friend.totalAmount}</td>
+                              <td
+                                onClick={() => {
+                                  setOrderId(friend._id);
+                                  setOrderName(
+                                    friend.products.map(
+                                      (product) => product.p_title + " "
+                                    )
+                                  );
+                                  setShowChat(true);
+                                }}
+                                className="viewOrderChat"
+                                style={{ cursor: "pointer" }}
+                              >
+                                Chat
+                              </td>
+                              <td>{friend.status}</td>
 
-                            <div
-                              className="modal fade"
-                              id="exampleModal"
-                              tabIndex="-1"
-                              aria-labelledby="exampleModalLabel"
-                              aria-hidden="true"
-                            >
-                              <div className="modal-dialog">
-                                <div className="modal-content">
-                                  <div className="modal-header">
-                                    <button
-                                      type="button"
-                                      className="btn-close"
-                                      data-bs-dismiss="modal"
-                                      aria-label="Close"
-                                    ></button>
-                                  </div>
-                                  <div className="modal-body text-center">
-                                    <h4>
-                                      Are You Sure This Subscription Cancel?
-                                    </h4>
-                                  </div>
-                                  <div className="modal-footer p-0">
+                              <td
+                                data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"
+                                style={{ cursor: "pointer" }}
+                              >
+                                {friend.sub_status}
+                              </td>
+
+                              <div
+                                className="modal fade"
+                                id="exampleModal"
+                                tabIndex="-1"
+                                aria-labelledby="exampleModalLabel"
+                                aria-hidden="true"
+                              >
+                                <div className="modal-dialog">
+                                  <div className="modal-content border-0">
+                                    <div className="">
+                                      <button
+                                        type="button"
+                                        className="btn-close p-3 outline-0"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                      ></button>
+                                    </div>
+                                    <div className="modal-body text-center">
+                                      <h4>
+                                        Are You Sure This Subscription Cancel?
+                                      </h4>
+                                    </div>
+
                                     {friend.sub_status === "Active" ? (
                                       <button
                                         type="button"
@@ -252,9 +272,9 @@ const Dashboard = () => {
                                             friend.pay_method
                                           )
                                         }
-                                        className="btn border-0 mt-3 btn-primary"
+                                        className=" border-0  text-white py-2 fs-4 rounded-0 chat_s_btn"
                                       >
-                                        Cancelled
+                                        Cancel
                                       </button>
                                     ) : (
                                       ""
@@ -262,203 +282,212 @@ const Dashboard = () => {
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <td>
-                              <button
-                                className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
-                                type="button"
-                                data-bs-toggle="offcanvas"
-                                data-bs-target={"#viewdetails" + friend._id}
-                                aria-controls="offcanvasScrolling"
-                              >
-                                ViewDetails
-                              </button>
-                              <div
-                                className="offcanvas viewOrder text-wrap offcanvas-end"
-                                data-bs-scroll="true"
-                                data-bs-backdrop="false"
-                                tabIndex="-1"
-                                id={"viewdetails" + friend._id}
-                                aria-labelledby="offcanvasScrollingLabel"
-                              >
-                                <div
-                                  className="offcanvas-header text-white"
-                                  style={{ background: "rgb(2, 154, 153)" }}
+                              <td>
+                                <button
+                                  className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
+                                  type="button"
+                                  data-bs-toggle="offcanvas"
+                                  data-bs-target={"#viewdetails" + friend._id}
+                                  aria-controls="offcanvasScrolling"
                                 >
-                                  <button
-                                    type="button"
-                                    className="bg-transparent border-0"
-                                    data-bs-dismiss="offcanvas"
-                                    aria-label="Close"
-                                  >
-                                    <i className="fa-solid fa-xmark fs-3 text-white"></i>
-                                  </button>
-
-                                  <h5
-                                    className="offcanvas-title"
-                                    id="offcanvasScrollingLabel"
-                                  >
-                                    OrderDetails
-                                  </h5>
-                                </div>
-                                <div className="offcanvas-body">
-                                  <table className="table table-borderless mb-0">
-                                    <tbody>
-                                      <tr>
-                                        <td>OrderId</td>
-                                        <td>:</td>
-
-                                        <td>{friend.transactionId}</td>
-                                      </tr>
-                                      <tr>
-                                        <td>Date</td>
-                                        <td>:</td> <td>{friend.datetime}</td>
-                                      </tr>
-                                      <tr>
-                                        <td>Pay-Method</td>
-                                        <td>:</td>
-                                        <td>{friend.pay_method}</td>
-                                      </tr>
-                                      <tr>
-                                        <td>Type</td>
-                                        <td>:</td> <td>{friend.type}</td>
-                                      </tr>
-                                      <tr>
-                                        <td>Amount</td>
-                                        <td>:</td> <td>{friend.totalAmount}</td>
-                                      </tr>
-                                      <tr>
-                                        <td>Sub.Cancel</td>
-                                        <td>:</td>
-                                        <td>{friend.sub_status}</td>
-                                      </tr>
-                                      <tr>
-                                        <td>Status</td>
-                                        <td>:</td> <td>{friend.status}</td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                        ) : (
-                          <tr key={index} className="viewOrderbody">
-                            <td>{index + 1}</td>
-                            <td>{friend.transactionId}</td>
-                            <td>{friend.datetime}</td>
-                            <td>{friend.pay_method}</td>
-                            <td>{friend.type}</td>
-                            <td>{friend.totalAmount}</td>
-                            <td
-                              onClick={() => {
-                                setOrderId(friend._id);
-                                setOrderName(
-                                  friend.products.map(
-                                    (product) => product.p_title + " "
-                                  )
-                                );
-                                setShowChat(true);
-                              }}
-                              style={{ cursor: "pointer" }}
-                            >
-                              Chat
-                            </td>
-                            <td>{friend.status}</td>
-                            <td>
-                              {" "}
-                              <Link
-                                className="bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
-                                role="button"
-                                aria-disabled="true"
-                              >
-                                {friend.sub_status}
-                              </Link>
-                            </td>
-                            <td>
-                              <button
-                                className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
-                                type="button"
-                                data-bs-toggle="offcanvas"
-                                data-bs-target={"#viewdetails" + friend._id}
-                                aria-controls="offcanvasScrolling"
-                              >
-                                ViewDetails
-                              </button>
-                              <div
-                                className="offcanvas viewOrder text-wrap offcanvas-end"
-                                data-bs-scroll="true"
-                                data-bs-backdrop="false"
-                                tabIndex="-1"
-                                id={"viewdetails" + friend._id}
-                                aria-labelledby="offcanvasScrollingLabel"
-                              >
+                                  ViewDetails
+                                </button>
                                 <div
-                                  className="offcanvas-header text-white"
-                                  style={{ background: "rgb(2, 154, 153)" }}
+                                  className="offcanvas viewOrder text-wrap offcanvas-end"
+                                  data-bs-scroll="true"
+                                  data-bs-backdrop="false"
+                                  tabIndex="-1"
+                                  id={"viewdetails" + friend._id}
+                                  aria-labelledby="offcanvasScrollingLabel"
                                 >
-                                  <button
-                                    type="button"
-                                    className="bg-transparent border-0"
-                                    data-bs-dismiss="offcanvas"
-                                    aria-label="Close"
+                                  <div
+                                    className="offcanvas-header text-white"
+                                    style={{ background: "rgb(2, 154, 153)" }}
                                   >
-                                    <i className="fa-solid fa-xmark fs-3 text-white"></i>
-                                  </button>
-                                  <h5
-                                    className="offcanvas-title"
-                                    id="offcanvasScrollingLabel"
-                                  >
-                                    OrderDetails
-                                  </h5>
+                                    <button
+                                      type="button"
+                                      className="bg-transparent border-0"
+                                      data-bs-dismiss="offcanvas"
+                                      aria-label="Close"
+                                    >
+                                      <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                                    </button>
+
+                                    <h5
+                                      className="offcanvas-title"
+                                      id="offcanvasScrollingLabel"
+                                    >
+                                      OrderDetails
+                                    </h5>
+                                  </div>
+                                  <div className="offcanvas-body">
+                                    <table className="table table-borderless mb-0">
+                                      <tbody>
+                                        <tr>
+                                          <td>OrderId</td>
+                                          <td>:</td>
+
+                                          <td>{friend.transactionId}</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Date</td>
+                                          <td>:</td> <td>{friend.datetime}</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Pay-Method</td>
+                                          <td>:</td>
+                                          <td>{friend.pay_method}</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Type</td>
+                                          <td>:</td> <td>{friend.type}</td>
+                                        </tr>
+                                        {/* <tr>
+                                        <td>Product</td>
+                                        <td>:</td>
+                                        <td>{friend.products._id}</td>
+                                      </tr> */}
+
+                                        <tr>
+                                          <td>Amount</td>
+                                          <td>:</td>{" "}
+                                          <td>{friend.totalAmount}</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Sub.Cancel</td>
+                                          <td>:</td>
+                                          <td>{friend.sub_status}</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Status</td>
+                                          <td>:</td> <td>{friend.status}</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
                                 </div>
-                                <div className="offcanvas-body">
-                                  <table className="table table-borderless mb-0">
-                                    <tbody>
-                                      <tr>
-                                        <td>OrderId</td>
-                                        <td>:</td>
-                                        <td>{friend.transactionId}</td>
-                                      </tr>
-                                      <tr>
-                                        <td>Date</td>
-                                        <td>:</td> <td>{friend.datetime}</td>
-                                      </tr>
-                                      <tr>
-                                        <td>Pay-Method</td>
-                                        <td>:</td>
-                                        <td>{friend.pay_method}</td>
-                                      </tr>
-                                      <tr>
-                                        <td>Type</td>
-                                        <td>:</td> <td>{friend.type}</td>
-                                      </tr>
-                                      <tr>
-                                        <td>Amount</td>
-                                        <td>:</td> <td>{friend.totalAmount}</td>
-                                      </tr>
-                                      {/* <tr>
+                              </td>
+                            </tr>
+                          ) : (
+                            <tr key={index} className="viewOrderbody">
+                              <td>{index + 1}</td>
+                              <td>{friend.transactionId}</td>
+                              <td>{friend.datetime}</td>
+                              <td>{friend.pay_method}</td>
+                              <td>{friend.type}</td>
+                              <td>{friend.totalAmount}</td>
+                              <td
+                                onClick={() => {
+                                  setOrderId(friend._id);
+                                  setOrderName(
+                                    friend.products.map(
+                                      (product) => product.p_title + " "
+                                    )
+                                  );
+                                  setShowChat(true);
+                                }}
+                                className="viewOrderChat"
+                                style={{ cursor: "pointer" }}
+                              >
+                                Chat
+                              </td>
+                              <td>{friend.status}</td>
+                              <td>
+                                {" "}
+                                <Link
+                                  className="bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
+                                  role="button"
+                                  aria-disabled="true"
+                                >
+                                  {friend.sub_status}
+                                </Link>
+                              </td>
+                              <td>
+                                <button
+                                  className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
+                                  type="button"
+                                  data-bs-toggle="offcanvas"
+                                  data-bs-target={"#viewdetails" + friend._id}
+                                  aria-controls="offcanvasScrolling"
+                                >
+                                  ViewDetails
+                                </button>
+                                <div
+                                  className="offcanvas viewOrder text-wrap offcanvas-end"
+                                  data-bs-scroll="true"
+                                  data-bs-backdrop="false"
+                                  tabIndex="-1"
+                                  id={"viewdetails" + friend._id}
+                                  aria-labelledby="offcanvasScrollingLabel"
+                                >
+                                  <div
+                                    className="offcanvas-header text-white"
+                                    style={{ background: "rgb(2, 154, 153)" }}
+                                  >
+                                    <button
+                                      type="button"
+                                      className="bg-transparent border-0"
+                                      data-bs-dismiss="offcanvas"
+                                      aria-label="Close"
+                                    >
+                                      <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                                    </button>
+                                    <h5
+                                      className="offcanvas-title"
+                                      id="offcanvasScrollingLabel"
+                                    >
+                                      OrderDetails
+                                    </h5>
+                                  </div>
+                                  <div className="offcanvas-body">
+                                    <table className="table table-borderless mb-0">
+                                      <tbody>
+                                        <tr>
+                                          <td>OrderId</td>
+                                          <td>:</td>
+                                          <td>{friend.transactionId}</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Date</td>
+                                          <td>:</td> <td>{friend.datetime}</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Pay-Method</td>
+                                          <td>:</td>
+                                          <td>{friend.pay_method}</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Type</td>
+                                          <td>:</td> <td>{friend.type}</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Amount</td>
+                                          <td>:</td>{" "}
+                                          <td>{friend.totalAmount}</td>
+                                        </tr>
+                                        {/* <tr>
                                     <td>Sub.Cancel</td>
 
    <td>:</td>                                    <td>{friend.sub_status}</td>
                                   </tr> */}
-                                      <tr>
-                                        <td>Status</td>
-                                        <td>:</td> <td>{friend.status}</td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
-                              </div>{" "}
-                            </td>
-                          </tr>
-                        )}
-                      </>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
+                                        <tr>
+                                          <td>Status</td>
+                                          <td>:</td> <td>{friend.status}</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>{" "}
+                              </td>
+                            </tr>
+                          )}
+                        </>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )}
             {showChat && <Chat orderId={orderId} orderName={orderName} />}
           </div>
         </div>

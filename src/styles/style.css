@@ -8,6 +8,40 @@
   text-align: center;
 }
 
+/* ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  Track
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+  background: #029a99;
+}
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #029a99;
+} */
+
+/* .viewOrderChat:target {
+  background: #000000 !important;
+} */
+/* 
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.loader img {
+  width: 10%;
+} */
+
 .logo {
   padding-right: 13%;
 }
@@ -509,10 +543,10 @@
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 3%;
-  border-radius: 14px;
 }
 .btn:hover {
-  background: black;
+  background: rgb(2, 154, 153);
+  border: 0;
 }
 .down_p {
   color: white;
@@ -2036,7 +2070,6 @@ th {
 }
 .table {
   background: white;
-  margin-top: 1%;
   margin-bottom: 6%;
 }
 .td {
@@ -2274,13 +2307,9 @@ th {
   border-left: 3px solid #02999b;
 }
 
-/* .pagination {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  margin: auto;
-  cursor: pointer;
-} */
+.pagination {
+  justify-content: center;
+}
 
 .pagination a {
   padding: 10px;
@@ -2332,7 +2361,7 @@ th {
 
 @media (max-width: 1024px) {
   .container {
-    max-width: 90%;
+    max-width: 95% !important;
   }
   .coupon-wrap .coupon {
     width: 100%;
@@ -2340,6 +2369,9 @@ th {
 }
 
 @media (max-width: 991px) {
+  .as-img {
+    width: 35% !important;
+  }
   .navbar-expand-sm .navbar-toggler {
     display: block !important;
   }
@@ -2427,6 +2459,9 @@ th {
 } */
 
 @media (max-width: 767px) {
+  .as-img {
+    width: 45% !important;
+  }
   .border-sec {
     height: inherit;
   }
@@ -2480,6 +2515,9 @@ th {
 }
 
 @media (max-width: 650px) {
+  .as-img {
+    width: 60% !important;
+  }
   .overlep_sec1 {
     flex-wrap: wrap;
     width: 45%;
@@ -2749,11 +2787,10 @@ th {
 
 .chat_s_btn {
   background: #029a99;
-  border-color: #029a99;
   padding: 5px 25px;
-  border-radius: 10px;
   margin-top: 15px;
   font-size: 15px;
+  border-radius: 5px;
 }
 .fileDiv {
   position: relative;
@@ -2761,6 +2798,7 @@ th {
   margin-top: 16px;
   padding: 7px 14px;
   cursor: pointer;
+  border-radius: 5px;
 }
 .fileDiv:hover {
   color: white;
@@ -2771,6 +2809,7 @@ th {
   opacity: 0;
   right: 0;
   top: 0;
+  cursor: pointer;
 }
 
 .chat_idp {

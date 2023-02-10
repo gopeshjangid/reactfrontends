@@ -157,6 +157,7 @@ const TransactionHistory = () => {
         setDebit(Response.debit);
         settotalCredit(Response.totalCredit);
         settotalDebit(Response.totalDebit);
+        console.log(Response);
       });
   }, []);
 
@@ -304,7 +305,7 @@ const TransactionHistory = () => {
                       {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
                       <button
                         type="button"
-                        className="btn btn-primary w-100"
+                        className="btn border-0 text-white w-100"
                         onClick={() => walletRecharge()}
                       >
                         Proceed
@@ -357,7 +358,7 @@ const TransactionHistory = () => {
                       {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
                       <button
                         type="button"
-                        className="btn btn-primary w-100"
+                        className="btn  border-0 text-white w-100"
                         onClick={() => payWithPaypal()}
                       >
                         Proceed
@@ -411,7 +412,7 @@ const TransactionHistory = () => {
                     {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
                     <button
                       type="button"
-                      className="btn btn-primary w-100"
+                      className="btn  border-0 text-white w-100"
                       onClick={() => showRazorpay()}
                     >
                       Proceed

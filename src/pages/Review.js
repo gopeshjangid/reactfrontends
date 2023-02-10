@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
+import ReviewGetintouch from "./ReviewGetintouch";
 // import { Link } from "react-router-dom";
 
 const Review = () => {
@@ -81,80 +82,7 @@ const Review = () => {
 
             <div className="col-md-6">
               <section className="form_sec">
-                <form
-                  style={{ padding: "4%" }}
-                  className="text-center"
-                  onSubmit={handleSubmit}
-                >
-                  <h2 className="form_sec-h2">
-                    Get In <span className="spa">Touch </span>
-                  </h2>
-                  <div className="form-inputs d-flex space-between">
-                    <div className="Home-Name">
-                      <input
-                        type="text"
-                        id="fname"
-                        name="username"
-                        placeholder="Name"
-                        onChange={inputChange}
-                        className="text_set ms-0 me-1 mt-0"
-                      />
-                      <p style={{ color: "red" }}>{formErrors.username}</p>
-                    </div>
-
-                    <div className="Home-Name">
-                      <input
-                        type="text"
-                        id="fname"
-                        name="email"
-                        placeholder="Email"
-                        onChange={inputChange}
-                        className="text_set ms-1 me-0 mt-0"
-                      />
-                      <p style={{ color: "red" }}>{formErrors.email}</p>
-                    </div>
-                  </div>
-                  <div className="form-inputs d-flex space-between">
-                    <div className="Home-Name">
-                      <input
-                        type="number"
-                        id="fname"
-                        name="number"
-                        placeholder="Phone"
-                        onChange={inputChange}
-                        className="text_set ms-0 me-1 mt-0"
-                      />
-                      <p style={{ color: "red" }}>{formErrors.number}</p>
-                    </div>
-
-                    <div className="Home-Name">
-                      <select className="text_set ms-1 me-0 mt-0">
-                        <option>Select Service</option>
-                        <option>Content Writing</option>
-                      </select>
-                    </div>
-                  </div>
-                  <textarea
-                    className="form-control rounded-0 form-area ms-0 text_set-area"
-                    rows="5"
-                    id="message"
-                    placeholder="Message"
-                    onChange={inputChange}
-                    name="message"
-                  ></textarea>
-                  <p style={{ color: "red" }}>{formErrors.message}</p>
-                  <button type="submit" className="btn_set ms-0">
-                    Submit
-                  </button>{" "}
-                  {Object.keys(formErrors).length === 0 && isSubmit ? (
-                    <h3 className="Success t-center" style={{ color: "#fff" }}>
-                      Submitted is Successfull
-                    </h3>
-                  ) : (
-                    ""
-                  )}
-                  {/* <Link to="/Login"><button type="button" className="btn_set2">Login</button></Link> */}
-                </form>
+                <ReviewGetintouch />
               </section>
             </div>
           </div>

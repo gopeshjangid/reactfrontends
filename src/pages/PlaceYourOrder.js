@@ -1,61 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
+import Placeyourordergetintouch from "./Placeyourordergetintouch";
 
 const PlaceYourOrder = () => {
-  const initialValues = {
-    username: "",
-    email: "",
-    number: "",
-    deadline: "",
-  };
-
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
-
-  const inputChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormErrors(validate(formValues));
-    setIsSubmit(true);
-  };
-
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(formValues);
-    }
-  }, [formErrors]);
-
-  const validate = (values) => {
-    const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.username) {
-      errors.username = "!'Please Enter Your Name'";
-    }
-    if (!values.email) {
-      errors.email = "!'Please Enter Your Email'";
-    } else if (!regex.test(values.email)) {
-      errors.email = "!'This is not Email Format'";
-    }
-    if (!values.number) {
-      errors.number = "!'Please Enter Your Number'";
-    } else if (values.number.length < 10) {
-      errors.number = "!'Please Enter Correct Number'";
-    } else if (values.number.length > 10) {
-      errors.number = "!'Please Enter Correct Number'";
-    }
-    if (!values.deadline) {
-      errors.deadline = "!'Please Enter Your deadline'";
-    }
-    return errors;
-  };
-
   const initialValue = {
     username: "",
     email: "",
@@ -115,95 +63,7 @@ const PlaceYourOrder = () => {
 
             <div className="col-md-6">
               <section className="form_sec">
-                <form
-                  style={{ padding: "4%" }}
-                  className="text-center"
-                  onSubmit={handleSubmit}
-                >
-                  <h2 className="form_sec-h2">
-                    Get In <span className="spa">Touch </span>
-                  </h2>
-                  <div className="d-flex space-between">
-                    <div className="Home-Name">
-                      <input
-                        type="text"
-                        id="fname"
-                        name="username"
-                        placeholder="Name"
-                        onChange={inputChange}
-                        className="text_set ms-0 me-1 mt-0"
-                      />
-                      <p style={{ color: "red" }}>{formErrors.username}</p>
-                    </div>
-
-                    <div className="Home-Name">
-                      <input
-                        type="text"
-                        id="fname"
-                        name="email"
-                        placeholder="Email"
-                        onChange={inputChange}
-                        className="text_set ms-1 me-0 mt-0"
-                      />
-                      <p style={{ color: "red" }}>{formErrors.email}</p>
-                    </div>
-                  </div>
-                  <div className="d-flex space-between">
-                    <div className="Home-Name">
-                      <input
-                        type="number"
-                        id="fname"
-                        name="number"
-                        placeholder="Exp:+91 7665092627"
-                        onChange={inputChange}
-                        className="text_set ms-0 me-1 mt-0"
-                      />
-                      <p style={{ color: "red" }}>{formErrors.number}</p>
-                    </div>
-                    <div className="Home-Name">
-                      <select className="text_set me-0 ms-1 mt-0">
-                        <option>Content Type</option>
-
-                        <option>Ghost Writing</option>
-                        <option>Blog Writing</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className="d-flex space-between">
-                    <div className="Home-Name">
-                      <input
-                        type="text"
-                        id="fname"
-                        name="deadline"
-                        placeholder="Deadline"
-                        onChange={inputChange}
-                        className="text_set ms-0 me-1 mt-0"
-                      />
-                      <p style={{ color: "red" }}>{formErrors.deadline}</p>
-                    </div>
-
-                    <div className="Home-Name">
-                      <select className="text_set ms-1 me-0 mt-0">
-                        <option>Expert Level</option>
-
-                        <option>Expert</option>
-                        <option>Premium</option>
-                        <option>Enterprice</option>
-                      </select>
-                    </div>
-                  </div>
-                  <button type="submit" className="btn_set1 ms-0">
-                    Register
-                  </button>{" "}
-                  {Object.keys(formErrors).length === 0 && isSubmit ? (
-                    <h3 className="Success t-center" style={{ color: "#fff" }}>
-                      Register is Successfull
-                    </h3>
-                  ) : (
-                    ""
-                  )}
-                  {/* <Link to="/Login"><button type="button" className="btn_set2" onClick={(e) => this.create(e)}>Login</button></Link> */}
-                </form>
+                <Placeyourordergetintouch />
               </section>
             </div>
           </div>

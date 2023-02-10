@@ -39,6 +39,7 @@ const ViewDetails = () => {
             >
               <img
                 src={urlApi + "/image/" + post?.data?.image}
+                alt="author-img"
                 className="author_sec-img ms-0"
                 style={{ border: "5px solid #029A99" }}
               />

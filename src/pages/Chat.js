@@ -323,21 +323,27 @@ const Chat = ({ orderId, orderName }) => {
           value={messageText}
           onChange={handleChange}
         ></textarea>
-        <button
-          onClick={messageSendHandler}
-          className="btn btn-primary chat_s_btn"
-        >
-          SEND
-        </button>
-        <div className="fileDiv btn btn-info btn-flat" id="upload-btn-chat">
-          {" "}
-          <i className="fa fa-upload"></i>
-          <input
-            onChange={(e) => selectImage(e)}
-            type="file"
-            name="file"
-            className="upload_attachmentfile"
-          />
+        <div className="d-flex">
+          <button
+            onClick={messageSendHandler}
+            className=" border-0 text-white chat_s_btn"
+          >
+            SEND
+          </button>
+          <div
+            className="fileDiv border-0 ms-2"
+            style={{ background: "#029a99" }}
+            id="upload-btn-chat"
+          >
+            {" "}
+            <i className="fa fa-upload text-white"></i>
+            <input
+              onChange={(e) => selectImage(e)}
+              type="file"
+              name="file"
+              className="upload_attachmentfile"
+            />
+          </div>
         </div>
       </div>
     </>
