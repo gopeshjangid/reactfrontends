@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import env from "react-dotenv";
+import Loader from "./Loader";
 
 let urlApi = `${env.REACT_APP_APIURL}`;
 
@@ -10,12 +11,14 @@ class Sample extends Component {
       User: [],
       searchText: "",
       startSearch: false,
+      isLoading: false,
     };
 
     this.componentDidMount = this.componentDidMount.bind(this);
   }
 
   async componentDidMount() {
+    this.setState({ isLoading: true });
     const response = await fetch(`${env.REACT_APP_APIURL}/getworkSamples`, {
       method: "GET",
       mode: "cors",
@@ -27,7 +30,7 @@ class Sample extends Component {
     if (response.ok) {
       const User = await response.json();
       console.log(User);
-      this.setState({ ...this.state, User: User.data });
+      this.setState({ ...this.state, User: User.data, isLoading: false });
     }
   }
   render() {
@@ -43,10 +46,12 @@ class Sample extends Component {
 
     return (
       <div>
-        <section className="samp_sec">
-          <div className="container">
-            <div className="row text-center">
-              <div>
+        {this.state.isLoading ? (
+          <Loader />
+        ) : (
+          <section className="samp_sec">
+            <div className="container">
+              <div className="text-center">
                 <input
                   type="text"
                   name="search"
@@ -54,7 +59,10 @@ class Sample extends Component {
                   className="samp_sec-search"
                   value={this.state.searchText}
                   onChange={(e) =>
-                    this.setState({ ...this.state, searchText: e.target.value })
+                    this.setState({
+                      ...this.state,
+                      searchText: e.target.value,
+                    })
                   }
                 />
                 &nbsp; &nbsp;
@@ -76,79 +84,81 @@ class Sample extends Component {
                 >
                   show All
                 </button>
+                <h2 className="samp_sec-h2 m-auto">Work Sample</h2>
+                <p className="samp_sec-p">
+                  You’re probably looking for ways to get people to pay
+                  attention to you. Maybe you’re looking for a way to make
+                  money. Maybe you’re trying to find a new portfolio to use. In
+                  any case, you’re probably looking for tips on how to write
+                  better content that gets people up at night
+                </p>
               </div>
-
-              <h2 className="samp_sec-h2 m-auto">Work Sample</h2>
-
-              <p className="samp_sec-p">
-                You’re probably looking for ways to get people to pay attention
-                to you. Maybe you’re looking for a way to make money. Maybe
-                you’re trying to find a new portfolio to use. In any case,
-                you’re probably looking for tips on how to write better content
-                that gets people up at night
-              </p>
-              {this.state.User && this.state.searchText
-                ? this.state.User.filter((item, index) =>
-                    item.title.includes(this.state.searchText)
-                  ).map((friend, value) => {
-                    return (
-                      <div className="col-md-3" key={value.toString()}>
-                        <div className="samp_box text-center">
-                          <img
-                            alt="images"
-                            src={urlApi + "/image/" + friend.image}
-                            className="samp_box-img"
-                          />
-
-                          <h3 className="samp_box-h3">{friend.title}</h3>
-
-                          <RenderHTML HTML={friend.dec} />
-                          <a
-                            type="button"
-                            rel="noreferrer"
-                            href={urlApi + "/upload-pdf/" + friend.pdf}
-                            download
-                            target="_blank"
-                            className="samp_box-btn"
-                          >
-                            {" "}
-                            <i className="fa fa-download samp-icon"></i>Download
-                          </a>
-                        </div>
-                      </div>
-                    );
-                  })
-                : this.state.User.map((friend, value) => {
-                    return (
-                      <div className="col-md-3" key={value.toString()}>
-                        <div className="samp_box">
-                          <div className="samp_box-img1">
+              <div className="row">
+                {this.state.User && this.state.searchText
+                  ? this.state.User.filter((item, index) =>
+                      item.title.includes(this.state.searchText)
+                    ).map((friend, value) => {
+                      return (
+                        <div className="col-md-3" key={value.toString()}>
+                          <div className="samp_box text-center">
                             <img
                               alt="images"
                               src={urlApi + "/image/" + friend.image}
                               className="samp_box-img"
                             />
+
+                            <h3 className="samp_box-h3">{friend.title}</h3>
+
+                            <RenderHTML HTML={friend.dec} />
+                            <a
+                              type="button"
+                              rel="noreferrer"
+                              href={urlApi + "/upload-pdf/" + friend.pdf}
+                              download
+                              target="_blank"
+                              className="samp_box-btn"
+                            >
+                              {" "}
+                              <i className="fa fa-download samp-icon"></i>
+                              Download
+                            </a>
                           </div>
-                          <h3 className="samp_box-h3">{friend.title}</h3>
-                          <RenderHTML HTML={friend.dec} />
-                          <a
-                            type="button"
-                            rel="noreferrer"
-                            href={urlApi + "/upload-pdf/" + friend.pdf}
-                            download
-                            target="_blank"
-                            className="samp_box-btn"
-                          >
-                            {" "}
-                            <i className="fa fa-download samp-icon"></i>Download
-                          </a>
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })
+                  : this.state.User.map((friend, value) => {
+                      return (
+                        <div className="col-md-3" key={value.toString()}>
+                          <div className="samp_box">
+                            <div className="samp_box-img1">
+                              <img
+                                alt="images"
+                                src={urlApi + "/image/" + friend.image}
+                                className="samp_box-img"
+                              />
+                            </div>
+                            <h3 className="samp_box-h3">{friend.title}</h3>
+                            <RenderHTML HTML={friend.dec} />
+                            <a
+                              type="button"
+                              rel="noreferrer"
+                              href={urlApi + "/upload-pdf/" + friend.pdf}
+                              download
+                              target="_blank"
+                              className="samp_box-btn"
+                            >
+                              {" "}
+                              <i className="fa fa-download samp-icon"></i>
+                              Download
+                            </a>
+                          </div>
+                        </div>
+                      );
+                    })}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
       </div>
     );
     // :(

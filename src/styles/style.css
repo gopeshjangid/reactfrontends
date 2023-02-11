@@ -30,17 +30,53 @@
 /* .viewOrderChat:target {
   background: #000000 !important;
 } */
-/* 
-.loader {
+
+.main-loader {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background: rgba(255, 255, 255, 0);
+  width: 8%;
+  margin: auto;
+  padding: 10% 0;
+}
+.loader {
   position: relative;
 }
 
 .loader img {
-  width: 10%;
-} */
+  width: 100%;
+  z-index: 100;
+  position: relative;
+  filter: contrast(1.5);
+  transform: scale(0.8);
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: -8px;
+  z-index: 100;
+  /* padding: 65px 0px; */
+  height: 123%;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0px 4px 0px #029a99;
+  border-radius: 100%;
+  animation: loader 1s linear infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .logo {
   padding-right: 13%;
@@ -1372,7 +1408,7 @@
 }
 
 .samp_box-img1 {
-  height: 250px;
+  height: 200px;
   overflow: hidden;
 }
 
@@ -2659,12 +2695,10 @@ th {
     width: 100%;
   }
   .samp_sec-search {
-    width: 75%;
-    margin-left: 13%;
+    width: 100%;
   }
   .samp_sec-btn {
     padding: 11px 30px 11px 30px;
-    margin-left: 21%;
     margin-top: 15px;
   }
   .samp_sec-h2 {

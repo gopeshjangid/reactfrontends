@@ -281,7 +281,7 @@ const PricesGetintouch = () => {
         <input
           type="password"
           name="password"
-          placeholder="password"
+          placeholder="Password"
           onChange={handleChange}
           className="text_set ms-0 mt-0"
         />
@@ -322,7 +322,7 @@ const PricesGetintouch = () => {
               type="text"
               style={{ paddingLeft: "60px" }}
               name="number"
-              placeholder="number"
+              placeholder="Number"
               onChange={handleChange}
               className="text_set ms-0 me-1 mt-0"
               aria-label="Username"

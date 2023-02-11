@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import env from "react-dotenv";
+import Loader from "./Loader";
 
 class Faq extends Component {
   constructor(props) {
     super(props);
     this.state = {
       User: [],
+      isLoading: false,
       // visibility: false,
     };
     // this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
@@ -13,6 +15,7 @@ class Faq extends Component {
   }
 
   async componentDidMount() {
+    this.setState({ isLoading: true });
     fetch(`${env.REACT_APP_APIURL}/getFaqs `, {
       method: "GET",
       mode: "cors",
@@ -25,7 +28,7 @@ class Faq extends Component {
         const User = await response.json();
         if (response.ok) {
           console.log(User);
-          this.setState({ ...this.state, User: User.data });
+          this.setState({ ...this.state, User: User.data, isLoading: false });
         }
       })
       .catch((err) => {
@@ -50,58 +53,64 @@ class Faq extends Component {
     console.log("this.props.User", this.state.User);
     return (
       <div>
-        <section className="faq_sec">
-          <h2 className="faq_sec-h2">Frequently Asked Questions</h2>
-          <p className="faq_sec-p">
-            Sometimes all you need is a fast answer to a question. We
-            understand. Answers to our most frequently asked questions may be
-            found here.
-          </p>
-        </section>
+        {this.state.isLoading ? (
+          <Loader />
+        ) : (
+          <>
+            <section className="faq_sec">
+              <h2 className="faq_sec-h2">Frequently Asked Questions</h2>
+              <p className="faq_sec-p">
+                Sometimes all you need is a fast answer to a question. We
+                understand. Answers to our most frequently asked questions may
+                be found here.
+              </p>
+            </section>
 
-        <section className="faq_section1">
-          <div className="container">
-            <div className="row">
-              <h2 className="faq_h3">FAQs</h2>
-              <div className="faq-inner">
-                {this.state.User &&
-                  this.state.User.map((friend) => {
-                    return (
-                      <div
-                        className="faq-item p-0 bg_set accordion-item"
-                        // onClick={this.handleToggleVisibility}
-                        key={friend._id}
-                      >
-                        <h2
-                          className="faq_item-h3 p-0 accordion-header"
-                          id={friend._id}
-                        >
-                          <button
-                            className="faq-plus size fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target={"#" + "s" + friend._id}
-                            aria-expanded="false"
-                            aria-controls={"s" + friend._id}
+            <section className="faq_section1">
+              <div className="container">
+                <div className="row">
+                  <h2 className="faq_h3">FAQs</h2>
+                  <div className="faq-inner">
+                    {this.state.User &&
+                      this.state.User.map((friend) => {
+                        return (
+                          <div
+                            className="faq-item p-0 bg_set accordion-item"
+                            // onClick={this.handleToggleVisibility}
+                            key={friend._id}
                           >
-                            + {friend.title}
-                          </button>
-                        </h2>
+                            <h2
+                              className="faq_item-h3 p-0 accordion-header"
+                              id={friend._id}
+                            >
+                              <button
+                                className="faq-plus size fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target={"#" + "s" + friend._id}
+                                aria-expanded="false"
+                                aria-controls={"s" + friend._id}
+                              >
+                                + {friend.title}
+                              </button>
+                            </h2>
 
-                        <div
-                          id={"s" + friend._id}
-                          className="bg-white accordion-collapse collapse"
-                          aria-labelledby={friend._id}
-                        >
-                          <div className="accordion-body">{friend.dec}</div>
-                        </div>
-                      </div>
-                    );
-                  })}
+                            <div
+                              id={"s" + friend._id}
+                              className="bg-white accordion-collapse collapse"
+                              aria-labelledby={friend._id}
+                            >
+                              <div className="accordion-body">{friend.dec}</div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </section>
+            </section>
+          </>
+        )}
       </div>
     );
   }

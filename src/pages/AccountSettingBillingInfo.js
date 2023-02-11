@@ -5,17 +5,8 @@ const AccountSettingBillingInfo = () => {
   return (
     <section className="reg_sec">
       <div className="container mt-3">
-        <div className="row">
+        <div className="row align-items-baseline">
           <div className="col-lg-3">
-            <h2 className="text-center">
-              <img
-                src="writer/img/logo/logo-img.png"
-                alt="logo-img"
-                className="as-img"
-              />
-            </h2>
-            <br />
-
             <ul className="nav nav-pills flex-column acunt_dsh" role="tablist">
               <li className="nav-item">
                 <Link className="nav-link" to="/dashboard">

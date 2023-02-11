@@ -4,6 +4,7 @@ import axios from "axios";
 import ExtraCredit from "./ExtraCredit";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -28,6 +29,7 @@ const TransactionHistory = () => {
   const [Users, setUsers] = useState([]);
   const [paypal, setPaypal] = useState("");
   const [amount, setAmount] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -75,6 +77,7 @@ const TransactionHistory = () => {
   }, [navigate]);
 
   async function showRazorpay() {
+    setIsLoading(true);
     const tokenID = localStorage.getItem("token");
 
     const res = await loadScript(
@@ -97,6 +100,7 @@ const TransactionHistory = () => {
       },
       body: payload,
     }).then((t) => t.json());
+    setIsLoading(false);
     console.log(data);
     const options = {
       key: "rzp_test_KiBn8QyRFCYQnw",
@@ -142,6 +146,7 @@ const TransactionHistory = () => {
   }
 
   useEffect(() => {
+    setIsLoading(true);
     const tokenID = localStorage.getItem("token");
     fetch(`${env.REACT_APP_APIURL}/walletTransactionHistory`, {
       method: "GET",
@@ -158,10 +163,12 @@ const TransactionHistory = () => {
         settotalCredit(Response.totalCredit);
         settotalDebit(Response.totalDebit);
         console.log(Response);
+        setIsLoading(false);
       });
   }, []);
 
   const walletRecharge = () => {
+    setIsLoading(true);
     axios
       .post(`${env.REACT_APP_APIURL}/payment`, { wallet: amount })
       .then((response) => {
@@ -169,11 +176,13 @@ const TransactionHistory = () => {
         console.log(response);
         sessionStorage.setItem("pay_id", response.data.id);
         window.open(response.data.url, "_self");
+        setIsLoading(false);
       })
       .catch((error) => console.log(error));
   };
 
   const payWithPaypal = () => {
+    setIsLoading(true);
     axios
       .post(`${env.REACT_APP_APIURL}/PaypalPayment`, {
         wallet: paypal,
@@ -186,6 +195,7 @@ const TransactionHistory = () => {
         setPaypal({
           response,
         });
+        setIsLoading(false);
       })
 
       .catch((error) => console.log(error));
@@ -193,326 +203,352 @@ const TransactionHistory = () => {
   console.log(paypal);
 
   return (
-    <section className="reg_sec">
-      <div className="container mt-3">
-        <div className="row">
-          <div className="col-lg-3">
-            <h2 className="text-center">
-              <img
-                src="writer/img/logo/logo-img.png"
-                alt="logo-img"
-                className="as-img"
-              />
-            </h2>
-            <br />
-
-            <ul className="nav nav-pills flex-column acunt_dsh" role="tablist">
-              <li className="nav-item">
-                <Link className="nav-link" to="/dashboard">
-                  Dasboard
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/accountsettingservices">
-                  Services
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/accountsettingsubscriptions">
-                  Subscriptions
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/viewprofile">
-                  Account Setting
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/accountsettingpaymentmethod">
-                  Payment Methods
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/accountsettingbillinginfo">
-                  Billing Information
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link active"
-                  data-bs-toggle="pill"
-                  to="/transactionhistory"
+    <>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <section className="reg_sec">
+          <div className="container mt-3">
+            <div className="row align-items-baseline">
+              <div className="col-lg-3">
+                <ul
+                  className="nav nav-pills flex-column acunt_dsh"
+                  role="tablist"
                 >
-                  Credits
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="col-lg-9">
-            <h5 className="user_tab1 mb-2">
-              Welcome to <span className="user_ach">User</span>
-            </h5>
-            <p className="d-flex justify-content-center align-items-center fw-bold fs-5">
-              Wallet Balance:&nbsp;&nbsp;
-              <span className="fw-bold fs-4" style={{ color: "#029a9f" }}>
-                ₹{Data1?.wallet}
-              </span>
-            </p>
-            <ExtraCredit />
-            <div className="payment-gateway justify-content-center">
-              <button
-                type="button"
-                className="btn payment-walllet"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal11"
-              >
-                Wallet with Stripe
-              </button>
-
-              <div
-                className="modal fade"
-                id="exampleModal11"
-                tabIndex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div className="modal-dialog">
-                  <div className="modal-content">
-                    <div className="modal-header ">
-                      <h1 className="modal-title fs-5" id="exampleModalLabel">
-                        Add Wallet with Stripe
-                      </h1>
-                      <button
-                        type="button"
-                        className="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-
-                    <div className="modal-body">
-                      <input
-                        className="w-100 px-1 py-3"
-                        placeholder="0"
-                        type="number"
-                        value={amount}
-                        onChange={(e) => setAmount(e.target.value)}
-                      />
-                    </div>
-                    <div className="modal-footer payment-model-footer ">
-                      {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
-                      <button
-                        type="button"
-                        className="btn border-0 text-white w-100"
-                        onClick={() => walletRecharge()}
-                      >
-                        Proceed
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <button
-                type="button"
-                className="btn  payment-walllet"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal2"
-              >
-                Wallet with PayPal
-              </button>
-
-              <div
-                className="modal fade"
-                id="exampleModal2"
-                tabIndex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div className="modal-dialog">
-                  <div className="modal-content">
-                    <div className="modal-header ">
-                      <h1 className="modal-title fs-5" id="exampleModalLabel">
-                        Add Wallet with PayPal
-                      </h1>
-                      <button
-                        type="button"
-                        className="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-
-                    <div className="modal-body">
-                      <input
-                        className="w-100 px-1 py-3"
-                        placeholder="0"
-                        type="number"
-                        value={paypal}
-                        onChange={(e) => setPaypal(e.target.value)}
-                      />
-                    </div>
-                    <div className="modal-footer payment-model-footer ">
-                      {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
-                      <button
-                        type="button"
-                        className="btn  border-0 text-white w-100"
-                        onClick={() => payWithPaypal()}
-                      >
-                        Proceed
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <button
-                type="button"
-                className="btn payment-walllet"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal3"
-              >
-                Wallet with RazorPay
-              </button>
-            </div>
-
-            <div
-              className="modal fade"
-              id="exampleModal3"
-              tabIndex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header ">
-                    <h1 className="modal-title fs-5" id="exampleModalLabel">
-                      Add Wallet with RazorPay
-                    </h1>
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-
-                  <div className="modal-body">
-                    <input
-                      className="w-100 px-1 py-3"
-                      placeholder="0"
-                      type="number"
-                      value={amount}
-                      onChange={(e) => setAmount(e.target.value)}
-                    />
-                  </div>
-                  <div className="modal-footer payment-model-footer ">
-                    {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
-                    <button
-                      type="button"
-                      className="btn  border-0 text-white w-100"
-                      onClick={() => showRazorpay()}
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/dashboard">
+                      Dasboard
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/accountsettingservices">
+                      Services
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link"
+                      to="/accountsettingsubscriptions"
                     >
-                      Proceed
-                    </button>
+                      Subscriptions
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/viewprofile">
+                      Account Setting
+                    </Link>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link"
+                      to="/accountsettingpaymentmethod"
+                    >
+                      Payment Methods
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/accountsettingbillinginfo">
+                      Billing Information
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link active"
+                      data-bs-toggle="pill"
+                      to="/transactionhistory"
+                    >
+                      Credits
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="col-lg-9">
+                <h5 className="user_tab1 mb-2">
+                  Welcome to <span className="user_ach">User</span>
+                </h5>
+                <p className="d-flex justify-content-center align-items-center fw-bold fs-5">
+                  Wallet Balance:&nbsp;&nbsp;
+                  <span className="fw-bold fs-4" style={{ color: "#029a9f" }}>
+                    ₹{Data1?.wallet}
+                  </span>
+                </p>
+                <ExtraCredit />
+                <div className="payment-gateway justify-content-center">
+                  <button
+                    type="button"
+                    className="btn payment-walllet"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal11"
+                  >
+                    Wallet with Stripe
+                  </button>
+
+                  <div
+                    className="modal fade"
+                    id="exampleModal11"
+                    tabIndex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog">
+                      <div className="modal-content">
+                        <div className="modal-header ">
+                          <h1
+                            className="modal-title fs-5"
+                            id="exampleModalLabel"
+                          >
+                            Add Wallet with Stripe
+                          </h1>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+
+                        <div className="modal-body">
+                          <input
+                            className="w-100 px-1 py-3"
+                            placeholder="0"
+                            type="number"
+                            value={amount}
+                            onChange={(e) => setAmount(e.target.value)}
+                          />
+                        </div>
+                        <div className="modal-footer payment-model-footer ">
+                          {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+                          <button
+                            type="button"
+                            className="btn border-0 text-white w-100"
+                            data-bs-dismiss="modal"
+                            onClick={() => walletRecharge()}
+                            disabled={isLoading}
+                          >
+                            Proceed
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
+                  <button
+                    type="button"
+                    className="btn  payment-walllet"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal2"
+                  >
+                    Wallet with PayPal
+                  </button>
+
+                  <div
+                    className="modal fade"
+                    id="exampleModal2"
+                    tabIndex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog">
+                      <div className="modal-content">
+                        <div className="modal-header ">
+                          <h1
+                            className="modal-title fs-5"
+                            id="exampleModalLabel"
+                          >
+                            Add Wallet with PayPal
+                          </h1>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+
+                        <div className="modal-body">
+                          <input
+                            className="w-100 px-1 py-3"
+                            placeholder="0"
+                            type="number"
+                            value={paypal}
+                            onChange={(e) => setPaypal(e.target.value)}
+                          />
+                        </div>
+                        <div className="modal-footer payment-model-footer ">
+                          {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+                          <button
+                            type="button"
+                            className="btn  border-0 text-white w-100"
+                            onClick={() => payWithPaypal()}
+                            data-bs-dismiss="modal"
+                            disabled={isLoading}
+                          >
+                            Proceed
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    className="btn payment-walllet"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal3"
+                  >
+                    Wallet with RazorPay
+                  </button>
+                </div>
+
+                <div
+                  className="modal fade"
+                  id="exampleModal3"
+                  tabIndex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header ">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">
+                          Add Wallet with RazorPay
+                        </h1>
+                        <button
+                          type="button"
+                          className="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+
+                      <div className="modal-body">
+                        <input
+                          className="w-100 px-1 py-3"
+                          placeholder="0"
+                          type="number"
+                          value={amount}
+                          onChange={(e) => setAmount(e.target.value)}
+                        />
+                      </div>
+                      <div className="modal-footer payment-model-footer ">
+                        {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+                        <button
+                          type="button"
+                          className="btn  border-0 text-white w-100"
+                          onClick={() => showRazorpay()}
+                          data-bs-dismiss="modal"
+                          disabled={isLoading}
+                        >
+                          Proceed
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <table
+                  className="table text-white credt-total mb-3"
+                  data-bs-spy="scroll"
+                >
+                  <thead>
+                    <tr>
+                      <th>Credit History</th>
+                      <th className="w-50 text-end">
+                        Total: Rs. <span>{totalCredit}</span>
+                      </th>
+                    </tr>
+                  </thead>
+                </table>
+                <div
+                  style={{
+                    overflow: "auto",
+                    height: "200px",
+                    marginBottom: "6%",
+                  }}
+                >
+                  <table className="table mb-0 table-bordered">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Transactions ID</th>
+                        <th>Status</th>
+                        <th>Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {credit &&
+                        credit.map((item, index) => {
+                          return (
+                            <tr key={index}>
+                              <td>{index + 1}</td>
+                              <td>{item.datetime}</td>
+                              <td>{item.transactionId}</td>
+                              <td>{item.pay_type}</td>
+                              <td style={{ color: "green", fontWeight: "700" }}>
+                                +{item.wallet}
+                              </td>
+                            </tr>
+                          );
+                        })}
+                    </tbody>
+                  </table>
+                </div>
+
+                <table className="table text-white credt-total mb-3">
+                  <thead>
+                    <tr>
+                      <th>Debit History</th>
+                      <th className="w-50 text-end">
+                        Total: Rs. <span>{totalDebit}</span>
+                      </th>
+                    </tr>
+                  </thead>
+                </table>
+
+                <div
+                  style={{
+                    overflow: "auto",
+                    height: "200px",
+                    marginBottom: "6%",
+                  }}
+                >
+                  <table className="table mb-0 table-bordered">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Date</th>
+
+                        <th>Status</th>
+                        <th>Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {debit &&
+                        debit.map((items, index) => {
+                          return (
+                            <tr key={index}>
+                              <td>{index + 1}</td>
+                              <td>{items.datetime}</td>
+                              {/* <td>{items.transactionId}</td> */}
+                              <td>{items.pay_type}</td>
+                              <td style={{ color: "red", fontWeight: "700" }}>
+                                -{items.wallet}
+                              </td>
+                            </tr>
+                          );
+                        })}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
-
-            <table
-              className="table text-white credt-total mb-3"
-              data-bs-spy="scroll"
-            >
-              <thead>
-                <tr>
-                  <th>Credit History</th>
-                  <th className="w-50 text-end">
-                    Total: Rs. <span>{totalCredit}</span>
-                  </th>
-                </tr>
-              </thead>
-            </table>
-            <div
-              style={{ overflow: "auto", height: "200px", marginBottom: "6%" }}
-            >
-              <table className="table mb-0 table-bordered">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Date</th>
-                    <th>Transactions ID</th>
-                    <th>Status</th>
-                    <th>Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {credit &&
-                    credit.map((item, index) => {
-                      return (
-                        <tr key={index}>
-                          <td>{index + 1}</td>
-                          <td>{item.datetime}</td>
-                          <td>{item.transactionId}</td>
-                          <td>{item.pay_type}</td>
-                          <td style={{ color: "green", fontWeight: "700" }}>
-                            +{item.wallet}
-                          </td>
-                        </tr>
-                      );
-                    })}
-                </tbody>
-              </table>
-            </div>
-
-            <table className="table text-white credt-total mb-3">
-              <thead>
-                <tr>
-                  <th>Debit History</th>
-                  <th className="w-50 text-end">
-                    Total: Rs. <span>{totalDebit}</span>
-                  </th>
-                </tr>
-              </thead>
-            </table>
-
-            <div
-              style={{ overflow: "auto", height: "200px", marginBottom: "6%" }}
-            >
-              <table className="table mb-0 table-bordered">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Date</th>
-
-                    <th>Status</th>
-                    <th>Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {debit &&
-                    debit.map((items, index) => {
-                      return (
-                        <tr key={index}>
-                          <td>{index + 1}</td>
-                          <td>{items.datetime}</td>
-                          {/* <td>{items.transactionId}</td> */}
-                          <td>{items.pay_type}</td>
-                          <td style={{ color: "red", fontWeight: "700" }}>
-                            -{items.wallet}
-                          </td>
-                        </tr>
-                      );
-                    })}
-                </tbody>
-              </table>
-            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
+      )}
+    </>
   );
 };
 
