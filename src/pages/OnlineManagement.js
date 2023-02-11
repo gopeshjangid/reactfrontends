@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import env from "react-dotenv";
-let urlApi = "`${env.REACT_APP_APIURL}";
+let urlApi = `${env.REACT_APP_APIURL}`;
 
 const OnlineManagement = () => {
   const { id } = useParams();
@@ -18,7 +18,7 @@ const OnlineManagement = () => {
     const fetch = async () => {
       try {
         const { data } = await axios.get(
-          `${env.REACT_APP_APIURL}/readmoreblog/${id}`,
+          `${env.REACT_APP_APIURL}/readMoreBlog/${id}`,
           {
             headers: {
               "Content-type": "application/json",
@@ -33,6 +33,10 @@ const OnlineManagement = () => {
     };
     fetch();
   }, []);
+
+  const RenderHTML = (props) => (
+    <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>
+  );
 
   console.log(post);
 
@@ -57,7 +61,7 @@ const OnlineManagement = () => {
                       September 08,2022
                     </span>
                   </div>
-                  <p className="blog_sec-p p-0">{post?.data?.dec} </p>
+                  <RenderHTML HTML={post?.data?.dec} />
                 </div>
               </div>
             </div>

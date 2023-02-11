@@ -110,15 +110,7 @@ class Blog extends Component {
                                   September 08,2022
                                 </span>
                               </div>
-                              {/* <p
-                              className="blog_sec-p p-0"
-                              dangerouslySetInnerHTML={{
-                                __html: `${friend.dec}`,
-                              }}
-                              // dangerouslySetInnerHTML={{
-                              //   __html: DOMPurify.sanitize(`${friend.dec}`),
-                              // }}
-                            ></p> */}
+
                               <RenderHTML HTML={friend.dec} />
                               <Link to={`/onlineManagement/${friend._id}`}>
                                 <button

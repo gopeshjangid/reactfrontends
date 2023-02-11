@@ -26,6 +26,10 @@ const ViewDetails = () => {
     fetch();
   }, []);
 
+  const RenderHTML = (props) => (
+    <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>
+  );
+
   console.log(post);
 
   return (
@@ -49,7 +53,7 @@ const ViewDetails = () => {
                 Designation:{" "}
                 <span className="text-dark">{post?.data?.dec}</span>
               </p>
-              <p className="author_Sec-p ">{post?.data?.longDec}</p>
+              <RenderHTML HTML={post?.data?.longDec} />{" "}
             </div>
           </div>
           <div className="col-md-8">

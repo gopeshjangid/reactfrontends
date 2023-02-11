@@ -32,7 +32,7 @@ const ViewCart = () => {
   const [currentWalletData, setCurrentWalletData] = useState({});
   const [orderErrorMessage, setOrderErrorMessage] = useState("");
   const [amount, setAmount] = useState({});
-  const [paypal, setPaypal] = useState({});
+  const [paypal, setPaypal] = useState("");
   const [logout, setLogout] = useState(false);
   const [login, setLogin] = useState(false);
   const [price, setPrice] = useState({});
@@ -411,13 +411,14 @@ const ViewCart = () => {
 
   const payWithPaypal = (paypal) => {
     axios
-      .post(`${env.REACT_APP_APIURL}/PaypalPayment`, {
-        TotalAmount: paypal,
+      .post(`${env.REACT_APP_APIURL}/orderPaypal`, {
+        totalamount: paypal,
       })
       .then((response) => {
-        sessionStorage.setItem("TotalAmount", paypal);
-        // sessionStorage.setItem("pay_id", response.data.id);
+        sessionStorage.setItem("totalamount", paypal);
+        sessionStorage.setItem("pay_id", response.data.id);
         window.open(response.data.url, "_self");
+        console.log(response.data.url);
         setPaypal({
           response,
         });
@@ -592,7 +593,7 @@ const ViewCart = () => {
                               <th>{item.productId.title}</th>
                               <th className="p-0 text-center">
                                 <span>
-                                  <span>₹</span>
+                                  <span>$</span>
                                   {item.productId.price}
                                 </span>
                               </th>
@@ -624,7 +625,7 @@ const ViewCart = () => {
                               <th className="p-0 text-center">
                                 <span className="woocommerce-Price-amount amount">
                                   <bdi>
-                                    <span className>₹</span>
+                                    <span className>$</span>
                                     {item.quantity * item.productId.price}
                                   </bdi>
                                 </span>
@@ -677,7 +678,7 @@ const ViewCart = () => {
                                   <span className="woocommerce-Price-amount amount">
                                     <bdi>
                                       <span className="woocommerce-Price-currencySymbol">
-                                        ₹
+                                        $
                                       </span>
                                       {cartItems.totalPrice}
                                     </bdi>
@@ -695,7 +696,7 @@ const ViewCart = () => {
                                           ? "Flat "
                                           : `(${couponApplied.message.offAmount}%) `}
                                         <span className="woocommerce-Price-currencySymbol">
-                                          ₹
+                                          $
                                         </span>
                                         {couponApplied.message.couponType ===
                                         "Flat"
@@ -715,7 +716,7 @@ const ViewCart = () => {
                                     <span className="woocommerce-Price-amount amount">
                                       <bdi>
                                         <span className="woocommerce-Price-currencySymbol">
-                                          ₹
+                                          $
                                         </span>
                                         {couponApplied?.message?.offAmount
                                           ? couponApplied.message.couponType ===
@@ -777,7 +778,7 @@ const ViewCart = () => {
                                       <span className="woocommerce-Price-amount amount">
                                         <bdi>
                                           <span className="woocommerce-Price-currencySymbol">
-                                            ₹
+                                            $
                                           </span>
                                           {cartItems.totalPrice}
                                         </bdi>
@@ -791,7 +792,7 @@ const ViewCart = () => {
                                         <span className="woocommerce-Price-amount amount">
                                           <bdi>
                                             <span className="woocommerce-Price-currencySymbol">
-                                              ₹
+                                              $
                                             </span>
                                             {couponApplied.message
                                               .couponType === "Flat"
@@ -812,7 +813,7 @@ const ViewCart = () => {
                                         <span className="woocommerce-Price-amount amount">
                                           <bdi>
                                             <span className="woocommerce-Price-currencySymbol">
-                                              ₹
+                                              $
                                             </span>
                                             {couponApplied?.message?.offAmount
                                               ? couponApplied.message
@@ -837,7 +838,7 @@ const ViewCart = () => {
                                       <span className="woocommerce-Price-amount amount">
                                         <bdi>
                                           <span className="woocommerce-Price-currencySymbol">
-                                            ₹
+                                            $
                                           </span>
                                           {currentWalletData?.wallet}
                                         </bdi>
@@ -1048,7 +1049,7 @@ const ViewCart = () => {
                               <th className="p-0 text-center">
                                 <span>
                                   <bdi>
-                                    <span>₹</span>
+                                    <span>$</span>
                                     {item.price}
                                   </bdi>
                                 </span>
@@ -1081,7 +1082,7 @@ const ViewCart = () => {
                               <th className="p-0 text-center">
                                 <span className="woocommerce-Price-amount amount">
                                   <bdi>
-                                    <span className>₹</span>
+                                    <span className>$</span>
                                     {item.quantity * item.price}
                                   </bdi>
                                 </span>
@@ -1111,7 +1112,7 @@ const ViewCart = () => {
                                   <span className="woocommerce-Price-amount amount">
                                     <bdi>
                                       <span className="woocommerce-Price-currencySymbol">
-                                        ₹
+                                        $
                                       </span>
                                       {price}
                                     </bdi>
@@ -1126,7 +1127,7 @@ const ViewCart = () => {
                                     <span className="woocommerce-Price-amount amount">
                                       <bdi>
                                         <span className="woocommerce-Price-currencySymbol">
-                                          ₹
+                                          $
                                         </span>
                                         {price}
                                       </bdi>

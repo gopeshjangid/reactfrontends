@@ -19,15 +19,15 @@ const ExtraCredit = () => {
   return (
     <div>
       {/* <p className="text-secondary text-center fs-5">
-        If you add <strong className="text-dark">₹500 </strong>
+        If you add <strong className="text-dark">$500 </strong>
         then you will get{" "}
-        <strong style={{ color: "rgb(2, 154, 159)" }}>₹20</strong> in your
+        <strong style={{ color: "rgb(2, 154, 159)" }}>$20</strong> in your
         wallet.
       </p> */}
       <p className="text-secondary text-center fs-5">
         {ExtraCredit?.message?.message}
         <strong style={{ color: "rgb(2, 154, 159)" }}>
-          ₹{ExtraCredit?.message?.extraCredit}
+          ${ExtraCredit?.message?.extraCredit}
         </strong>
       </p>
     </div>

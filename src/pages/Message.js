@@ -169,6 +169,46 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
       });
   };
 
+  const pendigAmountPaypal = async (message, orderId) => {
+    console.log("amount", message);
+    const tokenID = localStorage.getItem("token");
+
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization: `${tokenID}`,
+    };
+
+    await axios
+      .post(
+        `${env.REACT_APP_APIURL}/PendingPaymentPaypal/`,
+        {
+          totalamount: message,
+          orderId,
+        },
+
+        {
+          headers: headers,
+        }
+      )
+      .then((response) => {
+        console.log(response.data);
+        sessionStorage.setItem("totalamount", message);
+        sessionStorage.setItem("orderId", orderId);
+        sessionStorage.setItem("pay_id", response.data.id);
+        window.open(response.data.url, "_self");
+        // setPendingAmount(response);
+        // console.log(pendigAmount);
+        // if (response.data.data === "order Placed") {
+        //   navigate("/PurchaseSuccess");
+        // } else {
+        //   setOrderErrorMessage(response.data.data);
+        // }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   if (user && type === "image") {
     return (
       <div className={`messageBox ${classs}`}>
@@ -327,6 +367,13 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
                   className="btn Pay me-1"
                 >
                   Pay Stripe
+                </button>
+                <button
+                  type="button"
+                  onClick={() => pendigAmountPaypal(message, orderId)}
+                  className="btn Pay ms-1"
+                >
+                  Pay Paypal
                 </button>
                 <button
                   type="button"

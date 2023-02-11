@@ -44,6 +44,8 @@ import AccountSettingServices from "./pages/AccountSettingServices";
 import AccountSettingSubscriptions from "./pages/AccountSettingSubscriptions";
 import AccountSettingPaymentMethod from "./pages/AccountSettingPaymentMethod";
 import AccountSettingBillingInfo from "./pages/AccountSettingBillingInfo";
+import OrderPaypalSuccess from "./pages/OrderPaypalSuccess";
+import PendingPaymentPaypalSuccess from "./pages/PendingPaymentPaypalSuccess";
 
 function App() {
   return (
@@ -109,6 +111,11 @@ function App() {
         <Route
           path="accountsettingbillinginfo"
           element={<AccountSettingBillingInfo />}
+        />
+        <Route path="orderpaypalsuccess" element={<OrderPaypalSuccess />} />
+        <Route
+          path="pendingpaymentpaypalsuccess"
+          element={<PendingPaymentPaypalSuccess />}
         />
       </Routes>
       <Footer />

@@ -271,7 +271,7 @@ const TransactionHistory = () => {
                 <p className="d-flex justify-content-center align-items-center fw-bold fs-5">
                   Wallet Balance:&nbsp;&nbsp;
                   <span className="fw-bold fs-4" style={{ color: "#029a9f" }}>
-                    ₹{Data1?.wallet}
+                    ${Data1?.wallet}
                   </span>
                 </p>
                 <ExtraCredit />
@@ -456,7 +456,7 @@ const TransactionHistory = () => {
                     <tr>
                       <th>Credit History</th>
                       <th className="w-50 text-end">
-                        Total: Rs. <span>{totalCredit}</span>
+                        Total: $ <span>{totalCredit}</span>
                       </th>
                     </tr>
                   </thead>
@@ -502,7 +502,7 @@ const TransactionHistory = () => {
                     <tr>
                       <th>Debit History</th>
                       <th className="w-50 text-end">
-                        Total: Rs. <span>{totalDebit}</span>
+                        Total: $ <span>{totalDebit}</span>
                       </th>
                     </tr>
                   </thead>
