@@ -174,7 +174,9 @@ const TransactionHistory = () => {
   const walletRecharge = () => {
     setIsLoading(true);
     axios
-      .post(`${process.env.REACT_APP_APIURL}/payment`, { wallet: amount })
+      .post(`${process.env.REACT_APP_APIURL}/payment`, {
+        wallet: amount,
+      })
       .then((response) => {
         sessionStorage.setItem("wallet", amount);
         console.log(response);

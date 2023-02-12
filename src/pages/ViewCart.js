@@ -63,7 +63,7 @@ const ViewCart = () => {
       amount: amount,
     });
 
-    const data = await fetch(`${env.REACT_APP_APIURL}/orderRazorpay`, {
+    const data = await fetch(`${process.env.REACT_APP_APIURL}/orderRazorpay`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -91,7 +91,7 @@ const ViewCart = () => {
 
         var config = {
           method: "post",
-          url: `${env.REACT_APP_APIURL}/orderRazorpaySuccess`,
+          url: `${process.env.REACT_APP_APIURL}/orderRazorpaySuccess`,
           headers: {
             Authorization: tokenID,
             "Content-Type": "application/json",
@@ -129,7 +129,7 @@ const ViewCart = () => {
     // creates entity
     const tokenID = localStorage.getItem("token");
     console.log("hello", tokenID);
-    fetch(`${env.REACT_APP_APIURL}/viewProfile`, {
+    fetch(`${process.env.REACT_APP_APIURL}/viewProfile`, {
       method: "GET",
       mode: "cors",
 
@@ -150,7 +150,7 @@ const ViewCart = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`${env.REACT_APP_APIURL}/getServices`, {
+    fetch(`${process.env.REACT_APP_APIURL}/getServices`, {
       method: "GET",
       mode: "cors",
 
@@ -205,7 +205,7 @@ const ViewCart = () => {
         Authorization: `${tokenID}`,
       };
       await axios
-        .get(`${env.REACT_APP_APIURL}/viewCart`, {
+        .get(`${process.env.REACT_APP_APIURL}/viewCart`, {
           headers: headers,
         })
         .then((response) => {
@@ -248,7 +248,7 @@ const ViewCart = () => {
     const data = { quantity: quantity };
     // setIsAddLoading(true);
     await axios
-      .post(`${env.REACT_APP_APIURL}/addCart/${id}`, data, {
+      .post(`${process.env.REACT_APP_APIURL}/addCart/${id}`, data, {
         headers: headers,
       })
 
@@ -289,7 +289,7 @@ const ViewCart = () => {
     const data = { quantity: quantity };
     // setIsAddLoading(true);
     await axios
-      .post(`${env.REACT_APP_APIURL}/addCart/${id}`, data, {
+      .post(`${process.env.REACT_APP_APIURL}/addCart/${id}`, data, {
         headers: headers,
       })
       .then((response) => {
@@ -312,7 +312,7 @@ const ViewCart = () => {
     setIsAddLoading(true);
     await axios
       .post(
-        `${env.REACT_APP_APIURL}/deleteCart/${id}`,
+        `${process.env.REACT_APP_APIURL}/deleteCart/${id}`,
         {},
         {
           headers: headers,
@@ -330,7 +330,7 @@ const ViewCart = () => {
 
   const checkCoupon = async () => {
     await axios
-      .post(`${env.REACT_APP_APIURL}/getCoupon`, {
+      .post(`${process.env.REACT_APP_APIURL}/getCoupon`, {
         applyCouponName: couponText,
       })
       .then((response) => {
@@ -368,7 +368,7 @@ const ViewCart = () => {
       : "";
     await axios
       .post(
-        `${env.REACT_APP_APIURL}/useWallet/`,
+        `${process.env.REACT_APP_APIURL}/useWallet/`,
         {
           totalAmount,
           couponAmount,
@@ -394,7 +394,7 @@ const ViewCart = () => {
 
   const payWithStrip = (amount) => {
     axios
-      .post(`${env.REACT_APP_APIURL}/orderStripe`, {
+      .post(`${process.env.REACT_APP_APIURL}/orderStripe`, {
         TotalAmount: amount,
       })
       .then((response) => {
@@ -412,7 +412,7 @@ const ViewCart = () => {
 
   const payWithPaypal = (paypal) => {
     axios
-      .post(`${env.REACT_APP_APIURL}/orderPaypal`, {
+      .post(`${process.env.REACT_APP_APIURL}/orderPaypal`, {
         totalamount: paypal,
       })
       .then((response) => {
@@ -513,7 +513,7 @@ const ViewCart = () => {
       : "";
     await axios
       .post(
-        `${env.REACT_APP_APIURL}/withoutPaymentOrder/`,
+        `${process.env.REACT_APP_APIURL}/withoutPaymentOrder/`,
         {
           totalAmount,
           couponAmount,

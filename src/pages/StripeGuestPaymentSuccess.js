@@ -47,10 +47,13 @@ const StripeGuestPaymentSuccess = () => {
         <div className="row align-items-center justify-content-center">
           <div className="col-md-4">
             <form className="fp_form m-0 w-100 h-100">
-              {/* <<onSubmit={handleSubmit} */}
-              <span className=" p-0 fs-1 fw-bold">Payment Successfully</span>
+              <span className=" p-0 fs-1 fw-bold">
+                GuestPayment Successfully
+              </span>
 
-              <p className="fp-p p-0">Your Payment Successfully Add.</p>
+              <p className="fp-p p-0">
+                Your Stripe GuestPayment is Successfull{" "}
+              </p>
 
               <Link className="" to="/transactionhistory">
                 <button type="submit" className="fp-btn px-5  m-0">
