@@ -46,6 +46,7 @@ import AccountSettingPaymentMethod from "./pages/AccountSettingPaymentMethod";
 import AccountSettingBillingInfo from "./pages/AccountSettingBillingInfo";
 import OrderPaypalSuccess from "./pages/OrderPaypalSuccess";
 import PendingPaymentPaypalSuccess from "./pages/PendingPaymentPaypalSuccess";
+import PaypalGuestPaymentSuccess from "./pages/PaypalGuestPaymentSuccess";
 
 function App() {
   return (
@@ -78,7 +79,7 @@ function App() {
         <Route path="/onlinemanagement/:id" element={<OnlineManagement />} />
         <Route path="/ordersuccess" element={<Ordersuccess />} />
         <Route path="/payplesuccess" element={<Payplesuccess />} />
-        {/* <Route path="/WorkSampleroute" element={<WorkSampleroute />} /> */}
+
         <Route path="/StripeSubscription" element={<StripeSubscription />} />
 
         {/* <Route path="/BlogRoute" element={<BlogRoute />} />
@@ -116,6 +117,10 @@ function App() {
         <Route
           path="pendingpaymentpaypalsuccess"
           element={<PendingPaymentPaypalSuccess />}
+        />
+        <Route
+          path="paypalguestpaymentsuccess"
+          element={<PaypalGuestPaymentSuccess />}
         />
       </Routes>
       <Footer />

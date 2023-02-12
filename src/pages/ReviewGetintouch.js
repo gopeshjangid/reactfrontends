@@ -40,7 +40,7 @@ const ReviewGetintouch = () => {
   };
 
   useEffect(() => {
-    fetch(`${env.REACT_APP_APIURL}/getAllContentType`, {
+    fetch(`${process.env.REACT_APP_APIURL}/getAllContentType`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -65,7 +65,7 @@ const ReviewGetintouch = () => {
   // 	}
   // },[])
   useEffect(() => {
-    fetch(`${env.REACT_APP_APIURL}/getCountryCode`, {
+    fetch(`${process.env.REACT_APP_APIURL}/getCountryCode`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -128,7 +128,7 @@ const ReviewGetintouch = () => {
     ) {
       return;
     } else {
-      fetch(`${env.REACT_APP_APIURL}/getInTouch`, {
+      fetch(`${process.env.REACT_APP_APIURL}/getInTouch`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),

@@ -20,7 +20,7 @@ const Success = () => {
       navigate("/");
     } else {
       axios
-        .post(`${env.REACT_APP_APIURL}/rechargeWallet`, data, {
+        .post(`${process.env.REACT_APP_APIURL}/rechargeWallet`, data, {
           headers: headers,
         })
         .then((res) => {

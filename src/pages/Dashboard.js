@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import env from "react-dotenv";
 import Loader from "./Loader";
 import Chat from "./Chat";
+import moment from "moment";
 const Dashboard = () => {
   const [viewOrder, setViewOrder] = useState([]);
   const [Cancelled, setCancelled] = useState("");
@@ -19,7 +20,7 @@ const Dashboard = () => {
   const tokenID = localStorage.getItem("token");
   useEffect(() => {
     setIsLoading(true);
-    fetch(`${env.REACT_APP_APIURL}/viewOrder`, {
+    fetch(`${process.env.REACT_APP_APIURL}/viewOrder`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -52,7 +53,7 @@ const Dashboard = () => {
     console.log("pay_method", pay_method);
     axios
       .post(
-        `${env.REACT_APP_APIURL}/CancelStripeSubcription`,
+        `${process.env.REACT_APP_APIURL}/CancelStripeSubcription`,
         JSON.stringify({
           sub_id: id,
           mainOrderId: mainOrderId,
@@ -201,7 +202,11 @@ const Dashboard = () => {
                               <tr key={index} className="viewOrderbody">
                                 <td>{index + 1}</td>
                                 <td>{friend.transactionId}</td>
-                                <td>{friend.datetime}</td>
+                                <td>
+                                  {moment(friend.datetime).format(
+                                    " DD MMM YYYY, ddd, HH:mm:ss "
+                                  )}
+                                </td>
                                 <td>{friend.pay_method}</td>
                                 <td>{friend.type}</td>
                                 <td>{friend.totalAmount}</td>
@@ -323,7 +328,12 @@ const Dashboard = () => {
                                           <tr>
                                             <td>Date</td>
                                             <td>:</td>{" "}
-                                            <td>{friend.datetime}</td>
+                                            <td>
+                                              {" "}
+                                              {moment(friend.datetime).format(
+                                                " DD MMM YYYY, ddd, HH:mm:ss "
+                                              )}
+                                            </td>
                                           </tr>
                                           <tr>
                                             <td>Pay-Method</td>
@@ -364,7 +374,12 @@ const Dashboard = () => {
                               <tr key={index} className="viewOrderbody">
                                 <td>{index + 1}</td>
                                 <td>{friend.transactionId}</td>
-                                <td>{friend.datetime}</td>
+                                <td>
+                                  {" "}
+                                  {moment(friend.datetime).format(
+                                    " DD MMM YYYY, ddd, HH:mm:ss "
+                                  )}
+                                </td>
                                 <td>{friend.pay_method}</td>
                                 <td>{friend.type}</td>
                                 <td>{friend.totalAmount}</td>

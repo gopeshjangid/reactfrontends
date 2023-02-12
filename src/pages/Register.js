@@ -66,7 +66,7 @@ const Register = () => {
       return;
     } else {
       setIsLoggedin(true);
-      fetch(`${env.REACT_APP_APIURL}/register`, {
+      fetch(`${process.env.REACT_APP_APIURL}/register`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),

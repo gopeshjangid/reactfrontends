@@ -106,14 +106,17 @@ const GuestPayment = () => {
       email: email,
     });
 
-    const data = await fetch(`${env.REACT_APP_APIURL}/razorpayPayment`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        // Authorization: `${tokenID}`,
-      },
-      body: payload,
-    }).then((t) => t.json());
+    const data = await fetch(
+      `${process.env.REACT_APP_APIURL}/razorpayPayment`,
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          // Authorization: `${tokenID}`,
+        },
+        body: payload,
+      }
+    ).then((t) => t.json());
     console.log(data);
     const options = {
       key: "rzp_test_KiBn8QyRFCYQnw",
@@ -121,7 +124,6 @@ const GuestPayment = () => {
       amount: data.amount.toString(),
       order_id: data.order.id,
       name: "Donation",
-      callback_url: "/razorpay-is-completed",
       description: "Thank you for nothing. Please give us some money",
 
       // email: data?.user,
@@ -135,7 +137,7 @@ const GuestPayment = () => {
 
         const config = {
           method: "post",
-          url: `${env.REACT_APP_APIURL}/razorpayGuestPaymentSuccess`,
+          url: `${process.env.REACT_APP_APIURL}/razorpayGuestPaymentSuccess`,
           headers: {
             // Authorization: tokenID,
             "Content-Type": "application/json",
@@ -147,7 +149,7 @@ const GuestPayment = () => {
           .then(function (response) {
             console.log(response.data);
             // setEmail(response.data);
-            // console.log(email);
+            // console.log(email)
             window.location.reload(true);
           })
           .catch(function (error) {
@@ -168,7 +170,7 @@ const GuestPayment = () => {
     const email = user.email;
     console.log(email);
     axios
-      .post(`${env.REACT_APP_APIURL}/stripeGuestPayment`, {
+      .post(`${process.env.REACT_APP_APIURL}/stripeGuestPayment`, {
         wallet: amount,
         email: email,
       })
@@ -183,6 +185,28 @@ const GuestPayment = () => {
       })
       .catch((error) => console.log(error));
   };
+
+  const GuestPaypal = () => {
+    const amount = user.amount;
+    console.log(amount);
+    const email = user.email;
+    console.log(email);
+    axios
+      .post(`${process.env.REACT_APP_APIURL}/PaypalGuestPayment`, {
+        amount: amount,
+        email: email,
+      })
+      .then((response) => {
+        sessionStorage.setItem("amount", amount);
+        sessionStorage.setItem("email", email);
+        sessionStorage.setItem("pay_id", response.data.id);
+        window.open(response.data.url, "_self");
+        console.log(response.data.url);
+      })
+
+      .catch((error) => console.log(error));
+  };
+  // console.log(paypal);
 
   return (
     <section className="fp_sec">
@@ -285,6 +309,13 @@ const GuestPayment = () => {
                         className="btn Pay me-1"
                       >
                         Pay Stripe
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => GuestPaypal()}
+                        className="btn Pay ms-1"
+                      >
+                        Pay Paypal
                       </button>
                       <button
                         type="button"

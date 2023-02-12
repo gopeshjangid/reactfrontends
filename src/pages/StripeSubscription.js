@@ -20,9 +20,13 @@ const StripeSubscription = () => {
       navigate("/");
     } else {
       axios
-        .post(`${env.REACT_APP_APIURL}/StripeSubscriptionSuccess`, data, {
-          headers: headers,
-        })
+        .post(
+          `${process.env.REACT_APP_APIURL}/StripeSubscriptionSuccess`,
+          data,
+          {
+            headers: headers,
+          }
+        )
         .then((res) => {
           console.log(res);
 

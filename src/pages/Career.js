@@ -7,7 +7,7 @@ const Career = () => {
   const [career, setCareer] = useState([]);
 
   useEffect(() => {
-    fetch(`${env.REACT_APP_APIURL}/getcareers`, {
+    fetch(`${process.env.REACT_APP_APIURL}/getcareers`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",

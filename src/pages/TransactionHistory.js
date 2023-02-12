@@ -5,6 +5,7 @@ import ExtraCredit from "./ExtraCredit";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
+import moment from "moment";
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -39,7 +40,7 @@ const TransactionHistory = () => {
     const getToken = localStorage.getItem("token");
     const tokenID = localStorage.getItem("token");
     console.log("hello+++++++++++", tokenID);
-    fetch(`${env.REACT_APP_APIURL}/viewProfile`, {
+    fetch(`${process.env.REACT_APP_APIURL}/viewProfile`, {
       method: "GET",
       mode: "cors",
 
@@ -92,14 +93,17 @@ const TransactionHistory = () => {
       amount: amount,
     });
 
-    const data = await fetch(`${env.REACT_APP_APIURL}/razorpayPayment`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `${tokenID}`,
-      },
-      body: payload,
-    }).then((t) => t.json());
+    const data = await fetch(
+      `${process.env.REACT_APP_APIURL}/razorpayPayment`,
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `${tokenID}`,
+        },
+        body: payload,
+      }
+    ).then((t) => t.json());
     setIsLoading(false);
     console.log(data);
     const options = {
@@ -120,7 +124,7 @@ const TransactionHistory = () => {
 
         var config = {
           method: "post",
-          url: `${env.REACT_APP_APIURL}/razorpay-is-completed`,
+          url: `${process.env.REACT_APP_APIURL}/razorpay-is-completed`,
           headers: {
             Authorization: tokenID,
             "Content-Type": "application/json",
@@ -148,7 +152,7 @@ const TransactionHistory = () => {
   useEffect(() => {
     setIsLoading(true);
     const tokenID = localStorage.getItem("token");
-    fetch(`${env.REACT_APP_APIURL}/walletTransactionHistory`, {
+    fetch(`${process.env.REACT_APP_APIURL}/walletTransactionHistory`, {
       method: "GET",
       mode: "cors",
       headers: {
@@ -170,7 +174,7 @@ const TransactionHistory = () => {
   const walletRecharge = () => {
     setIsLoading(true);
     axios
-      .post(`${env.REACT_APP_APIURL}/payment`, { wallet: amount })
+      .post(`${process.env.REACT_APP_APIURL}/payment`, { wallet: amount })
       .then((response) => {
         sessionStorage.setItem("wallet", amount);
         console.log(response);
@@ -184,7 +188,7 @@ const TransactionHistory = () => {
   const payWithPaypal = () => {
     setIsLoading(true);
     axios
-      .post(`${env.REACT_APP_APIURL}/PaypalPayment`, {
+      .post(`${process.env.REACT_APP_APIURL}/PaypalPayment`, {
         wallet: paypal,
       })
       .then((response) => {
@@ -484,7 +488,11 @@ const TransactionHistory = () => {
                           return (
                             <tr key={index}>
                               <td>{index + 1}</td>
-                              <td>{item.datetime}</td>
+                              <td>
+                                {moment(item.datetime).format(
+                                  " DD MMM YYYY, ddd, HH:mm:ss "
+                                )}
+                              </td>
                               <td>{item.transactionId}</td>
                               <td>{item.pay_type}</td>
                               <td style={{ color: "green", fontWeight: "700" }}>
@@ -531,7 +539,11 @@ const TransactionHistory = () => {
                           return (
                             <tr key={index}>
                               <td>{index + 1}</td>
-                              <td>{items.datetime}</td>
+                              <td>
+                                {moment(items.datetime).format(
+                                  " DD MMM YYYY, ddd, HH:mm:ss "
+                                )}
+                              </td>
                               {/* <td>{items.transactionId}</td> */}
                               <td>{items.pay_type}</td>
                               <td style={{ color: "red", fontWeight: "700" }}>

@@ -1,11 +1,13 @@
-import "../styles/style.css";
+// import "../styles/style.css";
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import env from "react-dotenv";
-let urlApi = `${env.REACT_APP_APIURL}`;
+let urlApi = `${process.env.REACT_APP_APIURL}`;
+
+console.log(`${process.env.REACT_APP_APIURL}`);
 
 const OnlineManagement = () => {
   const { id } = useParams();
@@ -14,15 +16,16 @@ const OnlineManagement = () => {
   const [post, SetPost] = useState([]);
 
   useEffect(() => {
+    const tokenID = localStorage.getItem("token");
     console.log("id", id);
     const fetch = async () => {
       try {
         const { data } = await axios.get(
-          `${env.REACT_APP_APIURL}/readMoreBlog/${id}`,
+          `${process.env.REACT_APP_APIURL}/readMoreBlog/${id}`,
           {
             headers: {
               "Content-type": "application/json",
-              Accept: "application/json",
+              Authorization: `${tokenID}`,
             },
           }
         );
@@ -32,7 +35,7 @@ const OnlineManagement = () => {
       }
     };
     fetch();
-  }, []);
+  }, [id]);
 
   const RenderHTML = (props) => (
     <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>

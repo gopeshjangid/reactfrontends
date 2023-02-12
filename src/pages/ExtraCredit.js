@@ -5,7 +5,7 @@ const ExtraCredit = () => {
   const [ExtraCredit, setExtracredit] = useState([]);
 
   useEffect(() => {
-    fetch(`${env.REACT_APP_APIURL}/getextracredit `, {
+    fetch(`${process.env.REACT_APP_APIURL}/getextracredit `, {
       method: "GET",
       headers: {
         "Content-type": "application/json",

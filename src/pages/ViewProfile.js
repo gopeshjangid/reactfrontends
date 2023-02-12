@@ -50,7 +50,7 @@ const ViewProfile = () => {
     ) {
       return;
     } else {
-      fetch(`${env.REACT_APP_APIURL}/changePassword`, {
+      fetch(`${process.env.REACT_APP_APIURL}/changePassword`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object, {
@@ -152,7 +152,7 @@ const ViewProfile = () => {
   useEffect(() => {
     const tokenID = localStorage.getItem("token");
     console.log("hello", tokenID);
-    fetch(`${env.REACT_APP_APIURL}/viewProfile`, {
+    fetch(`${process.env.REACT_APP_APIURL}/viewProfile`, {
       method: "GET",
       mode: "cors",
 
@@ -190,7 +190,7 @@ const ViewProfile = () => {
     // setFormErrors(validate(Users));
     const tokenId = localStorage.getItem("token");
     console.log("namastey", tokenId);
-    fetch(`${env.REACT_APP_APIURL}/updateProfile`, {
+    fetch(`${process.env.REACT_APP_APIURL}/updateProfile`, {
       method: "POST",
       mode: "cors",
       body: JSON.stringify({ NewUserName: userName }),

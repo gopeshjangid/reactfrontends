@@ -31,9 +31,13 @@ const PendingPaymentPaypalSuccess = () => {
       console.log("a=====", a);
       console.log("b=====", b);
       axios
-        .post(`${env.REACT_APP_APIURL}/PendingPaymentPaypalSuccess`, data, {
-          headers: headers,
-        })
+        .post(
+          `${process.env.REACT_APP_APIURL}/PendingPaymentPaypalSuccess`,
+          data,
+          {
+            headers: headers,
+          }
+        )
         .then((res) => {
           console.log(res);
 

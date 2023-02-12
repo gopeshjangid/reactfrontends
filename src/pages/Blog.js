@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import env from "react-dotenv";
 import Loader from "./Loader";
-let urlApi = `${env.REACT_APP_APIURL}`;
+let urlApi = `${process.env.REACT_APP_APIURL}`;
 
 class Blog extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class Blog extends Component {
 
   async componentDidMount() {
     this.setState({ isLoading: true });
-    fetch(`${env.REACT_APP_APIURL}/getBlog`, {
+    fetch(`${process.env.REACT_APP_APIURL}/getBlog`, {
       method: "GET",
       mode: "cors",
       headers: {

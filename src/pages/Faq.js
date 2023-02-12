@@ -16,7 +16,7 @@ class Faq extends Component {
 
   async componentDidMount() {
     this.setState({ isLoading: true });
-    fetch(`${env.REACT_APP_APIURL}/getFaqs `, {
+    fetch(`${process.env.REACT_APP_APIURL}/getFaqs `, {
       method: "GET",
       mode: "cors",
       headers: {

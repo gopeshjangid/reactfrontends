@@ -47,14 +47,17 @@ class Services extends Component {
 
     const tokenID = localStorage.getItem("token");
 
-    const response = await fetch(`${env.REACT_APP_APIURL}/getServices`, {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Content-type": "application/json",
-        Accept: "application/json",
-      },
-    });
+    const response = await fetch(
+      `${process.env.REACT_APP_APIURL}/getServices`,
+      {
+        method: "GET",
+        mode: "cors",
+        headers: {
+          "Content-type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
     if (response.ok) {
       const User = await response.json();
       console.log(User);
@@ -92,7 +95,7 @@ class Services extends Component {
       Authorization: `${tokenID}`,
     };
     await axios
-      .get(`${env.REACT_APP_APIURL}/viewCart`, {
+      .get(`${process.env.REACT_APP_APIURL}/viewCart`, {
         headers: headers,
       })
       .then((response) => {
@@ -215,7 +218,7 @@ class Services extends Component {
     const data = { quantity: quantity };
     this.setState({ ...this.state, isAddLoading: true });
     await axios
-      .post(`${env.REACT_APP_APIURL}/addCart/${id}`, data, {
+      .post(`${process.env.REACT_APP_APIURL}/addCart/${id}`, data, {
         headers: headers,
       })
       .then((response) => {
@@ -246,7 +249,7 @@ class Services extends Component {
     // });
 
     const data = await fetch(
-      `${env.REACT_APP_APIURL}/razorpayCreateSubscription/${id}`,
+      `${process.env.REACT_APP_APIURL}/razorpayCreateSubscription/${id}`,
       {
         method: "POST",
         headers: {
@@ -275,7 +278,7 @@ class Services extends Component {
 
         var config = {
           method: "post",
-          url: `${env.REACT_APP_APIURL}/verifySubscriptionPayment`,
+          url: `${process.env.REACT_APP_APIURL}/verifySubscriptionPayment`,
           headers: {
             Authorization: `${tokenID}`,
             "Content-Type": "application/json",
@@ -316,7 +319,7 @@ class Services extends Component {
     console.log("token", token);
     axios
       .post(
-        `${env.REACT_APP_APIURL}/stripeSubscription/${id}`,
+        `${process.env.REACT_APP_APIURL}/stripeSubscription/${id}`,
         {},
 
         {
@@ -335,6 +338,31 @@ class Services extends Component {
       .catch((error) => console.log(error));
   };
   // console.log(amount);
+
+  PaypalSubscription = async (id) => {
+    const token = localStorage.getItem("token");
+    // console.log("qwertyuiuytrewetui", id);
+    console.log("token", token);
+    axios
+      .post(
+        `${process.env.REACT_APP_APIURL}/PaypalSubscription/${id}`,
+        {},
+
+        {
+          headers: {
+            Authorization: `${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        sessionStorage.setItem("id", response.data.id);
+        window.open(response.data.url, "_self");
+        console.log("stripesubscription", response);
+      })
+
+      .catch((error) => console.log(error));
+  };
   render() {
     const { User } = this.state;
 
@@ -459,6 +487,15 @@ class Services extends Component {
                                       className="services-btn2 me-2 mb-0"
                                     >
                                       Razorpay
+                                    </button>
+                                    <button
+                                      type="button"
+                                      onClick={() =>
+                                        this.PaypalSubscription(friend._id)
+                                      }
+                                      className="services-btn2 ms-2 mb-0"
+                                    >
+                                      Paypal
                                     </button>
                                     <button
                                       type="button"

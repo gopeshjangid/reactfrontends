@@ -19,9 +19,13 @@ const StripeGuestPaymentSuccess = () => {
   useEffect(
     () => {
       axios
-        .post(`${env.REACT_APP_APIURL}/stripeGuestPaymentSuccess`, data, {
-          headers: headers,
-        })
+        .post(
+          `${process.env.REACT_APP_APIURL}/stripeGuestPaymentSuccess`,
+          data,
+          {
+            headers: headers,
+          }
+        )
         .then((res) => {
           console.log(res);
           console.log("weewq", res.data.data);

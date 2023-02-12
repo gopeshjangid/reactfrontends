@@ -29,7 +29,7 @@ const Payplesuccess = () => {
       console.log("a=====", a);
       console.log("b=====", b);
       axios
-        .post(`${env.REACT_APP_APIURL}/payplesuccess`, data, {
+        .post(`${process.env.REACT_APP_APIURL}/payplesuccess`, data, {
           headers: headers,
         })
         .then((res) => {

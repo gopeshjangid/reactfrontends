@@ -44,7 +44,7 @@ const Contact = () => {
     ) {
       return;
     } else {
-      fetch(`${env.REACT_APP_APIURL}/contact-us`, {
+      fetch(`${process.env.REACT_APP_APIURL}/contact-us`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object, { fullName, email, subject, message }),

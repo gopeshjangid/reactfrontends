@@ -30,7 +30,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
   const [PendingStatus, setPendingStatus] = useState(true);
   if (type === "link") {
     const tokenID = localStorage.getItem("token");
-    fetch(`${env.REACT_APP_APIURL}/viewOrder`, {
+    fetch(`${process.env.REACT_APP_APIURL}/viewOrder`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -75,14 +75,17 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
       amount: message,
     });
 
-    const data = await fetch(`${env.REACT_APP_APIURL}/PendingPaymentRazorpay`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `${tokenID}`,
-      },
-      body: payload,
-    }).then((t) => t.json());
+    const data = await fetch(
+      `${process.env.REACT_APP_APIURL}/PendingPaymentRazorpay`,
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `${tokenID}`,
+        },
+        body: payload,
+      }
+    ).then((t) => t.json());
     console.log(data);
     const options = {
       key: "rzp_test_KiBn8QyRFCYQnw",
@@ -103,7 +106,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
 
         var config = {
           method: "post",
-          url: `${env.REACT_APP_APIURL}/PendingPaymentRazorpaySuccess`,
+          url: `${process.env.REACT_APP_APIURL}/PendingPaymentRazorpaySuccess`,
           headers: {
             Authorization: tokenID,
             "Content-Type": "application/json",
@@ -141,7 +144,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
 
     await axios
       .post(
-        `${env.REACT_APP_APIURL}/PendingPaymentStripe/`,
+        `${process.env.REACT_APP_APIURL}/PendingPaymentStripe/`,
         {
           totalAmount: message,
           orderId,
@@ -180,7 +183,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
 
     await axios
       .post(
-        `${env.REACT_APP_APIURL}/PendingPaymentPaypal/`,
+        `${process.env.REACT_APP_APIURL}/PendingPaymentPaypal/`,
         {
           totalamount: message,
           orderId,

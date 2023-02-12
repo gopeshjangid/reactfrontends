@@ -1,7 +1,7 @@
 window.env = {
   "ALLUSERSPROFILE": "C:\\ProgramData",
   "APPDATA": "C:\\Users\\NIAN TECHNOLOGIES\\AppData\\Roaming",
-  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\LOCAL\\crashpad_9988_HRBVWJEGSPTXYMZQ",
+  "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\LOCAL\\crashpad_8508_ELNUOCVDQCFPWBIJ",
   "COLOR": "1",
   "COLORTERM": "truecolor",
   "CommonProgramFiles": "C:\\Program Files\\Common Files",
@@ -24,7 +24,7 @@ window.env = {
   "NODE": "C:\\Program Files\\nodejs\\node.exe",
   "NODE_EXE": "C:\\Program Files\\nodejs\\\\node.exe",
   "NPM_CLI_JS": "C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js",
-  "npm_command": "run-script",
+  "npm_command": "start",
   "npm_config_cache": "C:\\Users\\NIAN TECHNOLOGIES\\AppData\\Local\\npm-cache",
   "npm_config_globalconfig": "C:\\Users\\NIAN TECHNOLOGIES\\AppData\\Roaming\\npm\\etc\\npmrc",
   "npm_config_global_prefix": "C:\\Users\\NIAN TECHNOLOGIES\\AppData\\Roaming\\npm",

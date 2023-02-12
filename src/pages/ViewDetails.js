@@ -4,21 +4,21 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import env from "react-dotenv";
-let urlApi = `${env.REACT_APP_APIURL}`;
 
 const ViewDetails = () => {
+  let urlApi = `${process.env.REACT_APP_APIURL}`;
   const { id } = useParams();
   console.log(id, "id");
 
-  const [post, SetPost] = useState([]);
+  const [posts, SetPosts] = useState([]);
   useEffect(() => {
     console.log("id", id);
     const fetch = async () => {
       try {
         const { data } = await axios.get(
-          `${env.REACT_APP_APIURL}/getAuthor/${id}`
+          `${process.env.REACT_APP_APIURL}/getAuthor/${id}`
         );
-        SetPost(data);
+        SetPosts(data);
       } catch (err) {
         console.error(err);
       }
@@ -30,7 +30,7 @@ const ViewDetails = () => {
     <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>
   );
 
-  console.log(post);
+  console.log(posts);
 
   return (
     <section className="team_sec">
@@ -42,23 +42,23 @@ const ViewDetails = () => {
               style={{ border: "1px solid #029A99" }}
             >
               <img
-                src={urlApi + "/image/" + post?.data?.image}
+                src={urlApi + "/image/" + posts?.data?.image}
                 alt="author-img"
                 className="author_sec-img ms-0"
                 style={{ border: "5px solid #029A99" }}
               />
-              <h4 className="author_Sec-h2 fs-2">{post?.data?.title}</h4>
+              <h4 className="author_Sec-h2 fs-2">{posts?.data?.title}</h4>
               <br />
               <p className="author_Sec-p fs-4">
                 Designation:{" "}
-                <span className="text-dark">{post?.data?.dec}</span>
+                <span className="text-dark">{posts?.data?.dec}</span>
               </p>
-              <RenderHTML HTML={post?.data?.longDec} />{" "}
+              <RenderHTML HTML={posts?.data?.longDec} />{" "}
             </div>
           </div>
           <div className="col-md-8">
             <h2 className="author_Sec-h2 article  text-start ">
-              Articles by {post?.data?.title}
+              Articles by {posts?.data?.title}
             </h2>
             <p className="author_Sec-p text-start fs-6 mt-4">
               Sorry there is no article found for this author....!

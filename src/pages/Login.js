@@ -53,7 +53,7 @@ const Login = () => {
       return;
     } else {
       setIsLoggedin(true);
-      fetch(`${env.REACT_APP_APIURL}/login`, {
+      fetch(`${process.env.REACT_APP_APIURL}/login`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),
@@ -67,7 +67,7 @@ const Login = () => {
           setData({
             User: json,
           });
-       
+
           if (json.message === "successfully login") {
             localStorage.setItem("token", json.token);
             setIsLoggedin(true);
@@ -76,7 +76,7 @@ const Login = () => {
           }
 
           console.log(json);
-             setIsLoggedin(false);
+          setIsLoggedin(false);
         })
         .catch((err) => {
           console.log(err);

@@ -21,7 +21,7 @@ const Ordersuccess = () => {
       navigate("/");
     } else {
       axios
-        .post(`${env.REACT_APP_APIURL}/orderStripeSuccess`, data, {
+        .post(`${process.env.REACT_APP_APIURL}/orderStripeSuccess`, data, {
           headers: headers,
         })
         .then((res) => {

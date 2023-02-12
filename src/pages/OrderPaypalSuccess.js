@@ -29,7 +29,7 @@ const OrderPaypalSuccess = () => {
       console.log("a=====", a);
       console.log("b=====", b);
       axios
-        .post(`${env.REACT_APP_APIURL}/PaypalOrderSuccess`, data, {
+        .post(`${process.env.REACT_APP_APIURL}/PaypalOrderSuccess`, data, {
           headers: headers,
         })
         .then((res) => {

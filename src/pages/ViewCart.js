@@ -63,7 +63,7 @@ const ViewCart = () => {
       amount: amount,
     });
 
-    const data = await fetch(`${env.REACT_APP_APIURL}/orderRazorpay`, {
+    const data = await fetch(`${process.env.REACT_APP_APIURL}/orderRazorpay`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -91,7 +91,7 @@ const ViewCart = () => {
 
         var config = {
           method: "post",
-          url: `${env.REACT_APP_APIURL}/orderRazorpaySuccess`,
+          url: `${process.env.REACT_APP_APIURL}/orderRazorpaySuccess`,
           headers: {
             Authorization: tokenID,
             "Content-Type": "application/json",
@@ -129,7 +129,7 @@ const ViewCart = () => {
     // creates entity
     const tokenID = localStorage.getItem("token");
     console.log("hello", tokenID);
-    fetch(`${env.REACT_APP_APIURL}/viewProfile`, {
+    fetch(`${process.env.REACT_APP_APIURL}/viewProfile`, {
       method: "GET",
       mode: "cors",
 
@@ -150,7 +150,7 @@ const ViewCart = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`${env.REACT_APP_APIURL}/getServices`, {
+    fetch(`${process.env.REACT_APP_APIURL}/getServices`, {
       method: "GET",
       mode: "cors",
 
@@ -204,7 +204,7 @@ const ViewCart = () => {
         Authorization: `${tokenID}`,
       };
       await axios
-        .get(`${env.REACT_APP_APIURL}/viewCart`, {
+        .get(`${process.env.REACT_APP_APIURL}/viewCart`, {
           headers: headers,
         })
         .then((response) => {
@@ -247,7 +247,7 @@ const ViewCart = () => {
     const data = { quantity: quantity };
     setIsAddLoading(true);
     await axios
-      .post(`${env.REACT_APP_APIURL}/addCart/${id}`, data, {
+      .post(`${process.env.REACT_APP_APIURL}/addCart/${id}`, data, {
         headers: headers,
       })
 
@@ -288,7 +288,7 @@ const ViewCart = () => {
     const data = { quantity: quantity };
     setIsAddLoading(true);
     await axios
-      .post(`${env.REACT_APP_APIURL}/addCart/${id}`, data, {
+      .post(`${process.env.REACT_APP_APIURL}/addCart/${id}`, data, {
         headers: headers,
       })
       .then((response) => {
@@ -311,7 +311,7 @@ const ViewCart = () => {
     setIsAddLoading(true);
     await axios
       .post(
-        `${env.REACT_APP_APIURL}/deleteCart/${id}`,
+        `${process.env.REACT_APP_APIURL}/deleteCart/${id}`,
         {},
         {
           headers: headers,
@@ -329,7 +329,7 @@ const ViewCart = () => {
 
   const checkCoupon = async () => {
     await axios
-      .post(`${env.REACT_APP_APIURL}/getCoupon`, {
+      .post(`${process.env.REACT_APP_APIURL}/getCoupon`, {
         applyCouponName: couponText,
       })
       .then((response) => {
@@ -367,7 +367,7 @@ const ViewCart = () => {
       : "";
     await axios
       .post(
-        `${env.REACT_APP_APIURL}/useWallet/`,
+        `${process.env.REACT_APP_APIURL}/useWallet/`,
         {
           totalAmount,
           couponAmount,
@@ -393,7 +393,7 @@ const ViewCart = () => {
 
   const payWithStrip = (amount) => {
     axios
-      .post(`${env.REACT_APP_APIURL}/orderStripe`, {
+      .post(`${process.env.REACT_APP_APIURL}/orderStripe`, {
         TotalAmount: amount,
       })
       .then((response) => {
@@ -411,7 +411,7 @@ const ViewCart = () => {
 
   const payWithPaypal = (paypal) => {
     axios
-      .post(`${env.REACT_APP_APIURL}/orderPaypal`, {
+      .post(`${process.env.REACT_APP_APIURL}/orderPaypal`, {
         totalamount: paypal,
       })
       .then((response) => {
@@ -512,7 +512,7 @@ const ViewCart = () => {
       : "";
     await axios
       .post(
-        `${env.REACT_APP_APIURL}/withoutPaymentOrder/`,
+        `${process.env.REACT_APP_APIURL}/withoutPaymentOrder/`,
         {
           totalAmount,
           couponAmount,
@@ -539,186 +539,329 @@ const ViewCart = () => {
 
   return (
     <>
-      {Loading ? (
-        <Loader />
-      ) : (
+      <>
         <>
-          <>
-            {login && (
-              <div className="Cart">
-                <div className="container">
-                  <div className="out-cart">
-                    <div className="inner-cart">
-                      <table className="table bg-transparent table-borderless border-0 mb-3">
-                        <tbody>
-                          <tr className="border-0">
-                            <th></th>
-                            <th>Product</th>
+          {login && (
+            <div className="Cart">
+              <div className="container">
+                <div className="out-cart">
+                  <div className="inner-cart">
+                    <table className="table bg-transparent table-borderless border-0 mb-3">
+                      <tbody>
+                        <tr className="border-0">
+                          <th></th>
+                          <th>Product</th>
 
-                            <th className="text-center p-0">Price</th>
-                            <th className="text-center p-0">Quantity</th>
-                            <th className="text-center p-0">Total</th>
-                          </tr>
-                        </tbody>
-                        <tbody>
-                          {cartItems.message?.map((item, index) => (
-                            <tr
-                              style={{ position: "relative" }}
-                              className="second-tr"
-                              key={item._id}
-                            >
-                              {isAddLoading === true && (
-                                <div
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundColor: "black",
-                                    opacity: 0.4,
-                                    position: "absolute",
-                                    top: 0,
-                                    left: 0,
-                                    zIndex: 999,
+                          <th className="text-center p-0">Price</th>
+                          <th className="text-center p-0">Quantity</th>
+                          <th className="text-center p-0">Total</th>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        {cartItems.message?.map((item, index) => (
+                          <tr
+                            style={{ position: "relative" }}
+                            className="second-tr"
+                            key={item._id}
+                          >
+                            {isAddLoading === true && (
+                              <div
+                                style={{
+                                  width: "100%",
+                                  height: "100%",
+                                  backgroundColor: "black",
+                                  opacity: 0.4,
+                                  position: "absolute",
+                                  top: 0,
+                                  left: 0,
+                                  zIndex: 999,
+                                }}
+                              ></div>
+                            )}
+                            <th>
+                              <i
+                                onClick={() =>
+                                  deleteCartItem(item.productId._id)
+                                }
+                                aria-hidden="true"
+                                className="fas fa-times"
+                              ></i>
+                            </th>
+                            <th>{item.productId.title}</th>
+                            <th className="p-0 text-center">
+                              <span>
+                                <span>$</span>
+                                {item.productId.price}
+                              </span>
+                            </th>
+                            <th className="p-0 text-center">
+                              <div className="quantity d-flex align-items-center justify-content-between w-50 m-auto">
+                                <span
+                                  style={{ cursor: "pointer" }}
+                                  className="cursor-pointer"
+                                  data-action-type="minus"
+                                  onClick={() => {
+                                    deleteFromcarthandler(item.productId._id);
                                   }}
-                                ></div>
-                              )}
-                              <th>
-                                <i
-                                  onClick={() =>
-                                    deleteCartItem(item.productId._id)
-                                  }
-                                  aria-hidden="true"
-                                  className="fas fa-times"
-                                ></i>
-                              </th>
-                              <th>{item.productId.title}</th>
-                              <th className="p-0 text-center">
-                                <span>
-                                  <span>$</span>
-                                  {item.productId.price}
+                                >
+                                  -
                                 </span>
-                              </th>
-                              <th className="p-0 text-center">
-                                <div className="quantity d-flex align-items-center justify-content-between w-50 m-auto">
-                                  <span
-                                    style={{ cursor: "pointer" }}
-                                    className="cursor-pointer"
-                                    data-action-type="minus"
-                                    onClick={() => {
-                                      deleteFromcarthandler(item.productId._id);
-                                    }}
-                                  >
-                                    -
-                                  </span>
-                                  <h3> {item.quantity}</h3>
-                                  <span
-                                    style={{ cursor: "pointer" }}
-                                    className="cursor-pointer"
-                                    data-action-type="plus"
-                                    onClick={() => {
-                                      addTocarthandler(item.productId._id);
-                                    }}
-                                  >
-                                    +
-                                  </span>
-                                </div>
-                              </th>
-                              <th className="p-0 text-center">
+                                <h3> {item.quantity}</h3>
+                                <span
+                                  style={{ cursor: "pointer" }}
+                                  className="cursor-pointer"
+                                  data-action-type="plus"
+                                  onClick={() => {
+                                    addTocarthandler(item.productId._id);
+                                  }}
+                                >
+                                  +
+                                </span>
+                              </div>
+                            </th>
+                            <th className="p-0 text-center">
+                              <span className="woocommerce-Price-amount amount">
+                                <bdi>
+                                  <span className>$</span>
+                                  {item.quantity * item.productId.price}
+                                </bdi>
+                              </span>
+                            </th>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="coupon-wrap row">
+                    <div className="coupon-inner col-md-6">
+                      <div className="coupon">
+                        <input
+                          type="text"
+                          value={couponText}
+                          onChange={(e) => setCouponText(e.target.value)}
+                          className="bg-transparent border-0"
+                          placeholder="Coupon Code"
+                        />
+
+                        <button
+                          type="button"
+                          className="btn Coupons btn-primary mb-0"
+                          // data-bs-toggle="modal"
+                          // data-bs-target="#exampleModal"
+                          onClick={() => checkCoupon()}
+                        >
+                          Apply Coupon
+                        </button>
+                      </div>
+                      <div className=" text-danger">
+                        {coupons.message === null && "!'Invalid Coupon'"}
+                      </div>
+
+                      <Link to="/Services">
+                        <i aria-hidden="true" className="fas fa-chevron-left" />
+                        Continue Shopping
+                      </Link>
+                    </div>
+                    <div className="cart-collaterals col-md-6">
+                      <div className="cart_totals ">
+                        <table className="shop_table shop_table_responsive">
+                          <tbody>
+                            <tr className="cart-subtotal">
+                              <th>Subtotal</th>
+                              <td>
                                 <span className="woocommerce-Price-amount amount">
                                   <bdi>
-                                    <span className>$</span>
-                                    {item.quantity * item.productId.price}
+                                    <span className="woocommerce-Price-currencySymbol">
+                                      $
+                                    </span>
+                                    {cartItems.totalPrice}
                                   </bdi>
                                 </span>
-                              </th>
+                              </td>
                             </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                    <div className="coupon-wrap row">
-                      <div className="coupon-inner col-md-6">
-                        <div className="coupon">
-                          <input
-                            type="text"
-                            value={couponText}
-                            onChange={(e) => setCouponText(e.target.value)}
-                            className="bg-transparent border-0"
-                            placeholder="Coupon Code"
-                          />
-
-                          <button
-                            type="button"
-                            className="btn Coupons btn-primary mb-0"
-                            // data-bs-toggle="modal"
-                            // data-bs-target="#exampleModal"
-                            onClick={() => checkCoupon()}
-                          >
-                            Apply Coupon
-                          </button>
-                        </div>
-                        <div className=" text-danger">
-                          {coupons.message === null && "!'Invalid Coupon'"}
-                        </div>
-
-                        <Link to="/Services">
-                          <i
-                            aria-hidden="true"
-                            className="fas fa-chevron-left"
-                          />
-                          Continue Shopping
-                        </Link>
-                      </div>
-                      <div className="cart-collaterals col-md-6">
-                        <div className="cart_totals ">
-                          <table className="shop_table shop_table_responsive">
-                            <tbody>
+                            {couponApplied?.message?.offAmount ? (
                               <tr className="cart-subtotal">
-                                <th>Subtotal</th>
+                                <th>Coupon Discount</th>
                                 <td>
+                                  <span className="woocommerce-Price-amount amount">
+                                    <bdi>
+                                      {couponApplied.message.couponType ===
+                                      "Flat"
+                                        ? "Flat "
+                                        : `(${couponApplied.message.offAmount}%) `}
+                                      <span className="woocommerce-Price-currencySymbol">
+                                        $
+                                      </span>
+                                      {couponApplied.message.couponType ===
+                                      "Flat"
+                                        ? couponApplied.message.offAmount
+                                        : (cartItems.totalPrice *
+                                            couponApplied.message.offAmount) /
+                                          100}
+                                    </bdi>
+                                  </span>
+                                </td>
+                              </tr>
+                            ) : null}
+                            <tr className="order-total">
+                              <th>Total</th>
+                              <td data-title="Total">
+                                <strong>
                                   <span className="woocommerce-Price-amount amount">
                                     <bdi>
                                       <span className="woocommerce-Price-currencySymbol">
                                         $
                                       </span>
-                                      {cartItems.totalPrice}
+                                      {couponApplied?.message?.offAmount
+                                        ? couponApplied.message.couponType ===
+                                          "Flat"
+                                          ? cartItems.totalPrice -
+                                            couponApplied.message.offAmount
+                                          : cartItems.totalPrice -
+                                            (cartItems.totalPrice *
+                                              couponApplied.message.offAmount) /
+                                              100
+                                        : cartItems.totalPrice}
                                     </bdi>
                                   </span>
-                                </td>
-                              </tr>
-                              {couponApplied?.message?.offAmount ? (
+                                </strong>{" "}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div className="wc-proceed-to-checkout   eael-cart-update-btn">
+                          <button
+                            className="checkout-button button alt wc-forward"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasScrolling"
+                            aria-controls="offcanvasScrolling"
+                          >
+                            Proceed to Checkout
+                          </button>{" "}
+                        </div>
+
+                        <div
+                          className="offcanvas offcanvas-start"
+                          data-bs-scroll="true"
+                          data-bs-backdrop="false"
+                          tabIndex="-1"
+                          id="offcanvasScrolling"
+                          aria-labelledby="offcanvasScrollingLabel"
+                        >
+                          <div className="offcanvas-header">
+                            <h5
+                              className="offcanvas-title"
+                              id="offcanvasScrollingLabel"
+                            >
+                              Amount Details
+                            </h5>
+                            <button
+                              type="button"
+                              className="btn-close text-reset"
+                              data-bs-dismiss="offcanvas"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div className="offcanvas-body">
+                            <table className="shop_table shop_table_responsive">
+                              <tbody>
                                 <tr className="cart-subtotal">
-                                  <th>Coupon Discount</th>
+                                  <th>Subtotal</th>
                                   <td>
                                     <span className="woocommerce-Price-amount amount">
                                       <bdi>
-                                        {couponApplied.message.couponType ===
-                                        "Flat"
-                                          ? "Flat "
-                                          : `(${couponApplied.message.offAmount}%) `}
                                         <span className="woocommerce-Price-currencySymbol">
                                           $
                                         </span>
-                                        {couponApplied.message.couponType ===
-                                        "Flat"
-                                          ? couponApplied.message.offAmount
-                                          : (cartItems.totalPrice *
-                                              couponApplied.message.offAmount) /
-                                            100}
+                                        {cartItems.totalPrice}
                                       </bdi>
                                     </span>
                                   </td>
                                 </tr>
-                              ) : null}
-                              <tr className="order-total">
-                                <th>Total</th>
-                                <td data-title="Total">
-                                  <strong>
+                                {couponApplied?.message?.offAmount ? (
+                                  <tr className="cart-subtotal">
+                                    <th>Coupon Discount</th>
+                                    <td>
+                                      <span className="woocommerce-Price-amount amount">
+                                        <bdi>
+                                          <span className="woocommerce-Price-currencySymbol">
+                                            $
+                                          </span>
+                                          {couponApplied.message.couponType ===
+                                          "Flat"
+                                            ? couponApplied.message.offAmount
+                                            : (cartItems.totalPrice *
+                                                couponApplied.message
+                                                  .offAmount) /
+                                              100}
+                                        </bdi>
+                                      </span>
+                                    </td>
+                                  </tr>
+                                ) : null}
+                                <tr className="order-total">
+                                  <th>Total</th>
+                                  <td data-title="Total">
+                                    <strong>
+                                      <span className="woocommerce-Price-amount amount">
+                                        <bdi>
+                                          <span className="woocommerce-Price-currencySymbol">
+                                            $
+                                          </span>
+                                          {couponApplied?.message?.offAmount
+                                            ? couponApplied.message
+                                                .couponType === "Flat"
+                                              ? cartItems.totalPrice -
+                                                couponApplied.message.offAmount
+                                              : cartItems.totalPrice -
+                                                (cartItems.totalPrice *
+                                                  couponApplied.message
+                                                    .offAmount) /
+                                                  100
+                                            : cartItems.totalPrice}
+                                        </bdi>
+                                      </span>
+                                    </strong>{" "}
+                                  </td>
+                                </tr>
+                                <tr className="cart-subtotal">
+                                  <th>Available Amount in Wallet</th>
+                                  <td>
                                     <span className="woocommerce-Price-amount amount">
                                       <bdi>
                                         <span className="woocommerce-Price-currencySymbol">
                                           $
                                         </span>
-                                        {couponApplied?.message?.offAmount
+                                        {currentWalletData?.wallet}
+                                      </bdi>
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <div>
+                              <div className="text-danger mb-3 text-center">
+                                <p className="mb-0">{orderErrorMessage}</p>
+                                {orderErrorMessage && (
+                                  <span
+                                    className="signup "
+                                    style={{ cursor: "pointer" }}
+                                    data-bs-dismiss="modal"
+                                    onClick={() => navigate("/accountsetting")}
+                                  >
+                                    Add now!
+                                  </span>
+                                )}
+                              </div>
+
+                              <div className="row mb-3">
+                                <div className="col-md-6 text-start ps-4">
+                                  <button
+                                    type="button"
+                                    className="btn w-100 justify-content-center d-flex align-items-center Pay me-3"
+                                    onClick={() =>
+                                      walletUpdateHandler(
+                                        couponApplied?.message?.offAmount
                                           ? couponApplied.message.couponType ===
                                             "Flat"
                                             ? cartItems.totalPrice -
@@ -728,263 +871,109 @@ const ViewCart = () => {
                                                 couponApplied.message
                                                   .offAmount) /
                                                 100
-                                          : cartItems.totalPrice}
-                                      </bdi>
-                                    </span>
-                                  </strong>{" "}
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          <div className="wc-proceed-to-checkout   eael-cart-update-btn">
-                            <button
-                              className="checkout-button button alt wc-forward"
-                              data-bs-toggle="offcanvas"
-                              data-bs-target="#offcanvasScrolling"
-                              aria-controls="offcanvasScrolling"
-                            >
-                              Proceed to Checkout
-                            </button>{" "}
-                          </div>
+                                          : cartItems.totalPrice
+                                      )
+                                    }
+                                  >
+                                    Wallet
+                                    {/* <i class="fa-solid fa-wallet end-0 ps-2"></i> */}
+                                  </button>{" "}
+                                </div>
+                                <div className="col-md-6">
+                                  <button
+                                    type="button"
+                                    onClick={() =>
+                                      payWithStrip(
+                                        couponApplied?.message?.offAmount
+                                          ? couponApplied.message.couponType ===
+                                            "Flat"
+                                            ? cartItems.totalPrice -
+                                              couponApplied.message.offAmount
+                                            : cartItems.totalPrice -
+                                              (cartItems.totalPrice *
+                                                couponApplied.message
+                                                  .offAmount) /
+                                                100
+                                          : cartItems.totalPrice
+                                      )
+                                    }
+                                    className="btn w-100 Pay"
+                                  >
+                                    Stripe
+                                  </button>
+                                </div>
+                              </div>
 
-                          <div
-                            className="offcanvas offcanvas-start"
-                            data-bs-scroll="true"
-                            data-bs-backdrop="false"
-                            tabIndex="-1"
-                            id="offcanvasScrolling"
-                            aria-labelledby="offcanvasScrollingLabel"
-                          >
-                            <div className="offcanvas-header">
-                              <h5
-                                className="offcanvas-title"
-                                id="offcanvasScrollingLabel"
-                              >
-                                Amount Details
-                              </h5>
-                              <button
-                                type="button"
-                                className="btn-close text-reset"
-                                data-bs-dismiss="offcanvas"
-                                aria-label="Close"
-                              ></button>
-                            </div>
-                            <div className="offcanvas-body">
-                              <table className="shop_table shop_table_responsive">
-                                <tbody>
-                                  <tr className="cart-subtotal">
-                                    <th>Subtotal</th>
-                                    <td>
-                                      <span className="woocommerce-Price-amount amount">
-                                        <bdi>
-                                          <span className="woocommerce-Price-currencySymbol">
-                                            $
-                                          </span>
-                                          {cartItems.totalPrice}
-                                        </bdi>
-                                      </span>
-                                    </td>
-                                  </tr>
-                                  {couponApplied?.message?.offAmount ? (
-                                    <tr className="cart-subtotal">
-                                      <th>Coupon Discount</th>
-                                      <td>
-                                        <span className="woocommerce-Price-amount amount">
-                                          <bdi>
-                                            <span className="woocommerce-Price-currencySymbol">
-                                              $
-                                            </span>
-                                            {couponApplied.message
-                                              .couponType === "Flat"
-                                              ? couponApplied.message.offAmount
-                                              : (cartItems.totalPrice *
-                                                  couponApplied.message
-                                                    .offAmount) /
-                                                100}
-                                          </bdi>
-                                        </span>
-                                      </td>
-                                    </tr>
-                                  ) : null}
-                                  <tr className="order-total">
-                                    <th>Total</th>
-                                    <td data-title="Total">
-                                      <strong>
-                                        <span className="woocommerce-Price-amount amount">
-                                          <bdi>
-                                            <span className="woocommerce-Price-currencySymbol">
-                                              $
-                                            </span>
-                                            {couponApplied?.message?.offAmount
-                                              ? couponApplied.message
-                                                  .couponType === "Flat"
-                                                ? cartItems.totalPrice -
-                                                  couponApplied.message
-                                                    .offAmount
-                                                : cartItems.totalPrice -
-                                                  (cartItems.totalPrice *
-                                                    couponApplied.message
-                                                      .offAmount) /
-                                                    100
-                                              : cartItems.totalPrice}
-                                          </bdi>
-                                        </span>
-                                      </strong>{" "}
-                                    </td>
-                                  </tr>
-                                  <tr className="cart-subtotal">
-                                    <th>Available Amount in Wallet</th>
-                                    <td>
-                                      <span className="woocommerce-Price-amount amount">
-                                        <bdi>
-                                          <span className="woocommerce-Price-currencySymbol">
-                                            $
-                                          </span>
-                                          {currentWalletData?.wallet}
-                                        </bdi>
-                                      </span>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                              <div>
-                                <div className="text-danger mb-3 text-center">
-                                  <p className="mb-0">{orderErrorMessage}</p>
-                                  {orderErrorMessage && (
-                                    <span
-                                      className="signup "
-                                      style={{ cursor: "pointer" }}
-                                      data-bs-dismiss="modal"
-                                      onClick={() =>
-                                        navigate("/accountsetting")
-                                      }
-                                    >
-                                      Add now!
-                                    </span>
-                                  )}
+                              <div className="row justify-content-center">
+                                <div className="col-md-6 text-start ps-4 mb-3">
+                                  <button
+                                    type="button"
+                                    className="btn w-100 Pay me-3 "
+                                    onClick={() =>
+                                      payWithPaypal(
+                                        couponApplied?.message?.offAmount
+                                          ? couponApplied.message.couponType ===
+                                            "Flat"
+                                            ? cartItems.totalPrice -
+                                              couponApplied.message.offAmount
+                                            : cartItems.totalPrice -
+                                              (cartItems.totalPrice *
+                                                couponApplied.message
+                                                  .offAmount) /
+                                                100
+                                          : cartItems.totalPrice
+                                      )
+                                    }
+                                  >
+                                    PayPal
+                                  </button>
+                                </div>
+                                <div className="col-md-6 mb-3">
+                                  <button
+                                    onClick={() =>
+                                      showRazorpay(
+                                        couponApplied?.message?.offAmount
+                                          ? couponApplied.message.couponType ===
+                                            "Flat"
+                                            ? cartItems.totalPrice -
+                                              couponApplied.message.offAmount
+                                            : cartItems.totalPrice -
+                                              (cartItems.totalPrice *
+                                                couponApplied.message
+                                                  .offAmount) /
+                                                100
+                                          : cartItems.totalPrice
+                                      )
+                                    }
+                                    type="button"
+                                    className="btn w-100 Pay"
+                                  >
+                                    RazorPay
+                                  </button>
                                 </div>
 
-                                <div className="row mb-3">
-                                  <div className="col-md-6 text-start ps-4">
-                                    <button
-                                      type="button"
-                                      className="btn w-100 justify-content-center d-flex align-items-center Pay me-3"
-                                      onClick={() =>
-                                        walletUpdateHandler(
-                                          couponApplied?.message?.offAmount
-                                            ? couponApplied.message
-                                                .couponType === "Flat"
-                                              ? cartItems.totalPrice -
-                                                couponApplied.message.offAmount
-                                              : cartItems.totalPrice -
-                                                (cartItems.totalPrice *
-                                                  couponApplied.message
-                                                    .offAmount) /
-                                                  100
-                                            : cartItems.totalPrice
-                                        )
-                                      }
-                                    >
-                                      Wallet
-                                      {/* <i class="fa-solid fa-wallet end-0 ps-2"></i> */}
-                                    </button>{" "}
-                                  </div>
-                                  <div className="col-md-6">
-                                    <button
-                                      type="button"
-                                      onClick={() =>
-                                        payWithStrip(
-                                          couponApplied?.message?.offAmount
-                                            ? couponApplied.message
-                                                .couponType === "Flat"
-                                              ? cartItems.totalPrice -
-                                                couponApplied.message.offAmount
-                                              : cartItems.totalPrice -
-                                                (cartItems.totalPrice *
-                                                  couponApplied.message
-                                                    .offAmount) /
-                                                  100
-                                            : cartItems.totalPrice
-                                        )
-                                      }
-                                      className="btn w-100 Pay"
-                                    >
-                                      Stripe
-                                    </button>
-                                  </div>
-                                </div>
-
-                                <div className="row justify-content-center">
-                                  <div className="col-md-6 text-start ps-4 mb-3">
-                                    <button
-                                      type="button"
-                                      className="btn w-100 Pay me-3 "
-                                      onClick={() =>
-                                        payWithPaypal(
-                                          couponApplied?.message?.offAmount
-                                            ? couponApplied.message
-                                                .couponType === "Flat"
-                                              ? cartItems.totalPrice -
-                                                couponApplied.message.offAmount
-                                              : cartItems.totalPrice -
-                                                (cartItems.totalPrice *
-                                                  couponApplied.message
-                                                    .offAmount) /
-                                                  100
-                                            : cartItems.totalPrice
-                                        )
-                                      }
-                                    >
-                                      PayPal
-                                    </button>
-                                  </div>
-                                  <div className="col-md-6 mb-3">
-                                    <button
-                                      onClick={() =>
-                                        showRazorpay(
-                                          couponApplied?.message?.offAmount
-                                            ? couponApplied.message
-                                                .couponType === "Flat"
-                                              ? cartItems.totalPrice -
-                                                couponApplied.message.offAmount
-                                              : cartItems.totalPrice -
-                                                (cartItems.totalPrice *
-                                                  couponApplied.message
-                                                    .offAmount) /
-                                                  100
-                                            : cartItems.totalPrice
-                                        )
-                                      }
-                                      type="button"
-                                      className="btn w-100 Pay"
-                                    >
-                                      RazorPay
-                                    </button>
-                                  </div>
-
-                                  <div className="col-md-12 text-center">
-                                    <button
-                                      type="button"
-                                      className="btn  Pay  "
-                                      onClick={() =>
-                                        orderwithoutPayment(
-                                          couponApplied?.message?.offAmount
-                                            ? couponApplied.message
-                                                .couponType === "Flat"
-                                              ? cartItems.totalPrice -
-                                                couponApplied.message.offAmount
-                                              : cartItems.totalPrice -
-                                                (cartItems.totalPrice *
-                                                  couponApplied.message
-                                                    .offAmount) /
-                                                  100
-                                            : cartItems.totalPrice
-                                        )
-                                      }
-                                    >
-                                      Order Without Payment
-                                    </button>
-                                  </div>
+                                <div className="col-md-12 text-center">
+                                  <button
+                                    type="button"
+                                    className="btn  Pay  "
+                                    onClick={() =>
+                                      orderwithoutPayment(
+                                        couponApplied?.message?.offAmount
+                                          ? couponApplied.message.couponType ===
+                                            "Flat"
+                                            ? cartItems.totalPrice -
+                                              couponApplied.message.offAmount
+                                            : cartItems.totalPrice -
+                                              (cartItems.totalPrice *
+                                                couponApplied.message
+                                                  .offAmount) /
+                                                100
+                                          : cartItems.totalPrice
+                                      )
+                                    }
+                                  >
+                                    Order Without Payment
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -995,120 +984,133 @@ const ViewCart = () => {
                   </div>
                 </div>
               </div>
-            )}
-          </>
+            </div>
+          )}
+        </>
 
-          <>
-            {logout && (
-              <div className="Cart">
-                <div className="container">
-                  <div className="out-cart">
-                    <div className="inner-cart">
-                      <table className="table bg-transparent table-borderless border-0 mb-3">
-                        <tbody>
-                          <tr className="border-0">
-                            <th></th>
-                            <th>Product</th>
+        <>
+          {logout && (
+            <div className="Cart">
+              <div className="container">
+                <div className="out-cart">
+                  <div className="inner-cart">
+                    <table className="table bg-transparent table-borderless border-0 mb-3">
+                      <tbody>
+                        <tr className="border-0">
+                          <th></th>
+                          <th>Product</th>
 
-                            <th className="text-center p-0">Price</th>
-                            <th className="text-center p-0">Quantity</th>
-                            <th className="text-center p-0">Total</th>
-                          </tr>
-                        </tbody>
-                        <tbody>
-                          {cartItems?.map((item, index) => (
-                            <tr
-                              style={{ position: "relative" }}
-                              className="second-tr"
-                              key={item._id}
-                            >
-                              {isAddLoading === true && (
-                                <div
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundColor: "black",
-                                    opacity: 0.4,
-                                    position: "absolute",
-                                    top: 0,
-                                    left: 0,
-                                    zIndex: 999,
+                          <th className="text-center p-0">Price</th>
+                          <th className="text-center p-0">Quantity</th>
+                          <th className="text-center p-0">Total</th>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        {cartItems?.map((item, index) => (
+                          <tr
+                            style={{ position: "relative" }}
+                            className="second-tr"
+                            key={item._id}
+                          >
+                            {isAddLoading === true && (
+                              <div
+                                style={{
+                                  width: "100%",
+                                  height: "100%",
+                                  backgroundColor: "black",
+                                  opacity: 0.4,
+                                  position: "absolute",
+                                  top: 0,
+                                  left: 0,
+                                  zIndex: 999,
+                                }}
+                              ></div>
+                            )}
+                            <th>
+                              <i
+                                onClick={() =>
+                                  Alldeletelogoutcarthandler(item._id)
+                                }
+                                aria-hidden="true"
+                                className="fas fa-times"
+                              ></i>
+                            </th>
+                            <th>{item.title}</th>
+                            <th className="p-0 text-center">
+                              <span>
+                                <bdi>
+                                  <span>$</span>
+                                  {item.price}
+                                </bdi>
+                              </span>
+                            </th>
+                            <th className="p-0 text-center">
+                              <div className="quantity d-flex align-items-center justify-content-between w-50 m-auto">
+                                <span
+                                  style={{ cursor: "pointer" }}
+                                  className="cursor-pointer"
+                                  data-action-type="minus"
+                                  onClick={() => {
+                                    deletelogoutcarthandler(item._id);
                                   }}
-                                ></div>
-                              )}
-                              <th>
-                                <i
-                                  onClick={() =>
-                                    Alldeletelogoutcarthandler(item._id)
-                                  }
-                                  aria-hidden="true"
-                                  className="fas fa-times"
-                                ></i>
-                              </th>
-                              <th>{item.title}</th>
-                              <th className="p-0 text-center">
-                                <span>
-                                  <bdi>
-                                    <span>$</span>
-                                    {item.price}
-                                  </bdi>
+                                >
+                                  -
                                 </span>
-                              </th>
-                              <th className="p-0 text-center">
-                                <div className="quantity d-flex align-items-center justify-content-between w-50 m-auto">
-                                  <span
-                                    style={{ cursor: "pointer" }}
-                                    className="cursor-pointer"
-                                    data-action-type="minus"
-                                    onClick={() => {
-                                      deletelogoutcarthandler(item._id);
-                                    }}
-                                  >
-                                    -
-                                  </span>
-                                  <h3> {item.quantity}</h3>
-                                  <span
-                                    style={{ cursor: "pointer" }}
-                                    className="cursor-pointer"
-                                    data-action-type="plus"
-                                    onClick={() => {
-                                      addTologoutcarthandler(item._id);
-                                    }}
-                                  >
-                                    +
-                                  </span>
-                                </div>
-                              </th>
-                              <th className="p-0 text-center">
+                                <h3> {item.quantity}</h3>
+                                <span
+                                  style={{ cursor: "pointer" }}
+                                  className="cursor-pointer"
+                                  data-action-type="plus"
+                                  onClick={() => {
+                                    addTologoutcarthandler(item._id);
+                                  }}
+                                >
+                                  +
+                                </span>
+                              </div>
+                            </th>
+                            <th className="p-0 text-center">
+                              <span className="woocommerce-Price-amount amount">
+                                <bdi>
+                                  <span className>$</span>
+                                  {item.quantity * item.price}
+                                </bdi>
+                              </span>
+                            </th>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div className="coupon-wrap row">
+                    <div className="coupon-inner col-md-6">
+                      <Link to="/Services">
+                        <i aria-hidden="true" className="fas fa-chevron-left" />
+                        Continue Shopping
+                      </Link>
+                    </div>
+                    <div className="cart-collaterals col-md-6">
+                      <div className="cart_totals ">
+                        <table className="shop_table shop_table_responsive">
+                          <tbody>
+                            <tr className="cart-subtotal">
+                              <th>Subtotal</th>
+                              <td>
                                 <span className="woocommerce-Price-amount amount">
                                   <bdi>
-                                    <span className>$</span>
-                                    {item.quantity * item.price}
+                                    <span className="woocommerce-Price-currencySymbol">
+                                      $
+                                    </span>
+                                    {price}
                                   </bdi>
                                 </span>
-                              </th>
+                              </td>
                             </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                    <div className="coupon-wrap row">
-                      <div className="coupon-inner col-md-6">
-                        <Link to="/Services">
-                          <i
-                            aria-hidden="true"
-                            className="fas fa-chevron-left"
-                          />
-                          Continue Shopping
-                        </Link>
-                      </div>
-                      <div className="cart-collaterals col-md-6">
-                        <div className="cart_totals ">
-                          <table className="shop_table shop_table_responsive">
-                            <tbody>
-                              <tr className="cart-subtotal">
-                                <th>Subtotal</th>
-                                <td>
+
+                            <tr className="order-total">
+                              <th>Total</th>
+                              <td data-title="Total">
+                                <strong>
                                   <span className="woocommerce-Price-amount amount">
                                     <bdi>
                                       <span className="woocommerce-Price-currencySymbol">
@@ -1117,44 +1119,28 @@ const ViewCart = () => {
                                       {price}
                                     </bdi>
                                   </span>
-                                </td>
-                              </tr>
-
-                              <tr className="order-total">
-                                <th>Total</th>
-                                <td data-title="Total">
-                                  <strong>
-                                    <span className="woocommerce-Price-amount amount">
-                                      <bdi>
-                                        <span className="woocommerce-Price-currencySymbol">
-                                          $
-                                        </span>
-                                        {price}
-                                      </bdi>
-                                    </span>
-                                  </strong>{" "}
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          <div className="wc-proceed-to-checkout   eael-cart-update-btn">
-                            <button
-                              className="checkout-button button alt wc-forward"
-                              onClick={() => navigate("/login")}
-                            >
-                              Proceed to Checkout
-                            </button>{" "}
-                          </div>
+                                </strong>{" "}
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div className="wc-proceed-to-checkout   eael-cart-update-btn">
+                          <button
+                            className="checkout-button button alt wc-forward"
+                            onClick={() => navigate("/login")}
+                          >
+                            Proceed to Checkout
+                          </button>{" "}
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            )}
-          </>
+            </div>
+          )}
         </>
-      )}
+      </>
     </>
   );
 };

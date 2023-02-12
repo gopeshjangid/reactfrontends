@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Loader from "./Loader";
+import env from "react-dotenv";
 
 import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
 
-let urlApi = "http://localhost:5000";
 const PER_PAGE = 4;
 function Author() {
+  let urlApi = `${process.env.REACT_APP_APIURL}`;
   const [images, setImages] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -29,7 +30,7 @@ function Author() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:5000/getAuthors", {
+    fetch(`${process.env.REACT_APP_APIURL}/getAuthors`, {
       method: "GET",
       mode: "cors",
     })

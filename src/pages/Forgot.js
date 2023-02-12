@@ -36,7 +36,7 @@ const Forgot = () => {
     if (email.trim() === "" || regex1.test(email.trim()) === false) {
       return;
     } else {
-      fetch(`${env.REACT_APP_APIURL}/password-reset`, {
+      fetch(`${process.env.REACT_APP_APIURL}/password-reset`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),

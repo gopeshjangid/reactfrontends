@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import env from "react-dotenv";
 import Loader from "./Loader";
 
-let urlApi = `${env.REACT_APP_APIURL}`;
+let urlApi = `${process.env.REACT_APP_APIURL}`;
 
 class Sample extends Component {
   constructor(props) {
@@ -19,14 +19,17 @@ class Sample extends Component {
 
   async componentDidMount() {
     this.setState({ isLoading: true });
-    const response = await fetch(`${env.REACT_APP_APIURL}/getworkSamples`, {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Content-type": "application/json",
-        Accept: "application/json",
-      },
-    });
+    const response = await fetch(
+      `${process.env.REACT_APP_APIURL}/getworkSamples`,
+      {
+        method: "GET",
+        mode: "cors",
+        headers: {
+          "Content-type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
     if (response.ok) {
       const User = await response.json();
       console.log(User);
