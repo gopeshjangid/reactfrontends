@@ -493,7 +493,7 @@ class Services extends Component {
                                       onClick={() =>
                                         this.PaypalSubscription(friend._id)
                                       }
-                                      className="services-btn2 ms-2 mb-0"
+                                      className="services-btn2 mx-2 mb-0"
                                     >
                                       Paypal
                                     </button>

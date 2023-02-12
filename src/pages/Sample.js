@@ -76,7 +76,7 @@ class Sample extends Component {
                   }
                   className="samp_sec-btn "
                 >
-                  search
+                  Search
                 </button>
                 <button
                   onClick={() =>
@@ -85,7 +85,7 @@ class Sample extends Component {
                   type="button"
                   className="samp_sec-btn1"
                 >
-                  show All
+                  Show All
                 </button>
                 <h2 className="samp_sec-h2 m-auto">Work Sample</h2>
                 <p className="samp_sec-p">
@@ -96,7 +96,7 @@ class Sample extends Component {
                   better content that gets people up at night
                 </p>
               </div>
-              <div className="row">
+              <div className="row text-center">
                 {this.state.User && this.state.searchText
                   ? this.state.User.filter((item, index) =>
                       item.title.includes(this.state.searchText)

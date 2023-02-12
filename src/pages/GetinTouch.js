@@ -40,7 +40,7 @@ const GetinTouch = () => {
   };
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_APIURL}/getAllExpertLevel`, {
+    fetch(`${env.REACT_APP_APIURL}/getAllExpertLevel`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -60,7 +60,7 @@ const GetinTouch = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_APIURL}/getAllContentType`, {
+    fetch(`${env.REACT_APP_APIURL}/getAllContentType`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -85,7 +85,7 @@ const GetinTouch = () => {
   // 	}
   // },[])
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_APIURL}/getCountryCode`, {
+    fetch(`${env.REACT_APP_APIURL}/getCountryCode`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -149,7 +149,7 @@ const GetinTouch = () => {
     ) {
       return;
     } else {
-      fetch(`${process.env.REACT_APP_APIURL}/getInTouch`, {
+      fetch(`${env.REACT_APP_APIURL}/getInTouch`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),

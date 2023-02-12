@@ -80,17 +80,17 @@ function App() {
         <Route path="/ordersuccess" element={<Ordersuccess />} />
         <Route path="/payplesuccess" element={<Payplesuccess />} />
 
-        <Route path="/StripeSubscription" element={<StripeSubscription />} />
+        <Route path="/stripesubscription" element={<StripeSubscription />} />
 
         {/* <Route path="/BlogRoute" element={<BlogRoute />} />
         <Route path="/AuthorRoute" element={<AuthorRoute />} /> */}
         <Route
-          path="/stripeGuestPaymentSuccess"
+          path="/stripeguestpaymentSuccess"
           element={<StripeGuestPaymentSuccess />}
         />
-        <Route path="/GuestPayment" element={<GuestPayment />} />
+        <Route path="/guestpayment" element={<GuestPayment />} />
         <Route
-          path="/pendingPaymentStripeSuccess"
+          path="/pendingpaymentstripesuccess"
           element={<PendingPaymentStripeSuccess />}
         />
 
