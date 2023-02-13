@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import env from "react-dotenv";
 
 const ExtraCredit = () => {
   const [ExtraCredit, setExtracredit] = useState([]);

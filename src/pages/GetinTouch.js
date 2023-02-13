@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 // import "react-phone-input-2/lib/bootstrap.css";
 
 import { useState, useEffect } from "react";
-import env from "react-dotenv";
+
 // import axios from 'axios'
 
 const GetinTouch = () => {

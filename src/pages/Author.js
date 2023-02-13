@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Loader from "./Loader";
-import env from "react-dotenv";
 
 import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
@@ -38,7 +37,7 @@ function Author() {
 
       .then((json) => {
         console.log(json.data);
-        setImages(json.data);
+        setImages(json.data.sort().reverse());
         setIsLoading(false);
       })
       .catch((err) => {
@@ -64,11 +63,11 @@ function Author() {
                   <div className="author_box p-4 text-center">
                     <img
                       src={urlApi + "/image/" + friend.image}
-                      alt={"title" + friend.title}
+                      alt={friend.title}
                       className="author_sec-img m-0"
                     />
                     <h4 className="author_Sec-h2">{friend.title}</h4>
-                    <RenderHTML HTML={friend.dec} />
+                    <RenderHTML HTML={friend.dec.slice(0, 50)} />
 
                     <Link to={`/viewdetails/${friend._id}`}>
                       <button type="button" className="author-btn m-0">

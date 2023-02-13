@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import env from "react-dotenv";
+
 import axios from "axios";
 import Loader from "./Loader";
 
@@ -81,7 +81,7 @@ class Services extends Component {
       }
       this.setState({
         ...this.state,
-        User: User.data,
+        User: User.data.sort().reverse(),
         isAddLoading: false,
       });
     }

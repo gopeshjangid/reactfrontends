@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import env from "react-dotenv";
 
 const StripeGuestPaymentSuccess = () => {
   const tokenID = localStorage.getItem("token");

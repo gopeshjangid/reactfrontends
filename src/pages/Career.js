@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
-import env from "react-dotenv";
+
 import Loader from "./Loader";
 
 const Career = () => {
@@ -18,7 +18,7 @@ const Career = () => {
     })
       .then((res) => res.json(console.log(res)))
       .then((response) => {
-        setCareer(response.data);
+        setCareer(response.data.sort().reverse());
 
         console.log(response.data);
 

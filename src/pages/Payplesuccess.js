@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
-import env from "react-dotenv";
 
 const Payplesuccess = () => {
   const [searchParams, setSearchParams] = useSearchParams();

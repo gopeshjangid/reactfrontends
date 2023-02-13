@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import env from "react-dotenv";
+
 import axios from "axios";
 import ExtraCredit from "./ExtraCredit";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
-import moment from "moment";
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -162,8 +161,8 @@ const TransactionHistory = () => {
     })
       .then((res) => res.json())
       .then((Response) => {
-        setCredit(Response.credit);
-        setDebit(Response.debit);
+        setCredit(Response.credit.sort().reverse());
+        setDebit(Response.debit.sort().reverse());
         settotalCredit(Response.totalCredit);
         settotalDebit(Response.totalDebit);
         console.log(Response);
@@ -490,11 +489,7 @@ const TransactionHistory = () => {
                           return (
                             <tr key={index}>
                               <td>{index + 1}</td>
-                              <td>
-                                {moment(item.datetime).format(
-                                  " DD MMM YYYY, ddd, HH:mm:ss "
-                                )}
-                              </td>
+                              <td>{item.datetime}</td>
                               <td>{item.transactionId}</td>
                               <td>{item.pay_type}</td>
                               <td style={{ color: "green", fontWeight: "700" }}>
@@ -541,11 +536,7 @@ const TransactionHistory = () => {
                           return (
                             <tr key={index}>
                               <td>{index + 1}</td>
-                              <td>
-                                {moment(items.datetime).format(
-                                  " DD MMM YYYY, ddd, HH:mm:ss "
-                                )}
-                              </td>
+                              <td>{items.datetime}</td>
                               {/* <td>{items.transactionId}</td> */}
                               <td>{items.pay_type}</td>
                               <td style={{ color: "red", fontWeight: "700" }}>

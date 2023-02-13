@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 //import { user } from "./Join";
-import env from "react-dotenv";
 
 import socketIO from "socket.io-client";
 import Message from "./Message";
@@ -295,6 +294,7 @@ const Chat = ({ orderId, orderName }) => {
                   <Message
                     key={i}
                     id={item._id}
+                    datetime={item.datetime}
                     user={item.sender.username + ": "}
                     message={item.content}
                     orderId={item.chat.orderId}

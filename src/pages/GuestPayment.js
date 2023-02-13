@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import env from "react-dotenv";
 
 function loadScript(src) {
   return new Promise((resolve) => {

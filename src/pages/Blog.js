@@ -1,7 +1,7 @@
 // import DOMPurify from "dompurify";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import env from "react-dotenv";
+
 import Loader from "./Loader";
 let urlApi = `${process.env.REACT_APP_APIURL}`;
 
@@ -32,7 +32,11 @@ class Blog extends Component {
         const User = await response.json();
         if (response.ok) {
           console.log(User);
-          this.setState({ ...this.state, User: User.data, isLoading: false });
+          this.setState({
+            ...this.state,
+            User: User.data.sort().reverse(),
+            isLoading: false,
+          });
         }
       })
       .catch((err) => {
@@ -82,7 +86,7 @@ class Blog extends Component {
                                   September 08,2022
                                 </span>
                               </div>
-                              <RenderHTML HTML={friend.dec} />
+                              <RenderHTML HTML={friend.dec.slice(0, 150)} />
 
                               <button type="button" className="blog_sec-btn">
                                 Read More{" "}
@@ -111,7 +115,8 @@ class Blog extends Component {
                                 </span>
                               </div>
 
-                              <RenderHTML HTML={friend.dec} />
+                              <RenderHTML HTML={friend.dec.slice(0, 50)} />
+
                               <Link to={`/onlineManagement/${friend._id}`}>
                                 <button
                                   type="button"

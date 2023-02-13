@@ -2,7 +2,6 @@ import React, { useState } from "react";
 // import { VscFilePdf } from "react-icons/vsc";
 // import { Router, useNavigate } from "react-router-dom";
 import axios from "axios";
-import env from "react-dotenv";
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -18,8 +17,18 @@ function loadScript(src) {
   });
 }
 
-const Message = ({ id, user, message, orderId, classs, type, name }) => {
+const Message = ({
+  id,
+  user,
+  message,
+  orderId,
+  classs,
+  type,
+  name,
+  datetime,
+}) => {
   // const navigate = useNavigate();
+  console.log("datetime", datetime);
   console.log("message", message);
   console.log("type", type);
   console.log("type", type);
@@ -217,6 +226,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
       <div className={`messageBox ${classs}`}>
         <p className="fw-bold mb-2">{`${user}`}</p>
         <img src={`${message}`} alt="chatimg" />{" "}
+        <p className="float-end mb-0">{`${datetime}`}</p>
       </div>
     );
   } else if (user && type === "pdf") {
@@ -237,6 +247,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
           )}
         </button>
         <span className="ms-3"> {`${name}`}</span>
+        <p className="text-end mb-0">{`${datetime}`}</p>
       </div>
     );
   } else if ((user && type === "docx") || (user && type === "docs")) {
@@ -257,6 +268,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
           )}
         </button>
         <span className="ms-3"> {`${name}`}</span>
+        <p className="text-end mb-0">{`${datetime}`}</p>
       </div>
     );
   } else if (user && type === "msword") {
@@ -278,6 +290,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
           )}
         </button>
         <span className="ms-3"> {`${name}`}</span>
+        <p className="text-end mb-0">{`${datetime}`}</p>
       </div>
     );
   } else if (user && type === "txt") {
@@ -298,6 +311,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
           )}
         </button>
         <span className="ms-3"> {`${name}`}</span>
+        <p className="text-end mb-0">{`${datetime}`}</p>
       </div>
     );
   } else if (user && type === "message") {
@@ -305,6 +319,7 @@ const Message = ({ id, user, message, orderId, classs, type, name }) => {
       <div className={`messageBox ${classs}`}>
         <p className="fw-bold mb-2">{`${user}`}</p>
         {`${message}`}
+        <span className="float-end">{`${datetime}`}</span>
       </div>
     );
   } else if (user && type === "link" && PendingStatus === true) {

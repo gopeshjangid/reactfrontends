@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import env from "react-dotenv";
+
 import Loader from "./Loader";
 
 class Faq extends Component {
@@ -28,7 +28,11 @@ class Faq extends Component {
         const User = await response.json();
         if (response.ok) {
           console.log(User);
-          this.setState({ ...this.state, User: User.data, isLoading: false });
+          this.setState({
+            ...this.state,
+            User: User.data.sort().reverse(),
+            isLoading: false,
+          });
         }
       })
       .catch((err) => {

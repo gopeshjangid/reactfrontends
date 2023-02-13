@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import env from "react-dotenv";
 
 const Success = () => {
   const tokenID = localStorage.getItem("token");

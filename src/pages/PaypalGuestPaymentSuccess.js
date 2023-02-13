@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
-import env from "react-dotenv";
 
 const PaypalGuestPaymentSuccess = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -95,7 +94,7 @@ export default PaypalGuestPaymentSuccess;
 // import { useNavigate } from "react-router-dom";
 // import axios from "axios";
 // import { useSearchParams } from "react-router-dom";
-// import env from "react-dotenv";
+//
 
 // const PaypalGuestPaymentSuccess = () => {
 //   const [searchParams, setSearchParams] = useSearchParams();

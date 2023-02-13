@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import env from "react-dotenv";
 
 const Contact = () => {
   const initialValues = {

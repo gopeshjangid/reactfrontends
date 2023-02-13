@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import env from "react-dotenv";
+
 import Loader from "./Loader";
 import { useState, useEffect } from "react";
 

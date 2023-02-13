@@ -2,10 +2,10 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import env from "react-dotenv";
+
 import Loader from "./Loader";
 import Chat from "./Chat";
-import moment from "moment";
+
 const Dashboard = () => {
   const [viewOrder, setViewOrder] = useState([]);
   const [Cancelled, setCancelled] = useState("");
@@ -29,7 +29,7 @@ const Dashboard = () => {
     })
       .then((res) => res.json(console.log(res)))
       .then((response) => {
-        setViewOrder(response.data);
+        setViewOrder(response.data.sort().reverse());
         setIsLoading(false);
 
         console.log(response.data);
@@ -72,7 +72,7 @@ const Dashboard = () => {
         console.log(Cancelled);
 
         if (res.data.message === "your subscription canceled") {
-          window.location.reload("/accountSetting");
+          window.location.reload("/dashboard");
         }
       })
       .catch((err) => {
@@ -202,11 +202,7 @@ const Dashboard = () => {
                               <tr key={index} className="viewOrderbody">
                                 <td>{index + 1}</td>
                                 <td>{friend.transactionId}</td>
-                                <td>
-                                  {moment(friend.datetime).format(
-                                    " DD MMM YYYY, ddd, HH:mm:ss "
-                                  )}
-                                </td>
+                                <td>{friend.datetime}</td>
                                 <td>{friend.pay_method}</td>
                                 <td>{friend.type}</td>
                                 <td>{friend.totalAmount}</td>
@@ -328,12 +324,7 @@ const Dashboard = () => {
                                           <tr>
                                             <td>Date</td>
                                             <td>:</td>{" "}
-                                            <td>
-                                              {" "}
-                                              {moment(friend.datetime).format(
-                                                " DD MMM YYYY, ddd, HH:mm:ss "
-                                              )}
-                                            </td>
+                                            <td> {friend.datetime}</td>
                                           </tr>
                                           <tr>
                                             <td>Pay-Method</td>
@@ -344,11 +335,6 @@ const Dashboard = () => {
                                             <td>Type</td>
                                             <td>:</td> <td>{friend.type}</td>
                                           </tr>
-                                          {/* <tr>
-                                        <td>Product</td>
-                                        <td>:</td>
-                                        <td>{friend.products._id}</td>
-                                      </tr> */}
 
                                           <tr>
                                             <td>Amount</td>
@@ -374,12 +360,7 @@ const Dashboard = () => {
                               <tr key={index} className="viewOrderbody">
                                 <td>{index + 1}</td>
                                 <td>{friend.transactionId}</td>
-                                <td>
-                                  {" "}
-                                  {moment(friend.datetime).format(
-                                    " DD MMM YYYY, ddd, HH:mm:ss "
-                                  )}
-                                </td>
+                                <td> {friend.datetime}</td>
                                 <td>{friend.pay_method}</td>
                                 <td>{friend.type}</td>
                                 <td>{friend.totalAmount}</td>

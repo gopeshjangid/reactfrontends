@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import env from "react-dotenv";
+
 import Loader from "./Loader";
 
 let urlApi = `${process.env.REACT_APP_APIURL}`;
@@ -33,7 +33,11 @@ class Sample extends Component {
     if (response.ok) {
       const User = await response.json();
       console.log(User);
-      this.setState({ ...this.state, User: User.data, isLoading: false });
+      this.setState({
+        ...this.state,
+        User: User.data.sort().reverse(),
+        isLoading: false,
+      });
     }
   }
   render() {
