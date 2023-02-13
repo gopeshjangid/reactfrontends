@@ -303,9 +303,9 @@ const GetinTouch = () => {
               onChange={handleChange}
               // name="name"
             >
-              <option>
+              {/* <option>
                 {country?.[93]?.dial_code}&nbsp;{country?.[93]?.name}
-              </option>
+              </option> */}
               {country?.map((countryitem, value) => {
                 return (
                   <>
