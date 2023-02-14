@@ -69,7 +69,7 @@ const ViewProfile = () => {
             User: json,
           });
           if (json.message === "password successfully changed") {
-            navigate("/AccountSetting");
+            navigate("/viewprofile");
           }
 
           console.log(json);
@@ -205,7 +205,7 @@ const ViewProfile = () => {
           json,
         });
         // if (json.message === "successfully updated") {
-        //   // navigate("/AccountSetting");
+        //   // navigate("/viewprofile");
         // }
         setMessage(json.data);
 
@@ -228,10 +228,10 @@ const ViewProfile = () => {
             <ul className="nav nav-pills flex-column acunt_dsh" role="tablist">
               <li className="nav-item">
                 <Link className="nav-link" to="/dashboard">
-                  Dasboard
+                  Dashboard
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link" to="/accountsettingservices">
                   Services
                 </Link>
@@ -240,7 +240,7 @@ const ViewProfile = () => {
                 <Link className="nav-link" to="/accountsettingsubscriptions">
                   Subscriptions
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link
                   className="nav-link active"

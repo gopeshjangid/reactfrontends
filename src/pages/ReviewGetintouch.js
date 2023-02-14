@@ -145,7 +145,7 @@ const ReviewGetintouch = () => {
           });
           if (json.message === "successfully login and order") {
             localStorage.setItem("token", json.token);
-            navigate("/accountSetting");
+            navigate("/dashboard");
           }
 
           // setMessage(json.message)
@@ -281,10 +281,11 @@ const ReviewGetintouch = () => {
               name="countryCode"
               onChange={handleChange}
               // name="name"
+              required
             >
-              {/* <option>
-                {country?.[93]?.dial_code}&nbsp;{country?.[93]?.name}
-              </option> */}
+              <option disabled selected hidden>
+                +00
+              </option>
               {country?.map((countryitem, value) => {
                 return (
                   <>
@@ -334,7 +335,11 @@ const ReviewGetintouch = () => {
             style={{
               cursor: "pointer",
             }}
+            required
           >
+            <option disabled selected hidden>
+              Content Type
+            </option>
             {Alltype?.map((Alltypeitem, value) => {
               return (
                 <>

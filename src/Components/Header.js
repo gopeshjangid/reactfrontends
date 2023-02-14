@@ -118,12 +118,12 @@ const Header = () => {
                   <ul className="dropdown-menu">
                     <li>
                       <Link className="dropdown-item" to="/viewCart">
-                        ViewCart
+                        View cart
                       </Link>
                     </li>
                     <li>
                       <Link className="dropdown-item" to="/guestpayment">
-                        GuestPayment
+                        Guest Payment
                       </Link>
                     </li>
                     {/* <li><Link className="dropdown-item"  to="/Login">Login</Link></li> */}
@@ -138,7 +138,7 @@ const Header = () => {
 
                         <li>
                           <Link className="dropdown-item" to="/login">
-                            Login
+                            Log in
                           </Link>
                         </li>
                       </>
@@ -156,7 +156,7 @@ const Header = () => {
                             to="/"
                             onClick={logout}
                           >
-                            Logout
+                            Log out
                           </Link>
                         </li>
                       </>

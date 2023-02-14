@@ -47,6 +47,7 @@ import AccountSettingBillingInfo from "./pages/AccountSettingBillingInfo";
 import OrderPaypalSuccess from "./pages/OrderPaypalSuccess";
 import PendingPaymentPaypalSuccess from "./pages/PendingPaymentPaypalSuccess";
 import PaypalGuestPaymentSuccess from "./pages/PaypalGuestPaymentSuccess";
+import WalletPaymentSuccess from "./pages/WalletPaymentSuccess";
 
 function App() {
   return (
@@ -122,6 +123,7 @@ function App() {
           path="paypalguestpaymentsuccess"
           element={<PaypalGuestPaymentSuccess />}
         />
+        <Route path="walletpaymentsuccess" element={<WalletPaymentSuccess />} />
       </Routes>
       <Footer />
     </BrowserRouter>

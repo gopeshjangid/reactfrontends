@@ -1,25 +1,24 @@
-import React from "react";
+// import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-
-const Failed = () => {
+const WalletPaymentSuccess = () => {
   return (
     <div>
       <section className="fp_sec bg-transparent ">
         <div className="container">
           <div className="row align-items-center justify-content-center">
-            <div className="col-md-4">
+            <div className="col-md-5">
               <form className="fp_form m-0 w-100 h-100">
                 {/* <<onSubmit={handleSubmit} */}
-                <span className=" p-0 fs-1 fw-bold text-danger">
-                  Payment Failed
-                </span>
-                <p className="fp-p p-0">
-                  Your Payment Failed. Please try again later!
-                </p>
+                <span className=" p-0 fs-1 fw-bold">Payment successfull</span>
+
+                {/* <p className="fp-p p-0">
+                  We'll Email You an Order Confirmation With Details and
+                  tracking info
+                </p> */}
 
                 <Link className="" to="/dashboard">
-                  <button type="submit" className="fp-btn px-5 bg-danger m-0">
-                    Try Again!
+                  <button type="submit" className="fp-btn px-5 m-0">
+                    Go Back
                   </button>
                 </Link>
 
@@ -32,9 +31,10 @@ const Failed = () => {
               </form>
             </div>
 
-            <div className="col-md-6">
+            <div className="col-md-5">
               <img
-                src="writer/img/payment-error-info-message-smartphone-customer-cross-marks-failure_106788-2322.webp"
+                src="writer/img/Successful-purchase.gif"
+                alt="Successful-purchase"
                 className="fp-img m-0 w-100"
               />
             </div>
@@ -45,4 +45,4 @@ const Failed = () => {
   );
 };
 
-export default Failed;
+export default WalletPaymentSuccess;

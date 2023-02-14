@@ -99,22 +99,10 @@ const Dashboard = () => {
                       data-bs-toggle="pill"
                       to="/dashboard"
                     >
-                      Dasboard
+                      Dashboard
                     </Link>
                   </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/accountsettingservices">
-                      Services
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link
-                      className="nav-link"
-                      to="/accountsettingsubscriptions"
-                    >
-                      Subscriptions
-                    </Link>
-                  </li>
+
                   <li className="nav-item">
                     <Link className="nav-link" to="/viewprofile">
                       Account Setting
@@ -191,7 +179,7 @@ const Dashboard = () => {
                         <th>Chat</th>
                         <th>Status</th>
                         <th>Sub. Cancel</th>
-                        <th>OrderDetails</th>
+                        <th>Order Details</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -274,6 +262,7 @@ const Dashboard = () => {
                                     </div>
                                   </div>
                                 </div>
+
                                 <td>
                                   <button
                                     className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
@@ -282,7 +271,7 @@ const Dashboard = () => {
                                     data-bs-target={"#viewdetails" + friend._id}
                                     aria-controls="offcanvasScrolling"
                                   >
-                                    ViewDetails
+                                    View Details
                                   </button>
                                   <div
                                     className="offcanvas viewOrder text-wrap offcanvas-end"
@@ -309,14 +298,14 @@ const Dashboard = () => {
                                         className="offcanvas-title"
                                         id="offcanvasScrollingLabel"
                                       >
-                                        OrderDetails
+                                        Order Details
                                       </h5>
                                     </div>
                                     <div className="offcanvas-body">
                                       <table className="table table-borderless mb-0">
                                         <tbody>
                                           <tr>
-                                            <td>OrderId</td>
+                                            <td>Order Id</td>
                                             <td>:</td>
 
                                             <td>{friend.transactionId}</td>
@@ -390,84 +379,187 @@ const Dashboard = () => {
                                     {friend.sub_status}
                                   </Link>
                                 </td>
-                                <td>
-                                  <button
-                                    className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
-                                    type="button"
-                                    data-bs-toggle="offcanvas"
-                                    data-bs-target={"#viewdetails" + friend._id}
-                                    aria-controls="offcanvasScrolling"
-                                  >
-                                    ViewDetails
-                                  </button>
-                                  <div
-                                    className="offcanvas viewOrder text-wrap offcanvas-end"
-                                    data-bs-scroll="true"
-                                    data-bs-backdrop="false"
-                                    tabIndex="-1"
-                                    id={"viewdetails" + friend._id}
-                                    aria-labelledby="offcanvasScrollingLabel"
-                                  >
-                                    <div
-                                      className="offcanvas-header text-white"
-                                      style={{ background: "rgb(2, 154, 153)" }}
+                                {friend.type === "Customize" ? (
+                                  <td>
+                                    <button
+                                      className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
+                                      type="button"
+                                      data-bs-toggle="offcanvas"
+                                      data-bs-target={
+                                        "#viewdetails" + friend._id
+                                      }
+                                      aria-controls="offcanvasScrolling"
                                     >
-                                      <button
-                                        type="button"
-                                        className="bg-transparent border-0"
-                                        data-bs-dismiss="offcanvas"
-                                        aria-label="Close"
+                                      View Details
+                                    </button>
+                                    <div
+                                      className="offcanvas viewOrder text-wrap offcanvas-end"
+                                      data-bs-scroll="true"
+                                      data-bs-backdrop="false"
+                                      tabIndex="-1"
+                                      id={"viewdetails" + friend._id}
+                                      aria-labelledby="offcanvasScrollingLabel"
+                                    >
+                                      <div
+                                        className="offcanvas-header text-white"
+                                        style={{
+                                          background: "rgb(2, 154, 153)",
+                                        }}
                                       >
-                                        <i className="fa-solid fa-xmark fs-3 text-white"></i>
-                                      </button>
-                                      <h5
-                                        className="offcanvas-title"
-                                        id="offcanvasScrollingLabel"
-                                      >
-                                        OrderDetails
-                                      </h5>
-                                    </div>
-                                    <div className="offcanvas-body">
-                                      <table className="table table-borderless mb-0">
-                                        <tbody>
-                                          <tr>
-                                            <td>OrderId</td>
-                                            <td>:</td>
-                                            <td>{friend.transactionId}</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Date</td>
-                                            <td>:</td>{" "}
-                                            <td>{friend.datetime}</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Pay-Method</td>
-                                            <td>:</td>
-                                            <td>{friend.pay_method}</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Type</td>
-                                            <td>:</td> <td>{friend.type}</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Amount</td>
-                                            <td>:</td>{" "}
-                                            <td>{friend.totalAmount}</td>
-                                          </tr>
-                                          {/* <tr>
-                                    <td>Sub.Cancel</td>
+                                        <button
+                                          type="button"
+                                          className="bg-transparent border-0"
+                                          data-bs-dismiss="offcanvas"
+                                          aria-label="Close"
+                                        >
+                                          <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                                        </button>
 
-   <td>:</td>                                    <td>{friend.sub_status}</td>
-                                  </tr> */}
-                                          <tr>
-                                            <td>Status</td>
-                                            <td>:</td> <td>{friend.status}</td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
+                                        <h5
+                                          className="offcanvas-title"
+                                          id="offcanvasScrollingLabel"
+                                        >
+                                          Order Details
+                                        </h5>
+                                      </div>
+                                      <div className="offcanvas-body">
+                                        <table className="table table-borderless mb-0">
+                                          <tbody>
+                                            <tr>
+                                              <td>Order Id</td>
+                                              <td>:</td>
+
+                                              <td>{friend.transactionId}</td>
+                                            </tr>
+                                            <tr>
+                                              <td>Date</td>
+                                              <td>:</td>{" "}
+                                              <td> {friend.datetime}</td>
+                                            </tr>
+                                            <tr>
+                                              <td>Pay-Method</td>
+                                              <td>:</td>
+                                              <td>{friend.pay_method}</td>
+                                            </tr>
+                                            <tr>
+                                              <td>Type</td>
+                                              <td>:</td> <td>{friend.type}</td>
+                                            </tr>
+                                            <tr>
+                                              <td>Content Type</td>
+                                              <td>:</td>{" "}
+                                              <td>{friend.contentType}</td>
+                                            </tr>
+                                            <tr>
+                                              <td>Deadline</td>
+                                              <td>:</td>{" "}
+                                              <td>{friend.deadline}</td>
+                                            </tr>
+                                            <tr>
+                                              <td>Expert Level</td>
+                                              <td>:</td>{" "}
+                                              <td>{friend.expertLevel}</td>
+                                            </tr>
+                                            <tr>
+                                              <td>Amount</td>
+                                              <td>:</td>{" "}
+                                              <td>{friend.totalAmount}</td>
+                                            </tr>
+
+                                            <tr>
+                                              <td>Status</td>
+                                              <td>:</td>{" "}
+                                              <td>{friend.status}</td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
                                     </div>
-                                  </div>{" "}
-                                </td>
+                                  </td>
+                                ) : (
+                                  <td>
+                                    <button
+                                      className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
+                                      type="button"
+                                      data-bs-toggle="offcanvas"
+                                      data-bs-target={
+                                        "#viewdetails" + friend._id
+                                      }
+                                      aria-controls="offcanvasScrolling"
+                                    >
+                                      View Details
+                                    </button>
+                                    <div
+                                      className="offcanvas viewOrder text-wrap offcanvas-end"
+                                      data-bs-scroll="true"
+                                      data-bs-backdrop="false"
+                                      tabIndex="-1"
+                                      id={"viewdetails" + friend._id}
+                                      aria-labelledby="offcanvasScrollingLabel"
+                                    >
+                                      <div
+                                        className="offcanvas-header text-white"
+                                        style={{
+                                          background: "rgb(2, 154, 153)",
+                                        }}
+                                      >
+                                        <button
+                                          type="button"
+                                          className="bg-transparent border-0"
+                                          data-bs-dismiss="offcanvas"
+                                          aria-label="Close"
+                                        >
+                                          <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                                        </button>
+
+                                        <h5
+                                          className="offcanvas-title"
+                                          id="offcanvasScrollingLabel"
+                                        >
+                                          Order Details
+                                        </h5>
+                                      </div>
+                                      <div className="offcanvas-body">
+                                        <table className="table table-borderless mb-0">
+                                          <tbody>
+                                            <tr>
+                                              <td>Order Id</td>
+                                              <td>:</td>
+
+                                              <td>{friend.transactionId}</td>
+                                            </tr>
+                                            <tr>
+                                              <td>Date</td>
+                                              <td>:</td>{" "}
+                                              <td> {friend.datetime}</td>
+                                            </tr>
+                                            <tr>
+                                              <td>Pay-Method</td>
+                                              <td>:</td>
+                                              <td>{friend.pay_method}</td>
+                                            </tr>
+                                            <tr>
+                                              <td>Type</td>
+                                              <td>:</td> <td>{friend.type}</td>
+                                            </tr>
+
+                                            <tr>
+                                              <td>Amount</td>
+                                              <td>:</td>{" "}
+                                              <td>{friend.totalAmount}</td>
+                                            </tr>
+
+                                            <tr>
+                                              <td>Status</td>
+                                              <td>:</td>{" "}
+                                              <td>{friend.status}</td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                  </td>
+                                )}
                               </tr>
                             )}
                           </>

@@ -382,7 +382,7 @@ const ViewCart = () => {
       .then((response) => {
         console.log(response.data);
         if (response.data.data === "order Placed") {
-          navigate("/PurchaseSuccess");
+          navigate("/walletpaymentsuccess");
         } else {
           setOrderErrorMessage(response.data.data);
         }
@@ -857,7 +857,7 @@ const ViewCart = () => {
                                       style={{ cursor: "pointer" }}
                                       data-bs-dismiss="modal"
                                       onClick={() =>
-                                        navigate("/accountsetting")
+                                        navigate("/transactionhistory")
                                       }
                                     >
                                       Add now!

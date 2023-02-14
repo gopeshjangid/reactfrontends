@@ -10,10 +10,10 @@ const AccountSettingPaymentMethod = () => {
             <ul className="nav nav-pills flex-column acunt_dsh" role="tablist">
               <li className="nav-item">
                 <Link className="nav-link" to="/dashboard">
-                  Dasboard
+                  Dashboard
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link" to="/accountsettingservices">
                   Services
                 </Link>
@@ -22,7 +22,7 @@ const AccountSettingPaymentMethod = () => {
                 <Link className="nav-link" to="/accountsettingsubscriptions">
                   Subscriptions
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link className="nav-link" to="/viewprofile">
                   Account Setting

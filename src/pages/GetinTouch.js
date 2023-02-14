@@ -2,6 +2,8 @@ import React from "react";
 
 import { useNavigate } from "react-router-dom";
 
+import moment from "moment";
+
 // import PhoneInput from "react-phone-input-2";
 // import "react-phone-input-2/lib/bootstrap.css";
 
@@ -241,6 +243,13 @@ const GetinTouch = () => {
     return errors;
   };
 
+  var [date, setDate] = useState([]);
+
+  useEffect(() => {
+    const date = { currentTime: moment().format("YYYY-MM-DD") };
+    setDate(date);
+    console.log(date.currentTime);
+  }, []);
   return (
     <form
       style={{ padding: "4%" }}
@@ -301,15 +310,15 @@ const GetinTouch = () => {
               }}
               name="countryCode"
               onChange={handleChange}
-              // name="name"
+              required
             >
-              {/* <option>
-                {country?.[93]?.dial_code}&nbsp;{country?.[93]?.name}
-              </option> */}
+              <option disabled selected hidden>
+                +00
+              </option>
               {country?.map((countryitem, value) => {
                 return (
                   <>
-                    <option value={value}>
+                    <option>
                       {countryitem.dial_code}
                       &nbsp;{countryitem.name}
                     </option>
@@ -328,6 +337,10 @@ const GetinTouch = () => {
               aria-label="Username"
               aria-describedby="basic-addon1"
             />
+            {/* <i
+              class="fa-solid fa-globe"
+              style={{ top: "18px", position: "absolute", left: "18px" }}
+            ></i> */}
           </div>
 
           <p className="mb-0" style={{ color: "red" }}>
@@ -355,11 +368,15 @@ const GetinTouch = () => {
             style={{
               cursor: "pointer",
             }}
+            required
           >
+            <option disabled selected hidden>
+              Content Type
+            </option>
             {Alltype?.map((Alltypeitem, value) => {
               return (
                 <>
-                  <option value={value}>{Alltypeitem.contentType}</option>
+                  <option>{Alltypeitem.contentType}</option>
                 </>
               );
             })}
@@ -373,11 +390,13 @@ const GetinTouch = () => {
       <div className="form-inputs d-flex space-between">
         <div className="Home-Name">
           <input
-            type="text"
+            type="date"
+            min={date.currentTime}
             name="deadline"
             placeholder="Deadline"
             onChange={handleChange}
             className="text_set ms-0 me-1 mt-0"
+            required
           />
           <p className="mb-0" style={{ color: "red" }}>
             {formErrors.deadline}
@@ -393,12 +412,15 @@ const GetinTouch = () => {
             style={{
               cursor: "pointer",
             }}
+            required
           >
-            {/* <option selected>Expert Level</option> */}
+            <option disabled selected hidden>
+              Expert Level
+            </option>
             {expertlevel?.map((expertlevelItem, value) => {
               return (
                 <>
-                  <option value={value}>{expertlevelItem.expertLevel}</option>
+                  <option>{expertlevelItem.expertLevel}</option>
                 </>
               );
             })}

@@ -222,10 +222,10 @@ const TransactionHistory = () => {
                 >
                   <li className="nav-item">
                     <Link className="nav-link" to="/dashboard">
-                      Dasboard
+                      Dashboard
                     </Link>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <Link className="nav-link" to="/accountsettingservices">
                       Services
                     </Link>
@@ -237,7 +237,7 @@ const TransactionHistory = () => {
                     >
                       Subscriptions
                     </Link>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
                     <Link className="nav-link" to="/viewprofile">
                       Account Setting
