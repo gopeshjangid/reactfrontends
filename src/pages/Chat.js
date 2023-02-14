@@ -330,17 +330,13 @@ const Chat = ({ orderId, orderName }) => {
           >
             SEND
           </button>
-          <div
-            className="fileDiv border-0 ms-2"
-            style={{ background: "#029a99" }}
-            id="upload-btn-chat"
-          >
+          <div className="fileDiv border-0 ms-2" id="upload-btn-chat">
             <input
               onChange={(e) => selectImage(e)}
               type="file"
               style={{ cursor: "pointer" }}
               name="file"
-              className="text-white"
+              className="choose-file"
             />
           </div>
         </div>

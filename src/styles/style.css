@@ -8,6 +8,18 @@
   text-align: center;
 }
 
+.choose-file::file-selector-button {
+  background: #029a99;
+  background-position-x: 0%;
+  background-size: 200%;
+  border-radius: 6px;
+  border: 0;
+  padding: 10px 10px;
+  cursor: pointer;
+  color: #fff;
+  text-shadow: 0 1px 1px #333;
+}
+
 /* ::-webkit-scrollbar {
     width: 15px;
   }
@@ -2830,14 +2842,10 @@ th {
   position: relative;
   overflow: hidden;
   margin-top: 16px;
-  padding: 7px 14px;
   cursor: pointer;
   border-radius: 5px;
 }
-.fileDiv:hover {
-  color: white;
-  background-color: #029a99;
-}
+
 .upload_attachmentfile {
   position: absolute;
   opacity: 0;
