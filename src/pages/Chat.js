@@ -189,6 +189,7 @@ const Chat = ({ orderId, orderName }) => {
 
     var data = JSON.stringify({
       chatId: chatId,
+
       content: selectedImage
         ? "https://res.cloudinary.com/practicaldev/image/fetch/s--sQ19Mqmd--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/928773/24ac3701-8eee-48c5-99fb-2efcf5f88bc9.png"
         : pdfselected
@@ -212,6 +213,7 @@ const Chat = ({ orderId, orderName }) => {
         : null,
     });
     console.log(pdfselected);
+    console.log("chatId", chatId);
 
     var config = {
       method: "post",

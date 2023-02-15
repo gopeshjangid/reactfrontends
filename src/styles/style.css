@@ -8,6 +8,15 @@
   text-align: center;
 }
 
+::selection {
+  /* text-shadow: 4px 0px 1px #049899; */
+  /* box-shadow: 0px 1px 16px #029786; */
+  background: #02989b;
+  color: #fff;
+  padding: 0px 10%;
+  border-radius: 20px;
+}
+
 .choose-file::file-selector-button {
   background: #029a99;
   background-position-x: 0%;
@@ -314,6 +323,7 @@
   text-align: center;
   padding-top: 5%;
 }
+
 .writing_sec-spa {
   color: black;
   text-align: center;
