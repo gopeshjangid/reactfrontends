@@ -441,6 +441,19 @@ const Dashboard = () => {
                                               <td>:</td>
                                               <td>{friend.pay_method}</td>
                                             </tr>
+
+                                            <tr>
+                                              <td>Amount</td>
+                                              <td>:</td>{" "}
+                                              <td>{friend.totalAmount}</td>
+                                            </tr>
+
+                                            <tr>
+                                              <td>Status</td>
+                                              <td>:</td>{" "}
+                                              <td>{friend.status}</td>
+                                            </tr>
+                                            <h4>Products:</h4>
                                             <tr>
                                               <td>Type</td>
                                               <td>:</td> <td>{friend.type}</td>
@@ -459,17 +472,6 @@ const Dashboard = () => {
                                               <td>Expert Level</td>
                                               <td>:</td>{" "}
                                               <td>{friend.expertLevel}</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Amount</td>
-                                              <td>:</td>{" "}
-                                              <td>{friend.totalAmount}</td>
-                                            </tr>
-
-                                            <tr>
-                                              <td>Status</td>
-                                              <td>:</td>{" "}
-                                              <td>{friend.status}</td>
                                             </tr>
                                           </tbody>
                                         </table>

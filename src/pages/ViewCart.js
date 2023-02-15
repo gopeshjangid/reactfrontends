@@ -73,7 +73,7 @@ const ViewCart = () => {
     }).then((t) => t.json());
     console.log(data);
     const options = {
-      key: "rzp_test_KiBn8QyRFCYQnw",
+      key: "rzp_live_F667nZMfR8GTvt",
       currency: data.order.currency,
       amount: data.amount.toString(),
       order_id: data.order.id,
