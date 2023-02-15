@@ -21,6 +21,7 @@ const Chat = ({ orderId, orderName }) => {
   const [selectedImage, setSelectedImage] = useState(false);
   const [pdfselected, setPdfselected] = useState(false);
   const [docsSelected, setDocsSelected] = useState(false);
+  const [load, setLoad] = useState(false);
 
   const socket = useRef();
 
@@ -179,6 +180,7 @@ const Chat = ({ orderId, orderName }) => {
   }, [chatId, selectedChat]);
 
   const messageSendHandler = () => {
+    setLoad(true);
     const token = localStorage.getItem("token");
 
     // if (!file) {
@@ -238,6 +240,7 @@ const Chat = ({ orderId, orderName }) => {
         setPdfselected(false);
         setMessageText("");
         document.getElementById("fileInput").value = "";
+        setLoad(false);
       })
 
       .catch(function (error) {
@@ -327,12 +330,16 @@ const Chat = ({ orderId, orderName }) => {
           onChange={handleChange}
         ></textarea>
         <div className="d-flex">
-          <button
-            onClick={messageSendHandler}
-            className=" border-0 text-white chat_s_btn"
-          >
-            SEND
-          </button>
+          {load ? (
+            <button className=" border-0   text-white chat_s_btn">SEND</button>
+          ) : (
+            <button
+              onClick={messageSendHandler}
+              className=" border-0 text-white chat_s_btn"
+            >
+              SEND
+            </button>
+          )}
           <div className="fileDiv border-0 ms-2" id="upload-btn-chat">
             <input
               onChange={(e) => selectImage(e)}

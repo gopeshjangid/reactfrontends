@@ -9,12 +9,17 @@ const WalletPaymentSuccess = () => {
             <div className="col-md-5">
               <form className="fp_form m-0 w-100 h-100">
                 {/* <<onSubmit={handleSubmit} */}
-                <span className=" p-0 fs-1 fw-bold">Payment successfull</span>
+                <span className=" p-0 fs-1 fw-bold">
+                  Payment
+                  <br />
+                  Successfull
+                </span>
 
                 {/* <p className="fp-p p-0">
                   We'll Email You an Order Confirmation With Details and
                   tracking info
                 </p> */}
+                <br />
 
                 <Link className="" to="/dashboard">
                   <button type="submit" className="fp-btn px-5 m-0">
