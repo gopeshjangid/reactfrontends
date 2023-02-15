@@ -59,7 +59,7 @@ const PendingPaymentPaypalSuccess = () => {
               <span className=" p-0 fs-1 fw-bold">Payment Successfully</span>
               <p className="fp-p p-0">Your PayPal Payment Successfull</p>
 
-              <Link className="" to="/transactionhistory">
+              <Link className="" to="/dashboard">
                 <button type="submit" className="fp-btn px-5  m-0">
                   Go Back
                 </button>

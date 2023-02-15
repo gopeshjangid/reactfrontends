@@ -48,6 +48,7 @@ import OrderPaypalSuccess from "./pages/OrderPaypalSuccess";
 import PendingPaymentPaypalSuccess from "./pages/PendingPaymentPaypalSuccess";
 import PaypalGuestPaymentSuccess from "./pages/PaypalGuestPaymentSuccess";
 import WalletPaymentSuccess from "./pages/WalletPaymentSuccess";
+import OrderWithoutPayment from "./pages/OrderWithoutPayment";
 
 function App() {
   return (
@@ -124,6 +125,7 @@ function App() {
           element={<PaypalGuestPaymentSuccess />}
         />
         <Route path="walletpaymentsuccess" element={<WalletPaymentSuccess />} />
+        <Route path="orderwithoutpayment" element={<OrderWithoutPayment />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -223,7 +223,7 @@ const Message = ({
 
   if (user && type === "image") {
     return (
-      <div className={`messageBox ${classs}`}>
+      <div className={`messageBox  ${classs}`}>
         <p className="fw-bold mb-2">{`${user}`}</p>
         <img src={`${message}`} alt="chatimg" />{" "}
         <p className="float-end mb-0">{`${datetime}`}</p>

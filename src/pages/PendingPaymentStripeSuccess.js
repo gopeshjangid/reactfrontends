@@ -52,7 +52,7 @@ const PendingPaymentStripeSuccess = () => {
 
               <p className="fp-p p-0">Your Payment Successfully Add.</p>
 
-              <Link className="" to="/transactionhistory">
+              <Link className="" to="/dashboard">
                 <button type="submit" className="fp-btn px-5  m-0">
                   Go Back
                 </button>

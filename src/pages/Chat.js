@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 //import { user } from "./Join";
-
 import socketIO from "socket.io-client";
 import Message from "./Message";
 import ReactScrollToBoottome from "react-scroll-to-bottom";
@@ -236,7 +235,9 @@ const Chat = ({ orderId, orderName }) => {
         setSelectedImage(false);
         setPdfselected(false);
         setMessageText("");
+        document.getElementById("fileInput").value = "";
       })
+
       .catch(function (error) {
         console.log(error);
       });
@@ -337,6 +338,7 @@ const Chat = ({ orderId, orderName }) => {
               style={{ cursor: "pointer" }}
               name="file"
               className="choose-file"
+              id="fileInput"
             />
           </div>
         </div>
