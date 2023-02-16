@@ -43,7 +43,11 @@ class Sample extends Component {
   render() {
     const { User } = this.state;
     const RenderHTML = (props) => (
-      <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>
+      <p
+        dangerouslySetInnerHTML={{ __html: props.HTML }}
+        className="samp_box-h3 fs-6"
+        style={{ overflowX: "auto", height: "150px" }}
+      ></p>
     );
 
     if (User.length < 0) {

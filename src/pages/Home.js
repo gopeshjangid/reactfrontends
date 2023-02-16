@@ -6,7 +6,6 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import GetinTouch from "./GetinTouch";
 
-
 const Home = () => {
   return (
     <div>
@@ -14,7 +13,7 @@ const Home = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1 p-0">Add fire to your content!</h1>
+              <h1 className="top_Sec-h1 mt-2 p-0">Add fire to your content!</h1>
               <h2 className="top_Sec-h2">Product Description Writing</h2>
               <p className="top_Sec-p">
                 Get Quality Content For Your Business - Every Time: Hire a
@@ -222,7 +221,7 @@ const Home = () => {
             <div className="col-md-6">
               <h2 className="count_h2">Check us out and see for yourself:</h2>
               <div className="row">
-                <div className="col-sm-6 border-end border-bottom  border-2">
+                <div className="col-sm-6 counter border-end border-bottom  border-2">
                   <div className="counter1 border-0">
                     <h2 className="second_row-h2">
                       <span
@@ -237,7 +236,7 @@ const Home = () => {
                     <h3 className="count_h3">Content Pieces Delivered</h3>
                   </div>
                 </div>
-                <div className="col-sm-6 border-bottom border-2">
+                <div className="col-sm-6 counter border-bottom border-2">
                   <div className="counter_1a border-0">
                     <h2 className="second_row-h2">
                       <span
@@ -254,7 +253,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-sm-6 border-end border-2 ">
+                <div className="col-sm-6 counter  border-end border-2 ">
                   <div className="counter1b border-0">
                     <h2 className="second_row-h2">
                       <span
@@ -270,7 +269,7 @@ const Home = () => {
                   </div>
                 </div>
 
-                <div className="col-sm-6 ">
+                <div className="col-sm-6 counter ">
                   <div className="counter_1c border-0">
                     <h2 className="second_row-h2">
                       <span

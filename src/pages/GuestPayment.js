@@ -211,7 +211,7 @@ const GuestPayment = () => {
     <section className="fp_sec">
       <div className="container">
         <div className="row  align-items-center bg-white">
-          <div className="col-md-6">
+          <div className="col-md-6 text-center">
             <img
               src="writer/img/Payment-Information-cuate.png"
               className="fp-img"
@@ -220,7 +220,7 @@ const GuestPayment = () => {
 
           <div className="col-md-6 p-4">
             <form className="" onSubmit={handleSubmit}>
-              <div className="me-3">
+              <div>
                 <label className="as-lbl">Enter Your Email</label>
                 <input
                   type="email"
@@ -232,7 +232,7 @@ const GuestPayment = () => {
                 />
                 <p style={{ color: "red" }}>{formErrors.email}</p>
               </div>
-              <div className="me-3">
+              <div>
                 <label className="as-lbl">Enter Your Amount</label>
                 <input
                   type="number"
@@ -244,7 +244,7 @@ const GuestPayment = () => {
                 />
                 <p style={{ color: "red" }}>{formErrors.amount}</p>
               </div>
-              <div className="me-3">
+              <div>
                 <label className="as-lbl">Enter Your Description</label>
                 <textarea
                   className="form-control m-0 w-100 bg-white   mt-2 mb-3 form-area ct_text-set1"

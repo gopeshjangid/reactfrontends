@@ -100,8 +100,8 @@ const Contact = () => {
 
   return (
     <div>
-      <section className="ab_sec">
-        <h2 className="ab_sec-h2">We would love to hear from you!</h2>
+      <section className="ab_sec d-flex justify-content-center align-items-center">
+        <h2 className="ab_sec-h2 p-0">We would love to hear from you!</h2>
       </section>
 
       <section className="ct_sec">
@@ -172,7 +172,7 @@ const Contact = () => {
             </span>
             {/* <pre>{JSON.stringify(User, undefined, 2)}</pre> */}
             <form method="POST" onSubmit={handleSubmit}>
-              <div className="d-flex space-between">
+              <div className="contact_name d-flex space-between">
                 <div className="Name">
                   <input
                     type="text"

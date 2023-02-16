@@ -1089,7 +1089,7 @@
   background: white;
   padding-bottom: 15px;
   border: 1px solid #00000042;
-  margin: 5% 4% 5% 0px;
+  margin: 5% 0% 5% 0px;
 }
 .term_sec-h2 {
   font-family: "Jost", sans-serif;
@@ -1284,7 +1284,7 @@
   border: 1px solid #00000030;
   padding: 10px;
   border-radius: 10px;
-  height: 470px;
+
   margin-top: 20px;
 }
 .pab_box-img {
@@ -2418,6 +2418,28 @@ th {
   border-radius: 0 !important;
 }
 
+@media (max-width: 1199px) {
+  .container {
+    max-width: 95%;
+  }
+  .coupon-wrap .coupon {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1122px) {
+  .block1 .block_search {
+    width: 100%;
+  }
+  .block1 .block_btn {
+    margin-top: 5%;
+    margin-left: 0;
+  }
+  .block1 {
+    text-align: center;
+  }
+}
+
 @media (max-width: 1024px) {
   .container {
     max-width: 95% !important;
@@ -2429,6 +2451,10 @@ th {
 
 @media (max-width: 991px) {
   .as-img {
+    width: 35% !important;
+  }
+
+  .logo {
     width: 35% !important;
   }
   .navbar-expand-sm .navbar-toggler {
@@ -2521,6 +2547,26 @@ th {
   .as-img {
     width: 45% !important;
   }
+  .logo {
+    width: 40% !important;
+  }
+
+  .top_sec {
+    text-align: center;
+  }
+
+  .place_sec {
+    text-align: center;
+  }
+
+  .place_sec .place_sec-h1 {
+    margin-top: 2%;
+  }
+
+  .row .cwp_h2 {
+    margin: auto;
+    text-align: center;
+  }
   .border-sec {
     height: inherit;
   }
@@ -2562,6 +2608,16 @@ th {
   .login-form {
     width: 80%;
   }
+  .block1 {
+    text-align: left;
+  }
+
+  .block1 .block_search {
+    width: 56%;
+  }
+  .block1 .block_btn {
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 425px) {
@@ -2571,11 +2627,20 @@ th {
   .login-form {
     width: 100%;
   }
+  .contact_name {
+    display: block !important;
+  }
+  .contact_name .Name {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 650px) {
   .as-img {
     width: 60% !important;
+  }
+  .logo {
+    width: 45% !important;
   }
   .overlep_sec1 {
     flex-wrap: wrap;
@@ -2602,6 +2667,12 @@ th {
   .overlep_sec4 {
     flex-wrap: wrap;
     width: 45%;
+  }
+}
+@media (max-width: 575px) {
+  .counter {
+    border: 0 !important;
+    border-bottom: 2px solid #029a99 !important;
   }
 }
 
@@ -2631,9 +2702,15 @@ th {
     display: block;
     text-align: center;
   }
+  .logo {
+    width: 50% !important;
+  }
 }
 
 @media only screen and (max-width: 400px) {
+  .logo {
+    width: 60% !important;
+  }
   .counter1 {
     padding: 40px 0px 40px 0px;
     text-align: center;
@@ -2814,6 +2891,16 @@ th {
   .fp_form {
     margin-left: 0%;
     width: 100%;
+  }
+  .showItem {
+    display: block;
+  }
+  .showItem .col {
+    text-align: center !important;
+  }
+  .showItem .col a {
+    margin-top: 5%;
+    display: inline-block;
   }
 }
 

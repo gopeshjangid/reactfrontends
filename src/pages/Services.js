@@ -415,7 +415,10 @@ class Services extends Component {
                             {friend.shortTitle}
                           </h4>
 
-                          <ol className="p-0">
+                          <ol
+                            className="p-0"
+                            style={{ overflowX: "auto", height: "150px" }}
+                          >
                             <li className="ol_li d-flex justify-content-center">
                               <span className="ol_li-spa1 me-2">
                                 <i
@@ -538,7 +541,7 @@ class Services extends Component {
               >
                 <div className="container">
                   <div className="row align-items-center">
-                    <div className="col-md-8">
+                    <div className="col">
                       <h5 className="fw-normal">
                         Total-Price =<span>&nbsp;</span>{" "}
                         {this.state.cartItems.totalPrice}
@@ -549,7 +552,7 @@ class Services extends Component {
                       </h5>
                     </div>
 
-                    <div className="col-md-4 text-end">
+                    <div className="col text-end">
                       <Link
                         style={{ color: "white", fontSize: "20px" }}
                         className="viewCart text-decoration-none"
@@ -567,7 +570,7 @@ class Services extends Component {
               <div
                 style={{
                   width: "100%",
-                  height: "100px",
+                  padding: "20px 0px",
                   bottom: "0",
                   left: "0",
                   display: "flex",
@@ -579,8 +582,8 @@ class Services extends Component {
                 }}
               >
                 <div className="container">
-                  <div className="row align-items-center">
-                    <div className="col-md-8">
+                  <div className="row showItem align-items-center">
+                    <div className="col">
                       <h5 className="fw-normal">
                         Total-Price =<span>&nbsp;</span> {this.state.totalPrice}
                       </h5>
@@ -589,7 +592,7 @@ class Services extends Component {
                       </h5>
                     </div>
 
-                    <div className="col-md-4 text-end">
+                    <div className="col text-end">
                       <Link
                         style={{ color: "white", fontSize: "20px" }}
                         className="viewCart text-decoration-none"

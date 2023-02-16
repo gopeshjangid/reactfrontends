@@ -4,11 +4,11 @@ class About extends React.Component {
   render() {
     return (
       <div>
-        <section className="ab_sec">
-          <h2 className="ab_sec-h2">About Us</h2>
+        <section className="ab_sec  d-flex justify-content-center align-items-center">
+          <h2 className="ab_sec-h2 p-0">About Us</h2>
         </section>
 
-        <section className="ab_sec2">
+        <section className="ab_sec2 ">
           <div className="container">
             <div className="row">
               <div className="col-md-6">

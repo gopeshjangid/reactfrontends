@@ -61,13 +61,17 @@ class Faq extends Component {
           <Loader />
         ) : (
           <>
-            <section className="faq_sec">
-              <h2 className="faq_sec-h2">Frequently Asked Questions</h2>
-              <p className="faq_sec-p">
-                Sometimes all you need is a fast answer to a question. We
-                understand. Answers to our most frequently asked questions may
-                be found here.
-              </p>
+            <section className="faq_sec d-flex justify-content-center align-items-center">
+              <div className="container">
+                <h2 className="faq_sec-h2 p-0">
+                  Frequently Asked Questions{" "}
+                  <p className="faq_sec-p fs-6 fw-normal">
+                    Sometimes all you need is a fast answer to a question. We
+                    understand. Answers to our most frequently asked questions
+                    may be found here.
+                  </p>
+                </h2>
+              </div>
             </section>
 
             <section className="faq_section1">

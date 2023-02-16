@@ -132,82 +132,85 @@ class Blog extends Component {
                 </div>
 
                 <div className="col-md-3 term_sec-3">
-                  <div className="block1">
-                    <form>
-                      <p className="block_p">Search</p>
-                      <input
-                        type="text"
-                        name="search"
-                        value={this.state.searchText}
-                        onChange={(e) =>
-                          this.setState({
-                            ...this.state,
-                            searchText: e.target.value,
-                          })
-                        }
-                        className="block_search"
-                      />
-                      <button
-                        type="button"
-                        onClick={() =>
-                          this.setState({ ...this.state, startSearch: true })
-                        }
-                        className="block_btn"
-                      >
-                        search
-                      </button>
-                    </form>
-                  </div>
+                  <div className="container p-0">
+                    <div className="block1">
+                      <form>
+                        <p className="block_p">Search</p>
+                        <input
+                          type="text"
+                          name="search"
+                          value={this.state.searchText}
+                          onChange={(e) =>
+                            this.setState({
+                              ...this.state,
+                              searchText: e.target.value,
+                            })
+                          }
+                          className="block_search"
+                        />
+                        <button
+                          type="button"
+                          onClick={() =>
+                            this.setState({ ...this.state, startSearch: true })
+                          }
+                          className="block_btn"
+                        >
+                          search
+                        </button>
+                      </form>
+                    </div>
 
-                  <div className="block1">
-                    <h3 className="block-h3">Recent Posts</h3>
-                    <p className="block-p2">
-                      <Link to="" className="block_a">
-                        Online Reputation Management
-                      </Link>
-                    </p>
-                    <p className="block-p2">
-                      <Link to="" className="block_a">
-                        Marketing research case analysis of Google search engine
-                      </Link>
-                    </p>
-                    <p className="block-p2">
-                      <Link to="" className="block_a">
-                        A 5-Step Guide to Protecting Your Health and Well-Being
-                        While Working from Home
-                      </Link>
-                    </p>
+                    <div className="block1">
+                      <h3 className="block-h3">Recent Posts</h3>
+                      <p className="block-p2">
+                        <Link to="" className="block_a">
+                          Online Reputation Management
+                        </Link>
+                      </p>
+                      <p className="block-p2">
+                        <Link to="" className="block_a">
+                          Marketing research case analysis of Google search
+                          engine
+                        </Link>
+                      </p>
+                      <p className="block-p2">
+                        <Link to="" className="block_a">
+                          A 5-Step Guide to Protecting Your Health and
+                          Well-Being While Working from Home
+                        </Link>
+                      </p>
 
-                    <p className="block-p2">
-                      <Link to="" className="block_a">
-                        The Art of Content Writing
-                      </Link>
-                    </p>
-                    <p className="block-p2">
-                      <Link to="" className="block_a">
-                        Tips to write better content that gets you up in the
-                        night.
-                      </Link>
-                    </p>
-                  </div>
+                      <p className="block-p2">
+                        <Link to="" className="block_a">
+                          The Art of Content Writing
+                        </Link>
+                      </p>
+                      <p className="block-p2">
+                        <Link to="" className="block_a">
+                          Tips to write better content that gets you up in the
+                          night.
+                        </Link>
+                      </p>
+                    </div>
 
-                  <div className="block1">
-                    <h3 className="block-h3">Recent Comments</h3>
-                    <p className="block-p3">No comments to show.</p>
-                  </div>
+                    <div className="block1">
+                      <h3 className="block-h3">Recent Comments</h3>
+                      <p className="block-p3">No comments to show.</p>
+                    </div>
 
-                  <div className="block1">
-                    <h3 className="block-h3">Archives</h3>
-                    <p className="block-p3">February 2022</p>
-                    <p className="block-p3">January 2022</p>
-                    <p className="block-p3">December 2021</p>
-                  </div>
+                    <div className="block1">
+                      <h3 className="block-h3">Archives</h3>
+                      <p className="block-p3">February 2022</p>
+                      <p className="block-p3">January 2022</p>
+                      <p className="block-p3">December 2021</p>
+                    </div>
 
-                  <div className="block1">
-                    <h3 className="block-h3">Categories</h3>
-                    <p className="block-p3">Content Writing</p>
-                    <p className="block-p3">General</p>
-                    <p className="block-p3">Tips</p>
+                    <div className="block1">
+                      <h3 className="block-h3">Categories</h3>
+                      <p className="block-p3">Content Writing</p>
+                      <p className="block-p3">General</p>
+                      <p className="block-p3">Tips</p>
+                    </div>
                   </div>
                 </div>
               </div>

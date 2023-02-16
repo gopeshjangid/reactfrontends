@@ -67,7 +67,7 @@ const Review = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1 p-0">
+              <h1 className="top_Sec-h1 mt-3 p-0">
                 Stunning Review Writing Service!
               </h1>
               <h2 className="top_Sec-h2">Best Online Review Writing|</h2>

@@ -34,8 +34,8 @@ const Career = () => {
         <Loader />
       ) : (
         <>
-          <section className="ab_sec">
-            <h2 className="ab_sec-h3">
+          <section className="ab_sec  d-flex justify-content-center align-items-center">
+            <h2 className="ab_sec-h3 p-0">
               {" "}
               Get Pro Writer Is more than just a workplace. We're a family{" "}
             </h2>

@@ -555,7 +555,7 @@ const ViewCart = () => {
               <div className="Cart">
                 <div className="container">
                   <div className="out-cart">
-                    <div className="inner-cart">
+                    <div className="inner-cart table-responsive  ">
                       <table className="table bg-transparent table-borderless border-0 mb-3">
                         <tbody>
                           <tr className="border-0">
