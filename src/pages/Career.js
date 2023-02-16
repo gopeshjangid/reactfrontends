@@ -119,11 +119,12 @@ const Career = () => {
                 </span>
                 <div className="col-md-4">
                   <div className="pab_sec-box">
-                    <img
+                    <i class="fa-solid fa-house-chimney pab_box-img"></i>
+                    {/* <img
                       src="writer/img/home.png"
                       alt="home"
                       className="pab_box-img"
-                    />
+                    /> */}
                     <h2 className="pab_box-h2">WORK FROM ANYWHERE</h2>
                     <p className="pab_box-p">
                       Work from anywhere in the world on a variety of tasks. You
@@ -136,11 +137,13 @@ const Career = () => {
 
                 <div className="col-md-4">
                   <div className="pab_sec-box">
-                    <img
+                    <i class="fa-solid fa-dollar-sign pab_box-img"></i>
+
+                    {/* <img
                       src="writer/img/dollar-symbo.png"
                       alt="dollar"
                       className="pab_box-img"
-                    />
+                    /> */}
                     <h2 className="pab_box-h2">
                       ON TIME & HIGHER PAYMENTS RATES
                     </h2>
@@ -155,11 +158,12 @@ const Career = () => {
 
                 <div className="col-md-4">
                   <div className="pab_sec-box">
-                    <img
+                    <i class="fa-regular fa-heart pab_box-img"></i>
+                    {/* <img
                       src="writer/img/heart.png"
                       alt="heart"
                       className="pab_box-img"
-                    />
+                    /> */}
                     <h2 className="pab_box-h2">
                       WORK ON SUBJECTS OF YOUR CHOICE
                     </h2>
@@ -174,11 +178,12 @@ const Career = () => {
 
                 <div className="col-md-4">
                   <div className="pab_sec-box">
-                    <img
+                    <i class="fa-brands fa-leanpub pab_box-img"></i>
+                    {/* <img
                       src="writer/img/leanpub.png"
                       alt="leanpub"
                       className="pab_box-img"
-                    />
+                    /> */}
                     <h2 className="pab_box-h2">GET EXPERIENCE CERTIFICATE</h2>
                     <p className="pab_box-p">
                       Just join our platform and get the exposure you can have
@@ -192,11 +197,12 @@ const Career = () => {
 
                 <div className="col-md-4">
                   <div className="pab_sec-box">
-                    <img
+                    <i class="fa-solid fa-pen-to-square pab_box-img"></i>
+                    {/* <img
                       src="writer/img/edit.png"
                       alt="edit"
                       className="pab_box-img"
-                    />
+                    /> */}
                     <h2 className="pab_box-h2">
                       REGULAR HANDHOLDING AND CONSTANT LEARNING
                     </h2>
@@ -211,11 +217,12 @@ const Career = () => {
 
                 <div className="col-md-4">
                   <div className="pab_sec-box">
-                    <img
+                    <i class="fa-solid fa-universal-access pab_box-img"></i>
+                    {/* <img
                       src="writer/img/universal.png"
                       alt="universal"
                       className="pab_box-img"
-                    />
+                    /> */}
                     <h2 className="pab_box-h2">
                       OPPORTUNITY TO WORK ON INTERNATIONAL CASE STUDIES
                     </h2>

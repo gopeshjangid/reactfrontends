@@ -1292,11 +1292,14 @@ option:hover {
 }
 .pab_box-img {
   border: 3px solid #000000e3;
-  width: 80px;
-  padding: 18px;
+  padding: 10px;
   border-radius: 50%;
   margin-left: 10px;
+  font-size: 50px;
   margin-top: 8px;
+}
+.fa-dollar-sign {
+  padding: 10px 20px;
 }
 .pab_box-h2 {
   color: #029a99;
