@@ -2459,6 +2459,9 @@ th {
   .as-img {
     width: 35% !important;
   }
+  .main-loader {
+    width: 10%;
+  }
 
   .logo {
     width: 35% !important;
@@ -2553,6 +2556,9 @@ th {
   .as-img {
     width: 45% !important;
   }
+  .main-loader {
+    width: 13%;
+  }
   .logo {
     width: 40% !important;
   }
@@ -2627,6 +2633,10 @@ th {
 }
 
 @media (max-width: 425px) {
+  .main-loader {
+    width: 20% !important;
+    padding: 20% 0;
+  }
   .form-inputs {
     display: block !important;
   }
@@ -2691,6 +2701,9 @@ th {
 }
 
 @media (max-width: 601px) {
+  .main-loader {
+    width: 15%;
+  }
   .navbar-expand-sm .fgg {
     display: contents !important;
     flex-basis: auto;
