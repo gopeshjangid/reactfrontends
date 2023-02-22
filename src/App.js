@@ -17,7 +17,7 @@ import PlaceYourOrder from "./pages/PlaceYourOrder";
 import Prices from "./pages/Prices";
 import Privacy from "./pages/Privacy";
 import Register from "./pages/Register";
-import Review from "./pages/Review";
+import Reviews from "./pages/Reviews";
 import Sample from "./pages/Sample";
 import Services from "./pages/Services";
 import Terms from "./pages/Terms";
@@ -52,6 +52,7 @@ import OrderWithoutPayment from "./pages/OrderWithoutPayment";
 import GhostwritingServices from "./pages/GhostwritingServices";
 import BlogWritingServices from "./pages/BlogWritingServices";
 import FreelanceWritingServices from "./pages/FreelanceWritingServices";
+import ReviewWritingServices from "./pages/ReviewWritingServices";
 
 function App() {
   return (
@@ -72,7 +73,7 @@ function App() {
         <Route path="/prices" element={<Prices />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/review" element={<Review />} />
+        <Route path="/reviews" element={<Reviews />} />
         <Route path="/sample" element={<Sample />} />
         <Route path="/services" element={<Services />} />
         <Route path="/terms" element={<Terms />} />
@@ -143,6 +144,10 @@ function App() {
         <Route
           path="/freelance-writing-services"
           element={<FreelanceWritingServices />}
+        />
+        <Route
+          path="/review-writing-services"
+          element={<ReviewWritingServices />}
         />
       </Routes>
       <Footer />

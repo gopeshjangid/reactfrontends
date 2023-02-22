@@ -7,7 +7,7 @@ import "swiper/css/free-mode";
 import ReviewGetintouch from "./ReviewGetintouch";
 // import { Link } from "react-router-dom";
 
-const Review = () => {
+const ReviewWritingServices = () => {
   return (
     <div>
       <section className="top_sec p-0">
@@ -818,4 +818,4 @@ const Review = () => {
   );
 };
 
-export default Review;
+export default ReviewWritingServices;

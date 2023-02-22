@@ -2384,6 +2384,10 @@ th {
   border-left: 3px solid #02999b;
 }
 
+.previousLabel {
+  font-size: 31px;
+}
+
 .pagination {
   justify-content: center;
 }
@@ -2393,6 +2397,7 @@ th {
   border-radius: 5px;
   border: 1px solid #00a7a6;
   color: #00a7a6;
+  text-decoration: none;
 }
 
 .pagination__link {
@@ -2442,6 +2447,172 @@ th {
   margin-bottom: 0;
   justify-content: end;
   padding: 0%;
+}
+
+.elementor-section {
+  background-image: url(https://getprowriter.com/wp-content/uploads/2022/03/hero-pattern.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.elementor-divider {
+  text-align: center;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.elementor-divider-separator {
+  width: 22%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+}
+
+.elementor-icon {
+  text-align: center;
+}
+
+.elementor-divider-separator::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  background: #000;
+  width: 40%;
+  height: 1px;
+}
+.elementor-divider-separator::before {
+  content: "";
+  position: absolute;
+  display: block;
+  right: 0;
+  background: #000;
+  width: 40%;
+  height: 1px;
+}
+
+.elementor-divider-separator {
+  align-items: center;
+  justify-content: center;
+}
+
+.elementor-icon {
+  color: #029a99;
+  border-color: #029a99;
+}
+
+.review-show {
+  background: #fff;
+
+  border-radius: 5px;
+  padding: 30px;
+  margin: 0px 0px 0px 0px;
+  padding: 30px 30px 30px 30px;
+  background-color: #ffffff;
+  border-style: groove;
+  border-color: #58b5fe;
+  border-radius: 6px 6px 6px 6px;
+  box-shadow: 0px 10px 10px 0px rgb(0 0 0 / 50%);
+}
+
+.glsr-summary-rating {
+  display: flex;
+  align-items: center;
+}
+.glsr-bar {
+  display: table-row;
+  white-space: nowrap;
+}
+.glsr-bar > span {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.glsr-bar-label {
+  padding: 0.25rem 0.5rem 0.25rem 0;
+}
+.glsr-bar > span {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.glsr-bar-background {
+  position: relative;
+  width: 100%;
+}
+.glsr-bar-background:before {
+  background-color: currentColor;
+  content: "";
+  display: block;
+  height: 1rem;
+  margin-top: -0.5rem;
+  opacity: 0.1;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.glsr-bar-background-percent {
+  background-color: currentColor;
+  color: #faca15;
+  display: block;
+  height: 1rem;
+  position: relative;
+}
+
+.glsr-bar-percent {
+  padding-left: 0.5rem;
+  padding-right: 0;
+}
+
+.rating-form {
+  margin-top: 5%;
+}
+.rating-form .rating-inner-form {
+  margin: auto;
+  padding: 20px;
+  box-shadow: 1px 20px 20px 0px rgb(35 35 35 / 54%);
+  background-image: linear-gradient(180deg, #ffffffe6 0%, #4ffff15e 100%);
+  padding: 40px 40px 40px 40px;
+}
+.rating-inner-form h6 {
+  font-size: 14px;
+}
+
+.rating-stars .star_r {
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.feedback-tag {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.feedback-tag:after {
+  content: "";
+  position: absolute;
+  background: #00a7a6;
+  width: 11%;
+  height: 7px;
+  bottom: -18px;
+}
+.feedback-tag:before {
+  content: "";
+  position: absolute;
+  background: #00a7a6;
+  width: 11%;
+  height: 1px;
+  bottom: -10px;
+}
+
+.glsr-review {
+  background: #d4f6f1;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 @media (max-width: 1199px) {
