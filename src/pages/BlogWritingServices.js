@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
@@ -7,23 +6,21 @@ import "swiper/css/free-mode";
 import ReviewGetintouch from "./ReviewGetintouch";
 // import { Link } from "react-router-dom";
 
-const Review = () => {
+const BlogWritingServices = () => {
   return (
     <div>
       <section className="top_sec p-0">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1 mt-3 p-0">
-                Stunning Review Writing Service!
-              </h1>
-              <h2 className="top_Sec-h2">Best Online Review Writing|</h2>
+              <h1 className="top_Sec-h1 mt-3 p-0">Amazing Blog Services!</h1>
+              <h2 className="top_Sec-h2"> Affordable Blog Writing Services|</h2>
               <p className="top_Sec-p">
-                GetProWriter is a leading name that offers competitive online
-                review writing services to various companies. We are a team of
-                highly qualified professionals possessing many years of industry
-                experience. We understand what it takes to meet your
-                expectations.
+                GetProWriter is making blog writing services easily available
+                for clients. Our mission is to provide clients with high-quality
+                blog writing services at an affordable price. We believe in
+                making hiring writers for your blog affordable. That is why our
+                services are moderately priced.
               </p>
             </div>
 
@@ -40,57 +37,63 @@ const Review = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Need Industry Best Online Reviews Writers? GetProWriter Can Help!
+              Hire Someone To Write Blog Posts - Only From GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Let your business boom with our review writing service.
+              Fantastic blog writers for hire for your business.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Creative Reviews</h3>
+                <h3 className="box-h3">Highly Talented</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Tried Expertise</h3>
+                <h3 className="box-h3">Fantastic Skills</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Rich Keywords</h3>
+                <h3 className="box-h3">Tested Knowledge</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Striking Quality</h3>
+                <h3 className="box-h3">Keywords Rich</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Specialized Reviews</h3>
+                <h3 className="box-h3">Top Quality</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">ORM Friendly</h3>
+                <h3 className="box-h3">Industry Levels</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Molding Brand</h3>
+                <h3 className="box-h3">Blog Champions</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Captivating Reviews</h3>
+                <h3 className="box-h3">Empowering Brands</h3>
+              </div>
+            </div>
+
+            <div className="col-md-3">
+              <div className="wr-b">
+                <h3 className="box-h3">Original Blogs</h3>
               </div>
             </div>
 
@@ -102,19 +105,13 @@ const Review = () => {
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">True Genius</h3>
+                <h3 className="box-h3">Original Tone</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Writing Championed</h3>
-              </div>
-            </div>
-
-            <div className="col-md-3">
-              <div className="wr-b">
-                <h3 className="box-h3">Exhilarated Clients</h3>
+                <h3 className="box-h3">Happy Companies</h3>
               </div>
             </div>
           </div>
@@ -124,26 +121,128 @@ const Review = () => {
       <section className="rev_sec">
         <div className="container">
           <div className="row">
-            <h2 className="rev_sec-h2">
-              Online Review Service For All Kinds Of Businesses
-            </h2>
+            <h2 className="rev_sec-h2">Online Blog Writing Delivered Easily</h2>
 
             <p className="rev_sec-p">
-              GetProWriter caters to businesses across various industries. While
-              many companies specialize in some kind of writing services, we
-              have writers who can write for all industries. Our writers are
-              trained to understand the needs of your business and ensure that
-              their content is relevant and meets your specific requirements. We
-              know that hiring a review writer online is tough, so we’re here to
-              make it easier for you.
+              The internet is a vast place with millions of websites competing
+              for attention. As more people turn to the internet to find
+              information about their interests and concerns, businesses have
+              found that they need to have quality web content available in
+              order to compete with other businesses in their niche. And we make
+              effective blog writing happen!
             </p>
             <p className="rev_sec-p">
-              We believe that every business is designed for different clients.
-              Our experienced writers are able to write specific content for
-              each client. We understand that your business has needs that will
-              differ from others. That is why we bring our experience of working
-              with clients from all over the world for many years now.
+              GetProWriter is offering effective blog writing services to
+              clients. We believe that every business has something important to
+              say, but you shouldn’t have to be a writer to say it. Also, hiring
+              good writers for your blog takes time. That’s why we’re here – to
+              make sure your ideas are communicated in the most impactful way.
+              So, if need the best blog writing services, get in touch with us
+              immediately.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="counter_sec border-0  mt-5">
+        <div class="container">
+          <div class="row ">
+            <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
+              Top Bloggers For Hire On GetProWriter!
+            </h2>
+            <span className="writing_sec-spa">* * * * *</span>
+            <p className="writing_sec-p">
+              Best blog writing services for your business.
+            </p>
+
+            <div class="col-md-6">
+              <h2 class="count_h2">Check us out and see for yourself:</h2>
+              <div class="row">
+                <div class="col-sm-6 counter border-end border-bottom  border-2">
+                  <div class="counter1 border-0">
+                    <h2 class="second_row-h2">
+                      <span
+                        class="timer count-title count-number"
+                        data-to="35860"
+                        data-speed="2000"
+                      >
+                        35,860
+                      </span>
+                      <span style={{ paddingLeft: "5px" }}> </span>
+                    </h2>
+                    <h3 class="count_h3">Content Pieces Delivered</h3>
+                  </div>
+                </div>
+                <div class="col-sm-6 counter border-bottom border-2">
+                  <div class="counter_1a border-0">
+                    <h2 class="second_row-h2">
+                      <span
+                        class="timer count-title count-number"
+                        data-to="896588"
+                        data-speed="2000"
+                      >
+                        5,896,588
+                      </span>
+                      <span style={{ paddingLeft: "5px" }}> </span>
+                    </h2>
+                    <h3 class="count_h3">Words Written</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6 counter  border-end border-2 ">
+                  <div class="counter1b border-0">
+                    <h2 class="second_row-h2">
+                      <span
+                        class="timer count-title count-number"
+                        data-to="5000"
+                        data-speed="2000"
+                      >
+                        5,000
+                      </span>
+                      <span style={{ paddingLeft: "5px" }}> </span>
+                    </h2>
+                    <h3 class="count_h3">Professional Writers</h3>
+                  </div>
+                </div>
+                <div class="col-sm-6 counter ">
+                  <div class="counter_1c border-0">
+                    <h2 class="second_row-h2">
+                      <span
+                        class="timer count-title count-number"
+                        data-to="93.56"
+                        data-speed="2000"
+                      >
+                        93.56
+                      </span>
+                      <span style={{ paddingLeft: "5px" }}> </span>
+                    </h2>
+                    <h3 class="count_h3">Percent Client Retention</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h2 class="count_h2">Get An Expert Blogger For Hire</h2>
+              <p class="count-p">
+                Hiring writers for your blog is not easy. But With GetProWriter,
+                you can get an expert blogger for hire in no time. Many
+                businesses are looking for a way to get in front of their
+                audiences and share their message with the world. But not
+                everyone gets a good blogger for hire to do it. And for them,
+                GetProWriter is the answer!
+              </p>
+              <p class="count-p">
+                We help people like you get blog writing packages easily. We’ve
+                been helping people acquire the best blog writing services for
+                many years now and we’ve worked with clients from around the
+                world. GPW is the easiest way to get the professional help you
+                need to make effective blog writing a reality. We’ll provide you
+                with a writer who has experience writing content for websites.
+                You’ll be able to work with our writers directly through our
+                platform. So, hire someone to write blog posts today.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -151,40 +250,37 @@ const Review = () => {
       <section className="rws_sec">
         <div className="container">
           <div className="row">
-            <h2 className="writing_sec-h2 rws-h2">
-              Our Online Review Writing Services Ensure Business Expansion
+            <h2 className="writing_sec-h2 rws-h2 p-0">
+              Skilled Blog Post Writers For Hire On GPW
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Let our review writers take care of your business visibility
-              needs.
+              Buy blog writing services packages conveniently.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Online Review Content That Has No Match
+                Quality Driven Blog Post Writing Service
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our review content simply has no match. We believe that people
-                should be able to find what they need when they need it and that
-                the internet should be a place where anyone can get the
-                information they want. So, good online reviews matter. That’s
-                why we’ve worked hard to make review writer online hiring easy.
-                Our review content is designed to help people find out more
-                about your products and services they need and then decide which
-                ones will work best for them.
+                Our blog writing packages are all about quality and accuracy. We
+                know how hard it is to find a writer who can do your job well,
+                so we’ve made it our mission to bring you the best blog writing
+                services. This is what your company needs to grow by leaps and
+                bounds.
               </p>
               <p className="ab_sec2-p rws-p">
-                We strive to make sure all our reviews are clear, concise, and
-                easy to understand. And because we know that no two people are
-                alike, we make sure there’s something for everyone: whether
-                you’re looking for something fun or practical; whether you have
-                a small business or a big corporation.
+                Our effective blog writing professionals know their topics well.
+                They will not only write blog posts that are informative but
+                also ones that are fun to read. They’re also trained to write in
+                a way that is SEO-friendly so your readers get the information
+                they need and can find your site when they search for it. If
+                you’re looking for a blog post writing service, let us help!
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="writer/img/No-match-review.webp"
+                src="writer/img/Quality-blog-post.webp"
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -192,57 +288,57 @@ const Review = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="writer/img/Expertimental-review.webp"
+                src="writer/img/Effective-blog-writer.webp"
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Highly Experimental Review Ghostwriters
+                Effective Blog Writing Every Time
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our review writers are highly experimental. What this means is
-                that our writers go out of the way to create content that stands
-                out and at the same time, something that is relatable. We know
-                that writing a review is not an easy task. It requires a lot of
-                research, understanding, and creative thinking. That’s why we
-                have a team of creative and experienced writers who understand
-                what it takes to write an engaging review.
+                We believe in delivering effective services when it comes to
+                blog writing. We understand that you want to be sure your
+                audience will be engaged and they receive the information they
+                need from your blog, so we take a personal and professional
+                approach to every project. We work hard to make sure that hiring
+                writers for your blog becomes worthwhile with us.
               </p>
               <p className="ab_sec2-p rws-p">
-                We believe in quality over quantity so you can expect nothing
-                but the best from us. Our writers have years of experience in
-                writing reviews so they know exactly what it takes to attract
-                customers based on something as simple as a review.
+                We know that you have a lot on your plate, and we want to make
+                sure that our blog writing service makes your life easier by
+                providing high-quality, enriching content for your audience. If
+                you’re looking to hire someone to write blog posts and create
+                content that gets results, we’d love to talk with you about your
+                project!
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Online Review Writers Who Are Result Oriented
+                Qualified Blog Writers For Your Enterprise
               </h3>
               <p className="ab_sec2-p rws-p">
-                We have online review writers who focus on generating results.
-                So, no matter what your business is, we will be able to write
-                reviews for your business that are going to get noticed. We will
-                use our expertise in writing and SEO to ensure that you receive
-                the best possible review writing service.
+                All our blog writers are qualified and they have the knack for
+                it. They know how to write a blog post that will make you want
+                to read it. We know that this is an important part of successful
+                online blog writing and we want to provide you with the best
+                content possible by bloggers for hire.
               </p>
               <p className="ab_sec2-p rws-p">
-                {" "}
-                Our online review writers are specialized in generating reviews
-                that attract prospective customers. We make sure the content is
-                engaging and informative so that it gets picked up by search
-                engines like Google, Bing, and Yahoo. When you hire a review
-                writer online, you know that we indulge in top-notch review
-                writing. Call us to read review writing samples or for excellent
-                online review management.
+                We’ve chosen our blog post writers because of their vast
+                expertise and experience. They are not just good at writing, but
+                they’re also great at understanding what our customers want to
+                read about. That’s why we’re proud to say that every single one
+                of our blogs is written by a real person who knows their
+                industry well. Get in touch with us to know more about the blog
+                post writing service we offer.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="writer/img/Online-review.webp"
+                src="writer/img/Qualified-blog-writer.webp"
                 alt="Online-review"
                 className="rws-img"
               />
@@ -250,58 +346,57 @@ const Review = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="writer/img/Grow-your-business.webp"
+                src="writer/img/Boost-Traffic.webp"
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Grow Your Business With Our Online Review Writing Services
+                Blog Posts To Boost User Traffic
               </h3>
               <p className="ab_sec2-p rws-p">
-                You need online review services to grow your business. And that
-                happens every time you collaborate with us. When you partner
-                with us, we provide the content you need to achieve the success
-                you’ve always dreamed of. We know how hard it is to get people
-                to write reviews so we help you to hire experts and make sure
-                they write great reviews for you.
+                We know that you’re looking for blog post writers who can boost
+                your user traffic and we’ve got the best ones. Our writers are
+                experienced in creating blog posts that get people talking about
+                your brand. They are simply the masters of content. When they
+                write your content, customers will want to read more of what
+                you’ve published on your website.
               </p>
               <p className="ab_sec2-p rws-p">
-                We offer transparent online review management for all companies.
-                If you’re looking for an affordable way to get online reviews,
-                we’re here for you. We have been working in the online review
-                industry for years, which means we know what it takes to provide
-                an exceptional product. We understand how important reviews are
-                for growing your business and will make sure you get exactly
-                what you need from us every time.
+                When you get a blogger for hire from us, he/she will create blog
+                posts that are engaging and shareable. We’ll work with you to
+                make sure we understand your brand’s voice and tone, so the
+                writing sounds like it’s coming from someone at your company –
+                not just some random person on the internet. Many clients are
+                immensely happy with our offerings. If you want to hire someone
+                to write blog posts, then we would want to know what kind of
+                content you’d like us to create for you!
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <h3 className="ab_sec2-h3 rws-h3">
-                Real Reviews From Real Review Writers
-              </h3>
+              <h3 className="ab_sec2-h3 rws-h3">Blog Posts That Are Genuine</h3>
               <p className="ab_sec2-p rws-p">
-                When we say real reviews from real writers, we mean it. We know
-                that you want to be able to trust the reviews on your website,
-                and so do we. That’s why we work hard to make sure every review
-                is written by an expert – a person who has spent years
-                practicing the craft of review writing and gaining a deep
-                understanding of their industry. You can always check out our
-                review writing samples.
+                We are a team of bloggers for hire that focuses on creating blog
+                content that is genuine and reflects your brand message. Our
+                writing style is friendly, easy to read, and attractive. We use
+                simple language, short sentences, and analogies to make your
+                content easily understood by everyone who reads it.
               </p>
               <p className="ab_sec2-p rws-p">
-                We’ve got a team of talented writers who knows what it takes to
-                engage in effective online review management. This is why you
-                can be sure that any review you get from us will come from
-                someone who is aware of the nuances and knows how to make it
-                shine.
+                We can write about any topic you choose and we have many years
+                of experience in online blog writing as well as in drafting
+                websites, social media posts, and more. So when you have a
+                question about how your business can grow, or what the best
+                approach is for attracting new customers – we know exactly how
+                to get the answers. All you have to do is just send us your
+                requirements for blog writing packages and we will revert back.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="writer/img/Real-review-writer.webp"
+                src="writer/img/Genuine-post.webp"
                 alt="Real-review-writer"
                 className="rws-img"
               />
@@ -309,30 +404,30 @@ const Review = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="writer/img/Expertise.webp"
+                src="writer/img/Expertise-4.webp"
                 alt="Expertise"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise For Outstanding Online Reviews
+                Blogs With GetProWriter Expertise
               </h3>
               <p className="ab_sec2-p rws-p">
-                For outstanding online reviews, you definitely need GetProWriter
-                expertise. GetProWriter provides a comprehensive and affordable
-                writing service that will help you gain the reviews you need to
-                succeed. We will engage in online review writing in a way that
-                brings in customers and keeps them coming back for more.
+                GetProWriter expertise simply elevates the level of your blog
+                posts. We have a team of professional writers who can write your
+                blog posts for you with ease. Our writers are experienced in the
+                content writing industry and they are ready to deliver blog
+                writing services packages at a fast pace.
               </p>
               <p className="ab_sec2-p rws-p">
-                GetProWriter knows that when you’re looking to get online
-                reviews, the last thing you want to do is waste time and money
-                on something that isn’t going to work. That’s why we’ve set up a
-                one-stop-shop for all your online review writing needs. We will
-                work willingly on the feedback and make sure your business
-                becomes customers’ first pick. GetProWriter is known to create
-                content that has impacted enterprises and audiences alike.
+                Whether it is an informative article or a conversational piece,
+                we can do it all. Our blog post writers understand what makes
+                content attractive and keep in mind all the important elements
+                while writing a blog post. Our services come at affordable
+                prices and have proven to be very effective in improving your
+                brand awareness. So, for all your blog services needs – GPW is
+                here to help!
               </p>
             </div>
           </div>
@@ -342,7 +437,7 @@ const Review = () => {
       <section className="ltw_sec">
         <div className="container">
           <div className="row">
-            <h2 className="get_sec-h2">Get started today at in a few clicks</h2>
+            <h2 className="get_sec-h2">Get Started Today At In A Few Clicks</h2>
             <p className="get_sec-p">
               Follow these super simple steps and get started with our services.
             </p>
@@ -402,7 +497,7 @@ const Review = () => {
       <section className="img_testimonial">
         <div className="container">
           <div className="row">
-            <h2 className="writing_sec-h2">Some of our esteemed key Clients</h2>
+            <h2 className="writing_sec-h2">SOME OF OUR ESTEEMED KEY CLIENTS</h2>
             <span className="writing_sec-spa">* * * * *</span>
 
             <Swiper
@@ -543,9 +638,9 @@ const Review = () => {
       <section className="hire_Sec">
         <div className="container">
           <div className="row">
-            <h2 className="get_sec-h2">Why Hire Our Online Review Writers?</h2>
+            <h2 className="get_sec-h2">Why Hire Our Blog Writers?</h2>
             <p className="get_sec-p">
-              Make sure your enterprise has a better industry presence.
+              To let your business grow significantly.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -557,7 +652,21 @@ const Review = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">Domain experts</span>
+                    <span className="spa_h2">Expert bloggers for hire</span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="box-ol">
+                <ol className="m-0 d-flex align-items-center p-0">
+                  <li className="in_li">
+                    <span className="right_span">
+                      <i aria-hidden="true" className="fas fa-check-circle"></i>
+                    </span>
+                  </li>
+                  <li className="in_li">
+                    <span className="spa_h2">Mastered blog writing</span>
                   </li>
                 </ol>
               </div>
@@ -572,23 +681,7 @@ const Review = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Client requirements are of utmost importance
-                    </span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="box-ol">
-                <ol className="m-0 d-flex align-items-center p-0">
-                  <li className="in_li">
-                    <span className="right_span">
-                      <i aria-hidden="true" className="fas fa-check-circle"></i>
-                    </span>
-                  </li>
-                  <li className="in_li">
-                    <span className="spa_h2">
-                      Punctual and dedicated writers
+                      Affordable blog writing services on time
                     </span>
                   </li>
                 </ol>
@@ -596,22 +689,19 @@ const Review = () => {
             </div>
 
             <p className="review1-p">
-              Our review writers are sure of helping your enterprise achieve a
-              better industry presence. We know the power of review writing and
-              how reviews can help you reach new heights in your business. We
-              understand the need to have great online review management. So, we
-              help you skip the hassle of the time-consuming and costly process
-              by offering effective and affordable services. Our services are
-              designed to help you keep up with the pace of change in today’s
-              world.
+              Our blog writers are full of ideas. Ideas about how to grow your
+              business to the next level and make it more successful than ever.
+              We know that, in order for your business to be successful, you
+              need to have a plan. You need something concrete: a way to
+              increase sales and make your company stand out from the crowd.
+              That’s where GPW comes in.
             </p>
 
             <p className="review1-p">
-              We know that the people who are looking for reviews of your
-              products are knowledgeable customers and they have very specific
-              expectations. Our review writers are domain experts themselves, so
-              they can understand and prioritize your requirements. They are
-              dedicated to their projects and are punctual.
+              We have expert bloggers for hire in our team who have mastered
+              blog writing. They have helped many companies grow and prosper.
+              Also, our blog writing services packages come at affordable
+              prices.
             </p>
           </div>
         </div>
@@ -625,21 +715,20 @@ const Review = () => {
             <div className="col-md-6">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  We needed to get some reviews for our website and we didn't
-                  have time to do it ourselves. We were looking for a reliable
-                  company that could help us with this task. We thus got into
-                  GetProWriter for our online review writing needs. They did a
-                  superb job.
+                  We checked out samples of GPW writers for blogs. We liked it
+                  and hired a writer from them. We are highly satisfied with the
+                  results. The writer was very professional and did everything
+                  on time.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="writer/img/Carmen-Mendez-Istillarte.webp"
+                    src="writer/img/Daniel-Presley.webp"
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3"> Carmen Mendez Istillarte</h3>
+                  <h3 className="testi_box-h3">Daniel Presley</h3>
                   <p className="testi_box-p">
-                    Media Relations Coordinator, Swipro
+                    Web Development Manager, Togeting
                   </p>
                 </div>
               </div>
@@ -648,24 +737,28 @@ const Review = () => {
             <div className="col-md-6">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  I highly recommend GetProWriter for your online reviews. I am
-                  very happy with the service I received from GetProWriter.
-                  Their writers were extremely talented and they were incredibly
-                  professional from start to finish.
+                  The writer from GPW was fantastic. I was able to communicate
+                  with him easily online. The writer understood my requirements
+                  and gave excellent blogs within the assured time. I will
+                  definitely hire GPW writers again!
                 </p>
                 <div className="t_sels">
                   <img
-                    src="writer/img/Marcela-Vella.webp"
+                    src="writer/img/Lucy-Grace.webp"
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Marcela Vella</h3>
-                  <p className="testi_box-p">Executive Assistant, Financy</p>
+                  <h3 className="testi_box-h3">Lucy Grace</h3>
+                  <p className="testi_box-p">Executive Assistant, Infomedia</p>
                 </div>
               </div>
             </div>
             <h6 className="text-center">
-              <button type="button" className="btn btn-outline-dark btn">
+              <button
+                type="button"
+                className=" rounded-3 text-white p-3 bg-transparent"
+                style={{ border: "solid 3px #fff" }}
+              >
                 All Testimonials
               </button>
             </h6>
@@ -713,14 +806,15 @@ const Review = () => {
                       id="headingOne"
                     >
                       <button
-                        className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                        className="faq-plus fs-5 fw-normal align-items-baseline accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseOne"
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        + How does your content writing process work?
+                        <span className="me-2">+</span>How to hire blog writers
+                        from GetProWriter?
                       </button>
                     </h2>
 
@@ -732,11 +826,14 @@ const Review = () => {
                     >
                       <div className="accordion-body">
                         {" "}
-                        We will analyse your project requirements and
-                        specifications once you have completed the online order
-                        submission and payment procedure. This normally takes
-                        one to two days, depending on the complexity and
-                        requirements of your project.
+                        Hiring blog writers from GetProWriter is easy and
+                        hassle-free. You can get started with a quick process
+                        and send your requirements. Once you’ve filled in the
+                        information about your project, we’ll match you with the
+                        best writer for your needs. We have writers specializing
+                        in a wide range of topics, from fashion to technology to
+                        health and fitness, so whatever kind of content you
+                        need, we’ve got you covered!
                       </div>
                     </div>
                   </div>
@@ -747,14 +844,15 @@ const Review = () => {
                       id="headingTwo"
                     >
                       <button
-                        className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                        className="faq-plus fs-5 fw-normal  align-items-baseline  accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo"
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        + Can I own content copyright with my order?
+                        <span className="me-2">+</span>Which is the best
+                        platform for online blog writers for hire?
                       </button>
                     </h2>
 
@@ -766,12 +864,15 @@ const Review = () => {
                     >
                       <div className="accordion-body">
                         {" "}
-                        Yes, you have exclusive copyright as soon as We’ve
-                        turned in the document and you pay for it. After We’ve
-                        handed over the documents, it’s up to you to decide what
-                        to do with the information. You can re-distribute it,
-                        alter it, truncate it, or just remove it (although this
-                        would be heartbreaking and discouraging).
+                        GetProWriter is definitely one of the best platforms for
+                        online blog writers for hire. We have a great selection
+                        of professional writers and they are very professional.
+                        The system of hiring bloggers works very well and the
+                        customer support team is always ready to help you with
+                        any problem or question you might have. The website has
+                        a simple interface that makes it easy to navigate even
+                        if you are not familiar with the website. You can also
+                        find all the necessary information on the homepage.{" "}
                       </div>
                     </div>
                   </div>
@@ -783,15 +884,15 @@ const Review = () => {
                     id="headingThree"
                   >
                     <button
-                      className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                      className="faq-plus fs-5 fw-normal align-items-baseline accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseThree"
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      + Do you check contents on Copyscape or other related
-                      software?
+                      <span className="me-2">+</span>Should we go with
+                      freelancers for our blog writing?
                     </button>
                   </h2>
 
@@ -803,9 +904,13 @@ const Review = () => {
                   >
                     <div className="accordion-body">
                       {" "}
-                      We analyze articles for grammatical correctness using our
-                      Copyscape VIP account. All of the content we create is
-                      delivered by our editorial team.
+                      Yes. If you do not have the in-house resources, then you
+                      should go with freelancers for your blog writing. There
+                      are many benefits to hiring a freelance writer to create
+                      content for your blog. First and foremost, it can save you
+                      time and money. Second, a freelance blogger will be able
+                      to provide fresh content that you might not be able to
+                      produce yourself.
                     </div>
                   </div>
                 </div>
@@ -818,4 +923,4 @@ const Review = () => {
   );
 };
 
-export default Review;
+export default BlogWritingServices;

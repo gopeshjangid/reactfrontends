@@ -8,11 +8,11 @@ const Footer = () => {
         <nav className=" navbar-expand-sm f_menunavbar-dark">
           <div className="container">
             <div className="row align-items-center ">
-              <span className="col-lg-6 copyright" to="/">
+              <span className="col-lg-4 copyright" to="/">
                 Copyright © 2022 Get Pro Writer All Right Reserved
               </span>
-              <div className=" col-lg-6">
-                <ul className="navbar-nav">
+              <div className=" col-lg-8 copyright">
+                <ul className="footer-navbar-nav">
                   <li className="nav-item pad-footer">
                     <Link className="nav-link set1" to="/blog">
                       Blog

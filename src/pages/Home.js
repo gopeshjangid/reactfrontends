@@ -5,6 +5,7 @@ import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import GetinTouch from "./GetinTouch";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -92,6 +93,7 @@ const Home = () => {
               Prepare to ace your content writing by hiring our top-notch
               content writers.
             </p>
+
             <div className="col-md-3 text-center">
               <div className="box">
                 <i
@@ -686,7 +688,11 @@ const Home = () => {
               </div>
             </div>
             <h6 className="text-center">
-              <button type="button" className="btn btn-outline-dark btn">
+              <button
+                type="button"
+                className=" rounded-3 text-white p-3 bg-transparent"
+                style={{ border: "solid 3px #fff" }}
+              >
                 All Testimonials
               </button>
             </h6>

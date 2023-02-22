@@ -392,6 +392,7 @@ const PricesGetintouch = () => {
             placeholder="Deadline"
             onChange={handleChange}
             className="text_set ms-0 me-1 mt-0"
+            style={{ cursor: "pointer" }}
           />
           <p className="mb-0" style={{ color: "red" }}>
             {formErrors.deadline}

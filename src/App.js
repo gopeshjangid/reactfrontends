@@ -49,6 +49,9 @@ import PendingPaymentPaypalSuccess from "./pages/PendingPaymentPaypalSuccess";
 import PaypalGuestPaymentSuccess from "./pages/PaypalGuestPaymentSuccess";
 import WalletPaymentSuccess from "./pages/WalletPaymentSuccess";
 import OrderWithoutPayment from "./pages/OrderWithoutPayment";
+import GhostwritingServices from "./pages/GhostwritingServices";
+import BlogWritingServices from "./pages/BlogWritingServices";
+import FreelanceWritingServices from "./pages/FreelanceWritingServices";
 
 function App() {
   return (
@@ -104,28 +107,43 @@ function App() {
           element={<AccountSettingServices />}
         />
         <Route
-          path="accountsettingsubscriptions"
+          path="/accountsettingsubscriptions"
           element={<AccountSettingSubscriptions />}
         />
         <Route
-          path="accountsettingpaymentmethod"
+          path="/accountsettingpaymentmethod"
           element={<AccountSettingPaymentMethod />}
         />
         <Route
-          path="accountsettingbillinginfo"
+          path="/accountsettingbillinginfo"
           element={<AccountSettingBillingInfo />}
         />
-        <Route path="orderpaypalsuccess" element={<OrderPaypalSuccess />} />
+        <Route path="/orderpaypalsuccess" element={<OrderPaypalSuccess />} />
         <Route
-          path="pendingpaymentpaypalsuccess"
+          path="/pendingpaymentpaypalsuccess"
           element={<PendingPaymentPaypalSuccess />}
         />
         <Route
-          path="paypalguestpaymentsuccess"
+          path="/paypalguestpaymentsuccess"
           element={<PaypalGuestPaymentSuccess />}
         />
-        <Route path="walletpaymentsuccess" element={<WalletPaymentSuccess />} />
-        <Route path="orderwithoutpayment" element={<OrderWithoutPayment />} />
+        <Route
+          path="/walletpaymentsuccess"
+          element={<WalletPaymentSuccess />}
+        />
+        <Route path="/orderwithoutpayment" element={<OrderWithoutPayment />} />
+        <Route
+          path="/ghostwriting-services"
+          element={<GhostwritingServices />}
+        />
+        <Route
+          path="/blog-writing-services"
+          element={<BlogWritingServices />}
+        />
+        <Route
+          path="/freelance-writing-services"
+          element={<FreelanceWritingServices />}
+        />
       </Routes>
       <Footer />
     </BrowserRouter>

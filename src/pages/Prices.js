@@ -142,8 +142,11 @@ const Prices = () => {
                     onClick={onClick}
                     value=""
                     className="price-select"
+                    required
                   >
-                    <option value="">-Select Value-</option>
+                    <option disabled selected hidden>
+                      -Select Value-
+                    </option>
                     <option value=".03">Expert</option>
                   </select>
 
@@ -154,8 +157,11 @@ const Prices = () => {
                     onClick={onClick}
                     value=""
                     className="price-select"
+                    required
                   >
-                    <option value="">-Select Value-</option>
+                    <option disabled selected hidden>
+                      -Select Value-
+                    </option>
                     <option value=".06">Premium</option>
                   </select>
 
@@ -166,8 +172,11 @@ const Prices = () => {
                     onClick={onClick}
                     value=""
                     className="price-select"
+                    required
                   >
-                    <option value="">-Select Value-</option>
+                    <option disabled selected hidden>
+                      -Select Value-
+                    </option>
                     <option value=".08">Enterprise</option>
                   </select>
 

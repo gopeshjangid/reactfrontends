@@ -528,7 +528,7 @@ class Services extends Component {
               <div
                 style={{
                   width: "100%",
-                  height: "100px",
+                  padding: "20px 0px",
                   bottom: "0",
                   left: "0",
                   display: "flex",
@@ -540,7 +540,7 @@ class Services extends Component {
                 }}
               >
                 <div className="container">
-                  <div className="row align-items-center">
+                  <div className="row showItem align-items-center">
                     <div className="col">
                       <h5 className="fw-normal">
                         Total-Price =<span>&nbsp;</span>{" "}
