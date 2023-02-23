@@ -92,14 +92,14 @@ class Faq extends Component {
                               id={friend._id}
                             >
                               <button
-                                className="faq-plus size fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                                className="faq-plus size fw-normal  align-items-baseline accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
                                 type="button"
                                 data-bs-toggle="collapse"
                                 data-bs-target={"#" + "s" + friend._id}
                                 aria-expanded="false"
                                 aria-controls={"s" + friend._id}
                               >
-                                + {friend.title}
+                                {friend.title}
                               </button>
                             </h2>
 

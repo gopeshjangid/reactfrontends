@@ -825,8 +825,7 @@ const FreelanceWritingServices = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        <span className="me-2">+</span>How can we check your
-                        writers’ samples?
+                        How can we check your writers’ samples?
                       </button>
                     </h2>
 
@@ -862,8 +861,8 @@ const FreelanceWritingServices = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        <span className="me-2">+</span>Do you have a procedure
-                        for acquiring freelance writing services?
+                        Do you have a procedure for acquiring freelance writing
+                        services?
                       </button>
                     </h2>
 
@@ -902,8 +901,8 @@ const FreelanceWritingServices = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      <span className="me-2">+</span>I need a freelance writer
-                      to edit my book. Can your team help?
+                      I need a freelance writer to edit my book. Can your team
+                      help?
                     </button>
                   </h2>
 

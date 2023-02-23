@@ -2615,6 +2615,42 @@ th {
   border-radius: 10px;
 }
 
+.accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  content: "";
+  background-image: inherit;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform 2s ease-in-out;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: inherit;
+  /* content: ""; */
+  transform: rotate(0deg);
+}
+
+.accordion-button::before {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0;
+  content: "\2b";
+  background-image: inherit;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform 2s ease-in-out;
+}
+
+.accordion-button:not(.collapsed)::before {
+  background-image: inherit;
+  /* content: ""; */
+  transform: rotate(0deg);
+}
+
 @media (max-width: 1199px) {
   .container {
     max-width: 95%;

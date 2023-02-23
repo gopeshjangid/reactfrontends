@@ -739,14 +739,14 @@ const Home = () => {
                       id="headingOne"
                     >
                       <button
-                        className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                        className="faq-plus fs-5 fw-normal align-items-baseline accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseOne"
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        + How does your content writing process work?
+                        How does your content writing process work?
                       </button>
                     </h2>
 
@@ -773,14 +773,14 @@ const Home = () => {
                       id="headingTwo"
                     >
                       <button
-                        className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                        className="faq-plus fs-5 fw-normal align-items-baseline accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo"
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        + Can I own content copyright with my order?
+                        Can I own content copyright with my order?
                       </button>
                     </h2>
 
@@ -809,14 +809,14 @@ const Home = () => {
                     id="headingThree"
                   >
                     <button
-                      className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                      className="faq-plus fs-5 fw-normal align-items-baseline accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseThree"
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      + Do you check contents on Copyscape or other related
+                      Do you check contents on Copyscape or other related
                       software?
                     </button>
                   </h2>

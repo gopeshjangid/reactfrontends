@@ -713,14 +713,14 @@ const ReviewWritingServices = () => {
                       id="headingOne"
                     >
                       <button
-                        className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                        className="faq-plus fs-5 fw-normal  bg-transparent text-white accordion-button shadow-none collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseOne"
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        + How does your content writing process work?
+                        Can we get good review writers from GetProWriter?
                       </button>
                     </h2>
 
@@ -732,11 +732,12 @@ const ReviewWritingServices = () => {
                     >
                       <div className="accordion-body">
                         {" "}
-                        We will analyse your project requirements and
-                        specifications once you have completed the online order
-                        submission and payment procedure. This normally takes
-                        one to two days, depending on the complexity and
-                        requirements of your project.
+                        Yes. GetProWriter has among the best review writers in
+                        the industry. We hire only the most talented people and
+                        we have a rigorous hiring process to ensure that we only
+                        hire people with the highest levels of skill and talent.
+                        Our writers attend excellent training programs so that
+                        they are always improving themselves and their work.
                       </div>
                     </div>
                   </div>
@@ -747,14 +748,15 @@ const ReviewWritingServices = () => {
                       id="headingTwo"
                     >
                       <button
-                        className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                        className="faq-plus fs-5 fw-normal align-items-baseline accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo"
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        + Can I own content copyright with my order?
+                        Which is the best platform to get the best online
+                        reviews for my business?
                       </button>
                     </h2>
 
@@ -766,12 +768,14 @@ const ReviewWritingServices = () => {
                     >
                       <div className="accordion-body">
                         {" "}
-                        Yes, you have exclusive copyright as soon as We’ve
-                        turned in the document and you pay for it. After We’ve
-                        handed over the documents, it’s up to you to decide what
-                        to do with the information. You can re-distribute it,
-                        alter it, truncate it, or just remove it (although this
-                        would be heartbreaking and discouraging).
+                        We can confidently say that GetProWriter is in the
+                        league of best platforms to get online reviews for any
+                        business. We have a team of experts who are working hard
+                        to make sure that our clients get the best quality
+                        content at competitive prices. Our writers are motivated
+                        by the passion for writing and helping people out. They
+                        have an excellent command of the English language and
+                        can write on any subject matter with ease.
                       </div>
                     </div>
                   </div>
@@ -783,15 +787,14 @@ const ReviewWritingServices = () => {
                     id="headingThree"
                   >
                     <button
-                      className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                      className="faq-plus fs-5 fw-normal align-items-baseline accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseThree"
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      + Do you check contents on Copyscape or other related
-                      software?
+                      Do you have writers from America?
                     </button>
                   </h2>
 
@@ -803,9 +806,12 @@ const ReviewWritingServices = () => {
                   >
                     <div className="accordion-body">
                       {" "}
-                      We analyze articles for grammatical correctness using our
-                      Copyscape VIP account. All of the content we create is
-                      delivered by our editorial team.
+                      Yes, we have writers from America. In fact, the writers in
+                      our company are hired from across the globe. We’re very
+                      proud of our international team and their ability to come
+                      together to create such a diverse and exciting portfolio
+                      of work. This is what makes GetProWriter stand out among
+                      its competitors in the domain.
                     </div>
                   </div>
                 </div>

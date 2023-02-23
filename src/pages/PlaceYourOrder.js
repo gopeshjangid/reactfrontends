@@ -149,14 +149,14 @@ const PlaceYourOrder = () => {
                       id="headingOne"
                     >
                       <button
-                        className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                        className="faq-plus fs-5 fw-normal align-items-baseline accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseOne"
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        + Why use a Content Writing Agency?
+                        Why use a Content Writing Agency?
                       </button>
                     </h2>
 
@@ -186,14 +186,14 @@ const PlaceYourOrder = () => {
                       id="headingTwo"
                     >
                       <button
-                        className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                        className="faq-plus fs-5 fw-normal align-items-baseline accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo"
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        + Why should I hire a content writer?
+                        Why should I hire a content writer?
                       </button>
                     </h2>
 
@@ -221,14 +221,14 @@ const PlaceYourOrder = () => {
                     id="headingThree"
                   >
                     <button
-                      className="faq-plus fs-5 fw-normal accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
+                      className="faq-plus fs-5 fw-normal  align-items-baseline accordion-button bg-transparent text-white accordion-button shadow-none collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseThree"
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      + Do I own the Content written by you?
+                      Do I own the Content written by you?
                     </button>
                   </h2>
 

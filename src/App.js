@@ -134,7 +134,7 @@ function App() {
         />
         <Route path="/orderwithoutpayment" element={<OrderWithoutPayment />} />
         <Route
-          path="/ghostwriting-services"
+          path="/ghost-writing-services"
           element={<GhostwritingServices />}
         />
         <Route

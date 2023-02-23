@@ -716,9 +716,8 @@ const GhostwritingServices = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        <span className="me-2">+</span> I need a ghostwriter.
-                        Why should we go for ghostwriting services of
-                        GetProWriter?
+                        I need a ghostwriter. Why should we go for ghostwriting
+                        services of GetProWriter?
                       </button>
                     </h2>
 
@@ -754,8 +753,7 @@ const GhostwritingServices = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        <span className="me-2">+</span> Are online ghostwriting
-                        services reliable?
+                        Are online ghostwriting services reliable?
                       </button>
                     </h2>
 
@@ -796,8 +794,8 @@ const GhostwritingServices = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      <span className="me-2">+</span>How can I hire ghostwriters
-                      near me to help with articles and social media posts?
+                      How can I hire ghostwriters near me to help with articles
+                      and social media posts?
                     </button>
                   </h2>
 
