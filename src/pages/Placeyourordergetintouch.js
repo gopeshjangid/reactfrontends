@@ -259,26 +259,26 @@ const GetinTouch = () => {
         Get In <span className="spa">Touch </span>
       </h2>
       <div className="form-inputs d-flex space-between">
-        <div className="Home-Name">
+        <div className="Home-Name pe-1">
           <input
             type="text"
             name="username"
             placeholder="Name"
             onChange={handleChange}
-            className="text_set ms-0 me-1 mt-0"
+            className="text_set ms-0 mt-0"
           />
           <p className="mb-0" style={{ color: "red" }}>
             {formErrors.username}
           </p>
         </div>
 
-        <div className="Home-Name">
+        <div className="Home-Name  ps-1">
           <input
             type="email"
             name="email"
             placeholder="Email"
             onChange={handleChange}
-            className="text_set ms-1 mt-0"
+            className="text_set ms-0 mt-0"
           />
           <p className="mb-0" style={{ color: "red" }}>
             {formErrors.email}
@@ -289,7 +289,7 @@ const GetinTouch = () => {
         <input
           type="password"
           name="password"
-          placeholder="password"
+          placeholder="Password"
           onChange={handleChange}
           className="text_set ms-0 mt-0"
         />
@@ -298,7 +298,7 @@ const GetinTouch = () => {
         {formErrors.password}
       </p>
       <div className="form-inputs d-flex space-between">
-        <div className="Home-Name">
+        <div className="Home-Name pe-1">
           <div className=" position-relative">
             <select
               className=" position-absolute h-100 border-0"
@@ -309,7 +309,6 @@ const GetinTouch = () => {
               }}
               name="countryCode"
               onChange={handleChange}
-              // name="name"
               required
             >
               <option disabled selected hidden>
@@ -318,7 +317,7 @@ const GetinTouch = () => {
               {country?.map((countryitem, value) => {
                 return (
                   <>
-                    <option value={value}>
+                    <option>
                       {countryitem.dial_code}
                       &nbsp;{countryitem.name}
                     </option>
@@ -331,12 +330,16 @@ const GetinTouch = () => {
               type="text"
               style={{ paddingLeft: "60px" }}
               name="number"
-              placeholder="number"
+              placeholder="Number"
               onChange={handleChange}
-              className="text_set ms-0 me-1 mt-0"
+              className="text_set ms-0 me-0 mt-0"
               aria-label="Username"
               aria-describedby="basic-addon1"
             />
+            {/* <i
+              class="fa-solid fa-globe"
+              style={{ top: "18px", position: "absolute", left: "18px" }}
+            ></i> */}
           </div>
 
           <p className="mb-0" style={{ color: "red" }}>
@@ -355,10 +358,10 @@ const GetinTouch = () => {
             {formErrors.number}
           </p>
         </div>
-        <div className="Home-Name">
+        <div className="Home-Name ps-1">
           <select
             aria-label="Default select example"
-            className="form-select rounded-0 text_set ms-1 mt-0"
+            className="form-select rounded-0 text_set ms-0 mt-0"
             onChange={handleChange}
             name="contentType"
             style={{
@@ -372,7 +375,7 @@ const GetinTouch = () => {
             {Alltype?.map((Alltypeitem, value) => {
               return (
                 <>
-                  <option value={value}>{Alltypeitem.contentType}</option>
+                  <option>{Alltypeitem.contentType}</option>
                 </>
               );
             })}
@@ -384,25 +387,26 @@ const GetinTouch = () => {
         </div>
       </div>
       <div className="form-inputs d-flex space-between">
-        <div className="Home-Name">
+        <div className="Home-Name pe-1">
           <input
             type="date"
             min={date.currentTime}
             name="deadline"
             placeholder="Deadline"
             onChange={handleChange}
-            className="text_set ms-0 me-1 mt-0"
+            className="text_set ms-0 me-0 mt-0"
             style={{ cursor: "pointer" }}
+            required
           />
           <p className="mb-0" style={{ color: "red" }}>
             {formErrors.deadline}
           </p>
         </div>
 
-        <div className="Home-Name">
+        <div className="Home-Name ps-1">
           <select
             aria-label="Default select example"
-            className="form-select rounded-0 text_set ms-1 mt-0"
+            className="form-select rounded-0 text_set ms-0 mt-0"
             onChange={handleChange}
             name="expertLevel"
             style={{
@@ -416,7 +420,7 @@ const GetinTouch = () => {
             {expertlevel?.map((expertlevelItem, value) => {
               return (
                 <>
-                  <option value={value}>{expertlevelItem.expertLevel}</option>
+                  <option>{expertlevelItem.expertLevel}</option>
                 </>
               );
             })}

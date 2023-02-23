@@ -230,26 +230,26 @@ const ReviewGetintouch = () => {
         Get In <span className="spa">Touch </span>
       </h2>
       <div className="form-inputs d-flex space-between">
-        <div className="Home-Name">
+        <div className="Home-Name me-1">
           <input
             type="text"
             name="username"
             placeholder="Name"
             onChange={handleChange}
-            className="text_set ms-0 me-1 mt-0"
+            className="text_set ms-0 me-0 mt-0"
           />
           <p className="mb-0" style={{ color: "red" }}>
             {formErrors.username}
           </p>
         </div>
 
-        <div className="Home-Name">
+        <div className="Home-Name ms-1">
           <input
             type="email"
             name="email"
             placeholder="Email"
             onChange={handleChange}
-            className="text_set ms-1 mt-0"
+            className="text_set ms-0 mt-0"
           />
           <p className="mb-0" style={{ color: "red" }}>
             {formErrors.email}
@@ -269,7 +269,7 @@ const ReviewGetintouch = () => {
         {formErrors.password}
       </p>
       <div className="form-inputs d-flex space-between">
-        <div className="Home-Name">
+        <div className="Home-Name me-1">
           <div className=" position-relative">
             <select
               className=" position-absolute h-100 border-0"
@@ -304,7 +304,7 @@ const ReviewGetintouch = () => {
               name="number"
               placeholder="Number"
               onChange={handleChange}
-              className="text_set ms-0 me-1 mt-0"
+              className="text_set ms-0 me-0 mt-0"
               aria-label="Username"
               aria-describedby="basic-addon1"
             />
@@ -326,10 +326,10 @@ const ReviewGetintouch = () => {
             {formErrors.number}
           </p>
         </div>
-        <div className="Home-Name">
+        <div className="Home-Name ms-1">
           <select
             aria-label="Default select example"
-            className="form-select rounded-0 text_set ms-1 mt-0"
+            className="form-select rounded-0 text_set ms-0 mt-0"
             onChange={handleChange}
             name="contentType"
             style={{
@@ -357,7 +357,7 @@ const ReviewGetintouch = () => {
       <div className="form-inputs d-flex space-between">
         <div className="Home-Name">
           <textarea
-            className="form-control rounded-0 form-area ms-0 text_set-area"
+            className="form-control rounded-0 form-area ms-0 mt-0 text_set"
             rows="5"
             id="message"
             placeholder="Message"
