@@ -5,6 +5,7 @@ import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import GetinTouch from "./GetinTouch";
+// import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -94,6 +95,10 @@ const Home = () => {
             </p>
 
             <div className="col-md-3 text-center">
+              {/* <Link
+                to="/ghost-writing-services"
+                className="text-decoration-none"
+              > */}{" "}
               <div className="box">
                 <i
                   aria-hidden="true"
@@ -101,6 +106,7 @@ const Home = () => {
                 ></i>
                 <h3 className="box-h3">Ghost Writing</h3>
               </div>
+              {/* </Link> */}
             </div>
 
             <div className="col-md-3 text-center">

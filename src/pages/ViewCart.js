@@ -595,6 +595,7 @@ const ViewCart = () => {
                                   }
                                   aria-hidden="true"
                                   className="fas fa-times"
+                                  style={{ cursor: "pointer" }}
                                 ></i>
                               </th>
                               <th>{item.productId.title}</th>
@@ -1064,6 +1065,7 @@ const ViewCart = () => {
                                   }
                                   aria-hidden="true"
                                   className="fas fa-times"
+                                  style={{ cursor: "pointer" }}
                                 ></i>
                               </th>
                               <th>{item.title}</th>
