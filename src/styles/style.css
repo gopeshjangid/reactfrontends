@@ -2445,7 +2445,7 @@ th {
   display: flex;
   list-style: none;
   margin-bottom: 0;
-  justify-content: end;
+  justify-content: right;
   padding: 0%;
 }
 
@@ -3293,4 +3293,24 @@ th {
   float: left;
   margin-bottom: 10px;
   color: #000;
+}
+
+select option[selected] {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+select option {
+  position: relative !important;
+}
+
+select option::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 100 !important;
+  background: #000 !important;
+  color: #fff !important;
 }

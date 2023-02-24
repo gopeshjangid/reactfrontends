@@ -119,7 +119,7 @@ const Career = () => {
                 </span>
                 <div className="col-md-4">
                   <div className="pab_sec-box">
-                    <i class="fa-solid fa-house-chimney pab_box-img"></i>
+                    <i className="fa-solid fa-house-chimney pab_box-img"></i>
                     {/* <img
                       src="writer/img/home.png"
                       alt="home"
@@ -137,7 +137,7 @@ const Career = () => {
 
                 <div className="col-md-4">
                   <div className="pab_sec-box">
-                    <i class="fa-solid fa-dollar-sign pab_box-img"></i>
+                    <i className="fa-solid fa-dollar-sign pab_box-img"></i>
 
                     {/* <img
                       src="writer/img/dollar-symbo.png"
@@ -158,7 +158,7 @@ const Career = () => {
 
                 <div className="col-md-4">
                   <div className="pab_sec-box">
-                    <i class="fa-regular fa-heart pab_box-img"></i>
+                    <i className="fa-regular fa-heart pab_box-img"></i>
                     {/* <img
                       src="writer/img/heart.png"
                       alt="heart"
@@ -178,7 +178,7 @@ const Career = () => {
 
                 <div className="col-md-4">
                   <div className="pab_sec-box">
-                    <i class="fa-brands fa-leanpub pab_box-img"></i>
+                    <i className="fa-brands fa-leanpub pab_box-img"></i>
                     {/* <img
                       src="writer/img/leanpub.png"
                       alt="leanpub"
@@ -197,7 +197,7 @@ const Career = () => {
 
                 <div className="col-md-4">
                   <div className="pab_sec-box">
-                    <i class="fa-solid fa-pen-to-square pab_box-img"></i>
+                    <i className="fa-solid fa-pen-to-square pab_box-img"></i>
                     {/* <img
                       src="writer/img/edit.png"
                       alt="edit"
@@ -217,7 +217,7 @@ const Career = () => {
 
                 <div className="col-md-4">
                   <div className="pab_sec-box">
-                    <i class="fa-solid fa-universal-access pab_box-img"></i>
+                    <i className="fa-solid fa-universal-access pab_box-img"></i>
                     {/* <img
                       src="writer/img/universal.png"
                       alt="universal"

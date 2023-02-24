@@ -1,15 +1,9 @@
 import React from "react";
-
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
-// import PhoneInput from "react-phone-input-2";
-// import "react-phone-input-2/lib/bootstrap.css";
-
 import { useState, useEffect } from "react";
 
-// import axios from 'axios'
-
-const GetinTouch = () => {
+const Placeyourordergetintouch = () => {
   const initialValues = {
     username: "",
     email: "",
@@ -31,6 +25,7 @@ const GetinTouch = () => {
   const [country, setCountry] = useState([]);
   const [Alltype, setAlltype] = useState([]);
   const [expertlevel, setExpertlevel] = useState([]);
+  const [searchcountry, setSearchCountry] = useState("");
 
   // const [state, setState] = useState('')
 
@@ -223,11 +218,7 @@ const GetinTouch = () => {
     if (!values.countryCode) {
       errors.countryCode = "!'Please Choose your countrycode'";
     }
-    // else if (values.number.length < 10) {
-    //   errors.number = "!'Please Enter 10 Character'";
-    // } else if (values.number.length > 10) {
-    //   errors.number = "!'Please Enter 10 Character'";
-    // }
+
     if (!values.deadline) {
       errors.deadline = "!'Please Enter Your deadline'";
     }
@@ -314,6 +305,33 @@ const GetinTouch = () => {
               <option disabled selected hidden>
                 +00
               </option>
+
+              {/* <input
+                type="text"
+                name="search"
+                placeholder="Search Your Work Sample"
+                className="samp_sec-search"
+                value={searchcountry}
+                onChange={(e) => setSearchCountry(e.target.value)}
+              /> */}
+
+              {/* {country && searchcountry
+                ? country
+                    .filter(
+                      (item, index) =>
+                        item.dial_code || item.name.includes(searchcountry)
+                    )
+                    .map((countryitem, value) => {
+                      return (
+                        <>
+                          <option>
+                            {countryitem.dial_code}
+                            &nbsp;{countryitem.name}
+                          </option>
+                        </>
+                      );
+                    })
+                : */}
               {country?.map((countryitem, value) => {
                 return (
                   <>
@@ -446,4 +464,4 @@ const GetinTouch = () => {
   );
 };
 
-export default GetinTouch;
+export default Placeyourordergetintouch;

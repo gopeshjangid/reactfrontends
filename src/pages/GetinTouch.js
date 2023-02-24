@@ -4,12 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import moment from "moment";
 
-// import PhoneInput from "react-phone-input-2";
-// import "react-phone-input-2/lib/bootstrap.css";
-
 import { useState, useEffect } from "react";
-
-// import axios from 'axios'
 
 const GetinTouch = () => {
   const initialValues = {
@@ -79,13 +74,6 @@ const GetinTouch = () => {
       });
   }, []);
 
-  // useEffect(() => {
-  // 	console.log(message);
-  // 	if(Object.keys(message).length === 0 && isSubmit) {
-  // 		console.log(User);
-
-  // 	}
-  // },[])
   useEffect(() => {
     fetch(`${process.env.REACT_APP_APIURL}/getCountryCode`, {
       method: "GET",
@@ -225,11 +213,7 @@ const GetinTouch = () => {
     if (!values.countryCode) {
       errors.countryCode = "!'Please Choose your countrycode'";
     }
-    // else if (values.number.length < 10) {
-    //   errors.number = "!'Please Enter 10 Character'";
-    // } else if (values.number.length > 10) {
-    //   errors.number = "!'Please Enter 10 Character'";
-    // }
+
     if (!values.deadline) {
       errors.deadline = "!'Please Enter Your deadline'";
     }

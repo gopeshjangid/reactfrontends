@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-// import { VscFilePdf } from "react-icons/vsc";
-// import { Router, useNavigate } from "react-router-dom";
+
 import axios from "axios";
 
 function loadScript(src) {

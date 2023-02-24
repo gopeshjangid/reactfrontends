@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-//import { user } from "./Join";
+
 import socketIO from "socket.io-client";
 import Message from "./Message";
 import ReactScrollToBoottome from "react-scroll-to-bottom";

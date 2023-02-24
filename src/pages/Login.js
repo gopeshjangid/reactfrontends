@@ -2,11 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import Loader from "./Loader";
 
-// import Header from '../Components/Header'
-// import axios from 'axios'
-// import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const initialValues = {
@@ -116,77 +112,73 @@ const Login = () => {
 
   return (
     <div>
-      {isLoggedin ? (
+      {/* {message === "successfully login" && isLoggedin ? (
         <Loader />
-      ) : (
-        <section className="reg_sec">
-          <div className="container">
-            <div className="row justify-content-center">
-              <form
-                method="POST"
-                className="login-form"
-                onSubmit={handleSubmit}
+      ) : ( */}
+      <section className="reg_sec">
+        <div className="container">
+          <div className="row justify-content-center">
+            <form method="POST" className="login-form" onSubmit={handleSubmit}>
+              <label className="reg-lbl"> Username or E-mail </label>
+              <input
+                type="text"
+                autoComplete="username"
+                id="fname"
+                name="username"
+                placeholder="Name"
+                onChange={handleChange}
+                className="text_set"
+              />
+              <p style={{ color: "red" }}>{formErrors.username}</p>
+
+              <label className="reg-lbl">Password</label>
+              <input
+                type="password"
+                autoComplete="current-password"
+                placeholder="password"
+                name="password"
+                onChange={handleChange}
+                className="ct_text-set1"
+              />
+              <p style={{ color: "red" }}>{formErrors.password}</p>
+
+              <button
+                type="submit"
+                disabled={isLoggedin}
+                className="reg_btn-1 d-flex justify-content-center m-0 mt-4 m-auto"
               >
-                <label className="reg-lbl"> Username or E-mail </label>
-                <input
-                  type="text"
-                  autoComplete="username"
-                  id="fname"
-                  name="username"
-                  placeholder="Name"
-                  onChange={handleChange}
-                  className="text_set"
-                />
-                <p style={{ color: "red" }}>{formErrors.username}</p>
+                Login
+              </button>
+              <br />
 
-                <label className="reg-lbl">Password</label>
-                <input
-                  type="password"
-                  autoComplete="current-password"
-                  placeholder="password"
-                  name="password"
-                  onChange={handleChange}
-                  className="ct_text-set1"
-                />
-                <p style={{ color: "red" }}>{formErrors.password}</p>
-
-                <button
-                  type="submit"
-                  disabled={isLoggedin}
-                  className="reg_btn-1 d-flex justify-content-center m-0 mt-4 m-auto"
+              {message === "successfully login" ? (
+                <h3
+                  className="Success text-center"
+                  style={{ color: "#03979c" }}
                 >
-                  Login
-                </button>
-                <br />
+                  {message}
+                </h3>
+              ) : (
+                <h3 className="Success text-danger text-center">{message}</h3>
+              )}
 
-                {message === "successfully login" ? (
-                  <h3
-                    className="Success text-center"
-                    style={{ color: "#03979c" }}
-                  >
-                    {message}
-                  </h3>
-                ) : (
-                  <h3 className="Success text-danger text-center">{message}</h3>
-                )}
+              <p className="text-center m-0 fs-6 mb-1">
+                <span>Not a member?</span>
+                <Link to="/register" className="signup">
+                  SignUp!
+                </Link>
+              </p>
 
-                <p className="text-center m-0 fs-6 mb-1">
-                  <span>Not a member?</span>
-                  <Link to="/register" className="signup">
-                    SignUp!
-                  </Link>
-                </p>
-
-                <p className="text-center m-0 fs-6">
-                  <Link className="forgot_p p-0" to="/forgot">
-                    Forget Password?
-                  </Link>
-                </p>
-              </form>
-            </div>
+              <p className="text-center m-0 fs-6">
+                <Link className="forgot_p p-0" to="/forgot">
+                  Forget Password?
+                </Link>
+              </p>
+            </form>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
+      {/* )} */}
     </div>
   );
 };

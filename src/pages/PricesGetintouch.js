@@ -1,13 +1,7 @@
 import React from "react";
-
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
-// import PhoneInput from "react-phone-input-2";
-// import "react-phone-input-2/lib/bootstrap.css";
-
 import { useState, useEffect } from "react";
-
-// import axios from 'axios'
 
 const PricesGetintouch = () => {
   const initialValues = {

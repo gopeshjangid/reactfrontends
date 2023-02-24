@@ -4,7 +4,7 @@ import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "./ReviewGetintouch";
-// import { Link } from "react-router-dom";
+
 
 const BlogWritingServices = () => {
   return (

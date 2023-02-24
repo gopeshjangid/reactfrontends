@@ -1,11 +1,10 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import GetinTouch from "./GetinTouch";
-import { Link } from "react-router-dom";
 
 const Home = () => {
   return (

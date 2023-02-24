@@ -1,4 +1,3 @@
-// import DOMPurify from "dompurify";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
@@ -73,6 +72,7 @@ class Blog extends Component {
                             <img
                               src={urlApi + "/image/" + friend.image}
                               className="blog_sec-img"
+                              alt=""
                             />
                             <div className="p-4">
                               <h2 className="blog_sec-h2 p-0">
@@ -101,6 +101,7 @@ class Blog extends Component {
                             <img
                               src={urlApi + "/image/" + friend.image}
                               className="blog_sec-img"
+                              alt=""
                             />
                             <div className="p-4">
                               <h2 className="blog_sec-h2 p-0">
