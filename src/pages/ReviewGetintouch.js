@@ -23,7 +23,7 @@ const ReviewGetintouch = () => {
   const [data, setData] = useState();
   const [country, setCountry] = useState([]);
   const [Alltype, setAlltype] = useState([]);
-  const [expertlevel, setExpertlevel] = useState([]);
+  // const [expertlevel, setExpertlevel] = useState([]);
 
   // const [state, setState] = useState('')
 
@@ -107,7 +107,7 @@ const ReviewGetintouch = () => {
     // creates entity
 
     const passwordLength1 = /^.{6,}$/;
-    const regex1 = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     if (
       username.trim() === "" ||
       email.trim() === "" ||
@@ -175,7 +175,7 @@ const ReviewGetintouch = () => {
     const errors = {};
 
     const passwordLength = /^.{6,}$/;
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const regex = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     if (!values.username) {
       errors.username = "!'Please Enter Your Name'";
     }

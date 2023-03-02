@@ -53,6 +53,7 @@ import GhostwritingServices from "./pages/GhostwritingServices";
 import BlogWritingServices from "./pages/BlogWritingServices";
 import FreelanceWritingServices from "./pages/FreelanceWritingServices";
 import ReviewWritingServices from "./pages/ReviewWritingServices";
+import PaypalSubscriptionSuccess from "./pages/PaypalSubscriptionSuccess";
 
 function App() {
   return (
@@ -85,9 +86,7 @@ function App() {
         <Route path="/onlinemanagement/:id" element={<OnlineManagement />} />
         <Route path="/ordersuccess" element={<Ordersuccess />} />
         <Route path="/payplesuccess" element={<Payplesuccess />} />
-
         <Route path="/stripesubscription" element={<StripeSubscription />} />
-
         {/* <Route path="/BlogRoute" element={<BlogRoute />} />
         <Route path="/AuthorRoute" element={<AuthorRoute />} /> */}
         <Route
@@ -99,7 +98,6 @@ function App() {
           path="/pendingpaymentstripesuccess"
           element={<PendingPaymentStripeSuccess />}
         />
-
         <Route path="/transactionhistory" element={<TransactionHistory />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/viewprofile" element={<ViewProfile />} />
@@ -148,6 +146,10 @@ function App() {
         <Route
           path="/review-writing-services"
           element={<ReviewWritingServices />}
+        />{" "}
+        <Route
+          path="/paypalsubscriptionsuccess"
+          element={<PaypalSubscriptionSuccess />}
         />
       </Routes>
       <Footer />

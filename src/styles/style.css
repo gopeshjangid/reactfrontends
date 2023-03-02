@@ -2258,7 +2258,7 @@ th {
   width: 85%;
 }
 
-.coupon-wrap .coupon input:focus-visible {
+.coupon-wrap .coupon .rating-stars1:focus-visible {
   outline: 0px;
 }
 
@@ -2394,11 +2394,12 @@ th {
 }
 
 .pagination a {
-  padding: 10px;
-  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
   border: 1px solid #00a7a6;
   color: #00a7a6;
   text-decoration: none;
+  margin-right: 10px;
+  font-weight: 400;
 }
 
 .pagination__link {
@@ -2435,7 +2436,7 @@ th {
   background: #fff;
 }
 
-.react-tel-input .form-control {
+.react-tel-.rating-stars1 .form-control {
   padding: 10.5px 14px 10.5px 60px !important;
   margin-top: 20px;
   width: 100% !important;
@@ -2533,10 +2534,6 @@ th {
 .glsr-bar-label {
   padding: 0.25rem 0.5rem 0.25rem 0;
 }
-.glsr-bar > span {
-  display: table-cell;
-  vertical-align: middle;
-}
 
 .glsr-bar-background {
   position: relative;
@@ -2560,6 +2557,7 @@ th {
   display: block;
   height: 1rem;
   position: relative;
+  animation: all 5s;
 }
 
 .glsr-bar-percent {
@@ -2650,6 +2648,212 @@ th {
   background-image: inherit;
   /* content: ""; */
   transform: rotate(0deg);
+}
+
+/* .rating-stars {
+  display: block;
+
+  border-radius: 5vmin;
+  position: relative;
+} */
+
+/* .rating-counter {
+  font-size: 5.5vmin;
+  font-family: Arial, Helvetica, serif;
+  color: #9aacc6;
+  width: 10vmin;
+  text-align: center;
+  background: #0006;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border-radius: 0 5vmin 5vmin 0;
+  line-height: 10vmin;
+} */
+
+/* .rating-counter:before {
+  content: "0";
+  transition: all 0.25s ease 0s;
+} */
+
+/* .rating-stars1 {
+  display: none;
+}
+
+.rating-star-label {
+  width: 7vmin;
+  height: 7vmin;
+  background: #000b;
+  display: inline-flex;
+  cursor: pointer;
+  margin: 0.5vmin 0.65vmin;
+  transition: all 1s ease 0s;
+  clip-path: polygon(
+    50% 0%,
+    66% 32%,
+    100% 38%,
+    78% 64%,
+    83% 100%,
+    50% 83%,
+    17% 100%,
+    22% 64%,
+    0 38%,
+    34% 32%
+  );
+}
+
+.rating-star-label[for="rs0"] {
+  display: none;
+}
+
+.rating-star-label:before {
+  width: 90%;
+  height: 90%;
+  content: "";
+  background: orange;
+  z-index: -1;
+  display: block;
+  clip-path: polygon(
+    50% 0%,
+    66% 32%,
+    100% 38%,
+    78% 64%,
+    83% 100%,
+    50% 83%,
+    17% 100%,
+    22% 64%,
+    0 38%,
+    34% 32%
+  );
+  background: linear-gradient(
+    90deg,
+    yellow,
+    orange 30% 50%,
+    #000000 50%,
+    70%,
+    #000000 100%
+  );
+  background-size: 205% 100%;
+  background-position: 0 0;
+}
+
+.rating-star-label:hover:before {
+  transition: all 0.25s ease 0s;
+}
+
+.rating-stars1:checked + .rating-star-label ~ .rating-star-label:before {
+  background-position: 100% 0;
+  transition: all 0.25s ease 0s;
+}
+
+.rating-stars1:checked + .rating-starlabel ~ .rating-starlabel:hover:before {
+  background-position: 0% 0;
+} */
+
+/* #rs1:checked ~ .rating-counter:before {
+  content: "1";
+}
+
+#rs2:checked ~ .rating-counter:before {
+  content: "2";
+}
+
+#rs3:checked ~ .rating-counter:before {
+  content: "3";
+}
+
+#rs4:checked ~ .rating-counter:before {
+  content: "4";
+}
+
+#rs5:checked ~ .rating-counter:before {
+  content: "5";
+} */
+
+/* .rating-star-label + .rating-stars1:checked ~ .rating-counter:before {
+  color: #ffab00 !important;
+  transition: all 0.25s ease 0s;
+} */
+
+/* .rating-star-label:hover ~ .rating-counter:before {
+  color: #9aacc6 !important;
+  transition: all 0.5s ease 0s;
+  animation: pulse 1s ease 0s infinite;
+} */
+
+/* @keyframes pulse {
+  50% {
+    font-size: 6.25vmin;
+  }
+}
+
+.rating-star-label[for="rs1"]:hover ~ .rating-counter:before {
+  content: "1" !important;
+}
+
+.rating-star-label[for="rs2"]:hover ~ .rating-counter:before {
+  content: "2" !important;
+}
+
+.rating-star-label[for="rs3"]:hover ~ .rating-counter:before {
+  content: "3" !important;
+}
+
+.rating-star-label[for="rs4"]:hover ~ .rating-counter:before {
+  content: "4" !important;
+}
+
+.rating-star-label[for="rs5"]:hover ~ .rating-counter:before {
+  content: "5" !important;
+}
+
+.rating-stars1:checked:hover ~ .rating-counter:before {
+  animation: none !important;
+  color: #ffab00 !important ;
+} */
+
+/*** INITIAL ANIMATION - Not Necessary ***/
+/*** I want to make a loop here ***/
+/*
+.rating-star + .rating-stars1 + .rating-star:before {
+    animation: start 0.5s ease 0s 1;
+}
+
+.rating-stars:hover .rating-star + .rating-stars1 + .rating-star:before {
+    animation: none;
+}
+
+.rating-star[for=rs2]:before {
+	animation-delay: 0.1s;
+}
+
+.rating-star[for=rs3]:before {
+	animation-delay: 0.2s;
+}
+
+.rating-star[for=rs4]:before {
+	animation-delay: 0.3s;
+}
+
+.rating-star[for=rs5]:before {
+	animation-delay: 0.4s;
+}
+
+@keyframes start {
+	10%, 90% { background-position: 0% 0; }
+}
+
+*/
+
+.react-read-more-read-less {
+  display: block;
+  color: #00a7a6;
+  text-decoration: underline;
+}
+
+.react-read-more-read-less-more {
+  display: inline-block;
 }
 
 @media (max-width: 1199px) {
@@ -2848,7 +3052,7 @@ th {
   .fp-img {
     width: 50%;
   }
-  .fp_form input::placeholder {
+  .fp_form .rating-stars1::placeholder {
     text-align: center;
   }
   .forget {
@@ -2877,7 +3081,7 @@ th {
     width: 20% !important;
     padding: 20% 0;
   }
-  .form-inputs {
+  .form-.rating-stars1s {
     display: block !important;
   }
   .login-form {
@@ -2889,7 +3093,7 @@ th {
   .contact_name .Name {
     width: 100% !important;
   }
-  .Home-Name input {
+  .Home-Name .rating-stars1 {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }

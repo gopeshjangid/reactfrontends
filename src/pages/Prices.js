@@ -7,14 +7,11 @@ const Prices = () => {
   const [price, setPrice] = useState(0.0);
   // const [experts,setExperts] = useState(".00")
 
-  function handleChange(val) {
+  function handleChange(val, ex) {
     setPrice(val.target.value);
-  }
-  const [select, setSelect] = useState(".00");
-
-  function onChange(ex) {
     setSelect(ex.target.value);
   }
+  const [select, setSelect] = useState(".00");
 
   const [deactive, setDeactive] = useState("");
   function onClick(exy) {
@@ -138,13 +135,13 @@ const Prices = () => {
                   <br />
 
                   <select
-                    onChange={onChange}
+                    onChange={handleChange}
                     onClick={onClick}
                     value=""
                     className="price-select"
                     required
                   >
-                    <option disabled selected hidden>
+                    <option selected hidden>
                       -Select Value-
                     </option>
                     <option value=".03">Expert</option>
@@ -153,13 +150,13 @@ const Prices = () => {
                   <label className="price-lbl">Premium</label>
                   <br />
                   <select
-                    onChange={onChange}
+                    onChange={handleChange}
                     onClick={onClick}
                     value=""
                     className="price-select"
                     required
                   >
-                    <option disabled selected hidden>
+                    <option selected hidden>
                       -Select Value-
                     </option>
                     <option value=".06">Premium</option>
@@ -168,13 +165,13 @@ const Prices = () => {
                   <label className="price-lbl">Enterprise</label>
                   <br />
                   <select
-                    onChange={onChange}
+                    onChange={handleChange}
                     onClick={onClick}
                     value=""
                     className="price-select"
                     required
                   >
-                    <option disabled selected hidden>
+                    <option selected hidden>
                       -Select Value-
                     </option>
                     <option value=".08">Enterprise</option>

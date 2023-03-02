@@ -35,7 +35,7 @@ const PlaceYourOrder = () => {
 
   const valide = (values) => {
     const error = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const regex = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     if (!values.username) {
       error.username = "!'Please Enter Your Name'";
     }

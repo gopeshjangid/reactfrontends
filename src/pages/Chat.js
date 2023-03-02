@@ -24,9 +24,12 @@ const Chat = ({ orderId, orderName }) => {
   const [load, setLoad] = useState(false);
 
   const socket = useRef();
-
+  console.log("userData", userData);
   useEffect(() => {
-    socket.current = socketIO(ENDPOINT, { transports: ["websocket"] });
+    socket.current = socketIO(ENDPOINT, {
+      transports: ["websocket"],
+      query: { roomId: userData?._id },
+    });
 
     socket.current.on("receive-user", (data) => {
       console.log("data", data);
@@ -47,7 +50,7 @@ const Chat = ({ orderId, orderName }) => {
       socket.current.disconnect();
       socket.current.off();
     };
-  });
+  }, [userData]);
 
   const accessChat = async () => {
     const token = localStorage.getItem("token");
@@ -117,9 +120,9 @@ const Chat = ({ orderId, orderName }) => {
         Authorization: `${tokenID}`,
       },
     })
-      .then((response) => console.log(response))
+      .then((response) => response.json())
       .then((json) => {
-        setUserData(json);
+        setUserData(json?.data);
         console.log(userData);
       })
       .catch((err) => {

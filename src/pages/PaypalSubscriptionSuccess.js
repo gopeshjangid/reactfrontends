@@ -3,24 +3,24 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const StripeSubscription = () => {
+const PaypalSubscriptionSuccess = () => {
   const tokenID = localStorage.getItem("token");
-  const id = sessionStorage.getItem("id");
+  const sub_id = sessionStorage.getItem("sub_id");
   const headers = {
     "Content-Type": "application/json",
     Authorization: `${tokenID}`,
   };
-
-  const data = { pay_id: id };
+  console.log("sub_id", sub_id);
+  const data = { sub_id: sub_id };
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!sessionStorage.getItem("id")) {
+    if (!sessionStorage.getItem("sub_id")) {
       navigate("/");
     } else {
       axios
         .post(
-          `${process.env.REACT_APP_APIURL}/StripeSubscriptionSuccess`,
+          `${process.env.REACT_APP_APIURL}/payplesubscriptionsuccess`,
           data,
           {
             headers: headers,
@@ -29,7 +29,7 @@ const StripeSubscription = () => {
         .then((res) => {
           console.log(res);
 
-          sessionStorage.removeItem("id");
+          sessionStorage.removeItem("sub_id");
         })
         .catch((err) => {
           console.log(err);
@@ -77,4 +77,4 @@ const StripeSubscription = () => {
   );
 };
 
-export default StripeSubscription;
+export default PaypalSubscriptionSuccess;

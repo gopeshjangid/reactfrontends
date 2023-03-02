@@ -235,6 +235,7 @@ class Services extends Component {
 
   showRazorpay = async (id) => {
     const tokenID = localStorage.getItem("token");
+    console.log(tokenID);
     console.log("iiiiiddddd", id);
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
@@ -260,7 +261,7 @@ class Services extends Component {
     ).then((t) => t.json());
     console.log("ddddd", data);
     const options = {
-      key: "rzp_test_KiBn8QyRFCYQnw",
+      key: "rzp_test_Xa2mSWNFvEWycp",
       subscription_id: data.message.id,
       name: "Acme Corp.",
       description: "Monthly Test Plan",
@@ -324,8 +325,8 @@ class Services extends Component {
 
         {
           headers: {
-            Authorization: `${token}`,
             "Content-Type": "application/json",
+            Authorization: `${token}`,
           },
         }
       )
@@ -341,7 +342,7 @@ class Services extends Component {
 
   PaypalSubscription = async (id) => {
     const token = localStorage.getItem("token");
-    // console.log("qwertyuiuytrewetui", id);
+    console.log("qwertyuiuytrewetui", id);
     console.log("token", token);
     axios
       .post(
@@ -350,15 +351,16 @@ class Services extends Component {
 
         {
           headers: {
-            Authorization: `${token}`,
             "Content-Type": "application/json",
+            Authorization: `${token}`,
           },
         }
       )
+
       .then((response) => {
-        sessionStorage.setItem("id", response.data.id);
+        sessionStorage.setItem("sub_id", response.data.id);
         window.open(response.data.url, "_self");
-        console.log("stripesubscription", response);
+        console.log("Paypalsubscription", response);
       })
 
       .catch((error) => console.log(error));

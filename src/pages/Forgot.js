@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { useState, useEffect } from "react";
 
@@ -31,7 +31,7 @@ const Forgot = () => {
     // add entity - POST
     // e.preventDefault();
     // creates entity
-    const regex1 = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     if (email.trim() === "" || regex1.test(email.trim()) === false) {
       return;
     } else {
@@ -79,7 +79,7 @@ const Forgot = () => {
 
   const validate = (values) => {
     const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const regex = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
 
     if (!values.email) {
       errors.email = "!'Please Enter Your Email'";

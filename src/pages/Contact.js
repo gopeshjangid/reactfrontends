@@ -33,7 +33,7 @@ const Contact = () => {
     // add entity - POST
     // e.preventDefault();
     // creates entity
-    const regex1 = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     if (
       fullName.trim() === "" ||
       email.trim() === "" ||
@@ -80,7 +80,7 @@ const Contact = () => {
 
   const validate = (values) => {
     const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const regex = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     if (!values.fullName) {
       errors.fullName = "!'Please Enter Your Name'";
     }

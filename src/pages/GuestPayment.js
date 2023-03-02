@@ -45,7 +45,7 @@ const GuestPayment = () => {
       dec: dec.trim(),
     };
 
-    const regex1 = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     if (
       email.trim() === "" ||
       amount.trim() === "" ||
@@ -69,7 +69,7 @@ const GuestPayment = () => {
   const validate = (values) => {
     const errors = {};
 
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const regex = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
 
     if (!values.email) {
       errors.email = "!'Please Enter Your Email'";
@@ -118,7 +118,7 @@ const GuestPayment = () => {
     ).then((t) => t.json());
     console.log(data);
     const options = {
-      key: "rzp_test_KiBn8QyRFCYQnw",
+      key: "rzp_test_Xa2mSWNFvEWycp",
       currency: data.order.currency,
       amount: data.amount.toString(),
       order_id: data.order.id,
@@ -215,6 +215,7 @@ const GuestPayment = () => {
             <img
               src="writer/img/Payment-Information-cuate.png"
               className="fp-img"
+              alt=""
             />
           </div>
 
@@ -280,7 +281,7 @@ const GuestPayment = () => {
                 aria-hidden="true"
               >
                 <div className="modal-dialog">
-                  <div className="modal-content">
+                  <div className="modal-content border-0">
                     <div
                       className="modal-header border-0"
                       style={{ background: "rgb(3, 151, 156)" }}

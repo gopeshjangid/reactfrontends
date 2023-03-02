@@ -55,7 +55,7 @@ const Register = () => {
     // e.preventDefault();
     // creates entity
     const passwordLength2 = /^.{6,}$/;
-    // const regex1 = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    // const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     // /^[^@]+@(yahoo|gmail|mail|rocketmail)\.(com|in|co\.uk)$/i;
     const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     if (

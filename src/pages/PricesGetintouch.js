@@ -128,7 +128,7 @@ const PricesGetintouch = () => {
     // creates entity
 
     const passwordLength1 = /^.{6,}$/;
-    const regex1 = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     if (
       username.trim() === "" ||
       email.trim() === "" ||
@@ -197,7 +197,7 @@ const PricesGetintouch = () => {
     const errors = {};
 
     const passwordLength = /^.{6,}$/;
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const regex = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     if (!values.username) {
       errors.username = "!'Please Enter Your Name'";
     }

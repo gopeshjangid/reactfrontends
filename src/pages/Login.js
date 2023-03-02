@@ -2,8 +2,6 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-
-
 const Login = () => {
   const initialValues = {
     username: "",
@@ -96,7 +94,7 @@ const Login = () => {
 
   const validate = (values) => {
     const errors = {};
-    // const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    // const regex = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     if (!values.username) {
       errors.username = "!'Please Enter Your Email / Username'";
     } // else if(!regex.test(values.username)) {

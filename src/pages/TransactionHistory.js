@@ -106,7 +106,7 @@ const TransactionHistory = () => {
     setIsLoading(false);
     console.log(data);
     const options = {
-      key: "rzp_test_KiBn8QyRFCYQnw",
+      key: "rzp_test_Xa2mSWNFvEWycp",
       currency: data.order.currency,
       amount: data.amount.toString(),
       order_id: data.order.id,

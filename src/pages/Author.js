@@ -80,8 +80,8 @@ function Author() {
 
               <nav aria-label="..." className="mt-5">
                 <ReactPaginate
-                  previousLabel={"previousLabel"}
-                  nextLabel={"nextLabel"}
+                  previousLabel={"prev"}
+                  nextLabel={"next"}
                   pageCount={pageCount}
                   onPageChange={handleClick}
                   pageRangeDisplayed={1}
@@ -89,7 +89,7 @@ function Author() {
                   renderOnZeroPageCount={null}
                   previousLinkClassName={"pagination__link"}
                   nextLinkClassName={"pagination__link"}
-                  disabledClassName={".pagination__link--disabled "}
+                  disabledClassName={"pagination__link--disabled "}
                   activeClassName={"pagination__link--active"}
                   // renderOnZeroPageCount={null}
                 />
