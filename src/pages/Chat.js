@@ -42,8 +42,8 @@ const Chat = ({ orderId, orderName }) => {
       .then(async function (response) {
         socket.current.emit("message", response?.data);
         setSelectedChat(response.data);
-        await setChatId(response?.data?._id);
-
+        setChatId(response?.data?._id);
+        console.log(response.data._id);
         console.log(
           "**********accessed the chat with admin**********",
           response.data
@@ -55,6 +55,7 @@ const Chat = ({ orderId, orderName }) => {
   };
 
   console.log("userData", userData);
+
   useEffect(() => {
     console.log(chatId);
     socket.current = socketIO(ENDPOINT, {
@@ -81,7 +82,7 @@ const Chat = ({ orderId, orderName }) => {
       socket.current.disconnect();
       socket.current.off();
     };
-  }, [userData]);
+  }, [userData, chatId]);
 
   const fetchMessages = async () => {
     if (!chatId) {
@@ -147,6 +148,7 @@ const Chat = ({ orderId, orderName }) => {
   }, [chatId]);
 
   useEffect(() => {
+    console.log(socket.current.on);
     socket.current.on("message", (newMessage) => {
       console.log("NEW MESSAGE ----------", newMessage);
       setMessages([...messages, newMessage]);
