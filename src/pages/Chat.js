@@ -25,35 +25,6 @@ const Chat = ({ orderId, orderName }) => {
 
   const socket = useRef();
 
-  console.log("userData", userData);
-  useEffect(() => {
-    console.log(chatId);
-    socket.current = socketIO(ENDPOINT, {
-      transports: ["websocket"],
-      query: { roomId: chatId },
-    });
-
-    socket.current.on("receive-user", (data) => {
-      console.log("data", data);
-    });
-    socket.current.on("message2", (newMessage) => {
-      console.log("NEW MESSAGE ----------", newMessage);
-      setMessages([...messages, newMessage]);
-    });
-    socket.current.on("userJoined", (data) => {
-      setMessages([...messages, data]);
-      console.log(data.user, data.message);
-    });
-    socket.current.on("leave", (data) => {
-      setMessages([...messages, data]);
-      console.log(data.user, data.message);
-    });
-    return () => {
-      socket.current.disconnect();
-      socket.current.off();
-    };
-  }, [userData]);
-
   const accessChat = async () => {
     const token = localStorage.getItem("token");
     console.log("chat acces function called");
@@ -82,6 +53,35 @@ const Chat = ({ orderId, orderName }) => {
         console.log("kjhdkhdkdhkdjdhk", error);
       });
   };
+
+  console.log("userData", userData);
+  useEffect(() => {
+    console.log(chatId);
+    socket.current = socketIO(ENDPOINT, {
+      transports: ["websocket"],
+      query: { roomId: chatId },
+    });
+
+    socket.current.on("receive-user", (data) => {
+      console.log("data", data);
+    });
+    socket.current.on("message2", (newMessage) => {
+      console.log("NEW MESSAGE ----------", newMessage);
+      setMessages([...messages, newMessage]);
+    });
+    socket.current.on("userJoined", (data) => {
+      setMessages([...messages, data]);
+      console.log(data.user, data.message);
+    });
+    socket.current.on("leave", (data) => {
+      setMessages([...messages, data]);
+      console.log(data.user, data.message);
+    });
+    return () => {
+      socket.current.disconnect();
+      socket.current.off();
+    };
+  }, [userData]);
 
   const fetchMessages = async () => {
     if (!chatId) {
