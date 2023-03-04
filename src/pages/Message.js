@@ -224,8 +224,8 @@ const Message = ({
     return (
       <div className={`messageBox  ${classs}`}>
         <p className="fw-bold mb-2">{`${user}`}</p>
-        <img src={`${message}`} alt="chatimg" />{" "}
-        <p className="float-end mb-0">{`${datetime}`}</p>
+        <img src={`${message}`} className="mb-3 " alt="chatimg" />{" "}
+        <p className="text-end mb-0 position-absolute bottom-0 end-0 w-100 pe-2 ">{`${datetime}`}</p>
       </div>
     );
   } else if (user && type === "pdf") {
@@ -235,7 +235,7 @@ const Message = ({
         <p className="fw-bold mb-2">{`${user}`}</p>
         <button
           onClick={() => window.open(`${message}`)}
-          className="border-0 p-2 rounded"
+          className="border-0 mb-3 p-2 rounded"
           style={{ background: "#029a99" }}
         >
           {user && type === "pdf" ? (
@@ -246,7 +246,7 @@ const Message = ({
           )}
         </button>
         <span className="ms-3"> {`${name}`}</span>
-        <p className="text-end mb-0">{`${datetime}`}</p>
+        <p className="text-end mb-0 position-absolute bottom-0 end-0 w-100 pe-2">{`${datetime}`}</p>
       </div>
     );
   } else if ((user && type === "docx") || (user && type === "docs")) {
@@ -256,7 +256,7 @@ const Message = ({
         <p className="fw-bold mb-2">{`${user}`}</p>
         <button
           onClick={() => window.open(`${message}`)}
-          className="border-0 p-2 rounded"
+          className="border-0 mb-3 p-2 rounded"
           style={{ background: "#029a99" }}
         >
           {(user && type === "docx") || (user && type === "docs") ? (
@@ -267,7 +267,7 @@ const Message = ({
           )}
         </button>
         <span className="ms-3"> {`${name}`}</span>
-        <p className="text-end mb-0">{`${datetime}`}</p>
+        <p className="text-end mb-0 position-absolute bottom-0 end-0 w-100 pe-2">{`${datetime}`}</p>
       </div>
     );
   } else if (user && type === "msword") {
@@ -277,7 +277,7 @@ const Message = ({
         <p className="fw-bold mb-2">{`${user}`}</p>
         <button
           onClick={() => window.open(`${message}`)}
-          className="border-0 p-2 rounded"
+          className="border-0 mb-3 p-2 rounded"
           style={{ background: "#029a99" }}
         >
           {user && type === "msword" ? (
@@ -289,7 +289,7 @@ const Message = ({
           )}
         </button>
         <span className="ms-3"> {`${name}`}</span>
-        <p className="text-end mb-0">{`${datetime}`}</p>
+        <p className="text-end mb-0 position-absolute bottom-0 end-0 w-100 pe-2">{`${datetime}`}</p>
       </div>
     );
   } else if (user && type === "txt") {
@@ -299,7 +299,7 @@ const Message = ({
         <p className="fw-bold mb-2">{`${user}`}</p>
         <button
           onClick={() => window.open(`${message}`)}
-          className="border-0 p-2 rounded"
+          className="border-0 mb-0 p-2 rounded"
           style={{ background: "#029a99" }}
         >
           {user && type === "txt" ? (
@@ -310,7 +310,7 @@ const Message = ({
           )}
         </button>
         <span className="ms-3"> {`${name}`}</span>
-        <p className="text-end mb-0">{`${datetime}`}</p>
+        <p className="text-end mb-0 position-absolute bottom-0 end-0 w-100 pe-2">{`${datetime}`}</p>
       </div>
     );
   } else if (user && type === "message") {

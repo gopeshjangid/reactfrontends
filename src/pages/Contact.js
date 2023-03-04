@@ -46,7 +46,7 @@ const Contact = () => {
       fetch(`${process.env.REACT_APP_APIURL}/contact-us`, {
         method: "POST",
         mode: "cors",
-        body: JSON.stringify(object, { fullName, email, subject, message }),
+        body: JSON.stringify(object),
         headers: {
           "Content-type": "application/json",
           Accept: "application/json",

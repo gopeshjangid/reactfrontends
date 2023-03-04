@@ -98,7 +98,17 @@
   top: -8px;
   z-index: 100;
   /* padding: 65px 0px; */
-  height: 123%;
+  height: 124%;
+  /* clip-path: polygon(
+    20% 0%,
+    80% 0%,
+    100% 20%,
+    100% 80%,
+    80% 100%,
+    20% 100%,
+    0% 80%,
+    0% 20%
+  ); */
   background: rgba(255, 255, 255, 0);
   box-shadow: 0px 4px 0px #029a99;
   border-radius: 100%;
@@ -3489,6 +3499,8 @@ th {
   border-radius: 10px;
   float: right;
   margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
 }
 .left {
   background: rgb(198 255 255);
@@ -3498,6 +3510,8 @@ th {
   float: left;
   margin-bottom: 10px;
   color: #000;
+  position: relative;
+  overflow: hidden;
 }
 
 select option[selected] {

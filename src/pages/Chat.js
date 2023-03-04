@@ -24,11 +24,13 @@ const Chat = ({ orderId, orderName }) => {
   const [load, setLoad] = useState(false);
 
   const socket = useRef();
+
   console.log("userData", userData);
   useEffect(() => {
+    console.log(chatId);
     socket.current = socketIO(ENDPOINT, {
       transports: ["websocket"],
-      query: { roomId: userData?._id },
+      query: { roomId: chatId },
     });
 
     socket.current.on("receive-user", (data) => {
@@ -66,17 +68,15 @@ const Chat = ({ orderId, orderName }) => {
     };
 
     await axios(config)
-      .then(function (response) {
+      .then(async function (response) {
+        socket.current.emit("message", response?.data);
+        setSelectedChat(response.data);
+        await setChatId(response?.data?._id);
+
         console.log(
           "**********accessed the chat with admin**********",
           response.data
         );
-
-        socket.current.emit("message", response?.data?._id);
-        setSelectedChat(response.data);
-        setChatId(response?.data?._id);
-        // console.log(response?.)
-        socket.current.emit("chatId", response?.data?._id);
       })
       .catch(function (error) {
         console.log("kjhdkhdkdhkdjdhk", error);
@@ -147,9 +147,7 @@ const Chat = ({ orderId, orderName }) => {
   }, [chatId]);
 
   useEffect(() => {
-    console.log(":::::");
-
-    socket.current.on("message2", (newMessage) => {
+    socket.current.on("message", (newMessage) => {
       console.log("NEW MESSAGE ----------", newMessage);
       setMessages([...messages, newMessage]);
     });
@@ -166,7 +164,7 @@ const Chat = ({ orderId, orderName }) => {
     //     setMessages([...messages, newMessageRecieved]);
     //   }
     // });
-  }, [messages]);
+  }, [messages, socket]);
 
   useEffect(() => {
     accessChat();
@@ -237,7 +235,7 @@ const Chat = ({ orderId, orderName }) => {
     axios(config)
       .then(function (response) {
         console.log(response.data);
-        socket.current.emit("new message", response.data);
+        socket.current.emit("message", response.data);
         setMessages([...messages, response.data]);
         setSelectedImage(false);
         setPdfselected(false);
