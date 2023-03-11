@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 import Loader from "./Loader";
+import { User } from "@auth0/auth0-react";
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -344,6 +345,10 @@ class Services extends Component {
     const token = localStorage.getItem("token");
     console.log("qwertyuiuytrewetui", id);
     console.log("token", token);
+
+    // const amount = this.state.User?.price;
+    // console.log(amount);
+
     axios
       .post(
         `${process.env.REACT_APP_APIURL}/PaypalSubscription/${id}`,
@@ -359,8 +364,11 @@ class Services extends Component {
 
       .then((response) => {
         sessionStorage.setItem("sub_id", response.data.id);
+        sessionStorage.setItem("amount", response.data.amount);
+        sessionStorage.setItem("productId", response.data.productId);
         window.open(response.data.url, "_self");
-        console.log("Paypalsubscription", response);
+
+        console.log("Paypalsubscription", response.data);
       })
 
       .catch((error) => console.log(error));

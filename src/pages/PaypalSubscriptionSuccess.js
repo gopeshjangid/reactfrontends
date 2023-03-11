@@ -6,12 +6,15 @@ import { Link } from "react-router-dom";
 const PaypalSubscriptionSuccess = () => {
   const tokenID = localStorage.getItem("token");
   const sub_id = sessionStorage.getItem("sub_id");
+  const amount = sessionStorage.getItem("amount");
+  const productId = sessionStorage.getItem("productId");
+  console.log(amount);
   const headers = {
     "Content-Type": "application/json",
     Authorization: `${tokenID}`,
   };
   console.log("sub_id", sub_id);
-  const data = { sub_id: sub_id };
+  const data = { sub_id: sub_id, amount: amount, productId: productId };
   const navigate = useNavigate();
 
   useEffect(() => {

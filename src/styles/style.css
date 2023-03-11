@@ -2422,20 +2422,17 @@ th {
 }
 
 .pagination__link--active a {
-  color: #fff;
+  color: #fff !important;
   border: solid 1px #00a7a6;
   background: #00a7a6;
 }
 
-.pagination__link--disabled {
+/* .pagination__link--disabled {
   background: #000;
-}
+} */
 
 .pagination__link--disabled a {
   text-decoration: none;
-  color: rgb(198, 197, 202);
-  background: #000;
-  border: 1px solid rgb(198, 197, 202);
 }
 
 .viewOrderbody td:hover {

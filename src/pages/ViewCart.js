@@ -366,7 +366,7 @@ const ViewCart = () => {
     const couponName = couponApplied?.message
       ? couponApplied.message.couponName
       : "";
-    setLoading(true);
+
     await axios
       .post(
         `${process.env.REACT_APP_APIURL}/useWallet/`,
@@ -388,7 +388,6 @@ const ViewCart = () => {
         } else {
           setOrderErrorMessage(response.data.data);
         }
-        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -421,7 +420,7 @@ const ViewCart = () => {
       .then((response) => {
         sessionStorage.setItem("totalamount", paypal);
         sessionStorage.setItem("pay_id", response.data.id);
-        window.open(response.data.url, "_self");
+        // window.open(response.data.url, "_self");
         console.log(response.data.url);
         setPaypal({
           response,
@@ -874,35 +873,28 @@ const ViewCart = () => {
 
                                 <div className="row mb-3">
                                   <div className="col-md-6 text-start ps-4">
-                                    {Loading ? (
-                                      <button className="btn w-100 justify-content-center d-flex align-items-center Pay me-3">
-                                        Wallet
-                                      </button>
-                                    ) : (
-                                      <button
-                                        type="button"
-                                        className="btn w-100 justify-content-center d-flex align-items-center Pay me-3"
-                                        onClick={() =>
-                                          walletUpdateHandler(
-                                            couponApplied?.message?.offAmount
-                                              ? couponApplied.message
-                                                  .couponType === "Flat"
-                                                ? cartItems.totalPrice -
+                                    <button
+                                      type="button"
+                                      className="btn w-100 justify-content-center d-flex align-items-center Pay me-3"
+                                      onClick={() =>
+                                        walletUpdateHandler(
+                                          couponApplied?.message?.offAmount
+                                            ? couponApplied.message
+                                                .couponType === "Flat"
+                                              ? cartItems.totalPrice -
+                                                couponApplied.message.offAmount
+                                              : cartItems.totalPrice -
+                                                (cartItems.totalPrice *
                                                   couponApplied.message
-                                                    .offAmount
-                                                : cartItems.totalPrice -
-                                                  (cartItems.totalPrice *
-                                                    couponApplied.message
-                                                      .offAmount) /
-                                                    100
-                                              : cartItems.totalPrice
-                                          )
-                                        }
-                                      >
-                                        Wallet
-                                        {/* <i class="fa-solid fa-wallet end-0 ps-2"></i> */}
-                                      </button>
-                                    )}{" "}
+                                                    .offAmount) /
+                                                  100
+                                            : cartItems.totalPrice
+                                        )
+                                      }
+                                    >
+                                      Wallet
+                                      {/* <i class="fa-solid fa-wallet end-0 ps-2"></i> */}
+                                    </button>
                                   </div>
                                   <div className="col-md-6">
                                     <button

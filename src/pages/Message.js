@@ -224,7 +224,7 @@ const Message = ({
     return (
       <div className={`messageBox  ${classs}`}>
         <p className="fw-bold mb-2">{`${user}`}</p>
-        <img src={`${message}`} className="mb-3 " alt="chatimg" />{" "}
+        <img src={`${message}`} className="mb-3 w-100 " alt="chatimg" />{" "}
         <p className="text-end mb-0 position-absolute bottom-0 end-0 w-100 pe-2 ">{`${datetime}`}</p>
       </div>
     );
