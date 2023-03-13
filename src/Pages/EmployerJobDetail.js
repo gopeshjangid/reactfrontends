@@ -1,8 +1,14 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const EmployerJobDetail = () => {
+  const { id } = useParams();
+  console.log(id, "id");
   const [getAllJob, setGetAllJob] = useState([]);
+  const [employer, setEmployer] = useState([]);
+  const [applyJob, setApplyJob] = useState();
   const tokenID = localStorage.getItem("token");
   useEffect(() => {
     fetch("http://localhost:5000/getAllJob", {
@@ -15,10 +21,36 @@ const EmployerJobDetail = () => {
       .then((res) => res.json())
       .then((response) => {
         setGetAllJob(response.message);
+        const filterData = response.message?.filter(
+          (item, index) => item._id === id
+        );
+        setEmployer(filterData[0]);
+        console.log(filterData);
         console.log(response.message);
       })
       .catch((err) => console.log(err));
   }, []);
+
+  const ApplyJob = () => {
+    const token = localStorage.getItem("token");
+    console.log(id);
+    console.log(token);
+
+    axios
+      .post("http://localhost:5000/applyJob", JSON.stringify({ jobId: id }), {
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `${token}`,
+        },
+      })
+
+      .then((response) => {
+        setApplyJob(response.data);
+
+        console.log(response.data);
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <div>
       {/* CONTENT START */}
@@ -26,7 +58,7 @@ const EmployerJobDetail = () => {
         {/* INNER PAGE BANNER */}
         <div
           className="wt-bnr-inr overlay-wraper bg-center"
-          style={{ backgroundImage: "url(images/banner/1.jpg)" }}
+          style={{ backgroundImage: "url(/jobzilla/images/banner/1.jpg)" }}
         >
           <div className="overlay-main site-bg-white opacity-01" />
           <div className="container">
@@ -64,7 +96,7 @@ const EmployerJobDetail = () => {
                         <div className="twm-job-self-top">
                           <div className="twm-media-bg">
                             <img
-                              src="jobzilla/images/job-detail-bg.jpg"
+                              src="/jobzilla/images/job-detail-bg.jpg"
                               alt="#"
                             />
                             <div className="twm-jobs-category green">
@@ -74,30 +106,30 @@ const EmployerJobDetail = () => {
                           <div className="twm-mid-content">
                             <div className="twm-media">
                               <img
-                                src="jobzilla/images/jobs-company/pic1.jpg"
+                                src="/jobzilla/images/jobs-company/pic1.jpg"
                                 alt="#"
                               />
                             </div>
                             <h4 className="twm-job-title">
-                              {getAllJob?.jobtitle}
+                              {employer?.jobtitle}
                               <span className="twm-job-post-duration">
                                 / 1 days ago
                               </span>
                             </h4>
                             <p className="twm-job-address">
                               <i className="feather-map-pin" />
-                              {getAllJob?.completeAddress}
+                              {employer?.completeAddress}
                             </p>
                             <div className="twm-job-self-mid">
                               <div className="twm-job-self-mid-left">
                                 <Link
-                                  to={getAllJob?.websiteUrl}
+                                  to={employer?.websiteUrl}
                                   className="twm-job-websites site-text-primary"
                                 >
-                                  {getAllJob?.websiteUrl}
+                                  {employer?.websiteUrl}
                                 </Link>
                                 <div className="twm-jobs-amount">
-                                  ${getAllJob?.offeredsalary}{" "}
+                                  ${employer?.offeredsalary}{" "}
                                   <span>/ Month</span>
                                 </div>
                               </div>
@@ -111,9 +143,10 @@ const EmployerJobDetail = () => {
                             <div className="twm-job-self-bottom">
                               <Link
                                 className="site-button"
-                                data-bs-toggle="modal"
-                                to="#apply_job_popup"
-                                role="button"
+                                // data-bs-toggle="modal"
+                                // to="#apply_job_popup"
+                                // role="button"
+                                onClick={ApplyJob}
                               >
                                 Apply Now
                               </Link>
@@ -123,7 +156,7 @@ const EmployerJobDetail = () => {
                       </div>
                     </div>
                     <h4 className="twm-s-title">Job Description:</h4>
-                    <p>{getAllJob?.description}</p>
+                    <p>{employer?.description}</p>
 
                     <h4 className="twm-s-title">Requirments:</h4>
                     <ul className="description-list-2">
@@ -190,19 +223,19 @@ const EmployerJobDetail = () => {
                     </ul>
                     <h4 className="twm-s-title">Share Profile</h4>
                     <div className="twm-social-tags">
-                      <Link to="javascript:void(0)" className="fb-clr">
+                      <Link to="" className="fb-clr">
                         Facebook
                       </Link>
-                      <Link to="javascript:void(0)" className="tw-clr">
+                      <Link to="" className="tw-clr">
                         Twitter
                       </Link>
-                      <Link to="javascript:void(0)" className="link-clr">
+                      <Link to="" className="link-clr">
                         Linkedin
                       </Link>
-                      <Link to="javascript:void(0)" className="whats-clr">
+                      <Link to="" className="whats-clr">
                         Whatsapp
                       </Link>
-                      <Link to="javascript:void(0)" className="pinte-clr">
+                      <Link to="" className="pinte-clr">
                         Pinterest
                       </Link>
                     </div>
@@ -211,7 +244,7 @@ const EmployerJobDetail = () => {
                       <div className="twm-m-map-iframe">
                         <iframe
                           height={310}
-                          src="jobzilla/https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.8534521658976!2d-118.2533646842856!3d34.073270780600225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c6fd9829c6f3%3A0x6ecd11bcf4b0c23a!2s1363%20Sunset%20Blvd%2C%20Los%20Angeles%2C%20CA%2090026%2C%20USA!5e0!3m2!1sen!2sin!4v1620815366832!5m2!1sen!2sin"
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.8534521658976!2d-118.2533646842856!3d34.073270780600225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c6fd9829c6f3%3A0x6ecd11bcf4b0c23a!2s1363%20Sunset%20Blvd%2C%20Los%20Angeles%2C%20CA%2090026%2C%20USA!5e0!3m2!1sen!2sin!4v1620815366832!5m2!1sen!2sin"
                         />
                       </div>
                     </div>
@@ -225,14 +258,14 @@ const EmployerJobDetail = () => {
                                 <div className="tw-service-gallery-thumb">
                                   <Link
                                     className="elem"
-                                    to="images/gallery/pic1.jpg"
+                                    to="/jobzilla/images/gallery/pic1.jpg"
                                     title="Title 1"
                                     data-lcl-author
-                                    data-lcl-thumb="images/gallery/thumb/pic1.jpg"
+                                    data-lcl-thumb="/jobzilla/images/gallery/thumb/pic1.jpg"
                                   >
                                     <img
-                                      src="jobzilla/images/gallery/thumb/pic1.jpg"
-                                      alt
+                                      src="/jobzilla/images/gallery/thumb/pic1.jpg"
+                                      alt=""
                                     />
                                     <i className="fa fa-file-image" />
                                   </Link>
@@ -242,14 +275,14 @@ const EmployerJobDetail = () => {
                                 <div className="tw-service-gallery-thumb">
                                   <Link
                                     className="elem"
-                                    to="images/gallery/pic2.jpg"
+                                    to="/jobzilla/images/gallery/pic2.jpg"
                                     title="Title 2"
                                     data-lcl-author
-                                    data-lcl-thumb="images/gallery/thumb/pic2.jpg"
+                                    data-lcl-thumb="/jobzilla/images/gallery/thumb/pic2.jpg"
                                   >
                                     <img
-                                      src="jobzilla/images/gallery/thumb/pic2.jpg"
-                                      alt
+                                      src="/jobzilla/images/gallery/thumb/pic2.jpg"
+                                      alt=""
                                     />
                                     <i className="fa fa-file-image" />
                                   </Link>
@@ -259,14 +292,14 @@ const EmployerJobDetail = () => {
                                 <div className="tw-service-gallery-thumb ">
                                   <Link
                                     className="elem"
-                                    to="images/gallery/pic3.jpg"
+                                    to="/jobzilla/images/gallery/pic3.jpg"
                                     title="Title 3"
                                     data-lcl-author
-                                    data-lcl-thumb="images/gallery/thumb/pic3.jpg"
+                                    data-lcl-thumb="/jobzilla/images/gallery/thumb/pic3.jpg"
                                   >
                                     <img
-                                      src="jobzilla/images/gallery/thumb/pic3.jpg"
-                                      alt
+                                      src="/jobzilla/images/gallery/thumb/pic3.jpg"
+                                      alt=""
                                     />
                                     <i className="fa fa-file-image" />
                                   </Link>
@@ -276,14 +309,14 @@ const EmployerJobDetail = () => {
                                 <div className="tw-service-gallery-thumb">
                                   <Link
                                     className="elem"
-                                    to="images/gallery/pic4.jpg"
+                                    to="/jobzilla/images/gallery/pic4.jpg"
                                     title="Title 4"
                                     data-lcl-author
-                                    data-lcl-thumb="images/gallery/thumb/pic4.jpg"
+                                    data-lcl-thumb="/jobzilla/images/gallery/thumb/pic4.jpg"
                                   >
                                     <img
-                                      src="jobzilla/images/gallery/thumb/pic4.jpg"
-                                      alt
+                                      src="/jobzilla/images/gallery/thumb/pic4.jpg"
+                                      alt=""
                                     />
                                     <i className="fa fa-file-image" />
                                   </Link>
@@ -293,14 +326,14 @@ const EmployerJobDetail = () => {
                                 <div className="tw-service-gallery-thumb">
                                   <Link
                                     className="elem"
-                                    to="images/gallery/pic5.jpg"
+                                    to="/jobzilla/images/gallery/pic5.jpg"
                                     title="Title 5"
                                     data-lcl-author
-                                    data-lcl-thumb="images/gallery/thumb/pic5.jpg"
+                                    data-lcl-thumb="/jobzilla/images/gallery/thumb/pic5.jpg"
                                   >
                                     <img
-                                      src="jobzilla/images/gallery/thumb/pic5.jpg"
-                                      alt
+                                      src="/jobzilla/images/gallery/thumb/pic5.jpg"
+                                      alt=""
                                     />
                                     <i className="fa fa-file-image" />
                                   </Link>
@@ -310,14 +343,14 @@ const EmployerJobDetail = () => {
                                 <div className="tw-service-gallery-thumb">
                                   <Link
                                     className="elem"
-                                    to="images/gallery/pic6.jpg"
+                                    to="/jobzilla/images/gallery/pic6.jpg"
                                     title="Title 6"
                                     data-lcl-author
-                                    data-lcl-thumb="images/gallery/thumb/pic6.jpg"
+                                    data-lcl-thumb="/jobzilla/images/gallery/thumb/pic6.jpg"
                                   >
                                     <img
-                                      src="jobzilla/images/gallery/thumb/pic6.jpg"
-                                      alt
+                                      src="/jobzilla/images/gallery/thumb/pic6.jpg"
+                                      alt=""
                                     />
                                     <i className="fa fa-file-image" />
                                   </Link>
@@ -327,14 +360,14 @@ const EmployerJobDetail = () => {
                                 <div className="tw-service-gallery-thumb">
                                   <Link
                                     className="elem"
-                                    to="images/gallery/pic7.jpg"
+                                    to="/jobzilla/images/gallery/pic7.jpg"
                                     title="Title 7"
                                     data-lcl-author
-                                    data-lcl-thumb="images/gallery/thumb/pic1.jpg"
+                                    data-lcl-thumb="/jobzilla/images/gallery/thumb/pic1.jpg"
                                   >
                                     <img
-                                      src="jobzilla/images/gallery/thumb/pic7.jpg"
-                                      alt
+                                      src="/jobzilla/images/gallery/thumb/pic7.jpg"
+                                      alt=""
                                     />
                                     <i className="fa fa-file-image" />
                                   </Link>
@@ -344,14 +377,14 @@ const EmployerJobDetail = () => {
                                 <div className="tw-service-gallery-thumb">
                                   <Link
                                     className="elem"
-                                    to="images/gallery/pic8.jpg"
+                                    to="/jobzilla/images/gallery/pic8.jpg"
                                     title="Title 8"
                                     data-lcl-author
-                                    data-lcl-thumb="images/gallery/thumb/pic2.jpg"
+                                    data-lcl-thumb="/jobzilla/images/gallery/thumb/pic2.jpg"
                                   >
                                     <img
-                                      src="jobzilla/images/gallery/thumb/pic8.jpg"
-                                      alt
+                                      src="/jobzilla/images/gallery/thumb/pic8.jpg"
+                                      alt=""
                                     />
                                     <i className="fa fa-file-image" />
                                   </Link>
@@ -361,14 +394,14 @@ const EmployerJobDetail = () => {
                                 <div className="tw-service-gallery-thumb ">
                                   <Link
                                     className="elem"
-                                    to="images/gallery/pic9.jpg"
+                                    to="/jobzilla/images/gallery/pic9.jpg"
                                     title="Title 9"
                                     data-lcl-author
-                                    data-lcl-thumb="images/gallery/thumb/pic3.jpg"
+                                    data-lcl-thumb="/jobzilla/images/gallery/thumb/pic3.jpg"
                                   >
                                     <img
-                                      src="jobzilla/images/gallery/thumb/pic9.jpg"
-                                      alt
+                                      src="/jobzilla/images/gallery/thumb/pic9.jpg"
+                                      alt=""
                                     />
                                     <i className="fa fa-file-image" />
                                   </Link>
@@ -378,14 +411,14 @@ const EmployerJobDetail = () => {
                                 <div className="tw-service-gallery-thumb">
                                   <Link
                                     className="elem"
-                                    to="images/gallery/pic10.jpg"
+                                    to="/jobzilla/images/gallery/pic10.jpg"
                                     title="Title 10"
                                     data-lcl-author
-                                    data-lcl-thumb="images/gallery/thumb/pic4.jpg"
+                                    data-lcl-thumb="/jobzilla/images/gallery/thumb/pic4.jpg"
                                   >
                                     <img
-                                      src="jobzilla/images/gallery/thumb/pic10.jpg"
-                                      alt
+                                      src="/jobzilla/images/gallery/thumb/pic10.jpg"
+                                      alt=""
                                     />
                                     <i className="fa fa-file-image" />
                                   </Link>
@@ -395,14 +428,14 @@ const EmployerJobDetail = () => {
                                 <div className="tw-service-gallery-thumb">
                                   <Link
                                     className="elem"
-                                    to="images/gallery/pic11.jpg"
+                                    to="/jobzilla/images/gallery/pic11.jpg"
                                     title="Title 11"
                                     data-lcl-author
-                                    data-lcl-thumb="images/gallery/thumb/pic5.jpg"
+                                    data-lcl-thumb="/jobzilla/images/gallery/thumb/pic5.jpg"
                                   >
                                     <img
-                                      src="jobzilla/images/gallery/thumb/pic11.jpg"
-                                      alt
+                                      src="/jobzilla/images/gallery/thumb/pic11.jpg"
+                                      alt=""
                                     />
                                     <i className="fa fa-file-image" />
                                   </Link>
@@ -412,14 +445,14 @@ const EmployerJobDetail = () => {
                                 <div className="tw-service-gallery-thumb">
                                   <Link
                                     className="elem"
-                                    to="images/gallery/pic12.jpg"
+                                    to="/jobzilla/images/gallery/pic12.jpg"
                                     title="Title 12"
                                     data-lcl-author
-                                    data-lcl-thumb="images/gallery/thumb/pic6.jpg"
+                                    data-lcl-thumb="/jobzilla/images/gallery/thumb/pic6.jpg"
                                   >
                                     <img
-                                      src="jobzilla/images/gallery/thumb/pic12.jpg"
-                                      alt
+                                      src="/jobzilla/images/gallery/thumb/pic12.jpg"
+                                      alt=""
                                     />
                                     <i className="fa fa-file-image" />
                                   </Link>
@@ -433,7 +466,8 @@ const EmployerJobDetail = () => {
                           <div
                             className="video-section-first"
                             style={{
-                              backgroundImage: "url(images/video-bg.jpg)",
+                              backgroundImage:
+                                "url(/jobzilla/images/video-bg.jpg)",
                             }}
                           >
                             <Link
@@ -476,7 +510,7 @@ const EmployerJobDetail = () => {
                               <i className="fas fa-calendar-alt" />
                               <span className="twm-title">Date Posted</span>
                               <div className="twm-s-info-discription">
-                                April 22, 2023
+                                {employer?.startDate}
                               </div>
                             </div>
                           </li>
@@ -485,7 +519,7 @@ const EmployerJobDetail = () => {
                               <i className="fas fa-map-marker-alt" />
                               <span className="twm-title">Location</span>
                               <div className="twm-s-info-discription">
-                                Munchen, Germany
+                                {employer?.location}
                               </div>
                             </div>
                           </li>
@@ -494,7 +528,7 @@ const EmployerJobDetail = () => {
                               <i className="fas fa-user-tie" />
                               <span className="twm-title">Job Title</span>
                               <div className="twm-s-info-discription">
-                                {getAllJob?.jobtitle}
+                                {employer?.jobtitle}
                               </div>
                             </div>
                           </li>
@@ -503,7 +537,7 @@ const EmployerJobDetail = () => {
                               <i className="fas fa-clock" />
                               <span className="twm-title">Experience</span>
                               <div className="twm-s-info-discription">
-                                {getAllJob?.experience} Year
+                                {employer?.experience} Year
                               </div>
                             </div>
                           </li>
@@ -512,7 +546,7 @@ const EmployerJobDetail = () => {
                               <i className="fas fa-suitcase" />
                               <span className="twm-title">Qualification</span>
                               <div className="twm-s-info-discription">
-                                {getAllJob?.qualification}{" "}
+                                {employer?.qualification}{" "}
                               </div>
                             </div>
                           </li>
@@ -521,7 +555,7 @@ const EmployerJobDetail = () => {
                               <i className="fas fa-venus-mars" />
                               <span className="twm-title">Gender</span>
                               <div className="twm-s-info-discription">
-                                {getAllJob?.gender}
+                                {employer?.gender}
                               </div>
                             </div>
                           </li>
@@ -530,7 +564,7 @@ const EmployerJobDetail = () => {
                               <i className="fas fa-money-bill-wave" />
                               <span className="twm-title">Offered Salary</span>
                               <div className="twm-s-info-discription">
-                                ${getAllJob?.offeredsalary} / Month
+                                ${employer?.offeredsalary} / Month
                               </div>
                             </div>
                           </li>
@@ -540,15 +574,15 @@ const EmployerJobDetail = () => {
                     <div className="widget tw-sidebar-tags-wrap">
                       <h4 className="section-head-small mb-4">Job Skills</h4>
                       <div className="tagcloud">
-                        <Link to="javascript:void(0)">Html</Link>
-                        <Link to="javascript:void(0)">Python</Link>
-                        <Link to="javascript:void(0)">WordPress</Link>
-                        <Link to="javascript:void(0)">JavaScript</Link>
-                        <Link to="javascript:void(0)">Figma</Link>
-                        <Link to="javascript:void(0)">Angular</Link>
-                        <Link to="javascript:void(0)">Reactjs</Link>
-                        <Link to="javascript:void(0)">Drupal</Link>
-                        <Link to="javascript:void(0)">Joomla</Link>
+                        <Link to="">Html</Link>
+                        <Link to="">Python</Link>
+                        <Link to="">WordPress</Link>
+                        <Link to="">JavaScript</Link>
+                        <Link to="">Figma</Link>
+                        <Link to="">Angular</Link>
+                        <Link to="">Reactjs</Link>
+                        <Link to="">Drupal</Link>
+                        <Link to="">Joomla</Link>
                       </div>
                     </div>
                   </div>
@@ -557,7 +591,7 @@ const EmployerJobDetail = () => {
                       <div className="twm-s-info-logo-section">
                         <div className="twm-media">
                           <img
-                            src="jobzilla/images/jobs-company/pic1.jpg"
+                            src="/jobzilla/images/jobs-company/pic1.jpg"
                             alt="#"
                           />
                         </div>

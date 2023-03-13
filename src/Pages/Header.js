@@ -451,8 +451,16 @@ const Header = () => {
                     </ul>
                   </li>
                   <li className="has-child">
-                    <Link>Candidates</Link>
+                    <Link to="/candidate-dashboard">Candidates</Link>
                     <ul className="sub-menu">
+                      <li>
+                        <Link to="candidate-dashboard">Dashboard</Link>
+                      </li>
+                      <li>
+                        <Link to="/candidate-list">Candidates List</Link>
+                      </li>
+                    </ul>
+                    {/* <ul className="sub-menu">
                       <li>
                         <Link to="candidate-grid">Candidates Grid</Link>
                       </li>
@@ -499,7 +507,7 @@ const Header = () => {
                       <li>
                         <Link to="candidate-chat">Chat</Link>
                       </li>
-                    </ul>
+                    </ul> */}
                   </li>
                   <li className="has-child">
                     <Link>Blog</Link>

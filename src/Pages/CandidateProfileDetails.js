@@ -378,37 +378,37 @@ const CandidateProfileDetails = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="candidate-jobs-applied">
+                        <Link to="/candidate-jobs-applied">
                           <i className="fa fa-suitcase"></i> Applied Jobs
                         </Link>
                       </li>
                       <li>
-                        <Link to="candidate-my-resume">
+                        <Link to="/candidate-my-resume">
                           <i className="fa fa-receipt"></i> My Resume
                         </Link>
                       </li>
                       <li>
-                        <Link to="candidate-saved-jobs">
+                        <Link to="/candidate-saved-jobs">
                           <i className="fa fa-file-download"></i> Saved Jobs
                         </Link>
                       </li>
                       <li>
-                        <Link to="candidate-cv-manager">
+                        <Link to="/candidate-cv-manager">
                           <i className="fa fa-paperclip"></i> CV Manager
                         </Link>
                       </li>
                       <li>
-                        <Link to="candidate-job-alert">
+                        <Link to="/candidate-job-alert">
                           <i className="fa fa-bell"></i> Job Alerts
                         </Link>
                       </li>
                       <li>
-                        <Link to="candidate-change-password">
+                        <Link to="/candidate-change-password">
                           <i className="fa fa-fingerprint"></i> Change Passeord
                         </Link>
                       </li>
                       <li>
-                        <Link to="candidate-chat">
+                        <Link to="/candidate-chat">
                           <i className="fa fa-comments"></i>Chat
                         </Link>
                       </li>

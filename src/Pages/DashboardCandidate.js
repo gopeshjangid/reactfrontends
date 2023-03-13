@@ -63,7 +63,7 @@ const DashboardCandidate = () => {
                   <div className="twm-nav-list-1">
                     <ul>
                       <li className="active">
-                        <Link to="/candiidate-dashboard">
+                        <Link to="/candidate-dashboard">
                           <i className="fa fa-tachometer-alt" /> Dashboard
                         </Link>
                       </li>
@@ -78,37 +78,37 @@ const DashboardCandidate = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link to="candidate-jobs-applied">
+                        <Link to="/candidate-jobs-applied">
                           <i className="fa fa-suitcase" /> Applied Jobs
                         </Link>
                       </li>
                       <li>
-                        <Link to="candidate-my-resume">
+                        <Link to="/candidate-my-resume">
                           <i className="fa fa-receipt" /> My Resume
                         </Link>
                       </li>
                       <li>
-                        <Link to="candidate-saved-jobs">
+                        <Link to="/candidate-saved-jobs">
                           <i className="fa fa-file-download" /> Saved Jobs
                         </Link>
                       </li>
                       <li>
-                        <Link to="candidate-cv-manager">
+                        <Link to="/candidate-cv-manager">
                           <i className="fa fa-paperclip" /> CV Manager
                         </Link>
                       </li>
                       <li>
-                        <Link to="candidate-job-alert">
+                        <Link to="/candidate-job-alert">
                           <i className="fa fa-bell" /> Job Alerts
                         </Link>
                       </li>
                       <li>
-                        <Link to="candidate-change-password">
+                        <Link to="/candidate-change-password">
                           <i className="fa fa-fingerprint" /> Change Passeord
                         </Link>
                       </li>
                       <li>
-                        <Link to="candidate-chat">
+                        <Link to="/candidate-chat">
                           <i className="fa fa-comments" />
                           Chat
                         </Link>

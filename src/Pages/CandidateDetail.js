@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const CandidateDetail = () => {
   const [getAllUser, setGetAllUser] = useState([]);
   const [candidate, setCandidate] = useState([]);
+  const [hire, setHire] = useState();
 
   const { id } = useParams();
   console.log(id, "id");
@@ -37,6 +39,31 @@ const CandidateDetail = () => {
         console.log(error);
       });
   }, [tokenID]);
+
+  const HireCandidate = () => {
+    const token = localStorage.getItem("token");
+    console.log(id);
+    console.log(token);
+
+    axios
+      .post(
+        "http://localhost:5000/hireCandidate",
+        JSON.stringify({ hireId: id }),
+        {
+          headers: {
+            "Content-type": "application/json",
+            Authorization: `${token}`,
+          },
+        }
+      )
+
+      .then((response) => {
+        setHire(response.data);
+
+        console.log(response.data);
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <div>
       {/* <!-- CONTENT START --> */}
@@ -112,7 +139,10 @@ const CandidateDetail = () => {
                           </div>
                         </div>
                         <div className="twm-candi-self-bottom">
-                          <Link to="" className="site-button outline-white">
+                          <Link
+                            onClick={HireCandidate}
+                            className="site-button outline-white"
+                          >
                             Hire Me Now
                           </Link>
                           <Link to="" className="site-button secondry">

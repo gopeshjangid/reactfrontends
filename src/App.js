@@ -24,6 +24,9 @@ import EmployerDashboard from "./Pages/EmployerDashboard";
 import DashboardCandidate from "./Pages/DashboardCandidate";
 import EmployerManageJob from "./Pages/EmployerManageJob";
 import EmployerJobDetail from "./Pages/EmployerJobDetail";
+import CandidateJobApplied from "./Pages/CandidateJobApplied";
+import BrowseCandidate from "./Pages/BrowseCandidate";
+import CandidateMyResume from "./Pages/CandidateMyResume";
 // import About from "./pages/About";
 // import Author from "./pages/Author";
 // import Blog from "./pages/Blog";
@@ -111,10 +114,13 @@ function App() {
           path="/employer-job-detail/:id"
           element={<EmployerJobDetail />}
         />
-        {/*  <Route path="/reviews" element={<Reviews />} />
-        <Route path="/sample" element={<Sample />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/terms" element={<Terms />} />
+        <Route
+          path="/candidate-jobs-applied"
+          element={<CandidateJobApplied />}
+        />
+        <Route path="/candidate-grid" element={<BrowseCandidate />} />
+        <Route path="/candidate-my-resume" element={<CandidateMyResume />} />
+        {/*<Route path="/terms" element={<Terms />} />
         <Route path="/viewCart" element={<ViewCart />} />
         <Route path="/success" element={<Success />} />
         <Route path="/viewdetails/:id" element={<ViewDetails />} />

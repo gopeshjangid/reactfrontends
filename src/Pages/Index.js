@@ -20,6 +20,35 @@ const Index = () => {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  const [hireCandidate, setHireCandidate] = useState([]);
+
+  useEffect(() => {
+    // setIsLoading(true);
+    fetch("http://localhost:5000/gethireCandidate", {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        authorization: `${tokenID}`,
+      },
+    })
+      .then((res) => res.json(console.log(res)))
+      .then((response) => {
+        setHireCandidate(response.message);
+        // const filterData = response.message?.filter(
+        //   (item, index) => item._id === id
+        // );
+
+        // setCandidate(filterData[0]);
+        // console.log(filterData);
+        // setIsLoading(false);
+
+        console.log(response.message);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [tokenID]);
   return (
     <>
       {/* <div className="loading-area">
@@ -592,271 +621,53 @@ const Index = () => {
                   <div className="row d-flex justify-content-center">
                     <div className="col-lg-6 col-md-12 col-sm-12">
                       {/* <!--Block one--> */}
-                      <div className="twm-candidates-list-style1">
-                        <div className="twm-media">
-                          <div className="twm-media-pic">
-                            <img
-                              src="jobzilla/images/candidates/pic1.jpg"
-                              alt="#"
-                            />
-                          </div>
-                          <div className="twm-candidates-tag">
-                            <span>Featured</span>
-                          </div>
-                        </div>
-                        <div className="twm-mid-content">
-                          <Link
-                            to="candidate-detail.html"
-                            className="twm-job-title"
-                          >
-                            <h4>Wanda Montgomery </h4>
-                          </Link>
-                          <p>Charted Accountant</p>
-
-                          <div className="twm-fot-content">
-                            <div className="twm-left-info">
-                              <p className="twm-candidate-address">
-                                <i className="feather-map-pin"></i>New York
-                              </p>
-                              <div className="twm-jobs-vacancies">
-                                $20<span>/ Day</span>
+                      {hireCandidate?.map((friend, index) => {
+                        return (
+                          <div className="twm-candidates-list-style1">
+                            <div className="twm-media">
+                              <div className="twm-media-pic">
+                                <img
+                                  src="jobzilla/images/candidates/pic1.jpg"
+                                  alt="#"
+                                />
+                              </div>
+                              <div className="twm-candidates-tag">
+                                <span>Featured</span>
                               </div>
                             </div>
-                            <div className="twm-right-btn">
+                            <div className="twm-mid-content">
                               <Link
                                 to="candidate-detail.html"
-                                className="twm-view-prifile site-text-primary"
+                                className="twm-job-title"
                               >
-                                View Profile
+                                <h4>{friend.candidateDetails.username} </h4>
                               </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                              <p>{friend.candidateDetails.jobCategory}</p>
 
-                    <div className="col-lg-6 col-md-12 col-sm-12">
-                      {/* <!--Block two--> */}
-                      <div className="twm-candidates-list-style1">
-                        <div className="twm-media">
-                          <div className="twm-media-pic">
-                            <img
-                              src="jobzilla/images/candidates/pic2.jpg"
-                              alt="#"
-                            />
-                          </div>
-                          <div className="twm-candidates-tag">
-                            <span>Featured</span>
-                          </div>
-                        </div>
-                        <div className="twm-mid-content">
-                          <Link
-                            to="candidate-detail.html"
-                            className="twm-job-title"
-                          >
-                            <h4>Peter Hawkins</h4>
-                          </Link>
-                          <p>Medical Professed</p>
-
-                          <div className="twm-fot-content">
-                            <div className="twm-left-info">
-                              <p className="twm-candidate-address">
-                                <i className="feather-map-pin"></i>New York
-                              </p>
-                              <div className="twm-jobs-vacancies">
-                                $7<span>/ Hour</span>
+                              <div className="twm-fot-content">
+                                <div className="twm-left-info">
+                                  <p className="twm-candidate-address">
+                                    <i className="feather-map-pin"></i>
+                                    {friend.candidateDetails.address}
+                                  </p>
+                                  <div className="twm-jobs-vacancies">
+                                    ${friend.candidateDetails.expectedSalary}
+                                    <span>/ Day</span>
+                                  </div>
+                                </div>
+                                <div className="twm-right-btn">
+                                  <Link
+                                    to={`/candidate-detail/${friend.candidateDetails._id}`}
+                                    className="twm-view-prifile site-text-primary"
+                                  >
+                                    View Profile
+                                  </Link>
+                                </div>
                               </div>
                             </div>
-                            <div className="twm-right-btn">
-                              <Link
-                                to="candidate-detail.html"
-                                className="twm-view-prifile site-text-primary"
-                              >
-                                View Profile
-                              </Link>
-                            </div>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-6 col-md-12 col-sm-12">
-                      {/* <!--Block three--> */}
-                      <div className="twm-candidates-list-style1">
-                        <div className="twm-media">
-                          <div className="twm-media-pic">
-                            <img
-                              src="jobzilla/images/candidates/pic3.jpg"
-                              alt="#"
-                            />
-                          </div>
-                          <div className="twm-candidates-tag">
-                            <span>Featured</span>
-                          </div>
-                        </div>
-                        <div className="twm-mid-content">
-                          <Link
-                            to="candidate-detail.html"
-                            className="twm-job-title"
-                          >
-                            <h4>Ralph Johnson </h4>
-                          </Link>
-                          <p>Bank Manger</p>
-
-                          <div className="twm-fot-content">
-                            <div className="twm-left-info">
-                              <p className="twm-candidate-address">
-                                <i className="feather-map-pin"></i>New York
-                              </p>
-                              <div className="twm-jobs-vacancies">
-                                $180<span>/ Day</span>
-                              </div>
-                            </div>
-                            <div className="twm-right-btn">
-                              <Link
-                                to="candidate-detail-2.html"
-                                className="twm-view-prifile site-text-primary"
-                              >
-                                View Profile
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-lg-6 col-md-12 col-sm-12">
-                      {/* <!--Block Four--> */}
-                      <div className="twm-candidates-list-style1">
-                        <div className="twm-media">
-                          <div className="twm-media-pic">
-                            <img
-                              src="jobzilla/images/candidates/pic4.jpg"
-                              alt="#"
-                            />
-                          </div>
-                          <div className="twm-candidates-tag">
-                            <span>Featured</span>
-                          </div>
-                        </div>
-                        <div className="twm-mid-content">
-                          <Link
-                            to="candidate-detail.html"
-                            className="twm-job-title"
-                          >
-                            <h4>Randall Henderson </h4>
-                          </Link>
-                          <p>IT Contractor</p>
-
-                          <div className="twm-fot-content">
-                            <div className="twm-left-info">
-                              <p className="twm-candidate-address">
-                                <i className="feather-map-pin"></i>New York
-                              </p>
-                              <div className="twm-jobs-vacancies">
-                                $90<span>/ Week</span>
-                              </div>
-                            </div>
-                            <div className="twm-right-btn">
-                              <Link
-                                to="candidate-detail.html"
-                                className="twm-view-prifile site-text-primary"
-                              >
-                                View Profile
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-6 col-md-12 col-sm-12">
-                      {/* <!--Block Five--> */}
-                      <div className="twm-candidates-list-style1">
-                        <div className="twm-media">
-                          <div className="twm-media-pic">
-                            <img
-                              src="jobzilla/images/candidates/pic5.jpg"
-                              alt="#"
-                            />
-                          </div>
-                          <div className="twm-candidates-tag">
-                            <span>Featured</span>
-                          </div>
-                        </div>
-                        <div className="twm-mid-content">
-                          <Link
-                            to="candidate-detail.html"
-                            className="twm-job-title"
-                          >
-                            <h4>Randall Warren</h4>
-                          </Link>
-                          <p>Digital & Creative</p>
-
-                          <div className="twm-fot-content">
-                            <div className="twm-left-info">
-                              <p className="twm-candidate-address">
-                                <i className="feather-map-pin"></i>New York
-                              </p>
-                              <div className="twm-jobs-vacancies">
-                                $95<span>/ Day</span>
-                              </div>
-                            </div>
-                            <div className="twm-right-btn">
-                              <Link
-                                to="candidate-detail.html"
-                                className="twm-view-prifile site-text-primary"
-                              >
-                                View Profile
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-6 col-md-12 col-sm-12">
-                      {/* <!--Block Six--> */}
-                      <div className="twm-candidates-list-style1">
-                        <div className="twm-media">
-                          <div className="twm-media-pic">
-                            <img
-                              src="jobzilla/images/candidates/pic6.jpg"
-                              alt="#"
-                            />
-                          </div>
-                          <div className="twm-candidates-tag">
-                            <span>Featured</span>
-                          </div>
-                        </div>
-                        <div className="twm-mid-content">
-                          <Link
-                            to="candidate-detail.html"
-                            className="twm-job-title"
-                          >
-                            <h4>Christina Fischer </h4>
-                          </Link>
-                          <p>Charity & Voluntary</p>
-
-                          <div className="twm-fot-content">
-                            <div className="twm-left-info">
-                              <p className="twm-candidate-address">
-                                <i className="feather-map-pin"></i>New York
-                              </p>
-                              <div className="twm-jobs-vacancies">
-                                $19<span>/ Hour</span>
-                              </div>
-                            </div>
-                            <div className="twm-right-btn">
-                              <Link
-                                to="candidate-detail.html"
-                                className="twm-view-prifile site-text-primary"
-                              >
-                                View Profile
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                        );
+                      })}
                     </div>
                   </div>
                   <div className="text-center m-b30">

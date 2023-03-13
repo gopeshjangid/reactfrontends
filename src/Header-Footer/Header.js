@@ -289,6 +289,15 @@ const Header = () => {
                   {isLoggedin === true ? (
                     <li className="has-child">
                       <Link to="/employer-profile">Employers</Link>
+
+                      <ul className="sub-menu">
+                        <li>
+                          <Link to="employer-profile">Profile</Link>
+                        </li>
+                        <li>
+                          <Link to="/employer-list">Employers List</Link>
+                        </li>
+                      </ul>
                       {/* <ul className="sub-menu">
                       <li>
                         <Link to="employer-grid">Employers Grid</Link>
@@ -399,8 +408,16 @@ const Header = () => {
                     </ul>
                   </li>
                   <li className="has-child">
-                    <Link to="">Candidates</Link>
+                    <Link>Candidates</Link>
                     <ul className="sub-menu">
+                      <li>
+                        <Link to="/candidate-dashboard">Dashboard</Link>
+                      </li>
+                      <li>
+                        <Link to="/candidate-list">Candidates List</Link>
+                      </li>
+                    </ul>
+                    {/* <ul className="sub-menu">
                       <li>
                         <Link to="candidate-grid">Candidates Grid</Link>
                       </li>
@@ -447,7 +464,7 @@ const Header = () => {
                       <li>
                         <Link to="candidate-chat">Chat</Link>
                       </li>
-                    </ul>
+                    </ul> */}
                   </li>
                   <li className="has-child">
                     <Link to="">Blog</Link>
@@ -497,7 +514,7 @@ const Header = () => {
                     ) : (
                       <div className="twm-nav-btn-left">
                         <Link
-                          className="twm-nav-sign-up"
+                          className="twm-nav-sign-up fs-6"
                           onClick={logout}
                           role="button"
                         >
@@ -507,22 +524,22 @@ const Header = () => {
                     )}
 
                     {isLoggedin === true && load === false ? (
-                      <div className="twm-nav-btn-right">
+                      <div className="twm-nav-btn-right ">
                         <Link
                           to="/employer-post-job"
-                          className="twm-nav-post-a-job"
+                          className="twm-nav-post-a-job fs-6"
                         >
                           <i className="feather-briefcase"></i> Post a job
                         </Link>
                       </div>
                     ) : (
                       <div
-                        className="twm-nav-btn-right"
+                        className="twm-nav-btn-right "
                         data-bs-toggle="modal"
                         href="#exampleModalToggle"
                         role="button"
                       >
-                        <Link className="twm-nav-post-a-job ">
+                        <Link className="twm-nav-post-a-job fs-6 ">
                           <i className="feather-briefcase"></i> Post a job
                         </Link>
                       </div>
