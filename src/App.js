@@ -43,7 +43,7 @@ import ViewProfile from "./pages/ViewProfile";
 import AccountSettingServices from "./pages/AccountSettingServices";
 import AccountSettingSubscriptions from "./pages/AccountSettingSubscriptions";
 import AccountSettingPaymentMethod from "./pages/AccountSettingPaymentMethod";
-import AccountSettingBillingInfo from "./pages/AccountSettingBillingInfo";
+
 import OrderPaypalSuccess from "./pages/OrderPaypalSuccess";
 import PendingPaymentPaypalSuccess from "./pages/PendingPaymentPaypalSuccess";
 import PaypalGuestPaymentSuccess from "./pages/PaypalGuestPaymentSuccess";
@@ -112,10 +112,6 @@ function App() {
         <Route
           path="/accountsettingpaymentmethod"
           element={<AccountSettingPaymentMethod />}
-        />
-        <Route
-          path="/accountsettingbillinginfo"
-          element={<AccountSettingBillingInfo />}
         />
         <Route path="/orderpaypalsuccess" element={<OrderPaypalSuccess />} />
         <Route

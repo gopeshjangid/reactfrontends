@@ -6,7 +6,8 @@ import { FaStar } from "react-icons/fa";
 // import { Radio, Rating } from "./RatingStyles";
 import { Rating, Radio } from "./RatingStyles";
 import ReactPaginate from "react-paginate";
-const PER_PAGE = 5;
+import { hasPointerEvents } from "@testing-library/user-event/dist/utils";
+const PER_PAGE = 10;
 const Reviews = () => {
   const initialValues = {
     title: "",
@@ -172,7 +173,7 @@ const Reviews = () => {
     })
       .then((res) => res.json(console.log(res)))
       .then((response) => {
-        setGetRating(response.message.sort().reverse());
+        setGetRating(response.message);
         console.log(response.message);
         const filterData = response.message?.filter(
           (item, index) => item.status === "read"
@@ -533,75 +534,74 @@ const Reviews = () => {
               </h3>
             </div>
 
-            {getRating.slice(offset, offset + PER_PAGE)?.map((friend, i) => {
-              return (
-                <>
-                  {friend.status === "read" ? (
-                    <>
-                      <div
-                        className="glsr-review my-4"
-                        data-type="local"
-                        id="review-2548"
-                        data-assigned="[]"
-                        key={friend._id}
-                      >
-                        <div className="glsr-review-title">
-                          <h3 className="glsr-tag-value"> {friend.title}</h3>
-                        </div>
-                        <div className="glsr-review-rating">
-                          <div
-                            className="glsr-star-rating glsr-stars"
-                            data-rating="5"
-                          >
-                            {friend.rating === 0 ? "" : ""}
-                            {friend.rating === 1 ? (
+            {AllfilterData.slice(offset, offset + PER_PAGE)?.map(
+              (friend, i) => {
+                return (
+                  <>
+                    <div
+                      className="glsr-review my-4"
+                      data-type="local"
+                      id="review-2548"
+                      data-assigned="[]"
+                      key={friend._id}
+                    >
+                      <div className="glsr-review-title">
+                        <h5 className="glsr-tag-value"> {friend.title}</h5>
+                      </div>
+                      <div className="glsr-review-rating">
+                        <div
+                          className="glsr-star-rating glsr-stars"
+                          data-rating="5"
+                        >
+                          {friend.rating === 0 ? "" : ""}
+                          {friend.rating === 1 ? (
+                            <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
+                          ) : (
+                            ""
+                          )}
+                          {friend.rating === 2 ? (
+                            <>
                               <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                            ) : (
-                              ""
-                            )}
-                            {friend.rating === 2 ? (
-                              <>
-                                <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                                <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                              </>
-                            ) : (
-                              ""
-                            )}
-                            {friend.rating === 3 ? (
-                              <>
-                                <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                                <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                                <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                              </>
-                            ) : (
-                              ""
-                            )}
-                            {friend.rating === 4 ? (
-                              <>
-                                <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                                <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                                <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                                <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                              </>
-                            ) : (
-                              ""
-                            )}
-                            {friend.rating === 5 ? (
-                              <>
-                                <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                                <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                                <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                                <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                                <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
-                              </>
-                            ) : (
-                              ""
-                            )}
-                          </div>
+                              <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
+                            </>
+                          ) : (
+                            ""
+                          )}
+                          {friend.rating === 3 ? (
+                            <>
+                              <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
+                              <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
+                              <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
+                            </>
+                          ) : (
+                            ""
+                          )}
+                          {friend.rating === 4 ? (
+                            <>
+                              <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
+                              <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
+                              <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
+                              <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
+                            </>
+                          ) : (
+                            ""
+                          )}
+                          {friend.rating === 5 ? (
+                            <>
+                              <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
+                              <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
+                              <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
+                              <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
+                              <i className="fa-sharp fa-solid fa-star fs-5 star_r"></i>
+                            </>
+                          ) : (
+                            ""
+                          )}
                         </div>
+                      </div>
 
-                        <div className="glsr-review-content mt-2">
-                          {/* {friend.description.length > 150 ? (
+                      <div className="glsr-review-content mt-2">
+                        {/* {friend.description.length > 150 ? (
                           <div>
                             {isReadMore ? (
                               <div>
@@ -627,34 +627,31 @@ const Reviews = () => {
                         ) : (
                           ""
                         )} */}
-                          <ReactReadMoreReadLess
-                            charLimit={50}
-                            readMoreText={"Read more"}
-                            readLessText={"Read less"}
-                          >
-                            {friend.description}
-                          </ReactReadMoreReadLess>
-                          {/* ▲▼ */}
-                          {/* <span
+                        <ReactReadMoreReadLess
+                          charLimit={200}
+                          readMoreText={"Read more"}
+                          readLessText={"Read less"}
+                        >
+                          {friend.description}
+                        </ReactReadMoreReadLess>
+                        {/* ▲▼ */}
+                        {/* <span
                           onClick={(e) => setIsReadMore(friend.description)}
                         >
                           ...READ MORE
                         </span> */}
-                        </div>
-                        <br />
-                        <div className="glsr-review-author">
-                          <span className="glsr-tag-value">
-                            -{friend.username}
-                          </span>
-                        </div>
                       </div>
-                    </>
-                  ) : (
-                    ""
-                  )}
-                </>
-              );
-            })}
+                      <br />
+                      <div className="glsr-review-author">
+                        <span className="glsr-tag-value">
+                          -{friend.username}
+                        </span>
+                      </div>
+                    </div>
+                  </>
+                );
+              }
+            )}
 
             <nav aria-label="..." className="mt-5">
               <ReactPaginate

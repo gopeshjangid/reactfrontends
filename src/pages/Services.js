@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 
 import axios from "axios";
 import Loader from "./Loader";
+import usePaymentMethod from "../fetchApi/PaymentMethod";
 import { User } from "@auth0/auth0-react";
 
 function loadScript(src) {
@@ -31,6 +32,8 @@ class Services extends Component {
       stripeSubscription: [],
       noUser: false,
       razorpaSubscription: [],
+      paymentMethod: [],
+
       // navigate: useNavigate(),
       // details : {
       //     name: "gopesh"
@@ -38,6 +41,7 @@ class Services extends Component {
     };
 
     this.componentDidMount = this.componentDidMount.bind(this);
+    this.paymentDidMount = this.paymentDidMount.bind(this);
   }
   // var navigate =  useNavigate()
 
@@ -373,8 +377,89 @@ class Services extends Component {
 
       .catch((error) => console.log(error));
   };
+
+  async paymentDidMount() {
+    const paymentId = this.state.paymentMethod._id;
+    console.log(paymentId);
+    const tokenID = localStorage.getItem("token");
+    axios
+      .get(`${process.env.REACT_APP_APIURL}/fetchPaymentMethod`, {
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `${tokenID}`,
+        },
+      })
+
+      .then((response) => {
+        console.log("payment ---------------", response.data.message);
+        this.setState({
+          ...this.state,
+          paymentMethod: response.data.message,
+        });
+        console.log(this.state.paymentMethod);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  // async componentDidMount() {
+  //   this.setState({ isAddLoading: true });
+
+  //   this.viewCart();
+
+  //   // const tokenID = localStorage.getItem("token");
+
+  //   const response = await fetch(
+  //     `${process.env.REACT_APP_APIURL}/fetchPaymentMethod`,
+  //     {
+  //       method: "GET",
+  //       mode: "cors",
+  //       headers: {
+  //         "Content-type": "application/json",
+  //         Accept: "application/json",
+  //       },
+  //     }
+  //   );
+  //   if (response.ok) {
+  //     const paymentMethod = await response.json();
+  //     console.log(paymentMethod);
+
+  //     this.setState({
+  //       ...this.state,
+  //       paymentMethod: paymentMethod.data.sort().reverse(),
+  //       isAddLoading: false,
+  //     });
+  //   }
+  // }
+
+  // async componentDidMount() {
+  //   this.viewCart();
+  //   fetch(`${process.env.REACT_APP_APIURL}/fetchPaymentMethod`, {
+  //     method: "GET",
+  //     mode: "cors",
+  //     headers: {
+  //       "Content-type": "application/json",
+  //       Accept: "application/json",
+  //     },
+  //   })
+  //     .then(async (response) => {
+  //       const User = await response.json();
+  //       if (response.ok) {
+  //         console.log(User);
+  //         this.setState({ ...this.state, User: User.data });
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
+
   render() {
-    const { User } = this.state;
+    const { User, paymentMethod } = this.state;
+    if (paymentMethod.length < 0) {
+      return paymentMethod.length > 0;
+    }
 
     if (User.length < 0) {
       return User.length > 0;
@@ -383,7 +468,8 @@ class Services extends Component {
       <span dangerouslySetInnerHTML={{ __html: props.HTML }}></span>
     );
 
-    // console.log("this.props.User", this.state.User);
+    console.log("this.props.User", this.state.paymentMethod);
+
     return (
       <div>
         {this.state.isAddLoading ? (

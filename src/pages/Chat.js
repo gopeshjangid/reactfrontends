@@ -182,7 +182,9 @@ const Chat = ({ orderId, orderName }) => {
     selectedChatCompare = selectedChat;
   }, [chatId, selectedChat]);
 
-  const messageSendHandler = () => {
+  const messageSendHandler = (e) => {
+    e.preventDefault();
+
     setLoad(true);
     const token = localStorage.getItem("token");
 
@@ -251,9 +253,7 @@ const Chat = ({ orderId, orderName }) => {
       });
   };
 
-  const handleChange = (e) => {
-    setMessageText(e.target.value);
-  };
+  // const handleChange = (e) => {};
 
   const selectImage = (e) => {
     // if (e.target.files) {
@@ -322,27 +322,24 @@ const Chat = ({ orderId, orderName }) => {
         </div>
       </div>
 
-      <div className="chat_msg">
+      <form className="chat_msg" onSubmit={messageSendHandler}>
         <textarea
           className="form-control chat_cm"
           rows="3"
-          id="chatInput"
+          // id="chatInput"
           placeholder="type here...."
           name="text"
           value={messageText}
-          onChange={handleChange}
+          onChange={(e) => setMessageText(e.target.value)}
         ></textarea>
         <div className="d-flex">
-          {load ? (
-            <button className=" border-0   text-white chat_s_btn">SEND</button>
-          ) : (
-            <button
-              onClick={messageSendHandler}
-              className=" border-0 text-white chat_s_btn"
-            >
-              SEND
-            </button>
-          )}
+          {/* {load ? ( */}
+          {/* <button className=" border-0   text-white chat_s_btn">SEND</button> */}
+          {/* ) : ( */}
+          <button type="submit" className=" border-0 text-white chat_s_btn">
+            SEND
+          </button>
+          {/* )} */}
           <div className="fileDiv border-0 ms-2" id="upload-btn-chat">
             <input
               onChange={(e) => selectImage(e)}
@@ -354,7 +351,7 @@ const Chat = ({ orderId, orderName }) => {
             />
           </div>
         </div>
-      </div>
+      </form>
     </>
   );
 };

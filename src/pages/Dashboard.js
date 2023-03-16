@@ -117,11 +117,7 @@ const Dashboard = () => {
                       Payment Methods
                     </Link>
                   </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" to="/accountsettingbillinginfo">
-                      Billing Information
-                    </Link>
-                  </li>
+
                   <li className="nav-item">
                     <Link className="nav-link" to="/transactionhistory">
                       Credits
