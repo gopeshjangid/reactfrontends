@@ -2,18 +2,29 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const CandidateMyResume = () => {
-  const resumeValues = [{ ResumeHeadline: "" }];
+  const resumeValues = { ResumeHeadline: "" };
 
   const [resumeHeadline, setResumeHaeadline] = useState(resumeValues);
 
-  const ResumeHeadlineClick = () => {
+  const resumeChange = (e) => {
+    const { name, value } = e.target;
+    setResumeHaeadline({ ...resumeHeadline, [name]: value });
+  };
+
+  const ResumeHeadlineClick = (e) => {
+    e.preventDefault();
     setResumeHaeadline(resumeHeadline);
     console.log(resumeHeadline);
   };
+
+
+
+const tableValue ={
+  fullName: "",
+}
+
   const [tableData, setTableData] = useState([]);
-  const [formInputData, setformInputData] = useState({
-    fullName: "",
-  });
+  const [formInputData, setformInputData] = useState(tableValue);
 
   const handleChange = (evnt) => {
     const newInput = (data) => ({
@@ -98,6 +109,94 @@ const CandidateMyResume = () => {
     console.log(project);
   };
 
+
+
+
+  const desiredValues = {
+    industry: "",
+    functionalarea: "",
+    role: "",
+    jobtype: "",
+    employmenttype: "",
+    preferredshift: "",
+    availabilityjoin: "",
+    expectedsalary: "",
+    desiredlocation: "",
+    desiredindustry: "",
+  };
+
+  const [desired, setDesired] = useState(desiredValues);
+
+  const desiredChange = (e) => {
+    const { name, value } = e.target;
+    setDesired({ ...desired, [name]: value });
+  };
+
+  const desiredClick = (e) => {
+    e.preventDefault();
+    setDesired(desired);
+    console.log(desired);
+  };
+
+  const personalValues = {
+    dateofbirth: "",
+    gender: "",
+    permanentAddress: "",
+    hometown: "",
+    pincode: "",
+    maritalstatus: "",
+    passportnumber: "",
+    assistance: "",
+    otherCountry: "",
+  };
+
+  const [personal, setPersonal] = useState(personalValues);
+
+  const personalChange = (e) => {
+    const { name, value } = e.target;
+    setPersonal({ ...personal, [name]: value });
+  };
+
+  const personalClick = (e) => {
+    e.preventDefault();
+    setPersonal(personal);
+    console.log(personal);
+  };
+
+  const Allset = [{ resumeHeadline, employer, education,tableData, project, desired, personal }]
+
+  console.log(Allset)
+  const [all, setAll] = useState([Allset])
+
+  const allClick = (e) => {
+    e.preventDefault();
+
+    fetch("http://localhost:5000/register", {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify(Allset),
+      headers: {
+        "Content-type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((response) => response.json(console.log(response)))
+
+      .then((json) => {
+        setAll({
+          User: json,
+        });
+
+
+        // setMessage(json.message);
+        console.log(json);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    setAll(all);
+    console.log(all);
+  };
   return (
     <div>
       {/* CONTENT START */}
@@ -225,7 +324,7 @@ const CandidateMyResume = () => {
                     </div>
                     <div className="panel-body wt-panel-body p-a20 ">
                       <div className="twm-panel-inner">
-                        <div>{`${resumeHeadline}`}</div>
+                        <div>{resumeHeadline.ResumeHeadline }</div>
                       </div>
                     </div>
                     {/*Modal Popup */}
@@ -240,7 +339,7 @@ const CandidateMyResume = () => {
                     >
                       <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
-                          <form>
+                          <form  onSubmit={ResumeHeadlineClick}>
                             <div className="modal-header">
                               <h2 className="modal-title">Resume Headline</h2>
                               <button
@@ -263,11 +362,8 @@ const CandidateMyResume = () => {
                                     <textarea
                                       className="form-control"
                                       name="ResumeHeadline"
-                                      onChange={(e) =>
-                                        setResumeHaeadline(e.target.value)
-                                      }
+                                      onChange={resumeChange}
                                       placeholder="Type Description"
-                                      defaultValue={""}
                                     />
                                   </div>
                                 </div>
@@ -282,8 +378,8 @@ const CandidateMyResume = () => {
                                 Close
                               </button>
                               <button
-                                type="button"
-                                onClick={ResumeHeadlineClick}
+                                type="submit"
+                               
                                 className="site-button"
                               >
                                 Save
@@ -694,9 +790,9 @@ const CandidateMyResume = () => {
                         <p>
                           <b>Jobzilla</b>
                         </p>
-                        <p>Google INC</p>
-                        <p>January 2023 to Present</p>
-                        <p>Jobjilla Template</p>
+                        <p>{project?.ProjectTitle}</p>
+                        <p>{project?.ProjectEducation}</p>
+                        <p>{project?.projectDetail}</p>
                       </div>
                     </div>
                     {/*Project */}
@@ -838,14 +934,14 @@ const CandidateMyResume = () => {
                       <h4 className="panel-tittle m-a0">
                         Desired Career Profile
                       </h4>
-                      <Link
+                      <button
                         data-bs-toggle="modal"
                         href="#Desired_Career"
                         title="Edit"
-                        className="site-text-primary"
+                        className="site-text-primary bg-transparent border-0 p-0"
                       >
                         <span className="fa fa-edit" />
-                      </Link>
+                      </button>
                     </div>
                     <div className="panel-body wt-panel-body p-a20 ">
                       <div className="twm-panel-inner">
@@ -854,7 +950,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Industry</div>
                               <span className="twm-s-info-discription">
-                                IT-Software/Software Services
+                                {desired.industry}
                               </span>
                             </div>
                           </div>
@@ -862,7 +958,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Functional Area</div>
                               <span className="twm-s-info-discription">
-                                Design / Creative / User Experience
+                                {desired.functionalarea}
                               </span>
                             </div>
                           </div>
@@ -870,7 +966,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Role</div>
                               <span className="twm-s-info-discription">
-                                Web Designer
+                                {desired.role}
                               </span>
                             </div>
                           </div>
@@ -878,7 +974,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Job Type</div>
                               <span className="twm-s-info-discription">
-                                permanent
+                                {desired.role}
                               </span>
                             </div>
                           </div>
@@ -886,7 +982,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Employment Type</div>
                               <span className="twm-s-info-discription">
-                                Full Time
+                                {desired.employmenttype}
                               </span>
                             </div>
                           </div>
@@ -894,7 +990,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Desired Shift</div>
                               <span className="twm-s-info-discription">
-                                Add Desired Shift
+                                {desired.preferredshift}
                               </span>
                             </div>
                           </div>
@@ -904,7 +1000,7 @@ const CandidateMyResume = () => {
                                 Availability to Join
                               </div>
                               <span className="twm-s-info-discription">
-                                06 August
+                                {desired.availabilityjoin}
                               </span>
                             </div>
                           </div>
@@ -912,7 +1008,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Expected Salary</div>
                               <span className="twm-s-info-discription">
-                                1 Lakhs
+                                {desired.expectedsalary}
                               </span>
                             </div>
                           </div>
@@ -920,7 +1016,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Desired Location</div>
                               <span className="twm-s-info-discription">
-                                Add Desired Location
+                                {desired.desiredlocation}
                               </span>
                             </div>
                           </div>
@@ -928,7 +1024,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Desired Industry</div>
                               <span className="twm-s-info-discription">
-                                Add Desired Industry
+                                {desired.desiredindustry}
                               </span>
                             </div>
                           </div>
@@ -939,11 +1035,12 @@ const CandidateMyResume = () => {
                     <div
                       className="modal fade twm-saved-jobs-view"
                       id="Desired_Career"
+                      style={{ background: "#0000003d" }}
                       tabIndex={-1}
                     >
                       <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
-                          <form>
+                          <form onSubmit={desiredClick}>
                             <div className="modal-header">
                               <h2 className="modal-title">
                                 Desired Career Profile
@@ -962,24 +1059,15 @@ const CandidateMyResume = () => {
                                   <div className="form-group">
                                     <label>Industry</label>
                                     <div className="ls-inputicon-box">
-                                      <select
-                                        className="wt-select-box selectpicker"
-                                        data-live-search="true"
-                                        title
-                                        data-bv-field="size"
-                                      >
-                                        <option>Accounting / Finance</option>
-                                        <option>
-                                          Banking / Financial Services / Broking
-                                        </option>
-                                        <option>
-                                          Education / Teaching / Training
-                                        </option>
-                                        <option>
-                                          IT-Hardware / Networking
-                                        </option>
-                                        <option>Other</option>
-                                      </select>
+                                      <input
+                                        onChange={desiredChange}
+                                        className="form-control "
+                                        type="text"
+
+                                        placeholder="Industry"
+                                        name="industry"
+                                        id="Permanent"
+                                      />
                                       <i className="fs-input-icon fa fa-industry" />
                                     </div>
                                   </div>
@@ -989,27 +1077,14 @@ const CandidateMyResume = () => {
                                   <div className="form-group">
                                     <label>Functional Area / Department</label>
                                     <div className="ls-inputicon-box">
-                                      <select
-                                        className="wt-select-box selectpicker"
-                                        data-live-search="true"
-                                        title
-                                        data-bv-field="size"
-                                      >
-                                        <option>Agent</option>
-                                        <option>
-                                          Architecture / Interior Design
-                                        </option>
-                                        <option>
-                                          Beauty / Fitness / Spa Services
-                                        </option>
-                                        <option>
-                                          IT Hardware / Technical Support
-                                        </option>
-                                        <option>
-                                          IT Software - System Programming
-                                        </option>
-                                        <option>Other</option>
-                                      </select>
+                                      <input
+                                        onChange={desiredChange}
+                                        className="form-control "
+                                        type="text"
+                                        placeholder="Agent"
+                                        name="functionalarea"
+                                        id="Permanent"
+                                      />
                                       <i className="fs-input-icon fa fa-building" />
                                     </div>
                                   </div>
@@ -1019,21 +1094,14 @@ const CandidateMyResume = () => {
                                   <div className="form-group">
                                     <label>Role</label>
                                     <div className="ls-inputicon-box">
-                                      <select
-                                        className="wt-select-box selectpicker"
-                                        data-live-search="true"
-                                        title
-                                        data-bv-field="size"
-                                      >
-                                        <option>Creative</option>
-                                        <option>Web Designer</option>
-                                        <option>Graphic Designer</option>
-                                        <option>
-                                          National Creative Director
-                                        </option>
-                                        <option>Fresher</option>
-                                        <option>Other</option>
-                                      </select>
+                                      <input
+                                        onChange={desiredChange}
+                                        className="form-control "
+                                        type="text"
+                                        placeholder="Role"
+                                        name="role"
+                                        id="Permanent"
+                                      />
                                       <i className="fs-input-icon fa fa-globe-americas" />
                                     </div>
                                   </div>
@@ -1042,36 +1110,15 @@ const CandidateMyResume = () => {
                                 <div className="col-xl-12 col-lg-12">
                                   <div className="form-group">
                                     <label>Job Type</label>
-                                    <div className="row twm-form-radio-inline">
-                                      <div className="col-md-6">
-                                        <input
-                                          className="form-check-input"
-                                          type="radio"
-                                          name="flexRadioDefault"
-                                          id="Permanent"
-                                        />
-                                        <label
-                                          className="form-check-label"
-                                          htmlFor="Permanent"
-                                        >
-                                          Permanent
-                                        </label>
-                                      </div>
-                                      <div className="col-md-6">
-                                        <input
-                                          className="form-check-input"
-                                          type="radio"
-                                          name="flexRadioDefault"
-                                          id="Contractual"
-                                          defaultChecked
-                                        />
-                                        <label
-                                          className="form-check-label"
-                                          htmlFor="Contractual"
-                                        >
-                                          Contractual
-                                        </label>
-                                      </div>
+                                    <div className=" twm-form-radio-inline">
+                                      <input
+                                        onChange={desiredChange}
+                                        className="form-control "
+                                        type="text"
+                                        placeholder="Job Types"
+                                        name="jobtype"
+                                        id="Permanent"
+                                      />
                                     </div>
                                   </div>
                                 </div>
@@ -1079,36 +1126,15 @@ const CandidateMyResume = () => {
                                 <div className="col-xl-12 col-lg-12">
                                   <div className="form-group">
                                     <label>Employment Type</label>
-                                    <div className="row twm-form-radio-inline">
-                                      <div className="col-md-6">
-                                        <input
-                                          className="form-check-input"
-                                          type="radio"
-                                          name="flexRadioDefault"
-                                          id="Full_Time"
-                                        />
-                                        <label
-                                          className="form-check-label"
-                                          htmlFor="Full_Time"
-                                        >
-                                          Full Time
-                                        </label>
-                                      </div>
-                                      <div className="col-md-6">
-                                        <input
-                                          className="form-check-input"
-                                          type="radio"
-                                          name="flexRadioDefault"
-                                          id="part_Time"
-                                          defaultChecked
-                                        />
-                                        <label
-                                          className="form-check-label"
-                                          htmlFor="part_Time"
-                                        >
-                                          Part Time
-                                        </label>
-                                      </div>
+                                    <div className=" twm-form-radio-inline">
+                                      <input
+                                        onChange={desiredChange}
+                                        className="form-control "
+                                        type="text"
+                                        placeholder="Employment Type"
+                                        name="employmenttype"
+                                        id="Permanent"
+                                      />
                                     </div>
                                   </div>
                                 </div>
@@ -1117,50 +1143,14 @@ const CandidateMyResume = () => {
                                   <div className="form-group">
                                     <label>Preferred Shift</label>
                                     <div className="row twm-form-radio-inline">
-                                      <div className="col-md-4">
-                                        <input
-                                          className="form-check-input"
-                                          type="radio"
-                                          name="flexRadioDefault"
-                                          id="S_day"
-                                        />
-                                        <label
-                                          className="form-check-label"
-                                          htmlFor="S_day"
-                                        >
-                                          Day
-                                        </label>
-                                      </div>
-                                      <div className="col-md-4">
-                                        <input
-                                          className="form-check-input"
-                                          type="radio"
-                                          name="flexRadioDefault"
-                                          id="S_night"
-                                          defaultChecked
-                                        />
-                                        <label
-                                          className="form-check-label"
-                                          htmlFor="S_night"
-                                        >
-                                          Night
-                                        </label>
-                                      </div>
-                                      <div className="col-md-4">
-                                        <input
-                                          className="form-check-input"
-                                          type="radio"
-                                          name="flexRadioDefault"
-                                          id="s_part_time"
-                                          defaultChecked
-                                        />
-                                        <label
-                                          className="form-check-label"
-                                          htmlFor="s_part_time"
-                                        >
-                                          Part Time
-                                        </label>
-                                      </div>
+                                      <input
+                                        onChange={desiredChange}
+                                        className="form-control "
+                                        type="text"
+                                        placeholder="Prefferd Shift"
+                                        name="preferredshift"
+                                        id="Permanent"
+                                      />
                                     </div>
                                   </div>
                                 </div>
@@ -1170,10 +1160,11 @@ const CandidateMyResume = () => {
                                     <label>Availability to Join</label>
                                     <div className="ls-inputicon-box">
                                       <input
+                                        onChange={desiredChange}
                                         className="form-control datepicker"
                                         data-provide="datepicker"
-                                        name="company_since"
-                                        type="text"
+                                        name="availabilityjoin"
+                                        type="date"
                                         placeholder="mm/dd/yyyy"
                                       />
                                       <i className="fs-input-icon far fa-calendar" />
@@ -1185,118 +1176,31 @@ const CandidateMyResume = () => {
                                   <div className="form-group">
                                     <label>Expected Salary</label>
                                     <div className="row twm-form-radio-inline">
-                                      <div className="col-md-6">
-                                        <input
-                                          className="form-check-input"
-                                          type="radio"
-                                          name="US_Dollars"
-                                        />
-                                        <label className="form-check-label">
-                                          US Dollars
-                                        </label>
-                                      </div>
-                                      <div className="col-md-6">
-                                        <input
-                                          className="form-check-input"
-                                          type="radio"
-                                          name="US_Dollars"
-                                          id="indian_rpees"
-                                          defaultChecked
-                                        />
-                                        <label
-                                          className="form-check-label"
-                                          htmlFor="indian_rpees"
-                                        >
-                                          Indian Rupees
-                                        </label>
-                                      </div>
+                                      <input
+                                        onChange={desiredChange}
+                                        className="form-control "
+                                        type="number"
+                                        placeholder="Expected Salary"
+                                        name="expectedsalary"
+                                        id="Permanent"
+                                      />
+
                                     </div>
                                   </div>
                                 </div>
-                                <div className="col-xl-6 col-lg-6">
-                                  <div className="form-group">
-                                    <label>Lakh</label>
-                                    <div className="ls-inputicon-box">
-                                      <select
-                                        className="wt-select-box selectpicker"
-                                        data-live-search="true"
-                                        title
-                                        data-bv-field="size"
-                                      >
-                                        <option
-                                          className="bs-title-option"
-                                          value
-                                        >
-                                          Select Category
-                                        </option>
-                                        <option>0 lakh</option>
-                                        <option>1 lakh</option>
-                                        <option>2 lakh</option>
-                                        <option>5 lakh</option>
-                                        <option>4 lakh</option>
-                                        <option>5 lakh</option>
-                                      </select>
-                                      <i className="fs-input-icon fa fa-dollar-sign" />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-xl-6 col-lg-6">
-                                  <div className="form-group">
-                                    <label>Thousand</label>
-                                    <div className="ls-inputicon-box">
-                                      <select
-                                        className="wt-select-box selectpicker"
-                                        data-live-search="true"
-                                        title
-                                        data-bv-field="size"
-                                      >
-                                        <option
-                                          className="bs-title-option"
-                                          value
-                                        >
-                                          Select Category
-                                        </option>
-                                        <option> 05 Thousand </option>
-                                        <option> 10 Thousand </option>
-                                        <option> 15 Thousand </option>
-                                        <option> 20 Thousand </option>
-                                        <option> 25 Thousand </option>
-                                        <option> 30 Thousand </option>
-                                        <option> 35 Thousand </option>
-                                        <option> 40 Thousand </option>
-                                        <option> 45 Thousand </option>
-                                        <option> 50 Thousand </option>
-                                      </select>
-                                      <i className="fs-input-icon fa fa-dollar-sign" />
-                                    </div>
-                                  </div>
-                                </div>
+
                                 <div className="col-xl-12 col-lg-12">
                                   <div className="form-group">
                                     <label>Desired Location</label>
                                     <div className="ls-inputicon-box">
-                                      <select
-                                        className="wt-select-box selectpicker"
-                                        data-live-search="true"
-                                        title
-                                        data-bv-field="size"
-                                      >
-                                        <option
-                                          className="bs-title-option"
-                                          value
-                                        >
-                                          Country
-                                        </option>
-                                        <option>India</option>
-                                        <option>Australia</option>
-                                        <option>Bahrain</option>
-                                        <option>China</option>
-                                        <option>Dubai</option>
-                                        <option>France</option>
-                                        <option>Germany</option>
-                                        <option>Hong Kong</option>
-                                        <option>Kuwait</option>
-                                      </select>
+                                      <input
+                                        onChange={desiredChange}
+                                        className="form-control "
+                                        type="text"
+                                        placeholder="Desired Location"
+                                        name="desiredlocation"
+                                        id="Permanent"
+                                      />
                                       <i className="fs-input-icon fa fa-map-marker-alt" />
                                     </div>
                                   </div>
@@ -1305,23 +1209,14 @@ const CandidateMyResume = () => {
                                   <div className="form-group mb-0">
                                     <label>Desired Industry</label>
                                     <div className="ls-inputicon-box">
-                                      <select
-                                        className="wt-select-box selectpicker"
-                                        data-live-search="true"
-                                        title
-                                        data-bv-field="size"
-                                      >
-                                        <option
-                                          className="bs-title-option"
-                                          value
-                                        >
-                                          Country
-                                        </option>
-                                        <option>Software</option>
-                                        <option>Factory</option>
-                                        <option>Ngo</option>
-                                        <option>Other</option>
-                                      </select>
+                                      <input
+                                        onChange={desiredChange}
+                                        className="form-control "
+                                        type="text"
+                                        placeholder="Desired Industry"
+                                        name="desiredindustry"
+                                        id="Permanent"
+                                      />
                                       <i className="fs-input-icon fa fa-globe-americas" />
                                     </div>
                                   </div>
@@ -1336,7 +1231,7 @@ const CandidateMyResume = () => {
                               >
                                 Close
                               </button>
-                              <button type="button" className="site-button">
+                              <button type="submit" className="site-button">
                                 Save
                               </button>
                             </div>
@@ -1349,14 +1244,14 @@ const CandidateMyResume = () => {
                   <div className="panel panel-default mb-3">
                     <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
                       <h4 className="panel-tittle m-a0">Personal Details</h4>
-                      <Link
+                      <button
                         data-bs-toggle="modal"
                         href="#Personal_Details"
                         title="Edit"
-                        className="site-text-primary"
+                        className="site-text-primary border-0 bg-transparent p-0"
                       >
                         <span className="fa fa-edit" />
-                      </Link>
+                      </button>
                     </div>
                     <div className="panel-body wt-panel-body p-a20 ">
                       <div className="twm-panel-inner">
@@ -1365,7 +1260,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Date of Birth</div>
                               <span className="twm-s-info-discription">
-                                31 July 1998
+                                {personal.dateofbirth}
                               </span>
                             </div>
                           </div>
@@ -1373,7 +1268,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Permanent Address</div>
                               <span className="twm-s-info-discription">
-                                Add Permanent Address
+                                {personal.permanentAddress}
                               </span>
                             </div>
                           </div>
@@ -1381,7 +1276,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Gender</div>
                               <span className="twm-s-info-discription">
-                                Male
+                                {personal.gender}
                               </span>
                             </div>
                           </div>
@@ -1389,7 +1284,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Area Pin Code</div>
                               <span className="twm-s-info-discription">
-                                302021
+                                {personal.pincode}
                               </span>
                             </div>
                           </div>
@@ -1397,7 +1292,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Marital Status</div>
                               <span className="twm-s-info-discription">
-                                Single / unmarried
+                                {personal.maritalstatus}
                               </span>
                             </div>
                           </div>
@@ -1405,7 +1300,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Hometown</div>
                               <span className="twm-s-info-discription">
-                                USA
+                                {personal.hometown}
                               </span>
                             </div>
                           </div>
@@ -1413,7 +1308,7 @@ const CandidateMyResume = () => {
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Passport Number</div>
                               <span className="twm-s-info-discription">
-                                +123 456 7890
+                                {personal.passportnumber}
                               </span>
                             </div>
                           </div>
@@ -1422,25 +1317,18 @@ const CandidateMyResume = () => {
                               <div className="twm-title">
                                 Work permit of other country
                               </div>
-                              <span className="twm-s-info-discription">UK</span>
+                              <span className="twm-s-info-discription">{personal.otherCountry}</span>
                             </div>
                           </div>
                           <div className="col-md-6">
                             <div className="twm-s-detail-section">
                               <div className="twm-title">Differently Abled</div>
                               <span className="twm-s-info-discription">
-                                None
+                                {personal.assistance}
                               </span>
                             </div>
                           </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Languages</div>
-                              <span className="twm-s-info-discription">
-                                English
-                              </span>
-                            </div>
-                          </div>
+
                         </div>
                       </div>
                     </div>
@@ -1448,11 +1336,12 @@ const CandidateMyResume = () => {
                     <div
                       className="modal fade twm-saved-jobs-view"
                       id="Personal_Details"
+                      style={{ background: "#00000066" }}
                       tabIndex={-1}
                     >
                       <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
-                          <form>
+                          <form onSubmit={personalClick}>
                             <div className="modal-header">
                               <h2 className="modal-title">Personal Detail</h2>
                               <button
@@ -1470,10 +1359,10 @@ const CandidateMyResume = () => {
                                     <label>Date of Birth</label>
                                     <div className="ls-inputicon-box">
                                       <input
-                                        className="form-control datepicker"
-                                        data-provide="datepicker"
-                                        name="company_since"
-                                        type="text"
+                                        onChange={personalChange}
+                                        className="form-control "
+                                        name="dateofbirth"
+                                        type="date"
                                         placeholder="mm/dd/yyyy"
                                       />
                                       <i className="fs-input-icon far fa-calendar" />
@@ -1483,36 +1372,16 @@ const CandidateMyResume = () => {
                                 <div className="col-xl-12 col-lg-12">
                                   <div className="form-group">
                                     <label>Gender</label>
-                                    <div className="row twm-form-radio-inline">
-                                      <div className="col-md-6">
-                                        <input
-                                          className="form-check-input"
-                                          type="radio"
-                                          name="flexRadioDefault"
-                                          id="S_male"
-                                        />
-                                        <label
-                                          className="form-check-label"
-                                          htmlFor="S_male"
-                                        >
-                                          Male
-                                        </label>
-                                      </div>
-                                      <div className="col-md-6">
-                                        <input
-                                          className="form-check-input"
-                                          type="radio"
-                                          name="flexRadioDefault"
-                                          id="S_female"
-                                          defaultChecked
-                                        />
-                                        <label
-                                          className="form-check-label"
-                                          htmlFor="S_female"
-                                        >
-                                          Female
-                                        </label>
-                                      </div>
+                                    <div className="ls-inputicon-box">
+                                      <input
+                                        onChange={personalChange}
+                                        className="form-control"
+
+                                        name="gender"
+                                        type="text"
+                                        placeholder="Gender"
+                                      />
+                                      <i className="fs-input-icon far fa-calendar" />
                                     </div>
                                   </div>
                                 </div>
@@ -1521,8 +1390,10 @@ const CandidateMyResume = () => {
                                     <label>Permanent Address</label>
                                     <div className="ls-inputicon-box">
                                       <input
+                                        onChange={personalChange}
                                         className="form-control"
                                         type="text"
+                                        name="permanentAddress"
                                         placeholder="Enter Permanent Address"
                                       />
                                       <i className="fs-input-icon fa fa-map-marker-alt" />
@@ -1534,8 +1405,10 @@ const CandidateMyResume = () => {
                                     <label>Hometown</label>
                                     <div className="ls-inputicon-box">
                                       <input
+                                        onChange={personalChange}
                                         className="form-control"
                                         type="text"
+                                        name="hometown"
                                         placeholder="Enter Hometown"
                                       />
                                       <i className="fs-input-icon fa fa-map-marker-alt" />
@@ -1547,8 +1420,10 @@ const CandidateMyResume = () => {
                                     <label>Pincode</label>
                                     <div className="ls-inputicon-box">
                                       <input
+                                        onChange={personalChange}
                                         className="form-control"
                                         type="text"
+                                        name="pincode"
                                         placeholder="Enter Pincode"
                                       />
                                       <i className="fs-input-icon fa fa-map-pin" />
@@ -1559,21 +1434,13 @@ const CandidateMyResume = () => {
                                   <div className="form-group">
                                     <label>Marital Status</label>
                                     <div className="ls-inputicon-box">
-                                      <select
-                                        className="wt-select-box selectpicker"
-                                        data-live-search="true"
-                                        title
-                                        data-bv-field="size"
-                                      >
-                                        <option
-                                          className="bs-title-option"
-                                          value
-                                        >
-                                          Select Category
-                                        </option>
-                                        <option>Married</option>
-                                        <option>Single</option>
-                                      </select>
+                                      <input
+                                        onChange={personalChange}
+                                        className="form-control"
+                                        type="text"
+                                        name="maritalstatus"
+                                        placeholder="Marital Status"
+                                      />
                                       <i className="fs-input-icon fa fa-user" />
                                     </div>
                                   </div>
@@ -1583,8 +1450,10 @@ const CandidateMyResume = () => {
                                     <label>Passport Number</label>
                                     <div className="ls-inputicon-box">
                                       <input
+                                        onChange={personalChange}
                                         className="form-control"
-                                        type="text"
+                                        type="number"
+                                        name="passportnumber"
                                         placeholder="Enter Passport Number"
                                       />
                                       <i className="fs-input-icon fa fa-star-of-life" />
@@ -1597,6 +1466,8 @@ const CandidateMyResume = () => {
                                     <textarea
                                       className="form-control"
                                       rows={3}
+                                      onChange={personalChange}
+                                      name="assistance"
                                       placeholder="Describe"
                                       defaultValue={""}
                                     />
@@ -1608,34 +1479,13 @@ const CandidateMyResume = () => {
                                       Work Permit for Other Countries
                                     </label>
                                     <div className="ls-inputicon-box">
-                                      <select
-                                        className="wt-select-box selectpicker"
-                                        data-live-search="true"
-                                        title
-                                        data-bv-field="size"
-                                      >
-                                        <option
-                                          className="bs-title-option"
-                                          value
-                                        >
-                                          Country
-                                        </option>
-                                        <option>Afghanistan</option>
-                                        <option>Albania</option>
-                                        <option>Algeria</option>
-                                        <option>Andorra</option>
-                                        <option>Angola</option>
-                                        <option>Antigua and Barbuda</option>
-                                        <option>Argentina</option>
-                                        <option>Armenia</option>
-                                        <option>Australia</option>
-                                        <option>Austria</option>
-                                        <option>Azerbaijan</option>
-                                        <option>The Bahamas</option>
-                                        <option>Bahrain</option>
-                                        <option>Bangladesh</option>
-                                        <option>Barbados</option>
-                                      </select>
+                                      <input
+                                        onChange={personalChange}
+                                        className="form-control"
+                                        type="text"
+                                        name="otherCountry"
+                                        placeholder="Enter Other Country"
+                                      />
                                       <i className="fs-input-icon fa fa-globe-americas" />
                                     </div>
                                   </div>
@@ -1650,7 +1500,7 @@ const CandidateMyResume = () => {
                               >
                                 Close
                               </button>
-                              <button type="button" className="site-button">
+                              <button type="submit" className="site-button">
                                 Save
                               </button>
                             </div>
@@ -1660,829 +1510,9 @@ const CandidateMyResume = () => {
                     </div>
                   </div>
                   {/*Attach Resume*/}
-                  <div className="panel panel-default mb-3">
-                    <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
-                      <h4 className="panel-tittle m-a0">Attach Resume</h4>
-                    </div>
-                    <div className="panel-body wt-panel-body p-a20 ">
-                      <div className="twm-panel-inner">
-                        <p>
-                          Resume is the most important document recruiters look
-                          for. Recruiters generally do not look at profiles
-                          without resumes.
-                        </p>
-                        <div className="dashboard-cover-pic">
-                          <form
-                            action="https://thewebmax.org/jobzilla/upload.php"
-                            className="dropzone"
-                          />
-                          <p>Upload Resume File size is 3 MB</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/*Accomplishments*/}
-                  <div className="panel panel-default mb-3">
-                    <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
-                      <h4 className="panel-tittle m-a0">Accomplishments</h4>
-                    </div>
-                    <div className="panel-body wt-panel-body p-a20 ">
-                      <div className="twm-panel-inner">
-                        <div className="twm-list-wrap">
-                          <div className="twm-list-inner d-flex justify-content-between">
-                            <b>Online Profile</b>
-                            <Link
-                              data-bs-toggle="modal"
-                              href="#Online_Profile"
-                              title="Edit"
-                              className="site-text-primary"
-                            >
-                              <span className="fa fa-edit" />
-                            </Link>
-                          </div>
-                          <p>
-                            Add link to Online profiles (e.g. Linkedin, Facebook
-                            etc.).
-                          </p>
-                        </div>
-                        {/*Online Profile Modal */}
-                        <div
-                          className="modal fade twm-saved-jobs-view"
-                          id="Online_Profile"
-                          tabIndex={-1}
-                        >
-                          <div className="modal-dialog modal-dialog-centered">
-                            <div className="modal-content">
-                              <form>
-                                <div className="modal-header">
-                                  <h2 className="modal-title">
-                                    Online Profiles
-                                  </h2>
-                                  <button
-                                    type="button"
-                                    className="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
-                                  />
-                                </div>
-                                <div className="modal-body">
-                                  <div className="row">
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>Social Profile</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="Enter Social Profile Name"
-                                          />
-                                          <i className="fs-input-icon fa fa-address-card" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>URL</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="Enter Url"
-                                          />
-                                          <i className="fs-input-icon fa fa-globe-americas" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-md-12">
-                                      <div className="form-group mb-0">
-                                        <label>Description</label>
-                                        <textarea
-                                          className="form-control"
-                                          rows={3}
-                                          placeholder="Type Description"
-                                          defaultValue={""}
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="modal-footer">
-                                  <button
-                                    type="button"
-                                    className="site-button"
-                                    data-bs-dismiss="modal"
-                                  >
-                                    Close
-                                  </button>
-                                  <button type="button" className="site-button">
-                                    Save
-                                  </button>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="twm-list-wrap">
-                          <div className="twm-list-inner d-flex justify-content-between">
-                            <b>Work Sample</b>
-                            <Link
-                              data-bs-toggle="modal"
-                              href="#Work_Sample"
-                              title="Edit"
-                              className="site-text-primary"
-                            >
-                              <span className="fa fa-edit" />
-                            </Link>
-                          </div>
-                          <p>
-                            Add link to your Projects (e.g. Github links etc.).
-                          </p>
-                        </div>
-                        {/*Work Sample Modal */}
-                        <div
-                          className="modal fade twm-saved-jobs-view"
-                          id="Work_Sample"
-                          tabIndex={-1}
-                        >
-                          <div className="modal-dialog modal-dialog-centered">
-                            <div className="modal-content">
-                              <form>
-                                <div className="modal-header">
-                                  <h2 className="modal-title">Work Sample</h2>
-                                  <button
-                                    type="button"
-                                    className="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
-                                  />
-                                </div>
-                                <div className="modal-body">
-                                  <div className="row">
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>Work Title</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="Enter Work Title"
-                                          />
-                                          <i className="fs-input-icon fa fa-address-card" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>URL</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="Enter Url"
-                                          />
-                                          <i className="fs-input-icon fa fa-globe-americas" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    {/*Start Date*/}
-                                    <div className="col-md-6">
-                                      <div className="form-group">
-                                        <label>Duration From</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control datepicker"
-                                            data-provide="datepicker"
-                                            name="company_since"
-                                            type="text"
-                                            placeholder="mm/dd/yyyy"
-                                          />
-                                          <i className="fs-input-icon far fa-calendar" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    {/*End Date*/}
-                                    <div className="col-md-6">
-                                      <div className="form-group">
-                                        <label>Duration to</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control datepicker"
-                                            data-provide="datepicker"
-                                            name="company_since"
-                                            type="text"
-                                            placeholder="mm/dd/yyyy"
-                                          />
-                                          <i className="fs-input-icon far fa-calendar" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <input
-                                          className="form-check-input"
-                                          type="checkbox"
-                                          name="flexRadioDefault"
-                                          id="Working_on"
-                                          defaultChecked
-                                        />
-                                        <label
-                                          className="form-check-label"
-                                          htmlFor="Working_on"
-                                        >
-                                          I am currently working on this
-                                        </label>
-                                      </div>
-                                    </div>
-                                    <div className="col-md-12">
-                                      <div className="form-group mb-0">
-                                        <label>Description</label>
-                                        <textarea
-                                          className="form-control"
-                                          rows={3}
-                                          placeholder="Type Description"
-                                          defaultValue={""}
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="modal-footer">
-                                  <button
-                                    type="button"
-                                    className="site-button"
-                                    data-bs-dismiss="modal"
-                                  >
-                                    Close
-                                  </button>
-                                  <button type="button" className="site-button">
-                                    Save
-                                  </button>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="twm-list-wrap">
-                          <div className="twm-list-inner d-flex justify-content-between">
-                            <b>
-                              White Paper / Research Publication / Journal Entry
-                            </b>
-                            <Link
-                              data-bs-toggle="modal"
-                              href="#Research_Publication"
-                              title="Edit"
-                              className="site-text-primary"
-                            >
-                              <span className="fa fa-edit" />
-                            </Link>
-                          </div>
-                          <p>Add links to your Online publications.</p>
-                        </div>
-                        {/*White Paper / Research Publication / Journal Entry Modal */}
-                        <div
-                          className="modal fade twm-saved-jobs-view"
-                          id="Research_Publication"
-                          tabIndex={-1}
-                        >
-                          <div className="modal-dialog modal-dialog-centered">
-                            <div className="modal-content">
-                              <form>
-                                <div className="modal-header">
-                                  <h2 className="modal-title">
-                                    White Paper / Research Publication / Journal
-                                    Entry
-                                  </h2>
-                                  <button
-                                    type="button"
-                                    className="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
-                                  />
-                                </div>
-                                <div className="modal-body">
-                                  <div className="row">
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>Title</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="Title"
-                                          />
-                                          <i className="fs-input-icon fa fa-address-card" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>URL</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="Enter Url"
-                                          />
-                                          <i className="fs-input-icon fa fa-globe-americas" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    {/*Start Date*/}
-                                    <div className="col-md-12">
-                                      <div className="form-group">
-                                        <label>Published On</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control datepicker"
-                                            data-provide="datepicker"
-                                            name="company_since"
-                                            type="text"
-                                            placeholder="mm/dd/yyyy"
-                                          />
-                                          <i className="fs-input-icon far fa-calendar" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-md-12">
-                                      <div className="form-group mb-0">
-                                        <label>Description</label>
-                                        <textarea
-                                          className="form-control"
-                                          rows={3}
-                                          placeholder="Type Description"
-                                          defaultValue={""}
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="modal-footer">
-                                  <button
-                                    type="button"
-                                    className="site-button"
-                                    data-bs-dismiss="modal"
-                                  >
-                                    Close
-                                  </button>
-                                  <button type="button" className="site-button">
-                                    Save
-                                  </button>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="twm-list-wrap">
-                          <div className="twm-list-inner d-flex justify-content-between">
-                            <b>Presentation</b>
-                            <Link
-                              data-bs-toggle="modal"
-                              href="#Presentation_modal"
-                              title="Edit"
-                              className="site-text-primary"
-                            >
-                              <span className="fa fa-edit" />
-                            </Link>
-                          </div>
-                          <p>
-                            Add links to your Online presentations (e.g.
-                            Slideshare presentation links etc.).
-                          </p>
-                        </div>
-                        {/*Presentation Modal */}
-                        <div
-                          className="modal fade twm-saved-jobs-view"
-                          id="Presentation_modal"
-                          tabIndex={-1}
-                        >
-                          <div className="modal-dialog modal-dialog-centered">
-                            <div className="modal-content">
-                              <form>
-                                <div className="modal-header">
-                                  <h2 className="modal-title">Presentation</h2>
-                                  <button
-                                    type="button"
-                                    className="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
-                                  />
-                                </div>
-                                <div className="modal-body">
-                                  <div className="row">
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>Social Profile</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="Enter Social Profile Name"
-                                          />
-                                          <i className="fs-input-icon fa fa-address-card" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>URL</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="Enter Url"
-                                          />
-                                          <i className="fs-input-icon fa fa-globe-americas" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-md-12">
-                                      <div className="form-group mb-0">
-                                        <label>Description</label>
-                                        <textarea
-                                          className="form-control"
-                                          rows={3}
-                                          placeholder="Type Description"
-                                          defaultValue={""}
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="modal-footer">
-                                  <button
-                                    type="button"
-                                    className="site-button"
-                                    data-bs-dismiss="modal"
-                                  >
-                                    Close
-                                  </button>
-                                  <button type="button" className="site-button">
-                                    Save
-                                  </button>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="twm-list-wrap">
-                          <div className="twm-list-inner d-flex justify-content-between">
-                            <b>Certification</b>
-                            <Link
-                              data-bs-toggle="modal"
-                              href="#Certification_modal"
-                              title="Edit"
-                              className="site-text-primary"
-                            >
-                              <span className="fa fa-edit" />
-                            </Link>
-                          </div>
-                          <p>Add details of Certification you have filed.</p>
-                        </div>
-                        {/*Certification Modal */}
-                        <div
-                          className="modal fade twm-saved-jobs-view"
-                          id="Certification_modal"
-                          tabIndex={-1}
-                        >
-                          <div className="modal-dialog modal-dialog-centered">
-                            <div className="modal-content">
-                              <form>
-                                <div className="modal-header">
-                                  <h2 className="modal-title">Certification</h2>
-                                  <button
-                                    type="button"
-                                    className="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
-                                  />
-                                </div>
-                                <div className="modal-body">
-                                  <div className="row">
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>Certification Name</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="Enter Certification Name"
-                                          />
-                                          <i className="fs-input-icon fa fa-address-card" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>Certification Body</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="Enter Certification Body"
-                                          />
-                                          <i className="fs-input-icon fa fa-address-card" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group mb-0">
-                                        <label>Year Onlabel</label>
-                                        <div className="ls-inputicon-box">
-                                          <select
-                                            className="wt-select-box selectpicker"
-                                            data-live-search="true"
-                                            title
-                                            data-bv-field="size"
-                                          >
-                                            <option
-                                              className="bs-title-option"
-                                              value
-                                            >
-                                              Year
-                                            </option>
-                                            <option>2021</option>
-                                            <option>2020</option>
-                                            <option>2019</option>
-                                            <option>2018</option>
-                                            <option>2017</option>
-                                            <option>2016</option>
-                                            <option>2015</option>
-                                            <option>2014</option>
-                                            <option>2013</option>
-                                            <option>2012</option>
-                                            <option>2011</option>
-                                          </select>
-                                          <i className="fs-input-icon fa fa-calendar-alt" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="modal-footer">
-                                  <button
-                                    type="button"
-                                    className="site-button"
-                                    data-bs-dismiss="modal"
-                                  >
-                                    Close
-                                  </button>
-                                  <button type="button" className="site-button">
-                                    Save
-                                  </button>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="twm-list-wrap">
-                          <div className="twm-list-inner d-flex justify-content-between">
-                            <b>Patent</b>
-                            <Link
-                              data-bs-toggle="modal"
-                              href="#Patent_modal"
-                              title="Edit"
-                              className="site-text-primary"
-                            >
-                              <span className="fa fa-edit" />
-                            </Link>
-                          </div>
-                          <p>Add details of Patents you have filed.</p>
-                        </div>
-                        {/*Patent Modal */}
-                        <div
-                          className="modal fade twm-saved-jobs-view"
-                          id="Patent_modal"
-                          tabIndex={-1}
-                        >
-                          <div className="modal-dialog modal-dialog-centered">
-                            <div className="modal-content">
-                              <form>
-                                <div className="modal-header">
-                                  <h2 className="modal-title">Patent</h2>
-                                  <button
-                                    type="button"
-                                    className="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
-                                  />
-                                </div>
-                                <div className="modal-body">
-                                  <div className="row">
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>Title</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="Enter Title"
-                                          />
-                                          <i className="fs-input-icon fa fa-address-card" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>Url</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="Enter Url "
-                                          />
-                                          <i className="fs-input-icon fa fa-globe-americas" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>Patent Office</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="Enter Patent Office"
-                                          />
-                                          <i className="fs-input-icon fa fa-building" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>Application Number</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control"
-                                            type="text"
-                                            placeholder="Enter Application Number"
-                                          />
-                                          <i className="fs-input-icon fa fa-dice-d6" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-xl-12 col-lg-12">
-                                      <div className="form-group">
-                                        <label>Status</label>
-                                        <div className="row twm-form-radio-inline">
-                                          <div className="col-md-6">
-                                            <input
-                                              className="form-check-input"
-                                              type="radio"
-                                              name="flexRadioDefault"
-                                              id="Patent_Issued"
-                                            />
-                                            <label
-                                              className="form-check-label"
-                                              htmlFor="Patent_Issued"
-                                            >
-                                              Patent Issued
-                                            </label>
-                                          </div>
-                                          <div className="col-md-6">
-                                            <input
-                                              className="form-check-input"
-                                              type="radio"
-                                              name="flexRadioDefault"
-                                              id="Patent_pending"
-                                              defaultChecked
-                                            />
-                                            <label
-                                              className="form-check-label"
-                                              htmlFor="Patent_pending"
-                                            >
-                                              Patent pending
-                                            </label>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    {/*Start Date*/}
-                                    <div className="col-md-12">
-                                      <div className="form-group">
-                                        <label>Published On</label>
-                                        <div className="ls-inputicon-box">
-                                          <input
-                                            className="form-control datepicker"
-                                            data-provide="datepicker"
-                                            name="company_since"
-                                            type="text"
-                                            placeholder="mm/dd/yyyy"
-                                          />
-                                          <i className="fs-input-icon far fa-calendar" />
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="col-md-12">
-                                      <div className="form-group mb-0">
-                                        <label>Description</label>
-                                        <textarea
-                                          className="form-control"
-                                          rows={3}
-                                          placeholder="Type Description"
-                                          defaultValue={""}
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="modal-footer">
-                                  <button
-                                    type="button"
-                                    className="site-button"
-                                    data-bs-dismiss="modal"
-                                  >
-                                    Close
-                                  </button>
-                                  <button type="button" className="site-button">
-                                    Save
-                                  </button>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/*Profile Summary*/}
-                  <div className="panel panel-default mb-3">
-                    <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
-                      <h4 className="panel-tittle m-a0">Profile Summary</h4>
-                      <Link
-                        data-bs-toggle="modal"
-                        href="#Profile_Summary"
-                        title="Edit"
-                        className="site-text-primary"
-                      >
-                        <span className="fa fa-edit" />
-                      </Link>
-                    </div>
-                    <div className="panel-body wt-panel-body p-a20 ">
-                      <div className="twm-panel-inner">
-                        <p>
-                          Your Profile Summary should mention the highlights of
-                          your career and education, what your professional
-                          interests are, and what kind of a career you are
-                          looking for. Write a meaningful summary of more than
-                          50 characters.
-                        </p>
-                      </div>
-                    </div>
-                    {/*Modal Popup */}
-                    <div
-                      className="modal fade twm-saved-jobs-view"
-                      id="Profile_Summary"
-                      tabIndex={-1}
-                    >
-                      <div className="modal-dialog modal-dialog-centered">
-                        <div className="modal-content">
-                          <form>
-                            <div className="modal-header">
-                              <h2 className="modal-title">Profile Summary</h2>
-                              <button
-                                type="button"
-                                className="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                              />
-                            </div>
-                            <div className="modal-body">
-                              <p>
-                                Your Profile Summary should mention the
-                                highlights of your career and education, what
-                                your professional interests are, and what kind
-                                of a career you are looking for. Write a
-                                meaningful summary of more than 50 characters.
-                              </p>
-                              <div className="row">
-                                <div className="col-lg-12 col-md-12">
-                                  <div className="form-group twm-textarea-full">
-                                    <textarea
-                                      className="form-control"
-                                      placeholder="Detail of Project"
-                                      defaultValue={""}
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="modal-footer">
-                              <button
-                                type="button"
-                                className="site-button"
-                                data-bs-dismiss="modal"
-                              >
-                                Close
-                              </button>
-                              <button type="button" className="site-button">
-                                Save
-                              </button>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <button type="button" onClick={allClick} className="site-button">
+                    Save
+                  </button>
                 </div>
               </div>
             </div>
