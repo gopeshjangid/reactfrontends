@@ -543,6 +543,29 @@ const ViewCart = () => {
       });
   };
 
+  const [savePayment, setSavePayment] = useState([]);
+  // const paymentId = savePayment.payments;
+  // console.log(paymentId);
+
+  useEffect((paymentId) => {
+    console.log(paymentId);
+    const tokenID = localStorage.getItem("token");
+    console.log(tokenID);
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization: `${tokenID}`,
+    };
+    axios
+      .get(`${process.env.REACT_APP_APIURL}/fetchPaymentMethod`, {
+        headers: headers,
+      })
+      .then((res) => {
+        setSavePayment({ payments: res.data.message });
+        console.log(res.data.message);
+        console.log(savePayment);
+      });
+  }, []);
+
   return (
     <>
       {Loading ? (

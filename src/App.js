@@ -54,6 +54,9 @@ import BlogWritingServices from "./pages/BlogWritingServices";
 import FreelanceWritingServices from "./pages/FreelanceWritingServices";
 import ReviewWritingServices from "./pages/ReviewWritingServices";
 import PaypalSubscriptionSuccess from "./pages/PaypalSubscriptionSuccess";
+import BlogWritingServicesTechnical from "./pages/BlogWritingServicesTechnical";
+import BlogWritingServicesProfessional from "./pages/BlogWritingServicesProfessional";
+import BlogWritingServicesCreative from "./pages/BlogWritingServicesCreative";
 
 function App() {
   return (
@@ -146,6 +149,18 @@ function App() {
         <Route
           path="/paypalsubscriptionsuccess"
           element={<PaypalSubscriptionSuccess />}
+        />
+        <Route
+          path="blog-writing-services/technical"
+          element={<BlogWritingServicesTechnical />}
+        />
+        <Route
+          path="blog-writing-services/professional"
+          element={<BlogWritingServicesProfessional />}
+        />
+        <Route
+          path="blog-writing-services/creative"
+          element={<BlogWritingServicesCreative />}
         />
       </Routes>
       <Footer />

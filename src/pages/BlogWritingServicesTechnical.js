@@ -5,21 +5,24 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "./ReviewGetintouch";
 
-const BlogWritingServices = () => {
+const BlogWritingServicesTechnical = () => {
   return (
     <div>
       <section className="top_sec p-0">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1 mt-3 p-0">Amazing Blog Services!</h1>
-              <h2 className="top_Sec-h2"> Affordable Blog Writing Services|</h2>
+              <h1 className="top_Sec-h1 mt-3 p-0">
+                Compelling Technical Blogs!
+              </h1>
+              <h2 className="top_Sec-h2"> Blog Professionals Available|</h2>
               <p className="top_Sec-p">
-                GetProWriter is making blog writing services easily available
-                for clients. Our mission is to provide clients with high-quality
-                blog writing services at an affordable price. We believe in
-                making hiring writers for your blog affordable. That is why our
-                services are moderately priced.
+                GetProWriter offers comprehensive technical blog writing
+                services to clients. Our writers are always up-to-date on the
+                latest trends in technology and are familiar with all major
+                software packages. We know how important it is for your business
+                to stay current, so we make sure that our writers can help you
+                do just that.
               </p>
             </div>
 
@@ -36,81 +39,81 @@ const BlogWritingServices = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Hire Someone To Write Blog Posts - Only From GetProWriter!
+              Excellent Writers For Technical Blogs!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Fantastic blog writers for hire for your business.
+              Informative technical blogs designed for your business.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Highly Talented</h3>
+                <h3 className="box-h3">Certified Writers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Fantastic Skills</h3>
+                <h3 className="box-h3">Best Tech Blogs</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Tested Knowledge</h3>
+                <h3 className="box-h3">Quality Pieces</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Keywords Rich</h3>
+                <h3 className="box-h3">Blog Masters</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Top Quality</h3>
+                <h3 className="box-h3">Industry Best</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Industry Levels</h3>
+                <h3 className="box-h3">Effective ORM</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Blog Champions</h3>
+                <h3 className="box-h3">Bloggers Unmatched</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Empowering Brands</h3>
+                <h3 className="box-h3">True To Work</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Original Blogs</h3>
+                <h3 className="box-h3">Experience Unrivalled</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Experienced Writers</h3>
+                <h3 className="box-h3">Punctual Professionals</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Original Tone</h3>
+                <h3 className="box-h3">Originality Maintained</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Happy Companies</h3>
+                <h3 className="box-h3">Delighted Businesses</h3>
               </div>
             </div>
           </div>
@@ -120,24 +123,24 @@ const BlogWritingServices = () => {
       <section className="rev_sec">
         <div className="container">
           <div className="row">
-            <h2 className="rev_sec-h2">Online Blog Writing Delivered Easily</h2>
+            <h2 className="rev_sec-h2">
+              Technical Blog Writing To Boost Businesses
+            </h2>
 
             <p className="rev_sec-p">
-              The internet is a vast place with millions of websites competing
-              for attention. As more people turn to the internet to find
-              information about their interests and concerns, businesses have
-              found that they need to have quality web content available in
-              order to compete with other businesses in their niche. And we make
-              effective blog writing happen!
+              We provide technical blogs for clients, who are in need of them
+              for various purposes. We have a team of expert writers and these
+              experts can write any kind of technical blog. Our writers have
+              extensive experience in writing all kinds of blogs, from the basic
+              to the advanced ones. Our writers are able to write blogs on any
+              topic that you want them to cover.
             </p>
             <p className="rev_sec-p">
-              GetProWriter is offering effective blog writing services to
-              clients. We believe that every business has something important to
-              say, but you shouldn’t have to be a writer to say it. Also, hiring
-              good writers for your blog takes time. That’s why we’re here – to
-              make sure your ideas are communicated in the most impactful way.
-              So, if need the best blog writing services, get in touch with us
-              immediately.
+              Our main goal is to provide high-quality content for our clients
+              at affordable prices to boost businesses. We always try to provide
+              the best possible service for our clients, as this will help us
+              build a good reputation in the market and attract more business
+              from other companies as well.
             </p>
           </div>
         </div>
@@ -147,11 +150,11 @@ const BlogWritingServices = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              Top Bloggers For Hire On GetProWriter!
+              Commendable Technical Blog Writers On GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Best blog writing services for your business.
+              Outstanding technical blogs for your enterprise.
             </p>
 
             <div class="col-md-6">
@@ -222,24 +225,24 @@ const BlogWritingServices = () => {
               </div>
             </div>
             <div class="col-md-6">
-              <h2 class="count_h2">Get An Expert Blogger For Hire</h2>
+              <h2 class="count_h2">
+                Hire A GPW Technical Blog Expert To Attract Users
+              </h2>
               <p class="count-p">
-                Hiring writers for your blog is not easy. But With GetProWriter,
-                you can get an expert blogger for hire in no time. Many
-                businesses are looking for a way to get in front of their
-                audiences and share their message with the world. But not
-                everyone gets a good blogger for hire to do it. And for them,
-                GetProWriter is the answer!
+                GetProWriter professionals write the most relevant technical
+                blogs to attract users. We understand that you have lots of
+                choices when it comes to writing services, which is why we work
+                hard to make sure our clients are always satisfied with the work
+                we provide. We know that you want a writer who will deliver
+                high-quality content, and that’s exactly what we’ll give you.
               </p>
               <p class="count-p">
-                We help people like you get blog writing packages easily. We’ve
-                been helping people acquire the best blog writing services for
-                many years now and we’ve worked with clients from around the
-                world. GPW is the easiest way to get the professional help you
-                need to make effective blog writing a reality. We’ll provide you
-                with a writer who has experience writing content for websites.
-                You’ll be able to work with our writers directly through our
-                platform. So, hire someone to write blog posts today.
+                When you’re looking for a technical blog, it’s important to make
+                sure that the information is up-to-date. The best way to do that
+                is to hire GetProWriter professionals, who are seasoned at
+                writing technical blogs. These professionals will make sure that
+                your blog is both accurate and interesting to read so that it
+                attracts the right audience.
               </p>
             </div>
           </div>
@@ -250,36 +253,36 @@ const BlogWritingServices = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-              Skilled Blog Post Writers For Hire On GPW
+              Reasonable Prices For Technical Blog Writing Services
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Buy blog writing services packages conveniently.
+              Our tech blog professionals for SEO-rich content.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Quality Driven Blog Post Writing Service
+                Technical Blog Writing Services Where Quality Is The King
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our blog writing packages are all about quality and accuracy. We
-                know how hard it is to find a writer who can do your job well,
-                so we’ve made it our mission to bring you the best blog writing
-                services. This is what your company needs to grow by leaps and
-                bounds.
+                All GetProWriter content is led by quality. Our writers are
+                trained to use the best practices in their writing and to ensure
+                that every piece of content meets your requirements. We take
+                pride in our writers’ ability to produce high-quality content
+                for any purpose, so you can be sure that all of our work is
+                original and tailored to fit your needs.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our effective blog writing professionals know their topics well.
-                They will not only write blog posts that are informative but
-                also ones that are fun to read. They’re also trained to write in
-                a way that is SEO-friendly so your readers get the information
-                they need and can find your site when they search for it. If
-                you’re looking for a blog post writing service, let us help!
+                When we offer technical blog writing services, our motto is to
+                ensure your satisfaction. We know how important it is for you to
+                be able to trust the people you work with, and we’re glad that
+                you’ve chosen us. So, for all your tech blog requirements, get
+                in touch with us today.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="writer/img/Quality-blog-post.webp"
+                src="/writer/img/Blog-writing-quality.webp"
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -287,57 +290,58 @@ const BlogWritingServices = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="writer/img/Effective-blog-writer.webp"
+                src="/writer/img/Informative-content.webp"
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Effective Blog Writing Every Time
+                Informative Technical Blog Content
               </h3>
               <p className="ab_sec2-p rws-p">
-                We believe in delivering effective services when it comes to
-                blog writing. We understand that you want to be sure your
-                audience will be engaged and they receive the information they
-                need from your blog, so we take a personal and professional
-                approach to every project. We work hard to make sure that hiring
-                writers for your blog becomes worthwhile with us.
+                Once we’ve gathered all the information we need, we’ll get right
+                down to business: creating great content that’s customized just
+                for you. Our writers are passionate about making sure they
+                understand exactly what their clients want from their work
+                before they even start writing. We also put great emphasis on
+                our content being informative.
               </p>
               <p className="ab_sec2-p rws-p">
-                We know that you have a lot on your plate, and we want to make
-                sure that our blog writing service makes your life easier by
-                providing high-quality, enriching content for your audience. If
-                you’re looking to hire someone to write blog posts and create
-                content that gets results, we’d love to talk with you about your
-                project!
+                We’re dedicated to providing you with high-quality content that
+                meets your needs. We believe that in order to do this, we need
+                to understand your business and its goals. That’s why we start
+                the process by knowing your company, who your target audience
+                is, and what kind of tone will resonate best with them. We have
+                made a difference in many businesses since our company’s
+                inception.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Qualified Blog Writers For Your Enterprise
+                Creative Bloggers For Technical Niche
               </h3>
               <p className="ab_sec2-p rws-p">
-                All our blog writers are qualified and they have the knack for
-                it. They know how to write a blog post that will make you want
-                to read it. We know that this is an important part of successful
-                online blog writing and we want to provide you with the best
-                content possible by bloggers for hire.
+                Technical blogging is not like other types of writing. It
+                involves extensive information and technical details. But that
+                doesn’t mean it has to be boring! Our writers add creativity to
+                such projects and make them engaging even to non-techies.
               </p>
               <p className="ab_sec2-p rws-p">
-                We’ve chosen our blog post writers because of their vast
-                expertise and experience. They are not just good at writing, but
-                they’re also great at understanding what our customers want to
-                read about. That’s why we’re proud to say that every single one
-                of our blogs is written by a real person who knows their
-                industry well. Get in touch with us to know more about the blog
-                post writing service we offer.
+                Our writers are passionate about the projects they work on and
+                strive to make each piece they write entertaining and engaging.
+                Whether you’re writing about the latest technological
+                advancements or a groundbreaking new study, our writers will add
+                creativity so your audience doesn’t lose interest. They are
+                masters of their craft. We know how important it is for you to
+                get your message across in the right way – and we can help you
+                do that.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="writer/img/Qualified-blog-writer.webp"
+                src="/writer/img/Creative-bloggers.webp"
                 alt="Online-review"
                 className="rws-img"
               />
@@ -345,57 +349,56 @@ const BlogWritingServices = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="writer/img/Boost-Traffic.webp"
+                src="/writer/img/Business-up-1.webp"
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <h3 className="ab_sec2-h3 rws-h3">
-                Blog Posts To Boost User Traffic
-              </h3>
+              <h3 className="ab_sec2-h3 rws-h3">Creative-bloggers</h3>
               <p className="ab_sec2-p rws-p">
-                We know that you’re looking for blog post writers who can boost
-                your user traffic and we’ve got the best ones. Our writers are
-                experienced in creating blog posts that get people talking about
-                your brand. They are simply the masters of content. When they
-                write your content, customers will want to read more of what
-                you’ve published on your website.
+                We know that you’re looking for a reliable and trustworthy way
+                to expand your business. And that’s exactly what we offer here
+                at GetProWriter. Our blog experts will help you to expand your
+                business image like no other company. We have a team of writers
+                who are ready to create content that will be sure to impress,
+                whether it’s for a company blog or an individual contributor
+                site.
               </p>
               <p className="ab_sec2-p rws-p">
-                When you get a blogger for hire from us, he/she will create blog
-                posts that are engaging and shareable. We’ll work with you to
-                make sure we understand your brand’s voice and tone, so the
-                writing sounds like it’s coming from someone at your company –
-                not just some random person on the internet. Many clients are
-                immensely happy with our offerings. If you want to hire someone
-                to write blog posts, then we would want to know what kind of
-                content you’d like us to create for you!
+                We’ll make sure that everything is done in accordance with the
+                latest SEO best practices, so you don’t have to worry about your
+                rankings slipping. Additionally, our writing team will ensure
+                that all of the content they create is engaging and interesting,
+                so readers will want more.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <h3 className="ab_sec2-h3 rws-h3">Blog Posts That Are Genuine</h3>
+              <h3 className="ab_sec2-h3 rws-h3">
+                Genuine Content Written For Tech Blogs
+              </h3>
               <p className="ab_sec2-p rws-p">
-                We are a team of bloggers for hire that focuses on creating blog
-                content that is genuine and reflects your brand message. Our
-                writing style is friendly, easy to read, and attractive. We use
-                simple language, short sentences, and analogies to make your
-                content easily understood by everyone who reads it.
+                Our technical blog experts write genuine blogs for all clients.
+                The information is verified and the continue is plagiarism-free.
+                Our experts are highly qualified and experienced in the field of
+                technical writing. We offer high-quality services to our
+                clients, which are primarily aimed at providing them with
+                reliable and authentic content. Our team of writers understands
+                the importance of writing a genuine blog, as it has a direct
+                impact on your website’s overall ranking in search engines.
               </p>
               <p className="ab_sec2-p rws-p">
-                We can write about any topic you choose and we have many years
-                of experience in online blog writing as well as in drafting
-                websites, social media posts, and more. So when you have a
-                question about how your business can grow, or what the best
-                approach is for attracting new customers – we know exactly how
-                to get the answers. All you have to do is just send us your
-                requirements for blog writing packages and we will revert back.
+                We take pride in our ability to provide 100% original content
+                that will help you achieve your goals. Our blog writers follow
+                strict guidelines while drafting blog posts that meet your
+                requirements and needs. We ensure that our content is always
+                genuine.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="writer/img/Genuine-post.webp"
+                src="/writer/img/Genuine-writer.webp"
                 alt="Real-review-writer"
                 className="rws-img"
               />
@@ -403,30 +406,32 @@ const BlogWritingServices = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="writer/img/Expertise-4.webp"
+                src="/writer/img/Expertise-writer-1.webp"
                 alt="Expertise"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Blogs With GetProWriter Expertise
+                GetProWriter Expertise For Phenomenal Tech Blogs
               </h3>
               <p className="ab_sec2-p rws-p">
-                GetProWriter expertise simply elevates the level of your blog
-                posts. We have a team of professional writers who can write your
-                blog posts for you with ease. Our writers are experienced in the
-                content writing industry and they are ready to deliver blog
-                writing services packages at a fast pace.
+                Looking to differentiate your technical blogs from your
+                competitors? Then you need GetProWriter. We have been offering
+                technical blog writing services since our inception. We’re
+                experts in technical writing and know how to make your content
+                stand out. Whether you’re looking for a product review or just
+                want to get more traffic by creating high-quality blogs, we’ve
+                got you covered.
               </p>
               <p className="ab_sec2-p rws-p">
-                Whether it is an informative article or a conversational piece,
-                we can do it all. Our blog post writers understand what makes
-                content attractive and keep in mind all the important elements
-                while writing a blog post. Our services come at affordable
-                prices and have proven to be very effective in improving your
-                brand awareness. So, for all your blog services needs – GPW is
-                here to help!
+                We’ll write your blog from scratch and do all the research
+                required to make sure it’s accurate, so you can be confident
+                that it will make the cut. And don’t worry about formatting –
+                we’ll format each article and make sure it looks great on any
+                device. You’ll have access to our network of writers who
+                specialize in different fields so that you can choose from the
+                best.
               </p>
             </div>
           </div>
@@ -447,7 +452,7 @@ const BlogWritingServices = () => {
                 <h2 className="get_sec-box_h2">STEP 1</h2>
                 <h3 className="get_sec-box_h3">Make a request</h3>
                 <img
-                  src="writer/img/Make-a-request.webp"
+                  src="/writer/img/Make-a-request.webp"
                   alt="Make-a-request"
                   className="get_sec-box_img"
                 />
@@ -463,7 +468,7 @@ const BlogWritingServices = () => {
                 <h2 className="get_sec-box_h2">STEP 2</h2>
                 <h3 className="get_sec-box_h3">Let us write your content</h3>
                 <img
-                  src="writer/img/Let-us-write-your-content.webp"
+                  src="/writer/img/Let-us-write-your-content.webp"
                   alt="Let-us-write-your-content"
                   className="get_sec-box_img"
                 />
@@ -479,7 +484,7 @@ const BlogWritingServices = () => {
                 <h2 className="get_sec-box_h2">STEP 3</h2>
                 <h3 className="get_sec-box_h3">Get your content copy</h3>
                 <img
-                  src="writer/img/Get-your-content-copy.webp"
+                  src="/writer/img/Get-your-content-copy.webp"
                   alt="Get-your-content-copy"
                   className="get_sec-box_img"
                 />
@@ -532,7 +537,7 @@ const BlogWritingServices = () => {
                 {" "}
                 <div className="img-box">
                   <img
-                    src="writer/img/testimonial/lego.webp"
+                    src="/writer/img/testimonial/lego.webp"
                     alt="lego"
                     className="d-block img-box_image"
                   />
@@ -542,7 +547,7 @@ const BlogWritingServices = () => {
                 {" "}
                 <div className="img-box">
                   <img
-                    src="writer/img/testimonial/Allianz.webp"
+                    src="/writer/img/testimonial/Allianz.webp"
                     alt="Allianz"
                     className="d-block img-box_image"
                   />
@@ -552,7 +557,7 @@ const BlogWritingServices = () => {
                 {" "}
                 <div className="img-box">
                   <img
-                    src="writer/img/testimonial/Citi.webp"
+                    src="/writer/img/testimonial/Citi.webp"
                     alt="Citi"
                     className="d-block img-box_image"
                   />
@@ -562,7 +567,7 @@ const BlogWritingServices = () => {
                 {" "}
                 <div className="img-box">
                   <img
-                    src="writer/img/testimonial/zara-logo.webp"
+                    src="/writer/img/testimonial/zara-logo.webp"
                     alt="zara"
                     className="d-block img-box_image"
                   />
@@ -573,7 +578,7 @@ const BlogWritingServices = () => {
                 {" "}
                 <div className="img-box">
                   <img
-                    src="writer/img/testimonial/loreal-logo.webp"
+                    src="/writer/img/testimonial/loreal-logo.webp"
                     alt="loreal"
                     className="d-block img-box_image"
                   />
@@ -583,7 +588,7 @@ const BlogWritingServices = () => {
                 {" "}
                 <div className="img-box">
                   <img
-                    src="writer/img/testimonial/gillette-logo.webp"
+                    src="/writer/img/testimonial/gillette-logo.webp"
                     alt="gillette"
                     className="d-block img-box_image"
                   />
@@ -593,7 +598,7 @@ const BlogWritingServices = () => {
                 {" "}
                 <div className="img-box">
                   <img
-                    src="writer/img/testimonial/sap-logo.webp"
+                    src="/writer/img/testimonial/sap-logo.webp"
                     alt="sap"
                     className="d-block img-box_image"
                   />
@@ -603,7 +608,7 @@ const BlogWritingServices = () => {
                 {" "}
                 <div className="img-box">
                   <img
-                    src="writer/img/testimonial/att-logo.webp"
+                    src="/writer/img/testimonial/att-logo.webp"
                     alt="att"
                     className="d-block img-box_image"
                   />
@@ -613,7 +618,7 @@ const BlogWritingServices = () => {
                 {" "}
                 <div className="img-box">
                   <img
-                    src="writer/img/testimonial/toyota-logo.webp"
+                    src="/writer/img/testimonial/toyota-logo.webp"
                     alt="toyota"
                     className="d-block img-box_image"
                   />
@@ -623,7 +628,7 @@ const BlogWritingServices = () => {
                 {" "}
                 <div className="img-box">
                   <img
-                    src="writer/img/testimonial/ikea-logo.webp"
+                    src="/writer/img/testimonial/ikea-logo.webp"
                     alt="ikea"
                     className="d-block img-box_image"
                   />
@@ -637,9 +642,9 @@ const BlogWritingServices = () => {
       <section className="hire_Sec">
         <div className="container">
           <div className="row">
-            <h2 className="get_sec-h2">Why Hire Our Blog Writers?</h2>
+            <h2 className="get_sec-h2">Why Hire Our Technical Blog Writers?</h2>
             <p className="get_sec-p">
-              To let your business grow significantly.
+              To always get the most appropriate content online.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -651,56 +656,58 @@ const BlogWritingServices = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">Expert bloggers for hire</span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="box-ol">
-                <ol className="m-0 d-flex align-items-center p-0">
-                  <li className="in_li">
-                    <span className="right_span">
-                      <i aria-hidden="true" className="fas fa-check-circle"></i>
-                    </span>
-                  </li>
-                  <li className="in_li">
-                    <span className="spa_h2">Mastered blog writing</span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="box-ol">
-                <ol className="m-0 d-flex align-items-center p-0">
-                  <li className="in_li">
-                    <span className="right_span">
-                      <i aria-hidden="true" className="fas fa-check-circle"></i>
-                    </span>
-                  </li>
-                  <li className="in_li">
                     <span className="spa_h2">
-                      Affordable blog writing services on time
+                      Tech professionals with humongous experience
                     </span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="box-ol">
+                <ol className="m-0 d-flex align-items-center p-0">
+                  <li className="in_li">
+                    <span className="right_span">
+                      <i aria-hidden="true" className="fas fa-check-circle"></i>
+                    </span>
+                  </li>
+                  <li className="in_li">
+                    <span className="spa_h2">Meet clients' needs always</span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="box-ol">
+                <ol className="m-0 d-flex align-items-center p-0">
+                  <li className="in_li">
+                    <span className="right_span">
+                      <i aria-hidden="true" className="fas fa-check-circle"></i>
+                    </span>
+                  </li>
+                  <li className="in_li">
+                    <span className="spa_h2">Relevant content on time</span>
                   </li>
                 </ol>
               </div>
             </div>
 
             <p className="review1-p">
-              Our blog writers are full of ideas. Ideas about how to grow your
-              business to the next level and make it more successful than ever.
-              We know that, in order for your business to be successful, you
-              need to have a plan. You need something concrete: a way to
-              increase sales and make your company stand out from the crowd.
-              That’s where GPW comes in.
+              When you hire writers from us, you basically get the best content
+              available online. Our writers are professional and experienced in
+              their fields. They have been trained to write content that is
+              engaging, informative, and interesting to read. We make sure that
+              every piece of content we produce passes through a rigorous
+              quality check before being sent out for delivery.
             </p>
 
             <p className="review1-p">
-              We have expert bloggers for hire in our team who have mastered
-              blog writing. They have helped many companies grow and prosper.
-              Also, our blog writing services packages come at affordable
-              prices.
+              Our writers have humongous experience writing for different kinds
+              of clients and can easily adapt their style to suit your needs. We
+              have writers who specialize in writing about finance, health,
+              business, and technology among other things. This means that we
+              will never run out of options when it comes to finding someone who
+              can help you with your project.
             </p>
           </div>
         </div>
@@ -714,21 +721,21 @@ const BlogWritingServices = () => {
             <div className="col-md-6">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  We checked out samples of GPW writers for blogs. We liked it
-                  and hired a writer from them. We are highly satisfied with the
-                  results. The writer was very professional and did everything
-                  on time.
+                  We got GetProWriter tech writers to create some blogs for us
+                  and they did an excellent job. The team was fantastic, we were
+                  able to communicate with them easily and they were very
+                  responsive. They delivered our order on time. Most
+                  importantly, the content was great! It was well written, easy
+                  to understand, and informative.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="writer/img/Daniel-Presley.webp"
+                    src="/writer/img/Rachel-Hanks.webp"
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Daniel Presley</h3>
-                  <p className="testi_box-p">
-                    Web Development Manager, Togeting
-                  </p>
+                  <h3 className="testi_box-h3">Rachel Hanks</h3>
+                  <p className="testi_box-p">IT Manager, Tactive </p>
                 </div>
               </div>
             </div>
@@ -736,19 +743,19 @@ const BlogWritingServices = () => {
             <div className="col-md-6">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  The writer from GPW was fantastic. I was able to communicate
-                  with him easily online. The writer understood my requirements
-                  and gave excellent blogs within the assured time. I will
-                  definitely hire GPW writers again!
+                  I was looking for a good company to help me with my blog
+                  posts. I needed someone who could write in a professional and
+                  engaging manner. After reading some reviews on GetProWriter, I
+                  decided to give them a try. And the results were impressive!
                 </p>
                 <div className="t_sels">
                   <img
-                    src="writer/img/Lucy-Grace.webp"
+                    src="/writer/img/Harry-Stone.webp"
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Lucy Grace</h3>
-                  <p className="testi_box-p">Executive Assistant, Infomedia</p>
+                  <h3 className="testi_box-h3">Harry Stone</h3>
+                  <p className="testi_box-p">Operations Assistant, Craffic</p>
                 </div>
               </div>
             </div>
@@ -812,7 +819,7 @@ const BlogWritingServices = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        How to hire blog writers from GetProWriter?
+                        Can we hire technical blog writers online?
                       </button>
                     </h2>
 
@@ -824,14 +831,16 @@ const BlogWritingServices = () => {
                     >
                       <div className="accordion-body">
                         {" "}
-                        Hiring blog writers from GetProWriter is easy and
-                        hassle-free. You can get started with a quick process
-                        and send your requirements. Once you’ve filled in the
-                        information about your project, we’ll match you with the
-                        best writer for your needs. We have writers specializing
-                        in a wide range of topics, from fashion to technology to
-                        health and fitness, so whatever kind of content you
-                        need, we’ve got you covered!
+                        Yes, you can easily hire technical blog writers online.
+                        If you’re looking for a writer who knows their stuff and
+                        has a knack for explaining complicated topics in a way
+                        that’s easy to understand, there are many options out
+                        there. And our company, GetProWriter, is one of them. We
+                        have a team of expert writers that are ready to work
+                        with you to create blog posts. Our team has extensive
+                        experience writing for many different industries, so
+                        we’ll be able to provide you with quality content
+                        regardless of what industry your business is in.
                       </div>
                     </div>
                   </div>
@@ -849,8 +858,8 @@ const BlogWritingServices = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Which is the best platform for online blog writers for
-                        hire?
+                        How do we know that your tech writers have the required
+                        qualifications?
                       </button>
                     </h2>
 
@@ -862,15 +871,13 @@ const BlogWritingServices = () => {
                     >
                       <div className="accordion-body">
                         {" "}
-                        GetProWriter is definitely one of the best platforms for
-                        online blog writers for hire. We have a great selection
-                        of professional writers and they are very professional.
-                        The system of hiring bloggers works very well and the
-                        customer support team is always ready to help you with
-                        any problem or question you might have. The website has
-                        a simple interface that makes it easy to navigate even
-                        if you are not familiar with the website. You can also
-                        find all the necessary information on the homepage.{" "}
+                        We are very particular about our recruitment. We make
+                        sure that all the tech writers who we hire have the
+                        required qualifications. We’ve realized that the best
+                        way to make sure that you’re getting a quality writer is
+                        to hire people with a background in writing and editing.
+                        And we hire people who have such solid expertise and
+                        experience.
                       </div>
                     </div>
                   </div>
@@ -889,7 +896,7 @@ const BlogWritingServices = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      Should we go with freelancers for our blog writing?
+                      Do you offer unlimited free revisions?
                     </button>
                   </h2>
 
@@ -901,13 +908,11 @@ const BlogWritingServices = () => {
                   >
                     <div className="accordion-body">
                       {" "}
-                      Yes. If you do not have the in-house resources, then you
-                      should go with freelancers for your blog writing. There
-                      are many benefits to hiring a freelance writer to create
-                      content for your blog. First and foremost, it can save you
-                      time and money. Second, a freelance blogger will be able
-                      to provide fresh content that you might not be able to
-                      produce yourself.
+                      No. We don’t offer unlimited free revisions. Our writers
+                      have been handpicked by us and they put in their best
+                      efforts to make sure that you get exactly what you want.
+                      And that is why we always want them to get their due
+                      rewards.
                     </div>
                   </div>
                 </div>
@@ -920,4 +925,4 @@ const BlogWritingServices = () => {
   );
 };
 
-export default BlogWritingServices;
+export default BlogWritingServicesTechnical;
