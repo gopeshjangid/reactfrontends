@@ -264,18 +264,12 @@ const EmployerDashboard = () => {
               </Link>
             </li>
             <li>
-              <Link to="/employer-profile">
+              <Link to="/dash-company-profile">
                 <i className="fa fa-user-tie" />
                 <span className="admin-nav-text">Company Profile</span>
               </Link>
             </li>
 
-            <li>
-              <Link to="/employer-dashboard">
-                <i className="fa fa-user-tie" />
-                <span className="admin-nav-text">Company Dashboard</span>
-              </Link>
-            </li>
             <li>
               <Link to="">
                 <i className="fa fa-suitcase" />
@@ -284,7 +278,7 @@ const EmployerDashboard = () => {
               <ul className="sub-menu">
                 <li>
                   {" "}
-                  <Link to="/employer-post-job">
+                  <Link to="/dash-post-job">
                     <span className="admin-nav-text">Post a New Jobs</span>
                   </Link>
                 </li>

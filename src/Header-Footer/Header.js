@@ -113,10 +113,9 @@ const Header = () => {
           setData({
             User: json,
           });
-          if (json.message === "successfully register") {
-            navigate("/login");
-          }
-
+          // if (json.message === "successfully register") {
+          //   navigate("/login");
+          // }
           // setMessage(json.message);
           console.log(json);
         })
@@ -234,7 +233,7 @@ const Header = () => {
                 <ul className=" nav navbar-nav">
                   <li className="has-child">
                     <Link to="">Home</Link>
-                    <ul className="sub-menu">
+                    {/* <ul className="sub-menu">
                       <li>
                         <Link to="/">Home-1</Link>
                       </li>
@@ -256,7 +255,7 @@ const Header = () => {
                       <li>
                         <Link to="index-7">Home-7</Link>
                       </li>
-                    </ul>
+                    </ul> */}
                   </li>
                   <li className="has-child">
                     <Link to="">Jobs</Link>
@@ -688,13 +687,7 @@ const Header = () => {
                             <div className=" form-check">
                               <p>
                                 Already registered?
-                                <Link
-                                  className="twm-backto-login"
-                                  //data-bs-target="#sign_up_popup2"
-                                  // data-bs-toggle="modal"
-                                  // data-bs-dismiss="modal"
-                                  to="/login"
-                                >
+                                <Link className="twm-backto-login" to="/login">
                                   Log in here
                                 </Link>
                               </p>
@@ -702,9 +695,22 @@ const Header = () => {
                           </div>
                         </div>
 
-                        <button type="submit" className="site-button">
-                          Sign Up
-                        </button>
+                        {message === "successfully register" ? (
+                          <Link to="/login">
+                            <button
+                              type="submit"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                              className="site-button "
+                            >
+                              Sign Up
+                            </button>
+                          </Link>
+                        ) : (
+                          <button type="submit" className="site-button ">
+                            Sign Up
+                          </button>
+                        )}
                         {message === "successfully register" ? (
                           <span className="text-primary">{message}</span>
                         ) : (

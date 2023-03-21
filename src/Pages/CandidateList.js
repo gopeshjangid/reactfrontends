@@ -4,9 +4,19 @@ import { Link } from "react-router-dom";
 const CandidateList = () => {
   const [getAllUser, setGetAllUser] = useState([]);
   const [candidate, setCandidate] = useState([]);
+  const [sendId, setSendId] = useState();
 
   const tokenID = localStorage.getItem("token");
+
+  const sendUserId = (id) => {
+    console.log("qwertyuio", id);
+    setSendId(id);
+    console.log("id", sendId);
+  };
+
   useEffect(() => {
+    sendUserId(sendId);
+    console.log("qwrthysghegfdvvdcvc", sendUserId(sendId));
     // setIsLoading(true);
     fetch("http://localhost:5000/getAllUser", {
       method: "GET",
@@ -50,7 +60,6 @@ const CandidateList = () => {
               <div className="banner-title-outer">
                 <div className="banner-title-name">
                   <h2 className="wt-title">Candidate List</h2>
-                  <h2 className="wt-title"></h2>
                 </div>
               </div>
               {/* <!-- BREADCRUMB ROW -->                             */}
@@ -435,7 +444,7 @@ const CandidateList = () => {
                 {/* <!--Filter Short By--> */}
                 <div className="product-filter-wrap d-flex justify-content-between align-items-center m-b30">
                   <span className="woocommerce-result-count-left">
-                    Showing 2,150 Candidates
+                    Showing {candidate.length} Candidates
                   </span>
 
                   <form
@@ -461,7 +470,6 @@ const CandidateList = () => {
                         tabindex="-1"
                         class="btn dropdown-toggle btn-light"
                         data-bs-toggle="dropdown"
-                        role="combobox"
                         aria-owns="bs-select-2"
                         aria-haspopup="listbox"
                         aria-expanded="false"
@@ -481,7 +489,6 @@ const CandidateList = () => {
                             type="search"
                             class="form-control"
                             autocomplete="off"
-                            role="combobox"
                             aria-label="Search"
                             aria-controls="bs-select-2"
                             aria-autocomplete="list"
@@ -518,7 +525,6 @@ const CandidateList = () => {
                         tabindex="-1"
                         class="btn dropdown-toggle btn-light"
                         data-bs-toggle="dropdown"
-                        role="combobox"
                         aria-owns="bs-select-3"
                         aria-haspopup="listbox"
                         aria-expanded="false"
@@ -536,7 +542,6 @@ const CandidateList = () => {
                             type="search"
                             class="form-control"
                             autocomplete="off"
-                            role="combobox"
                             aria-label="Search"
                             aria-controls="bs-select-3"
                             aria-autocomplete="list"
@@ -593,11 +598,12 @@ const CandidateList = () => {
                                   </p>
                                   <div className="twm-jobs-vacancies">
                                     ${friend.expectedSalary}
-                                    <span>/ Year</span>
+                                    <span>/ Month</span>
                                   </div>
                                 </div>
                                 <div className="twm-right-btn">
                                   <Link
+                                    onClick={(e) => sendUserId(friend._id)}
                                     to={`/candidate-detail/${friend._id}`}
                                     className="twm-view-prifile site-text-primary"
                                   >

@@ -9,6 +9,7 @@ const EmployerJobDetail = () => {
   const [getAllJob, setGetAllJob] = useState([]);
   const [employer, setEmployer] = useState([]);
   const [applyJob, setApplyJob] = useState();
+
   const tokenID = localStorage.getItem("token");
   useEffect(() => {
     fetch("http://localhost:5000/getAllJob", {
@@ -47,7 +48,10 @@ const EmployerJobDetail = () => {
       .then((response) => {
         setApplyJob(response.data);
 
-        console.log(response.data);
+        console.log(response.data.message);
+        if (response.data.message === "job applyed") {
+          document.getElementById("openPopup").click();
+        }
       })
       .catch((err) => console.log(err));
   };
@@ -141,15 +145,75 @@ const EmployerJobDetail = () => {
                               </div>
                             </div>
                             <div className="twm-job-self-bottom">
-                              <Link
+                              {/* 
+<!-- Modal --> */}
+                              {/* <!-- Button trigger modal --> */}
+
+                              <button
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#apply_job_popup"
+                                className="site-button "
+                                style={{ visibility: "hidden" }}
+                                data-toggle="modal"
+                                id="openPopup"
+                              >
+                                Apply Now
+                              </button>
+                              <button
+                                type="button"
                                 className="site-button"
-                                // data-bs-toggle="modal"
-                                // to="#apply_job_popup"
-                                // role="button"
                                 onClick={ApplyJob}
                               >
                                 Apply Now
-                              </Link>
+                              </button>
+
+                              {/* <!-- Modal --> */}
+                              <div
+                                class="modal fade"
+                                id="apply_job_popup"
+                                data-bs-backdrop="static"
+                                data-bs-keyboard="false"
+                                tabindex="-1"
+                                aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true"
+                                style={{ background: "#00000059" }}
+                              >
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                      ></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                      <img
+                                        src="/jobzilla/images/423-4236284_png-images-success-icon-png-transparent-png-download.png"
+                                        className="w-25 "
+                                      />
+                                      <h4>Job Applied</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button
+                                        type="button"
+                                        class="btn btn-secondary"
+                                        data-bs-dismiss="modal"
+                                      >
+                                        Close
+                                      </button>
+                                      <button
+                                        type="button"
+                                        class="btn btn-primary"
+                                      >
+                                        Understood
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>

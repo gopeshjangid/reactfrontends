@@ -84,11 +84,7 @@ const EmployerManageJob = () => {
                           <i className="fa fa-user" /> Company Profile
                         </Link>
                       </li>
-                      <li>
-                        <Link to="/employer-profile-details">
-                          <i className="fa fa-user" /> Company Details
-                        </Link>
-                      </li>
+
                       <li>
                         <Link to="employer-resume">
                           <i className="fa fa-receipt" /> Resume

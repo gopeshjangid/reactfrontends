@@ -69,14 +69,10 @@ const DashboardCandidate = () => {
                       </li>
                       <li>
                         <Link to="/candidate-profile">
-                          <i className="fa fa-user" /> Make Profile
+                          <i className="fa fa-user" /> My Profile
                         </Link>
                       </li>
-                      <li>
-                        <Link to="/candidate-profile-detail">
-                          <i className="fa fa-user" /> My Pfofile
-                        </Link>
-                      </li>
+
                       <li>
                         <Link to="/candidate-jobs-applied">
                           <i className="fa fa-suitcase" /> Applied Jobs

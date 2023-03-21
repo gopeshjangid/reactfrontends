@@ -131,7 +131,7 @@ const EmployerPostJob = () => {
       return;
     } else {
       const tokenID = localStorage.getItem("token");
-      fetch("http://localhost:5000/companyDetails", {
+      fetch("http://localhost:5000/postJob", {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),
@@ -313,11 +313,7 @@ const EmployerPostJob = () => {
                           <i className="fa fa-user"></i> Company Profile
                         </Link>
                       </li>
-                      <li>
-                        <Link to="/employer-profile-details">
-                          <i className="fa fa-user" /> Company Details
-                        </Link>
-                      </li>
+
                       <li>
                         <Link to="/employer-resume">
                           <i className="fa fa-receipt"></i> Resume
@@ -329,7 +325,7 @@ const EmployerPostJob = () => {
                         </Link>
                       </li>
                       <li className="active">
-                        <Link to=" /employer-post-job">
+                        <Link to=" employer-post-job">
                           <i className="fa fa-book-reader"></i> Post A Jobs
                         </Link>
                       </li>

@@ -2,8 +2,142 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const EmployerProfileDetails = () => {
-  const [emloyerDetails, setEmployerDetails] = useState([]);
-  const [load, setLoad] = useState(false);
+  const initialValues = {
+    companyName: "",
+    phone: "",
+    companyEmail: "",
+    websiteUrl: "",
+    country: "",
+    city: "",
+    pincode: "",
+    address: "",
+    description: "",
+    facebook: "",
+    linkedin: "",
+    twitter: "",
+  };
+
+  //   const navigate = useNavigate();
+
+  const [User, setUser] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+  const [message, setMessage] = useState();
+  const [data, setData] = useState();
+  const [load, setLoad] = useState(true);
+
+  const [companyName, setCompanyName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [Email, setCompanyEmail] = useState("");
+  const [websiteUrl, setWebsiteUrl] = useState("");
+  const [qualification, setQualification] = useState("");
+  const [language, setLanguage] = useState("");
+  // const [jobCategory, setJobCategory] = useState("");
+  // const [experience, setExperience] = useState("");
+  // const [currentSalary, setCurrentSalary] = useState("");
+
+  // const [expectedSalary, setEexpectedSalary] = useState("");
+  const [age, setAge] = useState("");
+  const [country, setCountry] = useState("");
+  const [city, setCity] = useState("");
+  const [pincode, setPincode] = useState("");
+  const [address, setAddress] = useState("");
+  const [description, setDescription] = useState("");
+  const [facebook, setFacebook] = useState("");
+  const [linkedin, setLinkedin] = useState("");
+  const [twitter, setTwitter] = useState("");
+
+  // const [error, setError] = useState()
+
+  // const [state, setState] = useState('')
+
+  // const handleChange = (e) => {
+  //   let name = e.target.name;
+  //   let value = e.target.value;
+  //   let User = { ...User };
+  //   setUser({ ...User, [name]: value });
+  //   console.log(User);
+  //   // const { name, value } = e.target;
+  //   // setUser({ ...User, [name]: value });
+  // };
+
+  // useEffect(() => {
+  // 	console.log(message);
+  // 	if(Object.keys(message).length === 0 && isSubmit) {
+  // 		console.log(User);
+
+  // 	}
+  // },[])
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // add entity - POST
+    // e.preventDefault();
+    // creates entity
+
+    // const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
+    // /^[^@]+@(yahoo|gmail|mail|rocketmail)\.(com|in|co\.uk)$/i;
+    const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
+
+    const tokenID = localStorage.getItem("token");
+    fetch("http://localhost:5000/companyDetails", {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify({
+        companyName,
+        phone,
+        companyEmail: Email,
+        websiteUrl,
+        country,
+        city,
+        pincode,
+        address,
+        description,
+        facebook,
+        linkedin,
+        twitter,
+      }),
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${tokenID}`,
+      },
+    })
+      .then((response) => response.json(console.log(response)))
+
+      .then((json) => {
+        setData({
+          User: json,
+        });
+
+        //   if (json.message === "successfully register") {
+        //     navigate("/login");
+        //   }
+
+        // setMessage(json.message)
+        console.log(json);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    // setState(valid(json.message));
+
+    setIsSubmit(true);
+  };
+
+  // useEffect(() => {
+  // 	const res = data?.User?.error;
+  // 	setError(res);
+
+  // }, [])
+
+  useEffect(() => {
+    const res = data?.User?.message;
+    setMessage(res);
+  }, [data]);
+
+  const [employerDetails, setEmployerDetails] = useState([]);
+  const [state, setState] = useState([]);
 
   useEffect(() => {
     const tokenID = localStorage.getItem("token");
@@ -19,18 +153,47 @@ const EmployerProfileDetails = () => {
       .then((json) => {
         if (json.message.length < 1) {
           setEmployerDetails(json.message);
-
-          setLoad(true);
+          setLoad(false);
+          console.log(json.message);
         } else {
           setEmployerDetails(json.message[0]);
+          setCompanyName(json.message[0].companyName);
+          setPhone(json.message[0].phone);
+          setCompanyEmail(json.message[0].companyEmail);
+          setWebsiteUrl(json.message[0].websiteUrl);
+          setCountry(json.message[0].country);
+          setCity(json.message[0].city);
+          setPincode(json.message[0].pincode);
+          setAddress(json.message[0].address);
+          setQualification(json.message[0].qualification);
+          setLanguage(json.message[0].language);
+          setDescription(json.message[0].description);
+          setFacebook(json.message[0].facebook);
+          setLinkedin(json.message[0].linkedin);
+          setTwitter(json.message[0].twitter);
+          setLoad(false);
+          console.log(json.message);
         }
 
+        console.log(json.message);
         //   if (json.message === "successfully register") {
         //     navigate("/login");
         //   }
 
+        // const filterData = json.message?.filter(
+        //   (item, index) => item.accountType === "employer"
+        // );
+        // setState(filterData);
+        // console.log(state);
+
+        // console.log(load);
+
         // setMessage(json.message)
-        console.log(json.message);
+
+        // if (json.message.profileStatus === "complete") {
+        //   setLoad(true);
+        //   console.log(load);
+        // }
       })
       .catch((err) => {
         console.log(err);
@@ -108,11 +271,7 @@ const EmployerProfileDetails = () => {
                           <i className="fa fa-user"></i> Company Profile
                         </Link>
                       </li>
-                      <li className="active">
-                        <Link to="/employer-profile-details">
-                          <i className="fa fa-user"></i> Company Details
-                        </Link>
-                      </li>
+
                       <li>
                         <Link to="/employer-resume">
                           <i className="fa fa-receipt"></i> Resume
@@ -123,7 +282,7 @@ const EmployerProfileDetails = () => {
                           <i className="fa fa-suitcase"></i> Manage Jobs
                         </Link>
                       </li>
-                      {emloyerDetails < 1 ? (
+                      {employerDetails < 1 ? (
                         <li>
                           <Link to="/employer-post-job">
                             <i className="fa fa-book-reader"></i> Post A Jobs
@@ -180,7 +339,7 @@ const EmployerProfileDetails = () => {
                 {/* <!--Filter Short By--> */}
                 <div className="twm-right-section-panel site-bg-gray">
                   {load === false ? (
-                    <form>
+                    <form onSubmit={handleSubmit}>
                       {/* <!--Basic Information--> */}
                       <div className="panel panel-default">
                         <div className="panel-heading wt-panel-heading p-a20">
@@ -196,11 +355,20 @@ const EmployerProfileDetails = () => {
                                   <input
                                     className="form-control"
                                     name="companyName"
-                                    value={emloyerDetails?.companyName}
+                                    onChange={(e) =>
+                                      setCompanyName(e.target.value)
+                                    }
                                     type="text"
+                                    value={companyName}
+                                    placeholder="Devid Smith"
                                   />
+
                                   <i className="fs-input-icon fa fa-building"></i>
                                 </div>
+
+                                <p style={{ color: "red" }}>
+                                  {formErrors.companyName}
+                                </p>
                               </div>
                             </div>
 
@@ -211,12 +379,16 @@ const EmployerProfileDetails = () => {
                                   <input
                                     className="form-control"
                                     name="phone"
-                                    value={emloyerDetails?.phone}
-                                    type="text"
+                                    onChange={(e) => setPhone(e.target.value)}
+                                    type="number"
+                                    value={phone}
                                     placeholder="(251) 1234-456-7890"
                                   />
                                   <i className="fs-input-icon fa fa-phone-alt"></i>
                                 </div>
+                                <p style={{ color: "red" }}>
+                                  {formErrors.phone}
+                                </p>
                               </div>
                             </div>
 
@@ -227,12 +399,18 @@ const EmployerProfileDetails = () => {
                                   <input
                                     className="form-control"
                                     name="companyEmail"
-                                    value={emloyerDetails?.companyEmail}
+                                    onChange={(e) =>
+                                      setCompanyEmail(e.target.value)
+                                    }
+                                    value={Email}
                                     type="email"
                                     placeholder="Devid@example.com"
                                   />
                                   <i className="fs-input-icon fas fa-at"></i>
                                 </div>
+                                <p style={{ color: "red" }}>
+                                  {formErrors.companyEmail}
+                                </p>
                               </div>
                             </div>
 
@@ -243,12 +421,18 @@ const EmployerProfileDetails = () => {
                                   <input
                                     className="form-control"
                                     name="websiteUrl"
-                                    value={emloyerDetails?.websiteUrl}
-                                    type="text"
+                                    onChange={(e) =>
+                                      setWebsiteUrl(e.target.value)
+                                    }
+                                    value={websiteUrl}
+                                    type="url"
                                     placeholder="https://devsmith.net/"
                                   />
                                   <i className="fs-input-icon fa fa-globe-americas"></i>
                                 </div>
+                                <p style={{ color: "red" }}>
+                                  {formErrors.websiteUrl}
+                                </p>
                               </div>
                             </div>
 
@@ -259,12 +443,16 @@ const EmployerProfileDetails = () => {
                                   <input
                                     className="form-control"
                                     name="country"
-                                    value={emloyerDetails?.country}
+                                    onChange={(e) => setCountry(e.target.value)}
+                                    value={country}
                                     type="text"
                                     placeholder="USA"
                                   />
                                   <i className="fs-input-icon fa fa-globe-americas"></i>
                                 </div>
+                                <p style={{ color: "red" }}>
+                                  {formErrors.country}
+                                </p>
                               </div>
                             </div>
 
@@ -276,11 +464,15 @@ const EmployerProfileDetails = () => {
                                     className="form-control"
                                     name="city"
                                     type="text"
-                                    value={emloyerDetails?.city}
+                                    onChange={(e) => setCity(e.target.value)}
+                                    value={city}
                                     placeholder="Texas"
                                   />
                                   <i className="fs-input-icon fa fa-globe-americas"></i>
                                 </div>
+                                <p style={{ color: "red" }}>
+                                  {formErrors.city}
+                                </p>
                               </div>
                             </div>
 
@@ -292,11 +484,15 @@ const EmployerProfileDetails = () => {
                                     className="form-control"
                                     name="pincode"
                                     type="text"
-                                    value={emloyerDetails?.pincode}
+                                    onChange={(e) => setPincode(e.target.value)}
+                                    value={pincode}
                                     placeholder="75462"
                                   />
                                   <i className="fs-input-icon fas fa-map-pin"></i>
                                 </div>
+                                <p style={{ color: "red" }}>
+                                  {formErrors.pincode}
+                                </p>
                               </div>
                             </div>
 
@@ -308,11 +504,15 @@ const EmployerProfileDetails = () => {
                                     className="form-control"
                                     name="address"
                                     type="text"
-                                    value={emloyerDetails?.address}
+                                    onChange={(e) => setAddress(e.target.value)}
+                                    value={address}
                                     placeholder="1363-1385 Sunset Blvd Angeles, CA 90026 ,USA"
                                   />
                                   <i className="fs-input-icon fas fa-map-marker-alt"></i>
                                 </div>
+                                <p style={{ color: "red" }}>
+                                  {formErrors.address}
+                                </p>
                               </div>
                             </div>
 
@@ -336,10 +536,16 @@ const EmployerProfileDetails = () => {
                                 <textarea
                                   className="form-control"
                                   name="description"
-                                  value={emloyerDetails?.description}
+                                  onChange={(e) =>
+                                    setDescription(e.target.value)
+                                  }
+                                  value={description}
                                   rows="3"
                                 ></textarea>
                               </div>
+                              <p style={{ color: "red" }}>
+                                {formErrors.description}
+                              </p>
                             </div>
 
                             <div className="panel panel-default">
@@ -357,12 +563,18 @@ const EmployerProfileDetails = () => {
                                         <input
                                           className="form-control wt-form-control"
                                           name="facebook"
-                                          value={emloyerDetails?.facebook}
-                                          type="text"
+                                          onChange={(e) =>
+                                            setFacebook(e.target.value)
+                                          }
+                                          value={facebook}
+                                          type="url"
                                           placeholder="https://www.facebook.com/"
                                         />
                                         <i className="fs-input-icon fab fa-facebook-f"></i>
                                       </div>
+                                      <p style={{ color: "red" }}>
+                                        {formErrors.facebook}
+                                      </p>
                                     </div>
                                   </div>
 
@@ -373,12 +585,18 @@ const EmployerProfileDetails = () => {
                                         <input
                                           className="form-control wt-form-control"
                                           name="twitter"
-                                          value={emloyerDetails?.twitter}
-                                          type="text"
+                                          onChange={(e) =>
+                                            setTwitter(e.target.value)
+                                          }
+                                          value={twitter}
+                                          type="url"
                                           placeholder="https://twitter.com/"
                                         />
                                         <i className="fs-input-icon fab fa-twitter"></i>
                                       </div>
+                                      <p style={{ color: "red" }}>
+                                        {formErrors.twitter}
+                                      </p>
                                     </div>
                                   </div>
 
@@ -389,12 +607,18 @@ const EmployerProfileDetails = () => {
                                         <input
                                           className="form-control wt-form-control"
                                           name="linkedin"
-                                          value={emloyerDetails?.linkedin}
-                                          type="text"
+                                          onChange={(e) =>
+                                            setLinkedin(e.target.value)
+                                          }
+                                          value={linkedin}
+                                          type="url"
                                           placeholder="https://in.linkedin.com/"
                                         />
                                         <i className="fs-input-icon fab fa-linkedin-in"></i>
                                       </div>
+                                      <p style={{ color: "red" }}>
+                                        {formErrors.linkedin}
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
@@ -403,13 +627,31 @@ const EmployerProfileDetails = () => {
 
                             <div className="col-lg-12 col-md-12">
                               <div className="text-left">
-                                <button
-                                  type="btn"
-                                  className="site-button disabled"
-                                >
+                                <button type="submit" className="site-button">
                                   Save Changes
                                 </button>
+                                &nbsp;&nbsp;
+                                <Link to="/employer-profile-details">
+                                  {" "}
+                                  <button className="site-button">
+                                    Update Profile
+                                  </button>
+                                </Link>
                               </div>
+
+                              {message ===
+                              "successfully created company details" ? (
+                                <h3
+                                  className="Success text-center"
+                                  style={{ color: "#03979c" }}
+                                >
+                                  {message}
+                                </h3>
+                              ) : (
+                                <h3 className="Success text-danger text-center">
+                                  {message}
+                                </h3>
+                              )}
                             </div>
                           </div>
                         </div>
@@ -434,10 +676,12 @@ const EmployerProfileDetails = () => {
                                   <input
                                     className="form-control"
                                     name="companyName"
-                                    value={emloyerDetails?.companyName}
+                                    // onChange={handleChange}
                                     type="text"
+                                    placeholder={employerDetails?.companyName}
                                     disabled
                                   />
+
                                   <i className="fs-input-icon fa fa-building"></i>
                                 </div>
                               </div>
@@ -450,9 +694,9 @@ const EmployerProfileDetails = () => {
                                   <input
                                     className="form-control"
                                     name="phone"
-                                    value={emloyerDetails?.phone}
+                                    // onChange={handleChange}
                                     type="text"
-                                    placeholder="(251) 1234-456-7890"
+                                    placeholder={employerDetails?.phone}
                                     disabled
                                   />
                                   <i className="fs-input-icon fa fa-phone-alt"></i>
@@ -467,13 +711,16 @@ const EmployerProfileDetails = () => {
                                   <input
                                     className="form-control"
                                     name="companyEmail"
-                                    value={emloyerDetails?.companyEmail}
+                                    // onChange={handleChange}
                                     type="email"
-                                    placeholder="Devid@example.com"
+                                    placeholder={employerDetails?.companyEmail}
                                     disabled
                                   />
                                   <i className="fs-input-icon fas fa-at"></i>
                                 </div>
+                                <p style={{ color: "red" }}>
+                                  {formErrors.companyEmail}
+                                </p>
                               </div>
                             </div>
 
@@ -484,13 +731,16 @@ const EmployerProfileDetails = () => {
                                   <input
                                     className="form-control"
                                     name="websiteUrl"
-                                    value={emloyerDetails?.websiteUrl}
+                                    // onChange={handleChange}
                                     type="text"
-                                    placeholder="https://devsmith.net/"
+                                    placeholder={employerDetails?.websiteUrl}
                                     disabled
                                   />
                                   <i className="fs-input-icon fa fa-globe-americas"></i>
                                 </div>
+                                <p style={{ color: "red" }}>
+                                  {formErrors.websiteUrl}
+                                </p>
                               </div>
                             </div>
 
@@ -501,13 +751,16 @@ const EmployerProfileDetails = () => {
                                   <input
                                     className="form-control"
                                     name="country"
-                                    value={emloyerDetails?.country}
+                                    // onChange={handleChange}
                                     type="text"
-                                    placeholder="USA"
+                                    placeholder={employerDetails?.country}
                                     disabled
                                   />
                                   <i className="fs-input-icon fa fa-globe-americas"></i>
                                 </div>
+                                <p style={{ color: "red" }}>
+                                  {formErrors.country}
+                                </p>
                               </div>
                             </div>
 
@@ -519,12 +772,15 @@ const EmployerProfileDetails = () => {
                                     className="form-control"
                                     name="city"
                                     type="text"
-                                    value={emloyerDetails?.city}
-                                    placeholder="Texas"
+                                    // onChange={handleChange}
+                                    placeholder={employerDetails?.city}
                                     disabled
                                   />
                                   <i className="fs-input-icon fa fa-globe-americas"></i>
                                 </div>
+                                <p style={{ color: "red" }}>
+                                  {formErrors.city}
+                                </p>
                               </div>
                             </div>
 
@@ -536,12 +792,15 @@ const EmployerProfileDetails = () => {
                                     className="form-control"
                                     name="pincode"
                                     type="text"
-                                    value={emloyerDetails?.pincode}
-                                    placeholder="75462"
+                                    // onChange={handleChange}
+                                    placeholder={employerDetails?.pincode}
                                     disabled
                                   />
                                   <i className="fs-input-icon fas fa-map-pin"></i>
                                 </div>
+                                <p style={{ color: "red" }}>
+                                  {formErrors.pincode}
+                                </p>
                               </div>
                             </div>
 
@@ -553,12 +812,15 @@ const EmployerProfileDetails = () => {
                                     className="form-control"
                                     name="address"
                                     type="text"
-                                    value={emloyerDetails?.address}
-                                    placeholder="1363-1385 Sunset Blvd Angeles, CA 90026 ,USA"
+                                    // onChange={handleChange}
+                                    placeholder={employerDetails?.address}
                                     disabled
                                   />
                                   <i className="fs-input-icon fas fa-map-marker-alt"></i>
                                 </div>
+                                <p style={{ color: "red" }}>
+                                  {formErrors.address}
+                                </p>
                               </div>
                             </div>
 
@@ -571,6 +833,7 @@ const EmployerProfileDetails = () => {
                                   <iframe
                                     height="270"
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.8534521658976!2d-118.2533646842856!3d34.073270780600225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c6fd9829c6f3%3A0x6ecd11bcf4b0c23a!2s1363%20Sunset%20Blvd%2C%20Los%20Angeles%2C%20CA%2090026%2C%20USA!5e0!3m2!1sen!2sin!4v1620815366832!5m2!1sen!2sin"
+                                    disabled
                                   />
                                 </div>
                               </div>
@@ -582,10 +845,15 @@ const EmployerProfileDetails = () => {
                                 <textarea
                                   className="form-control"
                                   name="description"
-                                  value={emloyerDetails?.description}
+                                  // onChange={handleChange}
                                   rows="3"
+                                  placeholder={employerDetails?.description}
+                                  disabled
                                 ></textarea>
                               </div>
+                              <p style={{ color: "red" }}>
+                                {formErrors.description}
+                              </p>
                             </div>
 
                             <div className="panel panel-default">
@@ -603,13 +871,18 @@ const EmployerProfileDetails = () => {
                                         <input
                                           className="form-control wt-form-control"
                                           name="facebook"
-                                          value={emloyerDetails?.facebook}
+                                          // onChange={handleChange}
                                           type="text"
-                                          placeholder="https://www.facebook.com/"
+                                          placeholder={
+                                            employerDetails?.facebook
+                                          }
                                           disabled
                                         />
                                         <i className="fs-input-icon fab fa-facebook-f"></i>
                                       </div>
+                                      <p style={{ color: "red" }}>
+                                        {formErrors.facebook}
+                                      </p>
                                     </div>
                                   </div>
 
@@ -620,13 +893,16 @@ const EmployerProfileDetails = () => {
                                         <input
                                           className="form-control wt-form-control"
                                           name="twitter"
-                                          value={emloyerDetails?.twitter}
+                                          // onChange={handleChange}
                                           type="text"
-                                          placeholder="https://twitter.com/"
+                                          placeholder={employerDetails?.twitter}
                                           disabled
                                         />
                                         <i className="fs-input-icon fab fa-twitter"></i>
                                       </div>
+                                      <p style={{ color: "red" }}>
+                                        {formErrors.twitter}
+                                      </p>
                                     </div>
                                   </div>
 
@@ -637,13 +913,18 @@ const EmployerProfileDetails = () => {
                                         <input
                                           className="form-control wt-form-control"
                                           name="linkedin"
-                                          value={emloyerDetails?.linkedin}
+                                          // onChange={handleChange}
                                           type="text"
-                                          placeholder="https://in.linkedin.com/"
+                                          placeholder={
+                                            employerDetails?.linkedin
+                                          }
                                           disabled
                                         />
                                         <i className="fs-input-icon fab fa-linkedin-in"></i>
                                       </div>
+                                      <p style={{ color: "red" }}>
+                                        {formErrors.linkedin}
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
@@ -652,13 +933,28 @@ const EmployerProfileDetails = () => {
 
                             <div className="col-lg-12 col-md-12">
                               <div className="text-left">
-                                <button
-                                  type="btn"
-                                  className="site-button disabled"
-                                >
+                                <button type="submit" className="site-button">
+                                  Save Changes
+                                </button>
+                                &nbsp;&nbsp;
+                                <button type="submit" className="site-button">
                                   Save Changes
                                 </button>
                               </div>
+
+                              {message ===
+                              "successfully created company details" ? (
+                                <h3
+                                  className="Success text-center"
+                                  style={{ color: "#03979c" }}
+                                >
+                                  {message}
+                                </h3>
+                              ) : (
+                                <h3 className="Success text-danger text-center">
+                                  {message}
+                                </h3>
+                              )}
                             </div>
                           </div>
                         </div>

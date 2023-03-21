@@ -367,16 +367,12 @@ const CandidateProfileDetails = () => {
                           <i className="fa fa-tachometer-alt"></i> Dashboard
                         </Link>
                       </li>
-                      <li className="">
-                        <Link to="/candidate-profile">
-                          <i className="fa fa-user"></i> Make Profile
-                        </Link>
-                      </li>
                       <li className="active">
-                        <Link to="/candidate-profile-detail">
+                        <Link to="/candidate-profile">
                           <i className="fa fa-user"></i> My Profile
                         </Link>
                       </li>
+
                       <li>
                         <Link to="/candidate-jobs-applied">
                           <i className="fa fa-suitcase"></i> Applied Jobs

@@ -652,7 +652,7 @@ const Index = () => {
                                   </p>
                                   <div className="twm-jobs-vacancies">
                                     ${friend.candidateDetails.expectedSalary}
-                                    <span>/ Day</span>
+                                    <span>/ Month</span>
                                   </div>
                                 </div>
                                 <div className="twm-right-btn">

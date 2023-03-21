@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import useCandidatePersonalResumeApi from "../FetchApi/CandidatePersonalResumeApi";
 
 const CandidateDetail = () => {
+  const candidatePesonalResume = useCandidatePersonalResumeApi();
+  console.log(candidatePesonalResume);
+
   const [getAllUser, setGetAllUser] = useState([]);
   const [candidate, setCandidate] = useState([]);
   const [hire, setHire] = useState();
@@ -17,6 +21,7 @@ const CandidateDetail = () => {
     // setIsLoading(true);
     fetch("http://localhost:5000/getAllUser", {
       method: "GET",
+
       headers: {
         "Content-type": "application/json",
         authorization: `${tokenID}`,
@@ -58,12 +63,48 @@ const CandidateDetail = () => {
       )
 
       .then((response) => {
-        setHire(response.data);
+        setHire(response.data.message);
+
+        if (response.data.message === "Hire Successfull") {
+          document.getElementById("openPopup").click();
+        }
 
         console.log(response.data);
       })
       .catch((err) => console.log(err));
   };
+
+  const [UserResume, setUserResume] = useState([]);
+  useEffect(() => {
+    console.log(id);
+    // setIsLoading(true);
+    fetch(`http://localhost:5000/findUserResume/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((res) => res.json(console.log(res)))
+      .then((response) => {
+        // setGetAllUser(response.message);
+        // const filterData = response.message?.filter(
+        //   (item, index) => item._id === id
+        // );
+
+        // setCandidate(filterData[0]);
+        // console.log(filterData);
+        // setIsLoading(false);
+
+        setUserResume(response.message[0]);
+
+        console.log(response.message[0]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [tokenID]);
+
   return (
     <div>
       {/* <!-- CONTENT START --> */}
@@ -145,6 +186,60 @@ const CandidateDetail = () => {
                           >
                             Hire Me Now
                           </Link>
+                          <button
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#hireCandidate_popup"
+                            className="site-button outline-white "
+                            style={{ visibility: "hidden" }}
+                            data-toggle="modal"
+                            id="openPopup"
+                          >
+                            Hire Me Now
+                          </button>
+
+                          <div
+                            class="modal fade"
+                            id="hireCandidate_popup"
+                            data-bs-backdrop="static"
+                            data-bs-keyboard="false"
+                            tabindex="-1"
+                            aria-labelledby="staticBackdropLabel"
+                            aria-hidden="true"
+                            style={{ background: "#00000059" }}
+                          >
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  ></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                  <img
+                                    src="/jobzilla/images/423-4236284_png-images-success-icon-png-transparent-png-download.png"
+                                    className="w-25 "
+                                  />
+                                  <h4>Hire Successfull</h4>
+                                </div>
+                                <div class="modal-footer">
+                                  <button
+                                    type="button"
+                                    class="btn btn-secondary"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Close
+                                  </button>
+                                  <button type="button" class="btn btn-primary">
+                                    Understood
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                           <Link to="" className="site-button secondry">
                             Download CV
                           </Link>
@@ -159,126 +254,87 @@ const CandidateDetail = () => {
 
                     <div className="tw-sidebar-tags-wrap">
                       <div className="tagcloud">
-                        <Link to="javascript:void(0)">Finance</Link>
-                        <Link to="javascript:void(0)">Sales</Link>
-                        <Link to="javascript:void(0)">Part-time</Link>
-                        <Link to="javascript:void(0)">Administration</Link>
-                        <Link to="javascript:void(0)">Retail</Link>
-                        <Link to="javascript:void(0)">Engineering</Link>
-                        <Link to="javascript:void(0)">Developer</Link>
-                        <Link to="javascript:void(0)">Work from home</Link>
-                        <Link to="javascript:void(0)">IT Consulting</Link>
-                        <Link to="javascript:void(0)">Manufacturing</Link>
+                        {UserResume?.tableData?.map((friend) => {
+                          return (
+                            <>
+                              {" "}
+                              <Link>{friend.fullName}</Link>
+                            </>
+                          );
+                        })}
                       </div>
                     </div>
 
                     <h4 className="twm-s-title">Work Experience</h4>
                     <div className="twm-timing-list-wrap">
-                      <div className="twm-timing-list">
-                        <div className="twm-time-list-date">2012 to 2016</div>
-                        <div className="twm-time-list-title">Bluetech, Inc</div>
-                        <div className="twm-time-list-position">
-                          Senior PHP Developer
-                        </div>
-                        <div className="twm-time-list-discription">
-                          <p>
-                            One of the main areas that I work on with my clients
-                            is shedding these non-supportive beliefs and
-                            replacing them with beliefs that will help them to
-                            accomplish their desires.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="twm-timing-list">
-                        <div className="twm-time-list-date">2016 to 2020</div>
-                        <div className="twm-time-list-title">Amazon, Inc</div>
-                        <div className="twm-time-list-position">
-                          IT & Development
-                        </div>
-                        <div className="twm-time-list-discription">
-                          <p>
-                            One of the main areas that I work on with my clients
-                            is shedding these non-supportive beliefs and
-                            replacing them with beliefs that will help them to
-                            accomplish their desires.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="twm-timing-list">
-                        <div className="twm-time-list-date">2020 to 2023</div>
-                        <div className="twm-time-list-title">BGoogle, Inc</div>
-                        <div className="twm-time-list-position">
-                          Senior UI / UX Designer and Developer{" "}
-                        </div>
-                        <div className="twm-time-list-discription">
-                          <p>
-                            One of the main areas that I work on with my clients
-                            is shedding these non-supportive beliefs and
-                            replacing them with beliefs that will help them to
-                            accomplish their desires.
-                          </p>
-                        </div>
-                      </div>
+                      {UserResume?.employer?.map((item) => {
+                        return (
+                          <div className="twm-timing-list">
+                            <div className="twm-time-list-date">
+                              {item.startDate} to {item.EndDate}
+                            </div>
+                            <div className="twm-time-list-title">
+                              {item.ComapnyName}
+                            </div>
+                            <div className="twm-time-list-position">
+                              {item.Designation}
+                            </div>
+                            <div className="twm-time-list-discription">
+                              <p>{item.JobProfile}</p>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
 
                     <h4 className="twm-s-title">Education & Training</h4>
                     <div className="twm-timing-list-wrap">
-                      <div className="twm-timing-list">
-                        <div className="twm-time-list-date">2004 to 2006</div>
-                        <div className="twm-time-list-title">
-                          BCA - Bachelor of Computer Applications
-                        </div>
-                        <div className="twm-time-list-position">
-                          International University
-                        </div>
-                        <div className="twm-time-list-discription">
-                          <p>
-                            One of the main areas that I work on with my clients
-                            is shedding these non-supportive beliefs and
-                            replacing them with beliefs that will help them to
-                            accomplish their desires.
-                          </p>
-                        </div>
-                      </div>
+                      {UserResume?.education?.map((item) => {
+                        return (
+                          <div className="twm-timing-list">
+                            <div className="twm-time-list-date">
+                              {/* <div className="twm-time-list-date">
+                                2006 to 2008
+                              </div> */}
+                            </div>
+                            <div className="twm-time-list-title">
+                              {item.education}
+                            </div>
+                            <div className="twm-time-list-position">
+                              {item.course}
+                            </div>
+                            <div className="twm-time-list-discription">
+                              <p>{item.institute}</p>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
 
-                      <div className="twm-timing-list">
-                        <div className="twm-time-list-date">2006 to 2008</div>
-                        <div className="twm-time-list-title">
-                          MCA - Master of Computer Application
-                        </div>
-                        <div className="twm-time-list-position">
-                          Middle East Technical University
-                        </div>
-                        <div className="twm-time-list-discription">
-                          <p>
-                            One of the main areas that I work on with my clients
-                            is shedding these non-supportive beliefs and
-                            replacing them with beliefs that will help them to
-                            accomplish their desires.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="twm-timing-list">
-                        <div className="twm-time-list-date">2008 to 2011</div>
-                        <div className="twm-time-list-title">
-                          Design Communication Visual
-                        </div>
-                        <div className="twm-time-list-position">
-                          Design at Massachusetts Institute of Technology &
-                          Marketing
-                        </div>
-                        <div className="twm-time-list-discription">
-                          <p>
-                            One of the main areas that I work on with my clients
-                            is shedding these non-supportive beliefs and
-                            replacing them with beliefs that will help them to
-                            accomplish their desires.
-                          </p>
-                        </div>
-                      </div>
+                    <h4 className="twm-s-title">Projects</h4>
+                    <div className="twm-timing-list-wrap">
+                      {UserResume?.project?.map((item) => {
+                        return (
+                          <div className="twm-timing-list">
+                            <div className="twm-time-list-date">
+                              {item.projectStartDate} to {item.projectEndDate}
+                            </div>
+                            <div className="twm-time-list-title">
+                              {item.ProjectClientName}
+                            </div>
+                            <div className="twm-time-list-position">
+                              {item.ProjectTitle}
+                            </div>
+                            <div className="twm-time-list-position">
+                              {" "}
+                              {item.ProjectEducation}
+                            </div>
+                            <div className="twm-time-list-discription">
+                              <p>{item.projectDetail}</p>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -302,9 +358,9 @@ const CandidateDetail = () => {
                           <li>
                             <div className="twm-s-info-inner">
                               <i className="fas fa-money-bill-wave"></i>
-                              <span className="twm-title">Offered Salary</span>
+                              <span className="twm-title">Expected Salary</span>
                               <div className="twm-s-info-discription">
-                                ${candidate?.expectedSalary} / Year
+                                ${candidate?.expectedSalary} / Month
                               </div>
                             </div>
                           </li>

@@ -27,6 +27,10 @@ import EmployerJobDetail from "./Pages/EmployerJobDetail";
 import CandidateJobApplied from "./Pages/CandidateJobApplied";
 import BrowseCandidate from "./Pages/BrowseCandidate";
 import CandidateMyResume from "./Pages/CandidateMyResume";
+import CandidateMyResumeDetail from "./Pages/CandidateMyResumeDetail";
+import DashPostJob from "./Pages/DashPostJob";
+import DashCompanyProfile from "./Pages/DashCompanyProfile";
+import DashCompanyProfileUpdate from "./Pages/DashCompanyProfileUpdate";
 // import About from "./pages/About";
 // import Author from "./pages/Author";
 // import Blog from "./pages/Blog";
@@ -120,11 +124,17 @@ function App() {
         />
         <Route path="/candidate-grid" element={<BrowseCandidate />} />
         <Route path="/candidate-my-resume" element={<CandidateMyResume />} />
-        {/*<Route path="/terms" element={<Terms />} />
-        <Route path="/viewCart" element={<ViewCart />} />
-        <Route path="/success" element={<Success />} />
-        <Route path="/viewdetails/:id" element={<ViewDetails />} />
-        <Route path="/failed" element={<Failed />} />
+        <Route
+          path="/candidate-my-resume-detail"
+          element={<CandidateMyResumeDetail />}
+        />
+        <Route path="/dash-post-job" element={<DashPostJob />} />
+        <Route path="/dash-company-profile" element={<DashCompanyProfile />} />
+        <Route
+          path="/dash-company-profile-update"
+          element={<DashCompanyProfileUpdate />}
+        />
+        {/*  <Route path="/failed" element={<Failed />} />
         <Route path="/purchasesuccess" element={<PurchaseSuccess />} />
         <Route path="/onlinemanagement/:id" element={<OnlineManagement />} />
         <Route path="/ordersuccess" element={<Ordersuccess />} />

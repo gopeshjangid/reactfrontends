@@ -134,34 +134,7 @@ const EmployerDetails = () => {
 
                     <h4 className="twm-s-title">About Company</h4>
 
-                    <p>
-                      UUt enim ad minima veniam, quis nostrum exercitationem
-                      ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
-                      commodi consequatur? Quis autem vel eum iure reprehenderit
-                      qui in ea voluptate velit esse quam nihil molestiae
-                      consequatur, vel illum qui dolorem eum fugiat quo voluptas
-                      nulla pariatur?{" "}
-                    </p>
-
-                    <p>
-                      At vero eos et accusamus et iusto odio dignissimos ducimus
-                      qui blanditiis praesentium voluptatum deleniti atque
-                      corrupti quos dolores et quas molestias excepturi sint
-                      occaecati cupiditate non provident, similique sunt in
-                      culpa qui officia deserunt mollitia animi.
-                    </p>
-                    <p>
-                      Opossum but dramatically despite expeditiously that
-                      jeepers loosely yikes that as or eel underneath kept and
-                      slept compactly far purred sure abidingly up above fitting
-                      to strident wiped set waywardly far the and pangolin horse
-                      approving paid chuckled cassowary oh above a much opposite
-                      far much hypnotically more therefore wasp less that hey
-                      apart well like while superbly orca and far hence one.Far
-                      much that one rank beheld bluebird after outside ignobly
-                      allegedly more when oh arrogantly vehement irresistibly
-                      fussy.?{" "}
-                    </p>
+                    <p>{fetchData?.description}</p>
 
                     <h4 className="twm-s-title">Responsabilities</h4>
                     <ul className="description-list-2">
@@ -640,7 +613,7 @@ const EmployerDetails = () => {
                               <i className="fas fa-mobile-alt"></i>
                               <span className="twm-title">Phone</span>
                               <div className="twm-s-info-discription">
-                                +291 560 56456
+                                {fetchData?.phone}
                               </div>
                             </div>
                           </li>
@@ -649,7 +622,7 @@ const EmployerDetails = () => {
                               <i className="fas fa-at"></i>
                               <span className="twm-title">Email</span>
                               <div className="twm-s-info-discription">
-                                thewebmaxdemo@gmail.com
+                                {fetchData?.email}
                               </div>
                             </div>
                           </li>
@@ -667,7 +640,7 @@ const EmployerDetails = () => {
                               <i className="fas fa-map-marker-alt"></i>
                               <span className="twm-title">Address</span>
                               <div className="twm-s-info-discription">
-                                1363-1385 Sunset Blvd Angeles, CA 90026 ,USA
+                                {fetchData?.address}
                               </div>
                             </div>
                           </li>

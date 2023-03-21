@@ -28,14 +28,40 @@ const EmployerProfile = () => {
   const [data, setData] = useState();
   const [load, setLoad] = useState(true);
 
+  const [companyName, setCompanyName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [Email, setCompanyEmail] = useState("");
+  const [websiteUrl, setWebsiteUrl] = useState("");
+  const [qualification, setQualification] = useState("");
+  const [language, setLanguage] = useState("");
+  // const [jobCategory, setJobCategory] = useState("");
+  // const [experience, setExperience] = useState("");
+  // const [currentSalary, setCurrentSalary] = useState("");
+
+  // const [expectedSalary, setEexpectedSalary] = useState("");
+  const [age, setAge] = useState("");
+  const [country, setCountry] = useState("");
+  const [city, setCity] = useState("");
+  const [pincode, setPincode] = useState("");
+  const [address, setAddress] = useState("");
+  const [description, setDescription] = useState("");
+  const [facebook, setFacebook] = useState("");
+  const [linkedin, setLinkedin] = useState("");
+  const [twitter, setTwitter] = useState("");
+
   // const [error, setError] = useState()
 
   // const [state, setState] = useState('')
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUser({ ...User, [name]: value });
-  };
+  // const handleChange = (e) => {
+  //   let name = e.target.name;
+  //   let value = e.target.value;
+  //   let User = { ...User };
+  //   setUser({ ...User, [name]: value });
+  //   console.log(User);
+  //   // const { name, value } = e.target;
+  //   // setUser({ ...User, [name]: value });
+  // };
 
   // useEffect(() => {
   // 	console.log(message);
@@ -47,37 +73,6 @@ const EmployerProfile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const {
-      companyName,
-      phone,
-      companyEmail,
-      websiteUrl,
-      country,
-      city,
-      pincode,
-      address,
-      description,
-      facebook,
-      linkedin,
-      twitter,
-    } = User;
-
-    const object = {
-      companyName: companyName.trim(),
-      phone: phone.trim(),
-      companyEmail: companyEmail.trim(),
-      websiteUrl: websiteUrl.trim(),
-      country: country.trim(),
-      city: city.trim(),
-      pincode: pincode.trim(),
-      address: address.trim(),
-      description: description.trim(),
-      facebook: facebook.trim(),
-      linkedin: linkedin.trim(),
-      twitter: twitter.trim(),
-    };
-
-    setFormErrors(validate(User));
 
     // add entity - POST
     // e.preventDefault();
@@ -86,54 +81,50 @@ const EmployerProfile = () => {
     // const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     // /^[^@]+@(yahoo|gmail|mail|rocketmail)\.(com|in|co\.uk)$/i;
     const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
-    if (
-      companyName.trim() === "" ||
-      phone.trim() === "" ||
-      companyEmail.trim() === "" ||
-      regex1.test(companyEmail.trim()) === false ||
-      websiteUrl.trim() === "" ||
-      country.trim() === "" ||
-      city.trim() === "" ||
-      pincode.trim() === "" ||
-      address.trim() === "" ||
-      description.trim() === "" ||
-      facebook.trim() === "" ||
-      linkedin.trim() === "" ||
-      twitter.trim() === ""
-    ) {
-      return;
-    } else {
-      const tokenID = localStorage.getItem("token");
-      fetch("http://localhost:5000/companyDetails", {
-        method: "POST",
-        mode: "cors",
-        body: JSON.stringify(object),
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `${tokenID}`,
-        },
-      })
-        .then((response) => response.json(console.log(response)))
 
-        .then((json) => {
-          setData({
-            User: json,
-          });
+    const tokenID = localStorage.getItem("token");
+    fetch("http://localhost:5000/companyDetails", {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify({
+        companyName,
+        phone,
+        companyEmail: Email,
+        websiteUrl,
+        country,
+        city,
+        pincode,
+        address,
+        description,
+        facebook,
+        linkedin,
+        twitter,
+      }),
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${tokenID}`,
+      },
+    })
+      .then((response) => response.json(console.log(response)))
 
-          //   if (json.message === "successfully register") {
-          //     navigate("/login");
-          //   }
-
-          // setMessage(json.message)
-          console.log(json);
-        })
-        .catch((err) => {
-          console.log(err);
+      .then((json) => {
+        setData({
+          User: json,
         });
-      // setState(valid(json.message));
 
-      setIsSubmit(true);
-    }
+        //   if (json.message === "successfully register") {
+        //     navigate("/login");
+        //   }
+
+        // setMessage(json.message)
+        console.log(json);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    // setState(valid(json.message));
+
+    setIsSubmit(true);
   };
 
   // useEffect(() => {
@@ -146,60 +137,6 @@ const EmployerProfile = () => {
     const res = data?.User?.message;
     setMessage(res);
   }, [data]);
-
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(User);
-      // fetchData()
-    }
-  }, []);
-
-  const validate = (values) => {
-    const errors = {};
-
-    const regex = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
-    if (!values.companyName) {
-      errors.companyName = "!'Please Enter Your Name'";
-    }
-    if (!values.phone) {
-      errors.phone = "!'Please Enter Your Phone Number'";
-    }
-    if (!values.companyEmail) {
-      errors.companyEmail = "!'Please Enter Your companyEmail '";
-    } else if (!regex.test(values.companyEmail)) {
-      errors.companyEmail = "!'This is not Email Format'";
-    }
-    if (!values.websiteUrl) {
-      errors.websiteUrl = "!'Please Enter Your Password'";
-    }
-
-    if (!values.country) {
-      errors.country = "!'Please Enter country'";
-    }
-    if (!values.city) {
-      errors.city = "!'Please Enter city'";
-    }
-    if (!values.pincode) {
-      errors.pincode = "!'Please Enter pincode'";
-    }
-    if (!values.address) {
-      errors.address = "!'Please Enter address'";
-    }
-    if (!values.description) {
-      errors.description = "!'Please Enter description'";
-    }
-    if (!values.facebook) {
-      errors.facebook = "!'Please Enter facebook'";
-    }
-    if (!values.linkedin) {
-      errors.linkedin = "!'Please Enter linkedin'";
-    }
-    if (!values.twitter) {
-      errors.twitter = "!'Please Enter twitter'";
-    }
-    return errors;
-  };
 
   const [employerDetails, setEmployerDetails] = useState([]);
   const [state, setState] = useState([]);
@@ -219,8 +156,25 @@ const EmployerProfile = () => {
         if (json.message.length < 1) {
           setEmployerDetails(json.message);
           setLoad(false);
+          console.log(json.message);
         } else {
           setEmployerDetails(json.message[0]);
+          setCompanyName(json.message[0].companyName);
+          setPhone(json.message[0].phone);
+          setCompanyEmail(json.message[0].companyEmail);
+          setWebsiteUrl(json.message[0].websiteUrl);
+          setCountry(json.message[0].country);
+          setCity(json.message[0].city);
+          setPincode(json.message[0].pincode);
+          setAddress(json.message[0].address);
+          setQualification(json.message[0].qualification);
+          setLanguage(json.message[0].language);
+          setDescription(json.message[0].description);
+          setFacebook(json.message[0].facebook);
+          setLinkedin(json.message[0].linkedin);
+          setTwitter(json.message[0].twitter);
+          setLoad(false);
+          console.log(json.message);
         }
 
         console.log(json.message);
@@ -320,11 +274,7 @@ const EmployerProfile = () => {
                           <i className="fa fa-user"></i> Company Profile
                         </Link>
                       </li>
-                      <li className="">
-                        <Link to="/employer-profile-details">
-                          <i className="fa fa-user"></i> Company Details
-                        </Link>
-                      </li>
+
                       <li>
                         <Link to="/employer-resume">
                           <i className="fa fa-receipt"></i> Resume
@@ -411,9 +361,11 @@ const EmployerProfile = () => {
                                   <input
                                     className="form-control"
                                     name="companyName"
-                                    onChange={handleChange}
+                                    onChange={(e) =>
+                                      setCompanyName(e.target.value)
+                                    }
                                     type="text"
-                                    value={employerDetails?.companyName}
+                                    value={companyName}
                                     placeholder="Devid Smith"
                                   />
 
@@ -433,9 +385,9 @@ const EmployerProfile = () => {
                                   <input
                                     className="form-control"
                                     name="phone"
-                                    onChange={handleChange}
+                                    onChange={(e) => setPhone(e.target.value)}
                                     type="number"
-                                    value={employerDetails?.phone}
+                                    value={phone}
                                     placeholder="(251) 1234-456-7890"
                                   />
                                   <i className="fs-input-icon fa fa-phone-alt"></i>
@@ -453,8 +405,10 @@ const EmployerProfile = () => {
                                   <input
                                     className="form-control"
                                     name="companyEmail"
-                                    onChange={handleChange}
-                                    value={employerDetails?.companyEmail}
+                                    onChange={(e) =>
+                                      setCompanyEmail(e.target.value)
+                                    }
+                                    value={Email}
                                     type="email"
                                     placeholder="Devid@example.com"
                                   />
@@ -473,7 +427,10 @@ const EmployerProfile = () => {
                                   <input
                                     className="form-control"
                                     name="websiteUrl"
-                                    onChange={handleChange}
+                                    onChange={(e) =>
+                                      setWebsiteUrl(e.target.value)
+                                    }
+                                    value={websiteUrl}
                                     type="url"
                                     placeholder="https://devsmith.net/"
                                   />
@@ -492,7 +449,8 @@ const EmployerProfile = () => {
                                   <input
                                     className="form-control"
                                     name="country"
-                                    onChange={handleChange}
+                                    onChange={(e) => setCountry(e.target.value)}
+                                    value={country}
                                     type="text"
                                     placeholder="USA"
                                   />
@@ -512,7 +470,8 @@ const EmployerProfile = () => {
                                     className="form-control"
                                     name="city"
                                     type="text"
-                                    onChange={handleChange}
+                                    onChange={(e) => setCity(e.target.value)}
+                                    value={city}
                                     placeholder="Texas"
                                   />
                                   <i className="fs-input-icon fa fa-globe-americas"></i>
@@ -531,7 +490,8 @@ const EmployerProfile = () => {
                                     className="form-control"
                                     name="pincode"
                                     type="text"
-                                    onChange={handleChange}
+                                    onChange={(e) => setPincode(e.target.value)}
+                                    value={pincode}
                                     placeholder="75462"
                                   />
                                   <i className="fs-input-icon fas fa-map-pin"></i>
@@ -550,7 +510,8 @@ const EmployerProfile = () => {
                                     className="form-control"
                                     name="address"
                                     type="text"
-                                    onChange={handleChange}
+                                    onChange={(e) => setAddress(e.target.value)}
+                                    value={address}
                                     placeholder="1363-1385 Sunset Blvd Angeles, CA 90026 ,USA"
                                   />
                                   <i className="fs-input-icon fas fa-map-marker-alt"></i>
@@ -581,7 +542,10 @@ const EmployerProfile = () => {
                                 <textarea
                                   className="form-control"
                                   name="description"
-                                  onChange={handleChange}
+                                  onChange={(e) =>
+                                    setDescription(e.target.value)
+                                  }
+                                  value={description}
                                   rows="3"
                                 ></textarea>
                               </div>
@@ -605,7 +569,10 @@ const EmployerProfile = () => {
                                         <input
                                           className="form-control wt-form-control"
                                           name="facebook"
-                                          onChange={handleChange}
+                                          onChange={(e) =>
+                                            setFacebook(e.target.value)
+                                          }
+                                          value={facebook}
                                           type="url"
                                           placeholder="https://www.facebook.com/"
                                         />
@@ -624,7 +591,10 @@ const EmployerProfile = () => {
                                         <input
                                           className="form-control wt-form-control"
                                           name="twitter"
-                                          onChange={handleChange}
+                                          onChange={(e) =>
+                                            setTwitter(e.target.value)
+                                          }
+                                          value={twitter}
                                           type="url"
                                           placeholder="https://twitter.com/"
                                         />
@@ -643,7 +613,10 @@ const EmployerProfile = () => {
                                         <input
                                           className="form-control wt-form-control"
                                           name="linkedin"
-                                          onChange={handleChange}
+                                          onChange={(e) =>
+                                            setLinkedin(e.target.value)
+                                          }
+                                          value={linkedin}
                                           type="url"
                                           placeholder="https://in.linkedin.com/"
                                         />
@@ -663,6 +636,13 @@ const EmployerProfile = () => {
                                 <button type="submit" className="site-button">
                                   Save Changes
                                 </button>
+                                &nbsp;&nbsp;
+                                <Link to="/employer-profile-details">
+                                  {" "}
+                                  <button className="site-button">
+                                    Update Profile
+                                  </button>
+                                </Link>
                               </div>
 
                               {message ===
@@ -702,7 +682,7 @@ const EmployerProfile = () => {
                                   <input
                                     className="form-control"
                                     name="companyName"
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
                                     type="text"
                                     placeholder={employerDetails?.companyName}
                                     disabled
@@ -720,7 +700,7 @@ const EmployerProfile = () => {
                                   <input
                                     className="form-control"
                                     name="phone"
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
                                     type="text"
                                     placeholder={employerDetails?.phone}
                                     disabled
@@ -737,7 +717,7 @@ const EmployerProfile = () => {
                                   <input
                                     className="form-control"
                                     name="companyEmail"
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
                                     type="email"
                                     placeholder={employerDetails?.companyEmail}
                                     disabled
@@ -757,7 +737,7 @@ const EmployerProfile = () => {
                                   <input
                                     className="form-control"
                                     name="websiteUrl"
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
                                     type="text"
                                     placeholder={employerDetails?.websiteUrl}
                                     disabled
@@ -777,7 +757,7 @@ const EmployerProfile = () => {
                                   <input
                                     className="form-control"
                                     name="country"
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
                                     type="text"
                                     placeholder={employerDetails?.country}
                                     disabled
@@ -798,7 +778,7 @@ const EmployerProfile = () => {
                                     className="form-control"
                                     name="city"
                                     type="text"
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
                                     placeholder={employerDetails?.city}
                                     disabled
                                   />
@@ -818,7 +798,7 @@ const EmployerProfile = () => {
                                     className="form-control"
                                     name="pincode"
                                     type="text"
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
                                     placeholder={employerDetails?.pincode}
                                     disabled
                                   />
@@ -838,7 +818,7 @@ const EmployerProfile = () => {
                                     className="form-control"
                                     name="address"
                                     type="text"
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
                                     placeholder={employerDetails?.address}
                                     disabled
                                   />
@@ -871,7 +851,7 @@ const EmployerProfile = () => {
                                 <textarea
                                   className="form-control"
                                   name="description"
-                                  onChange={handleChange}
+                                  // onChange={handleChange}
                                   rows="3"
                                   placeholder={employerDetails?.description}
                                   disabled
@@ -897,7 +877,7 @@ const EmployerProfile = () => {
                                         <input
                                           className="form-control wt-form-control"
                                           name="facebook"
-                                          onChange={handleChange}
+                                          // onChange={handleChange}
                                           type="text"
                                           placeholder={
                                             employerDetails?.facebook
@@ -919,7 +899,7 @@ const EmployerProfile = () => {
                                         <input
                                           className="form-control wt-form-control"
                                           name="twitter"
-                                          onChange={handleChange}
+                                          // onChange={handleChange}
                                           type="text"
                                           placeholder={employerDetails?.twitter}
                                           disabled
@@ -939,7 +919,7 @@ const EmployerProfile = () => {
                                         <input
                                           className="form-control wt-form-control"
                                           name="linkedin"
-                                          onChange={handleChange}
+                                          // onChange={handleChange}
                                           type="text"
                                           placeholder={
                                             employerDetails?.linkedin
@@ -959,6 +939,10 @@ const EmployerProfile = () => {
 
                             <div className="col-lg-12 col-md-12">
                               <div className="text-left">
+                                <button type="submit" className="site-button">
+                                  Save Changes
+                                </button>
+                                &nbsp;&nbsp;
                                 <button type="submit" className="site-button">
                                   Save Changes
                                 </button>
@@ -1759,7 +1743,7 @@ export default EmployerProfile;
 //                               <input
 //                                 className="form-control"
 //                                 name="companyName"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 type="text"
 //                                 placeholder="Devid Smith"
 //                               />
@@ -1780,7 +1764,7 @@ export default EmployerProfile;
 //                               <input
 //                                 className="form-control"
 //                                 name="phone"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 type="number"
 //                                 placeholder="(251) 1234-456-7890"
 //                               />
@@ -1797,7 +1781,7 @@ export default EmployerProfile;
 //                               <input
 //                                 className="form-control"
 //                                 name="companyEmail"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 value=""
 //                                 type="email"
 //                                 placeholder="Devid@example.com"
@@ -1817,7 +1801,7 @@ export default EmployerProfile;
 //                               <input
 //                                 className="form-control"
 //                                 name="websiteUrl"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 type="url"
 //                                 placeholder="https://devsmith.net/"
 //                               />
@@ -1836,7 +1820,7 @@ export default EmployerProfile;
 //                               <input
 //                                 className="form-control"
 //                                 name="country"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 type="text"
 //                                 placeholder="USA"
 //                               />
@@ -1854,7 +1838,7 @@ export default EmployerProfile;
 //                                 className="form-control"
 //                                 name="city"
 //                                 type="text"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 placeholder="Texas"
 //                               />
 //                               <i className="fs-input-icon fa fa-globe-americas"></i>
@@ -1871,7 +1855,7 @@ export default EmployerProfile;
 //                                 className="form-control"
 //                                 name="pincode"
 //                                 type="text"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 placeholder="75462"
 //                               />
 //                               <i className="fs-input-icon fas fa-map-pin"></i>
@@ -1888,7 +1872,7 @@ export default EmployerProfile;
 //                                 className="form-control"
 //                                 name="address"
 //                                 type="text"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 placeholder="1363-1385 Sunset Blvd Angeles, CA 90026 ,USA"
 //                               />
 //                               <i className="fs-input-icon fas fa-map-marker-alt"></i>
@@ -1917,7 +1901,7 @@ export default EmployerProfile;
 //                             <textarea
 //                               className="form-control"
 //                               name="description"
-//                               onChange={handleChange}
+// onChange = { handleChange };
 //                               rows="3"
 //                             ></textarea>
 //                           </div>
@@ -1941,7 +1925,7 @@ export default EmployerProfile;
 //                                     <input
 //                                       className="form-control wt-form-control"
 //                                       name="facebook"
-//                                       onChange={handleChange}
+// onChange = { handleChange };
 //                                       type="url"
 //                                       placeholder="https://www.facebook.com/"
 //                                     />
@@ -1960,7 +1944,7 @@ export default EmployerProfile;
 //                                     <input
 //                                       className="form-control wt-form-control"
 //                                       name="twitter"
-//                                       onChange={handleChange}
+// onChange = { handleChange };
 //                                       type="url"
 //                                       placeholder="https://twitter.com/"
 //                                     />
@@ -1979,7 +1963,7 @@ export default EmployerProfile;
 //                                     <input
 //                                       className="form-control wt-form-control"
 //                                       name="linkedin"
-//                                       onChange={handleChange}
+// onChange = { handleChange };
 //                                       type="url"
 //                                       placeholder="https://in.linkedin.com/"
 //                                     />
@@ -2038,7 +2022,7 @@ export default EmployerProfile;
 //                               <input
 //                                 className="form-control"
 //                                 name="companyName"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 type="text"
 //                                 placeholder=""
 //                                 value={employerDetails?.companyName}
@@ -2057,7 +2041,7 @@ export default EmployerProfile;
 //                               <input
 //                                 className="form-control"
 //                                 name="phone"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 type="text"
 //                                 value={employerDetails?.phone}
 //                                 placeholder=""
@@ -2075,7 +2059,7 @@ export default EmployerProfile;
 //                               <input
 //                                 className="form-control"
 //                                 name="companyEmail"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 type="email"
 //                                 placeholder=""
 //                                 value={employerDetails?.companyEmail}
@@ -2093,7 +2077,7 @@ export default EmployerProfile;
 //                               <input
 //                                 className="form-control"
 //                                 name="websiteUrl"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 type="text"
 //                                 placeholder="https://devsmith.net/"
 //                                 disabled
@@ -2110,7 +2094,7 @@ export default EmployerProfile;
 //                               <input
 //                                 className="form-control"
 //                                 name="country"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 type="text"
 //                                 placeholder="USA"
 //                                 disabled
@@ -2128,7 +2112,7 @@ export default EmployerProfile;
 //                                 className="form-control"
 //                                 name="city"
 //                                 type="text"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 placeholder="Texas"
 //                                 disabled
 //                               />
@@ -2145,7 +2129,7 @@ export default EmployerProfile;
 //                                 className="form-control"
 //                                 name="pincode"
 //                                 type="text"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 placeholder="75462"
 //                                 disabled
 //                               />
@@ -2162,7 +2146,7 @@ export default EmployerProfile;
 //                                 className="form-control"
 //                                 name="address"
 //                                 type="text"
-//                                 onChange={handleChange}
+// onChange = { handleChange };
 //                                 placeholder="1363-1385 Sunset Blvd Angeles, CA 90026 ,USA"
 //                                 disabled
 //                               />
@@ -2192,7 +2176,7 @@ export default EmployerProfile;
 //                             <textarea
 //                               className="form-control"
 //                               name="description"
-//                               onChange={handleChange}
+// onChange = { handleChange };
 //                               rows="3"
 //                               disabled
 //                             ></textarea>
@@ -2214,7 +2198,7 @@ export default EmployerProfile;
 //                                     <input
 //                                       className="form-control wt-form-control"
 //                                       name="facebook"
-//                                       onChange={handleChange}
+// onChange = { handleChange };
 //                                       type="text"
 //                                       placeholder="https://www.facebook.com/"
 //                                       disabled
@@ -2231,7 +2215,7 @@ export default EmployerProfile;
 //                                     <input
 //                                       className="form-control wt-form-control"
 //                                       name="twitter"
-//                                       onChange={handleChange}
+// onChange = { handleChange };
 //                                       type="text"
 //                                       placeholder="https://twitter.com/"
 //                                       disabled
@@ -2248,7 +2232,7 @@ export default EmployerProfile;
 //                                     <input
 //                                       className="form-control wt-form-control"
 //                                       name="linkedin"
-//                                       onChange={handleChange}
+// onChange = { handleChange };
 //                                       type="text"
 //                                       placeholder="https://in.linkedin.com/"
 //                                       disabled

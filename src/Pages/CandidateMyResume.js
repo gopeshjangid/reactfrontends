@@ -1,7 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+// import useCandidateResumeApi from "../FetchApi/CandidateResumeApi";
 
 const CandidateMyResume = () => {
+  const [load, setLoad] = useState(true);
+  //  const tokenID = localStorage.getItem("token");
+  // const { id } = useParams();
+  // console.log(id, "id");
+  useEffect(() => {
+    fetch("http://localhost:5000/findResume", {
+      method: "GET",
+      mode: "cors",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${tokenID}`,
+      },
+    })
+      .then((response) => response.json(console.log(response)))
+
+      .then((json) => {
+        // setResume(json.message);
+
+        if (json.message.length < 1) {
+          setLoad(true);
+        } else {
+          setLoad(false);
+        }
+        console.log(load);
+        // const resumeData = json.message?.filter(
+        //   (item, index) => item._id === id
+        // );
+        // console.log(resumeData);
+        // setMessage(json.message);
+        console.log(json.message);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  // const candidateResume = useCandidateResumeApi();
+
   const resumeValues = { ResumeHeadline: "" };
 
   const [resumeHeadline, setResumeHaeadline] = useState(resumeValues);
@@ -17,11 +56,9 @@ const CandidateMyResume = () => {
     console.log(resumeHeadline);
   };
 
-
-
-const tableValue ={
-  fullName: "",
-}
+  const tableValue = {
+    fullName: "",
+  };
 
   const [tableData, setTableData] = useState([]);
   const [formInputData, setformInputData] = useState(tableValue);
@@ -55,17 +92,28 @@ const tableValue ={
     JobProfile: "",
   };
 
-  const [employer, setEmployer] = useState(EmployerValues);
+  const [employer, setEmployer] = useState([]);
+  const [employerInputData, setEmployerInputData] = useState(EmployerValues);
 
-  const inputChange = (e) => {
-    const { name, value } = e.target;
-    setEmployer({ ...employer, [name]: value });
+  const inputChange = (evnt) => {
+    const newInput = (data) => ({
+      ...data,
+      [evnt.target.name]: evnt.target.value,
+    });
+    setEmployerInputData(newInput);
   };
 
-  const EmployerClick = (e) => {
-    e.preventDefault();
-    setEmployer(employer);
-    console.log(employer);
+  const EmployerClick = (evnt) => {
+    evnt.preventDefault();
+    const checkEmptyInput = !Object.values(employerInputData).every(
+      (res) => res === ""
+    );
+    if (checkEmptyInput) {
+      const newData = (data) => [...data, employerInputData];
+      setEmployer(newData);
+      const emptyInput = { fullName: "" };
+      setEmployerInputData(emptyInput);
+    }
   };
 
   const educationValues = {
@@ -74,17 +122,28 @@ const tableValue ={
     institute: "",
   };
 
-  const [education, setEducation] = useState(educationValues);
+  const [education, setEducation] = useState([]);
+  const [educationInputData, setEducationInputData] = useState(educationValues);
 
-  const educationChange = (e) => {
-    const { name, value } = e.target;
-    setEducation({ ...education, [name]: value });
+  const educationChange = (evnt) => {
+    const newInput = (data) => ({
+      ...data,
+      [evnt.target.name]: evnt.target.value,
+    });
+    setEducationInputData(newInput);
   };
 
-  const EducationClick = (e) => {
-    e.preventDefault();
-    setEducation(education);
-    console.log(education);
+  const EducationClick = (evnt) => {
+    evnt.preventDefault();
+    const checkEmptyInput = !Object.values(educationInputData).every(
+      (res) => res === ""
+    );
+    if (checkEmptyInput) {
+      const newData = (data) => [...data, educationInputData];
+      setEducation(newData);
+      const emptyInput = { fullName: "" };
+      setEducationInputData(emptyInput);
+    }
   };
 
   const projectValues = {
@@ -96,21 +155,29 @@ const tableValue ={
     projectStartDate: "",
   };
 
-  const [project, setProject] = useState(projectValues);
+  const [project, setProject] = useState([]);
+  const [projectInputData, setProjectInputData] = useState(projectValues);
 
-  const ProjectChange = (e) => {
-    const { name, value } = e.target;
-    setProject({ ...project, [name]: value });
+  const ProjectChange = (evnt) => {
+    const newInput = (data) => ({
+      ...data,
+      [evnt.target.name]: evnt.target.value,
+    });
+    setProjectInputData(newInput);
   };
 
-  const ProjectClick = (e) => {
-    e.preventDefault();
-    setProject(project);
-    console.log(project);
+  const ProjectClick = (evnt) => {
+    evnt.preventDefault();
+    const checkEmptyInput = !Object.values(projectInputData).every(
+      (res) => res === ""
+    );
+    if (checkEmptyInput) {
+      const newData = (data) => [...data, projectInputData];
+      setProject(newData);
+      const emptyInput = { fullName: "" };
+      setProjectInputData(emptyInput);
+    }
   };
-
-
-
 
   const desiredValues = {
     industry: "",
@@ -163,30 +230,39 @@ const tableValue ={
     console.log(personal);
   };
 
-  const Allset = [{ resumeHeadline, employer, education,tableData, project, desired, personal }]
+  const Allset = {
+    resumeHeadline,
+    employer,
+    education,
+    tableData,
+    project,
+    desired,
+    personal,
+  };
 
-  console.log(Allset)
-  const [all, setAll] = useState([Allset])
+  console.log(Allset);
+  const [all, setAll] = useState();
 
+  const tokenID = localStorage.getItem("token");
+  console.log(tokenID);
   const allClick = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:5000/register", {
+    fetch("http://localhost:5000/createResume", {
       method: "POST",
       mode: "cors",
       body: JSON.stringify(Allset),
       headers: {
         "Content-type": "application/json",
-        Accept: "application/json",
+        Authorization: `${tokenID}`,
       },
     })
       .then((response) => response.json(console.log(response)))
 
       .then((json) => {
         setAll({
-          User: json,
+          CV: json,
         });
-
 
         // setMessage(json.message);
         console.log(json);
@@ -194,12 +270,11 @@ const tableValue ={
       .catch((err) => {
         console.log(err);
       });
-    setAll(all);
-    console.log(all);
   };
   return (
     <div>
       {/* CONTENT START */}
+
       <div className="page-content">
         {/* INNER PAGE BANNER */}
         <div
@@ -307,105 +382,43 @@ const tableValue ={
                   </div>
                 </div>
               </div>
+
               <div className="col-xl-9 col-lg-8 col-md-12 m-b30">
-                <div className="twm-right-section-panel site-bg-gray">
-                  {/*Resume Headline*/}
-                  <div className="panel panel-default mb-3">
-                    <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
-                      <h4 className="panel-tittle m-a0">Resume Headline</h4>
-                      <button
-                        data-bs-toggle="modal"
-                        href="#Resume_Headline"
-                        title="Edit"
-                        className="site-text-primary bg-transparent border-0 p-0"
-                      >
-                        <span className="fa fa-edit" />
-                      </button>
-                    </div>
-                    <div className="panel-body wt-panel-body p-a20 ">
-                      <div className="twm-panel-inner">
-                        <div>{resumeHeadline.ResumeHeadline }</div>
+                {load === true ? (
+                  <div className="twm-right-section-panel site-bg-gray">
+                    {/*Resume Headline*/}
+                    <div className="panel panel-default mb-3">
+                      <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
+                        <h4 className="panel-tittle m-a0">Resume Headline</h4>
+                        <button
+                          data-bs-toggle="modal"
+                          href="#Resume_Headline"
+                          title="Edit"
+                          className="site-text-primary bg-transparent border-0 p-0"
+                        >
+                          <span className="fa fa-edit" />
+                        </button>
                       </div>
-                    </div>
-                    {/*Modal Popup */}
-                    <div
-                      className="modal fade twm-saved-jobs-view"
-                      id="Resume_Headline"
-                      tabIndex={-1}
-                      style={{ background: "#00000045" }}
-                      aria-hidden="true"
-                      data-bs-backdrop="static"
-                      aria-labelledby="Resume_HeadlineLabel"
-                    >
-                      <div className="modal-dialog modal-dialog-centered">
-                        <div className="modal-content">
-                          <form  onSubmit={ResumeHeadlineClick}>
-                            <div className="modal-header">
-                              <h2 className="modal-title">Resume Headline</h2>
-                              <button
-                                type="button"
-                                className="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                              />
-                            </div>
-                            <div className="modal-body">
-                              <p>
-                                It is the first thing recruiters notice in your
-                                profile. Write concisely what makes you unique
-                                and right person for the job you are looking
-                                for.
-                              </p>
-                              <div className="row">
-                                <div className="col-lg-12 col-md-12">
-                                  <div className="form-group twm-textarea-full">
-                                    <textarea
-                                      className="form-control"
-                                      name="ResumeHeadline"
-                                      onChange={resumeChange}
-                                      placeholder="Type Description"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="modal-footer">
-                              <button
-                                type="button"
-                                className="site-button"
-                                data-bs-dismiss="modal"
-                              >
-                                Close
-                              </button>
-                              <button
-                                type="submit"
-                               
-                                className="site-button"
-                              >
-                                Save
-                              </button>
-                            </div>
-                          </form>
+                      <div className="panel-body wt-panel-body p-a20 ">
+                        <div className="twm-panel-inner">
+                          <div>{resumeHeadline.ResumeHeadline}</div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  {/*Key Skills*/}
-                  <div className="panel panel-default mb-3">
-                    <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
-                      <h4 className="panel-tittle m-a0">Key Skills</h4>
-
+                      {/*Modal Popup */}
                       <div
                         className="modal fade twm-saved-jobs-view"
-                        style={{ background: "#00000045" }}
-                        id="Key_Skills"
+                        id="Resume_Headline"
                         tabIndex={-1}
+                        style={{ background: "#00000045" }}
+                        aria-hidden="true"
+                        data-bs-backdrop="static"
+                        aria-labelledby="Resume_HeadlineLabel"
                       >
                         <div className="modal-dialog modal-dialog-centered">
                           <div className="modal-content">
-                            <form>
+                            <form onSubmit={ResumeHeadlineClick}>
                               <div className="modal-header">
-                                <h2 className="modal-title">Key Skills</h2>
+                                <h2 className="modal-title">Resume Headline</h2>
                                 <button
                                   type="button"
                                   className="btn-close"
@@ -420,14 +433,17 @@ const tableValue ={
                                   unique and right person for the job you are
                                   looking for.
                                 </p>
-                                <div className="form-group">
-                                  <input
-                                    htmlFor="fullName"
-                                    className="form-control"
-                                    name="fullName"
-                                    type="text"
-                                    onChange={handleChange}
-                                  />
+                                <div className="row">
+                                  <div className="col-lg-12 col-md-12">
+                                    <div className="form-group twm-textarea-full">
+                                      <textarea
+                                        className="form-control"
+                                        name="ResumeHeadline"
+                                        onChange={resumeChange}
+                                        placeholder="Type Description"
+                                      />
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                               <div className="modal-footer">
@@ -438,11 +454,7 @@ const tableValue ={
                                 >
                                   Close
                                 </button>
-                                <button
-                                  type="button"
-                                  onClick={handleSubmit}
-                                  className="site-button"
-                                >
+                                <button type="submit" className="site-button">
                                   Save
                                 </button>
                               </div>
@@ -450,106 +462,222 @@ const tableValue ={
                           </div>
                         </div>
                       </div>
-                      <button
-                        data-bs-toggle="modal"
-                        href="#Key_Skills"
-                        title="Edit"
-                        className="site-text-primary bg-transparent p-0 border-0"
-                      >
-                        <span className="fa fa-edit" />
-                      </button>
                     </div>
-                    <div className="panel-body wt-panel-body p-a20 ">
-                      <div className="tw-sidebar-tags-wrap">
-                        <div className="tagcloud">
-                          {tableData?.map((friend, index) => {
+                    {/*Key Skills*/}
+                    <div className="panel panel-default mb-3">
+                      <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
+                        <h4 className="panel-tittle m-a0">Key Skills</h4>
+
+                        <div
+                          className="modal fade twm-saved-jobs-view"
+                          style={{ background: "#00000045" }}
+                          id="Key_Skills"
+                          tabIndex={-1}
+                        >
+                          <div className="modal-dialog modal-dialog-centered">
+                            <div className="modal-content">
+                              <form>
+                                <div className="modal-header">
+                                  <h2 className="modal-title">Key Skills</h2>
+                                  <button
+                                    type="button"
+                                    className="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  />
+                                </div>
+                                <div className="modal-body">
+                                  <p>
+                                    It is the first thing recruiters notice in
+                                    your profile. Write concisely what makes you
+                                    unique and right person for the job you are
+                                    looking for.
+                                  </p>
+                                  <div className="form-group">
+                                    <input
+                                      htmlFor="fullName"
+                                      className="form-control"
+                                      name="fullName"
+                                      type="text"
+                                      onChange={handleChange}
+                                    />
+                                  </div>
+                                </div>
+                                <div className="modal-footer">
+                                  <button
+                                    type="button"
+                                    className="site-button"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Close
+                                  </button>
+                                  <button
+                                    type="button"
+                                    onClick={handleSubmit}
+                                    className="site-button"
+                                  >
+                                    Save
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                        <button
+                          data-bs-toggle="modal"
+                          href="#Key_Skills"
+                          title="Edit"
+                          className="site-text-primary bg-transparent p-0 border-0"
+                        >
+                          <span className="fa fa-edit" />
+                        </button>
+                      </div>
+                      <div className="panel-body wt-panel-body p-a20 ">
+                        <div className="tw-sidebar-tags-wrap">
+                          <div className="tagcloud">
+                            {tableData?.map((friend, index) => {
+                              return (
+                                <>
+                                  {" "}
+                                  <Link>{friend.fullName}</Link>
+                                </>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                      {/*Modal popup */}
+                    </div>
+                    {/*Employment*/}
+                    <div className="panel panel-default mb-3">
+                      <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
+                        <h4 className="panel-tittle m-a0">Employment</h4>
+                        <button
+                          data-bs-toggle="modal"
+                          href="#Employment"
+                          title="Edit"
+                          className="site-text-primary bg-transparent border-0 p-0"
+                        >
+                          <span className="fa fa-edit" />
+                        </button>
+                      </div>
+                      <div className="panel-body wt-panel-body p-a20 ">
+                        <div className="twm-panel-inner">
+                          <p>
+                            <b>Senior UI / UX Designer and Developer</b>
+                          </p>
+
+                          {employer?.map((friend, index) => {
                             return (
                               <>
-                                {" "}
-                                <Link>{friend.fullName}</Link>
+                                <div className="table-responsive  text-nowrap">
+                                  <table className="table table-borderless ">
+                                    <tbody>
+                                      {/* <tr
+                                      className="p-0"
+                                      style={{ background: "#029a99" }}
+                                    >
+                                      <td className="p-2 fs-4 text-white">
+                                        Card
+                                      </td>
+                                      <td className="p-2 text-end fs-4 text-white">
+                                        {index + 1}
+                                      </td>
+                                    </tr> */}
+                                      <tr>
+                                        <td className="fw-bold w-25">
+                                          Your Designation &nbsp; :
+                                        </td>
+
+                                        <td>{friend.Designation}</td>
+                                      </tr>
+                                      <tr>
+                                        <td className="fw-bold w-25">
+                                          Your Comapny &nbsp; :
+                                        </td>
+                                        <td> {friend.ComapnyName}</td>
+                                      </tr>
+                                      <tr>
+                                        <td className="fw-bold w-25">
+                                          Started Working &nbsp; :
+                                        </td>
+
+                                        <td>{friend.startDate}</td>
+                                      </tr>
+                                      <tr>
+                                        <td className=" fw-bold w-25">
+                                          Working Till &nbsp; :
+                                        </td>
+
+                                        <td>{friend.EndDate}</td>
+                                      </tr>
+                                      <tr>
+                                        <td className="fw-bold w-25">
+                                          Job Description &nbsp; :
+                                        </td>
+
+                                        <td>{friend.JobProfile}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
                               </>
                             );
                           })}
                         </div>
                       </div>
-                    </div>
-                    {/*Modal popup */}
-                  </div>
-                  {/*Employment*/}
-                  <div className="panel panel-default mb-3">
-                    <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
-                      <h4 className="panel-tittle m-a0">Employment</h4>
-                      <button
-                        data-bs-toggle="modal"
-                        href="#Employment"
-                        title="Edit"
-                        className="site-text-primary bg-transparent border-0 p-0"
+                      {/*Employment */}
+                      <div
+                        className="modal fade twm-saved-jobs-view"
+                        style={{ background: "#00000045" }}
+                        id="Employment"
+                        tabIndex={-1}
                       >
-                        <span className="fa fa-edit" />
-                      </button>
-                    </div>
-                    <div className="panel-body wt-panel-body p-a20 ">
-                      <div className="twm-panel-inner">
-                        <p>
-                          <b>Senior UI / UX Designer and Developer</b>
-                        </p>
-                        <p>{employer.ComapnyName}</p>
-                        <p>{employer.Designation}</p>
-                        <p>{employer.JobProfile}</p>
-                      </div>
-                    </div>
-                    {/*Employment */}
-                    <div
-                      className="modal fade twm-saved-jobs-view"
-                      style={{ background: "#00000045" }}
-                      id="Employment"
-                      tabIndex={-1}
-                    >
-                      <div className="modal-dialog modal-dialog-centered">
-                        <div className="modal-content">
-                          <form onSubmit={EmployerClick}>
-                            <div className="modal-header">
-                              <h2 className="modal-title">Add Employment</h2>
-                              <button
-                                type="button"
-                                className="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                              />
-                            </div>
-                            <div className="modal-body">
-                              <div className="row">
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Your Designation</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        className="form-control"
-                                        type="text"
-                                        onChange={inputChange}
-                                        name="Designation"
-                                        placeholder="Enter Your Designation"
-                                      />
-                                      <i className="fs-input-icon fa fa-address-card" />
+                        <div className="modal-dialog modal-dialog-centered">
+                          <div className="modal-content">
+                            <form onSubmit={EmployerClick}>
+                              <div className="modal-header">
+                                <h2 className="modal-title">Add Employment</h2>
+                                <button
+                                  type="button"
+                                  className="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                />
+                              </div>
+                              <div className="modal-body">
+                                <div className="row">
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Your Designation</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          className="form-control"
+                                          type="text"
+                                          onChange={inputChange}
+                                          name="Designation"
+                                          placeholder="Enter Your Designation"
+                                        />
+                                        <i className="fs-input-icon fa fa-address-card" />
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Your Company Name</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        className="form-control"
-                                        type="text"
-                                        onChange={inputChange}
-                                        name="ComapnyName"
-                                        placeholder="Enter Your Organization"
-                                      />
-                                      <i className="fs-input-icon fa fa-building" />
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Your Company Name</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          className="form-control"
+                                          type="text"
+                                          onChange={inputChange}
+                                          name="ComapnyName"
+                                          placeholder="Enter Your Organization"
+                                        />
+                                        <i className="fs-input-icon fa fa-building" />
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                                {/* <div className="col-xl-12 col-lg-12">
+                                  {/* <div className="col-xl-12 col-lg-12">
                                   <div className="form-group">
                                     <label>Is this your current company?</label>
                                     <div className="row twm-form-radio-inline">
@@ -585,941 +713,1071 @@ const tableValue ={
                                     </div>
                                   </div>
                                 </div> */}
-                                {/*Start Date*/}
-                                <div className="col-md-6">
-                                  <div className="form-group">
-                                    <label>Started Working From</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        className="form-control datepicker"
-                                        data-provide="datepicker"
-                                        name="startDate"
+                                  {/*Start Date*/}
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <label>Started Working From</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          className="form-control "
+                                          name="startDate"
+                                          onChange={inputChange}
+                                          type="date"
+                                          placeholder="mm/dd/yyyy"
+                                        />
+                                        <i className="fs-input-icon far fa-calendar" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {/*End Date*/}
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <label>Worked Till</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          className="form-control "
+                                          name="EndDate"
+                                          onChange={inputChange}
+                                          type="date"
+                                          placeholder="mm/dd/yyyy"
+                                        />
+                                        <i className="fs-input-icon far fa-calendar" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-md-12">
+                                    <div className="form-group mb-0">
+                                      <label>Describe your Job Profile</label>
+                                      <textarea
+                                        className="form-control"
+                                        rows={3}
                                         onChange={inputChange}
-                                        type="text"
-                                        placeholder="mm/dd/yyyy"
+                                        name="JobProfile"
+                                        placeholder="Describe your Job"
+                                        defaultValue={""}
                                       />
-                                      <i className="fs-input-icon far fa-calendar" />
                                     </div>
-                                  </div>
-                                </div>
-                                {/*End Date*/}
-                                <div className="col-md-6">
-                                  <div className="form-group">
-                                    <label>Worked Till</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        className="form-control datepicker"
-                                        data-provide="datepicker"
-                                        name="EndDate"
-                                        onChange={inputChange}
-                                        type="text"
-                                        placeholder="mm/dd/yyyy"
-                                      />
-                                      <i className="fs-input-icon far fa-calendar" />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-md-12">
-                                  <div className="form-group mb-0">
-                                    <label>Describe your Job Profile</label>
-                                    <textarea
-                                      className="form-control"
-                                      rows={3}
-                                      onChange={inputChange}
-                                      name="JobProfile"
-                                      placeholder="Describe your Job"
-                                      defaultValue={""}
-                                    />
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div className="modal-footer">
-                              <button
-                                type="button"
-                                className="site-button"
-                                data-bs-dismiss="modal"
-                              >
-                                Close
-                              </button>
-                              <button type="submit" className="site-button">
-                                Save
-                              </button>
-                            </div>
-                          </form>
+                              <div className="modal-footer">
+                                <button
+                                  type="button"
+                                  className="site-button"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Close
+                                </button>
+                                <button type="submit" className="site-button">
+                                  Save
+                                </button>
+                              </div>
+                            </form>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  {/*Education*/}
-                  <div className="panel panel-default mb-3">
-                    <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
-                      <h4 className="panel-tittle m-a0">Education</h4>
-                      <button
-                        data-bs-toggle="modal"
-                        href="#Education"
-                        title="Edit"
-                        className="site-text-primary bg- transparent border-0 p-0"
+                    {/*Education*/}
+                    <div className="panel panel-default mb-3">
+                      <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
+                        <h4 className="panel-tittle m-a0">Education</h4>
+                        <button
+                          data-bs-toggle="modal"
+                          href="#Education"
+                          title="Edit"
+                          className="site-text-primary bg-transparent border-0 p-0"
+                        >
+                          <span className="fa fa-edit" />
+                        </button>
+                      </div>
+                      <div className="panel-body wt-panel-body p-a20 ">
+                        <div className="twm-panel-inner">
+                          <p>
+                            Mention your employment details including your
+                            current and previous company work experience
+                          </p>
+
+                          {education?.map((friend, index) => {
+                            return (
+                              <>
+                                <div className="table-responsive  text-nowrap">
+                                  <table className="table table-borderless ">
+                                    <tbody>
+                                      {/* <tr
+                                      className="p-0"
+                                      style={{ background: "#029a99" }}
+                                    >
+                                      <td className="p-2 fs-4 text-white">
+                                        Card
+                                      </td>
+                                      <td className="p-2 text-end fs-4 text-white">
+                                        {index + 1}
+                                      </td>
+                                    </tr> */}
+                                      <tr>
+                                        <td className="fw-bold w-25">
+                                          Education &nbsp; :
+                                        </td>
+
+                                        <td>{friend.education}</td>
+                                      </tr>
+                                      <tr>
+                                        <td className="fw-bold w-25">
+                                          Course &nbsp; :
+                                        </td>
+                                        <td> {friend.course}</td>
+                                      </tr>
+                                      <tr>
+                                        <td className="fw-bold w-25">
+                                          University/Institute &nbsp; :
+                                        </td>
+
+                                        <td>{friend.institute}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </>
+                            );
+                          })}
+                        </div>
+                      </div>
+                      {/*Education */}
+                      <div
+                        className="modal fade twm-saved-jobs-view"
+                        id="Education"
+                        style={{ background: "#00000045" }}
+                        tabIndex={-1}
                       >
-                        <span className="fa fa-edit" />
-                      </button>
-                    </div>
-                    <div className="panel-body wt-panel-body p-a20 ">
-                      <div className="twm-panel-inner">
-                        <p>
-                          Mention your employment details including your current
-                          and previous company work experience
-                        </p>
-                        <p>2004 to 2006</p>
-                        <p>
-                          <b>{education.education}</b>
-                        </p>
-                        <p>2006 to 2008</p>
-                        <p>
-                          <b>{education.course}</b>
-                        </p>
-                        <p>2008 to 20011</p>
-                        <p>
-                          <b>{education.institute}</b>
-                        </p>
-                      </div>
-                    </div>
-                    {/*Education */}
-                    <div
-                      className="modal fade twm-saved-jobs-view"
-                      id="Education"
-                      style={{ background: "#00000045" }}
-                      tabIndex={-1}
-                    >
-                      <div className="modal-dialog modal-dialog-centered">
-                        <div className="modal-content">
-                          <form onSubmit={EducationClick}>
-                            <div className="modal-header">
-                              <h2 className="modal-title">Education</h2>
-                              <button
-                                type="button"
-                                className="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                              />
-                            </div>
-                            <div className="modal-body">
-                              <div className="row">
-                                <div className="col-md-6">
-                                  <div className="form-group">
-                                    <label>Education</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        className="form-control"
-                                        name="education"
-                                        onChange={educationChange}
-                                        type="text"
-                                        placeholder="Education"
-                                      />
-                                      <i class="fs-input-icon fa fa-user-graduate" />
+                        <div className="modal-dialog modal-dialog-centered">
+                          <div className="modal-content">
+                            <form onSubmit={EducationClick}>
+                              <div className="modal-header">
+                                <h2 className="modal-title">Education</h2>
+                                <button
+                                  type="button"
+                                  className="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                />
+                              </div>
+                              <div className="modal-body">
+                                <div className="row">
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <label>Education</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          className="form-control"
+                                          name="education"
+                                          onChange={educationChange}
+                                          type="text"
+                                          placeholder="Education"
+                                        />
+                                        <i class="fs-input-icon fa fa-user-graduate" />
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                                {/*End Date*/}
-                                <div className="col-md-6">
-                                  <div className="form-group">
-                                    <label>Course</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        className="form-control"
-                                        name="course"
-                                        onChange={educationChange}
-                                        type="text"
-                                        placeholder="Course"
-                                      />
-                                      <i class="fs-input-icon fa fa-book" />
+                                  {/*End Date*/}
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <label>Course</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          className="form-control"
+                                          name="course"
+                                          onChange={educationChange}
+                                          type="text"
+                                          placeholder="Course"
+                                        />
+                                        <i class="fs-input-icon fa fa-book" />
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
 
-                                <div className="col-md-6">
-                                  <div className="form-group">
-                                    <label>University/Institute</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        className="form-control"
-                                        name="institute"
-                                        onChange={educationChange}
-                                        type="text"
-                                        placeholder="University/Institute"
-                                      />
-                                      <i class="fs-input-icon fas fa-book-reader" />
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <label>University/Institute</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          className="form-control"
+                                          name="institute"
+                                          onChange={educationChange}
+                                          type="text"
+                                          placeholder="University/Institute"
+                                        />
+                                        <i class="fs-input-icon fas fa-book-reader" />
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div className="modal-footer">
-                              <button
-                                type="button"
-                                className="site-button"
-                                data-bs-dismiss="modal"
-                              >
-                                Close
-                              </button>
-                              <button type="submit" className="site-button">
-                                Save
-                              </button>
-                            </div>
-                          </form>
+                              <div className="modal-footer">
+                                <button
+                                  type="button"
+                                  className="site-button"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Close
+                                </button>
+                                <button type="submit" className="site-button">
+                                  Save
+                                </button>
+                              </div>
+                            </form>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                    {/*Project*/}
+                    <div className="panel panel-default mb-3">
+                      <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
+                        <h4 className="panel-tittle m-a0">Project</h4>
+                        <button
+                          data-bs-toggle="modal"
+                          href="#Pro_ject"
+                          title="Edit"
+                          className="site-text-primary border-0 p-0 bg-transparent"
+                        >
+                          <span className="fa fa-edit" />
+                        </button>
+                      </div>
+                      <div className="panel-body wt-panel-body p-a20 ">
+                        <div className="twm-panel-inner">
+                          {project?.map((friend, index) => {
+                            return (
+                              <>
+                                <div className="table-responsive  text-nowrap">
+                                  <table className="table table-borderless ">
+                                    <tbody>
+                                      {/* <tr
+                                      className="p-0"
+                                      style={{ background: "#029a99" }}
+                                    >
+                                      <td className="p-2 fs-4 text-white">
+                                        Card
+                                      </td>
+                                      <td className="p-2 text-end fs-4 text-white">
+                                        {index + 1}
+                                      </td>
+                                    </tr> */}
+                                      <tr>
+                                        <td className="fw-bold w-25">
+                                          Project Title &nbsp; :
+                                        </td>
 
-                  {/*Project*/}
-                  <div className="panel panel-default mb-3">
-                    <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
-                      <h4 className="panel-tittle m-a0">Project</h4>
-                      <button
-                        data-bs-toggle="modal"
-                        href="#Pro_ject"
-                        title="Edit"
-                        className="site-text-primary border-0 p-0 bg-transparent"
+                                        <td>{friend.ProjectTitle}</td>
+                                      </tr>
+                                      <tr>
+                                        <td className="fw-bold w-25">
+                                          Education &nbsp; :
+                                        </td>
+                                        <td> {friend.ProjectEducation}</td>
+                                      </tr>
+                                      <tr>
+                                        <td className="fw-bold w-25">
+                                          Project Client Name &nbsp; :
+                                        </td>
+
+                                        <td>{friend.ProjectClientName}</td>
+                                      </tr>
+                                      <tr>
+                                        <td className=" fw-bold w-25">
+                                          Start Working &nbsp; :
+                                        </td>
+
+                                        <td>{friend.projectStartDate}</td>
+                                      </tr>
+                                      <tr>
+                                        <td className="fw-bold w-25">
+                                          Worked Till &nbsp; :
+                                        </td>
+
+                                        <td>{friend.projectEndDate}</td>
+                                      </tr>
+                                      <tr>
+                                        <td className="fw-bold w-25">
+                                          Project Details&nbsp; :
+                                        </td>
+
+                                        <td>{friend.projectDetail}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </>
+                            );
+                          })}
+                        </div>
+                      </div>
+                      {/*Project */}
+                      <div
+                        className="modal fade twm-saved-jobs-view"
+                        id="Pro_ject"
+                        style={{ background: "#00000045" }}
+                        tabIndex={-1}
                       >
-                        <span className="fa fa-edit" />
-                      </button>
-                    </div>
-                    <div className="panel-body wt-panel-body p-a20 ">
-                      <div className="twm-panel-inner">
-                        <p>
-                          <b>Jobzilla</b>
-                        </p>
-                        <p>{project?.ProjectTitle}</p>
-                        <p>{project?.ProjectEducation}</p>
-                        <p>{project?.projectDetail}</p>
-                      </div>
-                    </div>
-                    {/*Project */}
-                    <div
-                      className="modal fade twm-saved-jobs-view"
-                      id="Pro_ject"
-                      style={{ background: "#00000045" }}
-                      tabIndex={-1}
-                    >
-                      <div className="modal-dialog modal-dialog-centered">
-                        <div className="modal-content">
-                          <form onSubmit={ProjectClick}>
-                            <div className="modal-header">
-                              <h2 className="modal-title">Add Project</h2>
-                              <button
-                                type="button"
-                                className="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                              />
-                            </div>
-                            <div className="modal-body">
-                              <div className="row">
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Project Title</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        className="form-control"
-                                        type="text"
-                                        name="ProjectTitle"
-                                        placeholder="Enter Project Title"
-                                        onChange={ProjectChange}
-                                      />
-                                      <i className="fs-input-icon fa fa-address-card" />
+                        <div className="modal-dialog modal-dialog-centered">
+                          <div className="modal-content">
+                            <form onSubmit={ProjectClick}>
+                              <div className="modal-header">
+                                <h2 className="modal-title">Add Project</h2>
+                                <button
+                                  type="button"
+                                  className="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                />
+                              </div>
+                              <div className="modal-body">
+                                <div className="row">
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Project Title</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          className="form-control"
+                                          type="text"
+                                          name="ProjectTitle"
+                                          placeholder="Enter Project Title"
+                                          onChange={ProjectChange}
+                                        />
+                                        <i className="fs-input-icon fa fa-address-card" />
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Education</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={ProjectChange}
-                                        className="form-control"
-                                        type="text"
-                                        name="ProjectEducation"
-                                        placeholder="Enter Education"
-                                      />
-                                      <i className="fs-input-icon fa fa-user-graduate" />
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Education</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={ProjectChange}
+                                          className="form-control"
+                                          type="text"
+                                          name="ProjectEducation"
+                                          placeholder="Enter Education"
+                                        />
+                                        <i className="fs-input-icon fa fa-user-graduate" />
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Client</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={ProjectChange}
-                                        className="form-control"
-                                        type="text"
-                                        name="ProjectClientName"
-                                        placeholder="Enter Client Name"
-                                      />
-                                      <i className="fs-input-icon fa fa-user" />
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Client</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={ProjectChange}
+                                          className="form-control"
+                                          type="text"
+                                          name="ProjectClientName"
+                                          placeholder="Enter Client Name"
+                                        />
+                                        <i className="fs-input-icon fa fa-user" />
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
 
-                                {/*Start Date*/}
-                                <div className="col-md-6">
-                                  <div className="form-group">
-                                    <label>Started Working From</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={ProjectChange}
-                                        className="form-control datepicker"
-                                        data-provide="datepicker"
-                                        name="projectStartDate"
-                                        type="text"
-                                        placeholder="mm/dd/yyyy"
-                                      />
-                                      <i className="fs-input-icon far fa-calendar" />
+                                  {/*Start Date*/}
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <label>Started Working From</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={ProjectChange}
+                                          className="form-control "
+                                          name="projectStartDate"
+                                          type="date"
+                                          placeholder="mm/dd/yyyy"
+                                        />
+                                        <i className="fs-input-icon far fa-calendar" />
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                                {/*End Date*/}
-                                <div className="col-md-6">
-                                  <div className="form-group">
-                                    <label>Worked Till</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={ProjectChange}
-                                        className="form-control datepicker"
-                                        data-provide="datepicker"
-                                        name="projectEndDate"
-                                        type="text"
-                                        placeholder="mm/dd/yyyy"
-                                      />
-                                      <i className="fs-input-icon far fa-calendar" />
+                                  {/*End Date*/}
+                                  <div className="col-md-6">
+                                    <div className="form-group">
+                                      <label>Worked Till</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={ProjectChange}
+                                          className="form-control "
+                                          name="projectEndDate"
+                                          type="date"
+                                          placeholder="mm/dd/yyyy"
+                                        />
+                                        <i className="fs-input-icon far fa-calendar" />
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                                <div className="col-md-12">
-                                  <div className="form-group mb-0">
-                                    <label>Detail of Projects</label>
-                                    <textarea
-                                      onChange={ProjectChange}
-                                      className="form-control"
-                                      rows={3}
-                                      name="projectDetail"
-                                      placeholder="Describe your Job"
-                                      defaultValue={""}
-                                    />
+                                  <div className="col-md-12">
+                                    <div className="form-group mb-0">
+                                      <label>Detail of Projects</label>
+                                      <textarea
+                                        onChange={ProjectChange}
+                                        className="form-control"
+                                        rows={3}
+                                        name="projectDetail"
+                                        placeholder="Describe your Job"
+                                        defaultValue={""}
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div className="modal-footer">
-                              <button
-                                type="button"
-                                className="site-button"
-                                data-bs-dismiss="modal"
-                              >
-                                Close
-                              </button>
-                              <button type="submit" className="site-button">
-                                Save
-                              </button>
-                            </div>
-                          </form>
+                              <div className="modal-footer">
+                                <button
+                                  type="button"
+                                  className="site-button"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Close
+                                </button>
+                                <button type="submit" className="site-button">
+                                  Save
+                                </button>
+                              </div>
+                            </form>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  {/*Desired Career Profile*/}
-                  <div className="panel panel-default mb-3">
-                    <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
-                      <h4 className="panel-tittle m-a0">
-                        Desired Career Profile
-                      </h4>
-                      <button
-                        data-bs-toggle="modal"
-                        href="#Desired_Career"
-                        title="Edit"
-                        className="site-text-primary bg-transparent border-0 p-0"
+                    {/*Desired Career Profile*/}
+                    <div className="panel panel-default mb-3">
+                      <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
+                        <h4 className="panel-tittle m-a0">
+                          Desired Career Profile
+                        </h4>
+                        <button
+                          data-bs-toggle="modal"
+                          href="#Desired_Career"
+                          title="Edit"
+                          className="site-text-primary bg-transparent border-0 p-0"
+                        >
+                          <span className="fa fa-edit" />
+                        </button>
+                      </div>
+                      <div className="panel-body wt-panel-body p-a20 ">
+                        <div className="twm-panel-inner">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">Industry</div>
+                                <span className="twm-s-info-discription">
+                                  {desired.industry}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">Functional Area</div>
+                                <span className="twm-s-info-discription">
+                                  {desired.functionalarea}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">Role</div>
+                                <span className="twm-s-info-discription">
+                                  {desired.role}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">Job Type</div>
+                                <span className="twm-s-info-discription">
+                                  {desired.role}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">Employment Type</div>
+                                <span className="twm-s-info-discription">
+                                  {desired.employmenttype}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">Desired Shift</div>
+                                <span className="twm-s-info-discription">
+                                  {desired.preferredshift}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">
+                                  Availability to Join
+                                </div>
+                                <span className="twm-s-info-discription">
+                                  {desired.availabilityjoin}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">Expected Salary</div>
+                                <span className="twm-s-info-discription">
+                                  {desired.expectedsalary}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">
+                                  Desired Location
+                                </div>
+                                <span className="twm-s-info-discription">
+                                  {desired.desiredlocation}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">
+                                  Desired Industry
+                                </div>
+                                <span className="twm-s-info-discription">
+                                  {desired.desiredindustry}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {/*Desired Career Profile */}
+                      <div
+                        className="modal fade twm-saved-jobs-view"
+                        id="Desired_Career"
+                        style={{ background: "#0000003d" }}
+                        tabIndex={-1}
                       >
-                        <span className="fa fa-edit" />
-                      </button>
-                    </div>
-                    <div className="panel-body wt-panel-body p-a20 ">
-                      <div className="twm-panel-inner">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Industry</div>
-                              <span className="twm-s-info-discription">
-                                {desired.industry}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Functional Area</div>
-                              <span className="twm-s-info-discription">
-                                {desired.functionalarea}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Role</div>
-                              <span className="twm-s-info-discription">
-                                {desired.role}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Job Type</div>
-                              <span className="twm-s-info-discription">
-                                {desired.role}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Employment Type</div>
-                              <span className="twm-s-info-discription">
-                                {desired.employmenttype}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Desired Shift</div>
-                              <span className="twm-s-info-discription">
-                                {desired.preferredshift}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">
-                                Availability to Join
+                        <div className="modal-dialog modal-dialog-centered">
+                          <div className="modal-content">
+                            <form onSubmit={desiredClick}>
+                              <div className="modal-header">
+                                <h2 className="modal-title">
+                                  Desired Career Profile
+                                </h2>
+                                <button
+                                  type="button"
+                                  className="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                />
                               </div>
-                              <span className="twm-s-info-discription">
-                                {desired.availabilityjoin}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Expected Salary</div>
-                              <span className="twm-s-info-discription">
-                                {desired.expectedsalary}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Desired Location</div>
-                              <span className="twm-s-info-discription">
-                                {desired.desiredlocation}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Desired Industry</div>
-                              <span className="twm-s-info-discription">
-                                {desired.desiredindustry}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {/*Desired Career Profile */}
-                    <div
-                      className="modal fade twm-saved-jobs-view"
-                      id="Desired_Career"
-                      style={{ background: "#0000003d" }}
-                      tabIndex={-1}
-                    >
-                      <div className="modal-dialog modal-dialog-centered">
-                        <div className="modal-content">
-                          <form onSubmit={desiredClick}>
-                            <div className="modal-header">
-                              <h2 className="modal-title">
-                                Desired Career Profile
-                              </h2>
-                              <button
-                                type="button"
-                                className="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                              />
-                            </div>
-                            <div className="modal-body">
-                              <div className="row">
-                                {/*Industry*/}
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Industry</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={desiredChange}
-                                        className="form-control "
-                                        type="text"
+                              <div className="modal-body">
+                                <div className="row">
+                                  {/*Industry*/}
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Industry</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={desiredChange}
+                                          className="form-control "
+                                          type="text"
+                                          placeholder="Industry"
+                                          name="industry"
+                                          id="Permanent"
+                                        />
+                                        <i className="fs-input-icon fa fa-industry" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {/*Functional Area / Department*/}
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>
+                                        Functional Area / Department
+                                      </label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={desiredChange}
+                                          className="form-control "
+                                          type="text"
+                                          placeholder="Agent"
+                                          name="functionalarea"
+                                          id="Permanent"
+                                        />
+                                        <i className="fs-input-icon fa fa-building" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {/*Role*/}
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Role</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={desiredChange}
+                                          className="form-control "
+                                          type="text"
+                                          placeholder="Role"
+                                          name="role"
+                                          id="Permanent"
+                                        />
+                                        <i className="fs-input-icon fa fa-globe-americas" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {/*Job Type*/}
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Job Type</label>
+                                      <div className=" twm-form-radio-inline">
+                                        <input
+                                          onChange={desiredChange}
+                                          className="form-control "
+                                          type="text"
+                                          placeholder="Job Types"
+                                          name="jobtype"
+                                          id="Permanent"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {/*Employment Type*/}
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Employment Type</label>
+                                      <div className=" twm-form-radio-inline">
+                                        <input
+                                          onChange={desiredChange}
+                                          className="form-control "
+                                          type="text"
+                                          placeholder="Employment Type"
+                                          name="employmenttype"
+                                          id="Permanent"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {/*Preferred Shift*/}
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Preferred Shift</label>
+                                      <div className="row twm-form-radio-inline">
+                                        <input
+                                          onChange={desiredChange}
+                                          className="form-control "
+                                          type="text"
+                                          placeholder="Prefferd Shift"
+                                          name="preferredshift"
+                                          id="Permanent"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {/*Availability to join*/}
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Availability to Join</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={desiredChange}
+                                          className="form-control datepicker"
+                                          data-provide="datepicker"
+                                          name="availabilityjoin"
+                                          type="date"
+                                          placeholder="mm/dd/yyyy"
+                                        />
+                                        <i className="fs-input-icon far fa-calendar" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {/*Expected Salary*/}
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Expected Salary</label>
+                                      <div className="row twm-form-radio-inline">
+                                        <input
+                                          onChange={desiredChange}
+                                          className="form-control "
+                                          type="number"
+                                          placeholder="Expected Salary"
+                                          name="expectedsalary"
+                                          id="Permanent"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
 
-                                        placeholder="Industry"
-                                        name="industry"
-                                        id="Permanent"
-                                      />
-                                      <i className="fs-input-icon fa fa-industry" />
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Desired Location</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={desiredChange}
+                                          className="form-control "
+                                          type="text"
+                                          placeholder="Desired Location"
+                                          name="desiredlocation"
+                                          id="Permanent"
+                                        />
+                                        <i className="fs-input-icon fa fa-map-marker-alt" />
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                                {/*Functional Area / Department*/}
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Functional Area / Department</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={desiredChange}
-                                        className="form-control "
-                                        type="text"
-                                        placeholder="Agent"
-                                        name="functionalarea"
-                                        id="Permanent"
-                                      />
-                                      <i className="fs-input-icon fa fa-building" />
-                                    </div>
-                                  </div>
-                                </div>
-                                {/*Role*/}
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Role</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={desiredChange}
-                                        className="form-control "
-                                        type="text"
-                                        placeholder="Role"
-                                        name="role"
-                                        id="Permanent"
-                                      />
-                                      <i className="fs-input-icon fa fa-globe-americas" />
-                                    </div>
-                                  </div>
-                                </div>
-                                {/*Job Type*/}
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Job Type</label>
-                                    <div className=" twm-form-radio-inline">
-                                      <input
-                                        onChange={desiredChange}
-                                        className="form-control "
-                                        type="text"
-                                        placeholder="Job Types"
-                                        name="jobtype"
-                                        id="Permanent"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                {/*Employment Type*/}
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Employment Type</label>
-                                    <div className=" twm-form-radio-inline">
-                                      <input
-                                        onChange={desiredChange}
-                                        className="form-control "
-                                        type="text"
-                                        placeholder="Employment Type"
-                                        name="employmenttype"
-                                        id="Permanent"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                {/*Preferred Shift*/}
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Preferred Shift</label>
-                                    <div className="row twm-form-radio-inline">
-                                      <input
-                                        onChange={desiredChange}
-                                        className="form-control "
-                                        type="text"
-                                        placeholder="Prefferd Shift"
-                                        name="preferredshift"
-                                        id="Permanent"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                {/*Availability to join*/}
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Availability to Join</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={desiredChange}
-                                        className="form-control datepicker"
-                                        data-provide="datepicker"
-                                        name="availabilityjoin"
-                                        type="date"
-                                        placeholder="mm/dd/yyyy"
-                                      />
-                                      <i className="fs-input-icon far fa-calendar" />
-                                    </div>
-                                  </div>
-                                </div>
-                                {/*Expected Salary*/}
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Expected Salary</label>
-                                    <div className="row twm-form-radio-inline">
-                                      <input
-                                        onChange={desiredChange}
-                                        className="form-control "
-                                        type="number"
-                                        placeholder="Expected Salary"
-                                        name="expectedsalary"
-                                        id="Permanent"
-                                      />
-
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Desired Location</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={desiredChange}
-                                        className="form-control "
-                                        type="text"
-                                        placeholder="Desired Location"
-                                        name="desiredlocation"
-                                        id="Permanent"
-                                      />
-                                      <i className="fs-input-icon fa fa-map-marker-alt" />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group mb-0">
-                                    <label>Desired Industry</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={desiredChange}
-                                        className="form-control "
-                                        type="text"
-                                        placeholder="Desired Industry"
-                                        name="desiredindustry"
-                                        id="Permanent"
-                                      />
-                                      <i className="fs-input-icon fa fa-globe-americas" />
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group mb-0">
+                                      <label>Desired Industry</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={desiredChange}
+                                          className="form-control "
+                                          type="text"
+                                          placeholder="Desired Industry"
+                                          name="desiredindustry"
+                                          id="Permanent"
+                                        />
+                                        <i className="fs-input-icon fa fa-globe-americas" />
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div className="modal-footer">
-                              <button
-                                type="button"
-                                className="site-button"
-                                data-bs-dismiss="modal"
-                              >
-                                Close
-                              </button>
-                              <button type="submit" className="site-button">
-                                Save
-                              </button>
-                            </div>
-                          </form>
+                              <div className="modal-footer">
+                                <button
+                                  type="button"
+                                  className="site-button"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Close
+                                </button>
+                                <button type="submit" className="site-button">
+                                  Save
+                                </button>
+                              </div>
+                            </form>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  {/*Personal Details*/}
-                  <div className="panel panel-default mb-3">
-                    <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
-                      <h4 className="panel-tittle m-a0">Personal Details</h4>
-                      <button
-                        data-bs-toggle="modal"
-                        href="#Personal_Details"
-                        title="Edit"
-                        className="site-text-primary border-0 bg-transparent p-0"
+                    {/*Personal Details*/}
+                    <div className="panel panel-default mb-3">
+                      <div className="panel-heading wt-panel-heading p-a20 panel-heading-with-btn ">
+                        <h4 className="panel-tittle m-a0">Personal Details</h4>
+                        <button
+                          data-bs-toggle="modal"
+                          href="#Personal_Details"
+                          title="Edit"
+                          className="site-text-primary border-0 bg-transparent p-0"
+                        >
+                          <span className="fa fa-edit" />
+                        </button>
+                      </div>
+                      <div className="panel-body wt-panel-body p-a20 ">
+                        <div className="twm-panel-inner">
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">Date of Birth</div>
+                                <span className="twm-s-info-discription">
+                                  {personal.dateofbirth}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">
+                                  Permanent Address
+                                </div>
+                                <span className="twm-s-info-discription">
+                                  {personal.permanentAddress}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">Gender</div>
+                                <span className="twm-s-info-discription">
+                                  {personal.gender}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">Area Pin Code</div>
+                                <span className="twm-s-info-discription">
+                                  {personal.pincode}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">Marital Status</div>
+                                <span className="twm-s-info-discription">
+                                  {personal.maritalstatus}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">Hometown</div>
+                                <span className="twm-s-info-discription">
+                                  {personal.hometown}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">Passport Number</div>
+                                <span className="twm-s-info-discription">
+                                  {personal.passportnumber}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">
+                                  Work permit of other country
+                                </div>
+                                <span className="twm-s-info-discription">
+                                  {personal.otherCountry}
+                                </span>
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="twm-s-detail-section">
+                                <div className="twm-title">
+                                  Differently Abled
+                                </div>
+                                <span className="twm-s-info-discription">
+                                  {personal.assistance}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {/*Personal Details Modal */}
+                      <div
+                        className="modal fade twm-saved-jobs-view"
+                        id="Personal_Details"
+                        style={{ background: "#00000066" }}
+                        tabIndex={-1}
                       >
-                        <span className="fa fa-edit" />
-                      </button>
-                    </div>
-                    <div className="panel-body wt-panel-body p-a20 ">
-                      <div className="twm-panel-inner">
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Date of Birth</div>
-                              <span className="twm-s-info-discription">
-                                {personal.dateofbirth}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Permanent Address</div>
-                              <span className="twm-s-info-discription">
-                                {personal.permanentAddress}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Gender</div>
-                              <span className="twm-s-info-discription">
-                                {personal.gender}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Area Pin Code</div>
-                              <span className="twm-s-info-discription">
-                                {personal.pincode}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Marital Status</div>
-                              <span className="twm-s-info-discription">
-                                {personal.maritalstatus}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Hometown</div>
-                              <span className="twm-s-info-discription">
-                                {personal.hometown}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Passport Number</div>
-                              <span className="twm-s-info-discription">
-                                {personal.passportnumber}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">
-                                Work permit of other country
+                        <div className="modal-dialog modal-dialog-centered">
+                          <div className="modal-content">
+                            <form onSubmit={personalClick}>
+                              <div className="modal-header">
+                                <h2 className="modal-title">Personal Detail</h2>
+                                <button
+                                  type="button"
+                                  className="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                />
                               </div>
-                              <span className="twm-s-info-discription">{personal.otherCountry}</span>
-                            </div>
+                              <div className="modal-body">
+                                <div className="row">
+                                  {/*Birth Date*/}
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Date of Birth</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={personalChange}
+                                          className="form-control "
+                                          name="dateofbirth"
+                                          type="date"
+                                          placeholder="mm/dd/yyyy"
+                                        />
+                                        <i className="fs-input-icon far fa-calendar" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Gender</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={personalChange}
+                                          className="form-control"
+                                          name="gender"
+                                          type="text"
+                                          placeholder="Gender"
+                                        />
+                                        <i className="fs-input-icon far fa-calendar" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Permanent Address</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={personalChange}
+                                          className="form-control"
+                                          type="text"
+                                          name="permanentAddress"
+                                          placeholder="Enter Permanent Address"
+                                        />
+                                        <i className="fs-input-icon fa fa-map-marker-alt" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Hometown</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={personalChange}
+                                          className="form-control"
+                                          type="text"
+                                          name="hometown"
+                                          placeholder="Enter Hometown"
+                                        />
+                                        <i className="fs-input-icon fa fa-map-marker-alt" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Pincode</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={personalChange}
+                                          className="form-control"
+                                          type="text"
+                                          name="pincode"
+                                          placeholder="Enter Pincode"
+                                        />
+                                        <i className="fs-input-icon fa fa-map-pin" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Marital Status</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={personalChange}
+                                          className="form-control"
+                                          type="text"
+                                          name="maritalstatus"
+                                          placeholder="Marital Status"
+                                        />
+                                        <i className="fs-input-icon fa fa-user" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group">
+                                      <label>Passport Number</label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={personalChange}
+                                          className="form-control"
+                                          type="number"
+                                          name="passportnumber"
+                                          placeholder="Enter Passport Number"
+                                        />
+                                        <i className="fs-input-icon fa fa-star-of-life" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-md-12">
+                                    <div className="form-group">
+                                      <label>What assistance do you need</label>
+                                      <textarea
+                                        className="form-control"
+                                        rows={3}
+                                        onChange={personalChange}
+                                        name="assistance"
+                                        placeholder="Describe"
+                                        defaultValue={""}
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="col-xl-12 col-lg-12">
+                                    <div className="form-group mb-0">
+                                      <label>
+                                        Work Permit for Other Countries
+                                      </label>
+                                      <div className="ls-inputicon-box">
+                                        <input
+                                          onChange={personalChange}
+                                          className="form-control"
+                                          type="text"
+                                          name="otherCountry"
+                                          placeholder="Enter Other Country"
+                                        />
+                                        <i className="fs-input-icon fa fa-globe-americas" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="modal-footer">
+                                <button
+                                  type="button"
+                                  className="site-button"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Close
+                                </button>
+                                <button type="submit" className="site-button">
+                                  Save
+                                </button>
+                              </div>
+                            </form>
                           </div>
-                          <div className="col-md-6">
-                            <div className="twm-s-detail-section">
-                              <div className="twm-title">Differently Abled</div>
-                              <span className="twm-s-info-discription">
-                                {personal.assistance}
-                              </span>
-                            </div>
-                          </div>
-
                         </div>
                       </div>
                     </div>
-                    {/*Personal Details Modal */}
-                    <div
-                      className="modal fade twm-saved-jobs-view"
-                      id="Personal_Details"
-                      style={{ background: "#00000066" }}
-                      tabIndex={-1}
+                    {/*Attach Resume*/}
+                    <button
+                      type="button"
+                      onClick={allClick}
+                      className="site-button"
                     >
-                      <div className="modal-dialog modal-dialog-centered">
-                        <div className="modal-content">
-                          <form onSubmit={personalClick}>
-                            <div className="modal-header">
-                              <h2 className="modal-title">Personal Detail</h2>
-                              <button
-                                type="button"
-                                className="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                              />
-                            </div>
-                            <div className="modal-body">
-                              <div className="row">
-                                {/*Birth Date*/}
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Date of Birth</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={personalChange}
-                                        className="form-control "
-                                        name="dateofbirth"
-                                        type="date"
-                                        placeholder="mm/dd/yyyy"
-                                      />
-                                      <i className="fs-input-icon far fa-calendar" />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Gender</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={personalChange}
-                                        className="form-control"
-
-                                        name="gender"
-                                        type="text"
-                                        placeholder="Gender"
-                                      />
-                                      <i className="fs-input-icon far fa-calendar" />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Permanent Address</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={personalChange}
-                                        className="form-control"
-                                        type="text"
-                                        name="permanentAddress"
-                                        placeholder="Enter Permanent Address"
-                                      />
-                                      <i className="fs-input-icon fa fa-map-marker-alt" />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Hometown</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={personalChange}
-                                        className="form-control"
-                                        type="text"
-                                        name="hometown"
-                                        placeholder="Enter Hometown"
-                                      />
-                                      <i className="fs-input-icon fa fa-map-marker-alt" />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Pincode</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={personalChange}
-                                        className="form-control"
-                                        type="text"
-                                        name="pincode"
-                                        placeholder="Enter Pincode"
-                                      />
-                                      <i className="fs-input-icon fa fa-map-pin" />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Marital Status</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={personalChange}
-                                        className="form-control"
-                                        type="text"
-                                        name="maritalstatus"
-                                        placeholder="Marital Status"
-                                      />
-                                      <i className="fs-input-icon fa fa-user" />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group">
-                                    <label>Passport Number</label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={personalChange}
-                                        className="form-control"
-                                        type="number"
-                                        name="passportnumber"
-                                        placeholder="Enter Passport Number"
-                                      />
-                                      <i className="fs-input-icon fa fa-star-of-life" />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-md-12">
-                                  <div className="form-group">
-                                    <label>What assistance do you need</label>
-                                    <textarea
-                                      className="form-control"
-                                      rows={3}
-                                      onChange={personalChange}
-                                      name="assistance"
-                                      placeholder="Describe"
-                                      defaultValue={""}
-                                    />
-                                  </div>
-                                </div>
-                                <div className="col-xl-12 col-lg-12">
-                                  <div className="form-group mb-0">
-                                    <label>
-                                      Work Permit for Other Countries
-                                    </label>
-                                    <div className="ls-inputicon-box">
-                                      <input
-                                        onChange={personalChange}
-                                        className="form-control"
-                                        type="text"
-                                        name="otherCountry"
-                                        placeholder="Enter Other Country"
-                                      />
-                                      <i className="fs-input-icon fa fa-globe-americas" />
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="modal-footer">
-                              <button
-                                type="button"
-                                className="site-button"
-                                data-bs-dismiss="modal"
-                              >
-                                Close
-                              </button>
-                              <button type="submit" className="site-button">
-                                Save
-                              </button>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
+                      Save
+                    </button>
+                    &nbsp; &nbsp;
+                    <Link to="/candidate-my-resume-detail">
+                      <button
+                        type="button"
+                        // onClick={allClick}
+                        className="site-button"
+                      >
+                        CV Update
+                      </button>
+                    </Link>
+                    <h4>{all?.message}</h4>
+                  </div>
+                ) : (
+                  <div className="  d-flex align-items-center justify-content-center">
+                    <div className="w-50">
+                      <img
+                        src="jobzilla/images/Completed-pana-(1).png"
+                        className="w-100"
+                      />
+                      <p className="text-center">
+                        your resume is already created if you want to edit your
+                        resume you can click the link below
+                        <br />
+                        <Link
+                          className="fs-3 twm-nav-post-a-job"
+                          to="/candidate-my-resume-detail"
+                        >
+                          GO{">>"}
+                        </Link>
+                      </p>
                     </div>
                   </div>
-                  {/*Attach Resume*/}
-                  <button type="button" onClick={allClick} className="site-button">
-                    Save
-                  </button>
-                </div>
+                )}
               </div>
             </div>
           </div>
         </div>
         {/* OUR BLOG END */}
       </div>
+
       {/* CONTENT END */}
     </div>
   );

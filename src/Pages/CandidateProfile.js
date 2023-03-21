@@ -28,59 +28,49 @@ const CandidateProfile = () => {
   const [isSubmit, setIsSubmit] = useState(false);
   const [message, setMessage] = useState();
   const [data, setData] = useState();
-  const [load, setLoad] = useState(false);
+  const [load, setLoad] = useState(true);
 
   // const [error, setError] = useState()
 
   const [state, setState] = useState([]);
   const [candidates, setCandidates] = useState([]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUser({ ...User, [name]: value });
-  };
+  const [userName, setUserName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [Email, setEmail] = useState("");
+  const [websiteUrl, setWebsiteUrl] = useState("");
+  const [qualification, setQualification] = useState("");
+  const [language, setLanguage] = useState("");
+  const [jobCategory, setJobCategory] = useState("");
+  const [experience, setExperience] = useState("");
+  const [currentSalary, setCurrentSalary] = useState("");
+
+  const [expectedSalary, setEexpectedSalary] = useState("");
+  const [age, setAge] = useState("");
+  const [country, setCountry] = useState("");
+  const [city, setCity] = useState("");
+  const [pincode, setPincode] = useState("");
+  const [address, setAddress] = useState("");
+  const [description, setDescription] = useState("");
+  const [facebook, setFacebook] = useState("");
+  const [linkedin, setLinkedin] = useState("");
+  const [twitter, setTwitter] = useState("");
+  console.log("qwertyuioppojhgfdsadfgh", websiteUrl);
+
+  // const handleChange = (e)=>  {
+  //   let name = e.target.name;
+  //   let value = e.target.value;
+  //   let User = { ...User };
+  //   setUser({ ...User, [name]: value });
+  //   console.log(User);
+  //   // const { name, value } = e.target;
+  //   // setUser({ ...User, [name]: value });
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const {
-      websiteUrl,
-      qualification,
-      language,
-      jobCategory,
-      experience,
-      currentSalary,
-      expectedSalary,
-      age,
-      country,
-      city,
-      pincode,
-      address,
-      description,
-      facebook,
-      linkedin,
-      twitter,
-    } = User;
 
-    const object = {
-      websiteUrl: websiteUrl.trim(),
-      qualification: qualification.trim(),
-      language: language.trim(),
-      jobCategory: jobCategory.trim(),
-      experience: experience.trim(),
-      currentSalary: currentSalary.trim(),
-      expectedSalary: expectedSalary.trim(),
-      age: age.trim(),
-      country: country.trim(),
-      city: city.trim(),
-      pincode: pincode.trim(),
-      address: address.trim(),
-      description: description.trim(),
-      facebook: facebook.trim(),
-      linkedin: linkedin.trim(),
-      twitter: twitter.trim(),
-    };
-
-    setFormErrors(validate(User));
+    // setFormErrors(validate(User));
 
     // add entity - POST
     // e.preventDefault();
@@ -89,57 +79,73 @@ const CandidateProfile = () => {
     // const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     // /^[^@]+@(yahoo|gmail|mail|rocketmail)\.(com|in|co\.uk)$/i;
     // const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
-    if (
-      websiteUrl.trim() === "" ||
-      qualification.trim() === "" ||
-      language.trim() === "" ||
-      jobCategory.trim() === "" ||
-      experience.trim() === "" ||
-      currentSalary.trim() === "" ||
-      expectedSalary.trim() === "" ||
-      age.trim() === "" ||
-      country.trim() === "" ||
-      city.trim() === "" ||
-      pincode.trim() === "" ||
-      address.trim() === "" ||
-      description.trim() === "" ||
-      facebook.trim() === "" ||
-      linkedin.trim() === "" ||
-      twitter.trim() === ""
-    ) {
-      return;
-    } else {
-      const tokenID = localStorage.getItem("token");
-      fetch("http://localhost:5000/canditateDetails", {
-        method: "POST",
-        mode: "cors",
-        body: JSON.stringify(object),
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `${tokenID}`,
-        },
-      })
-        .then((response) => response.json(console.log(response)))
+    // if (
+    //   websiteUrl.trim() === "" ||
+    //   qualification.trim() === "" ||
+    //   language.trim() === "" ||
+    //   jobCategory.trim() === "" ||
+    //   experience.trim() === "" ||
+    //   currentSalary.trim() === "" ||
+    //   expectedSalary.trim() === "" ||
+    //   age.trim() === "" ||
+    //   country.trim() === "" ||
+    //   city.trim() === "" ||
+    //   pincode.trim() === "" ||
+    //   address.trim() === "" ||
+    //   description.trim() === "" ||
+    //   facebook.trim() === "" ||
+    //   linkedin.trim() === "" ||
+    //   twitter.trim() === ""
+    // ) {
+    //   return;
+    // } else {
+    const tokenID = localStorage.getItem("token");
+    fetch("http://localhost:5000/canditateDetails", {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify({
+        websiteUrl,
+        qualification,
+        language,
+        jobCategory,
+        experience,
+        currentSalary,
+        expectedSalary,
+        age,
+        country,
+        city,
+        pincode,
+        address,
+        description,
+        facebook,
+        linkedin,
+        twitter,
+      }),
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `${tokenID}`,
+      },
+    })
+      .then((response) => response.json(console.log(response)))
 
-        .then((json) => {
-          setData({
-            User: json,
-          });
-
-          //   if (json.message === "successfully register") {
-          //     navigate("/login");
-          //   }
-
-          // setMessage(json.message)
-          console.log(json);
-        })
-        .catch((err) => {
-          console.log(err);
+      .then((json) => {
+        setData({
+          User: json,
         });
-      // setState(valid(json.message));
 
-      setIsSubmit(true);
-    }
+        //   if (json.message === "successfully register") {
+        //     navigate("/login");
+        //   }
+
+        // setMessage(json.message)
+        console.log(json);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    // setState(valid(json.message));
+
+    setIsSubmit(true);
   };
 
   // useEffect(() => {
@@ -153,69 +159,69 @@ const CandidateProfile = () => {
     setMessage(res);
   }, [data]);
 
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(User);
-      // fetchData()
-    }
-  }, []);
+  // useEffect(() => {
+  //   console.log(formErrors);
+  //   if (Object.keys(formErrors).length === 0 && isSubmit) {
+  //     console.log(User);
+  //     // fetchData()
+  //   }
+  // }, []);
 
-  const validate = (values) => {
-    const errors = {};
+  // const validate = (values) => {
+  //   const errors = {};
 
-    const regex = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
-    if (!values.websiteUrl) {
-      errors.websiteUrl = "!'Please Enter Your websiteUrl'";
-    }
-    if (!values.qualification) {
-      errors.qualification = "!'Please Enter Your qualification '";
-    }
-    if (!values.language) {
-      errors.language = "!'Please Enter Your language '";
-    }
-    if (!values.jobCategory) {
-      errors.jobCategory = "!'Please Enter Your JobCategory'";
-    }
-    if (!values.experience) {
-      errors.experience = "!'Please Enter Your experience'";
-    }
-    if (!values.currentSalary) {
-      errors.currentSalary = "!'Please Enter Your currentSalary'";
-    }
-    if (!values.expectedSalary) {
-      errors.expectedSalary = "!'Please Enter Your expectedSalary'";
-    }
-    if (!values.age) {
-      errors.age = "!'Please Enter Your age'";
-    }
+  //   const regex = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
+  //   if (!values.websiteUrl) {
+  //     errors.websiteUrl = "!'Please Enter Your websiteUrl'";
+  //   }
+  //   if (!values.qualification) {
+  //     errors.qualification = "!'Please Enter Your qualification '";
+  //   }
+  //   if (!values.language) {
+  //     errors.language = "!'Please Enter Your language '";
+  //   }
+  //   if (!values.jobCategory) {
+  //     errors.jobCategory = "!'Please Enter Your JobCategory'";
+  //   }
+  //   if (!values.experience) {
+  //     errors.experience = "!'Please Enter Your experience'";
+  //   }
+  //   if (!values.currentSalary) {
+  //     errors.currentSalary = "!'Please Enter Your currentSalary'";
+  //   }
+  //   if (!values.expectedSalary) {
+  //     errors.expectedSalary = "!'Please Enter Your expectedSalary'";
+  //   }
+  //   if (!values.age) {
+  //     errors.age = "!'Please Enter Your age'";
+  //   }
 
-    if (!values.country) {
-      errors.country = "!'Please Enter country'";
-    }
-    if (!values.city) {
-      errors.city = "!'Please Enter city'";
-    }
-    if (!values.pincode) {
-      errors.pincode = "!'Please Enter pincode'";
-    }
-    if (!values.address) {
-      errors.address = "!'Please Enter address'";
-    }
-    if (!values.description) {
-      errors.description = "!'Please Enter description'";
-    }
-    if (!values.facebook) {
-      errors.facebook = "!'Please Enter facebook'";
-    }
-    if (!values.linkedin) {
-      errors.linkedin = "!'Please Enter linkedin'";
-    }
-    if (!values.twitter) {
-      errors.twitter = "!'Please Enter twitter'";
-    }
-    return errors;
-  };
+  //   if (!values.country) {
+  //     errors.country = "!'Please Enter country'";
+  //   }
+  //   if (!values.city) {
+  //     errors.city = "!'Please Enter city'";
+  //   }
+  //   if (!values.pincode) {
+  //     errors.pincode = "!'Please Enter pincode'";
+  //   }
+  //   if (!values.address) {
+  //     errors.address = "!'Please Enter address'";
+  //   }
+  //   if (!values.description) {
+  //     errors.description = "!'Please Enter description'";
+  //   }
+  //   if (!values.facebook) {
+  //     errors.facebook = "!'Please Enter facebook'";
+  //   }
+  //   if (!values.linkedin) {
+  //     errors.linkedin = "!'Please Enter linkedin'";
+  //   }
+  //   if (!values.twitter) {
+  //     errors.twitter = "!'Please Enter twitter'";
+  //   }
+  //   return errors;
+  // };
 
   useEffect(() => {
     const tokenID = localStorage.getItem("token");
@@ -233,7 +239,30 @@ const CandidateProfile = () => {
       .then((json) => {
         if (json.message.accountType === "candidate") {
           setCandidates(json.message);
-          setLoad(true);
+          setUserName(json.message.username);
+          setPhone(json.message.phoneNumber);
+          setEmail(json.message.email);
+          setWebsiteUrl(json.message.websiteUrl);
+
+          setQualification(json.message.qualification);
+          setLanguage(json.message.language);
+
+          setJobCategory(json.message.jobCategory);
+          setExperience(json.message.experience);
+          setCurrentSalary(json.message.currentSalary);
+
+          setEexpectedSalary(json.message.expectedSalary);
+          setAge(json.message.age);
+
+          setCountry(json.message.country);
+          setCity(json.message.city);
+          setPincode(json.message.pincode);
+          setAddress(json.message.address);
+          setDescription(json.message.description);
+          setFacebook(json.message.facebook);
+          setLinkedin(json.message.linkedin);
+          setTwitter(json.message.twitter);
+          setLoad(false);
 
           console.log(json.message);
         }
@@ -330,14 +359,10 @@ const CandidateProfile = () => {
                       </li>
                       <li className="active">
                         <Link to="/candidate-profile">
-                          <i className="fa fa-user"></i> Make Profile
+                          <i className="fa fa-user"></i> MY Profile
                         </Link>
                       </li>
-                      <li className="">
-                        <Link to="/candidate-profile-detail">
-                          <i className="fa fa-user"></i> My Profile
-                        </Link>
-                      </li>
+
                       <li>
                         <Link to="/candidate-jobs-applied">
                           <i className="fa fa-suitcase"></i> Applied Jobs
@@ -400,7 +425,10 @@ const CandidateProfile = () => {
                                     className="form-control"
                                     name="username"
                                     type="text"
-                                    value={state?.username}
+                                    onChange={(e) =>
+                                      setUserName(e.target.value)
+                                    }
+                                    value={userName}
                                     placeholder="Devid Smith"
                                   />
                                   <i className="fs-input-icon fa fa-user "></i>
@@ -416,7 +444,8 @@ const CandidateProfile = () => {
                                     className="form-control"
                                     name="phone"
                                     type="number"
-                                    value={state?.phoneNumber}
+                                    onChange={(e) => setPhone(e.target.value)}
+                                    value={phone}
                                     placeholder="(251) 1234-456-7890"
                                   />
                                   <i className="fs-input-icon fa fa-phone-alt"></i>
@@ -432,7 +461,8 @@ const CandidateProfile = () => {
                                     className="form-control"
                                     name="company_Email"
                                     type="email"
-                                    value={state?.email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    value={Email}
                                     placeholder="Devid@example.com"
                                   />
                                   <i className="fs-input-icon fas fa-at"></i>
@@ -445,10 +475,14 @@ const CandidateProfile = () => {
                                 <label>Website</label>
                                 <div className="ls-inputicon-box">
                                   <input
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+                                    onChange={(e) =>
+                                      setWebsiteUrl(e.target.value)
+                                    }
                                     className="form-control"
                                     name="websiteUrl"
                                     type="url"
+                                    value={websiteUrl}
                                     placeholder="https://devsmith.net/"
                                   />
                                   <i className="fs-input-icon fa fa-globe-americas"></i>
@@ -464,10 +498,14 @@ const CandidateProfile = () => {
                                 <label>Qualification</label>
                                 <div className="ls-inputicon-box">
                                   <input
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+                                    onChange={(e) =>
+                                      setQualification(e.target.value)
+                                    }
                                     className="form-control"
                                     name="qualification"
                                     type="text"
+                                    value={qualification}
                                     placeholder="BTech"
                                   />
                                   <i className="fs-input-icon fa fa-user-graduate"></i>
@@ -483,10 +521,14 @@ const CandidateProfile = () => {
                                 <label>Language</label>
                                 <div className="ls-inputicon-box">
                                   <input
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+                                    onChange={(e) =>
+                                      setLanguage(e.target.value)
+                                    }
                                     className="form-control"
                                     name="language"
                                     type="text"
+                                    value={language}
                                     placeholder="e.x English, Spanish"
                                   />
                                   <i className="fs-input-icon fa fa-language"></i>
@@ -502,9 +544,13 @@ const CandidateProfile = () => {
                                 <label>Job Category</label>
                                 <div className="ls-inputicon-box">
                                   <input
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+                                    onChange={(e) =>
+                                      setJobCategory(e.target.value)
+                                    }
                                     className="form-control"
                                     name="jobCategory"
+                                    value={jobCategory}
                                     type="text"
                                     placeholder="IT & Software"
                                   />
@@ -521,9 +567,13 @@ const CandidateProfile = () => {
                                 <label>Experience</label>
                                 <div className="ls-inputicon-box">
                                   <input
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+                                    onChange={(e) =>
+                                      setExperience(e.target.value)
+                                    }
                                     className="form-control"
                                     name="experience"
+                                    value={experience}
                                     type="text"
                                     placeholder="05 Years"
                                   />
@@ -540,9 +590,13 @@ const CandidateProfile = () => {
                                 <label>Current Salary</label>
                                 <div className="ls-inputicon-box">
                                   <input
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+                                    onChange={(e) =>
+                                      setCurrentSalary(e.target.value)
+                                    }
                                     className="form-control"
                                     name="currentSalary"
+                                    value={currentSalary}
                                     type="text"
                                     placeholder="65K"
                                   />
@@ -559,9 +613,13 @@ const CandidateProfile = () => {
                                 <label>Expected Salary</label>
                                 <div className="ls-inputicon-box">
                                   <input
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+                                    onChange={(e) =>
+                                      setEexpectedSalary(e.target.value)
+                                    }
                                     className="form-control"
                                     name="expectedSalary"
+                                    value={expectedSalary}
                                     type="text"
                                     placeholder="75K"
                                   />
@@ -578,9 +636,11 @@ const CandidateProfile = () => {
                                 <label>Age</label>
                                 <div className="ls-inputicon-box">
                                   <input
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+                                    onChange={(e) => setAge(e.target.value)}
                                     className="form-control"
                                     name="age"
+                                    value={age}
                                     type="text"
                                     placeholder="35 Years"
                                   />
@@ -595,9 +655,11 @@ const CandidateProfile = () => {
                                 <label>Country</label>
                                 <div className="ls-inputicon-box">
                                   <input
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+                                    onChange={(e) => setCountry(e.target.value)}
                                     className="form-control"
                                     name="country"
+                                    value={country}
                                     type="text"
                                     placeholder="USA"
                                   />
@@ -614,9 +676,11 @@ const CandidateProfile = () => {
                                 <label>City</label>
                                 <div className="ls-inputicon-box">
                                   <input
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+                                    onChange={(e) => setCity(e.target.value)}
                                     className="form-control"
                                     name="city"
+                                    value={city}
                                     type="text"
                                     placeholder="Texas"
                                   />
@@ -633,9 +697,11 @@ const CandidateProfile = () => {
                                 <label>Postcode</label>
                                 <div className="ls-inputicon-box">
                                   <input
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+                                    onChange={(e) => setPincode(e.target.value)}
                                     className="form-control"
                                     name="pincode"
+                                    value={pincode}
                                     type="text"
                                     placeholder="75462"
                                   />
@@ -652,9 +718,11 @@ const CandidateProfile = () => {
                                 <label>Full Address</label>
                                 <div className="ls-inputicon-box">
                                   <input
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+                                    onChange={(e) => setAddress(e.target.value)}
                                     className="form-control"
                                     name="address"
+                                    value={address}
                                     type="text"
                                     placeholder="1363-1385 Sunset Blvd Angeles, CA 90026 ,USA"
                                   />
@@ -672,7 +740,11 @@ const CandidateProfile = () => {
                                 <textarea
                                   className="form-control"
                                   name="description"
-                                  onChange={handleChange}
+                                  value={description}
+                                  // onChange={handleChange}
+                                  onChange={(e) =>
+                                    setDescription(e.target.value)
+                                  }
                                   rows="3"
                                 ></textarea>
                                 <p style={{ color: "red" }}>
@@ -695,9 +767,13 @@ const CandidateProfile = () => {
                                       <label>Facebook</label>
                                       <div className="ls-inputicon-box">
                                         <input
-                                          onChange={handleChange}
+                                          // onChange={handleChange}
+                                          onChange={(e) =>
+                                            setFacebook(e.target.value)
+                                          }
                                           className="form-control wt-form-control"
                                           name="facebook"
+                                          value={facebook}
                                           type="text"
                                           placeholder="https://www.facebook.com/"
                                         />
@@ -714,9 +790,13 @@ const CandidateProfile = () => {
                                       <label>Twitter</label>
                                       <div className="ls-inputicon-box">
                                         <input
-                                          onChange={handleChange}
+                                          // onChange={handleChange}
+                                          onChange={(e) =>
+                                            setTwitter(e.target.value)
+                                          }
                                           className="form-control wt-form-control"
                                           name="twitter"
+                                          value={twitter}
                                           type="text"
                                           placeholder="https://twitter.com/"
                                         />
@@ -733,9 +813,13 @@ const CandidateProfile = () => {
                                       <label>linkedin</label>
                                       <div className="ls-inputicon-box">
                                         <input
-                                          onChange={handleChange}
+                                          // onChange={handleChange}
+                                          onChange={(e) =>
+                                            setLinkedin(e.target.value)
+                                          }
                                           className="form-control wt-form-control"
                                           name="linkedin"
+                                          value={linkedin}
                                           type="text"
                                           placeholder="https://in.linkedin.com/"
                                         />
@@ -753,8 +837,9 @@ const CandidateProfile = () => {
                                         type="submit"
                                         className="site-button"
                                       >
-                                        Save Changes
+                                        Submit
                                       </button>
+                                      &nbsp; &nbsp;
                                       {message}
                                     </div>
                                   </div>
@@ -832,7 +917,8 @@ const CandidateProfile = () => {
                                 <div className="ls-inputicon-box">
                                   <input
                                     disabled
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+
                                     className="form-control"
                                     name="websiteUrl"
                                     placeholder={candidates?.websiteUrl}
@@ -852,7 +938,8 @@ const CandidateProfile = () => {
                                 <div className="ls-inputicon-box">
                                   <input
                                     disabled
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+
                                     className="form-control"
                                     name="qualification"
                                     placeholder={candidates?.qualification}
@@ -872,7 +959,8 @@ const CandidateProfile = () => {
                                 <div className="ls-inputicon-box">
                                   <input
                                     disabled
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+
                                     className="form-control"
                                     name="language"
                                     placeholder={candidates?.language}
@@ -892,7 +980,8 @@ const CandidateProfile = () => {
                                 <div className="ls-inputicon-box">
                                   <input
                                     disabled
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+
                                     className="form-control"
                                     name="jobCategory"
                                     placeholder={candidates?.jobCategory}
@@ -912,7 +1001,8 @@ const CandidateProfile = () => {
                                 <div className="ls-inputicon-box">
                                   <input
                                     disabled
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+
                                     className="form-control"
                                     name="experience"
                                     placeholder={candidates?.experience}
@@ -932,7 +1022,8 @@ const CandidateProfile = () => {
                                 <div className="ls-inputicon-box">
                                   <input
                                     disabled
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+
                                     className="form-control"
                                     name="currentSalary"
                                     placeholder={candidates?.currentSalary}
@@ -952,7 +1043,8 @@ const CandidateProfile = () => {
                                 <div className="ls-inputicon-box">
                                   <input
                                     disabled
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+
                                     className="form-control"
                                     name="expectedSalary"
                                     placeholder={candidates?.expectedSalary}
@@ -972,7 +1064,8 @@ const CandidateProfile = () => {
                                 <div className="ls-inputicon-box">
                                   <input
                                     disabled
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+
                                     className="form-control"
                                     name="age"
                                     placeholder={candidates?.age}
@@ -990,7 +1083,8 @@ const CandidateProfile = () => {
                                 <div className="ls-inputicon-box">
                                   <input
                                     disabled
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+
                                     className="form-control"
                                     name="country"
                                     placeholder={candidates?.country}
@@ -1010,7 +1104,8 @@ const CandidateProfile = () => {
                                 <div className="ls-inputicon-box">
                                   <input
                                     disabled
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+
                                     className="form-control"
                                     name="city"
                                     placeholder={candidates?.city}
@@ -1030,7 +1125,8 @@ const CandidateProfile = () => {
                                 <div className="ls-inputicon-box">
                                   <input
                                     disabled
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+
                                     className="form-control"
                                     name="pincode"
                                     placeholder={candidates?.pincode}
@@ -1050,7 +1146,8 @@ const CandidateProfile = () => {
                                 <div className="ls-inputicon-box">
                                   <input
                                     disabled
-                                    onChange={handleChange}
+                                    // onChange={handleChange}
+
                                     className="form-control"
                                     name="address"
                                     placeholder={candidates?.address}
@@ -1070,7 +1167,8 @@ const CandidateProfile = () => {
                                 <textarea
                                   className="form-control"
                                   name="description"
-                                  onChange={handleChange}
+                                  // onChange={handleChange}
+
                                   rows="3"
                                   placeholder={candidates?.description}
                                   disabled
@@ -1096,7 +1194,8 @@ const CandidateProfile = () => {
                                       <div className="ls-inputicon-box">
                                         <input
                                           disabled
-                                          onChange={handleChange}
+                                          // onChange={handleChange}
+
                                           className="form-control wt-form-control"
                                           name="facebook"
                                           placeholder={candidates?.facebook}
@@ -1116,7 +1215,8 @@ const CandidateProfile = () => {
                                       <div className="ls-inputicon-box">
                                         <input
                                           disabled
-                                          onChange={handleChange}
+                                          // onChange={handleChange}
+
                                           className="form-control wt-form-control"
                                           name="twitter"
                                           placeholder={candidates?.twitter}
@@ -1136,7 +1236,8 @@ const CandidateProfile = () => {
                                       <div className="ls-inputicon-box">
                                         <input
                                           disabled
-                                          onChange={handleChange}
+                                          // onChange={handleChange}
+
                                           className="form-control wt-form-control"
                                           name="linkedin"
                                           placeholder={candidates?.linkedin}

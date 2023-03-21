@@ -113,9 +113,6 @@ const Header = () => {
           setData({
             User: json,
           });
-          if (json.message === "successfully register") {
-            navigate("/login");
-          }
 
           // setMessage(json.message);
           console.log(json);
@@ -211,7 +208,7 @@ const Header = () => {
             <div className="container-fluid clearfix">
               <div className="logo-header">
                 <div className="logo-header-inner logo-header-one">
-                  <Link to="/index-3">
+                  <Link to="/">
                     <img
                       src="jobzilla/images/logo-light-3.png"
                       alt=""
@@ -245,7 +242,7 @@ const Header = () => {
                 <ul className=" nav navbar-nav">
                   <li className="has-child">
                     <Link>Home</Link>
-                    <ul className="sub-menu">
+                    {/* <ul className="sub-menu">
                       <li>
                         <Link to="index">Home-1</Link>
                       </li>
@@ -267,7 +264,7 @@ const Header = () => {
                       <li>
                         <Link to="index-7">Home-7</Link>
                       </li>
-                    </ul>
+                    </ul> */}
                   </li>
                   <li className="has-child">
                     <Link>Jobs</Link>
@@ -300,6 +297,15 @@ const Header = () => {
                   {isLoggedin === true ? (
                     <li className="has-child">
                       <Link to="/employer-profile">Employers</Link>
+
+                      <ul className="sub-menu">
+                        <li>
+                          <Link to="employer-profile">Profile</Link>
+                        </li>
+                        <li>
+                          <Link to="/employer-list">Employers List</Link>
+                        </li>
+                      </ul>
                       {/* <ul className="sub-menu">
                       <li>
                         <Link to="employer-grid">Employers Grid</Link>
@@ -536,9 +542,14 @@ const Header = () => {
               <div className="extra-nav header-2-nav">
                 <div className="extra-cell">
                   <div className="header-search">
-                    <Link to="#search" className="header-search-icon">
+                    <button
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop"
+                      className="header-search-icon bg-transparent border-0 text-white fs-4"
+                    >
                       <i className="feather-search"></i>
-                    </Link>
+                    </button>
                   </div>
                 </div>
                 <div className="extra-cell">
@@ -639,29 +650,65 @@ const Header = () => {
           </div>
 
           {/* <!-- SITE Search --> */}
-          <div id="search">
-            <span className="close"></span>
-            <form
-              role="search"
-              id="searchform"
-              action="https://thewebmax.org/search"
-              //   method="get"
-              className="radius-xl"
-            >
-              <input
-                className="form-control"
-                value=""
-                name="q"
-                type="search"
-                placeholder="Type to search"
-              />
-              <span className="input-group-append">
-                <button type="button" className="search-btn">
-                  <i className="fa fa-paper-plane"></i>
-                </button>
-              </span>
-            </form>
+
+          <div
+            className="modal fade"
+            id="staticBackdrop"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabIndex={-1}
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog radius-xl  modal-dialog-centered">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="staticBackdropLabel">
+                    Modal title
+                  </h5>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  />
+                </div>
+                <div className="modal-body">
+                  <form
+                    className=" radius-xl"
+                    role="search"
+                    id="searchform"
+                    action="https://thewebmax.org/search"
+                    //   method="get"
+                  >
+                    <input
+                      className="form-control"
+                      value=""
+                      name="q"
+                      type="search"
+                      placeholder="Type to search"
+                    />
+                    <span className="input-group-append">
+                      <button type="button" className="search-btn">
+                        <i className="fa fa-paper-plane"></i>
+                      </button>
+                    </span>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
+
+          {/* <div
+            class="modal fade"
+            id="search"
+            aria-hidden="true"
+            data-bs-backdrop="static"
+            aria-labelledby="exampleModalToggleLabel"
+            tabindex="-1"
+          >
+            <span className="close"></span>
+          </div> */}
         </div>
         <div
           className="modal fade twm-sign-up"
@@ -789,9 +836,22 @@ const Header = () => {
                           </div>
                         </div>
 
-                        <button type="submit" className="site-button">
-                          Sign Up
-                        </button>
+                        {message === "successfully register" ? (
+                          <Link to="/login">
+                            <button
+                              type="submit"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                              className="site-button "
+                            >
+                              Sign Up
+                            </button>
+                          </Link>
+                        ) : (
+                          <button type="submit" className="site-button ">
+                            Sign Up
+                          </button>
+                        )}
                         {message === "successfully register" ? (
                           <span className="text-primary">{message}</span>
                         ) : (
@@ -800,6 +860,30 @@ const Header = () => {
                       </div>
                     </div>
                   </form>
+
+                  <div id="search">
+                    <span className="close"></span>
+                    <form
+                      role="search"
+                      id="searchform"
+                      action="https://thewebmax.org/search"
+                      method="get"
+                      className="radius-xl"
+                    >
+                      <input
+                        className="form-control"
+                        value=""
+                        name="q"
+                        type="search"
+                        placeholder="Type to search"
+                      />
+                      <span className="input-group-append">
+                        <button type="button" className="search-btn">
+                          <i className="fa fa-paper-plane"></i>
+                        </button>
+                      </span>
+                    </form>
+                  </div>
                   {/* <!--Signup Employer Content-->  */}
                   {/* 
                   
