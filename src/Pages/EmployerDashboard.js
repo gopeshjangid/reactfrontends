@@ -1,7 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 const EmployerDashboard = () => {
+  const navigate= useNavigate()
+  const [login, setLogin] = useState(false);
+
+
+  const accountType = localStorage.getItem("accountType");
+  console.log(accountType)
+  useEffect(() => {
+if(accountType==="admin"){
+  setLogin(false)
+}else{
+  setLogin(true)
+}
+  },[])
   return (
+<>
+    {login === false?(
     <div className="page-wraper position-relative" style={{ zIndex: "1000" }}>
       <header id="header-admin-wrap" className="header-admin-fixed">
         {/* Header Start */}
@@ -1053,6 +1068,9 @@ const EmployerDashboard = () => {
         </div>
       </div>
     </div>
+    ):(
+     navigate("/") )}
+    </>
   );
 };
 

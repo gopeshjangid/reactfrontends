@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const DashCompanyProfileUpdate = () => {
+  const navigate = useNavigate()
   const initialValues = {
     companyName: "",
     phone: "",
@@ -48,6 +49,8 @@ const DashCompanyProfileUpdate = () => {
   const [linkedin, setLinkedin] = useState("");
   const [twitter, setTwitter] = useState("");
 
+  const [login, setLogin] = useState(false);
+
   // const [error, setError] = useState()
 
   // const [state, setState] = useState('')
@@ -69,6 +72,16 @@ const DashCompanyProfileUpdate = () => {
 
   // 	}
   // },[])
+
+  const accountType = localStorage.getItem("accountType");
+  console.log(accountType)
+  useEffect(() => {
+if(accountType==="admin"){
+  setLogin(false)
+}else{
+  setLogin(true)
+}
+  },[])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -110,7 +123,7 @@ const DashCompanyProfileUpdate = () => {
         setData({
           User: json,
         });
-
+ 
         //   if (json.message === "successfully register") {
         //     navigate("/login");
         //   }
@@ -203,6 +216,8 @@ const DashCompanyProfileUpdate = () => {
   }, []);
 
   return (
+    <>
+    {login === false ?(
     <div className="page-wraper position-relative" style={{ zIndex: "1000" }}>
       <header id="header-admin-wrap" className="header-admin-fixed">
         {/* <!-- Header Start --> */}
@@ -489,7 +504,7 @@ const DashCompanyProfileUpdate = () => {
               <ul className="sub-menu">
                 <li>
                   {" "}
-                  <Link to="/employer-post-job">
+                  <Link to="/dash-post-job">
                     <span className="admin-nav-text">Post a New Jobs</span>
                   </Link>
                 </li>
@@ -1342,6 +1357,9 @@ const DashCompanyProfileUpdate = () => {
         </div>
       </div>
     </div>
+   ) :(navigate("/"))
+      }
+    </>
   );
 };
 

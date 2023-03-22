@@ -111,7 +111,9 @@ const EmployerProfile = () => {
         setData({
           User: json,
         });
-
+        if (json.message === "successfuly created company details") {
+          document.getElementById("openPopup").click();
+        }
         //   if (json.message === "successfully register") {
         //     navigate("/login");
         //   }
@@ -633,26 +635,67 @@ const EmployerProfile = () => {
 
                             <div className="col-lg-12 col-md-12">
                               <div className="text-left">
-                                <button type="submit" className="site-button">
-                                  Save Changes
-                                </button>
-                                &nbsp;&nbsp;
+                              <button
+                                type="submit"
+                                className="site-button"
+                              >
+                                Submit
+                              </button>                  
+                               &nbsp;&nbsp;
                                 <Link to="/employer-profile-details">
                                   {" "}
                                   <button className="site-button">
                                     Update Profile
                                   </button>
                                 </Link>
+                                <button
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#completeprofile"
+                                className="site-button "
+                                style={{ visibility: "hidden" }}
+                                data-toggle="modal"
+                                id="openPopup"
+                              >
+                               Submit
+                              </button>
+                              </div>
+                              <div
+                                class="modal fade"
+                                id="completeprofile"
+                                data-bs-backdrop="static"
+                                data-bs-keyboard="false"
+                                tabindex="-1"
+                                aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true"
+                                style={{ background: "#00000059" }}
+                              >
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                      ></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                      <img
+                                        src="/jobzilla/images/423-4236284_png-images-success-icon-png-transparent-png-download.png"
+                                        className="w-25 "
+                                      />
+                                      <h4>  
+                                      {message}</h4>
+                                    </div>
+                                   
+                                  </div>
+                                </div>
                               </div>
 
                               {message ===
                               "successfully created company details" ? (
-                                <h3
-                                  className="Success text-center"
-                                  style={{ color: "#03979c" }}
-                                >
-                                  {message}
-                                </h3>
+                             ""
                               ) : (
                                 <h3 className="Success text-danger text-center">
                                   {message}

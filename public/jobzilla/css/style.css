@@ -125,6 +125,8 @@ This files [Table of contents] are outlined below
   color: #1967d2;
 }
 
+
+
 .site-text-secondry {
   color: #171d28;
 }
@@ -178,10 +180,11 @@ body {
   font-family: "Rubik", sans-serif;
   line-height: 1.7;
   font-weight: 400;
-  padding: 0px;
-  margin: 0px;
-  overflow-x: hidden;
+  padding: 0px!important;
+  margin: 0px!important;
+  overflow: overlay!important;
   font-size: 15px;
+  overflow-x: hidden;
 }
 
 a {

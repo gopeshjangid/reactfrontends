@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Footer from "./Header-Footer/Footer";
 import Header from "./Header-Footer/Header";
@@ -31,59 +31,47 @@ import CandidateMyResumeDetail from "./Pages/CandidateMyResumeDetail";
 import DashPostJob from "./Pages/DashPostJob";
 import DashCompanyProfile from "./Pages/DashCompanyProfile";
 import DashCompanyProfileUpdate from "./Pages/DashCompanyProfileUpdate";
-// import About from "./pages/About";
-// import Author from "./pages/Author";
-// import Blog from "./pages/Blog";
-// import Career from "./pages/Career";
-// import Contact from "./pages/Contact";
-// import Faq from "./pages/Faq";
-// import Forgot from "./pages/Forgot";
-// import HowItwork from "./pages/HowItwork";
-// import Login from "./pages/Login";
-// import PlaceYourOrder from "./pages/PlaceYourOrder";
-// import Prices from "./pages/Prices";
-// import Privacy from "./pages/Privacy";
-// import Register from "./pages/Register";
-// import Reviews from "./pages/Reviews";
-// import Sample from "./pages/Sample";
-// import Services from "./pages/Services";
-// import Terms from "./pages/Terms";
-// import ViewCart from "./pages/ViewCart";
-// import ViewDetails from "./pages/ViewDetails";
-// import Success from "./pages/Success";
-// import Failed from "./pages/Failed";
-// import PurchaseSuccess from "./pages/PurchaseSuccess";
-// import OnlineManagement from "./pages/OnlineManagement";
-// import Ordersuccess from "./pages/Ordersuccess";
-// import Payplesuccess from "./pages/Payplesuccess";
-// // import WorkSampleroute from "./pages/routes/WorkSampleroute";
-// // import BlogRoute from "./pages/routes/BlogRoute";
-// import StripeSubscription from "./pages/StripeSubscription";
-// // import AuthorRoute from "./pages/routes/AuthorRoute";
-// import StripeGuestPaymentSuccess from "./pages/StripeGuestPaymentSuccess";
-// import GuestPayment from "./pages/GuestPayment";
-// import PendingPaymentStripeSuccess from "./pages/PendingPaymentStripeSuccess";
-// // import Join from "./pages/Join";
-// import TransactionHistory from "./pages/TransactionHistory";
-// import Dashboard from "./pages/Dashboard";
-// import ViewProfile from "./pages/ViewProfile";
-// import AccountSettingServices from "./pages/AccountSettingServices";
-// import AccountSettingSubscriptions from "./pages/AccountSettingSubscriptions";
-// import AccountSettingPaymentMethod from "./pages/AccountSettingPaymentMethod";
-// import AccountSettingBillingInfo from "./pages/AccountSettingBillingInfo";
-// import OrderPaypalSuccess from "./pages/OrderPaypalSuccess";
-// import PendingPaymentPaypalSuccess from "./pages/PendingPaymentPaypalSuccess";
-// import PaypalGuestPaymentSuccess from "./pages/PaypalGuestPaymentSuccess";
-// import WalletPaymentSuccess from "./pages/WalletPaymentSuccess";
-// import OrderWithoutPayment from "./pages/OrderWithoutPayment";
-// import GhostwritingServices from "./pages/GhostwritingServices";
-// import BlogWritingServices from "./pages/BlogWritingServices";
-// import FreelanceWritingServices from "./pages/FreelanceWritingServices";
-// import ReviewWritingServices from "./pages/ReviewWritingServices";
-// import PaypalSubscriptionSuccess from "./pages/PaypalSubscriptionSuccess";
+
 
 function App() {
+  const [login,setLogin]=useState(false)
+  const [admin,setAdmin] = useState([])
+
+const tokenID = localStorage.getItem("token")
+console.log(tokenID)
+
+useEffect(()=>{
+  fetch("http://localhost:5000/checkLogin", {
+        method: "GET",
+        mode: "cors",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `${tokenID}`,
+        },
+      })
+        .then((response) => response.json(console.log(response)))
+
+        .then((json) => {
+          setAdmin(json)
+        console.log(json.message.accountType)
+        if(json.message.accountType=="admin"){
+            setLogin(true)
+        }else{
+          setLogin(false)
+        }
+        
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+ 
+
+},[tokenID])
+
+
   return (
+
+
     <BrowserRouter>
       <Header />
       <Routes>
@@ -128,81 +116,18 @@ function App() {
           path="/candidate-my-resume-detail"
           element={<CandidateMyResumeDetail />}
         />
-        <Route path="/dash-post-job" element={<DashPostJob />} />
+   
+          <>
+        <Route path="/dash-post-job" element={<DashPostJob /> }/>
         <Route path="/dash-company-profile" element={<DashCompanyProfile />} />
         <Route
           path="/dash-company-profile-update"
-          element={<DashCompanyProfileUpdate />}
+          element={<DashCompanyProfileUpdate />}  
         />
-        {/*  <Route path="/failed" element={<Failed />} />
-        <Route path="/purchasesuccess" element={<PurchaseSuccess />} />
-        <Route path="/onlinemanagement/:id" element={<OnlineManagement />} />
-        <Route path="/ordersuccess" element={<Ordersuccess />} />
-        <Route path="/payplesuccess" element={<Payplesuccess />} />
-        <Route path="/stripesubscription" element={<StripeSubscription />} />
-       
-        <Route
-          path="/stripeguestpaymentSuccess"
-          element={<StripeGuestPaymentSuccess />}
-        />
-        <Route path="/guestpayment" element={<GuestPayment />} />
-        <Route
-          path="/pendingpaymentstripesuccess"
-          element={<PendingPaymentStripeSuccess />}
-        />
-        <Route path="/transactionhistory" element={<TransactionHistory />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/viewprofile" element={<ViewProfile />} />
-        <Route
-          path="/accountsettingservices"
-          element={<AccountSettingServices />}
-        />
-        <Route
-          path="/accountsettingsubscriptions"
-          element={<AccountSettingSubscriptions />}
-        />
-        <Route
-          path="/accountsettingpaymentmethod"
-          element={<AccountSettingPaymentMethod />}
-        />
-        <Route
-          path="/accountsettingbillinginfo"
-          element={<AccountSettingBillingInfo />}
-        />
-        <Route path="/orderpaypalsuccess" element={<OrderPaypalSuccess />} />
-        <Route
-          path="/pendingpaymentpaypalsuccess"
-          element={<PendingPaymentPaypalSuccess />}
-        />
-        <Route
-          path="/paypalguestpaymentsuccess"
-          element={<PaypalGuestPaymentSuccess />}
-        />
-        <Route
-          path="/walletpaymentsuccess"
-          element={<WalletPaymentSuccess />}
-        />
-        <Route path="/orderwithoutpayment" element={<OrderWithoutPayment />} />
-        <Route
-          path="/ghost-writing-services"
-          element={<GhostwritingServices />}
-        />
-        <Route
-          path="/blog-writing-services"
-          element={<BlogWritingServices />}
-        />
-        <Route
-          path="/freelance-writing-services"
-          element={<FreelanceWritingServices />}
-        />
-        <Route
-          path="/review-writing-services"
-          element={<ReviewWritingServices />}
-        />{" "}
-        <Route
-          path="/paypalsubscriptionsuccess"
-          element={<PaypalSubscriptionSuccess />}
-        /> */}
+        </>
+
+   
+        
       </Routes>
       <Footer />
     </BrowserRouter>

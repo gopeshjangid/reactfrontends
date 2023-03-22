@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 const DashPostJob = () => {
+  const navigate= useNavigate()
   const initialValues = {
     jobtitle: "",
     jobcategory: "",
@@ -42,14 +43,18 @@ const DashPostJob = () => {
     setUser({ ...User, [name]: value });
   };
 
-  // useEffect(() => {
-  // 	console.log(message);
-  // 	if(Object.keys(message).length === 0 && isSubmit) {
-  // 		console.log(User);
+  
+  const tokenID = localStorage.getItem("token");
 
-  // 	}
-  // },[])
-
+  const accountType = localStorage.getItem("accountType");
+  console.log(accountType)
+  useEffect(() => {
+if(accountType==="admin"){
+  setLoad(false)
+}else{
+  setLoad(true)
+}
+  },[])
   const handleSubmit = (e) => {
     e.preventDefault();
     const {
@@ -130,7 +135,7 @@ const DashPostJob = () => {
     ) {
       return;
     } else {
-      const tokenID = localStorage.getItem("token");
+      
       fetch("http://localhost:5000/postJob", {
         method: "POST",
         mode: "cors",
@@ -146,7 +151,9 @@ const DashPostJob = () => {
           setData({
             User: json,
           });
-
+          if (json.message === "job posted") {
+            document.getElementById("openPopup").click();
+          }
           //   if (json.message === "successfully register") {
           //     navigate("/login");
           //   }
@@ -252,6 +259,7 @@ const DashPostJob = () => {
 
   return (
     <div>
+      {load===false?(
       <div className="page-wraper position-relative" style={{ zIndex: "1000" }}>
         <header id="header-admin-wrap" className="header-admin-fixed">
           <div id="header-admin">
@@ -536,7 +544,7 @@ const DashPostJob = () => {
                 <ul className="sub-menu">
                   <li>
                     {" "}
-                    <Link to="dash-post-job">
+                    <Link to="/dash-post-job">
                       <span className="admin-nav-text">Post a New Jobs</span>
                     </Link>
                   </li>
@@ -1037,10 +1045,60 @@ const DashPostJob = () => {
                         </div>
                         <div className="col-lg-12 col-md-12">
                           <div className="text-left">
-                            <button type="submit" className="site-button m-r5">
-                              Publish Job
-                            </button>
-                            {message}
+                          <button
+                                type="submit"
+                                className="site-button"
+                              >
+                              Post Job
+                              </button>
+                                      <button
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#postjob"
+                                className="site-button "
+                                style={{ visibility: "hidden" }}
+                                data-toggle="modal"
+                                id="openPopup"
+                              >
+                              Post Job
+                              </button>
+                              
+
+
+
+                                  
+                                       <div
+                                class="modal fade"
+                                id="postjob"
+                                data-bs-backdrop="static"
+                                data-bs-keyboard="false"
+                                tabindex="-1"
+                                aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true"
+                                style={{ background: "#00000059" }}
+                              >
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                      ></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                      <img
+                                        src="/jobzilla/images/423-4236284_png-images-success-icon-png-transparent-png-download.png"
+                                        className="w-25 "
+                                      />
+                                      <h4>  
+                                      {message}</h4>
+                                    </div>
+                                   
+                                  </div>
+                                </div>
+                              </div>
                             {/* <button
                                 type="submit"
                                 className="site-button outline-primary"
@@ -1138,6 +1196,9 @@ const DashPostJob = () => {
           </div>
         </div>
       </div>
+      ):(
+       navigate("/")
+      )}
     </div>
   );
 };

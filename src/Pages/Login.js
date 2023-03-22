@@ -90,9 +90,19 @@ const Login = () => {
           if (
             json.message === "successfully login" &&
             accountType === "employer"
-          ) {
+          )
+           {
             localStorage.setItem("token", json.token);
             navigate("/employer-profile");
+          }
+          if (
+            json.message === "successfully login" &&
+            json.loginType === "admin"
+          )
+           {
+            localStorage.setItem("token", json.token);
+            localStorage.setItem("accountType", json.loginType);
+            navigate("/dash-company-profile");
           }
 
           // setMessage(json.message);

@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const DashCompanyProfile = () => {
+  const navigate = useNavigate()
   const initialValues = {
     companyName: "",
     phone: "",
@@ -47,6 +48,8 @@ const DashCompanyProfile = () => {
   const [facebook, setFacebook] = useState("");
   const [linkedin, setLinkedin] = useState("");
   const [twitter, setTwitter] = useState("");
+  
+  const [login, setLogin] = useState(false);
 
   // const [error, setError] = useState()
 
@@ -69,6 +72,16 @@ const DashCompanyProfile = () => {
 
   // 	}
   // },[])
+
+  const accountType = localStorage.getItem("accountType");
+  console.log(accountType)
+  useEffect(() => {
+if(accountType==="admin"){
+  setLogin(false)
+}else{
+  setLogin(true)
+}
+  },[])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -110,7 +123,9 @@ const DashCompanyProfile = () => {
         setData({
           User: json,
         });
-
+        if (json.message === "successfuly created company details") {
+          document.getElementById("openPopup").click();
+        }
         //   if (json.message === "successfully register") {
         //     navigate("/login");
         //   }
@@ -203,6 +218,8 @@ const DashCompanyProfile = () => {
   }, []);
 
   return (
+    <>
+    {login === false ?(
     <div className="page-wraper position-relative" style={{ zIndex: "1000" }}>
       <header id="header-admin-wrap" className="header-admin-fixed">
         {/* <!-- Header Start --> */}
@@ -489,7 +506,7 @@ const DashCompanyProfile = () => {
               <ul className="sub-menu">
                 <li>
                   {" "}
-                  <Link to="/employer-post-job">
+                  <Link to="/dash-post-job">
                     <span className="admin-nav-text">Post a New Jobs</span>
                   </Link>
                 </li>
@@ -934,31 +951,72 @@ const DashCompanyProfile = () => {
 
                         <div className="col-lg-12 col-md-12">
                           <div className="text-left">
-                            <button type="submit" className="site-button">
-                              Save Changes
-                            </button>
-                            &nbsp;&nbsp;
-                            <Link to="/dash-company-profile-update">
-                              {" "}
-                              <button className="site-button">
-                                Update Profile
+                          <button
+                                type="submit"
+                                className="site-button"
+                              >
+                                Submit
+                              </button>                  
+                               &nbsp;&nbsp;
+                                <Link to="/employer-profile-details">
+                                  {" "}
+                                  <button className="site-button">
+                                    Update Profile
+                                  </button>
+                                </Link>
+                                <button
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#completeprofile"
+                                className="site-button "
+                                style={{ visibility: "hidden" }}
+                                data-toggle="modal"
+                                id="openPopup"
+                              >
+                               Submit
                               </button>
-                            </Link>
-                          </div>
+                              </div>
+                              <div
+                                class="modal fade"
+                                id="completeprofile"
+                                data-bs-backdrop="static"
+                                data-bs-keyboard="false"
+                                tabindex="-1"
+                                aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true"
+                                style={{ background: "#00000059" }}
+                              >
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                      ></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                      <img
+                                        src="/jobzilla/images/423-4236284_png-images-success-icon-png-transparent-png-download.png"
+                                        className="w-25 "
+                                      />
+                                      <h4>  
+                                      {message}</h4>
+                                    </div>
+                                   
+                                  </div>
+                                </div>
+                              </div>
 
-                          {message ===
-                          "successfully created company details" ? (
-                            <h3
-                              className="Success text-center"
-                              style={{ color: "#03979c" }}
-                            >
-                              {message}
-                            </h3>
-                          ) : (
-                            <h3 className="Success text-danger text-center">
-                              {message}
-                            </h3>
-                          )}
+                              {message ===
+                              "successfully created company details" ? (
+                             ""
+                              ) : (
+                                <h3 className="Success text-danger text-center">
+                                  {message}
+                                </h3>
+                              )}
                         </div>
                       </div>
                     </div>
@@ -1342,6 +1400,10 @@ const DashCompanyProfile = () => {
         </div>
       </div>
     </div>
+    ):(
+      navigate("/")
+    )}
+    </>
   );
 };
 

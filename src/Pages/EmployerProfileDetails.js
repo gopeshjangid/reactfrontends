@@ -81,7 +81,7 @@ const EmployerProfileDetails = () => {
     const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
 
     const tokenID = localStorage.getItem("token");
-    fetch("http://localhost:5000/companyDetails", {
+    fetch("http://localhost:5000/register", {
       method: "POST",
       mode: "cors",
       body: JSON.stringify({
@@ -628,15 +628,15 @@ const EmployerProfileDetails = () => {
                             <div className="col-lg-12 col-md-12">
                               <div className="text-left">
                                 <button type="submit" className="site-button">
-                                  Save Changes
+                                Update Profile
                                 </button>
-                                &nbsp;&nbsp;
+                                {/* &nbsp;&nbsp;
                                 <Link to="/employer-profile-details">
                                   {" "}
                                   <button className="site-button">
-                                    Update Profile
+                                 
                                   </button>
-                                </Link>
+                                </Link> */}
                               </div>
 
                               {message ===

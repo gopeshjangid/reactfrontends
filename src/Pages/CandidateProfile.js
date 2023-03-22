@@ -67,7 +67,7 @@ const CandidateProfile = () => {
   //   // setUser({ ...User, [name]: value });
   // };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // setFormErrors(validate(User));
@@ -100,7 +100,7 @@ const CandidateProfile = () => {
     //   return;
     // } else {
     const tokenID = localStorage.getItem("token");
-    fetch("http://localhost:5000/canditateDetails", {
+   await fetch("http://localhost:5000/canditateDetails", {
       method: "POST",
       mode: "cors",
       body: JSON.stringify({
@@ -132,7 +132,9 @@ const CandidateProfile = () => {
         setData({
           User: json,
         });
-
+        if (json.message === "successfuly created user details") {
+          document.getElementById("openPopup").click();
+        }
         //   if (json.message === "successfully register") {
         //     navigate("/login");
         //   }
@@ -484,6 +486,7 @@ const CandidateProfile = () => {
                                     type="url"
                                     value={websiteUrl}
                                     placeholder="https://devsmith.net/"
+                                    required
                                   />
                                   <i className="fs-input-icon fa fa-globe-americas"></i>
                                 </div>
@@ -507,6 +510,7 @@ const CandidateProfile = () => {
                                     type="text"
                                     value={qualification}
                                     placeholder="BTech"
+                                    required
                                   />
                                   <i className="fs-input-icon fa fa-user-graduate"></i>
                                 </div>
@@ -530,6 +534,7 @@ const CandidateProfile = () => {
                                     type="text"
                                     value={language}
                                     placeholder="e.x English, Spanish"
+                                    required
                                   />
                                   <i className="fs-input-icon fa fa-language"></i>
                                 </div>
@@ -574,8 +579,9 @@ const CandidateProfile = () => {
                                     className="form-control"
                                     name="experience"
                                     value={experience}
-                                    type="text"
+                                    type="number"
                                     placeholder="05 Years"
+                                    required
                                   />
                                   <i className="fs-input-icon fa fa-user-edit"></i>
                                 </div>
@@ -597,8 +603,9 @@ const CandidateProfile = () => {
                                     className="form-control"
                                     name="currentSalary"
                                     value={currentSalary}
-                                    type="text"
+                                    type="number"
                                     placeholder="65K"
+                                    required
                                   />
                                   <i className="fs-input-icon fa fa-dollar-sign"></i>
                                 </div>
@@ -620,8 +627,9 @@ const CandidateProfile = () => {
                                     className="form-control"
                                     name="expectedSalary"
                                     value={expectedSalary}
-                                    type="text"
+                                    type="number"
                                     placeholder="75K"
+                                    required
                                   />
                                   <i className="fs-input-icon fa fa-dollar-sign"></i>
                                 </div>
@@ -641,8 +649,9 @@ const CandidateProfile = () => {
                                     className="form-control"
                                     name="age"
                                     value={age}
-                                    type="text"
+                                    type="number"
                                     placeholder="35 Years"
+                                    required
                                   />
                                   <i className="fs-input-icon fa fa-child"></i>
                                 </div>
@@ -662,6 +671,7 @@ const CandidateProfile = () => {
                                     value={country}
                                     type="text"
                                     placeholder="USA"
+                                    required
                                   />
                                   <i className="fs-input-icon fa fa-globe-americas"></i>
                                 </div>
@@ -683,6 +693,7 @@ const CandidateProfile = () => {
                                     value={city}
                                     type="text"
                                     placeholder="Texas"
+                                    required
                                   />
                                   <i className="fs-input-icon fa fa-globe-americas"></i>
                                 </div>
@@ -702,8 +713,9 @@ const CandidateProfile = () => {
                                     className="form-control"
                                     name="pincode"
                                     value={pincode}
-                                    type="text"
+                                    type="number"
                                     placeholder="75462"
+                                    required
                                   />
                                   <i className="fs-input-icon fas fa-map-pin"></i>
                                 </div>
@@ -725,6 +737,7 @@ const CandidateProfile = () => {
                                     value={address}
                                     type="text"
                                     placeholder="1363-1385 Sunset Blvd Angeles, CA 90026 ,USA"
+                                    required
                                   />
                                   <i className="fs-input-icon fas fa-map-marker-alt"></i>
                                 </div>
@@ -746,6 +759,7 @@ const CandidateProfile = () => {
                                     setDescription(e.target.value)
                                   }
                                   rows="3"
+                                  required
                                 ></textarea>
                                 <p style={{ color: "red" }}>
                                   {formErrors.description}
@@ -774,8 +788,9 @@ const CandidateProfile = () => {
                                           className="form-control wt-form-control"
                                           name="facebook"
                                           value={facebook}
-                                          type="text"
+                                          type="url"
                                           placeholder="https://www.facebook.com/"
+                                          required
                                         />
                                         <i className="fs-input-icon fab fa-facebook-f"></i>
                                       </div>
@@ -797,8 +812,9 @@ const CandidateProfile = () => {
                                           className="form-control wt-form-control"
                                           name="twitter"
                                           value={twitter}
-                                          type="text"
+                                          type="url"
                                           placeholder="https://twitter.com/"
+                                          required
                                         />
                                         <i className="fs-input-icon fab fa-twitter"></i>
                                       </div>
@@ -820,8 +836,9 @@ const CandidateProfile = () => {
                                           className="form-control wt-form-control"
                                           name="linkedin"
                                           value={linkedin}
-                                          type="text"
+                                          type="url"
                                           placeholder="https://in.linkedin.com/"
+                                          required
                                         />
                                         <i className="fs-input-icon fab fa-linkedin-in"></i>
                                       </div>
@@ -833,14 +850,62 @@ const CandidateProfile = () => {
 
                                   <div className="col-lg-12 col-md-12">
                                     <div className="text-left">
+                            
+                                    <button
+                                type="submit"
+                                className="site-button"
+                              >
+                                Submit
+                              </button>
                                       <button
-                                        type="submit"
-                                        className="site-button"
-                                      >
-                                        Submit
-                                      </button>
-                                      &nbsp; &nbsp;
-                                      {message}
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#completeprofile"
+                                className="site-button "
+                                style={{ visibility: "hidden" }}
+                                data-toggle="modal"
+                                id="openPopup"
+                              >
+                               Submit
+                              </button>
+                              
+
+
+
+                                  
+                                       <div
+                                class="modal fade"
+                                id="completeprofile"
+                                data-bs-backdrop="static"
+                                data-bs-keyboard="false"
+                                tabindex="-1"
+                                aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true"
+                                style={{ background: "#00000059" }}
+                              >
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                      ></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                      <img
+                                        src="/jobzilla/images/423-4236284_png-images-success-icon-png-transparent-png-download.png"
+                                        className="w-25 "
+                                      />
+                                      <h4>  
+                                      {message}</h4>
+                                    </div>
+                                   
+                                  </div>
+                                </div>
+                              </div>
+                                    
                                     </div>
                                   </div>
                                 </div>
@@ -1006,7 +1071,7 @@ const CandidateProfile = () => {
                                     className="form-control"
                                     name="experience"
                                     placeholder={candidates?.experience}
-                                    type="text"
+                                    type="number"
                                   />
                                   <i className="fs-input-icon fa fa-user-edit"></i>
                                 </div>
@@ -1027,7 +1092,7 @@ const CandidateProfile = () => {
                                     className="form-control"
                                     name="currentSalary"
                                     placeholder={candidates?.currentSalary}
-                                    type="text"
+                                    type="number"
                                   />
                                   <i className="fs-input-icon fa fa-dollar-sign"></i>
                                 </div>
@@ -1048,7 +1113,7 @@ const CandidateProfile = () => {
                                     className="form-control"
                                     name="expectedSalary"
                                     placeholder={candidates?.expectedSalary}
-                                    type="text"
+                                    type="number"
                                   />
                                   <i className="fs-input-icon fa fa-dollar-sign"></i>
                                 </div>
@@ -1069,7 +1134,7 @@ const CandidateProfile = () => {
                                     className="form-control"
                                     name="age"
                                     placeholder={candidates?.age}
-                                    type="text"
+                                    type="number"
                                   />
                                   <i className="fs-input-icon fa fa-child"></i>
                                 </div>

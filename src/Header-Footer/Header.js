@@ -42,6 +42,7 @@ const Header = () => {
 
     localStorage.removeItem("token");
     localStorage.removeItem("userInfo");
+    localStorage.removeItem("accountType");
     setIsLoggedin(false);
     navigate("/login");
   };
@@ -113,6 +114,10 @@ const Header = () => {
           setData({
             User: json,
           });
+
+          if (json.message === "successfully register") {
+           navigate("/login")
+          }
           // if (json.message === "successfully register") {
           //   navigate("/login");
           // }
@@ -287,7 +292,7 @@ const Header = () => {
                   </li>
                   {isLoggedin === true ? (
                     <li className="has-child">
-                      <Link to="/employer-profile">Employers</Link>
+                      <Link >Employers</Link>
 
                       <ul className="sub-menu">
                         <li>
@@ -297,80 +302,37 @@ const Header = () => {
                           <Link to="/employer-list">Employers List</Link>
                         </li>
                       </ul>
-                      {/* <ul className="sub-menu">
-                      <li>
-                        <Link to="employer-grid">Employers Grid</Link>
-                      </li>
-                      <li>
-                        <Link to="employer-list">Employers List</Link>
-                      </li>
-                      <li className="has-child">
-                        <Link to="">Employers Detail</Link>
-                        <ul className="sub-menu">
-                          <li>
-                            <Link to="employer-detail">Detail 1</Link>
-                          </li>
-                          <li>
-                            <Link to="employer-detail-v2">Detail 2</Link>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <Link to="employer-profile">Profile</Link>
-                      </li>
-                      <li>
-                        <Link to="employer-resume">Resume</Link>
-                      </li>
-                      <li>
-                        <Link to="/employer-manage-job">Manage Jobs</Link>
-                      </li>
-                      {load === false ? (
-                        <li>
-                          <Link to="/employer-post-job">Post A Jobs</Link>
-                        </li>
-                      ) : (
-                        <li
-                          class="btn text-start"
-                          data-bs-toggle="modal"
-                          href="#exampleModalToggle"
-                          role="button"
-                        >
-                          <Link className="p-0 ps-1 py-1">Post A Jobs</Link>
-                        </li>
-                      )}
-                      <li>
-                        <Link to="employer-transaction">Transaction</Link>
-                      </li>
-                      <li>
-                        <Link to="candidate-grid">Browse Candidates</Link>
-                      </li>
-                      <li>
-                        <Link to="employer-change-password">
-                          Change Password
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="employer-account-fresher">
-                          Register Fresher
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="employer-account-professional">
-                          Register Professionals
-                        </Link>
-                      </li>
-                    </ul> */}
+                 
                     </li>
                   ) : (
-                    <li
-                      className="has-child"
-                      data-bs-toggle="modal"
-                      href="#exampleModalToggle2"
-                      role="button"
-                    >
-                      <Link>Employers</Link>
-                    </li>
+                    <>
+                      <li
+                        className="has-child"
+                        data-bs-toggle="modal"
+                        href="#exampleModalToggle3"
+                        role="button"
+                      >
+                        <Link>Employers</Link>
+                        <ul className="sub-menu">
+                        <li
+                         data-bs-toggle="modal"
+                         href="#exampleModalToggle3"
+                         role="button">
+                          <Link >Profile</Link>
+                        </li>
+                        <li
+                         data-bs-toggle="modal"
+                         href="#exampleModalToggle3"
+                         role="button">
+                          <Link>Employers List</Link>
+                        </li>
+                      </ul>
+                      </li>
+                      
+                    </>
                   )}
+
+                  
                   <li className="has-child">
                     <Link to="">Pages</Link>
                     <ul className="sub-menu">
@@ -406,65 +368,38 @@ const Header = () => {
                       </li>
                     </ul>
                   </li>
+                  {isLoggedin === true ? (
                   <li className="has-child">
                     <Link>Candidates</Link>
                     <ul className="sub-menu">
-                      <li>
-                        <Link to="/candidate-dashboard">Dashboard</Link>
+                      <li
+                      >
+                        <Link to="candidate-dashboard">Dashboard</Link>
                       </li>
                       <li>
                         <Link to="/candidate-list">Candidates List</Link>
                       </li>
                     </ul>
-                    {/* <ul className="sub-menu">
-                      <li>
-                        <Link to="candidate-grid">Candidates Grid</Link>
-                      </li>
-                      <li>
-                        <Link to="candidate-list">Candidates List</Link>
-                      </li>
-                      <li className="has-child">
-                        <Link to="">Candidate Detail</Link>
-                        <ul className="sub-menu">
-                          <li>
-                            <Link to="candidate-detail">Detail 1</Link>
-                          </li>
-                          <li>
-                            <Link to="candidate-detail-v2">Detail 2</Link>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <Link to="candidate-dashboard">Dashboard</Link>
-                      </li>
-                      <li>
-                        <Link to="candidate-profile">My Pfofile</Link>
-                      </li>
-                      <li>
-                        <Link to="candidate-jobs-applied">Applied Jobs</Link>
-                      </li>
-                      <li>
-                        <Link to="candidate-my-resume">My Resume</Link>
-                      </li>
-                      <li>
-                        <Link to="candidate-saved-jobs">Saved Jobs</Link>
-                      </li>
-                      <li>
-                        <Link to="candidate-cv-manager">CV Manager</Link>
-                      </li>
-                      <li>
-                        <Link to="candidate-job-alert">Job Alerts</Link>
-                      </li>
-                      <li>
-                        <Link to="candidate-change-password">
-                          Change Passeord
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="candidate-chat">Chat</Link>
-                      </li>
-                    </ul> */}
+                 
                   </li>
+                  ):( 
+                  <li className="has-child">
+                  <Link>Candidates</Link>
+                  <ul className="sub-menu">
+                    <li 
+                    data-bs-toggle="modal"
+                        href="#exampleModalToggle3"
+                        role="button">
+                      <Link>Dashboard</Link>
+                    </li>
+                    <li
+                     data-bs-toggle="modal"
+                     href="#exampleModalToggle3"
+                     role="button">
+                      <Link>Candidates List</Link>
+                    </li>
+                  </ul>
+                  </li>)}
                   <li className="has-child">
                     <Link to="">Blog</Link>
                     <ul className="sub-menu">
@@ -492,11 +427,19 @@ const Header = () => {
               <div className="extra-nav header-2-nav">
                 <div className="extra-cell">
                   <div className="header-search">
-                    <Link to="#search" className="header-search-icon">
+                  <button
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop"
+                      className="header-search-icon bg-transparent border-0 text-primary fs-4"
+                    >
                       <i className="feather-search"></i>
-                    </Link>
+                    </button>
                   </div>
                 </div>
+
+              
+
                 <div className="extra-cell">
                   <div className="header-nav-btn-section">
                     {isLoggedin === false ? (
@@ -695,22 +638,20 @@ const Header = () => {
                           </div>
                         </div>
 
-                        {message === "successfully register" ? (
-                          <Link to="/login">
-                            <button
-                              type="submit"
-                              data-bs-dismiss="modal"
-                              aria-label="Close"
-                              className="site-button "
-                            >
-                              Sign Up
-                            </button>
-                          </Link>
-                        ) : (
-                          <button type="submit" className="site-button ">
-                            Sign Up
-                          </button>
-                        )}
+                       
+                       
+                        
+                        
+                      
+                          <button
+                                type="submit"
+                                className="site-button "
+                              >
+                                 Sign Up
+                              </button>                  
+                              
+                               
+                                
                         {message === "successfully register" ? (
                           <span className="text-primary">{message}</span>
                         ) : (
@@ -877,42 +818,91 @@ const Header = () => {
         </div>
       </div>
 
+
       <div
-        class="modal fade"
-        id="exampleModalToggle2"
-        aria-hidden="true"
-        data-bs-backdrop="static"
-        aria-labelledby="exampleModalToggleLabel2"
-        tabindex="-1"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">
-                Modal 1
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">Please First Login</div>
-            <div class="modal-footer">
-              <button
-                class="btn btn-primary"
-                type="button"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
-                {" "}
-                <Link to="/login">GO {">>>"}</Link>
-              </button>
+                        class="modal fade"
+                        style={{background:"#00000052"}}
+                        id="exampleModalToggle2"
+                        aria-hidden="true"
+                        data-bs-backdrop="static"
+                        aria-labelledby="exampleModalToggleLabel2"
+                        tabindex="-1"
+                      >
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                           
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body text-center"><h3>Please First Login</h3></div>
+                            <div class="modal-footer justify-content-center">
+                              <button
+                                class="btn btn-primary"
+                                type="button"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              >
+                                {" "}
+                                <Link to="/login" className="text-white">GO {">>>"}</Link>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+            className="modal fade"
+            id="staticBackdrop"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            style={{background:"#00000052"}}
+            tabIndex={-1}
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog radius-xl  modal-fullscreen">
+              <div className="modal-content">
+                <div className="modal-header">
+              
+                  <button
+                    type="button"
+                    className="btn-close "
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  />
+                </div>
+                <div className="modal-body">
+                  <form
+                    className=" radius-xl"
+                    role="search"
+                    id="searchform"
+                    action="https://thewebmax.org/search"
+                    //   method="get"
+                  >
+                    <input
+                      className="form-control"
+                      value=""
+                      name="q"
+                      type="search"
+                      placeholder="Type to search"
+                    />
+                    <span className="input-group-append">
+                      <button type="button" className="search-btn">
+                        <i className="fa fa-paper-plane"></i>
+                      </button>
+                    </span>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+
+    
       {/* <!-- HEADER END --> */}
     </div>
   );
