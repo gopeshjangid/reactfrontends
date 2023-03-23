@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "./ReviewGetintouch";
 
-const BlogWritingServicesInformal = () => {
+const BlogWritingServicesPersuasive = () => {
   return (
     <div>
       <section className="top_sec p-0">
@@ -13,14 +13,14 @@ const BlogWritingServicesInformal = () => {
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1 className="top_Sec-h1 mt-3 p-0">
-                Unmatched Informal Blog Posts!
+                Persuasive Blog Post Services!
               </h1>
-              <h2 className="top_Sec-h2">Best Writers For Informal Blogs|</h2>
+              <h2 className="top_Sec-h2">Instant Persuasive Blog Post|</h2>
               <p className="top_Sec-p">
-                GetProWriter is the company to go to for all your informal blog
-                post requirements. We have seasoned professionals working with
-                us, who have been in this business for many years and we know
-                how to get the job done right.
+                GetProWriter is a reliable company offering excellent writing
+                services. Our blog posts are highly persuasive. We offer many
+                types of writing services and we have experience in serving top
+                clients across the globe.
               </p>
             </div>
 
@@ -37,83 +37,82 @@ const BlogWritingServicesInformal = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Want Expert Informal Blog Posts Writers? Find Them On
-              GetProWriter!
+              Want Persuasive Blog Posts That Convert? Reach Out To
+              GetProWriter!{" "}
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Your business can grow immensely with our informal blog post
-              services.
+              Grow your business with our persuasive blog post services.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Committed Bloggers</h3>
+                <h3 className="box-h3">Amazing Craft</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Niche Experienced</h3>
+                <h3 className="box-h3">Sincere Writers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Accurate Keywords</h3>
+                <h3 className="box-h3">Qualified Professionals</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Effective Blogs</h3>
+                <h3 className="box-h3">Effective Methods</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Publish Ready</h3>
+                <h3 className="box-h3">Outstanding Skills</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">No Plagiarism</h3>
+                <h3 className="box-h3">Industry Expertise</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Original Always</h3>
+                <h3 className="box-h3">Uplifting Brands</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Engrossing Content</h3>
+                <h3 className="box-h3">Fascinating Narratives</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Global Standards</h3>
+                <h3 className="box-h3">Truly Convincing</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Efficacy Guaranteed</h3>
+                <h3 className="box-h3">Persuasion Guaranteed</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Original & Genuine</h3>
+                <h3 className="box-h3">No Errors</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Knowledgeable Professionals</h3>
+                <h3 className="box-h3">Structured Content</h3>
               </div>
             </div>
           </div>
@@ -124,24 +123,25 @@ const BlogWritingServicesInformal = () => {
         <div className="container">
           <div className="row">
             <h2 className="rev_sec-h2">
-              Informal Blog Posts For Every Business
+              Businesses Have Benefitted With Our Persuasive Blog Posts
             </h2>
 
             <p className="rev_sec-p">
-              Our company has worked with clients from all over the world and
-              provided them with high-quality content that they can use on their
-              blogs or websites. We offer services for all kinds of businesses.
-              We’ve got an excellent track record when it comes to delivering
-              high-quality blog posts within your budget. This means that our
-              prices are very reasonable compared to other services on the
-              market.
+              Our company, GetProWriter, is known for persuasive blog post
+              services. Our staff is very helpful and friendly. The writers in
+              our team are very professional and experienced; they deliver
+              high-quality work in the shortest possible time frame. The prices
+              are competitive compared to other companies offering similar
+              services.
             </p>
             <p className="rev_sec-p">
-              We offer easy-to-understand, easy-to-use, and effective content
-              writing solutions. Our team of professional writers will make sure
-              that your business benefits from its content services. So, if
-              you’re looking for a company that can offer the best content for
-              your informal blog posts, then here we are!
+              Our company offers outstanding persuasive blog post services. We
+              have writers who have been serving the industry for many years
+              now. You can be sure that we will deliver work that will stand out
+              for you. We always strive to provide our clients with quality blog
+              posts that are unique and plagiarism-free. We have a team of
+              highly trained staff who have the best experience in performing
+              all kinds of writing tasks.
             </p>
           </div>
         </div>
@@ -151,11 +151,12 @@ const BlogWritingServicesInformal = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              Affordable Informal Blog Post Service On GetProWriter
+              Best Industry Writers For Persuasive Blog Posts
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Call us anytime to get the best informal blog post services.
+              Give a call to let your business grow with our persuasive blog
+              posts.
             </p>
 
             <div class="col-md-6">
@@ -226,22 +227,24 @@ const BlogWritingServicesInformal = () => {
               </div>
             </div>
             <div class="col-md-6">
-              <h2 class="count_h2">Skilled Writers For Informal Blog Posts</h2>
+              <h2 class="count_h2">
+                Qualified Writers For Persuasive Blog Posts
+              </h2>
               <p class="count-p">
-                All our informal blog post writers are highly skilled. Most of
-                them have a background in relevant fields like journalism,
-                marketing, public relations, etc. They have years of experience
-                writing content that’s both engaging and fun to read and they’re
-                just a click away!
+                We offer a wide range of services including blog writing,
+                article writing, ebooks, and social media content, among other
+                items. For us, nothing is greater than content quality. You can
+                also get your content redrafted if you feel like there is
+                something wrong with your existing blog.
               </p>
               <p class="count-p">
-                When you’re looking for a writer to help you write your next
-                blog post, you want someone who can bring their A-game. You want
-                someone who will make your ideas come alive, who can take on any
-                topic and make it shine, and who will always be on time. And
-                that’s why we are here to help you out, any time. Simply call us
-                and we will get back with the most appropriate plan for you. You
-                just need to reach out to us and send us your requirements.
+                Our company is affordable and you will not break your bank
+                account to hire us. You can simply place an order and receive it
+                within hours. Our customer service agents are also on standby
+                24/7 to answer all your questions about our services and how we
+                can help you achieve your goals. If you want someone to create
+                your blog content, then let us know because we have experts from
+                various industries who will draft it in the right way.
               </p>
             </div>
           </div>
@@ -252,38 +255,38 @@ const BlogWritingServicesInformal = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-              Informal Blog Post Writing Services To Attract Audiences
+              Persuasive Blog Post Services Available Easily
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Acquire our services for unmatched informal blog posts.
+              Acquire our persuasive blog post services to stand out.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Informal Blog Posts Of Outstanding Quality
+                Top-Notch Persuasive Blog Posts
               </h3>
               <p className="ab_sec2-p rws-p">
-                We offer informal blog posts which are of outstanding quality.
-                Our goal is to provide you with blog posts that will be
-                interactive and entertaining for your readers, while still being
-                informative. We do this by providing you with the best writing
-                team we can find.
+                The aim of a great persuasive essay is to win over your
+                audience. Persuasive essays are used in a wide range of
+                situations, from business presentations to student assignments.
+                They are often used in the academic world to help students
+                understand opposing viewpoints and develop their own opinions
+                about sensitive issues.
               </p>
               <p className="ab_sec2-p rws-p">
-                Every writer in our team has a proven track record of writing
-                for a wide variety of clients and topics. They also have years
-                of experience in the industry that they write about. We know how
-                important it is to have content that stands out from the crowd,
-                so we make sure that every article we write is simply
-                breathtaking. We offer a wide range of writing services –
-                including informal blog posts, review writing, articles, social
-                media content, ebooks, etc.
+                Our company offers the best persuasive blog post services in the
+                industry. We have writers who have been serving the industry for
+                many years now. They can write you an excellent persuasive blog
+                post within the shortest time possible. Our writers are highly
+                qualified and experienced in writing persuasive blog posts of
+                any level and topic. So, what are you waiting for? Reach out to
+                us to acquire our persuasive blog post writing service today!
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Outstanding-Quality.webp"
+                src="/writer/img/Top-notch.webp"
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -291,58 +294,60 @@ const BlogWritingServicesInformal = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Informal-Unique-content.webp"
+                src="/writer/img/Extremely-creative.webp"
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Informal Blog Posts That Are Unique
+                Extremely Creative Persuasive Blog Posts
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our blog posts are written with the goal of giving readers
-                valuable information about businesses. All of our informal blog
-                posts are written by seasoned writers. You can be sure that
-                every blog post has been carefully crafted to ensure it is
-                engaging, effective, and on-brand.
+                We have writers in our team who are extremely creative. They
+                have been serving the industry with dedication since our
+                company’s inception. They have exceptional skills in writing
+                persuasive blog posts, which are a key factor in converting
+                customers into loyal followers.
               </p>
               <p className="ab_sec2-p rws-p">
-                At GetProWriter, we take blog post writing very seriously. We go
-                out of the way to ensure that your blog posts are SEO-friendly,
-                well-written, and enriching. Our writers are experts in their
-                fields and will craft the best piece of content for your
-                audience. We understand the importance of having a well-written
-                blog and we want to help you succeed. That’s why we’ve created a
-                platform that makes it easy for you to find the perfect writer
-                for your project.
+                You might be wondering how we can offer such high-quality
+                persuasive blog posts at affordable prices? Well, we do not
+                compromise on quality while keeping our prices low because we
+                believe that every client deserves quality work regardless of
+                his or her budget limitations. Our writers work hard day and
+                night to ensure that each blog post they submit meets or exceeds
+                your expectations at all times. With our persuasive blog post
+                service, you can expect creative content to be drafted every
+                time!
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Informal Blog Posts That Represent Diverse Voices
+                Persuasive Blog Posts Written By Diverse Writers
               </h3>
               <p className="ab_sec2-p rws-p">
-                We know how important it is to you to publish high-quality
-                informal blog post content that helps you achieve your business
-                goals. And we are here to help you with that. We’ve been working
-                with clients all over the world for years, so no matter what the
-                nature of your company is, we’ll be able to meet your needs
-                quickly and accurately.
+                Our company has a diverse group of writers for persuasive blog
+                post services. We have writers who have been serving various
+                industries with content writing. They are highly experienced in
+                writing blog posts that can help you to market your product or
+                service effectively. It is important to note that our writers
+                are experts in writing persuasive blog posts. They understand
+                how to make your customers stick to your brand and buy from you
+                more often.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our company, GetProWriter provides the best quality blog post
-                writing services in the industry, allowing you to focus on
-                what’s important: your business. Whether your project is a
-                personal blog or a corporate website, we’ll get the job done
-                right and on time. We deliver high-quality content within a
-                short time frame without compromising on the quality.
+                Our company, GPW, is one of the best providers of persuasive
+                blog posts because we hire only the best writers who know how to
+                write compelling content. Their skills, experience, and
+                expertise allow them to come up with high-quality content that
+                will inspire your audience to buy from you.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Represent-Diverse-voices.webp"
+                src="/writer/img/Diverse-writers.webp"
                 alt="Online-review"
                 className="rws-img"
               />
@@ -350,56 +355,57 @@ const BlogWritingServicesInformal = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Business-boost.webp"
+                src="/writer/img/Boost-Business-image.webp"
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Informal Blog Posts To Boost Your Business Image
+                Persuasive Blog Post Boosting Business Image
               </h3>
               <p className="ab_sec2-p rws-p">
-                The informal blog posts written by our writers will surely boost
-                your business image. We have professional writers on board who
-                have a passion for writing. They know how to write in a way that
-                will appeal to your target audience. They understand what makes
-                people tick and they can take your business goals and turn them
-                into something that will help you achieve them.
+                When choosing a writer for your project, it is important that he
+                knows about the topic well enough so that he can provide quality
+                information about it in the blog post. You can also get someone
+                who has a way with words so that he can express the content
+                clearly. The best writer should not struggle with grammar
+                mistakes or typos that may affect the blog’s credibility. And
+                that’s why you need us.
               </p>
               <p className="ab_sec2-p rws-p">
-                We understand how important it is for you to have an image that
-                reflects the quality of your products or services and we want to
-                help you get there. If you’re looking to enhance your business
-                image with the content we create for you, then hire an expert
-                writer from us today.
+                For our clients, we always ensure that they get their money’s
+                worth. We also ensure that they receive high-quality content
+                that will help them achieve their goals. With our persuasive
+                blog post services, you can be assured that you will be getting
+                the best.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Originality Maintained In All Informal Blog Posts
+                Original Writing Styles In Persuasive Blog Posts
               </h3>
               <p className="ab_sec2-p rws-p">
-                When our writers create informal blog posts for you, they
-                maintain optimal originality. All our writers are dedicated to
-                producing original content, so every time you work with us,
-                we’ll make sure that your audience is getting the most original
-                content possible.
+                We have writers who know exactly what it takes to come up with a
+                compelling blog post that will help you sell your product or
+                service. They are well-versed in various fields such as
+                technology, business, and other related topics. They can also
+                write about personal finance, health, lifestyle, and any other
+                topic you want us to cover in your article.
               </p>
               <p className="ab_sec2-p rws-p">
-                We know that you want to be able to stand out from the crowd and
-                drive traffic to your site through quality writing, so we take
-                care of all the hard work so that you can focus on other things.
-                Our team of expert writers is trained to ensure that all of your
-                blog posts are fresh. They know how to write in a way that will
-                engage readers so that you can continue to build an audience and
-                grow your business. And we take our work very seriously.
+                All our writers maintain originality in their persuasive blog
+                post content. We know that plagiarism is the biggest threat to
+                your business and we take it very seriously. We always use the
+                best tools for checking for plagiarism. You can hire our writers
+                to write a blog post on a specific topic or topic range such as
+                technology, startups, health, fitness, science, etc.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Originality-2.webp"
+                src="/writer/img/Original-writing-(1).webp"
                 alt="Real-review-writer"
                 className="rws-img"
               />
@@ -407,31 +413,29 @@ const BlogWritingServicesInformal = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Expertise-8.webp"
+                src="/writer/img/Expertise-(1).webp"
                 alt="Expertise"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise Blended Into Informal Blog Posts
+                Persuasive Blog Post With GetProWriter Expertise
               </h3>
               <p className="ab_sec2-p rws-p">
-                GetProWriter offers a unique blend of content expertise,
-                creativity, and strategic thinking, which is the perfect
-                ingredient for your informal blog content. You want something
-                that will inform your readers while also making them feel like
-                they’re having a conversation with you. You want to be able to
-                include industry knowledge, but also make the informal blog
-                posts relatable. And that’s what we offer.
+                The main benefit of GetProWriter expertise is that we have a
+                large pool of writers from all over the world. This means that
+                you are more likely to get your order completed by a writer who
+                is familiar with your topic and can write about it in a way that
+                makes sense for your target audience.
               </p>
               <p className="ab_sec2-p rws-p">
-                GetProWriter is here to just provide the most remarkable content
-                to you. We’ve been writing content for businesses for many years
-                now and we have the experience necessary to make sure your blog
-                posts are perfect every time. With our expertise, you can be
-                assured that your readers will be receiving content that really
-                matters.
+                When you place an order with us, you will get access to our team
+                of professional writers. All our writers maintain originality in
+                their persuasive blog post content. Our blog writing service is
+                available at very affordable prices. So, if you have been
+                struggling to find value-for-money blog post services, then give
+                us a try now!
               </p>
             </div>
           </div>
@@ -643,10 +647,10 @@ const BlogWritingServicesInformal = () => {
         <div className="container">
           <div className="row">
             <h2 className="get_sec-h2">
-              Why Hire Our Short Blog Post Writers?
+              Why Hire Our Persuasive Blog Post Writers?
             </h2>
             <p className="get_sec-p">
-              To let your business become an industry leader.
+              To add the aspect of persuasion to your business.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -658,7 +662,7 @@ const BlogWritingServicesInformal = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">Informal blog posts experts</span>
+                    <span className="spa_h2">Experts who know their craft</span>
                   </li>
                 </ol>
               </div>
@@ -673,7 +677,7 @@ const BlogWritingServicesInformal = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Focus on the expected outcomes
+                      Content creation with the objectives in mind
                     </span>
                   </li>
                 </ol>
@@ -689,7 +693,7 @@ const BlogWritingServicesInformal = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Timely delivery of error-free content
+                      Content delivery with the timeline in mind
                     </span>
                   </li>
                 </ol>
@@ -697,20 +701,20 @@ const BlogWritingServicesInformal = () => {
             </div>
 
             <p className="review1-p">
-              You must hire our informal blog post writers if you wish to become
-              an industry leader. Our team of freelance writers is highly
-              skilled and experienced and we are proud to offer our services. If
-              you are looking for a reliable, affordable option for your blog
-              posts, we are the right choice for you.
+              Our writers will craft unique content that is appealing to your
+              target audience and drives conversions. To ensure on-time delivery
+              of our services, we use only the best tools and strategies. We
+              know how important it is for businesses to keep costs down, so we
+              offer affordable prices for all of our services.
             </p>
 
             <p className="review1-p">
-              We understand that every company has its own unique needs when it
-              comes to writing blog posts for its website and that’s why we only
-              hire experts. We offer custom pricing options and packages that
-              can fit into a variety of budgets. We have writers who focus on
-              the best content output. And our work is delivered on time and
-              without any errors.
+              When you order a blog post, our team of professional writers will
+              work with you to determine what type of information you need.
+              Then, they will research the topic and write the post in such a
+              way that it is relevant to your industry and company. You can be
+              assured that our writers will maintain the highest level of
+              quality in their persuasive blog post content.
             </p>
           </div>
         </div>
@@ -724,19 +728,22 @@ const BlogWritingServicesInformal = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  We hired some of the best writers from GetProWriter for our
-                  informal blog content. They did a fantastic job! We were
-                  looking to hire someone who could write in a conversational
-                  tone and we were not disappointed at all.
+                  We went ahead with GetProWriter for persuasive blog post
+                  content and we are satisfied with the results. The
+                  professionals are easy to work with. We were very happy with
+                  the writer we hired because he did an excellent job on his
+                  first assignment.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Santiago-Yorman.webp"
+                    src="/writer/img/Charles-Beckham.webp"
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Santiago Yorman</h3>
-                  <p className="testi_box-p">SEM Account Manager, Marketide</p>
+                  <h3 className="testi_box-h3">Charles Beckham</h3>
+                  <p className="testi_box-p">
+                    Marketing Technologist, Launchic
+                  </p>
                 </div>
               </div>
             </div>
@@ -744,19 +751,22 @@ const BlogWritingServicesInformal = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  The writer I hired from GPW understood what my clients wanted
-                  right away. He was able to deliver some great articles that
-                  really represented these clients well. The content they
-                  produced was on-brand, easy to read, and engaging.
+                  We chose to work with a writer from GetProWriter for
+                  persuasive blog posts. The writer was very prompt in
+                  responding to our queries and she did a great job on the final
+                  draft. We have used this service several times now and we have
+                  always been happy with the quality of content.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Bill-Heusen.webp"
+                    src="/writer/img/Boris-Walker.webp"
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Bill Heusen</h3>
-                  <p className="testi_box-p">Email Marketer, Trand</p>
+                  <h3 className="testi_box-h3">Boris Walker</h3>
+                  <p className="testi_box-p">
+                    Social Media Coordinator, Brandcog
+                  </p>
                 </div>
               </div>
             </div>
@@ -820,7 +830,8 @@ const BlogWritingServicesInformal = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        Do you have informal blog posts writers in your company?
+                        How do we keep a track of industry trends for persuasive
+                        blog posts?
                       </button>
                     </h2>
 
@@ -831,10 +842,12 @@ const BlogWritingServicesInformal = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        Yes, we do. In fact, we have some of the best informal
-                        blog post writers in our company. We believe that the
-                        best writing comes from a place of authenticity and
-                        honesty. And our writers understand that very well.
+                        To make your blog persuasive, keeping a track of the
+                        industry trends is important. If you can’t do that
+                        yourself, simply hire a capable freelance writer. And
+                        our company is the best option for you. We have the most
+                        promising writers on board to help you with your writing
+                        assignments.
                       </div>
                     </div>
                   </div>
@@ -852,8 +865,7 @@ const BlogWritingServicesInformal = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        How do we create the best informal blog post content for
-                        our business?
+                        What’s the best ingredient for persuasive blog posts?
                       </button>
                     </h2>
 
@@ -864,14 +876,15 @@ const BlogWritingServicesInformal = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        You can create the best informal blog post content for
-                        your business by simply hiring excellent writers from
-                        across the industry. And our company definitely has a
-                        very strong team. Our writers also review every piece of
-                        writing thoroughly before sending it over to you. This
-                        is important because it makes sure that your content is
-                        written well and that it can be easily understood by
-                        your audience.
+                        The best way to make your blog persuasive is by using
+                        the right words because they are what people remember.
+                        You can use words in different ways to make your blog
+                        more persuasive. Our writers are skilled at creating
+                        compelling content for blogs, websites, and social media
+                        accounts. They have experience working with different
+                        types of businesses in different industries and can
+                        provide you with top-quality articles on any topic. You
+                        can hire a writer from us today!
                       </div>
                     </div>
                   </div>
@@ -890,8 +903,7 @@ const BlogWritingServicesInformal = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      How to bring experienced informal blog post writers on
-                      board?
+                      Do you have experienced writers for persuasive blog posts?
                     </button>
                   </h2>
 
@@ -902,14 +914,14 @@ const BlogWritingServicesInformal = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      You can bring experienced informal blog post writers on
-                      board by making a capable in-house team or hiring
-                      freelance blog writers with the right expertise. Our
-                      company is known to offer affordable and quality-driven
-                      services. Your blog is a reflection of your brand, so it
-                      needs to be written with care and attention. And we ensure
-                      that every step of the way. So, what are you waiting for?
-                      Reach out to us to acquire our services today.
+                      Yes. We have experts who will create unique persuasive
+                      blog posts that will be relevant to your audience’s
+                      interests and needs. They know how to write in an engaging
+                      manner so readers won’t get bored while reading through
+                      your posts or newsletters. Our writers are also familiar
+                      with SEO techniques which they use while crafting their
+                      articles to make sure they get maximum exposure on search
+                      engines like Google and Bing.
                     </div>
                   </div>
                 </div>
@@ -922,4 +934,4 @@ const BlogWritingServicesInformal = () => {
   );
 };
 
-export default BlogWritingServicesInformal;
+export default BlogWritingServicesPersuasive;

@@ -5,22 +5,20 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "./ReviewGetintouch";
 
-const BlogWritingServicesInformal = () => {
+const BlogWritingServicesViral = () => {
   return (
     <div>
       <section className="top_sec p-0">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1 mt-3 p-0">
-                Unmatched Informal Blog Posts!
-              </h1>
-              <h2 className="top_Sec-h2">Best Writers For Informal Blogs|</h2>
+              <h1 className="top_Sec-h1 mt-3 p-0">Stellar Viral Blog Posts!</h1>
+              <h2 className="top_Sec-h2">Creative Viral Blog Posts|</h2>
               <p className="top_Sec-p">
-                GetProWriter is the company to go to for all your informal blog
-                post requirements. We have seasoned professionals working with
-                us, who have been in this business for many years and we know
-                how to get the job done right.
+                GetProWriter is one of the best companies in the sector offering
+                viral blog post services. GetProWriter offers a full range of
+                writing services to its customers, including blogging,
+                ghostwriting, copywriting, articles, ebooks, and more.
               </p>
             </div>
 
@@ -37,83 +35,81 @@ const BlogWritingServicesInformal = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Want Expert Informal Blog Posts Writers? Find Them On
-              GetProWriter!
+              Want Top-Notch Viral Blog Posts? Reach Out To GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Your business can grow immensely with our informal blog post
-              services.
+              Our viral blog posts can ensure phenomenal business growth
             </p>
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Committed Bloggers</h3>
+                <h3 className="box-h3">Amazing Professionals</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Niche Experienced</h3>
+                <h3 className="box-h3">Experts with Knowledge</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Accurate Keywords</h3>
+                <h3 className="box-h3">Go-to Writers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Effective Blogs</h3>
+                <h3 className="box-h3">Effective Narration</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Publish Ready</h3>
+                <h3 className="box-h3">Apt Content</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">No Plagiarism</h3>
+                <h3 className="box-h3">Noticeable Blogs</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Original Always</h3>
+                <h3 className="box-h3">Celebrated Bloggers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Engrossing Content</h3>
+                <h3 className="box-h3">Truly Dedicated</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Global Standards</h3>
+                <h3 className="box-h3">Quality Unrivalled</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Efficacy Guaranteed</h3>
+                <h3 className="box-h3">Original Writing</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Original & Genuine</h3>
+                <h3 className="box-h3">Organic Flow</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Knowledgeable Professionals</h3>
+                <h3 className="box-h3">Informative & Enriching</h3>
               </div>
             </div>
           </div>
@@ -124,24 +120,23 @@ const BlogWritingServicesInformal = () => {
         <div className="container">
           <div className="row">
             <h2 className="rev_sec-h2">
-              Informal Blog Posts For Every Business
+              Nurture Your Enterprise With Our Viral Blog Posts Services
             </h2>
 
             <p className="rev_sec-p">
-              Our company has worked with clients from all over the world and
-              provided them with high-quality content that they can use on their
-              blogs or websites. We offer services for all kinds of businesses.
-              We’ve got an excellent track record when it comes to delivering
-              high-quality blog posts within your budget. This means that our
-              prices are very reasonable compared to other services on the
-              market.
+              Our company was founded to get professional writers on board who
+              have years of experience in their fields. We provide professional
+              content writing services for blogs, websites, social media, etc.
+              We have a team of professional writers who understand all aspects
+              of writing and can produce high-quality content that will help you
+              achieve your business goals. With us, you can be sure that you
+              will receive a quality blog post written by a highly-skilled
+              writer who knows what is to be included in the content.
             </p>
             <p className="rev_sec-p">
-              We offer easy-to-understand, easy-to-use, and effective content
-              writing solutions. Our team of professional writers will make sure
-              that your business benefits from its content services. So, if
-              you’re looking for a company that can offer the best content for
-              your informal blog posts, then here we are!
+              The customer service team at GetProWriter is very friendly and
+              always ready to help you with any questions or concerns you may
+              have. We have received many positive reviews from our clients.
             </p>
           </div>
         </div>
@@ -151,11 +146,11 @@ const BlogWritingServicesInformal = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              Affordable Informal Blog Post Service On GetProWriter
+              Industry’s Top Viral Blog Posts Writers Only On GetProWriter
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Call us anytime to get the best informal blog post services.
+              Send us your Viral Blog Posts query now.
             </p>
 
             <div class="col-md-6">
@@ -226,22 +221,23 @@ const BlogWritingServicesInformal = () => {
               </div>
             </div>
             <div class="col-md-6">
-              <h2 class="count_h2">Skilled Writers For Informal Blog Posts</h2>
+              <h2 class="count_h2">Skilled Writers For Viral Blog Posts</h2>
               <p class="count-p">
-                All our informal blog post writers are highly skilled. Most of
-                them have a background in relevant fields like journalism,
-                marketing, public relations, etc. They have years of experience
-                writing content that’s both engaging and fun to read and they’re
-                just a click away!
+                Our company, GetProWriter, is considered one of the leading
+                companies in the industry offering content writing services. We
+                have a team of professional writers who have been writing for
+                many years. All our writers are extremely skilled. They write
+                high-quality blog posts that will help you get more traffic,
+                leads, and sales. We provide viral blog posts for all types of
+                businesses.
               </p>
               <p class="count-p">
-                When you’re looking for a writer to help you write your next
-                blog post, you want someone who can bring their A-game. You want
-                someone who will make your ideas come alive, who can take on any
-                topic and make it shine, and who will always be on time. And
-                that’s why we are here to help you out, any time. Simply call us
-                and we will get back with the most appropriate plan for you. You
-                just need to reach out to us and send us your requirements.
+                One of the most important factors to consider when choosing a
+                company is its experience in the industry. And our extensive
+                experience makes us your best choice. We are dedicated to
+                providing clients with well-drafted content that has been
+                written by experts in their fields who understand your needs and
+                how to answer them.
               </p>
             </div>
           </div>
@@ -252,38 +248,39 @@ const BlogWritingServicesInformal = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-              Informal Blog Post Writing Services To Attract Audiences
+              Affordable Viral Blog Posts Services On GPW
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Acquire our services for unmatched informal blog posts.
+              Acquire our viral blog posts services to lead the league.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Informal Blog Posts Of Outstanding Quality
+                Quality Assured In All Viral Blog Posts
               </h3>
               <p className="ab_sec2-p rws-p">
-                We offer informal blog posts which are of outstanding quality.
-                Our goal is to provide you with blog posts that will be
-                interactive and entertaining for your readers, while still being
-                informative. We do this by providing you with the best writing
-                team we can find.
+                Viral blog post writing services are a great way for companies
+                to break into the blogosphere. Blogging is a powerful tool that
+                can be used by businesses to promote their products and services
+                to potential customers. A viral blog post is one that goes viral
+                and gets shared on social media platforms like Facebook,
+                Twitter, and Pinterest. This kind of content will not only drive
+                traffic to your website but also increase sales through targeted
+                marketing efforts.
               </p>
               <p className="ab_sec2-p rws-p">
-                Every writer in our team has a proven track record of writing
-                for a wide variety of clients and topics. They also have years
-                of experience in the industry that they write about. We know how
-                important it is to have content that stands out from the crowd,
-                so we make sure that every article we write is simply
-                breathtaking. We offer a wide range of writing services –
-                including informal blog posts, review writing, articles, social
-                media content, ebooks, etc.
+                If you want the attention of audiences, then acquiring our viral
+                blog post service will help. We offer quality content writing
+                and editing services at affordable prices in different styles
+                such as business and creative writing. Our writers have proven
+                expertise in various fields. Our team only offers top-notch work
+                to clients, every time!
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Outstanding-Quality.webp"
+                src="/writer/img/Quality-viral-blog-post.webp"
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -291,58 +288,56 @@ const BlogWritingServicesInformal = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Informal-Unique-content.webp"
+                src="/writer/img/Wll-crafted-viral-blog-posts.webp"
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Informal Blog Posts That Are Unique
+                Well-crafted Viral Blog Posts
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our blog posts are written with the goal of giving readers
-                valuable information about businesses. All of our informal blog
-                posts are written by seasoned writers. You can be sure that
-                every blog post has been carefully crafted to ensure it is
-                engaging, effective, and on-brand.
+                A viral blog post is an excellent way to catch the attention of
+                audiences. If you want to make your business more visible in the
+                market, then you need to get our viral blog post service. We
+                have many years of experience in writing and creating content
+                that makes people talk about it. We are experts when it comes to
+                creating content that can go viral on the internet.
               </p>
               <p className="ab_sec2-p rws-p">
-                At GetProWriter, we take blog post writing very seriously. We go
-                out of the way to ensure that your blog posts are SEO-friendly,
-                well-written, and enriching. Our writers are experts in their
-                fields and will craft the best piece of content for your
-                audience. We understand the importance of having a well-written
-                blog and we want to help you succeed. That’s why we’ve created a
-                platform that makes it easy for you to find the perfect writer
-                for your project.
+                We have been helping businesses succeed since our inception by
+                providing them with quality content writing services at
+                affordable prices. We understand that every business has unique
+                needs when it comes to content creation so we want to make sure
+                that you get exactly what you need when you come to us for help!
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Informal Blog Posts That Represent Diverse Voices
+                Diverse Cohort Of Writers For Viral Blog Posts
               </h3>
               <p className="ab_sec2-p rws-p">
-                We know how important it is to you to publish high-quality
-                informal blog post content that helps you achieve your business
-                goals. And we are here to help you with that. We’ve been working
-                with clients all over the world for years, so no matter what the
-                nature of your company is, we’ll be able to meet your needs
-                quickly and accurately.
+                We have a diverse cohort of professionals on our team. What this
+                means is that we get you the best writers for viral blog posts.
+                You don’t have to spend a lot of money on marketing campaigns if
+                you have a good content writer who knows how to create viral
+                blog posts. And we give you just that!
               </p>
               <p className="ab_sec2-p rws-p">
-                Our company, GetProWriter provides the best quality blog post
-                writing services in the industry, allowing you to focus on
-                what’s important: your business. Whether your project is a
-                personal blog or a corporate website, we’ll get the job done
-                right and on time. We deliver high-quality content within a
-                short time frame without compromising on the quality.
+                Viral blog posts can help increase the visibility of your
+                business and improve its brand value among the customers. Our
+                viral blog post services are designed to be shared across social
+                media channels. Our team of professional writers and marketers
+                work together to create high-quality content that can help you
+                attract more customers, increase sales, and bring more profit to
+                your business.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Represent-Diverse-voices.webp"
+                src="/writer/img/Writer-blog-post.webp"
                 alt="Online-review"
                 className="rws-img"
               />
@@ -350,56 +345,60 @@ const BlogWritingServicesInformal = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Business-boost.webp"
+                src="/writer/img/Boost-Corporation-image.webp"
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Informal Blog Posts To Boost Your Business Image
+                Viral Blog Posts To Boost Corporation Image
               </h3>
               <p className="ab_sec2-p rws-p">
-                The informal blog posts written by our writers will surely boost
-                your business image. We have professional writers on board who
-                have a passion for writing. They know how to write in a way that
-                will appeal to your target audience. They understand what makes
-                people tick and they can take your business goals and turn them
-                into something that will help you achieve them.
+                If you want your corporate image to go up, then reach out to us
+                today. All you need is an amazing viral blog post from us and
+                your company will be the talk of the industry. We offer a wide
+                range of services related to content marketing and blog posts.
+                We have a team of writers who are experienced in writing blog
+                posts that can go viral.
               </p>
               <p className="ab_sec2-p rws-p">
-                We understand how important it is for you to have an image that
-                reflects the quality of your products or services and we want to
-                help you get there. If you’re looking to enhance your business
-                image with the content we create for you, then hire an expert
-                writer from us today.
+                Our expert writers will write content that is suitable for your
+                industry, company, and brand. They know how to make your content
+                shareable and engaging. Our writers will create unique and
+                original content that will help you generate more leads,
+                increase sales, and improve the overall reputation of your
+                business. We understand the importance of having quality content
+                so we only hire professional writers who have the right
+                experience.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Originality Maintained In All Informal Blog Posts
+                Originality In All Viral Blog Posts
               </h3>
               <p className="ab_sec2-p rws-p">
-                When our writers create informal blog posts for you, they
-                maintain optimal originality. All our writers are dedicated to
-                producing original content, so every time you work with us,
-                we’ll make sure that your audience is getting the most original
-                content possible.
+                We are a top-notch blog writing service provider that helps
+                businesses in creating viral content for their blogs. We create
+                an article that will be shared and discussed among the readers.
+                Our viral blog post writing services are affordable and
+                effective. All our blog posts are written by skilled writers and
+                they contain original thoughts.
               </p>
               <p className="ab_sec2-p rws-p">
-                We know that you want to be able to stand out from the crowd and
-                drive traffic to your site through quality writing, so we take
-                care of all the hard work so that you can focus on other things.
-                Our team of expert writers is trained to ensure that all of your
-                blog posts are fresh. They know how to write in a way that will
-                engage readers so that you can continue to build an audience and
-                grow your business. And we take our work very seriously.
+                As a business owner, you want to make sure that your website is
+                well-optimized so that you can attract more visitors and
+                increase your online sales. Also, your content should be
+                original and unique. A well-written blog post can help you
+                achieve this goal as it encourages visitors to read more about
+                your products or services. And we are the right company for all
+                of this!
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Originality-2.webp"
+                src="/writer/img/Originality-(1).webp"
                 alt="Real-review-writer"
                 className="rws-img"
               />
@@ -407,31 +406,30 @@ const BlogWritingServicesInformal = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Expertise-8.webp"
+                src="/writer/img/Expertise-writer.webp"
                 alt="Expertise"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise Blended Into Informal Blog Posts
+                Viral Blog Posts With GetProWriter Expertise
               </h3>
               <p className="ab_sec2-p rws-p">
-                GetProWriter offers a unique blend of content expertise,
-                creativity, and strategic thinking, which is the perfect
-                ingredient for your informal blog content. You want something
-                that will inform your readers while also making them feel like
-                they’re having a conversation with you. You want to be able to
-                include industry knowledge, but also make the informal blog
-                posts relatable. And that’s what we offer.
+                When it comes to creating high-quality content for your website,
+                GetProWriter expertise will set the ball rolling. Our writers
+                specialize in writing posts that will go viral instantly. With
+                our blog writing services, you will receive compelling articles
+                that will keep readers engaged for longer periods of time.
               </p>
               <p className="ab_sec2-p rws-p">
-                GetProWriter is here to just provide the most remarkable content
-                to you. We’ve been writing content for businesses for many years
-                now and we have the experience necessary to make sure your blog
-                posts are perfect every time. With our expertise, you can be
-                assured that your readers will be receiving content that really
-                matters.
+                We have been providing excellent viral blog writing services for
+                many years now. Our team consists of highly skilled writers who
+                have worked with some of the biggest brands in the world. They
+                are also proficient in various fields such as finance,
+                technology, health care, travel industry, etc. Therefore, they
+                can create unique articles based on your requirements without
+                any difficulty at all!
               </p>
             </div>
           </div>
@@ -643,11 +641,9 @@ const BlogWritingServicesInformal = () => {
         <div className="container">
           <div className="row">
             <h2 className="get_sec-h2">
-              Why Hire Our Short Blog Post Writers?
+              Why Hire Our Viral Blog Posts Writers?
             </h2>
-            <p className="get_sec-p">
-              To let your business become an industry leader.
-            </p>
+            <p className="get_sec-p">To help your business prosper.</p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
               <div className="box-ol">
@@ -658,22 +654,8 @@ const BlogWritingServicesInformal = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">Informal blog posts experts</span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="box-ol">
-                <ol className="m-0 d-flex align-items-center p-0">
-                  <li className="in_li">
-                    <span className="right_span">
-                      <i aria-hidden="true" className="fas fa-check-circle"></i>
-                    </span>
-                  </li>
-                  <li className="in_li">
                     <span className="spa_h2">
-                      Focus on the expected outcomes
+                      Viral blog post professionals
                     </span>
                   </li>
                 </ol>
@@ -689,7 +671,23 @@ const BlogWritingServicesInformal = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Timely delivery of error-free content
+                      Dedicated viral blog post writers
+                    </span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="box-ol">
+                <ol className="m-0 d-flex align-items-center p-0">
+                  <li className="in_li">
+                    <span className="right_span">
+                      <i aria-hidden="true" className="fas fa-check-circle"></i>
+                    </span>
+                  </li>
+                  <li className="in_li">
+                    <span className="spa_h2">
+                      On-time viral blog posts for all
                     </span>
                   </li>
                 </ol>
@@ -697,20 +695,20 @@ const BlogWritingServicesInformal = () => {
             </div>
 
             <p className="review1-p">
-              You must hire our informal blog post writers if you wish to become
-              an industry leader. Our team of freelance writers is highly
-              skilled and experienced and we are proud to offer our services. If
-              you are looking for a reliable, affordable option for your blog
-              posts, we are the right choice for you.
+              You should hire our blog writing services because we will help you
+              to expand your brand. Our blogs are written by professional
+              writers who have the experience to do it. We have top-notch
+              writers who write blogs that are interesting to read and
+              informative at the same time.
             </p>
 
             <p className="review1-p">
-              We understand that every company has its own unique needs when it
-              comes to writing blog posts for its website and that’s why we only
-              hire experts. We offer custom pricing options and packages that
-              can fit into a variety of budgets. We have writers who focus on
-              the best content output. And our work is delivered on time and
-              without any errors.
+              We will also make sure that you get a blog that is well
+              researched, backed up with facts and figures, written in an
+              engaging style, and has no grammatical or spelling mistakes at
+              all. Also, our writers follow guidelines to ensure that they
+              deliver quality work at all times. So, you can use it as soon as
+              possible after getting it from us to make your brand viral.
             </p>
           </div>
         </div>
@@ -724,19 +722,20 @@ const BlogWritingServicesInformal = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  We hired some of the best writers from GetProWriter for our
-                  informal blog content. They did a fantastic job! We were
-                  looking to hire someone who could write in a conversational
-                  tone and we were not disappointed at all.
+                  When we hired bloggers from GetProWriter, we expected good
+                  results. But, the final result was beyond expectations. They
+                  delivered us blog posts that were well researched and
+                  informative. The blogs went viral within just a few hours of
+                  posting.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Santiago-Yorman.webp"
+                    src="/writer/img/John-Muo.webp"
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Santiago Yorman</h3>
-                  <p className="testi_box-p">SEM Account Manager, Marketide</p>
+                  <h3 className="testi_box-h3">John Muo</h3>
+                  <p className="testi_box-p">Product Strategist, Geation</p>
                 </div>
               </div>
             </div>
@@ -744,19 +743,20 @@ const BlogWritingServicesInformal = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  The writer I hired from GPW understood what my clients wanted
-                  right away. He was able to deliver some great articles that
-                  really represented these clients well. The content they
-                  produced was on-brand, easy to read, and engaging.
+                  I am glad that I found this company because I didn't know how
+                  to write my content myself and they helped me out with that.
+                  It's been a great experience working with them so far and I am
+                  sure they will continue doing such an excellent job in the
+                  future too!
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Bill-Heusen.webp"
+                    src="/writer/img/Reagan-Williams.webp"
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Bill Heusen</h3>
-                  <p className="testi_box-p">Email Marketer, Trand</p>
+                  <h3 className="testi_box-h3">Reagan Williams</h3>
+                  <p className="testi_box-p">Outreach Specialist, Retahype</p>
                 </div>
               </div>
             </div>
@@ -820,7 +820,7 @@ const BlogWritingServicesInformal = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        Do you have informal blog posts writers in your company?
+                        Do you have viral blog post specialists in your team?
                       </button>
                     </h2>
 
@@ -831,10 +831,14 @@ const BlogWritingServicesInformal = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        Yes, we do. In fact, we have some of the best informal
-                        blog post writers in our company. We believe that the
-                        best writing comes from a place of authenticity and
-                        honesty. And our writers understand that very well.
+                        Yes. We have the best writers for a variety of content
+                        and viral blog posts are among them. Our writers are
+                        experts in writing high-quality blog posts that get
+                        shared on online platforms. We have a large pool of
+                        experienced professional writers who can create content
+                        that goes viral. If you need your blog to go viral in no
+                        time, then we can help you there. Simply send us your
+                        query!
                       </div>
                     </div>
                   </div>
@@ -852,8 +856,8 @@ const BlogWritingServicesInformal = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        How do we create the best informal blog post content for
-                        our business?
+                        We urgently need a viral blog post freelancer writer.
+                        Can you help?
                       </button>
                     </h2>
 
@@ -864,14 +868,15 @@ const BlogWritingServicesInformal = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        You can create the best informal blog post content for
-                        your business by simply hiring excellent writers from
-                        across the industry. And our company definitely has a
-                        very strong team. Our writers also review every piece of
-                        writing thoroughly before sending it over to you. This
-                        is important because it makes sure that your content is
-                        written well and that it can be easily understood by
-                        your audience.
+                        Of course. We are the best at writing viral blog posts
+                        for you. We have amazing writers for a variety of
+                        content and viral blog posts are among them. We can
+                        guarantee that you will get the best result from our
+                        services because we only hire professional writers who
+                        understand what it takes to write a viral blog post. You
+                        can be assured that your article will go viral as soon
+                        as it is posted online. Our writers will make people go
+                        crazy with excitement and admiration for your work.
                       </div>
                     </div>
                   </div>
@@ -890,8 +895,7 @@ const BlogWritingServicesInformal = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      How to bring experienced informal blog post writers on
-                      board?
+                      Where can we get experienced writers for viral blog posts?
                     </button>
                   </h2>
 
@@ -902,14 +906,14 @@ const BlogWritingServicesInformal = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      You can bring experienced informal blog post writers on
-                      board by making a capable in-house team or hiring
-                      freelance blog writers with the right expertise. Our
-                      company is known to offer affordable and quality-driven
-                      services. Your blog is a reflection of your brand, so it
-                      needs to be written with care and attention. And we ensure
-                      that every step of the way. So, what are you waiting for?
-                      Reach out to us to acquire our services today.
+                      In our platform. We only pick experienced writers to be
+                      added to our team. We understand how important it is for
+                      you to have an article that is not only informative but
+                      also reaches the right audience on time, so we will ensure
+                      that for you. We believe that viral blog posts should be
+                      written in such a way that they immediately grab the
+                      attention of readers and keep them engaged until they
+                      finish reading them. And that’s what we do here!
                     </div>
                   </div>
                 </div>
@@ -922,4 +926,4 @@ const BlogWritingServicesInformal = () => {
   );
 };
 
-export default BlogWritingServicesInformal;
+export default BlogWritingServicesViral;

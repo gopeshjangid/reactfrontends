@@ -64,6 +64,10 @@ import BlogWritingServicesFreelance from "./pages/BlogWritingServicesFreelance";
 import BlogWritingServicesIntro from "./pages/BlogWritingServicesIntro";
 import BlogWritingServicesShort from "./pages/BlogWritingServicesShort";
 import BlogWritingServicesInformal from "./pages/BlogWritingServicesInformal";
+import BlogWritingServicesFamous from "./pages/BlogWritingServicesFamous";
+import BlogWritingServicesPlr from "./pages/BlogWritingServicesPlr";
+import BlogWritingServicesViral from "./pages/BlogWritingServicesViral";
+import BlogWritingServicesPersuasive from "./pages/BlogWritingServicesPersuasive";
 
 function App() {
   return (
@@ -196,6 +200,22 @@ function App() {
         <Route
           path="blog-writing-services/informal"
           element={<BlogWritingServicesInformal />}
+        />
+        <Route
+          path="blog-writing-services/famous"
+          element={<BlogWritingServicesFamous />}
+        />
+        <Route
+          path="blog-writing-services/plr"
+          element={<BlogWritingServicesPlr />}
+        />
+        <Route
+          path="blog-writing-services/viral"
+          element={<BlogWritingServicesViral />}
+        />
+        <Route
+          path="blog-writing-services/persuasive"
+          element={<BlogWritingServicesPersuasive />}
         />
       </Routes>
       <Footer />

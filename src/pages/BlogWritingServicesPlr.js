@@ -5,22 +5,21 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "./ReviewGetintouch";
 
-const BlogWritingServicesInformal = () => {
+const BlogWritingServicesPlr = () => {
   return (
     <div>
       <section className="top_sec p-0">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1 mt-3 p-0">
-                Unmatched Informal Blog Posts!
-              </h1>
-              <h2 className="top_Sec-h2">Best Writers For Informal Blogs|</h2>
+              <h1 className="top_Sec-h1 mt-3 p-0">Stellar PLR Blog Posts!</h1>
+              <h2 className="top_Sec-h2">PLR Blog Posts For You|</h2>
               <p className="top_Sec-p">
-                GetProWriter is the company to go to for all your informal blog
-                post requirements. We have seasoned professionals working with
-                us, who have been in this business for many years and we know
-                how to get the job done right.
+                GetProWriter is a well-known writing company that offers
+                excellent PLR content services. PLR, or private label rights, is
+                a great way to get high-quality content on a budget. It involves
+                buying content from an established company and using it as your
+                own. And we offer the best of these.
               </p>
             </div>
 
@@ -37,83 +36,82 @@ const BlogWritingServicesInformal = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Want Expert Informal Blog Posts Writers? Find Them On
-              GetProWriter!
+              Want Top PLR Blog Posts Services? GetProWriter Is Your Best
+              Companion!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Your business can grow immensely with our informal blog post
-              services.
+              Our PLR blog posts can help your business to perform better.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Committed Bloggers</h3>
+                <h3 className="box-h3">Right Approach</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Niche Experienced</h3>
+                <h3 className="box-h3">Experts Recommended</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Accurate Keywords</h3>
+                <h3 className="box-h3">Apt Keywords</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Effective Blogs</h3>
+                <h3 className="box-h3">Effective Writers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Publish Ready</h3>
+                <h3 className="box-h3">PLR Knowledge</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">No Plagiarism</h3>
+                <h3 className="box-h3">Truly Inspiring</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Original Always</h3>
+                <h3 className="box-h3">Refining Brands</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Engrossing Content</h3>
+                <h3 className="box-h3">Fascinating Blogs</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Global Standards</h3>
+                <h3 className="box-h3">Qualified Team</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Efficacy Guaranteed</h3>
+                <h3 className="box-h3">Wonderful Writing</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Original & Genuine</h3>
+                <h3 className="box-h3">Cooperative Freelancers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Knowledgeable Professionals</h3>
+                <h3 className="box-h3">Pleased Leaders</h3>
               </div>
             </div>
           </div>
@@ -124,24 +122,25 @@ const BlogWritingServicesInformal = () => {
         <div className="container">
           <div className="row">
             <h2 className="rev_sec-h2">
-              Informal Blog Posts For Every Business
+              PLR Blog Posts Writers Nurturing Businesses
             </h2>
 
             <p className="rev_sec-p">
-              Our company has worked with clients from all over the world and
-              provided them with high-quality content that they can use on their
-              blogs or websites. We offer services for all kinds of businesses.
-              We’ve got an excellent track record when it comes to delivering
-              high-quality blog posts within your budget. This means that our
-              prices are very reasonable compared to other services on the
-              market.
+              Blogs that are pre-written, or articles that you can use for your
+              own blog. It is a great way to save time when creating content for
+              your website. The best part about using PLR (private label rights)
+              content is that you don’t have to write it yourself. You can buy
+              the content from an author who has already written the article and
+              then repurpose it for your own use.
             </p>
             <p className="rev_sec-p">
-              We offer easy-to-understand, easy-to-use, and effective content
-              writing solutions. Our team of professional writers will make sure
-              that your business benefits from its content services. So, if
-              you’re looking for a company that can offer the best content for
-              your informal blog posts, then here we are!
+              Our writers have been offering PLR content to leading companies
+              for many years now. We have been developing unique and
+              highly-engaging PLR articles and eBooks for our clients. Our
+              writers are skilled at creating compelling, high-quality content
+              that will attract your audience’s attention. We have a proven
+              track record of writing well-researched articles for a variety of
+              industries.
             </p>
           </div>
         </div>
@@ -151,11 +150,11 @@ const BlogWritingServicesInformal = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              Affordable Informal Blog Post Service On GetProWriter
+              Buy PLR Blog Posts Service Only With GetProWriter
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Call us anytime to get the best informal blog post services.
+              Give a call now to acquire PLR blog posts services from us.
             </p>
 
             <div class="col-md-6">
@@ -226,22 +225,23 @@ const BlogWritingServicesInformal = () => {
               </div>
             </div>
             <div class="col-md-6">
-              <h2 class="count_h2">Skilled Writers For Informal Blog Posts</h2>
+              <h2 class="count_h2">Skilled Writers For PLR Blog Posts</h2>
               <p class="count-p">
-                All our informal blog post writers are highly skilled. Most of
-                them have a background in relevant fields like journalism,
-                marketing, public relations, etc. They have years of experience
-                writing content that’s both engaging and fun to read and they’re
-                just a click away!
+                PLR content comes in many different forms, including articles
+                and eBooks. Sometimes there is only one version of the PLR
+                content available, but other times there will be multiple
+                versions with slight variations (such as changing the title).
+                Our writers are experienced at writing on a wide range of
+                topics.
               </p>
               <p class="count-p">
-                When you’re looking for a writer to help you write your next
-                blog post, you want someone who can bring their A-game. You want
-                someone who will make your ideas come alive, who can take on any
-                topic and make it shine, and who will always be on time. And
-                that’s why we are here to help you out, any time. Simply call us
-                and we will get back with the most appropriate plan for you. You
-                just need to reach out to us and send us your requirements.
+                Our company, GetProWriter offers fast turnaround times and will
+                work closely with you to make sure your content is exactly what
+                you need it to be. We have been offering PLR content to leading
+                companies for many years now. Our writers have been writing on a
+                wide variety of topics, including health, education, technology,
+                and business. We are also specialized in writing about any
+                subject related to the internet world.
               </p>
             </div>
           </div>
@@ -252,38 +252,38 @@ const BlogWritingServicesInformal = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-              Informal Blog Post Writing Services To Attract Audiences
+              PLR Blog Posts Writing Services To Get More Users
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Acquire our services for unmatched informal blog posts.
+              Acquire our services for unmatched PLR blog posts.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Informal Blog Posts Of Outstanding Quality
+                PLR Blog Posts Of Outstanding Quality
               </h3>
               <p className="ab_sec2-p rws-p">
-                We offer informal blog posts which are of outstanding quality.
-                Our goal is to provide you with blog posts that will be
-                interactive and entertaining for your readers, while still being
-                informative. We do this by providing you with the best writing
-                team we can find.
+                If you need a reliable writer who can provide you with
+                high-quality articles on any subject, then we are your best
+                choice. We guarantee that our writers will create an article
+                that is 100% original and tailored to the needs of your target
+                audience. We’re here to offer you blog posts that are of the
+                highest quality. We believe in the power of words and the
+                importance of communication. That’s why we’ve made it our
+                mission to create content that will help you communicate your
+                message more effectively.
               </p>
               <p className="ab_sec2-p rws-p">
-                Every writer in our team has a proven track record of writing
-                for a wide variety of clients and topics. They also have years
-                of experience in the industry that they write about. We know how
-                important it is to have content that stands out from the crowd,
-                so we make sure that every article we write is simply
-                breathtaking. We offer a wide range of writing services –
-                including informal blog posts, review writing, articles, social
-                media content, ebooks, etc.
+                Our team has been working for years to bring you the best
+                quality blog posts on a wide range of topics. We’re passionate
+                about what we do and want to help you communicate your message
+                as well as possible.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Outstanding-Quality.webp"
+                src="/writer/img/Quality-2.webp"
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -291,58 +291,55 @@ const BlogWritingServicesInformal = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Informal-Unique-content.webp"
+                src="/writer/img/Creative-blog-post.webp"
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Informal Blog Posts That Are Unique
+                PLR Blog Posts That Are Immensely Creative
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our blog posts are written with the goal of giving readers
-                valuable information about businesses. All of our informal blog
-                posts are written by seasoned writers. You can be sure that
-                every blog post has been carefully crafted to ensure it is
-                engaging, effective, and on-brand.
+                At GetProWriter, we believe that the quality of your content is
+                what sets you apart from the rest. That’s why we offer blog
+                posts that are crafted by experts in their field. They have
+                years of experience writing engaging, informative content that
+                gets results. All their content is immensely creative.
               </p>
               <p className="ab_sec2-p rws-p">
-                At GetProWriter, we take blog post writing very seriously. We go
-                out of the way to ensure that your blog posts are SEO-friendly,
-                well-written, and enriching. Our writers are experts in their
-                fields and will craft the best piece of content for your
-                audience. We understand the importance of having a well-written
-                blog and we want to help you succeed. That’s why we’ve created a
-                platform that makes it easy for you to find the perfect writer
-                for your project.
+                We know that writing can be a daunting task and that’s why we’re
+                here to help. Our team is ready to work with you to create
+                high-quality content for your website or blog – whether it’s
+                about your business, products and services, industry trends, or
+                anything else! We believe that the best way to help you succeed
+                is to provide you with creative blog posts.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Informal Blog Posts That Represent Diverse Voices
+                Diversified Writers For PLR Blog Posts
               </h3>
               <p className="ab_sec2-p rws-p">
-                We know how important it is to you to publish high-quality
-                informal blog post content that helps you achieve your business
-                goals. And we are here to help you with that. We’ve been working
-                with clients all over the world for years, so no matter what the
-                nature of your company is, we’ll be able to meet your needs
-                quickly and accurately.
+                Our PLR blog post writers come from a diverse range of
+                backgrounds, which is one of the many reasons we think they’re
+                so talented. We don’t just hire based on education or
+                experience; we also look for individuals who have that extra
+                something that makes them stand out and make our clients happy.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our company, GetProWriter provides the best quality blog post
-                writing services in the industry, allowing you to focus on
-                what’s important: your business. Whether your project is a
-                personal blog or a corporate website, we’ll get the job done
-                right and on time. We deliver high-quality content within a
-                short time frame without compromising on the quality.
+                We’re able to provide you with high-quality content that will
+                match your needs and help you attract the attention of your
+                ideal customers. Our team of professional writers is here to
+                give you the best possible content. We’ll make sure that every
+                article we write for you is tailored to your needs, so you can
+                be assured that it’ll be perfect!
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Represent-Diverse-voices.webp"
+                src="/writer/img/Diversified-writers.webp"
                 alt="Online-review"
                 className="rws-img"
               />
@@ -350,56 +347,57 @@ const BlogWritingServicesInformal = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Business-boost.webp"
+                src="/writer/img/Business-Image-1.webp"
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Informal Blog Posts To Boost Your Business Image
+                PLR Blog Posts For Enhanced Business Image
               </h3>
               <p className="ab_sec2-p rws-p">
-                The informal blog posts written by our writers will surely boost
-                your business image. We have professional writers on board who
-                have a passion for writing. They know how to write in a way that
-                will appeal to your target audience. They understand what makes
-                people tick and they can take your business goals and turn them
-                into something that will help you achieve them.
+                Blog post writing is a crucial part of the marketing process for
+                any business. It helps your business image expand and reach more
+                customers. The more blog posts you have on your website, the
+                more likely it is that people will find you online. We offer
+                custom blog posts written by professional writers who have
+                experience in this field, so they know what they are doing when
+                it comes to writing content for websites.
               </p>
               <p className="ab_sec2-p rws-p">
-                We understand how important it is for you to have an image that
-                reflects the quality of your products or services and we want to
-                help you get there. If you’re looking to enhance your business
-                image with the content we create for you, then hire an expert
-                writer from us today.
+                Blog posts are also an excellent way to build trust with
+                potential clients by showing them that you are knowledgeable and
+                experienced in your field. Our writers will make sure that every
+                blog post they write is engaging and informative so that your
+                readers keep coming back for more.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Originality Maintained In All Informal Blog Posts
+                PLR Blog Posts That Have Originality In Every Step
               </h3>
               <p className="ab_sec2-p rws-p">
-                When our writers create informal blog posts for you, they
-                maintain optimal originality. All our writers are dedicated to
-                producing original content, so every time you work with us,
-                we’ll make sure that your audience is getting the most original
-                content possible.
+                Our blog post writers understand what it takes to develop
+                content that will appeal to your audience and get them excited
+                about your products or services. We’ll make sure that each piece
+                of content we create for you is engaging – so you can reach more
+                customers and expand your business!
               </p>
               <p className="ab_sec2-p rws-p">
-                We know that you want to be able to stand out from the crowd and
-                drive traffic to your site through quality writing, so we take
-                care of all the hard work so that you can focus on other things.
-                Our team of expert writers is trained to ensure that all of your
-                blog posts are fresh. They know how to write in a way that will
-                engage readers so that you can continue to build an audience and
-                grow your business. And we take our work very seriously.
+                Our writers maintain originality when they create blog posts. At
+                GetProWriter, we pride ourselves on our ability to provide
+                high-quality, original content to our clients. Our writers are
+                highly trained professionals who have the experience and
+                expertise required to deliver content that is both unique and
+                engaging. So, what are you waiting for? Send us your PLR blog
+                post requirement today.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Originality-2.webp"
+                src="/writer/img/Originality-3.webp"
                 alt="Real-review-writer"
                 className="rws-img"
               />
@@ -407,31 +405,31 @@ const BlogWritingServicesInformal = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Expertise-8.webp"
+                src="/writer/img/Expertise-9.webp"
                 alt="Expertise"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise Blended Into Informal Blog Posts
+                PLR Blog Posts With GetProWriter Expertise
               </h3>
               <p className="ab_sec2-p rws-p">
-                GetProWriter offers a unique blend of content expertise,
-                creativity, and strategic thinking, which is the perfect
-                ingredient for your informal blog content. You want something
-                that will inform your readers while also making them feel like
-                they’re having a conversation with you. You want to be able to
-                include industry knowledge, but also make the informal blog
-                posts relatable. And that’s what we offer.
+                GetProWriter is a team of experts in their field, providing you
+                with the best writing services available. Our team of writers is
+                experienced in a wide array of topics and industries, from
+                business to technology to marketing to health care and more.
+                GetProWriter expertise means providing you with the best content
+                possible so that your company stays ahead of other industry
+                competitors.
               </p>
               <p className="ab_sec2-p rws-p">
-                GetProWriter is here to just provide the most remarkable content
-                to you. We’ve been writing content for businesses for many years
-                now and we have the experience necessary to make sure your blog
-                posts are perfect every time. With our expertise, you can be
-                assured that your readers will be receiving content that really
-                matters.
+                Our writers have a solid grasp of the English language, which
+                enables them to produce grammatically correct copy that is free
+                from errors and typos. Our writers understand that each client
+                has a different objective for their content, so they tailor
+                their work accordingly. We are committed to maintaining the
+                highest standards of quality in our writing.
               </p>
             </div>
           </div>
@@ -643,11 +641,9 @@ const BlogWritingServicesInformal = () => {
         <div className="container">
           <div className="row">
             <h2 className="get_sec-h2">
-              Why Hire Our Short Blog Post Writers?
+              Why Hire Our PLR Blog Posts Writers?{" "}
             </h2>
-            <p className="get_sec-p">
-              To let your business become an industry leader.
-            </p>
+            <p className="get_sec-p">To help your business prosper.</p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
               <div className="box-ol">
@@ -658,7 +654,7 @@ const BlogWritingServicesInformal = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">Informal blog posts experts</span>
+                    <span className="spa_h2"> PLR blog experts</span>
                   </li>
                 </ol>
               </div>
@@ -673,7 +669,7 @@ const BlogWritingServicesInformal = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Focus on the expected outcomes
+                      Content creation as per the clients’ expectations
                     </span>
                   </li>
                 </ol>
@@ -689,7 +685,7 @@ const BlogWritingServicesInformal = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Timely delivery of error-free content
+                      Flawless content delivery for all
                     </span>
                   </li>
                 </ol>
@@ -697,20 +693,21 @@ const BlogWritingServicesInformal = () => {
             </div>
 
             <p className="review1-p">
-              You must hire our informal blog post writers if you wish to become
-              an industry leader. Our team of freelance writers is highly
-              skilled and experienced and we are proud to offer our services. If
-              you are looking for a reliable, affordable option for your blog
-              posts, we are the right choice for you.
+              The GetProWriter team of experts knows how to keep your brand
+              relevant and recognizable to your audience. We’ll make sure you’re
+              always on top of the latest trends in your industry. Hiring
+              writers from our company means that you won’t have to worry about
+              making your content engaging for readers. We have a proven track
+              record of success in this area, so we know what really works!
             </p>
 
             <p className="review1-p">
-              We understand that every company has its own unique needs when it
-              comes to writing blog posts for its website and that’s why we only
-              hire experts. We offer custom pricing options and packages that
-              can fit into a variety of budgets. We have writers who focus on
-              the best content output. And our work is delivered on time and
-              without any errors.
+              Our writers are experts in the field. They create content with
+              utmost focus and ensure flawless content delivery for all projects
+              undertaken. They understand that quality is something that cannot
+              be compromised and they put in their best effort to make sure that
+              everything you receive is error-free. Our company has been trusted
+              by thousands of clients worldwide.
             </p>
           </div>
         </div>
@@ -724,19 +721,19 @@ const BlogWritingServicesInformal = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  We hired some of the best writers from GetProWriter for our
-                  informal blog content. They did a fantastic job! We were
-                  looking to hire someone who could write in a conversational
-                  tone and we were not disappointed at all.
+                  Our company hired blog writers from GetProWriter and we are
+                  extremely happy with what they have offered us. Our blog
+                  content needed to be revised and their writers have done a
+                  phenomenal job for the same. We will hire them again!
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Santiago-Yorman.webp"
+                    src="/writer/img/Chan-Liang.webp"
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Santiago Yorman</h3>
-                  <p className="testi_box-p">SEM Account Manager, Marketide</p>
+                  <h3 className="testi_box-h3">Chan Liang</h3>
+                  <p className="testi_box-p">Marketing consultant, Fashsale</p>
                 </div>
               </div>
             </div>
@@ -744,19 +741,19 @@ const BlogWritingServicesInformal = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  The writer I hired from GPW understood what my clients wanted
-                  right away. He was able to deliver some great articles that
-                  really represented these clients well. The content they
-                  produced was on-brand, easy to read, and engaging.
+                  I have worked with many companies, especially for blog writing
+                  projects. GPW has by far been my best experience. The writers
+                  are qualified and they bring in a lot of experience to the
+                  table. I am amazed at the clarity with which they work.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Bill-Heusen.webp"
+                    src="/writer/img/Hanna-Underwood.webp"
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Bill Heusen</h3>
-                  <p className="testi_box-p">Email Marketer, Trand</p>
+                  <h3 className="testi_box-h3">Hanna Underwood</h3>
+                  <p className="testi_box-p">Web developer, Strade</p>
                 </div>
               </div>
             </div>
@@ -820,7 +817,8 @@ const BlogWritingServicesInformal = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        Do you have informal blog posts writers in your company?
+                        How do I contact GetProWriter to hire writers for my
+                        company?
                       </button>
                     </h2>
 
@@ -831,10 +829,12 @@ const BlogWritingServicesInformal = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        Yes, we do. In fact, we have some of the best informal
-                        blog post writers in our company. We believe that the
-                        best writing comes from a place of authenticity and
-                        honesty. And our writers understand that very well.
+                        GetProWriter is a very easy-to-reach writing company.
+                        You can simply give us a call or visit our website to
+                        send in your query. According to your requirements, we
+                        will assign the best team of writers for the project. We
+                        are sure that you will be happy with the writing
+                        services that we have to offer.
                       </div>
                     </div>
                   </div>
@@ -852,8 +852,8 @@ const BlogWritingServicesInformal = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        How do we create the best informal blog post content for
-                        our business?
+                        Is it possible to create effective PLR content with
+                        freelancers?
                       </button>
                     </h2>
 
@@ -864,14 +864,14 @@ const BlogWritingServicesInformal = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        You can create the best informal blog post content for
-                        your business by simply hiring excellent writers from
-                        across the industry. And our company definitely has a
-                        very strong team. Our writers also review every piece of
-                        writing thoroughly before sending it over to you. This
-                        is important because it makes sure that your content is
-                        written well and that it can be easily understood by
-                        your audience.
+                        Yes. Freelancers do a remarkable job when it comes to
+                        writing content for PLR blogs. PLR content must be
+                        created by expert writers for the best impact. Since the
+                        content can be used in a variety of manners, you need
+                        skilled writers to give you compelling blog posts. If
+                        you do not have the finances or infrastructure to set up
+                        an in-house team for such projects, then hiring
+                        freelancers is the best option.
                       </div>
                     </div>
                   </div>
@@ -890,8 +890,7 @@ const BlogWritingServicesInformal = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      How to bring experienced informal blog post writers on
-                      board?
+                      How do we know that your writers are experienced?
                     </button>
                   </h2>
 
@@ -902,14 +901,15 @@ const BlogWritingServicesInformal = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      You can bring experienced informal blog post writers on
-                      board by making a capable in-house team or hiring
-                      freelance blog writers with the right expertise. Our
-                      company is known to offer affordable and quality-driven
-                      services. Your blog is a reflection of your brand, so it
-                      needs to be written with care and attention. And we ensure
-                      that every step of the way. So, what are you waiting for?
-                      Reach out to us to acquire our services today.
+                      You will know it by simply going through their work.
+                      GetProWriter believes that only the most dedicated
+                      professionals can deliver a project in a rightful manner.
+                      Experience is something that is instrumental to our hiring
+                      process. We have the best writers from all over the world
+                      and they bring in experiences of a varied nature. Whether
+                      you are looking for a writer to craft an article for you
+                      or one to write an interesting blog post, GPW is
+                      definitely the best place for all.
                     </div>
                   </div>
                 </div>
@@ -922,4 +922,4 @@ const BlogWritingServicesInformal = () => {
   );
 };
 
-export default BlogWritingServicesInformal;
+export default BlogWritingServicesPlr;
