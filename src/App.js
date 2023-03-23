@@ -34,39 +34,7 @@ import DashCompanyProfileUpdate from "./Pages/DashCompanyProfileUpdate";
 
 
 function App() {
-  const [login,setLogin]=useState(false)
-  const [admin,setAdmin] = useState([])
 
-const tokenID = localStorage.getItem("token")
-console.log(tokenID)
-
-useEffect(()=>{
-  fetch("http://localhost:5000/checkLogin", {
-        method: "GET",
-        mode: "cors",
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `${tokenID}`,
-        },
-      })
-        .then((response) => response.json(console.log(response)))
-
-        .then((json) => {
-          setAdmin(json)
-        console.log(json.message.accountType)
-        if(json.message.accountType=="admin"){
-            setLogin(true)
-        }else{
-          setLogin(false)
-        }
-        
-        })
-        .catch((err) => {
-          console.log(err);
-        });
- 
-
-},[tokenID])
 
 
   return (

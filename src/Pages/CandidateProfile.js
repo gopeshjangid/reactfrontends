@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 const CandidateProfile = () => {
+  const navigate = useNavigate()
   const initialValues = {
     websiteUrl: "",
     qualification: "",
@@ -55,7 +56,21 @@ const CandidateProfile = () => {
   const [facebook, setFacebook] = useState("");
   const [linkedin, setLinkedin] = useState("");
   const [twitter, setTwitter] = useState("");
-  console.log("qwertyuioppojhgfdsadfgh", websiteUrl);
+
+  const [userInfo, setuserInfo] = useState({
+    file: [],
+    filepreview: null,
+  });
+
+  const handleInputChange = (event) => {
+    setuserInfo({
+      ...userInfo,
+      file: event.target.files[0],
+      filepreview: URL.createObjectURL(event.target.files[0]),
+    });
+  };
+  console.log("userInfo.filepreview", userInfo?.filepreview);
+  // const [isSucces, setSuccess] = useState(null);
 
   // const handleChange = (e)=>  {
   //   let name = e.target.name;
@@ -99,11 +114,15 @@ const CandidateProfile = () => {
     // ) {
     //   return;
     // } else {
+
+    const uploadImg = userInfo?.filepreview;
+    console.log(uploadImg);
     const tokenID = localStorage.getItem("token");
-   await fetch("http://localhost:5000/canditateDetails", {
+    await fetch("http://localhost:5000/canditateDetails", {
       method: "POST",
       mode: "cors",
       body: JSON.stringify({
+        uploadImg,
         websiteUrl,
         qualification,
         language,
@@ -135,6 +154,10 @@ const CandidateProfile = () => {
         if (json.message === "successfuly created user details") {
           document.getElementById("openPopup").click();
         }
+
+        // if (res.data.success === 1) {
+        //   setSuccess("Image upload successfully");
+        // }
         //   if (json.message === "successfully register") {
         //     navigate("/login");
         //   }
@@ -327,89 +350,100 @@ const CandidateProfile = () => {
             <!-- OUR BLOG START --> */}
         <div className="section-full p-t120  p-b90 site-bg-white">
           <div className="container">
-            <div className="row">
-              <div className="col-xl-3 col-lg-4 col-md-12 rightSidebar m-b30">
-                <div className="side-bar-st-1">
-                  <div className="twm-candidate-profile-pic">
-                    <img src="jobzilla/images/user-avtar/pic4.jpg" alt="" />
-                    <div className="upload-btn-wrapper">
-                      <div id="upload-image-grid"></div>
-                      <button className="site-button button-sm">
-                        Upload Photo
-                      </button>
-                      <input
-                        type="file"
-                        name="myfile"
-                        id="file-uploader"
-                        accept=".jpg, .jpeg, .png"
-                      />
+            {load === false ? (
+              <form onSubmit={handleSubmit}>
+                <div className="row">
+                  <div className="col-xl-3 col-lg-4 col-md-12 rightSidebar m-b30">
+                    <div className="side-bar-st-1">
+                      <div className="twm-candidate-profile-pic">
+                        <img src="jobzilla/images/user-avtar/pic4.jpg" />
+                        <div className="upload-btn-wrapper">
+                          <div id="upload-image-grid">
+                            {userInfo.filepreview !== null ? (
+                              <img
+                                src={userInfo.filepreview}
+                                alt="UploadImage"
+                              />
+                            ) : null}
+                          </div>
+                          <button className="site-button button-sm">
+                            Upload Photo
+                          </button>
+                          <input
+                            type="file"
+                            name="myfile"
+                            onChange={handleInputChange}
+                            id="file-uploader"
+                            accept=".jpg, .jpeg, .png"
+                          />
+                        </div>
+                      </div>
+
+                      {/* {isSucces !== null ? <h4> {isSucces} </h4> : null} */}
+                      <div className="twm-mid-content text-center">
+                        <Link to="candidate-detail" className="twm-job-title">
+                          <h4> {state?.username}</h4>
+                        </Link>
+                        <p>IT Contractor</p>
+                      </div>
+
+                      <div className="twm-nav-list-1">
+                        <ul>
+                          <li>
+                            <Link to="/candidate-dashboard">
+                              <i className="fa fa-tachometer-alt"></i> Dashboard
+                            </Link>
+                          </li>
+                          <li className="active">
+                            <Link to="/candidate-profile">
+                              <i className="fa fa-user"></i> MY Profile
+                            </Link>
+                          </li>
+
+                          <li>
+                            <Link to="/candidate-jobs-applied">
+                              <i className="fa fa-suitcase"></i> Applied Jobs
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/candidate-my-resume">
+                              <i className="fa fa-receipt"></i> My Resume
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/candidate-saved-jobs">
+                              <i className="fa fa-file-download"></i> Saved Jobs
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/candidate-cv-manager">
+                              <i className="fa fa-paperclip"></i> CV Manager
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/candidate-job-alert">
+                              <i className="fa fa-bell"></i> Job Alerts
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/candidate-change-password">
+                              <i className="fa fa-fingerprint"></i> Change
+                              Passeord
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/candidate-chat">
+                              <i className="fa fa-comments"></i>Chat
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                  <div className="twm-mid-content text-center">
-                    <Link to="candidate-detail" className="twm-job-title">
-                      <h4> {state?.username}</h4>
-                    </Link>
-                    <p>IT Contractor</p>
-                  </div>
 
-                  <div className="twm-nav-list-1">
-                    <ul>
-                      <li>
-                        <Link to="/candidate-dashboard">
-                          <i className="fa fa-tachometer-alt"></i> Dashboard
-                        </Link>
-                      </li>
-                      <li className="active">
-                        <Link to="/candidate-profile">
-                          <i className="fa fa-user"></i> MY Profile
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/candidate-jobs-applied">
-                          <i className="fa fa-suitcase"></i> Applied Jobs
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/candidate-my-resume">
-                          <i className="fa fa-receipt"></i> My Resume
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/candidate-saved-jobs">
-                          <i className="fa fa-file-download"></i> Saved Jobs
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/candidate-cv-manager">
-                          <i className="fa fa-paperclip"></i> CV Manager
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/candidate-job-alert">
-                          <i className="fa fa-bell"></i> Job Alerts
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/candidate-change-password">
-                          <i className="fa fa-fingerprint"></i> Change Passeord
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/candidate-chat">
-                          <i className="fa fa-comments"></i>Chat
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-xl-9 col-lg-8 col-md-12 m-b30">
-                {/* <!--Filter Short By--> */}
-                <div className="twm-right-section-panel site-bg-gray">
-                  {load === false ? (
-                    <form onSubmit={handleSubmit}>
+                  <div className="col-xl-9 col-lg-8 col-md-12 m-b30">
+                    {/* <!--Filter Short By--> */}
+                    <div className="twm-right-section-panel site-bg-gray">
                       {/* <!--Basic Information--> */}
                       <div className="panel panel-default">
                         <div className="panel-heading wt-panel-heading p-a20">
@@ -850,62 +884,54 @@ const CandidateProfile = () => {
 
                                   <div className="col-lg-12 col-md-12">
                                     <div className="text-left">
-                            
-                                    <button
-                                type="submit"
-                                className="site-button"
-                              >
-                                Submit
-                              </button>
                                       <button
-                                type="button"
-                                data-bs-toggle="modal"
-                                data-bs-target="#completeprofile"
-                                className="site-button "
-                                style={{ visibility: "hidden" }}
-                                data-toggle="modal"
-                                id="openPopup"
-                              >
-                               Submit
-                              </button>
-                              
-
-
-
-                                  
-                                       <div
-                                class="modal fade"
-                                id="completeprofile"
-                                data-bs-backdrop="static"
-                                data-bs-keyboard="false"
-                                tabindex="-1"
-                                aria-labelledby="staticBackdropLabel"
-                                aria-hidden="true"
-                                style={{ background: "#00000059" }}
-                              >
-                                <div class="modal-dialog modal-dialog-centered">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
+                                        type="submit"
+                                        className="site-button"
+                                      >
+                                        Submit
+                                      </button>
                                       <button
                                         type="button"
-                                        class="btn-close"
-                                        data-bs-dismiss="modal"
-                                        aria-label="Close"
-                                      ></button>
-                                    </div>
-                                    <div class="modal-body text-center">
-                                      <img
-                                        src="/jobzilla/images/423-4236284_png-images-success-icon-png-transparent-png-download.png"
-                                        className="w-25 "
-                                      />
-                                      <h4>  
-                                      {message}</h4>
-                                    </div>
-                                   
-                                  </div>
-                                </div>
-                              </div>
-                                    
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#completeprofile"
+                                        className="site-button "
+                                        style={{ visibility: "hidden" }}
+                                        data-toggle="modal"
+                                        id="openPopup"
+                                      >
+                                        Submit
+                                      </button>
+
+                                      <div
+                                        class="modal fade"
+                                        id="completeprofile"
+                                        data-bs-backdrop="static"
+                                        data-bs-keyboard="false"
+                                        tabindex="-1"
+                                        aria-labelledby="staticBackdropLabel"
+                                        aria-hidden="true"
+                                        style={{ background: "#00000059" }}
+                                      >
+                                        <div class="modal-dialog modal-dialog-centered">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <button
+                                                type="button"
+                                                class="btn-close"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"
+                                              ></button>
+                                            </div>
+                                            <div class="modal-body text-center">
+                                              <img
+                                                src="/jobzilla/images/423-4236284_png-images-success-icon-png-transparent-png-download.png"
+                                                className="w-25 "
+                                              />
+                                              <h4>{message}</h4>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -914,9 +940,94 @@ const CandidateProfile = () => {
                           </div>
                         </div>
                       </div>
-                    </form>
-                  ) : (
-                    <form>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            ) : (
+              <form>
+                <div className="row">
+                  <div className="col-xl-3 col-lg-4 col-md-12 rightSidebar m-b30">
+                    <div className="side-bar-st-1">
+                      <div className="twm-candidate-profile-pic">
+                        <img src="jobzilla/images/user-avtar/pic4.jpg" alt="" />
+                        <div className="upload-btn-wrapper">
+                          <div id="upload-image-grid"></div>
+                          <button className="site-button button-sm">
+                            Upload Photo
+                          </button>
+                          <input
+                            type="file"
+                            name="myfile"
+                            id="file-uploader"
+                            accept=".jpg, .jpeg, .png"
+                          />
+                        </div>
+                      </div>
+                      <div className="twm-mid-content text-center">
+                        <Link to="candidate-detail" className="twm-job-title">
+                          <h4> {state?.username}</h4>
+                        </Link>
+                        <p>IT Contractor</p>
+                      </div>
+
+                      <div className="twm-nav-list-1">
+                        <ul>
+                          <li>
+                            <Link to="/candidate-dashboard">
+                              <i className="fa fa-tachometer-alt"></i> Dashboard
+                            </Link>
+                          </li>
+                          <li className="active">
+                            <Link to="/candidate-profile">
+                              <i className="fa fa-user"></i> MY Profile
+                            </Link>
+                          </li>
+
+                          <li>
+                            <Link to="/candidate-jobs-applied">
+                              <i className="fa fa-suitcase"></i> Applied Jobs
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/candidate-my-resume">
+                              <i className="fa fa-receipt"></i> My Resume
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/candidate-saved-jobs">
+                              <i className="fa fa-file-download"></i> Saved Jobs
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/candidate-cv-manager">
+                              <i className="fa fa-paperclip"></i> CV Manager
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/candidate-job-alert">
+                              <i className="fa fa-bell"></i> Job Alerts
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/candidate-change-password">
+                              <i className="fa fa-fingerprint"></i> Change
+                              Passeord
+                            </Link>
+                          </li>
+                          <li>
+                            <Link to="/candidate-chat">
+                              <i className="fa fa-comments"></i>Chat
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="col-xl-9 col-lg-8 col-md-12 m-b30">
+                    {/* <!--Filter Short By--> */}
+                    <div className="twm-right-section-panel site-bg-gray">
                       {/* <!--Basic Information--> */}
                       <div className="panel panel-default">
                         <div className="panel-heading wt-panel-heading p-a20">
@@ -1330,11 +1441,11 @@ const CandidateProfile = () => {
                           </div>
                         </div>
                       </div>
-                    </form>
-                  )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </form>
+            )}
           </div>
         </div>
         {/* <!-- OUR BLOG END --> */}

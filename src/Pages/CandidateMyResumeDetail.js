@@ -1,9 +1,25 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import useCandidateResumeApi from "../FetchApi/CandidateResumeApi";
 
 const CandidateMyResumeDetail = () => {
+
+const navigate = useNavigate()
+  const [Login,setLogin] = useState(false)
+
+  const accountType = localStorage.getItem("accountType");
+  console.log(accountType)
+  useEffect(() => {
+if(accountType==="candidate"){
+  setLogin(false)
+}else{
+  setLogin(true)
+}
+  },[])
+
+
+
   const candidateResume = useCandidateResumeApi();
   console.log(candidateResume);
 
@@ -199,6 +215,7 @@ const CandidateMyResumeDetail = () => {
   return (
     <div>
       {/* CONTENT START */}
+      {Login === false ? (
       <div className="page-content">
         {/* INNER PAGE BANNER */}
         <div
@@ -276,32 +293,14 @@ const CandidateMyResumeDetail = () => {
                           <i className="fa fa-receipt" /> My Resume
                         </Link>
                       </li>
-                      <li>
-                        <Link href="/candidate-saved-jobs">
-                          <i className="fa fa-file-download" /> Saved Jobs
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/candidate-cv-manager">
-                          <i className="fa fa-paperclip" /> CV Manager
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/candidate-job-alert">
-                          <i className="fa fa-bell" /> Job Alerts
-                        </Link>
-                      </li>
+           
+            
                       <li>
                         <Link href="/candidate-change-password">
                           <i className="fa fa-fingerprint" /> Change Passeord
                         </Link>
                       </li>
-                      <li>
-                        <Link href="/candidate-chat">
-                          <i className="fa fa-comments" />
-                          Chat
-                        </Link>
-                      </li>
+                 
                     </ul>
                   </div>
                 </div>
@@ -1661,7 +1660,11 @@ const CandidateMyResumeDetail = () => {
         </div>
         {/* OUR BLOG END */}
       </div>
+      ):(
+        navigate("/")
+      )}
       {/* CONTENT END */}
+      
     </div>
   );
 };

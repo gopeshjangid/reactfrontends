@@ -9,6 +9,7 @@ const EmployerJobDetail = () => {
   const [getAllJob, setGetAllJob] = useState([]);
   const [employer, setEmployer] = useState([]);
   const [applyJob, setApplyJob] = useState();
+  const [jobApplyMessage, setjobApplyMessage] = useState();
 
   const tokenID = localStorage.getItem("token");
   useEffect(() => {
@@ -49,7 +50,8 @@ const EmployerJobDetail = () => {
         setApplyJob(response.data);
 
         console.log(response.data.message);
-        if (response.data.message === "job applyed") {
+        if (response.data.message === "job applyed" ||response.data.message === "you are not candidate" ) {
+          setjobApplyMessage(response.data.message)
           document.getElementById("openPopup").click();
         }
       })
@@ -194,7 +196,7 @@ const EmployerJobDetail = () => {
                                         src="/jobzilla/images/423-4236284_png-images-success-icon-png-transparent-png-download.png"
                                         className="w-25 "
                                       />
-                                      <h4>Job Applied</h4>
+                                      <h4>{jobApplyMessage}</h4>
                                     </div>
                                     <div class="modal-footer">
                                       <button

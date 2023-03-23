@@ -21,8 +21,20 @@ const Header = () => {
   const [data, setData] = useState();
 
   const [isLoggedin, setIsLoggedin] = useState(false);
+  const [ Type,setType] = useState(false)
 
   const location = useLocation();
+  const employerType = localStorage.getItem("accountType")
+
+  console.log("employerType",employerType)
+
+  useEffect(() =>{
+    if(employerType === "employer"){
+      setType(true)
+    }else{
+      setType(false)
+    }
+  })
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -309,7 +321,7 @@ const Header = () => {
                       <li
                         className="has-child"
                         data-bs-toggle="modal"
-                        href="#exampleModalToggle3"
+                        href="#2"
                         role="button"
                       >
                         <Link>Employers</Link>
@@ -368,7 +380,7 @@ const Header = () => {
                       </li>
                     </ul>
                   </li>
-                  {isLoggedin === true ? (
+                  {isLoggedin === true  && Type === false  ?(
                   <li className="has-child">
                     <Link>Candidates</Link>
                     <ul className="sub-menu">
@@ -383,23 +395,30 @@ const Header = () => {
                  
                   </li>
                   ):( 
-                  <li className="has-child">
+                    Type === false  ?(
+                  <li
+                  data-bs-toggle="modal"
+                  href="#exampleModalToggle2"
+                  role="button" className="has-child">
                   <Link>Candidates</Link>
                   <ul className="sub-menu">
-                    <li 
-                    data-bs-toggle="modal"
-                        href="#exampleModalToggle3"
-                        role="button">
-                      <Link>Dashboard</Link>
-                    </li>
-                    <li
-                     data-bs-toggle="modal"
-                     href="#exampleModalToggle3"
-                     role="button">
-                      <Link>Candidates List</Link>
-                    </li>
-                  </ul>
-                  </li>)}
+                    
+                      <li>
+                        <Link to="/candidate-list">Candidates List</Link>
+                      </li>
+                    </ul>
+                  </li>
+                  ):(
+                     <li                   
+                   className="has-child">
+                    <Link>Candidates</Link>
+                    <ul className="sub-menu">
+                      
+                        <li>
+                          <Link to="/candidate-list">Candidates List</Link>
+                        </li>
+                      </ul>
+                    </li>))}
                   <li className="has-child">
                     <Link to="">Blog</Link>
                     <ul className="sub-menu">
@@ -839,7 +858,7 @@ const Header = () => {
                                 aria-label="Close"
                               ></button>
                             </div>
-                            <div class="modal-body text-center"><h3>Please First Login</h3></div>
+                            <div class="modal-body text-center"><h3>Please First Candidate Login</h3></div>
                             <div class="modal-footer justify-content-center">
                               <button
                                 class="btn btn-primary"
