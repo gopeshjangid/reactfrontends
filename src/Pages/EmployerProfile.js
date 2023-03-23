@@ -277,41 +277,21 @@ const EmployerProfile = () => {
                         </Link>
                       </li>
 
+                
                       <li>
-                        <Link to="/employer-resume">
-                          <i className="fa fa-receipt"></i> Resume
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/employer-manage-jobs">
+                        <Link to="/employer-manage-job">
                           <i className="fa fa-suitcase"></i> Manage Jobs
                         </Link>
                       </li>
 
-                      {employerDetails < 1 ? (
+                   
                         <li>
                           <Link to="/employer-post-job">
                             <i className="fa fa-book-reader"></i> Post A Jobs
                           </Link>
                         </li>
-                      ) : (
-                        <>
-                          <li
-                            data-bs-toggle="modal"
-                            href="#exampleModalToggle1"
-                            role="button"
-                          >
-                            <Link>
-                              <i className="fa fa-book-reader"></i> Post A Jobs
-                            </Link>
-                          </li>
-                        </>
-                      )}
-                      <li>
-                        <Link to="/employer-transaction">
-                          <i className="fa fa-credit-card"></i>Transaction
-                        </Link>
-                      </li>
+                     
+               
                       <li>
                         <Link to="/candidate-grid">
                           <i className="fa fa-user-check"></i> Browse Candidates
@@ -322,22 +302,8 @@ const EmployerProfile = () => {
                           <i className="fa fa-fingerprint"></i> Change Passeord
                         </Link>
                       </li>
-                      <li>
-                        <Link to="/index">
-                          <i className="fa fa-share-square"></i> Logout
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/employer-account-fresher">
-                          <i className="fa fa-pencil-alt"></i>Register Fresher
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/employer-account-professional">
-                          <i className="fa fa-pencil-alt"></i>Register
-                          Professionals
-                        </Link>
-                      </li>
+               
+                     
                     </ul>
                   </div>
                 </div>

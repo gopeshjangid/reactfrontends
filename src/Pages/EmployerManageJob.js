@@ -85,11 +85,7 @@ const EmployerManageJob = () => {
                         </Link>
                       </li>
 
-                      <li>
-                        <Link to="employer-resume">
-                          <i className="fa fa-receipt" /> Resume
-                        </Link>
-                      </li>
+                     
                       <li className="active">
                         <Link to="/employer-manage-job">
                           <i className="fa fa-suitcase" /> Manage Jobs
@@ -100,12 +96,7 @@ const EmployerManageJob = () => {
                           <i className="fa fa-book-reader" /> Post A Jobs
                         </Link>
                       </li>
-                      <li>
-                        <Link to="employer-transaction">
-                          <i className="fa fa-credit-card" />
-                          Transaction
-                        </Link>
-                      </li>
+                 
                       <li>
                         <Link to="candidate-grid">
                           <i className="fa fa-user-check" /> Browse Candidates
@@ -116,23 +107,8 @@ const EmployerManageJob = () => {
                           <i className="fa fa-fingerprint" /> Change Passeord
                         </Link>
                       </li>
-                      <li>
-                        <Link to="/">
-                          <i className="fa fa-share-square" /> Logout
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="employer-account-fresher">
-                          <i className="fa fa-pencil-alt" />
-                          Register Fresher
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="employer-account-professional">
-                          <i className="fa fa-pencil-alt" />
-                          Register Professionals
-                        </Link>
-                      </li>
+                
+                    
                     </ul>
                   </div>
                 </div>
@@ -330,6 +306,11 @@ const EmployerManageJob = () => {
         {/* OUR BLOG END */}
       </div>
     </div>
+
+);
+};
+
+export default EmployerManageJob;
 
     // <div>
     //   <div className="page-wraper position-relative" style={{ zIndex: "1000" }}>
@@ -1005,7 +986,4 @@ const EmployerManageJob = () => {
     //     </div>
     //   </div>
     // </div>
-  );
-};
 
-export default EmployerManageJob;

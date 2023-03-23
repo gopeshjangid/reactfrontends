@@ -286,7 +286,7 @@ const EmployerPostJob = () => {
               <div className="col-xl-3 col-lg-4 col-md-12 rightSidebar m-b30">
                 <div className="side-bar-st-1">
                   <div className="twm-candidate-profile-pic">
-                    <img src="/jobzila/images/jobs-company/pic1.jpg" alt="" />
+                    <img src="jobzilla/images/jobs-company/pic1.jpg" alt="" />
                     <div className="upload-btn-wrapper">
                       <div id="upload-image-grid"></div>
                       <button className="site-button button-sm">
@@ -316,11 +316,7 @@ const EmployerPostJob = () => {
                         </Link>
                       </li>
 
-                      <li>
-                        <Link to="/employer-resume">
-                          <i className="fa fa-receipt"></i> Resume
-                        </Link>
-                      </li>
+                   
                       <li>
                         <Link to="/employer-manage-job">
                           <i className="fa fa-suitcase"></i> Manage Jobs
@@ -331,11 +327,7 @@ const EmployerPostJob = () => {
                           <i className="fa fa-book-reader"></i> Post A Jobs
                         </Link>
                       </li>
-                      <li>
-                        <Link to="employer-transaction">
-                          <i className="fa fa-credit-card"></i>Transaction
-                        </Link>
-                      </li>
+                      
                       <li>
                         <Link to="candidate-grid">
                           <i className="fa fa-user-check"></i> Browse Candidates
@@ -346,22 +338,8 @@ const EmployerPostJob = () => {
                           <i className="fa fa-fingerprint"></i> Change Passeord
                         </Link>
                       </li>
-                      <li>
-                        <Link to="index">
-                          <i className="fa fa-share-square"></i> Logout
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="employer-account-fresher">
-                          <i className="fa fa-pencil-alt"></i>Register Fresher
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="employer-account-professional">
-                          <i className="fa fa-pencil-alt"></i>Register
-                          Professionals
-                        </Link>
-                      </li>
+               
+                    
                     </ul>
                   </div>
                 </div>

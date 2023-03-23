@@ -1,11 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import useCandidatePersonalResumeApi from "../FetchApi/CandidatePersonalResumeApi";
 
 const CandidateDetail = () => {
+
+
+  const navigate = useNavigate()
+  const [Login,setLogin] = useState(false)
+
+  const accountType = localStorage.getItem("accountType");
+  console.log(accountType)
+  useEffect(() => {
+if(accountType==="candidate"){
+  setLogin(false)
+}else{
+  setLogin(true)
+}
+  },[])
   const candidatePesonalResume = useCandidatePersonalResumeApi();
   console.log(candidatePesonalResume);
 
@@ -108,6 +122,7 @@ const CandidateDetail = () => {
   return (
     <div>
       {/* <!-- CONTENT START --> */}
+      {Login === false ? (
       <div className="page-content">
         {/* <!-- INNER PAGE BANNER --> */}
         <div
@@ -487,6 +502,9 @@ const CandidateDetail = () => {
         </div>
         {/* <!-- OUR BLOG END -->           */}
       </div>
+      ):(
+        navigate("/")
+      )}
       {/* <!-- CONTENT END --> */}
     </div>
   );

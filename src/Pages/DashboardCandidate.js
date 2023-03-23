@@ -83,32 +83,15 @@ const DashboardCandidate = () => {
                           <i className="fa fa-receipt" /> My Resume
                         </Link>
                       </li>
-                      <li>
-                        <Link to="/candidate-saved-jobs">
-                          <i className="fa fa-file-download" /> Saved Jobs
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/candidate-cv-manager">
-                          <i className="fa fa-paperclip" /> CV Manager
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/candidate-job-alert">
-                          <i className="fa fa-bell" /> Job Alerts
-                        </Link>
-                      </li>
+            
+                
+                
                       <li>
                         <Link to="/candidate-change-password">
                           <i className="fa fa-fingerprint" /> Change Passeord
                         </Link>
                       </li>
-                      <li>
-                        <Link to="/candidate-chat">
-                          <i className="fa fa-comments" />
-                          Chat
-                        </Link>
-                      </li>
+                    
                     </ul>
                   </div>
                 </div>

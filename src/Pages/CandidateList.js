@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const CandidateList = () => {
+
+
+  
   const [getAllUser, setGetAllUser] = useState([]);
   const [candidate, setCandidate] = useState([]);
   const [sendId, setSendId] = useState();

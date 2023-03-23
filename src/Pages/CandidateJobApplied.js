@@ -1,7 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CandidateJobApplied = () => {
+
+
+
+  const navigate = useNavigate()
+  const [Login,setLogin] = useState(false)
+
+  const accountType = localStorage.getItem("accountType");
+  console.log(accountType)
+  useEffect(() => {
+if(accountType==="candidate"){
+  setLogin(false)
+}else{
+  setLogin(true)
+}
+  },[])
   const [appliedJob, setAppliedJob] = useState([]);
   const [state, setState] = useState();
   useEffect(() => {
@@ -48,6 +63,7 @@ const CandidateJobApplied = () => {
   return (
     <div>
       {/* CONTENT START */}
+      {Login === false ?(
       <div className="page-content">
         {/* INNER PAGE BANNER */}
         <div
@@ -106,51 +122,35 @@ const CandidateJobApplied = () => {
                   <div className="twm-nav-list-1">
                     <ul>
                       <li>
-                        <Link href="/candidate-dashboard">
-                          <i className="fa fa-tachometer-alt" /> Dashboard
+                        <Link to="/candidate-dashboard">
+                          <i className="fa fa-tachometer-alt"></i> Dashboard
                         </Link>
                       </li>
-                      <li>
-                        <Link href="/candidate-profile">
-                          <i className="fa fa-user" /> My Pfofile
+                      <li className="">
+                        <Link to="/candidate-profile">
+                          <i className="fa fa-user"></i> MY Profile
                         </Link>
                       </li>
+
                       <li className="active">
-                        <Link href="/candidate-jobs-applied">
-                          <i className="fa fa-suitcase" /> Applied Jobs
+                        <Link to="/candidate-jobs-applied">
+                          <i className="fa fa-suitcase"></i> Applied Jobs
                         </Link>
                       </li>
                       <li>
-                        <Link href="/candidate-my-resume">
-                          <i className="fa fa-receipt" /> My Resume
+                        <Link to="/candidate-my-resume">
+                          <i className="fa fa-receipt"></i> My Resume
                         </Link>
                       </li>
+              
+                 
+                    
                       <li>
-                        <Link href="/candidate-saved-jobs">
-                          <i className="fa fa-file-download" /> Saved Jobs
+                        <Link to="/candidate-change-password">
+                          <i className="fa fa-fingerprint"></i> Change Passeord
                         </Link>
                       </li>
-                      <li>
-                        <Link href="/candidate-cv-manager">
-                          <i className="fa fa-paperclip" /> CV Manager
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/candidate-job-alert">
-                          <i className="fa fa-bell" /> Job Alerts
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/candidate-change-password">
-                          <i className="fa fa-fingerprint" /> Change Passeord
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/candidate-chat">
-                          <i className="fa fa-comments" />
-                          Chat
-                        </Link>
-                      </li>
+                  
                     </ul>
                   </div>
                 </div>
@@ -160,7 +160,7 @@ const CandidateJobApplied = () => {
                   {/*Filter Short By*/}
                   <div className="product-filter-wrap d-flex justify-content-between align-items-center">
                     <span className="woocommerce-result-count-left">
-                      Applied 250 jobs
+                      Applied {appliedJob?.length} jobs
                     </span>
                     <form
                       className="woocommerce-ordering twm-filter-select"
@@ -291,6 +291,9 @@ const CandidateJobApplied = () => {
         </div>
         {/* OUR BLOG END */}
       </div>
+      ):(
+        navigate("/")
+      )}
       {/* CONTENT END */}
     </div>
   );

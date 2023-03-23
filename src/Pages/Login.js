@@ -85,6 +85,7 @@ const Login = () => {
             accountType === "candidate"
           ) {
             localStorage.setItem("token", json.token);
+            localStorage.setItem("accountType", json.loginType);
             navigate("/candidate-profile");
           }
           if (
@@ -93,6 +94,7 @@ const Login = () => {
           )
            {
             localStorage.setItem("token", json.token);
+            localStorage.setItem("accountType", json.loginType);
             navigate("/employer-profile");
           }
           if (
@@ -102,7 +104,7 @@ const Login = () => {
            {
             localStorage.setItem("token", json.token);
             localStorage.setItem("accountType", json.loginType);
-            navigate("/dash-company-profile");
+           navigate("/dash-company-profile");
           }
 
           // setMessage(json.message);

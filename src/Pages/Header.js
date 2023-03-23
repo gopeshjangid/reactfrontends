@@ -26,6 +26,24 @@ const Header = () => {
 
   const [isLoggedin, setIsLoggedin] = useState(false);
 
+  const [ Type,setType] = useState(false)
+
+
+  const employerType = localStorage.getItem("accountType")
+
+  console.log("employerType",employerType)
+
+  useEffect(() =>{
+    if(employerType === "candidate"){
+   
+      setType(false)
+    }else{
+      setType(true)
+    }
+
+    console.log(Type)
+  })
+
   const location = useLocation();
  
   useEffect(() => {
@@ -379,7 +397,7 @@ const Header = () => {
                     </ul>
                   </li>
 
-                  {isLoggedin === true ? (
+                  {isLoggedin === true && Type === false  ?(
                   <li className="has-child">
                     <Link>Candidates</Link>
                     <ul className="sub-menu">
@@ -394,23 +412,30 @@ const Header = () => {
                  
                   </li>
                   ):( 
-                  <li className="has-child">
+                    Type === false  ?(
+                  <li
+                  data-bs-toggle="modal"
+                  href="#exampleModalToggle2"
+                  role="button" className="has-child">
                   <Link>Candidates</Link>
                   <ul className="sub-menu">
-                    <li 
-                    data-bs-toggle="modal"
-                        href="#exampleModalToggle2"
-                        role="button">
-                      <Link>Dashboard</Link>
-                    </li>
-                    <li
-                     data-bs-toggle="modal"
-                     href="#exampleModalToggle2"
-                     role="button">
-                      <Link>Candidates List</Link>
-                    </li>
-                  </ul>
-                  </li>)}
+                    
+                      <li>
+                        <Link to="/candidate-list">Candidates List</Link>
+                      </li>
+                    </ul>
+                  </li>
+                  ):(
+                     <li                   
+                   className="has-child">
+                    <Link>Candidates</Link>
+                    <ul className="sub-menu">
+                      
+                        <li>
+                          <Link to="/candidate-list">Candidates List</Link>
+                        </li>
+                      </ul>
+                    </li>))}
                   <li className="has-child">
                     <Link>Blog</Link>
                     <ul className="sub-menu">
@@ -567,7 +592,7 @@ const Header = () => {
                                 aria-label="Close"
                               ></button>
                             </div>
-                            <div class="modal-body text-center"><h3>Please First Login</h3></div>
+                            <div class="modal-body text-center"><h3>Please First Candidate Login</h3></div>
                             <div class="modal-footer justify-content-center">
                               <button
                                 class="btn btn-primary"
