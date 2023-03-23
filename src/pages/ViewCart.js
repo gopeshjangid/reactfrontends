@@ -37,6 +37,7 @@ const ViewCart = () => {
   const [login, setLogin] = useState(false);
   const [price, setPrice] = useState({});
   const [Loading, setLoading] = useState(false);
+  const [couponCheck, setCouponCheck] = useState();
 
   async function showRazorpay(amount) {
     const tokenID = localStorage.getItem("token");
@@ -334,9 +335,14 @@ const ViewCart = () => {
         applyCouponName: couponText,
       })
       .then((response) => {
-        console.log("coupons ++++++++++++++++++", response.data);
-        setCoupons(response.data);
-        setCouponApplied(response.data);
+        console.log("coupons ++++++++++++++++++", response.data.message);
+
+        setCouponCheck(response.data.message);
+        if (response.data.message.status !== "Deactive") {
+          setCoupons(response.data);
+          setCouponApplied(response.data);
+        }
+
         // if (response.message) {
         //   // localStorage.setItem("token", json.token);
         //   // setIsLoggedin(true);
@@ -544,11 +550,8 @@ const ViewCart = () => {
   };
 
   const [savePayment, setSavePayment] = useState([]);
-  // const paymentId = savePayment.payments;
-  // console.log(paymentId);
 
-  useEffect((paymentId) => {
-    console.log(paymentId);
+  useEffect(() => {
     const tokenID = localStorage.getItem("token");
     console.log(tokenID);
     const headers = {
@@ -560,11 +563,34 @@ const ViewCart = () => {
         headers: headers,
       })
       .then((res) => {
-        setSavePayment({ payments: res.data.message });
+        setSavePayment(res.data.message);
         console.log(res.data.message);
-        console.log(savePayment);
       });
   }, []);
+
+  const savePayments = (id) => {
+    console.log(id);
+    const tokenID = localStorage.getItem("token");
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization: `${tokenID}`,
+    };
+
+    axios
+      .post(
+        `${process.env.REACT_APP_APIURL}/register`,
+        {
+          id,
+        },
+        {
+          headers,
+        }
+      )
+      .then((res) => {
+        // setSavePayment(res.data.message);
+        console.log(res.data.message);
+      });
+  };
 
   return (
     <>
@@ -675,7 +701,6 @@ const ViewCart = () => {
                             className="bg-transparent border-0"
                             placeholder="Coupon Code"
                           />
-
                           <button
                             type="button"
                             className="btn Coupons btn-primary mb-0"
@@ -1022,6 +1047,64 @@ const ViewCart = () => {
                                       </button>
                                     )}
                                   </div>
+                                </div>
+
+                                <div className="row">
+                                  {savePayment?.map((friend, index) => {
+                                    return (
+                                      <div className="col-sm-12">
+                                        <div className="table-responsive  text-nowrap">
+                                          <table className="table table-borderless ">
+                                            <tbody>
+                                              <tr
+                                                onClick={() =>
+                                                  savePayments(friend._id)
+                                                }
+                                                className="p-0"
+                                                style={{
+                                                  background: "#029a99",
+                                                  cursor: "pointer",
+                                                }}
+                                              >
+                                                <td className="p-2 fs-4 text-start text-white">
+                                                  Card
+                                                </td>
+                                                <td className="p-2 text-end fs-4 text-white">
+                                                  {index + 1}
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td className="w-25  text-start">
+                                                  Acccount Holder &nbsp; :
+                                                </td>
+
+                                                <td>{friend.accountHolder}</td>
+                                              </tr>
+                                              <tr>
+                                                <td className="w-25  text-start">
+                                                  Ac/No. &nbsp; :
+                                                </td>
+                                                <td> {friend.accountNumber}</td>
+                                              </tr>
+                                              <tr>
+                                                <td className="w-25  text-start">
+                                                  Expiry Date &nbsp; :
+                                                </td>
+
+                                                <td>{friend.ifsc}</td>
+                                              </tr>
+                                              <tr>
+                                                <td className="w-25  text-start">
+                                                  CVC &nbsp; :
+                                                </td>
+                                                <td>{friend.cvc}</td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                      </div>
+                                    );
+                                  })}
                                 </div>
                               </div>
                             </div>

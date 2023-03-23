@@ -608,9 +608,10 @@
 }
 .testi_box-p {
   color: #5a5f66;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 32px;
+  font-family: "Times New Roman", Sans-serif;
+  line-height: 26px;
 }
 .testi_box-img {
   width: 60px;

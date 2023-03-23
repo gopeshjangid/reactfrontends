@@ -5,23 +5,21 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "./ReviewGetintouch";
 
-const BlogWritingServicesProfessional = () => {
+const BlogWritingServicesIntro = () => {
   return (
     <div>
       <section className="top_sec p-0">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1 mt-3 p-0">
-                Top Professional Blog Writers!
-              </h1>
-              <h2 className="top_Sec-h2"> Skilled Blog Write|</h2>
+              <h1 className="top_Sec-h1 mt-3 p-0">Amazing Intro Blog Posts!</h1>
+              <h2 className="top_Sec-h2">Right Intro Posts for Blogs|</h2>
               <p className="top_Sec-p">
-                GetProWriter offers professional blog writing services at
-                affordable prices to clients. Whether you’re an ambitious
-                entrepreneur looking to expand your online presence or a blogger
-                who wants to create more engaging content, GetProWriter can
-                help.
+                GetProWriter is a company that has made a name for itself for
+                offering excellent writing services. It has commendable writers
+                for intro blog posts. Our company offers a wide range of
+                services such as blog writing, article wiring, business writing,
+                website content writing, and more.
               </p>
             </div>
 
@@ -38,81 +36,81 @@ const BlogWritingServicesProfessional = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Get Professional Blog Writing Services On GetProWriter!
+              Want A Top-Notch Intro For Your Blog Post? GetProWriter Is Here!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Seamless blog creators to nurture your business.
+              Excellent writers for excellent introduction blog posts.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Talented Cohort</h3>
+                <h3 className="box-h3">Approachable Writers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Certified Experts</h3>
+                <h3 className="box-h3">Expertise Unparalleled</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Flawless Narration</h3>
+                <h3 className="box-h3">Accurate Keywords</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Fantastic Blogs</h3>
+                <h3 className="box-h3">Effective Blogs</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Industry Leaders</h3>
+                <h3 className="box-h3">Best Intros</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Seasoned Bloggers</h3>
+                <h3 className="box-h3">Online Services</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Brand Shapers</h3>
+                <h3 className="box-h3">Encouraging Brands</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Original Content</h3>
+                <h3 className="box-h3">Craft Masters</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Experienced Bloggers</h3>
+                <h3 className="box-h3">Fascinating Blogs</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Seamless Delivery</h3>
+                <h3 className="box-h3">Highly Talented</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">New Ideas</h3>
+                <h3 className="box-h3">Impressive Style</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Pleased Clients</h3>
+                <h3 className="box-h3">Happy Employers</h3>
               </div>
             </div>
           </div>
@@ -123,23 +121,25 @@ const BlogWritingServicesProfessional = () => {
         <div className="container">
           <div className="row">
             <h2 className="rev_sec-h2">
-              Professional Blog Writers To Strengthen Businesses
+              Trained Writers For Any Business Intro Blog Post
             </h2>
 
             <p className="rev_sec-p">
-              GetProWriter offers professional blog writers who can help you to
-              strengthen your business. We are here to help you get more traffic
-              and customers, increase your sales and establish a good reputation
-              for your company. Our blog writers are experts in their fields and
-              have years of experience working with businesses like yours.
+              For all your business intro blogs, GetProWriter is the best name.
+              The company has an experienced team of writers who are well versed
+              in their field. This makes them able to provide customers with
+              quality services at affordable prices. At GetProWriter, we
+              guarantee customer satisfaction in every project we undertake.
             </p>
             <p className="rev_sec-p">
-              They can help you to establish a strong presence on the web by
-              writing blogs that people want to read, sharing information they
-              need, and telling the stories behind your brand. If you’re looking
-              for bloggers who will provide content that is engaging,
-              informative, and interesting then look no further than
-              GetProWriter. So, for all your blogging needs, call us today.
+              The services offered by GetProWriter are the best in the industry.
+              We have a team of around 5000 writers who are well-versed in
+              various fields such as technology, business, finance, education,
+              and health & fitness among others. Our entire team ensures that
+              each piece of work is delivered within the stipulated time frame
+              without compromising on quality. Our company has a large number of
+              clients and we continue to grow because of our high-quality
+              services.
             </p>
           </div>
         </div>
@@ -149,11 +149,11 @@ const BlogWritingServicesProfessional = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              Top Blog Writers Only On GetProWriter!
+              Best GetProWriter Services For Intro Blog Post
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Well-created blogs for professional purposes.
+              Just call us for intro blog post requirements.
             </p>
 
             <div class="col-md-6">
@@ -225,22 +225,23 @@ const BlogWritingServicesProfessional = () => {
             </div>
             <div class="col-md-6">
               <h2 class="count_h2">
-                Hire Industry’s Best Bloggers From GetProWriter
+                Qualified Intro Blog Post Writers To Attract More Readers
               </h2>
               <p class="count-p">
-                GetProWriter is a service that connects clients to industry’s
-                best professional bloggers. We have a team of experts who are
-                well-versed in various niches and industries, allowing us to
-                connect you with the right writer for your project. We
-                specialize in writing blog posts, eBooks, and more.
+                Intro blog posts are the most important part of your website
+                because they help you to drive traffic to your website. They are
+                the first thing that people see when they visit your website.
+                They offer information about your business, how it works, and
+                its goals. Intro blog posts help to build a rapport between you
+                and your user, which makes them feel like they can trust you.
               </p>
               <p class="count-p">
-                We know that when you’re looking for a blog writer, it can be a
-                daunting task. There are so many options out there and you have
-                to make sure that your writer is someone who can meet your
-                needs. That’s why we’ve made it our mission to help you find the
-                perfect blogger for your project so that you can get back to
-                what really matters – running your business!
+                We offer the best introduction blog posts that will help your
+                business to attract more users every day. We specialize in
+                getting more customers for you through our unique blog posts
+                that will drive traffic straight to your website. Our team of
+                writers is ready to get started on your next big project, so
+                give us a call today!
               </p>
             </div>
           </div>
@@ -251,37 +252,37 @@ const BlogWritingServicesProfessional = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-              Affordable Professional Blog Writing Services
+              Intro Blog Post Writing Services For Better Brand Positioning
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Get qualified writers for your blogs today.
+              Go for our services to stand out online.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Professional Blog Writers Who Know The Way
+                Superb Quality Intro Blog Posts
               </h3>
               <p className="ab_sec2-p rws-p">
-                We, at GetProWriter, have professional blog writers who know how
-                to design the best content while working with blog posts. They
-                are experienced and have proven themselves in their work. Our
-                writers have a wide range of expertise in various fields and can
-                handle all the blogs with ease. They are also well-versed with
-                the latest topics and can write about them with ease.
+                An intro blog post is a type of writing that sets up and
+                explains an upcoming series of posts. It can also be used to
+                introduce a new audience to your company or brand if that’s what
+                you’re looking for and it’s especially important when trying to
+                build an online platform for an existing business.
               </p>
               <p className="ab_sec2-p rws-p">
-                They can help you to attract more users to your website by
-                writing engaging content for your blog. We offer quality
-                services at affordable prices so that you can acquire our
-                services without any worries. So, for your blog post
-                requirements, you can send us your queries any time. We are here
-                to extend the best of services.
+                We are known to offer superb quality introduction blog posts to
+                clients all over the world. We have a team of professional
+                writers who will help you get the best blog post for your
+                business. Our writers are highly trained, and they understand
+                how to write an effective blog post that will engage your target
+                audience. So, what are you waiting for? Get in touch with us
+                today.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Professional-blog-writer.webp"
+                src="/writer/img/Superb-Quality.webp"
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -289,58 +290,55 @@ const BlogWritingServicesProfessional = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Blog-creative-writer.webp"
+                src="/writer/img/Creatvie-Intro-blog.webp"
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <h3 className="ab_sec2-h3 rws-h3">
-                Blog Writers Who Are Highly Creative
-              </h3>
+              <h3 className="ab_sec2-h3 rws-h3">Creative Intro Blog Posts</h3>
               <p className="ab_sec2-p rws-p">
-                Our company is recognized by clients for having highly creative
-                professional bloggers. Our team is made up of skilled writers,
-                who are passionate about their work. Each blog they create goes
-                through several rounds of editing before being sent to you. Our
-                writers are experts in their field and will ensure that your
-                content is error-free and written in a language that is easily
-                understood by all audiences.
+                Our writers are trained to write intro blog posts that are
+                creative, engaging, and unique. We understand that your audience
+                is always looking for something new and exciting, so we want to
+                make sure that our content is always fresh.
               </p>
               <p className="ab_sec2-p rws-p">
-                When you hire bloggers for your content, they must ensure that
-                the content is creative. All of the content must be original and
-                unique. The blog should also be focused on a specific topic that
-                relates to the business. Our writers are trained to ensure all
-                of these while writing for you.
+                If you have creative introduction blog posts on your website,
+                then the right ground for your business expansion has been laid
+                out. While writing a good blog post may seem like a daunting
+                task, it is actually not that hard. And we can help in this
+                regard. We are ready to help you to put your best foot forward
+                when it comes to marketing. If you want people to come back to
+                your site, then you need content that is well-written. And
+                GetProWriter does exactly that!
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Get Versatile Blog Writers On Board
+                Diversified Intro Blog Post Ideas
               </h3>
               <p className="ab_sec2-p rws-p">
-                If you want versatile bloggers on board, then hire them from us.
-                Being versatile means that they should have experience in
-                writing for various industries. Being a versatile blogger is a
-                rare skill to find these days. However, we have a team of
-                writers who are experts in various fields and can write on
-                almost any topic or subject. We have writers who know how to
-                write about technology, fashion, lifestyle, travel, business,
-                sports, and much more.
+                When we say diversified intro blog posts, we mean we have
+                writers who can precisely write on any niche or topic. We work
+                hard to ensure our content is written in a way that’s easy for
+                your audience to understand and implement. Our writers are
+                experts in their fields and know how to deliver information in
+                an engaging way.
               </p>
               <p className="ab_sec2-p rws-p">
-                We always strive to provide you with high-quality content that
-                can be used for your website or blog. Our writers are very
-                knowledgeable about writing for the web and know the latest
-                trends in blogging so that they can create content that will
-                attract your readers and get them to stay on your site longer.
+                At GetProWriter, we only hire writers who have extensive writing
+                experience. Whether you need a blog post about how to expand a
+                business, or you want something written about the best software
+                in the industry – GetProWriter is here to help. Our team can
+                deliver high-quality content across all different niches and
+                topics.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Versatile-blog-writer.webp"
+                src="/writer/img/Blog-post-ideas.webp"
                 alt="Online-review"
                 className="rws-img"
               />
@@ -348,58 +346,58 @@ const BlogWritingServicesProfessional = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Professional-writer.webp"
+                src="/writer/img/Business-Image.webp"
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Professional Blog Writing Services That Get More Users
+                Business Image Depends A Lot On Intro Blog Posts
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our foremost objective of offering professional blog writing
-                services is to get you more and more users as the days pass by.
-                We know that it is not easy to get a lot of traffic in the first
-                place and it is even harder to keep them engaged so that they
-                come back to you. We have been in this business for many years
-                now and we know exactly what works and what does not work when
-                it comes to driving traffic to your website.
+                A business image depends immensely on intro blog posts. And we
+                are here to provide outstanding writing services. At
+                GetProWriter, we believe that every business needs a solid image
+                that can be developed through a well-written introduction blog
+                post. We understand that this is not an easy task, so we are
+                here to help you with this process by providing you with the
+                best writing services available in the market.
               </p>
               <p className="ab_sec2-p rws-p">
-                We will provide you with the best content that will help you
-                stand out from the crowd while keeping your audience engaged at
-                all times. We understand that you want your audience to engage
-                with your content and we thus offer engaging and informative
-                blog posts for you.
+                We are a team of highly qualified writers who create
+                high-quality content for clients. Our aim is to enhance the
+                image of your business by providing quality content that will be
+                enjoyed by your targeted audience. Our team of writers has years
+                of experience and they’re ready to help you with all of your
+                writing needs!
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Blog Writers With Original Content
+                Originality In All Intro Blog Post Content
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our writers have the skills needed to make your blog post stand
-                out amongst many other blogs by writing about topics that are
-                relevant in today’s world, which means that all blog posts will
-                have originality.
+                Our writers never compromise on originality when writing intro
+                blog posts. They strive to make all the content they produce for
+                you as unique, original, and compelling as possible. In order to
+                do this, they must be able to write from their own experiences,
+                opinions, and insights. This allows them to craft content that
+                speaks directly to your audience and helps you achieve your
+                goals.
               </p>
               <p className="ab_sec2-p rws-p">
-                We believe in quality over quantity, which is why all of our
-                articles are written with a specific purpose in mind. Our blog
-                writers never compromise on originality. Our team of
-                professional writers will craft pieces that are both relevant
-                and engaging for your readership. We’ll make sure your voice
-                comes through loud and clear, while also giving them something
-                they can relate to. You must know that our team of writers will
-                always deliver what they promise in terms of content and
-                quality.
+                Writing an introduction blog post is a lot like writing an
+                introduction to a book. You need to get the reader’s attention
+                and make them want to read more. Our writers always focus on
+                originality when working with intro blog posts, so you can be
+                sure that your readers will be hooked from the start.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Original-content-2.webp"
+                src="/writer/img/Original-blog-post-1.webp"
                 alt="Real-review-writer"
                 className="rws-img"
               />
@@ -407,30 +405,31 @@ const BlogWritingServicesProfessional = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Expertise-writer-2.webp"
+                src="/writer/img/Expertise-blog-post.webp"
                 alt="Expertise"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise - Professional Blog Writing
+                GetProWriter Expertise For Remarkable Intro Blog Post Ideas
               </h3>
               <p className="ab_sec2-p rws-p">
-                If you’re looking for a blog writing service that provides
-                unmatched levels of professionalism, GetProWriter is what you
-                need. GetProWriter is more than just a blog writing service –
-                it’s a community of writers who work together to create the best
-                content possible. Our team has worked with clients all around
-                the world and we’re ready to help you reach your goals.
+                If you need remarkable introduction blog post services, then
+                GetProWriter expertise is what you are looking for. We are a
+                team of professional writers who specialize in writing
+                professional, catchy, and engaging blog post titles. Our writers
+                have years of experience in writing custom blog post titles that
+                not only engage the reader but also make them want to read your
+                article.
               </p>
               <p className="ab_sec2-p rws-p">
-                When you need to hire a professional writer for your blog,
-                there’s no better place to go than GetProWriter. We’re here to
-                offer unmatched levels of quality and service so that you can
-                get the best results from your blog. So, what are you waiting
-                for? Get in touch with us and acquire the best professional blog
-                writing services.
+                We guarantee that our writers will create the best blog posts
+                for you which will help to get more traffic and sales on your
+                blog. Our company has worked with many clients in different
+                industries and has helped them gain more readership as a result
+                of their high-quality content. You can contact us anytime if you
+                want to discuss anything related to our services.
               </p>
             </div>
           </div>
@@ -642,10 +641,10 @@ const BlogWritingServicesProfessional = () => {
         <div className="container">
           <div className="row">
             <h2 className="get_sec-h2">
-              Why Hire Our Professional Blog Writers?
+              Why Hire Our Intro Blog Post Writers?
             </h2>
             <p className="get_sec-p">
-              To help your enterprise flourish in the industry.
+              To help your business achieve optimal heights of success.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -657,7 +656,7 @@ const BlogWritingServicesProfessional = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">Industry blog experts</span>
+                    <span className="spa_h2">Intro blog post experts</span>
                   </li>
                 </ol>
               </div>
@@ -672,7 +671,7 @@ const BlogWritingServicesProfessional = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Content as per the requirements of clients
+                      Trained content creators for introduction blogs
                     </span>
                   </li>
                 </ol>
@@ -688,7 +687,7 @@ const BlogWritingServicesProfessional = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Excellent blogs created seamlessly
+                      Effective content delivery on time
                     </span>
                   </li>
                 </ol>
@@ -696,21 +695,20 @@ const BlogWritingServicesProfessional = () => {
             </div>
 
             <p className="review1-p">
-              If you hire professional blog writers from us, they will help your
-              company flourish. We have a team of professional blog writers who
-              are highly qualified and experienced in writing content for
-              companies like yours. They can help you with any type of content
-              such as blogs, articles, ebooks, reports, etc.
+              If you want your business to achieve optimal heights of success,
+              you need our blog writers. Our team of dedicated writers will help
+              you create content that is not only engaging and informative, but
+              also consistent with the tone, voice, and style of your brand.
             </p>
 
             <p className="review1-p">
-              All our blog writers are industry experts. They consider clients’
-              requirements while easily creating blogs as per their
-              expectations. They also make sure that the content is error-free,
-              grammatically correct, and easy to understand by the target
-              audience. As a writing service company, we pride ourselves on our
-              industry expertise. We always consider the needs of the industry
-              when creating blogs.
+              Our writers are intro blog post experts and they have the
+              experience of writing blog posts for companies ranging from small
+              businesses to large corporations. No matter the size or scope of
+              your business, we can help you create content and deliver it on
+              time, whenever you acquire our services. You can’t afford to go
+              wrong with your marketing strategy. And that’s why you need to
+              make sure it works for you by hiring our blog writers today.
             </p>
           </div>
         </div>
@@ -724,19 +722,19 @@ const BlogWritingServicesProfessional = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  We hired blog writers from GetProWriter. We needed business
-                  blogs and they offered outstanding content. They are the best.
-                  They have a huge network of writers and they offer a lot of
-                  different services, so you can find what you need.
+                  Our business needed some excellent introduction blog posts to
+                  attract customers, and we just made the right choice with
+                  GetProWriter. We told them what we wanted and they delivered.
+                  We are extremely glad about the results!
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Dan-Richardson.webp"
+                    src="/writer/img/Mindy-Taylor.webp"
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Dan Richardson</h3>
-                  <p className="testi_box-p">Senior Executive SEO, Scouth </p>
+                  <h3 className="testi_box-h3">Mindy Taylor</h3>
+                  <p className="testi_box-p">VP of Marketing, Shopviar</p>
                 </div>
               </div>
             </div>
@@ -744,19 +742,19 @@ const BlogWritingServicesProfessional = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  I needed tech blogs and I reached out to GPW writers to write
-                  for my clients. Everyone is very pleased with their work and
-                  would highly recommend them to anyone who needs a blog
-                  written.
+                  I started looking around for a company that could help me with
+                  a huge project. I didn't want to spend too much time finding
+                  for the right now. Thankfully I found GPW at the right time.
+                  Their writers did a wonderful job!
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Gaston-Froidevaux.webp"
+                    src="/writer/img/Frank-Thompson.webp"
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Gaston Froidevaux</h3>
-                  <p className="testi_box-p">SEO Executive, Custer</p>
+                  <h3 className="testi_box-h3">Frank Thompson</h3>
+                  <p className="testi_box-p">PPC Specialist, Trategic</p>
                 </div>
               </div>
             </div>
@@ -820,7 +818,7 @@ const BlogWritingServicesProfessional = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        How does your content writing process work?
+                        For how long has GetProWriter been offering services?{" "}
                       </button>
                     </h2>
 
@@ -831,11 +829,13 @@ const BlogWritingServicesProfessional = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        We will analyse your project requirements and
-                        specifications once you have completed the online order
-                        submission and payment procedure. This normally takes
-                        one to two days, depending on the complexity and
-                        requirements of your project.
+                        GetProWriter has been offering its services for quite
+                        some time now. We have emerged as a leading company in
+                        the industry. We have been providing our clients with
+                        all types of writing services and have been able to
+                        deliver quality work on time. Our excellent customer
+                        service and affordable pricing make us stand out from
+                        our competitors.
                       </div>
                     </div>
                   </div>
@@ -853,7 +853,7 @@ const BlogWritingServicesProfessional = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Can I own content copyright with my order?
+                        What’s the role of a freelancer for intro blog posts?
                       </button>
                     </h2>
 
@@ -864,12 +864,11 @@ const BlogWritingServicesProfessional = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        Yes, you have exclusive copyright as soon as We’ve
-                        turned in the document and you pay for it. After We’ve
-                        handed over the documents, it’s up to you to decide what
-                        to do with the information. You can re-distribute it,
-                        alter it, truncate it, or just remove it (although this
-                        would be heartbreaking and discouraging).
+                        Freelancers are assets for intro blog posts. When you do
+                        not require a full team for content, simply hire a niche
+                        expert and let the freelancer do the job for you. Our
+                        services have been regarded as one of the best in the
+                        industry as we have highly skilled freelancers on board.
                       </div>
                     </div>
                   </div>
@@ -888,8 +887,7 @@ const BlogWritingServicesProfessional = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      Do you check contents on Copyscape or other related
-                      software?
+                      Do you have certified writers for our intro blog posts?
                     </button>
                   </h2>
 
@@ -900,10 +898,14 @@ const BlogWritingServicesProfessional = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      {" "}
-                      We analyze articles for grammatical correctness using our
-                      Copyscape VIP account. All of the content we create is
-                      delivered by our editorial team.
+                      Yes. All our writers are certified and they have
+                      substantial industry experience. They’ve worked for some
+                      of the biggest names in their fields. They are qualified
+                      to write any type of content – from blog posts to e-books
+                      and from web pages to press releases. If you are looking
+                      for talented writers for your introduction blog posts,
+                      then hire our writers. Also, we offer all our writing
+                      services at affordable prices.
                     </div>
                   </div>
                 </div>
@@ -916,4 +918,4 @@ const BlogWritingServicesProfessional = () => {
   );
 };
 
-export default BlogWritingServicesProfessional;
+export default BlogWritingServicesIntro;

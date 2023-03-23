@@ -57,6 +57,13 @@ import PaypalSubscriptionSuccess from "./pages/PaypalSubscriptionSuccess";
 import BlogWritingServicesTechnical from "./pages/BlogWritingServicesTechnical";
 import BlogWritingServicesProfessional from "./pages/BlogWritingServicesProfessional";
 import BlogWritingServicesCreative from "./pages/BlogWritingServicesCreative";
+import BlogWritingServicesWhitelabel from "./pages/BlogWritingServicesWhitelabel";
+import BlogWritingServicesRealState from "./pages/BlogWritingServicesRealState";
+import BlogWritingServicesHealthFitness from "./pages/BlogWritingServicesHealthFitness";
+import BlogWritingServicesFreelance from "./pages/BlogWritingServicesFreelance";
+import BlogWritingServicesIntro from "./pages/BlogWritingServicesIntro";
+import BlogWritingServicesShort from "./pages/BlogWritingServicesShort";
+import BlogWritingServicesInformal from "./pages/BlogWritingServicesInformal";
 
 function App() {
   return (
@@ -161,6 +168,34 @@ function App() {
         <Route
           path="blog-writing-services/creative"
           element={<BlogWritingServicesCreative />}
+        />
+        <Route
+          path="blog-writing-services/white-label"
+          element={<BlogWritingServicesWhitelabel />}
+        />
+        <Route
+          path="blog-writing-services/real-estate"
+          element={<BlogWritingServicesRealState />}
+        />
+        <Route
+          path="blog-writing-services/health-fitness"
+          element={<BlogWritingServicesHealthFitness />}
+        />
+        <Route
+          path="blog-writing-services/freelance"
+          element={<BlogWritingServicesFreelance />}
+        />
+        <Route
+          path="blog-writing-services/intro"
+          element={<BlogWritingServicesIntro />}
+        />
+        <Route
+          path="blog-writing-services/short"
+          element={<BlogWritingServicesShort />}
+        />
+        <Route
+          path="blog-writing-services/informal"
+          element={<BlogWritingServicesInformal />}
         />
       </Routes>
       <Footer />

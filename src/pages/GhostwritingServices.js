@@ -2,7 +2,6 @@ import React from "react";
 
 import ReviewGetintouch from "./ReviewGetintouch";
 
-
 const GhostwritingServices = () => {
   return (
     <div>
@@ -610,7 +609,7 @@ const GhostwritingServices = () => {
           <div className="row">
             <h2 className="testi_sec-h2">Testimonials</h2>
             <span className="testi_sec-spa">* * * * *</span>
-            <div className="col-md-6">
+            <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
                   I was looking for ghostwriters near me for our firm and
@@ -632,7 +631,7 @@ const GhostwritingServices = () => {
               </div>
             </div>
 
-            <div className="col-md-6">
+            <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
                   Our company relied on ghost writing services GetProWriter to

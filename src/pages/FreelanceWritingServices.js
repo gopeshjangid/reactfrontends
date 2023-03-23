@@ -5,7 +5,6 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "./ReviewGetintouch";
 
-
 const FreelanceWritingServices = () => {
   return (
     <div>
@@ -726,7 +725,7 @@ const FreelanceWritingServices = () => {
           <div className="row">
             <h2 className="testi_sec-h2">Testimonials</h2>
             <span className="testi_sec-spa">* * * * *</span>
-            <div className="col-md-6">
+            <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
                   We are extremely satisfied with the writers from GPW. They
@@ -746,7 +745,7 @@ const FreelanceWritingServices = () => {
               </div>
             </div>
 
-            <div className="col-md-6">
+            <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
                   I needed some help regarding freelance writing and we hired

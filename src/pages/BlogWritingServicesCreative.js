@@ -714,7 +714,7 @@ const BlogWritingServicesCreative = () => {
           <div className="row">
             <h2 className="testi_sec-h2">Testimonials</h2>
             <span className="testi_sec-spa">* * * * *</span>
-            <div className="col-md-6">
+            <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
                   Our requirements for creative blogging were taken care of by
@@ -733,7 +733,7 @@ const BlogWritingServicesCreative = () => {
               </div>
             </div>
 
-            <div className="col-md-6">
+            <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
                   I was very impressed with the writers that GetProWriter

@@ -5,23 +5,20 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "./ReviewGetintouch";
 
-const BlogWritingServicesProfessional = () => {
+const BlogWritingServicesRealState = () => {
   return (
     <div>
       <section className="top_sec p-0">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1 mt-3 p-0">
-                Top Professional Blog Writers!
-              </h1>
-              <h2 className="top_Sec-h2"> Skilled Blog Write|</h2>
+              <h1 className="top_Sec-h1 mt-3 p-0">Apt Real Estate Blogs!</h1>
+              <h2 className="top_Sec-h2">Real Estate Blog Writing Now|</h2>
               <p className="top_Sec-p">
-                GetProWriter offers professional blog writing services at
-                affordable prices to clients. Whether you’re an ambitious
-                entrepreneur looking to expand your online presence or a blogger
-                who wants to create more engaging content, GetProWriter can
-                help.
+                GetProWriter is a well-known real estate blog writing service
+                provider. We have been in the business for many years now. Our
+                team of expert writers has written thousands of blogs on real
+                estate. We have worked with clients from all over the world.
               </p>
             </div>
 
@@ -38,81 +35,81 @@ const BlogWritingServicesProfessional = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Get Professional Blog Writing Services On GetProWriter!
+              Get Excellent Real Estate Blog Services From GetProWriter!{" "}
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Seamless blog creators to nurture your business.
+              Compelling blogs for your real estate business.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Talented Cohort</h3>
+                <h3 className="box-h3">Trustworthy Experts</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Certified Experts</h3>
+                <h3 className="box-h3">Certified Bloggers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Flawless Narration</h3>
+                <h3 className="box-h3">Real Estate Expertise</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Fantastic Blogs</h3>
+                <h3 className="box-h3">High Quality</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Industry Leaders</h3>
+                <h3 className="box-h3">Industry Experience</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Seasoned Bloggers</h3>
+                <h3 className="box-h3">ORM Focussed</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Brand Shapers</h3>
+                <h3 className="box-h3">Expanding Brands</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Original Content</h3>
+                <h3 className="box-h3">Genuine & Sincere</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Experienced Bloggers</h3>
+                <h3 className="box-h3">Zero Plagiarism</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Seamless Delivery</h3>
+                <h3 className="box-h3">Original Tone</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">New Ideas</h3>
+                <h3 className="box-h3">Prospering Enterprises</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Pleased Clients</h3>
+                <h3 className="box-h3">Internationally Known</h3>
               </div>
             </div>
           </div>
@@ -123,23 +120,25 @@ const BlogWritingServicesProfessional = () => {
         <div className="container">
           <div className="row">
             <h2 className="rev_sec-h2">
-              Professional Blog Writers To Strengthen Businesses
+              Real Estate Blog Writers For Real Growth
             </h2>
 
             <p className="rev_sec-p">
-              GetProWriter offers professional blog writers who can help you to
-              strengthen your business. We are here to help you get more traffic
-              and customers, increase your sales and establish a good reputation
-              for your company. Our blog writers are experts in their fields and
-              have years of experience working with businesses like yours.
+              Our clients range from small businesses to large corporations. Our
+              team is made up entirely of professional writers who are native
+              English speakers with degrees in relevant fields. They have
+              extensive experience working in real estate blog content writing
+              service as well as other industries like health care or
+              technology.
             </p>
             <p className="rev_sec-p">
-              They can help you to establish a strong presence on the web by
-              writing blogs that people want to read, sharing information they
-              need, and telling the stories behind your brand. If you’re looking
-              for bloggers who will provide content that is engaging,
-              informative, and interesting then look no further than
-              GetProWriter. So, for all your blogging needs, call us today.
+              This means that they understand how to write content that will
+              resonate with your target audience and get them interested in your
+              brand or product. GetProWriter offers affordable prices for all
+              types of content whether you need something simple like a blog
+              about real estate investment tips or something more complex such
+              as a custom landing page design for your website. You will company
+              will grow immensely with this collaboration.
             </p>
           </div>
         </div>
@@ -149,11 +148,11 @@ const BlogWritingServicesProfessional = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              Top Blog Writers Only On GetProWriter!
+              Best Real Estate Blog Writing Services Only On GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Well-created blogs for professional purposes.
+              Well-designed blogs for all your real estate content needs.
             </p>
 
             <div class="col-md-6">
@@ -225,22 +224,24 @@ const BlogWritingServicesProfessional = () => {
             </div>
             <div class="col-md-6">
               <h2 class="count_h2">
-                Hire Industry’s Best Bloggers From GetProWriter
+                Go For A GPW Expert For Real Estate Blogs
               </h2>
               <p class="count-p">
-                GetProWriter is a service that connects clients to industry’s
-                best professional bloggers. We have a team of experts who are
-                well-versed in various niches and industries, allowing us to
-                connect you with the right writer for your project. We
-                specialize in writing blog posts, eBooks, and more.
+                If you’re in the real estate industry, you know that content is
+                key. But writing good content for your website can be
+                time-consuming and difficult. That is why GetProWriter is here
+                to help. We are a real estate blog writing service provider
+                helping companies build their brand by providing them with
+                high-quality articles and blogs.
               </p>
               <p class="count-p">
-                We know that when you’re looking for a blog writer, it can be a
-                daunting task. There are so many options out there and you have
-                to make sure that your writer is someone who can meet your
-                needs. That’s why we’ve made it our mission to help you find the
-                perfect blogger for your project so that you can get back to
-                what really matters – running your business!
+                Our team of writers has many years of experience working in the
+                industry. They have written extensively on real estate, so they
+                know exactly what works and what doesn’t with potential clients.
+                Our writers make sure that every article goes through a rigorous
+                review process before it is sent to you. This ensures that your
+                content looks professional, sounds professional, and is easy to
+                read. This will surely help you attract more clients!
               </p>
             </div>
           </div>
@@ -251,37 +252,35 @@ const BlogWritingServicesProfessional = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-              Affordable Professional Blog Writing Services
+              Affordable Services Great Results
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Get qualified writers for your blogs today.
+              Acquire our services to increase your real estate customers.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
-              <h3 className="ab_sec2-h3 rws-h3">
-                Professional Blog Writers Who Know The Way
-              </h3>
+              <h3 className="ab_sec2-h3 rws-h3">Quality Always Guaranteed</h3>
               <p className="ab_sec2-p rws-p">
-                We, at GetProWriter, have professional blog writers who know how
-                to design the best content while working with blog posts. They
-                are experienced and have proven themselves in their work. Our
-                writers have a wide range of expertise in various fields and can
-                handle all the blogs with ease. They are also well-versed with
-                the latest topics and can write about them with ease.
+                Our real estate blog writers are skilled enough to ensure
+                optimal quality in all wiring assignments. Our real estate blog
+                content writing service professionals are adequately trained, so
+                you can be confident that your project will be completed on time
+                and with the highest level of quality possible.
               </p>
               <p className="ab_sec2-p rws-p">
-                They can help you to attract more users to your website by
-                writing engaging content for your blog. We offer quality
-                services at affordable prices so that you can acquire our
-                services without any worries. So, for your blog post
-                requirements, you can send us your queries any time. We are here
-                to extend the best of services.
+                Whether you need a simple website or a full-blown marketing
+                campaign, our team can deliver the high-quality content that
+                your business needs to succeed. We know how to write for
+                multiple platforms and audiences, so you can rest assured that
+                your audience will see the same message no matter where they
+                are: on the web, in print, or even in person. So, get in touch
+                with us if you need any assistance in writing real estate blogs.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Professional-blog-writer.webp"
+                src="/writer/img/Guaranteed.webp"
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -289,58 +288,58 @@ const BlogWritingServicesProfessional = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Blog-creative-writer.webp"
+                src="/writer/img/Real-Estate-unmatched.webp"
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Blog Writers Who Are Highly Creative
+                Creativity Unmatched In All Real Estate Blogs
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our company is recognized by clients for having highly creative
-                professional bloggers. Our team is made up of skilled writers,
-                who are passionate about their work. Each blog they create goes
-                through several rounds of editing before being sent to you. Our
-                writers are experts in their field and will ensure that your
-                content is error-free and written in a language that is easily
-                understood by all audiences.
+                When you’re looking for a real estate blog writer, it’s
+                important to make sure that they are skilled and full of
+                creativity. Our real estate blog writers have been writing for
+                thousands of clients in the past years. This means they are
+                highly qualified to write creative content on any subject that
+                you need.
               </p>
               <p className="ab_sec2-p rws-p">
-                When you hire bloggers for your content, they must ensure that
-                the content is creative. All of the content must be original and
-                unique. The blog should also be focused on a specific topic that
-                relates to the business. Our writers are trained to ensure all
-                of these while writing for you.
+                Whether you need content for customers who are looking to
+                purchase a new home or need help building content for real
+                estate services, we are here to help you out. All our writers
+                are creative enough to write content for various real
+                estate-related aspects. We have writers who are experts in
+                writing about property management, architecture, construction,
+                buying and selling of properties, etc.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Get Versatile Blog Writers On Board
+                Committed To Offer The Best Content
               </h3>
               <p className="ab_sec2-p rws-p">
-                If you want versatile bloggers on board, then hire them from us.
-                Being versatile means that they should have experience in
-                writing for various industries. Being a versatile blogger is a
-                rare skill to find these days. However, we have a team of
-                writers who are experts in various fields and can write on
-                almost any topic or subject. We have writers who know how to
-                write about technology, fashion, lifestyle, travel, business,
-                sports, and much more.
+                When you are looking for the best content for your blogs, make
+                sure that you hire writers who know what needs to be done. Many
+                people think that they can write effective blog posts, but this
+                is not true. You need to hire someone who knows how to create
+                good content and then write it.
               </p>
               <p className="ab_sec2-p rws-p">
-                We always strive to provide you with high-quality content that
-                can be used for your website or blog. Our writers are very
-                knowledgeable about writing for the web and know the latest
-                trends in blogging so that they can create content that will
-                attract your readers and get them to stay on your site longer.
+                Our team of writers is passionate about their work and everyone
+                is committed to putting their best efforts into every project.
+                We know that you have a lot of options when it comes to finding
+                a writing partner and we’re proud to be among them. We’ve worked
+                hard to build a team that we feel confident in recommending to
+                our clients and we’re looking forward to making your next
+                project an exciting one.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Versatile-blog-writer.webp"
+                src="/writer/img/Committed-best-content.webp"
                 alt="Online-review"
                 className="rws-img"
               />
@@ -348,58 +347,56 @@ const BlogWritingServicesProfessional = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Professional-writer.webp"
+                src="/writer/img/Real-Estate-Industry-blogs.webp"
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Professional Blog Writing Services That Get More Users
+                Boost Real Estate Industry Image With Enriching Blogs
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our foremost objective of offering professional blog writing
-                services is to get you more and more users as the days pass by.
-                We know that it is not easy to get a lot of traffic in the first
-                place and it is even harder to keep them engaged so that they
-                come back to you. We have been in this business for many years
-                now and we know exactly what works and what does not work when
-                it comes to driving traffic to your website.
+                Our writers create enriching blogs for real estate clients to
+                boost their company image. Real estate is a booming industry,
+                and there are a lot of companies out there trying to make their
+                mark on the market. But how can you stand out from the crowd?
+                Well, it’s easier than you think! All you need is an engaging
+                blog that has been written by one of our talented writers.
               </p>
               <p className="ab_sec2-p rws-p">
-                We will provide you with the best content that will help you
-                stand out from the crowd while keeping your audience engaged at
-                all times. We understand that you want your audience to engage
-                with your content and we thus offer engaging and informative
-                blog posts for you.
+                Our writers are experts at creating blogs that will help your
+                company become more well-known in the real estate community.
+                They know how to craft content that will make your brand stand
+                out from the others and they’ll even work with you on coming up
+                with a topic that’s relevant to your brand.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Blog Writers With Original Content
+                Originality Is Always An Essence Of Our Blogs
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our writers have the skills needed to make your blog post stand
-                out amongst many other blogs by writing about topics that are
-                relevant in today’s world, which means that all blog posts will
-                have originality.
+                We make sure that the blogs that you get from us truly reflect
+                your brand voice and that the content stands apart from the
+                crowd. We always go out of the way to maintain originality in
+                all the blogs we create for clients.
               </p>
               <p className="ab_sec2-p rws-p">
-                We believe in quality over quantity, which is why all of our
-                articles are written with a specific purpose in mind. Our blog
-                writers never compromise on originality. Our team of
-                professional writers will craft pieces that are both relevant
-                and engaging for your readership. We’ll make sure your voice
-                comes through loud and clear, while also giving them something
-                they can relate to. You must know that our team of writers will
-                always deliver what they promise in terms of content and
-                quality.
+                We work with you to make sure that your voice is heard in every
+                article we write and we are committed to being sure that your
+                content is unique, engaging, and informative. Our team of
+                writers uses their expertise and experience to craft blog posts
+                that will captivate readers and inspire them to take action. So,
+                what are you waiting for? Hire a real estate blog content
+                writing service professional from us today to add the required
+                flair to your content.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Original-content-2.webp"
+                src="/writer/img/Originality.webp"
                 alt="Real-review-writer"
                 className="rws-img"
               />
@@ -407,30 +404,30 @@ const BlogWritingServicesProfessional = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Expertise-writer-2.webp"
+                src="/writer/img/Expertise-5.webp"
                 alt="Expertise"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise - Professional Blog Writing
+                GetProWriter Expertise For The Right Blogs
               </h3>
               <p className="ab_sec2-p rws-p">
-                If you’re looking for a blog writing service that provides
-                unmatched levels of professionalism, GetProWriter is what you
-                need. GetProWriter is more than just a blog writing service –
-                it’s a community of writers who work together to create the best
-                content possible. Our team has worked with clients all around
-                the world and we’re ready to help you reach your goals.
+                The GetProWriter team has a decade of experience writing real
+                estate blogs for major brands across the country and we’re ready
+                to use that knowledge to help your business. We understand how
+                important it is to be able to connect with your audience on a
+                personal level, so we make sure each blog we write is tailored
+                specifically for your brand and your audience.
               </p>
               <p className="ab_sec2-p rws-p">
-                When you need to hire a professional writer for your blog,
-                there’s no better place to go than GetProWriter. We’re here to
-                offer unmatched levels of quality and service so that you can
-                get the best results from your blog. So, what are you waiting
-                for? Get in touch with us and acquire the best professional blog
-                writing services.
+                We take our role, as your professional writer, very seriously.
+                We know that the right blog can be a powerful tool for your
+                business. That is why GetProWriter makes sure that you get the
+                most appropriate real estate blogs from us every single time.
+                Just send us your requirement and we will connect you to our
+                best writers in no time.
               </p>
             </div>
           </div>
@@ -642,10 +639,10 @@ const BlogWritingServicesProfessional = () => {
         <div className="container">
           <div className="row">
             <h2 className="get_sec-h2">
-              Why Hire Our Professional Blog Writers?
+              Why Hire Our Real Estate Blog Writers?
             </h2>
             <p className="get_sec-p">
-              To help your enterprise flourish in the industry.
+              We offer the best real estate blog writing services.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -657,7 +654,21 @@ const BlogWritingServicesProfessional = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">Industry blog experts</span>
+                    <span className="spa_h2">Industry experts for decades</span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="box-ol">
+                <ol className="m-0 d-flex align-items-center p-0">
+                  <li className="in_li">
+                    <span className="right_span">
+                      <i aria-hidden="true" className="fas fa-check-circle"></i>
+                    </span>
+                  </li>
+                  <li className="in_li">
+                    <span className="spa_h2">Real estate forte</span>
                   </li>
                 </ol>
               </div>
@@ -672,23 +683,7 @@ const BlogWritingServicesProfessional = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Content as per the requirements of clients
-                    </span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="box-ol">
-                <ol className="m-0 d-flex align-items-center p-0">
-                  <li className="in_li">
-                    <span className="right_span">
-                      <i aria-hidden="true" className="fas fa-check-circle"></i>
-                    </span>
-                  </li>
-                  <li className="in_li">
-                    <span className="spa_h2">
-                      Excellent blogs created seamlessly
+                      Content is error-free and information-rich
                     </span>
                   </li>
                 </ol>
@@ -696,21 +691,21 @@ const BlogWritingServicesProfessional = () => {
             </div>
 
             <p className="review1-p">
-              If you hire professional blog writers from us, they will help your
-              company flourish. We have a team of professional blog writers who
-              are highly qualified and experienced in writing content for
-              companies like yours. They can help you with any type of content
-              such as blogs, articles, ebooks, reports, etc.
+              When you are looking for a real estate blog writing service, it is
+              important that you choose the best. We have been regarded as an
+              excellent service provider by many clients and we look forward to
+              helping you too. We are a leading name and we have been in this
+              industry for quite some time. Our team of experts is highly
+              professional and experienced in the field of real estate blog
+              writing.
             </p>
 
             <p className="review1-p">
-              All our blog writers are industry experts. They consider clients’
-              requirements while easily creating blogs as per their
-              expectations. They also make sure that the content is error-free,
-              grammatically correct, and easy to understand by the target
-              audience. As a writing service company, we pride ourselves on our
-              industry expertise. We always consider the needs of the industry
-              when creating blogs.
+              All our writers have been industry experts for decades. They know
+              everything about real estate blog writing. The content they offer
+              for your projects is error-free ways. Their blogs are rich in
+              information and quite engaging. So, call us today to add
+              GetProWriter expertise to your blog writing!
             </p>
           </div>
         </div>
@@ -724,19 +719,21 @@ const BlogWritingServicesProfessional = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  We hired blog writers from GetProWriter. We needed business
-                  blogs and they offered outstanding content. They are the best.
-                  They have a huge network of writers and they offer a lot of
-                  different services, so you can find what you need.
+                  We hired real estate blog writers from GetProWriter and we are
+                  extremely satisfied with their content. When we contacted
+                  them, they were very responsive and started the assignment
+                  promptly.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Dan-Richardson.webp"
+                    src="/writer/img/Rupert-Donald.webp"
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Dan Richardson</h3>
-                  <p className="testi_box-p">Senior Executive SEO, Scouth </p>
+                  <h3 className="testi_box-h3">Rupert Donald</h3>
+                  <p className="testi_box-p">
+                    Digital Marketing Manager, Trand
+                  </p>
                 </div>
               </div>
             </div>
@@ -744,19 +741,21 @@ const BlogWritingServicesProfessional = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  I needed tech blogs and I reached out to GPW writers to write
-                  for my clients. Everyone is very pleased with their work and
-                  would highly recommend them to anyone who needs a blog
-                  written.
+                  I went through the samples of the writers at GPW and I could
+                  see how they know how to focus on SEO ranking. I decided to
+                  get two writers on board. GetProWriter did a wonderful job by
+                  providing me with high-quality content at affordable prices!
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Gaston-Froidevaux.webp"
+                    src="/writer/img/Charlotte-Cook.webp"
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Gaston Froidevaux</h3>
-                  <p className="testi_box-p">SEO Executive, Custer</p>
+                  <h3 className="testi_box-h3">Charlotte Cook</h3>
+                  <p className="testi_box-p">
+                    Product Marketing Manager, Webimple
+                  </p>
                 </div>
               </div>
             </div>
@@ -820,7 +819,8 @@ const BlogWritingServicesProfessional = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        How does your content writing process work?
+                        Why should we hire real estate blog writers from
+                        GetProWriter?
                       </button>
                     </h2>
 
@@ -831,11 +831,14 @@ const BlogWritingServicesProfessional = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        We will analyse your project requirements and
-                        specifications once you have completed the online order
-                        submission and payment procedure. This normally takes
-                        one to two days, depending on the complexity and
-                        requirements of your project.
+                        {" "}
+                        You should hire real estate blog writers from
+                        GetProWriter if you want to increase the visibility of
+                        your brand. To stand out in this competitive market, you
+                        need to invest in your business by hiring real estate
+                        blog writers from GetProWriter. We can provide you with
+                        quality content that will surely help you to attract
+                        more customers.
                       </div>
                     </div>
                   </div>
@@ -853,7 +856,7 @@ const BlogWritingServicesProfessional = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Can I own content copyright with my order?
+                        How do we test your writers before hiring?{" "}
                       </button>
                     </h2>
 
@@ -864,12 +867,15 @@ const BlogWritingServicesProfessional = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        Yes, you have exclusive copyright as soon as We’ve
-                        turned in the document and you pay for it. After We’ve
-                        handed over the documents, it’s up to you to decide what
-                        to do with the information. You can re-distribute it,
-                        alter it, truncate it, or just remove it (although this
-                        would be heartbreaking and discouraging).
+                        {" "}
+                        To test the quality of our writers, you can simply check
+                        their samples available on request. If you like the
+                        samples, then you can proceed with hiring them. Our
+                        writers are known to maintain quality consistency in all
+                        projects. Our team of experts is comprised of a diverse
+                        group of experts with a wide range of experience in
+                        various fields. We are able to deliver high-quality
+                        content at affordable prices.
                       </div>
                     </div>
                   </div>
@@ -888,8 +894,8 @@ const BlogWritingServicesProfessional = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      Do you check contents on Copyscape or other related
-                      software?
+                      Can we buy blogs from ghostwriters for our real estate
+                      business?
                     </button>
                   </h2>
 
@@ -901,9 +907,15 @@ const BlogWritingServicesProfessional = () => {
                   >
                     <div className="accordion-body">
                       {" "}
-                      We analyze articles for grammatical correctness using our
-                      Copyscape VIP account. All of the content we create is
-                      delivered by our editorial team.
+                      Yes. Getting ghostwriters on board is a wise idea. Since
+                      you have many aspects of the business to focus on, you can
+                      always hire ghostwriters for your real estate blog
+                      content. When you hire a ghostwriter, they will write the
+                      article for you and submit it on your behalf, with your
+                      name appearing as the author. The main benefit of this
+                      process is that it gives you more time to manage other
+                      business dimensions like managing properties, making sales
+                      calls, etc.
                     </div>
                   </div>
                 </div>
@@ -916,4 +928,4 @@ const BlogWritingServicesProfessional = () => {
   );
 };
 
-export default BlogWritingServicesProfessional;
+export default BlogWritingServicesRealState;

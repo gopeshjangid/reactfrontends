@@ -711,7 +711,7 @@ const BlogWritingServices = () => {
           <div className="row">
             <h2 className="testi_sec-h2">Testimonials</h2>
             <span className="testi_sec-spa">* * * * *</span>
-            <div className="col-md-6">
+            <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
                   We checked out samples of GPW writers for blogs. We liked it
@@ -733,7 +733,7 @@ const BlogWritingServices = () => {
               </div>
             </div>
 
-            <div className="col-md-6">
+            <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
                   The writer from GPW was fantastic. I was able to communicate

@@ -621,7 +621,7 @@ const ReviewWritingServices = () => {
           <div className="row">
             <h2 className="testi_sec-h2">Testimonials</h2>
             <span className="testi_sec-spa">* * * * *</span>
-            <div className="col-md-6">
+            <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
                   We needed to get some reviews for our website and we didn't
@@ -644,7 +644,7 @@ const ReviewWritingServices = () => {
               </div>
             </div>
 
-            <div className="col-md-6">
+            <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
                   I highly recommend GetProWriter for your online reviews. I am
