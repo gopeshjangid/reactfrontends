@@ -49,25 +49,54 @@ import PendingPaymentPaypalSuccess from "./pages/PendingPaymentPaypalSuccess";
 import PaypalGuestPaymentSuccess from "./pages/PaypalGuestPaymentSuccess";
 import WalletPaymentSuccess from "./pages/WalletPaymentSuccess";
 import OrderWithoutPayment from "./pages/OrderWithoutPayment";
-import GhostwritingServices from "./pages/GhostwritingServices";
-import BlogWritingServices from "./pages/BlogWritingServices";
-import FreelanceWritingServices from "./pages/FreelanceWritingServices";
-import ReviewWritingServices from "./pages/ReviewWritingServices";
+import GhostwritingServices from "./BlogServicesPages/GhostwritingServices";
+import BlogWritingServices from "./BlogServicesPages/BlogWritingServices";
+import FreelanceWritingServices from "./FreelanceServicesPages/FreelanceWritingServices";
+import ReviewWritingServices from "./BlogServicesPages/ReviewWritingServices";
 import PaypalSubscriptionSuccess from "./pages/PaypalSubscriptionSuccess";
-import BlogWritingServicesTechnical from "./pages/BlogWritingServicesTechnical";
-import BlogWritingServicesProfessional from "./pages/BlogWritingServicesProfessional";
-import BlogWritingServicesCreative from "./pages/BlogWritingServicesCreative";
-import BlogWritingServicesWhitelabel from "./pages/BlogWritingServicesWhitelabel";
-import BlogWritingServicesRealState from "./pages/BlogWritingServicesRealState";
-import BlogWritingServicesHealthFitness from "./pages/BlogWritingServicesHealthFitness";
-import BlogWritingServicesFreelance from "./pages/BlogWritingServicesFreelance";
-import BlogWritingServicesIntro from "./pages/BlogWritingServicesIntro";
-import BlogWritingServicesShort from "./pages/BlogWritingServicesShort";
-import BlogWritingServicesInformal from "./pages/BlogWritingServicesInformal";
-import BlogWritingServicesFamous from "./pages/BlogWritingServicesFamous";
-import BlogWritingServicesPlr from "./pages/BlogWritingServicesPlr";
-import BlogWritingServicesViral from "./pages/BlogWritingServicesViral";
-import BlogWritingServicesPersuasive from "./pages/BlogWritingServicesPersuasive";
+import BlogWritingServicesTechnical from "./BlogServicesPages/BlogWritingServicesTechnical";
+import BlogWritingServicesProfessional from "./BlogServicesPages/BlogWritingServicesProfessional";
+import BlogWritingServicesCreative from "./BlogServicesPages/BlogWritingServicesCreative";
+import BlogWritingServicesWhitelabel from "./BlogServicesPages/BlogWritingServicesWhitelabel";
+import BlogWritingServicesRealState from "./BlogServicesPages/BlogWritingServicesRealState";
+import BlogWritingServicesHealthFitness from "./BlogServicesPages/BlogWritingServicesHealthFitness";
+import BlogWritingServicesFreelance from "./BlogServicesPages/BlogWritingServicesFreelance";
+import BlogWritingServicesIntro from "./BlogServicesPages/BlogWritingServicesIntro";
+import BlogWritingServicesShort from "./BlogServicesPages/BlogWritingServicesShort";
+import BlogWritingServicesInformal from "./BlogServicesPages/BlogWritingServicesInformal";
+import BlogWritingServicesFamous from "./BlogServicesPages/BlogWritingServicesFamous";
+import BlogWritingServicesPlr from "./BlogServicesPages/BlogWritingServicesPlr";
+import BlogWritingServicesViral from "./BlogServicesPages/BlogWritingServicesViral";
+import BlogWritingServicesPersuasive from "./BlogServicesPages/BlogWritingServicesPersuasive";
+import BlogWritingServicesTech from "./BlogServicesPages/BlogWritingServicesTech";
+import BlogWritingServicesPersonal from "./BlogServicesPages/BlogWritingServicesPersonal";
+import BlogWritingServicesInspirational from "./BlogServicesPages/BlogWritingServicesInspirational";
+import BlogWritingServicesMarketing from "./BlogServicesPages/BlogWritingServicesMarketing";
+import BlogWritingServicesBusiness from "./BlogServicesPages/BlogWritingServicesBusiness";
+import BlogWritingServicesAffordable from "./BlogServicesPages/BlogWritingServicesAffordable";
+import BlogWritingServicesDigitalMarketing from "./BlogServicesPages/BlogWritingServicesDigitalMarketing";
+import BlogWritingServicesSocialMedia from "./BlogServicesPages/BlogWritingServicesSocialMedia";
+import BlogWritingServicesSocialMediaInstagram from "./BlogServicesPages/BlogWritingServicesSocialMediaInstagram";
+import BlogWritingServicesSocialMediaMedium from "./BlogServicesPages/BlogWritingServicesSocialMediaMedium";
+import BlogWritingServicesSocialMediaTumbler from "./BlogServicesPages/BlogWritingServicesSocialMediaTumbler";
+import BlogWritingServicesSocialMediaLinkedin from "./BlogServicesPages/BlogWritingServicesSocialMediaLinkedin";
+import BlogWritingServicesSocialMediaQuora from "./BlogServicesPages/BlogWritingServicesSocialMediaQuora";
+import BlogWritingServicesSocialMediaFacebook from "./BlogServicesPages/BlogWritingServicesSocialMediaFacebook";
+import BlogWritingServicesSocialMediaTwitter from "./BlogServicesPages/BlogWritingServicesSocialMediaTwitter";
+import BlogWritingServicesSocialMediaPinterest from "./BlogServicesPages/BlogWritingServicesSocialMediaPinterest";
+import BlogWritingServicesWordPress from "./BlogServicesPages/BlogWritingServicesWordPress";
+import BlogWritingServicesShopify from "./BlogServicesPages/BlogWritingServicesShopify";
+import BlogWritingServicesPostComment from "./BlogServicesPages/BlogWritingServicesPostComment";
+import BlogWritingServicesPostEditor from "./BlogServicesPages/BlogWritingServicesPostEditor";
+import BlogWritingServicesNewYear from "./BlogServicesPages/BlogWritingServicesNewYear";
+import BlogWritingservicesBirthday from "./BlogServicesPages/BlogWritingservicesBirthday";
+import BlogWritingServicesQna from "./BlogServicesPages/BlogWritingServicesQna";
+import BlogWritingServicesHoliday from "./BlogServicesPages/BlogWritingServicesHoliday";
+import BlogWritingServicesGratitude from "./BlogServicesPages/BlogWritingServicesGratitude";
+import BlogWritingServicesNotion from "./BlogServicesPages/BlogWritingServicesNotion";
+import BlogWritingServicesGithub from "./BlogServicesPages/BlogWritingServicesGithub";
+import FreelanceWritingServicesWhitePaper from "./FreelanceServicesPages/FreelanceWritingServicesWhitePaper";
+import FreelanceWritingServicesGrant from "./FreelanceServicesPages/FreelanceWritingServicesGrant";
 
 function App() {
   return (
@@ -216,6 +245,122 @@ function App() {
         <Route
           path="blog-writing-services/persuasive"
           element={<BlogWritingServicesPersuasive />}
+        />
+        <Route
+          path="blog-writing-services/tech"
+          element={<BlogWritingServicesTech />}
+        />
+        <Route
+          path="blog-writing-services/personal"
+          element={<BlogWritingServicesPersonal />}
+        />
+        <Route
+          path="blog-writing-services/inspirational"
+          element={<BlogWritingServicesInspirational />}
+        />
+        <Route
+          path="blog-writing-services/marketing"
+          element={<BlogWritingServicesMarketing />}
+        />
+        <Route
+          path="blog-writing-services/business"
+          element={<BlogWritingServicesBusiness />}
+        />
+        <Route
+          path="blog-writing-services/affordable"
+          element={<BlogWritingServicesAffordable />}
+        />
+        <Route
+          path="blog-writing-services/digital-marketing"
+          element={<BlogWritingServicesDigitalMarketing />}
+        />
+        <Route
+          path="blog-writing-services/social-media"
+          element={<BlogWritingServicesSocialMedia />}
+        />
+        <Route
+          path="blog-writing-services/social-media/instagram"
+          element={<BlogWritingServicesSocialMediaInstagram />}
+        />
+        <Route
+          path="blog-writing-services/social-media/media"
+          element={<BlogWritingServicesSocialMediaMedium />}
+        />
+        <Route
+          path="blog-writing-services/social-media/tumblr"
+          element={<BlogWritingServicesSocialMediaTumbler />}
+        />
+        <Route
+          path="blog-writing-services/social-media/linkedin"
+          element={<BlogWritingServicesSocialMediaLinkedin />}
+        />
+        <Route
+          path="blog-writing-services/social-media/quora"
+          element={<BlogWritingServicesSocialMediaQuora />}
+        />
+        <Route
+          path="blog-writing-services/social-media/facebook"
+          element={<BlogWritingServicesSocialMediaFacebook />}
+        />
+        <Route
+          path="blog-writing-services/social-media/twitter"
+          element={<BlogWritingServicesSocialMediaTwitter />}
+        />
+        <Route
+          path="blog-writing-services/social-media/pinterest"
+          element={<BlogWritingServicesSocialMediaPinterest />}
+        />
+        <Route
+          path="blog-writing-services/wordpress"
+          element={<BlogWritingServicesWordPress />}
+        />{" "}
+        <Route
+          path="blog-writing-services/shopify"
+          element={<BlogWritingServicesShopify />}
+        />
+        <Route
+          path="blog-writing-services/post-comment"
+          element={<BlogWritingServicesPostComment />}
+        />
+        <Route
+          path="blog-writing-services/post-editor"
+          element={<BlogWritingServicesPostEditor />}
+        />{" "}
+        <Route
+          path="blog-writing-services/new-year"
+          element={<BlogWritingServicesNewYear />}
+        />
+        <Route
+          path="blog-writing-services/birthday"
+          element={<BlogWritingservicesBirthday />}
+        />
+        <Route
+          path="blog-writing-services/qna"
+          element={<BlogWritingServicesQna />}
+        />{" "}
+        <Route
+          path="blog-writing-services/holiday"
+          element={<BlogWritingServicesHoliday />}
+        />
+        <Route
+          path="blog-writing-services/gratitude"
+          element={<BlogWritingServicesGratitude />}
+        />
+        <Route
+          path="blog-writing-services/notion"
+          element={<BlogWritingServicesNotion />}
+        />
+        <Route
+          path="blog-writing-services/github"
+          element={<BlogWritingServicesGithub />}
+        />
+        <Route
+          path="freelance-writing-services/white-paper"
+          element={<FreelanceWritingServicesWhitePaper />}
+        />
+        <Route
+          path="freelance-writing-services/grant"
+          element={<FreelanceWritingServicesGrant />}
         />
       </Routes>
       <Footer />

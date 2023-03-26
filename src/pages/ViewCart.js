@@ -568,7 +568,7 @@ const ViewCart = () => {
       });
   }, []);
 
-  const savePayments = (id) => {
+  const savePayments = async (id) => {
     console.log(id);
     const tokenID = localStorage.getItem("token");
     const headers = {
@@ -576,19 +576,26 @@ const ViewCart = () => {
       Authorization: `${tokenID}`,
     };
 
+    const savePaymentId = id;
+
+    console.log(savePaymentId);
+
     axios
       .post(
-        `${process.env.REACT_APP_APIURL}/register`,
+        `${process.env.REACT_APP_APIURL}/useSavePaymentMethod`,
         {
-          id,
+          id: savePaymentId,
         },
         {
-          headers,
+          headers: headers,
         }
       )
       .then((res) => {
         // setSavePayment(res.data.message);
-        console.log(res.data.message);
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
@@ -1050,10 +1057,129 @@ const ViewCart = () => {
                                 </div>
 
                                 <div className="row">
+                                  {/* <h4>Save Payment method</h4> */}
                                   {savePayment?.map((friend, index) => {
                                     return (
-                                      <div className="col-sm-12">
-                                        <div className="table-responsive  text-nowrap">
+                                      <div
+                                        className="col-md-12 p-2 mb-2 rounded"
+                                        style={{ background: "#e3e3e3" }}
+                                      >
+                                        <div className="row align-items-center">
+                                          <div className="col-sm-6 text-start ">
+                                            <label>Name:</label>
+                                            &nbsp;&nbsp;
+                                            <span>{friend.accountHolder}</span>
+                                            <br />
+                                            <label> Ac/No.:</label>
+                                            <span>{friend.accountNumber}</span>
+                                          </div>
+
+                                          <div className="col-sm-6">
+                                            <button
+                                              type="button"
+                                              className="btn Pay border-0"
+                                              data-bs-toggle="modal"
+                                              data-bs-target={`${
+                                                "#payment_id" + friend._id
+                                              }`}
+                                            >
+                                              Pay Now
+                                            </button>
+
+                                            <div
+                                              className="modal fade"
+                                              id={`${
+                                                "payment_id" + friend._id
+                                              }`}
+                                              data-bs-backdrop="static"
+                                              data-bs-keyboard="false"
+                                              tabIndex="-1"
+                                              style={{
+                                                background: "#00000059",
+                                              }}
+                                              aria-labelledby="exampleModalLabel"
+                                              aria-hidden="true"
+                                            >
+                                              <div
+                                                className="modal-dialog"
+                                                style={{ zIndex: "2000" }}
+                                              >
+                                                <div className="modal-content border-0">
+                                                  <div
+                                                    className="modal-header border-0"
+                                                    style={{
+                                                      background:
+                                                        "rgb(3, 151, 156)",
+                                                    }}
+                                                  >
+                                                    <h1
+                                                      className="modal-title fs-5 text-white"
+                                                      id="exampleModalLabel"
+                                                    >
+                                                      Choose Subscription method
+                                                      ?
+                                                    </h1>
+                                                    <button
+                                                      type="button"
+                                                      className="bg-transparent border-0"
+                                                      data-bs-dismiss="modal"
+                                                      aria-label="Close"
+                                                    >
+                                                      <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                                                    </button>
+                                                  </div>
+                                                  <div className="modal-body py-5">
+                                                    {" "}
+                                                    <button
+                                                      type="button"
+                                                      onClick={() =>
+                                                        savePayments(friend._id)
+                                                      }
+                                                      // onClick={() =>
+                                                      //   this.showRazorpay(
+                                                      //     friend._id
+                                                      //   )
+                                                      // }
+                                                      className="services-btn2 me-2 mb-0"
+                                                    >
+                                                      Razorpay
+                                                    </button>
+                                                    <button
+                                                      type="button"
+                                                      onClick={() =>
+                                                        savePayments(friend._id)
+                                                      }
+                                                      // onClick={() =>
+                                                      //   this.PaypalSubscription(
+                                                      //     friend._id
+                                                      //   )
+                                                      // }
+                                                      className="services-btn2 mx-2 mb-0"
+                                                    >
+                                                      Paypal
+                                                    </button>
+                                                    <button
+                                                      type="button"
+                                                      onClick={() =>
+                                                        savePayments(friend._id)
+                                                      }
+                                                      // onClick={() =>
+                                                      //   this.StripeSubscription(
+                                                      //     friend._id
+                                                      //   )
+                                                      // }
+                                                      className="services-btn2 ms-2 mb-0"
+                                                    >
+                                                      Stripe
+                                                    </button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        {/* <div className="table-responsive  text-nowrap">
                                           <table className="table table-borderless ">
                                             <tbody>
                                               <tr
@@ -1101,7 +1227,7 @@ const ViewCart = () => {
                                               </tr>
                                             </tbody>
                                           </table>
-                                        </div>
+                                        </div> */}
                                       </div>
                                     );
                                   })}
