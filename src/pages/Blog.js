@@ -83,7 +83,7 @@ class Blog extends Component {
                                   {friend.name}{" "}
                                 </span>{" "}
                                 <span className="  col-md-6 text-end blog-span2">
-                                  September 08,2022
+                                  {friend.date}
                                 </span>
                               </div>
                               <RenderHTML HTML={friend.dec.slice(0, 150)} />
@@ -112,7 +112,7 @@ class Blog extends Component {
                                   {friend.name}{" "}
                                 </span>{" "}
                                 <span className=" col-md-6 text-end  blog-span2 m-0">
-                                  September 08,2022
+                                  {friend.date}
                                 </span>
                               </div>
 

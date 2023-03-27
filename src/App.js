@@ -97,6 +97,11 @@ import BlogWritingServicesNotion from "./BlogServicesPages/BlogWritingServicesNo
 import BlogWritingServicesGithub from "./BlogServicesPages/BlogWritingServicesGithub";
 import FreelanceWritingServicesWhitePaper from "./FreelanceServicesPages/FreelanceWritingServicesWhitePaper";
 import FreelanceWritingServicesGrant from "./FreelanceServicesPages/FreelanceWritingServicesGrant";
+import FreelanceWritingServicesTechnical from "./FreelanceServicesPages/FreelanceWritingServicesTechnical";
+import FreelanceWritingServicesScript from "./FreelanceServicesPages/FreelanceWritingServicesScript";
+import FreelanceWritingServicesContent from "./FreelanceServicesPages/FreelanceWritingServicesContent";
+import FreelanceWritingServicesMedical from "./FreelanceServicesPages/FreelanceWritingServicesMedical";
+import FreelanceWritingServicesTravel from "./FreelanceServicesPages/FreelanceWritingServicesTravel";
 
 function App() {
   return (
@@ -361,6 +366,26 @@ function App() {
         <Route
           path="freelance-writing-services/grant"
           element={<FreelanceWritingServicesGrant />}
+        />
+        <Route
+          path="freelance-writing-services/technical"
+          element={<FreelanceWritingServicesTechnical />}
+        />
+        <Route
+          path="freelance-writing-services/script"
+          element={<FreelanceWritingServicesScript />}
+        />
+        <Route
+          path="freelance-writing-services/content"
+          element={<FreelanceWritingServicesContent />}
+        />
+        <Route
+          path="freelance-writing-services/medical"
+          element={<FreelanceWritingServicesMedical />}
+        />
+        <Route
+          path="freelance-writing-services/travel"
+          element={<FreelanceWritingServicesTravel />}
         />
       </Routes>
       <Footer />
