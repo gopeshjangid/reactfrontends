@@ -49,10 +49,10 @@ import PendingPaymentPaypalSuccess from "./pages/PendingPaymentPaypalSuccess";
 import PaypalGuestPaymentSuccess from "./pages/PaypalGuestPaymentSuccess";
 import WalletPaymentSuccess from "./pages/WalletPaymentSuccess";
 import OrderWithoutPayment from "./pages/OrderWithoutPayment";
-import GhostwritingServices from "./BlogServicesPages/GhostwritingServices";
+import GhostwritingServices from "./GhostServicesPages/GhostwritingServices";
 import BlogWritingServices from "./BlogServicesPages/BlogWritingServices";
 import FreelanceWritingServices from "./FreelanceServicesPages/FreelanceWritingServices";
-import ReviewWritingServices from "./BlogServicesPages/ReviewWritingServices";
+import ReviewWritingServices from "./ReviewServicesPages/ReviewWritingServices";
 import PaypalSubscriptionSuccess from "./pages/PaypalSubscriptionSuccess";
 import BlogWritingServicesTechnical from "./BlogServicesPages/BlogWritingServicesTechnical";
 import BlogWritingServicesProfessional from "./BlogServicesPages/BlogWritingServicesProfessional";
@@ -97,6 +97,32 @@ import BlogWritingServicesNotion from "./BlogServicesPages/BlogWritingServicesNo
 import BlogWritingServicesGithub from "./BlogServicesPages/BlogWritingServicesGithub";
 import FreelanceWritingServicesWhitePaper from "./FreelanceServicesPages/FreelanceWritingServicesWhitePaper";
 import FreelanceWritingServicesGrant from "./FreelanceServicesPages/FreelanceWritingServicesGrant";
+import GhostWritingServicesMedical from "./GhostServicesPages/GhostWritingServicesMedical";
+import GhostWritingServicesFiction from "./GhostServicesPages/GhostWritingServicesFiction";
+import GhostWritingServicesRomance from "./GhostServicesPages/GhostWritingServicesRomance";
+import GhostWritingServicesBusiness from "./GhostServicesPages/GhostWritingServicesBusiness";
+import GhostWritingServicesFantasy from "./GhostServicesPages/GhostWritingServicesFantasy";
+import GhostWritingServicesTechnical from "./GhostServicesPages/GhostWritingServicesTechnical";
+import GhostWritingServicesMemoir from "./GhostServicesPages/GhostWritingServicesMemoir";
+import ProductDescriptionWriting from "./ProductDescriptionWritingPages/ProductDescriptionWriting";
+import ProductDescriptionWritingTechnical from "./ProductDescriptionWritingPages/ProductDescriptionWritingTechnical";
+import ProductDescriptionWritingFunny from "./ProductDescriptionWritingPages/ProductDescriptionWritingFunny";
+import ProductDescriptionWritingEcommerce from "./ProductDescriptionWritingPages/ProductDescriptionWritingEcommerce";
+import ReviewWritingServicesMovie from "./ReviewServicesPages/ReviewWritingServicesMovie";
+import ReviewWritingServicesSimpleOnlinePharmacy from "./ReviewServicesPages/ReviewWritingServicesSimpleOnlinePharmacy";
+import ReviewWritingServicesTwitter from "./ReviewServicesPages/ReviewWritingServicesTwitter";
+import ReviewWritingServicesSitejabber from "./ReviewServicesPages/ReviewWritingServicesSitejabber";
+import ReviewWritingServicesOtherWebsites from "./ReviewServicesPages/ReviewWritingServicesOtherWebsites";
+import ReviewWritingServicesOnlineShop from "./ReviewServicesPages/ReviewWritingServicesOnlineShop";
+import ReviewWritingServicesElectronicGadgetsShop from "./ReviewServicesPages/ReviewWritingServicesElectronicGadgetsShop";
+import ReviewWritingServicesTrustpilot from "./ReviewServicesPages/ReviewWritingServicesTrustpilot";
+import ReviewWritingServicesGoogleMyBusiness from "./ReviewServicesPages/ReviewWritingServicesGoogleMyBusiness";
+import ReviewWritingServicesFacebook from "./ReviewServicesPages/ReviewWritingServicesFacebook";
+import ReviewWritingServicesInstagram from "./ReviewServicesPages/ReviewWritingServicesInstagram";
+import ReviewWritingServicesQna from "./ReviewServicesPages/ReviewWritingServicesQna";
+import ReviewWritingServicesQnaQuora from "./ReviewServicesPages/ReviewWritingServicesQnaQuora";
+import ReviewWritingServicesQnaReddit from "./ReviewServicesPages/ReviewWritingServicesQnaReddit";
+import ReviewWritingServicesQnaOther from "./ReviewServicesPages/ReviewWritingServicesQnaOther";
 
 function App() {
   return (
@@ -171,7 +197,7 @@ function App() {
         />
         <Route path="/orderwithoutpayment" element={<OrderWithoutPayment />} />
         <Route
-          path="/ghost-writing-services"
+          path="/ghostwriting-services"
           element={<GhostwritingServices />}
         />
         <Route
@@ -362,6 +388,117 @@ function App() {
           path="freelance-writing-services/grant"
           element={<FreelanceWritingServicesGrant />}
         />
+            <Route
+          path="ghostwriting-services/medical"
+          element={<GhostWritingServicesMedical />}
+        />
+            <Route
+          path="ghostwriting-services/fiction"
+          element={<GhostWritingServicesFiction />}
+        />
+         <Route
+          path="ghostwriting-services/romance"
+          element={<GhostWritingServicesRomance />}
+        />
+        <Route
+          path="ghostwriting-services/business"
+          element={<GhostWritingServicesBusiness />}
+        />
+        <Route
+          path="ghostwriting-services/fantasy"
+          element={<GhostWritingServicesFantasy />}
+        />
+        <Route
+          path="ghostwriting-services/technical"
+          element={<GhostWritingServicesTechnical />}
+        />
+         <Route
+          path="ghostwriting-services/memoir"
+          element={<GhostWritingServicesMemoir />}
+        />
+        <Route
+          path="product-description-writing"
+          element={<ProductDescriptionWriting />}
+        />
+        <Route
+          path="product-description-writing/technical"
+          element={<ProductDescriptionWritingTechnical />}
+        />
+        <Route
+          path="product-description-writing/funny"
+          element={<ProductDescriptionWritingFunny />}
+        />
+        <Route
+          path="product-description-writing/ecommerce"
+          element={<ProductDescriptionWritingEcommerce />}
+        />
+
+        <Route
+          path="review-writing-services/movie"
+          element={<ReviewWritingServicesMovie />}
+        />
+
+        <Route
+          path="review-writing-services/simple-online-pharmacy"
+          element={<ReviewWritingServicesSimpleOnlinePharmacy />}
+        />
+         <Route
+          path="review-writing-services/twitter"
+          element={<ReviewWritingServicesTwitter />}
+        />
+        <Route
+          path="review-writing-services/sitejabber"
+          element={<ReviewWritingServicesSitejabber />}
+        />
+
+        <Route
+          path="review-writing-services/other-websites"
+          element={<ReviewWritingServicesOtherWebsites />}
+        />
+        <Route
+          path="review-writing-services/online-shop"
+          element={<ReviewWritingServicesOnlineShop />}
+        />
+        <Route
+          path="review-writing-services/electronic-gadgets-shop"
+          element={<ReviewWritingServicesElectronicGadgetsShop />}
+        />
+    
+        <Route
+          path="review-writing-services/trustpilot"
+          element={<ReviewWritingServicesTrustpilot />}
+        />
+
+        <Route
+          path="review-writing-services/google-my-business"
+          element={<ReviewWritingServicesGoogleMyBusiness />}
+        />
+        <Route
+          path="review-writing-services/facebook"
+          element={<ReviewWritingServicesFacebook />}
+        />
+            <Route
+          path="review-writing-services/instagram"
+          element={<ReviewWritingServicesInstagram />}
+        />
+        <Route
+          path="review-writing-services/qna"
+          element={<ReviewWritingServicesQna />}
+        />
+        <Route
+          path="review-writing-services/qna/quora"
+          element={<ReviewWritingServicesQnaQuora />}
+        />
+        <Route
+          path="review-writing-services/qna/reddit"
+          element={<ReviewWritingServicesQnaReddit />}
+        />
+        <Route
+          path="review-writing-services/qna/other"
+          element={<ReviewWritingServicesQnaOther />}
+        />
+
+
       </Routes>
       <Footer />
     </BrowserRouter>
