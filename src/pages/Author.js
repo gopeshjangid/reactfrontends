@@ -69,7 +69,7 @@ function Author() {
                     <h4 className="author_Sec-h2">{friend.title}</h4>
                     <RenderHTML HTML={friend.dec.slice(0, 50)} />
 
-                    <Link to={`/viewdetails/${friend._id}`}>
+                    <Link to={`/author/${friend.slug}`}>
                       <button type="button" className="author-btn m-0">
                         View Details
                       </button>

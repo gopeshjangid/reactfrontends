@@ -89,7 +89,6 @@ const Career = () => {
                 </span>
 
                 <div className="jot_sec-box">
-                  <li className="jot_list">Senior Content Writer</li>
                   {career?.map((item, index) => {
                     return (
                       <div key={item._id}>

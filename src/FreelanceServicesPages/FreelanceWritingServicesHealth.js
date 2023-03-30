@@ -5,22 +5,20 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "../pages/ReviewGetintouch";
 
-const FreelanceWritingServicesSports = () => {
+const FreelanceWritingServicesHealth = () => {
   return (
     <div>
       <section className="top_sec p-0">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1 mt-3 p-0">
-                Catchy Freelance Sports Blogs!
-              </h1>
-              <h2 className="top_Sec-h2">Freelance Sports Writing Now|</h2>
+              <h1 className="top_Sec-h1 mt-3 p-0">Interesting Health Blogs!</h1>
+              <h2 className="top_Sec-h2">Freelance Health Experts|</h2>
               <p className="top_Sec-p">
-                GetProWriter is known to offer phenomenal freelance sports
-                writing services. Our company’s writers have been in the
-                business for many years. We have successfully worked on numerous
-                projects for clients on a wide range of topics.
+                GetProWriter is an industry-leading company, offering freelance
+                health writer services to clients. We are a team of writers and
+                editors who are dedicated to providing the best quality services
+                that match clients’ needs.
               </p>
             </div>
 
@@ -37,57 +35,31 @@ const FreelanceWritingServicesSports = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Leading writers for freelance sports writing with GetProWriter!
+              Outstanding freelance health writer services with GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Enriching sports posts for your website.
+              Impressive blog posts for your business.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Attractive Posts</h3>
+                <h3 className="box-h3">Health Posts</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Phenomenal Writers</h3>
+                <h3 className="box-h3">Skilled Professionals</h3>
               </div>
             </div>
-
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Noticeable Blogs</h3>
+                <h3 className="box-h3">Health Content</h3>
               </div>
             </div>
-
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Relevant Keywords</h3>
-              </div>
-            </div>
-
-            <div className="col-md-3">
-              <div className="wr-b">
-                <h3 className="box-h3">Writers Worldwide</h3>
-              </div>
-            </div>
-
-            <div className="col-md-3">
-              <div className="wr-b">
-                <h3 className="box-h3">ORM Assured</h3>
-              </div>
-            </div>
-
-            <div className="col-md-3">
-              <div className="wr-b">
-                <h3 className="box-h3">Easy Hire</h3>
-              </div>
-            </div>
-
-            <div className="col-md-3">
-              <div className="wr-b">
-                <h3 className="box-h3">Updated Info</h3>
+                <h3 className="box-h3">Industry Experts</h3>
               </div>
             </div>
 
@@ -99,19 +71,43 @@ const FreelanceWritingServicesSports = () => {
 
             <div className="col-md-3">
               <div className="wr-b">
+                <h3 className="box-h3">Assured ORM</h3>
+              </div>
+            </div>
+
+            <div className="col-md-3">
+              <div className="wr-b">
+                <h3 className="box-h3">Increasing Visibility</h3>
+              </div>
+            </div>
+
+            <div className="col-md-3">
+              <div className="wr-b">
                 <h3 className="box-h3">Genuine Ideas</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Recommended Freelancers</h3>
+                <h3 className="box-h3">Superb Bloggers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Timely Completion</h3>
+                <h3 className="box-h3">Sincere Professionals</h3>
+              </div>
+            </div>
+
+            <div className="col-md-3">
+              <div className="wr-b">
+                <h3 className="box-h3">Timely Delivery</h3>
+              </div>
+            </div>
+
+            <div className="col-md-3">
+              <div className="wr-b">
+                <h3 className="box-h3">Zero Hassle</h3>
               </div>
             </div>
           </div>
@@ -122,24 +118,26 @@ const FreelanceWritingServicesSports = () => {
         <div className="container">
           <div className="row">
             <h2 className="rev_sec-h2">
-              Our Sports Post Writers Are Industry’s Best
+              Our Health Writers Are Among The Best In The Sector
             </h2>
 
             <p className="rev_sec-p">
-              We have experienced writers who extensively write for the sports
-              domain. We can deliver well-written, accurate, and engaging
-              articles in a short period. We are a team of professional and
-              dedicated writers who have been working with us for a long time.
-              We offer you quality work at affordable prices. We provide our
-              clients with quality work that they can trust and rely on.
+              GetProWriter offers freelance health writer services to clients.
+              Our company is an industry leader and has been in business for
+              many years, serving thousands of clients throughout the country
+              and abroad. GetProWriter provides quality articles written by
+              professional writers who have extensive experience in various
+              fields related to the subject matter. If you are looking for a
+              well written piece on any health topic, then you need to hire
+              GetProWriter professionals.
             </p>
             <p className="rev_sec-p">
-              Our writers are highly skilled in their respective fields, which
-              is why you can expect nothing but high-quality content from us.
-              These writers work with sincerity. We have a team of writers who
-              are highly skilled and capable of producing interesting content
-              for your business. If you need more information on our services,
-              then simply contact us and send us your requirements.
+              All our articles are well-researched, grammatically correct, and
+              fully referenced, ensuring that you never receive an article that
+              is plagiarized or not credible. Your satisfaction is our top
+              priority; all of our writers are qualified professionals with
+              years of experience in the field, so you are dealing with experts
+              when you hire us.
             </p>
           </div>
         </div>
@@ -149,10 +147,12 @@ const FreelanceWritingServicesSports = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              Truly qualified bloggers on GetProWriter!
+              Truly qualified freelance healthcare writers on GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
-            <p className="writing_sec-p">Interesting sports blogs for all.</p>
+            <p className="writing_sec-p">
+              Well-documented health posts for all.
+            </p>
 
             <div class="col-md-6">
               <h2 class="count_h2">Check us out and see for yourself:</h2>
@@ -222,22 +222,25 @@ const FreelanceWritingServicesSports = () => {
               </div>
             </div>
             <div class="col-md-6">
-              <h2 class="count_h2">GPW Blog Expert For Sports Posts</h2>
+              <h2 class="count_h2">
+                Hire A GPW Health Writer For Excellent Content
+              </h2>
               <p class="count-p">
-                Our professionals are experts in sports content. They have
-                served thousands of clients all over the world. Whether you need
-                to launch a new website or need a new slogan for your brand, we
-                can help you come up with the best possible solution. We will
-                work with you to develop content that suits your business needs
-                and budget so that you can be sure that we’re delivering the
-                best to your customers.
+                GetProWriter is a leading healthcare writer service provider.
+                Our company offers professional, affordable, and high-quality
+                health content writing services. We have been in the industry
+                for quite some time now and we know what it means to be a great
+                writer. We offer various services like article writing, web
+                content writing, blog writing, and many other related services.
               </p>
               <p class="count-p">
-                We work with sports content and are passionate about providing
-                our clients with services that are both effective and
-                affordable. When you hire writers from us, you get nothing but
-                the best. If you need to learn how to get more traffic to your
-                website, or if you want to reach new audiences, we can help.
+                We hire the best writers on the market who are experts in their
+                fields. Our writers work hard and will deliver your content
+                within the deadline that you give us. Our writers only hire
+                those that are experienced so they can deliver the best results
+                to our customers. Our prices are very competitive in the
+                industry and we understand how important it is for our customers
+                to get quality content at an affordable price.
               </p>
             </div>
           </div>
@@ -248,35 +251,38 @@ const FreelanceWritingServicesSports = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-              Affordable Freelance Sports Writing Services
+              Cost-effective Freelance Health Writer Services
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Get noticed with our freelance sports writing services.
+              Maximum industry visibility with our writers.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
-              <h3 className="ab_sec2-h3 rws-h3">Quality Is Our Top Priority</h3>
+              <h3 className="ab_sec2-h3 rws-h3">
+                Our Writers Are Truly Talented
+              </h3>
               <p className="ab_sec2-p rws-p">
-                When we write sports content for you, we prioritize quality over
-                everything else. We believe that the most important thing is to
-                find the right writer for each project. That’s why we only work
-                with experienced professionals who can keep up with the pace of
-                our work and produce high-quality content every time.
+                While there are many freelance writing services available,
+                GetProWriter is one of the few offering professional writing
+                services in the health industry. All our writers are talented
+                and they know their craft well. We hire content writers that
+                have degrees and experience in their fields. They produce
+                outstanding content so you don’t have to worry about grammatical
+                errors or plagiarism at all.
               </p>
               <p className="ab_sec2-p rws-p">
-                We understand that your audience expects more from you than just
-                a headline to click on or a stat to tweet. They expect quality
-                content delivered on time. That’s why we’re obsessed with making
-                sure the content that you receive is of the highest possible
-                quality. We know that it takes time and effort to create
-                something like this, so we only hire writers who can guarantee
-                excellent results.
+                We care about our customers and make sure that they receive the
+                best quality content possible every time they place an order
+                with us. We always try to keep our prices low so we can provide
+                maximum value to all of our customers. The writers at
+                GetProWriter pride themselves on their dedication to quality
+                work that will help clients achieve their goals.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Quality-Is-Our-Top-Priority1.webp"
+                src="/writer/img/Our-Writers-Are-Truly-Talented.webp"
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -284,58 +290,60 @@ const FreelanceWritingServicesSports = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Sports-Writers-Who-Are-Experienced.webp"
+                src="/writer/img/Professionals.webp"
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Sports Writers Who Are Experienced
+                Professionals With Adequate Industry Experience
               </h3>
               <p className="ab_sec2-p rws-p">
-                All our content writers are experienced and they have adequate
-                experience in the sports sector. They have worked on different
-                sports articles and are well aware of the current sports news,
-                trends and issues.
+                For many years now, we have worked with clients to provide them
+                with the best possible health content available. All our writers
+                are experienced. Our offerings include blog writing, website
+                content, product descriptions, and more – all written by
+                experienced and knowledgeable professionals who understand the
+                importance of having well-written content for their business or
+                organization. From medical articles to manuals, we offer
+                professional writing services that are tailored to your needs.
               </p>
               <p className="ab_sec2-p rws-p">
-                We have a team of highly qualified writers who can provide you
-                with quality content for your website or blog. Our writers will
-                deliver fresh, unique, and interesting content to your audience
-                that will keep them engaged. You can trust us to produce
-                high-quality articles on any topic so that they are interesting
-                and easy to read. We provide content writing services that help
-                you to meet your business objectives with utmost integrity and
-                professionalism. We have a team of writers who have a vast
-                knowledge of the industry and they are committed to their work.
+                Our company has earned a reputation for being an industry leader
+                in this field, and we continue to provide exceptional service to
+                clients. We are known for fast turnaround times on all projects,
+                along with excellent customer service and affordable pricing
+                plans. We’ve worked with clients across the world and we’re
+                ready to help you today!
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <h3 className="ab_sec2-h3 rws-h3">Genuine Ideas in All Posts</h3>
+              <h3 className="ab_sec2-h3 rws-h3">Phenomenal Health Content</h3>
               <p className="ab_sec2-p rws-p">
-                We are known to include genuine ideas in all kinds of content.
-                When you hire our writers to help you with content, you will
-                surely benefit from their expertise. Our writers are highly
-                trained and experienced. What we offer is an excellent
-                combination of creativity and professionalism. We have a team
-                that can deliver the very best material for your business or
-                website.
+                We are here to draft phenomenal health content for your
+                company’s needs. Our writers are skilled enough to produce
+                outstanding healthcare content. We have a team of proficient and
+                talented experts who deliver high-quality content at reasonable
+                prices. With the help of our writers, you can educate your
+                patients about a variety of topics in the medical field. We
+                write everything from information on a specific disease to
+                general articles. Our writers will write engaging and
+                captivating content that will help you engage with your
+                customers.
               </p>
               <p className="ab_sec2-p rws-p">
-                We are committed to ensuring that every client gets the best
-                quality content possible, which is why we always ensure that
-                each project is 100% unique. Our writers are well-versed in all
-                aspects of SEO and will ensure that your content meets your SEO
-                requirements perfectly. You don’t have to worry about the
-                quality of our work because we work on several topics that are
-                relevant and important for your business or website.
+                We have an in-house team of expert healthcare content writers to
+                assist you with any type of medical, mental, or behavioral
+                disorder for your business. We offer our services 24/7. We work
+                with a flexible turnaround time that provides you with the
+                content you need when you need it.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Genuine-Ideas-in-All-Posts.webp"
+                src="/writer/img/Reader-Friendly-Content-(1).webp"
                 alt="Online-review"
                 className="rws-img"
               />
@@ -343,58 +351,59 @@ const FreelanceWritingServicesSports = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Enriching-Travel-Content-For-Companies-(1).webp"
+                src="/writer/img/Accurate-Information.webp"
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Reader-Friendly Sports Posts For Businesses
+                Accurate Information In All Blogs
               </h3>
               <p className="ab_sec2-p rws-p">
-                We know that the sports industry is a booming business. And our
-                writers have the relevant knowledge to write about this
-                industry. They are passionate about sports and they love to
-                write about it. They can write very interesting articles on
-                topics like how to make money in sports, how to get into the
-                business of sports, etc.
+                For the past few years, we’ve been working with companies like
+                yours to create content that addresses the healthcare issues of
+                your employees and patients. We start by researching the most
+                debated topics in your industry, then leveraging our
+                award-winning team of writers to create unique, fresh ideas and
+                perspectives. For us, the accuracy of information is a priority.
+                We are always transparent about information.
               </p>
               <p className="ab_sec2-p rws-p">
-                We are experts in writing about sports topics in order to get
-                your business up and running. We can write about anything from
-                the latest player news to how to make money from sports. Our
-                writers can also help you with your content marketing strategy
-                by creating articles and blogs on any topic that relates
-                directly to your brand or business.
+                Working with us is simple. Once we have a solid outline, we
+                discuss with you how to proceed. You can look over the draft
+                article or content and make any necessary changes before you
+                publish it on an established website. We’re happy to work with
+                you to customize a schedule that fits your needs. Also, the
+                prices of our services are affordable.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                SEO-Rich Posts For Freelance Sports Writing
+                Writers Whose Ideas Are Original
               </h3>
               <p className="ab_sec2-p rws-p">
-                We are known to maintain all SEO trends when we write content
-                for you. We will also write SEO-friendly content that is easy to
-                read and understand. We can help you get more organic traffic
-                from Search Engines like Google, Bing, Yahoo, and other major
-                search engines. Our writers will use the best keywords to
-                increase your search rankings online.
+                The writers working with us are healthcare experts and they have
+                original ideas when it comes to healthcare content. They work
+                hard and always meet deadlines. Our healthcare services have
+                been quite successful, we have received several comments from
+                our readers about how much they enjoy reading blogs that we have
+                written. These blogs are always informative and well-written.
               </p>
               <p className="ab_sec2-p rws-p">
-                We provide professional and witty writing that is highly
-                informative and easy to read. We have a team of writers who have
-                proven their expertise in crafting quality content that will
-                help your business grow. Our team is made up of professionals
-                with years of experience in this field, who understand the
-                nuances of an online presence. They can help you with content
-                like none in the industry.
+                We know that healthcare marketing is not an easy field to work
+                in; it is constantly evolving, and we understand the challenges
+                of covering all of the latest developments in a way that is both
+                engaging and informative. In addition to keeping up with trends,
+                our healthcare content providers also take a personal approach
+                to their writing. Because we are working with some of the top
+                minds in healthcare, our clients can trust us easily.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/SEO-Rich-Posts-For-Freelance-Sports-Writing.webp"
+                src="/writer/img/Ideas-Are-Original.webp"
                 alt="Real-review-writer"
                 className="rws-img"
               />
@@ -402,30 +411,31 @@ const FreelanceWritingServicesSports = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/GetProWriter-Expertise-For-Skilled-Freelance-Bloggers.webp"
+                src="/writer/img/Freelance-Health-Writing.webp"
                 alt="Expertise"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise For Skilled Freelance Bloggers
+                GetProWriter Expertise For Freelance Health Writing
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our company is known to offer skilled bloggers to clients for
-                outstanding content. We have a team of writers who are experts
-                in their respective fields and ready to produce high-quality
-                articles. We understand that our clients need results, and we do
-                not disappoint them at all.
+                Our writers have years of experience in their field. They are
+                also among the most published and credible experts in their
+                given niche, and they are always up-to-date with the latest news
+                and developments surrounding their specialty. When these writers
+                come together to produce articles for us, they know how to
+                approach the subject matter and position it in such a way that
+                our readers will find it interesting and engaging.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our writers have been in the industry for years, and they know
-                how to deliver excellent articles on time. They also know what
-                works and what does not work for your website or blog. We will
-                give you an estimate on how much money the article should cost
-                and how long it should take to write it up. It will help you to
-                decide on your project. To know more about the services that we
-                offer, simply reach out to us and send us your requirements.
+                As such, we have become one of the leaders in this industry by
+                producing content that is consistently fresh and interesting, so
+                that our readers never get bored from seeing the same old thing
+                over and over again. You thus need GetProWriter expertise to
+                make your content stand out and take your business to newer
+                heights.
               </p>
             </div>
           </div>
@@ -637,10 +647,11 @@ const FreelanceWritingServicesSports = () => {
         <div className="container">
           <div className="row">
             <h2 className="get_sec-h2">
-              Why Acquire Our Freelance Sports Writing Services?
+              Why Hire Our Freelance Health Writers?
             </h2>
             <p className="get_sec-p">
-              To let your company lead the sports content niche.
+              To get the best content related to health and increase reader
+              flow.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -653,7 +664,7 @@ const FreelanceWritingServicesSports = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Internationally acclaimed writers
+                      Posts that are original and creative
                     </span>
                   </li>
                 </ol>
@@ -668,7 +679,7 @@ const FreelanceWritingServicesSports = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">Work as per the guidelines</span>
+                    <span className="spa_h2">Work closely with clients</span>
                   </li>
                 </ol>
               </div>
@@ -683,7 +694,7 @@ const FreelanceWritingServicesSports = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      No plagiarism and superb content
+                      Moving content for health companies
                     </span>
                   </li>
                 </ol>
@@ -691,21 +702,22 @@ const FreelanceWritingServicesSports = () => {
             </div>
 
             <p className="review1-p">
-              With our sports writing services, you can be sure of getting
-              excellent content for your brand. We have a team of writers who
-              are experts in their field and can deliver high-quality content on
-              any topic. We have the ability to write about any type of sport.
-              Our writers are also trained to write about topics related to
-              technology and science.
+              You should hire our freelance health writers to get the best
+              content related to health and increase reader flow. Our company is
+              a leading online platform for expert healthcare writers who can
+              deliver quality content on time. You can now increase traffic with
+              quality content from our freelance health writers.
             </p>
 
             <p className="review1-p">
-              They can even create original articles that will help you in
-              getting more traffic and customers for your business. It ensures
-              that each piece of content is unique and original, giving it an
-              edge over other writers who may not have as much experience with
-              the subject matter at hand. Whether you need a news article or
-              blog post, we can help you make it happen.
+              We have the best freelance healthcare writers in the industry. We
+              guarantee to deliver 100% unique and high-quality content within
+              the deadline that you set. A lot of companies hire our writers
+              because they trust us. We have been in this niche for a long time
+              and have a pool of talented freelance healthcare writers that can
+              produce the work you need. We understand that this is more than
+              just a business for you and that is why we do everything possible
+              to help it succeed.
             </p>
           </div>
         </div>
@@ -719,19 +731,20 @@ const FreelanceWritingServicesSports = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  We have been working with GPW for some time now and we simply
-                  love their writers. They are always on time, they know how to
-                  work within our budget and they deliver the best results. It
-                  is a pleasure to work with them!
+                  We are delighted with the services offered by GPW. Their
+                  writers are excellent and always turn in assignments on time.
+                  They pay attention to our requirements and make sure that
+                  their writers meet all of these. We will continue working with
+                  them in the future.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Den-Cliff.webp"
+                    src="/writer/img/Tim-Ray-2.webp"
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Den Cliff</h3>
-                  <p className="testi_box-p">CEO, Sports Central</p>
+                  <h3 className="testi_box-h3">Tim Ray</h3>
+                  <p className="testi_box-p">CEO, Health Wealth</p>
                 </div>
               </div>
             </div>
@@ -739,17 +752,18 @@ const FreelanceWritingServicesSports = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  GPW writers know their job very well. They are professional
-                  and they do a great job. I will continue to use them and
-                  highly recommend them to other companies.
+                  We are happy with GPW healthcare writing services. Their
+                  writers have a good command of the English language. We are
+                  happy we found this site and will surely be using it again in
+                  the future!
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Ellen-D.webp"
+                    src="/writer/img/Taylor-K.webp"
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Ellen D</h3>
+                  <h3 className="testi_box-h3">Taylor K</h3>
                   <p className="testi_box-p">Business Analyst</p>
                 </div>
               </div>
@@ -814,8 +828,7 @@ const FreelanceWritingServicesSports = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        What is the process to hire freelance sports writers
-                        from GetProWriter?
+                        Do you have health expert writers on GetProWriter?
                       </button>
                     </h2>
 
@@ -826,14 +839,15 @@ const FreelanceWritingServicesSports = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        To hire writers from our company, all you have to do is
-                        reach out to us and tell us what you need. Our writers
-                        are here to make your work easier and to ensure that you
-                        can successfully meet all of your deadlines. We pride
-                        ourselves on being able to take anything that anyone
-                        comes to us with and turn it into something great. If
-                        you have a project in mind, we can make sure that it
-                        gets done properly and well.
+                        Yes. In fact, we offer the best healthcare content with
+                        a focus on the reader. We aim to transform our blog into
+                        a resource for all of your readers, offering them the
+                        best information possible about their health and how to
+                        improve it. We have a skilled team made up of healthcare
+                        experts and freelance writers who help clients with
+                        their content. So, if you’re looking for freelance
+                        health writers for your business or organization, we’ll
+                        make sure you get some help!
                       </div>
                     </div>
                   </div>
@@ -851,7 +865,7 @@ const FreelanceWritingServicesSports = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Do you have experienced sports writers for blog posts?
+                        How do you calculate writers’ costs?{" "}
                       </button>
                     </h2>
 
@@ -862,16 +876,16 @@ const FreelanceWritingServicesSports = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        We have a team of writers that are experienced in
-                        various domains including sports. They can write
-                        enriching content for your business. We have the best
-                        writers with years of experience in all the main
-                        domains, we write content that is unique, informative,
-                        and interesting. We take pride in writing outstanding
-                        and well-thought-out articles. We value our image and
-                        always deliver quality work within the deadlines. Our
-                        writers know exactly what to write to get a good
-                        reputation in the market.
+                        Our writers’ cost depends on the project length and
+                        requirements. The price also varies according to the
+                        number of days required for writing and research. This
+                        is also affected by content types like blog posts,
+                        emails, web copy, and more. We provide a clean and
+                        professional copy of the content you need so the costs
+                        that we quote are genuine and we offer value for money.
+                        If you have any questions or concerns about the cost or
+                        the scope of your project, please feel free to contact
+                        us!
                       </div>
                     </div>
                   </div>
@@ -890,8 +904,8 @@ const FreelanceWritingServicesSports = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      I am looking for a fantastic sports freelance writer.
-                      Where can I get one?
+                      I am looking for a health writing expert for bulk work.
+                      Where can I find one?
                     </button>
                   </h2>
 
@@ -902,16 +916,16 @@ const FreelanceWritingServicesSports = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      You can get fantastic sports freelance writers with us. We
-                      have the best writers from across the industry. Our
-                      writers will write the best content for you. They will
-                      produce work that can not be compared with other services.
-                      Our writers will help you build your brand image and
-                      create a strong reputation for your business. We want to
-                      be the ideal choice for our clients and offer them only
-                      top-quality products. Our writers will do their best to
-                      fulfill your needs and make sure everything is written as
-                      per all your requirements.
+                      For your health writing expert needs for bulk work, we are
+                      here to help. Our writers are trained and experienced to
+                      offer you such content. We have experienced and trained
+                      writers who can handle your bulk writing requests. All our
+                      writers can write on different topics, such as health and
+                      technology, which are quite popular. You can request any
+                      number of articles or pages, depending on how much content
+                      you need. We have writers for any subject or topic, even
+                      for academic areas. Our main goal is to provide quality
+                      services that will satisfy our clients.
                     </div>
                   </div>
                 </div>
@@ -924,4 +938,4 @@ const FreelanceWritingServicesSports = () => {
   );
 };
 
-export default FreelanceWritingServicesSports;
+export default FreelanceWritingServicesHealth;

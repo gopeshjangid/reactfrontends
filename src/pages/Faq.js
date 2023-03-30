@@ -50,7 +50,12 @@ class Faq extends Component {
 
   render() {
     const { User } = this.state;
-
+    const RenderHTML = (props) => (
+      <p
+        className="accordion-body mb-0"
+        dangerouslySetInnerHTML={{ __html: props.HTML }}
+      ></p>
+    );
     if (User.length < 0) {
       return User.length > 0;
     }
@@ -108,7 +113,8 @@ class Faq extends Component {
                               className="bg-white accordion-collapse collapse"
                               aria-labelledby={friend._id}
                             >
-                              <div className="accordion-body">{friend.dec}</div>
+                              {/* <div className="accordion-body">{friend.dec}</div> */}
+                              <RenderHTML HTML={friend.dec} />
                             </div>
                           </div>
                         );

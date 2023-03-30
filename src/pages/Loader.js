@@ -5,7 +5,7 @@ const Loader = () => {
     <div className="main-loader">
       <div className="loader">
         {" "}
-        <img src="writer/img/logo/gp-writer-loader.png" alt="logo-loader" />
+        <img src="/writer/img/logo/gp-writer-loader.png" alt="logo-loader" />
       </div>
     </div>
   );

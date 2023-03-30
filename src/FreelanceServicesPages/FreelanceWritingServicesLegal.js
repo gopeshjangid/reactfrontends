@@ -5,22 +5,21 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "../pages/ReviewGetintouch";
 
-const FreelanceWritingServicesSports = () => {
+const FreelanceWritingServicesLegal = () => {
   return (
     <div>
       <section className="top_sec p-0">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1 mt-3 p-0">
-                Catchy Freelance Sports Blogs!
-              </h1>
-              <h2 className="top_Sec-h2">Freelance Sports Writing Now|</h2>
+              <h1 className="top_Sec-h1 mt-3 p-0">Accurate Legal Blogs!</h1>
+              <h2 className="top_Sec-h2">Legal Writing Services|</h2>
               <p className="top_Sec-p">
-                GetProWriter is known to offer phenomenal freelance sports
-                writing services. Our company’s writers have been in the
-                business for many years. We have successfully worked on numerous
-                projects for clients on a wide range of topics.
+                GetProWriter is a renowned name in the industry offering
+                freelance legal writing services. We provide the best quality
+                work as per your requirements and needs. We hire the best
+                writers, editors, and proofreaders who always try to deliver the
+                most excellent work to our clients.
               </p>
             </div>
 
@@ -37,81 +36,79 @@ const FreelanceWritingServicesSports = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Leading writers for freelance sports writing with GetProWriter!
+              Fantastic freelance legal writer services with GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Enriching sports posts for your website.
+              Best legal posts and article content online.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Attractive Posts</h3>
+                <h3 className="box-h3">Informative Pieces</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Phenomenal Writers</h3>
+                <h3 className="box-h3">Legal Experts</h3>
+              </div>
+            </div>
+            <div className="col-md-3">
+              <div className="wr-b">
+                <h3 className="box-h3">Excellent Drafts</h3>
+              </div>
+            </div>
+            <div className="col-md-3">
+              <div className="wr-b">
+                <h3 className="box-h3">Catchy Keywords</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Noticeable Blogs</h3>
+                <h3 className="box-h3">Leading Names</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Relevant Keywords</h3>
+                <h3 className="box-h3">Empowering Companies</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Writers Worldwide</h3>
+                <h3 className="box-h3">Genuine Opinions</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">ORM Assured</h3>
+                <h3 className="box-h3">Legal Terminology</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Easy Hire</h3>
+                <h3 className="box-h3">Superb Writers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Updated Info</h3>
+                <h3 className="box-h3">Truly Dedicated</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Expert Bloggers</h3>
+                <h3 className="box-h3">Timely Submission</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Genuine Ideas</h3>
-              </div>
-            </div>
-
-            <div className="col-md-3">
-              <div className="wr-b">
-                <h3 className="box-h3">Recommended Freelancers</h3>
-              </div>
-            </div>
-
-            <div className="col-md-3">
-              <div className="wr-b">
-                <h3 className="box-h3">Timely Completion</h3>
+                <h3 className="box-h3">Reputed Professionals</h3>
               </div>
             </div>
           </div>
@@ -121,25 +118,24 @@ const FreelanceWritingServicesSports = () => {
       <section className="rev_sec">
         <div className="container">
           <div className="row">
-            <h2 className="rev_sec-h2">
-              Our Sports Post Writers Are Industry’s Best
-            </h2>
+            <h2 className="rev_sec-h2">Talented Freelance Legal Writers</h2>
 
             <p className="rev_sec-p">
-              We have experienced writers who extensively write for the sports
-              domain. We can deliver well-written, accurate, and engaging
-              articles in a short period. We are a team of professional and
-              dedicated writers who have been working with us for a long time.
-              We offer you quality work at affordable prices. We provide our
-              clients with quality work that they can trust and rely on.
+              We are proficient in different types of assignments like essays,
+              research papers, term papers, dissertations, project reports, and
+              much more. Be it any topic or subject area, our writers are always
+              ready with all the necessary resources for the same. We have been
+              involved in this industry for quite a long time now, having served
+              our clients from all around the world.
             </p>
             <p className="rev_sec-p">
-              Our writers are highly skilled in their respective fields, which
-              is why you can expect nothing but high-quality content from us.
-              These writers work with sincerity. We have a team of writers who
-              are highly skilled and capable of producing interesting content
-              for your business. If you need more information on our services,
-              then simply contact us and send us your requirements.
+              We have built a strong reputation over the years, providing only
+              original and plagiarism-free work to our clients which are highly
+              appreciated by them. We ensure that we provide timely delivery of
+              your order keeping in mind your urgent deadlines. You can place an
+              order at any time of the day as we have round-the-clock customer
+              support service to assist you with any query or concern regarding
+              your order.
             </p>
           </div>
         </div>
@@ -149,10 +145,12 @@ const FreelanceWritingServicesSports = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              Truly qualified bloggers on GetProWriter!
+              Highly acclaimed freelance legal writers on GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
-            <p className="writing_sec-p">Interesting sports blogs for all.</p>
+            <p className="writing_sec-p">
+              Streamlined content for your legal undertakings.
+            </p>
 
             <div class="col-md-6">
               <h2 class="count_h2">Check us out and see for yourself:</h2>
@@ -222,22 +220,24 @@ const FreelanceWritingServicesSports = () => {
               </div>
             </div>
             <div class="col-md-6">
-              <h2 class="count_h2">GPW Blog Expert For Sports Posts</h2>
+              <h2 class="count_h2">GPW Legal Experts Anytime</h2>
               <p class="count-p">
-                Our professionals are experts in sports content. They have
-                served thousands of clients all over the world. Whether you need
-                to launch a new website or need a new slogan for your brand, we
-                can help you come up with the best possible solution. We will
-                work with you to develop content that suits your business needs
-                and budget so that you can be sure that we’re delivering the
-                best to your customers.
+                Our team is made up of dedicated writers with more than 10 years
+                of experience in legal writing services that include all kinds
+                of legal documents. The main objective of our company is to
+                provide excellent and reliable services to our clients in order
+                for them to satisfy their requirements by providing quality
+                content.
               </p>
               <p class="count-p">
-                We work with sports content and are passionate about providing
-                our clients with services that are both effective and
-                affordable. When you hire writers from us, you get nothing but
-                the best. If you need to learn how to get more traffic to your
-                website, or if you want to reach new audiences, we can help.
+                We are a transparent company that ensures 24/7 assistance to our
+                customers through our technical support and customer support
+                service. Our team consists of professional writers who are ready
+                to offer assistance at any time to all customers in need. We
+                have put together a dedicated team of highly experienced writers
+                who are experts in different fields of law, so you can be
+                assured that we have what it takes to handle your projects and
+                deliver exemplary content within the deadline.
               </p>
             </div>
           </div>
@@ -248,35 +248,40 @@ const FreelanceWritingServicesSports = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-              Affordable Freelance Sports Writing Services
+              Reasonable GPW Freelance Legal Writing Services
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Get noticed with our freelance sports writing services.
+              Visible industry presence with our services.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
-              <h3 className="ab_sec2-h3 rws-h3">Quality Is Our Top Priority</h3>
+              <h3 className="ab_sec2-h3 rws-h3">
+                Our Writers Are Known For Their Creativity
+              </h3>
               <p className="ab_sec2-p rws-p">
-                When we write sports content for you, we prioritize quality over
-                everything else. We believe that the most important thing is to
-                find the right writer for each project. That’s why we only work
-                with experienced professionals who can keep up with the pace of
-                our work and produce high-quality content every time.
+                Our freelance writers are in demand because of their knowledge
+                and creativity. They are the best in their field, and
+                consistently deliver content that is of the highest quality. The
+                popularity of our writers has been a boon to our business,
+                giving us the opportunity to work with some remarkable clients
+                and write about an array of fascinating topics. Though many
+                people may view writing as just a job, we take it very
+                seriously.
               </p>
               <p className="ab_sec2-p rws-p">
-                We understand that your audience expects more from you than just
-                a headline to click on or a stat to tweet. They expect quality
-                content delivered on time. That’s why we’re obsessed with making
-                sure the content that you receive is of the highest possible
-                quality. We know that it takes time and effort to create
-                something like this, so we only hire writers who can guarantee
-                excellent results.
+                The reputation of our agency is on the line with every article
+                we author, so our writers spend hours researching and thinking
+                up ways to make each piece both informative and entertaining –
+                while still showcasing the client’s expertise in a favorable
+                light. It’s this commitment to quality that makes us such a
+                sought-after resource for companies who want their brand to be
+                represented in the best possible light.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Quality-Is-Our-Top-Priority1.webp"
+                src="/writer/img/Highly-Resourceful-Professionals-1.webp"
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -284,58 +289,59 @@ const FreelanceWritingServicesSports = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Sports-Writers-Who-Are-Experienced.webp"
+                src="/writer/img/Highly-Resourceful-Professionals.webp"
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Sports Writers Who Are Experienced
+                Highly Resourceful Professionals With Us
               </h3>
               <p className="ab_sec2-p rws-p">
-                All our content writers are experienced and they have adequate
-                experience in the sports sector. They have worked on different
-                sports articles and are well aware of the current sports news,
-                trends and issues.
+                Are you looking for a freelance legal writer to help you with
+                your business? Do you want a writer who will be available to
+                write articles at a moment’s notice and who can also provide
+                high-quality content as well as fast turnaround times? If yes,
+                then you are at the right place!
               </p>
               <p className="ab_sec2-p rws-p">
-                We have a team of highly qualified writers who can provide you
-                with quality content for your website or blog. Our writers will
-                deliver fresh, unique, and interesting content to your audience
-                that will keep them engaged. You can trust us to produce
-                high-quality articles on any topic so that they are interesting
-                and easy to read. We provide content writing services that help
-                you to meet your business objectives with utmost integrity and
-                professionalism. We have a team of writers who have a vast
-                knowledge of the industry and they are committed to their work.
+                We have writers who have the right expertise and experience. Our
+                writers can easily deliver what you’re looking for, whether it’s
+                an informative article or a blog that gives your company the
+                personality it needs. You’ll never have to worry about the
+                quality of the writing or about not getting your content when
+                you need it; just tell us what you need, and we’ll make it
+                happen. Contact us today to learn more about our services and
+                prices!
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <h3 className="ab_sec2-h3 rws-h3">Genuine Ideas in All Posts</h3>
+              <h3 className="ab_sec2-h3 rws-h3">
+                Reader-Friendly Content By Our Writers
+              </h3>
               <p className="ab_sec2-p rws-p">
-                We are known to include genuine ideas in all kinds of content.
-                When you hire our writers to help you with content, you will
-                surely benefit from their expertise. Our writers are highly
-                trained and experienced. What we offer is an excellent
-                combination of creativity and professionalism. We have a team
-                that can deliver the very best material for your business or
-                website.
+                We are known to draft reader-friendly content for our clients.
+                We have a solid reputation across the industry. Our freelance
+                writing services are highly rated online, and we’ve done an
+                excellent job at bringing in new business by delivering a high
+                quality of work and customer service. We have a vast pool of
+                talented writers who can produce quality content and original
+                articles in any niche you desire.
               </p>
               <p className="ab_sec2-p rws-p">
-                We are committed to ensuring that every client gets the best
-                quality content possible, which is why we always ensure that
-                each project is 100% unique. Our writers are well-versed in all
-                aspects of SEO and will ensure that your content meets your SEO
-                requirements perfectly. You don’t have to worry about the
-                quality of our work because we work on several topics that are
-                relevant and important for your business or website.
+                We have a 100% satisfaction guarantee. It is true that we have a
+                well-reputed team of writers and editors working for us. They
+                take care of the content development in such a way that is
+                reader-friendly and client-oriented. We are known for the
+                quality we offer to clients, so you can order without fear of
+                getting fake reviews.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Genuine-Ideas-in-All-Posts.webp"
+                src="/writer/img/Reader-Friendly-Content.webp"
                 alt="Online-review"
                 className="rws-img"
               />
@@ -343,58 +349,59 @@ const FreelanceWritingServicesSports = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Enriching-Travel-Content-For-Companies-(1).webp"
+                src="/writer/img/Legal-Blogs-That-Are-Highly-Informative.webp"
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Reader-Friendly Sports Posts For Businesses
+                Legal Blogs That Are Highly Informative
               </h3>
               <p className="ab_sec2-p rws-p">
-                We know that the sports industry is a booming business. And our
-                writers have the relevant knowledge to write about this
-                industry. They are passionate about sports and they love to
-                write about it. They can write very interesting articles on
-                topics like how to make money in sports, how to get into the
-                business of sports, etc.
+                All the legal blogs that our writers draft are highly
+                informative. In fact, they’re so informative that you may be
+                surprised by the kind of response you’d be getting from your
+                readers. As a writing company, it’s important to us that our
+                clients trust us and feel informed when they walk through our
+                doors. That’s why we strive to create legal content that is both
+                fun and informative.
               </p>
               <p className="ab_sec2-p rws-p">
-                We are experts in writing about sports topics in order to get
-                your business up and running. We can write about anything from
-                the latest player news to how to make money from sports. Our
-                writers can also help you with your content marketing strategy
-                by creating articles and blogs on any topic that relates
-                directly to your brand or business.
+                We write blog posts that are for general audiences and that also
+                contain information about specific legal issues or processes. We
+                also offer 24/7 customer support for our clients so that they do
+                not face any issues while writing blogs. If you want to write a
+                blog for your website with our help, then contact us today.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                SEO-Rich Posts For Freelance Sports Writing
+                Our Writers Have Outstanding Ideas For Content
               </h3>
               <p className="ab_sec2-p rws-p">
-                We are known to maintain all SEO trends when we write content
-                for you. We will also write SEO-friendly content that is easy to
-                read and understand. We can help you get more organic traffic
-                from Search Engines like Google, Bing, Yahoo, and other major
-                search engines. Our writers will use the best keywords to
-                increase your search rankings online.
+                Our writers are known for their unique ideas concerning legal
+                content, and we are dedicated to bringing our readers the most
+                compelling information possible. To achieve this, we hire only
+                the finest legal minds available. Our writers love to come up
+                with unique ideas that are as enjoyable to read as they are
+                informative. When it comes to legal content, we have an
+                impressive record of success in making the complex simple, and
+                we’re experts at finding the most interesting angles for our
+                clients.
               </p>
               <p className="ab_sec2-p rws-p">
-                We provide professional and witty writing that is highly
-                informative and easy to read. We have a team of writers who have
-                proven their expertise in crafting quality content that will
-                help your business grow. Our team is made up of professionals
-                with years of experience in this field, who understand the
-                nuances of an online presence. They can help you with content
-                like none in the industry.
+                With a team of highly skilled professionals in many different
+                fields, we are able to tackle any project with ease. We have
+                taken on everything from drafting personal injury settlement
+                agreements to helping clients find affordable housing. For more
+                information about our capabilities, please write to us anytime.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/SEO-Rich-Posts-For-Freelance-Sports-Writing.webp"
+                src="/writer/img/Outstanding-Ideas.webp"
                 alt="Real-review-writer"
                 className="rws-img"
               />
@@ -402,30 +409,32 @@ const FreelanceWritingServicesSports = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/GetProWriter-Expertise-For-Skilled-Freelance-Bloggers.webp"
+                src="/writer/img/Freelance-Legal-Writing.webp"
                 alt="Expertise"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise For Skilled Freelance Bloggers
+                GetProWriter Expertise For Impressive Freelance Legal Writing
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our company is known to offer skilled bloggers to clients for
-                outstanding content. We have a team of writers who are experts
-                in their respective fields and ready to produce high-quality
-                articles. We understand that our clients need results, and we do
-                not disappoint them at all.
+                GetProWriter offers the most professional, high-quality
+                freelance legal writing services to help your firm grow. Our
+                team of experienced freelance writers who have mastered the art
+                of legal content writing is all former law students and
+                graduates with a strong background in legal education. We
+                understand that producing top-notch content for your clients is
+                a crucial part of your business, and we’re here to help.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our writers have been in the industry for years, and they know
-                how to deliver excellent articles on time. They also know what
-                works and what does not work for your website or blog. We will
-                give you an estimate on how much money the article should cost
-                and how long it should take to write it up. It will help you to
-                decide on your project. To know more about the services that we
-                offer, simply reach out to us and send us your requirements.
+                The writers at GetProWriter are highly trained in all types of
+                legal documentation and they can help you with any kind of
+                assignment. We’ve also been helping businesses all over the
+                world with their copywriting needs for many years now, so you
+                can trust us to provide you with the high-quality content you
+                need for your firm. Your success is our success, and we look
+                forward to working with you!
               </p>
             </div>
           </div>
@@ -637,10 +646,10 @@ const FreelanceWritingServicesSports = () => {
         <div className="container">
           <div className="row">
             <h2 className="get_sec-h2">
-              Why Acquire Our Freelance Sports Writing Services?
+              Why Hire Our Freelance Legal Writers?
             </h2>
             <p className="get_sec-p">
-              To let your company lead the sports content niche.
+              To let your business go ahead of the league.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -653,22 +662,8 @@ const FreelanceWritingServicesSports = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Internationally acclaimed writers
+                      Legal experts for drafting content
                     </span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="box-ol">
-                <ol className="m-0 d-flex align-items-center p-0">
-                  <li className="in_li">
-                    <span className="right_span">
-                      <i aria-hidden="true" className="fas fa-check-circle"></i>
-                    </span>
-                  </li>
-                  <li className="in_li">
-                    <span className="spa_h2">Work as per the guidelines</span>
                   </li>
                 </ol>
               </div>
@@ -683,7 +678,23 @@ const FreelanceWritingServicesSports = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      No plagiarism and superb content
+                      Meet requirements without any hassle
+                    </span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="box-ol">
+                <ol className="m-0 d-flex align-items-center p-0">
+                  <li className="in_li">
+                    <span className="right_span">
+                      <i aria-hidden="true" className="fas fa-check-circle"></i>
+                    </span>
+                  </li>
+                  <li className="in_li">
+                    <span className="spa_h2">
+                      Superb content and accurate information
                     </span>
                   </li>
                 </ol>
@@ -691,21 +702,22 @@ const FreelanceWritingServicesSports = () => {
             </div>
 
             <p className="review1-p">
-              With our sports writing services, you can be sure of getting
-              excellent content for your brand. We have a team of writers who
-              are experts in their field and can deliver high-quality content on
-              any topic. We have the ability to write about any type of sport.
-              Our writers are also trained to write about topics related to
-              technology and science.
+              To be ahead in the league, hire freelance legal writing experts
+              from us. We are known to offer outstanding services to clients. As
+              legal content writers, our professionals have been writing for a
+              long time now. Many of our clients have expressed their
+              satisfaction with their orders and have recommended us to other
+              clients.
             </p>
 
             <p className="review1-p">
-              They can even create original articles that will help you in
-              getting more traffic and customers for your business. It ensures
-              that each piece of content is unique and original, giving it an
-              edge over other writers who may not have as much experience with
-              the subject matter at hand. Whether you need a news article or
-              blog post, we can help you make it happen.
+              Our team consists of certified lawyers, who can give you what you
+              need to win your case and improve your relationship with your
+              clients. Our services are meant for small and large businesses
+              across the world. We value every client and strive to offer them
+              the best service and support. In case you need any help with your
+              legal documents, contact us today and we will get back to you at
+              the earliest possible time.
             </p>
           </div>
         </div>
@@ -719,19 +731,19 @@ const FreelanceWritingServicesSports = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  We have been working with GPW for some time now and we simply
-                  love their writers. They are always on time, they know how to
-                  work within our budget and they deliver the best results. It
-                  is a pleasure to work with them!
+                  This company far exceeded my expectations with its ability to
+                  provide quality work. Their writers are extremely talented and
+                  professional. The project was handled exactly how I wanted,
+                  from start to finish.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Den-Cliff.webp"
+                    src="/writer/img/Jim-Cooper.webp"
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Den Cliff</h3>
-                  <p className="testi_box-p">CEO, Sports Central</p>
+                  <h3 className="testi_box-h3">Jim Cooper</h3>
+                  <p className="testi_box-p">CEO, Law Unlimited</p>
                 </div>
               </div>
             </div>
@@ -739,17 +751,17 @@ const FreelanceWritingServicesSports = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  GPW writers know their job very well. They are professional
-                  and they do a great job. I will continue to use them and
-                  highly recommend them to other companies.
+                  Great people, great prices, and most importantly great
+                  service! I recommend this company if you are looking for
+                  high-quality writing at an affordable price.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Ellen-D.webp"
+                    src="/writer/img/Julie-Win.webp"
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Ellen D</h3>
+                  <h3 className="testi_box-h3">Julie Win</h3>
                   <p className="testi_box-p">Business Analyst</p>
                 </div>
               </div>
@@ -814,8 +826,7 @@ const FreelanceWritingServicesSports = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        What is the process to hire freelance sports writers
-                        from GetProWriter?
+                        How can we hire the best legal freelancers online?
                       </button>
                     </h2>
 
@@ -826,14 +837,15 @@ const FreelanceWritingServicesSports = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        To hire writers from our company, all you have to do is
-                        reach out to us and tell us what you need. Our writers
-                        are here to make your work easier and to ensure that you
-                        can successfully meet all of your deadlines. We pride
-                        ourselves on being able to take anything that anyone
-                        comes to us with and turn it into something great. If
-                        you have a project in mind, we can make sure that it
-                        gets done properly and well.
+                        You can do that by simply getting in touch with us. We
+                        work closely with each client to meet their needs and
+                        deadlines, so none of our clients will be disappointed
+                        with us. When you have a case, or you are looking for
+                        one, the last thing you want is to lose it because of
+                        the lack of quality content in your documents. You
+                        cannot afford to hire a bad lawyer. But how do you know
+                        that the legal content writer you are hiring is good?
+                        That’s why we are here to help you with your needs.
                       </div>
                     </div>
                   </div>
@@ -851,7 +863,7 @@ const FreelanceWritingServicesSports = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Do you have experienced sports writers for blog posts?
+                        Do you have expert legal writers for content?
                       </button>
                     </h2>
 
@@ -862,16 +874,14 @@ const FreelanceWritingServicesSports = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        We have a team of writers that are experienced in
-                        various domains including sports. They can write
-                        enriching content for your business. We have the best
-                        writers with years of experience in all the main
-                        domains, we write content that is unique, informative,
-                        and interesting. We take pride in writing outstanding
-                        and well-thought-out articles. We value our image and
-                        always deliver quality work within the deadlines. Our
-                        writers know exactly what to write to get a good
-                        reputation in the market.
+                        Yes. All our legal content writers are experts in the
+                        domain. As a matter of fact, we have interviewed and
+                        selected our writers based on their expertise in various
+                        fields of law. Each writer is well-experienced and has
+                        been with us for a considerable amount of time. We vet
+                        our legal writers thoroughly before we hire them, to
+                        ensure that they are qualified enough to deliver the
+                        best quality articles on time.
                       </div>
                     </div>
                   </div>
@@ -890,8 +900,8 @@ const FreelanceWritingServicesSports = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      I am looking for a fantastic sports freelance writer.
-                      Where can I get one?
+                      I am looking for a trained legal editor. Can your company
+                      help me hire one?
                     </button>
                   </h2>
 
@@ -902,16 +912,15 @@ const FreelanceWritingServicesSports = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      You can get fantastic sports freelance writers with us. We
-                      have the best writers from across the industry. Our
-                      writers will write the best content for you. They will
-                      produce work that can not be compared with other services.
-                      Our writers will help you build your brand image and
-                      create a strong reputation for your business. We want to
-                      be the ideal choice for our clients and offer them only
-                      top-quality products. Our writers will do their best to
-                      fulfill your needs and make sure everything is written as
-                      per all your requirements.
+                      For trained legal editors, we are here to help you. Our
+                      legal content writers and editors have excellent command
+                      over all legal terminologies, concepts, and principles.
+                      They have extensive experience in the domain, which helps
+                      them to provide high-quality content to our clients. They
+                      are dedicated and passionate about writing the articles
+                      for us. All of our legal content writers have written for
+                      clients worldwide and they have helped our organization to
+                      maintain a strong record of accomplishments in this field.
                     </div>
                   </div>
                 </div>
@@ -924,4 +933,4 @@ const FreelanceWritingServicesSports = () => {
   );
 };
 
-export default FreelanceWritingServicesSports;
+export default FreelanceWritingServicesLegal;

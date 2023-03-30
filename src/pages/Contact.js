@@ -219,7 +219,9 @@ const Contact = () => {
                 Submit
               </button>{" "}
               {Object.keys(formErrors).length === 0 && isSubmit ? (
-                <span className="Success">Submitted is Successfull</span>
+                <span className="Success" style={{ color: "#03989f" }}>
+                  Submitted is Successfull
+                </span>
               ) : (
                 ""
               )}

@@ -15,20 +15,28 @@ const ViewDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     setIsLoading(true);
+    const tokenID = localStorage.getItem("token");
     console.log("id", id);
     const fetch = async () => {
       try {
         const { data } = await axios.get(
-          `${process.env.REACT_APP_APIURL}/getAuthor/${id}`
+          `${process.env.REACT_APP_APIURL}/getAuthor/${id}`,
+          {
+            headers: {
+              "Content-type": "application/json",
+              Authorization: `${tokenID}`,
+            },
+          }
         );
         SetPosts(data);
+        console.log(data);
         setIsLoading(false);
       } catch (err) {
         console.error(err);
       }
     };
     fetch();
-  }, []);
+  }, [id]);
 
   const RenderHTML = (props) => (
     <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>

@@ -97,6 +97,14 @@ import BlogWritingServicesNotion from "./BlogServicesPages/BlogWritingServicesNo
 import BlogWritingServicesGithub from "./BlogServicesPages/BlogWritingServicesGithub";
 import FreelanceWritingServicesWhitePaper from "./FreelanceServicesPages/FreelanceWritingServicesWhitePaper";
 import FreelanceWritingServicesGrant from "./FreelanceServicesPages/FreelanceWritingServicesGrant";
+import FreelanceWritingServicesSports from "./FreelanceServicesPages/FreelanceWritingServicesSports";
+import FreelanceWritingServicesFashion from "./FreelanceServicesPages/FreelanceWritingServicesFashion";
+import FreelanceWritingServicesFinance from "./FreelanceServicesPages/FreelanceWritingServicesFinance";
+import FreelanceWritingServicesLegal from "./FreelanceServicesPages/FreelanceWritingServicesLegal";
+import FreelanceWritingServicesHealth from "./FreelanceServicesPages/FreelanceWritingServicesHealth";
+import FreelanceWritingServicesMagazine from "./FreelanceServicesPages/FreelanceWritingServicesMagazine";
+import FreelanceWritingServicesBusiness from "./FreelanceServicesPages/FreelanceWritingServicesBusiness";
+import FreelanceWritingServicesNurse from "./FreelanceServicesPages/FreelanceWritingServicesNurse";
 import GhostWritingServicesMedical from "./GhostServicesPages/GhostWritingServicesMedical";
 import GhostWritingServicesFiction from "./GhostServicesPages/GhostWritingServicesFiction";
 import GhostWritingServicesRomance from "./GhostServicesPages/GhostWritingServicesRomance";
@@ -388,15 +396,47 @@ function App() {
           path="freelance-writing-services/grant"
           element={<FreelanceWritingServicesGrant />}
         />
-            <Route
+        <Route
+          path="freelance-writing-services/sports"
+          element={<FreelanceWritingServicesSports />}
+        />
+        <Route
+          path="freelance-writing-services/fashion"
+          element={<FreelanceWritingServicesFashion />}
+        />{" "}
+        <Route
+          path="freelance-writing-services/finance"
+          element={<FreelanceWritingServicesFinance />}
+        />
+        <Route
+          path="freelance-writing-services/legal"
+          element={<FreelanceWritingServicesLegal />}
+        />
+        <Route
+          path="freelance-writing-services/health"
+          element={<FreelanceWritingServicesHealth />}
+        />
+        <Route
+          path="freelance-writing-services/magazine"
+          element={<FreelanceWritingServicesMagazine />}
+        />
+        <Route
+          path="freelance-writing-services/business"
+          element={<FreelanceWritingServicesBusiness />}
+        />
+        <Route
+          path="freelance-writing-services/nurse"
+          element={<FreelanceWritingServicesNurse />}
+        />
+        <Route
           path="ghostwriting-services/medical"
           element={<GhostWritingServicesMedical />}
         />
-            <Route
+        <Route
           path="ghostwriting-services/fiction"
           element={<GhostWritingServicesFiction />}
         />
-         <Route
+        <Route
           path="ghostwriting-services/romance"
           element={<GhostWritingServicesRomance />}
         />
@@ -412,7 +452,7 @@ function App() {
           path="ghostwriting-services/technical"
           element={<GhostWritingServicesTechnical />}
         />
-         <Route
+        <Route
           path="ghostwriting-services/memoir"
           element={<GhostWritingServicesMemoir />}
         />
@@ -432,17 +472,15 @@ function App() {
           path="product-description-writing/ecommerce"
           element={<ProductDescriptionWritingEcommerce />}
         />
-
         <Route
           path="review-writing-services/movie"
           element={<ReviewWritingServicesMovie />}
         />
-
         <Route
           path="review-writing-services/simple-online-pharmacy"
           element={<ReviewWritingServicesSimpleOnlinePharmacy />}
         />
-         <Route
+        <Route
           path="review-writing-services/twitter"
           element={<ReviewWritingServicesTwitter />}
         />
@@ -450,7 +488,6 @@ function App() {
           path="review-writing-services/sitejabber"
           element={<ReviewWritingServicesSitejabber />}
         />
-
         <Route
           path="review-writing-services/other-websites"
           element={<ReviewWritingServicesOtherWebsites />}
@@ -463,12 +500,10 @@ function App() {
           path="review-writing-services/electronic-gadgets-shop"
           element={<ReviewWritingServicesElectronicGadgetsShop />}
         />
-    
         <Route
           path="review-writing-services/trustpilot"
           element={<ReviewWritingServicesTrustpilot />}
         />
-
         <Route
           path="review-writing-services/google-my-business"
           element={<ReviewWritingServicesGoogleMyBusiness />}
@@ -477,7 +512,7 @@ function App() {
           path="review-writing-services/facebook"
           element={<ReviewWritingServicesFacebook />}
         />
-            <Route
+        <Route
           path="review-writing-services/instagram"
           element={<ReviewWritingServicesInstagram />}
         />
@@ -497,8 +532,6 @@ function App() {
           path="review-writing-services/qna/other"
           element={<ReviewWritingServicesQnaOther />}
         />
-
-
       </Routes>
       <Footer />
     </BrowserRouter>

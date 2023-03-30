@@ -37,6 +37,7 @@ class Sample extends Component {
         ...this.state,
         User: User.data.sort().reverse(),
         isLoading: false,
+        startSearch: true,
       });
     }
   }
@@ -46,7 +47,7 @@ class Sample extends Component {
       <p
         dangerouslySetInnerHTML={{ __html: props.HTML }}
         className="samp_box-h3 fs-6"
-        style={{ overflowX: "auto", height: "150px" }}
+        style={{ overflowX: "auto", height: "100px" }}
       ></p>
     );
 
@@ -127,7 +128,7 @@ class Sample extends Component {
                               href={urlApi + "/upload-pdf/" + friend.pdf}
                               download
                               target="_blank"
-                              className="samp_box-btn"
+                              className="samp_box-btn text-white text-decoration-none"
                             >
                               {" "}
                               <i className="fa fa-download samp-icon"></i>
@@ -156,7 +157,7 @@ class Sample extends Component {
                               href={urlApi + "/upload-pdf/" + friend.pdf}
                               download
                               target="_blank"
-                              className="samp_box-btn"
+                              className="samp_box-btn text-white text-decoration-none"
                             >
                               {" "}
                               <i className="fa fa-download samp-icon"></i>

@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "../pages/ReviewGetintouch";
 
-const FreelanceWritingServicesSports = () => {
+const FreelanceWritingServicesMagazine = () => {
   return (
     <div>
       <section className="top_sec p-0">
@@ -13,14 +13,14 @@ const FreelanceWritingServicesSports = () => {
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1 className="top_Sec-h1 mt-3 p-0">
-                Catchy Freelance Sports Blogs!
+                Attractive Magazine Content!
               </h1>
-              <h2 className="top_Sec-h2">Freelance Sports Writing Now|</h2>
+              <h2 className="top_Sec-h2">Magazine Best Writers|</h2>
               <p className="top_Sec-p">
-                GetProWriter is known to offer phenomenal freelance sports
-                writing services. Our company’s writers have been in the
-                business for many years. We have successfully worked on numerous
-                projects for clients on a wide range of topics.
+                GetProWriter is a reputed name for freelance magazine writing
+                services in the industry. We have been providing services to
+                students, businesses, and other clients who want to make a
+                positive presence in the marketplace.
               </p>
             </div>
 
@@ -37,81 +37,79 @@ const FreelanceWritingServicesSports = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Leading writers for freelance sports writing with GetProWriter!
+              Excellent freelance magazine writing services with GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Enriching sports posts for your website.
+              Best magazine content to expand your enterprise.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Attractive Posts</h3>
+                <h3 className="box-h3">Top Content</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Phenomenal Writers</h3>
+                <h3 className="box-h3">Expert Creators</h3>
+              </div>
+            </div>
+            <div className="col-md-3">
+              <div className="wr-b">
+                <h3 className="box-h3">Fantastic Ideas</h3>
+              </div>
+            </div>
+            <div className="col-md-3">
+              <div className="wr-b">
+                <h3 className="box-h3">Rich Keywords</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Noticeable Blogs</h3>
+                <h3 className="box-h3">Industry Leaders</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Relevant Keywords</h3>
+                <h3 className="box-h3">Reader Friendly</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Writers Worldwide</h3>
+                <h3 className="box-h3">Attractive Content</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">ORM Assured</h3>
+                <h3 className="box-h3">Genuine Writeup</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Easy Hire</h3>
+                <h3 className="box-h3">Experienced Editors</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Updated Info</h3>
+                <h3 className="box-h3">Genuine Voices</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Expert Bloggers</h3>
+                <h3 className="box-h3">Superb Reach</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Genuine Ideas</h3>
-              </div>
-            </div>
-
-            <div className="col-md-3">
-              <div className="wr-b">
-                <h3 className="box-h3">Recommended Freelancers</h3>
-              </div>
-            </div>
-
-            <div className="col-md-3">
-              <div className="wr-b">
-                <h3 className="box-h3">Timely Completion</h3>
+                <h3 className="box-h3">Famous Worldwide</h3>
               </div>
             </div>
           </div>
@@ -122,24 +120,26 @@ const FreelanceWritingServicesSports = () => {
         <div className="container">
           <div className="row">
             <h2 className="rev_sec-h2">
-              Our Sports Post Writers Are Industry’s Best
+              Our Magazine Writers Are Shaping Businesses
             </h2>
 
             <p className="rev_sec-p">
-              We have experienced writers who extensively write for the sports
-              domain. We can deliver well-written, accurate, and engaging
-              articles in a short period. We are a team of professional and
-              dedicated writers who have been working with us for a long time.
-              We offer you quality work at affordable prices. We provide our
-              clients with quality work that they can trust and rely on.
+              GetProWriter has been offering quality content to online
+              publishers for many years now and we have been successful in
+              creating a niche as one of the top ten providers of content on the
+              web. Whatever your interest may be, GetProWriter promises to meet
+              your needs and exceed your expectations.
             </p>
             <p className="rev_sec-p">
-              Our writers are highly skilled in their respective fields, which
-              is why you can expect nothing but high-quality content from us.
-              These writers work with sincerity. We have a team of writers who
-              are highly skilled and capable of producing interesting content
-              for your business. If you need more information on our services,
-              then simply contact us and send us your requirements.
+              Whether you are looking for magazine authors with expertise in
+              fashion, travel, or technology, they will never disappoint you
+              with their creative approach. Our writers are committed to working
+              with clients who share their vision and values; hence they work
+              only with clients who want to build long-term relationships. The
+              team of experienced writers at GetProWriter guarantees that you
+              get high-quality content that is free of grammatical errors and
+              plagiarism. If you are looking for more than just words on a page,
+              then GetProWriter is your partner.
             </p>
           </div>
         </div>
@@ -149,10 +149,12 @@ const FreelanceWritingServicesSports = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              Truly qualified bloggers on GetProWriter!
+              Highly qualified magazine writers on GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
-            <p className="writing_sec-p">Interesting sports blogs for all.</p>
+            <p className="writing_sec-p">
+              Interesting content for your magazines.
+            </p>
 
             <div class="col-md-6">
               <h2 class="count_h2">Check us out and see for yourself:</h2>
@@ -222,22 +224,26 @@ const FreelanceWritingServicesSports = () => {
               </div>
             </div>
             <div class="col-md-6">
-              <h2 class="count_h2">GPW Blog Expert For Sports Posts</h2>
+              <h2 class="count_h2">
+                Hire An Expert From Us For Your Magazines
+              </h2>
               <p class="count-p">
-                Our professionals are experts in sports content. They have
-                served thousands of clients all over the world. Whether you need
-                to launch a new website or need a new slogan for your brand, we
-                can help you come up with the best possible solution. We will
-                work with you to develop content that suits your business needs
-                and budget so that you can be sure that we’re delivering the
-                best to your customers.
+                GetProWriter serves as the best platform to make your magazine
+                content recognized by the world. The team of GetProWriter is
+                comprised of a pool of writers who are experts in their area of
+                writing and are capable of providing you with professional
+                content.
               </p>
               <p class="count-p">
-                We work with sports content and are passionate about providing
-                our clients with services that are both effective and
-                affordable. When you hire writers from us, you get nothing but
-                the best. If you need to learn how to get more traffic to your
-                website, or if you want to reach new audiences, we can help.
+                Sharing experiences and knowledge on your blog or website is an
+                effective way to develop it further. Blogging has gained
+                popularity over the years owing to its benefits. In case you are
+                looking for online magazine writing services, GetProWriter can
+                help you out. The writers at GetProWriter have expertise in
+                handling various subjects and topics ranging from technology to
+                education and fashion to business, etc. They are also
+                experienced in covering different niches like parenting, sports,
+                health, travel, entertainment, and so on.
               </p>
             </div>
           </div>
@@ -248,35 +254,39 @@ const FreelanceWritingServicesSports = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-              Affordable Freelance Sports Writing Services
+              Affordable Freelance Magazine Writing Services
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Get noticed with our freelance sports writing services.
+              Guaranteed industry presence with our content.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
-              <h3 className="ab_sec2-h3 rws-h3">Quality Is Our Top Priority</h3>
+              <h3 className="ab_sec2-h3 rws-h3">
+                Our Writers Are Known For Quality
+              </h3>
               <p className="ab_sec2-p rws-p">
-                When we write sports content for you, we prioritize quality over
-                everything else. We believe that the most important thing is to
-                find the right writer for each project. That’s why we only work
-                with experienced professionals who can keep up with the pace of
-                our work and produce high-quality content every time.
+                Getting work done for your blog or website can be a daunting
+                task for many. Even if you have a topic in mind, it is likely
+                that you are not familiar with the correct way to write an
+                article. Many people try to go at it alone, but this can lead to
+                errors in grammar, punctuation, spelling, and other areas. While
+                you may want to be your writer, it is best to avoid the pitfalls
+                that come with it. And this is where we come in. Our magazine
+                writers are among the most talented in the whole industry.
               </p>
               <p className="ab_sec2-p rws-p">
-                We understand that your audience expects more from you than just
-                a headline to click on or a stat to tweet. They expect quality
-                content delivered on time. That’s why we’re obsessed with making
-                sure the content that you receive is of the highest possible
-                quality. We know that it takes time and effort to create
-                something like this, so we only hire writers who can guarantee
-                excellent results.
+                GetProWriter provides customized services as per your
+                requirements. You can get in touch with us through live chat or
+                email to convey your idea or ask for a quote before placing an
+                order. Our main aim is to provide 100% plagiarism-free articles
+                within the set deadline. The prices at GetProWriter are
+                affordable and we offer extraordinary services.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Quality-Is-Our-Top-Priority1.webp"
+                src="/writer/img/Our-Writers-Are-Known-For-Quality.webp"
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -284,58 +294,61 @@ const FreelanceWritingServicesSports = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Sports-Writers-Who-Are-Experienced.webp"
+                src="/writer/img/Writers-Are-Immensely-Creative.webp"
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Sports Writers Who Are Experienced
+                Our Writers Are Immensely Creative
               </h3>
               <p className="ab_sec2-p rws-p">
-                All our content writers are experienced and they have adequate
-                experience in the sports sector. They have worked on different
-                sports articles and are well aware of the current sports news,
-                trends and issues.
+                When you look into our freelance magazine writing services, you
+                will be provided with a professional writer who is familiar with
+                each of the industry’s standards and conventions. Our writers
+                will take care of everything from the opening sentences to the
+                closing paragraph. They will make sure that proper titles are
+                used, sources are cited properly, and everything else is done
+                according to the rules of your publication and industry. Rest
+                assured, our writers are immensely creative. They are known
+                across the industry for their writing skills.
               </p>
               <p className="ab_sec2-p rws-p">
-                We have a team of highly qualified writers who can provide you
-                with quality content for your website or blog. Our writers will
-                deliver fresh, unique, and interesting content to your audience
-                that will keep them engaged. You can trust us to produce
-                high-quality articles on any topic so that they are interesting
-                and easy to read. We provide content writing services that help
-                you to meet your business objectives with utmost integrity and
-                professionalism. We have a team of writers who have a vast
-                knowledge of the industry and they are committed to their work.
+                Our writers have years of experience in their fields. They are
+                familiar with all styles of writing from comedy to nonfiction
+                and everything in between. As such, they can write articles on
+                almost any subject matter or style without fail. When you need a
+                magazine article written for your website or blog, GetProWriter
+                can help!
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <h3 className="ab_sec2-h3 rws-h3">Genuine Ideas in All Posts</h3>
+              <h3 className="ab_sec2-h3 rws-h3">
+                You Will Witness Versatility In Our Content
+              </h3>
               <p className="ab_sec2-p rws-p">
-                We are known to include genuine ideas in all kinds of content.
-                When you hire our writers to help you with content, you will
-                surely benefit from their expertise. Our writers are highly
-                trained and experienced. What we offer is an excellent
-                combination of creativity and professionalism. We have a team
-                that can deliver the very best material for your business or
-                website.
+                Our writing service company is known to offer a variety of
+                services to clients. All our writers are skilled and they have
+                adequate writing experience. They have been working with
+                thousands of clients for some years now.
               </p>
               <p className="ab_sec2-p rws-p">
-                We are committed to ensuring that every client gets the best
-                quality content possible, which is why we always ensure that
-                each project is 100% unique. Our writers are well-versed in all
-                aspects of SEO and will ensure that your content meets your SEO
-                requirements perfectly. You don’t have to worry about the
-                quality of our work because we work on several topics that are
-                relevant and important for your business or website.
+                As a reliable name in the field of freelance magazine writing,
+                we have been committed to providing the services that our
+                clients deserve. Our writers know the requirements of the domain
+                in and out and they craft all the articles with high quality.
+                Our rates are pocket friendly and we never compromise on
+                quality. Our writers are experts in every topic, hence you can
+                assign them any type of article or subject and we guarantee that
+                you will be satisfied with the work. Also, our services are
+                moderately priced.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Genuine-Ideas-in-All-Posts.webp"
+                src="/writer/img/You-Will-Witness-Versatility-In-Our-Content.webp"
                 alt="Online-review"
                 className="rws-img"
               />
@@ -343,58 +356,58 @@ const FreelanceWritingServicesSports = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Enriching-Travel-Content-For-Companies-(1).webp"
+                src="/writer/img/Compelling-Magazine-Content-For-Companies.webp"
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Reader-Friendly Sports Posts For Businesses
+                Compelling Magazine Content For Companies
               </h3>
               <p className="ab_sec2-p rws-p">
-                We know that the sports industry is a booming business. And our
-                writers have the relevant knowledge to write about this
-                industry. They are passionate about sports and they love to
-                write about it. They can write very interesting articles on
-                topics like how to make money in sports, how to get into the
-                business of sports, etc.
+                We hire only the best experts for our team who are capable of
+                delivering quality work in the given time. Our writers have been
+                strong players in the market for years and their popularity has
+                increased drastically over time.
               </p>
               <p className="ab_sec2-p rws-p">
-                We are experts in writing about sports topics in order to get
-                your business up and running. We can write about anything from
-                the latest player news to how to make money from sports. Our
-                writers can also help you with your content marketing strategy
-                by creating articles and blogs on any topic that relates
-                directly to your brand or business.
+                Our company has writers who can write compelling magazine
+                content for a variety of niches. For the writers in our company,
+                it’s very important to be able to research and write catchy
+                magazine content, be it for fashion or automobiles. We are
+                creative, fast, and reliable. In case you need website content
+                or would like to create a blog for your company, we will write
+                original work that is eye-catching and full of information about
+                your business or industry. So, what are you waiting for? Hire
+                writers from us today!
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                SEO-Rich Posts For Freelance Sports Writing
+                Our Writers Are Known For Originality
               </h3>
               <p className="ab_sec2-p rws-p">
-                We are known to maintain all SEO trends when we write content
-                for you. We will also write SEO-friendly content that is easy to
-                read and understand. We can help you get more organic traffic
-                from Search Engines like Google, Bing, Yahoo, and other major
-                search engines. Our writers will use the best keywords to
-                increase your search rankings online.
+                When you create content, you’re telling a story. And when you
+                tell your story, you want to make sure that it’s unique. That’s
+                why we never derive our content from other blogs – we build our
+                narrative.
               </p>
               <p className="ab_sec2-p rws-p">
-                We provide professional and witty writing that is highly
-                informative and easy to read. We have a team of writers who have
-                proven their expertise in crafting quality content that will
-                help your business grow. Our team is made up of professionals
-                with years of experience in this field, who understand the
-                nuances of an online presence. They can help you with content
-                like none in the industry.
+                When we write for you, we don’t use pre-made templates. We don’t
+                take shortcuts like copy-and-pasting from other sources or
+                modifying old blog posts. We start fresh every time and build
+                your story with new ideas and new facts. Although many companies
+                take content from prewritten blog posts, we believe that none of
+                them will be as effective as the writing team at our company.
+                Also, we offer all our blog writing freelance services at
+                affordable prices.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/SEO-Rich-Posts-For-Freelance-Sports-Writing.webp"
+                src="/writer/img/Our-Writers-Are-Known-For-Originality.webp"
                 alt="Real-review-writer"
                 className="rws-img"
               />
@@ -402,30 +415,32 @@ const FreelanceWritingServicesSports = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/GetProWriter-Expertise-For-Skilled-Freelance-Bloggers.webp"
+                src="/writer/img/GetProWriter-Expertise-For-Leading-Magazine-Experts.webp"
                 alt="Expertise"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise For Skilled Freelance Bloggers
+                GetProWriter Expertise For Leading Magazine Experts
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our company is known to offer skilled bloggers to clients for
-                outstanding content. We have a team of writers who are experts
-                in their respective fields and ready to produce high-quality
-                articles. We understand that our clients need results, and we do
-                not disappoint them at all.
+                Freelance Every writer on our team has a degree in English
+                Literature or Journalism, and all of our writers have written
+                professionally for a variety of publications in different
+                niches. We understand what makes a good article work, and will
+                make sure it does exactly that.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our writers have been in the industry for years, and they know
-                how to deliver excellent articles on time. They also know what
-                works and what does not work for your website or blog. We will
-                give you an estimate on how much money the article should cost
-                and how long it should take to write it up. It will help you to
-                decide on your project. To know more about the services that we
-                offer, simply reach out to us and send us your requirements.
+                When you hire us to write for your publication, you should
+                expect more than just words on a page- we will also edit your
+                piece for typos and grammatical errors, ensuring that it’s
+                perfect before we hand it over to you. We are flexible as to
+                when we can meet with you; if you need a quick turnaround time
+                on an urgent project, we will find a writer who can meet your
+                timeline. If you don’t need anything until next month, that’s
+                okay too! We are happy to work with whatever schedule works best
+                for your needs.
               </p>
             </div>
           </div>
@@ -637,10 +652,10 @@ const FreelanceWritingServicesSports = () => {
         <div className="container">
           <div className="row">
             <h2 className="get_sec-h2">
-              Why Acquire Our Freelance Sports Writing Services?
+              Why Hire Our Freelance Magazine Writers?
             </h2>
             <p className="get_sec-p">
-              To let your company lead the sports content niche.
+              To truly shape your business in the right direction.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -652,9 +667,7 @@ const FreelanceWritingServicesSports = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">
-                      Internationally acclaimed writers
-                    </span>
+                    <span className="spa_h2">Magazine writer experts</span>
                   </li>
                 </ol>
               </div>
@@ -668,7 +681,7 @@ const FreelanceWritingServicesSports = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">Work as per the guidelines</span>
+                    <span className="spa_h2">Meet deadlines effectively</span>
                   </li>
                 </ol>
               </div>
@@ -683,7 +696,7 @@ const FreelanceWritingServicesSports = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      No plagiarism and superb content
+                      Error-free content as per the assured timeline
                     </span>
                   </li>
                 </ol>
@@ -691,21 +704,23 @@ const FreelanceWritingServicesSports = () => {
             </div>
 
             <p className="review1-p">
-              With our sports writing services, you can be sure of getting
-              excellent content for your brand. We have a team of writers who
-              are experts in their field and can deliver high-quality content on
-              any topic. We have the ability to write about any type of sport.
-              Our writers are also trained to write about topics related to
-              technology and science.
+              To have a solid industry presence, you must hire writers from our
+              company. We pride ourselves on being able to write compelling
+              content for any audience. We can provide an engaging article or
+              blog post at any length you request. Our team can write in a
+              variety of styles, from journalistic pieces that are ideal for
+              news sites and blogs, to narrative features that work best in a
+              print publication.
             </p>
 
             <p className="review1-p">
-              They can even create original articles that will help you in
-              getting more traffic and customers for your business. It ensures
-              that each piece of content is unique and original, giving it an
-              edge over other writers who may not have as much experience with
-              the subject matter at hand. Whether you need a news article or
-              blog post, we can help you make it happen.
+              If you’re looking for something in between, we can also write more
+              traditional articles that have all the flair of a well-told story
+              but still function as solid standalone reads online or in print.
+              Our team has the resources necessary to do the job right. Our team
+              of writers is dedicated to bringing your stories to life and
+              sharing them with the world. Any time you need engaging magazine
+              content, our team will write it for you.
             </p>
           </div>
         </div>
@@ -719,19 +734,19 @@ const FreelanceWritingServicesSports = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  We have been working with GPW for some time now and we simply
-                  love their writers. They are always on time, they know how to
-                  work within our budget and they deliver the best results. It
-                  is a pleasure to work with them!
+                  We hired writers from GPW when we needed someone to work on
+                  our project and they have done an excellent job with it. We
+                  were very pleased with the results and the way they
+                  communicated with us.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Den-Cliff.webp"
+                    src="/writer/img/Tim-Harper.webp"
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Den Cliff</h3>
-                  <p className="testi_box-p">CEO, Sports Central</p>
+                  <h3 className="testi_box-h3">Tim Harper</h3>
+                  <p className="testi_box-p">CEO, QV Zone</p>
                 </div>
               </div>
             </div>
@@ -739,17 +754,18 @@ const FreelanceWritingServicesSports = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  GPW writers know their job very well. They are professional
-                  and they do a great job. I will continue to use them and
-                  highly recommend them to other companies.
+                  We were thrilled with the quality of writers that we found
+                  through GetProWriter. They understood our project and what we
+                  were looking for, and they provided great results. I recommend
+                  using GPW's writers for your next project.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Ellen-D.webp"
+                    src="/writer/img/Tavern-Smith.webp"
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Ellen D</h3>
+                  <h3 className="testi_box-h3">Tavern Smith</h3>
                   <p className="testi_box-p">Business Analyst</p>
                 </div>
               </div>
@@ -814,8 +830,8 @@ const FreelanceWritingServicesSports = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        What is the process to hire freelance sports writers
-                        from GetProWriter?
+                        How can we hire freelance magazine writing experts from
+                        GetProWriter?
                       </button>
                     </h2>
 
@@ -826,14 +842,17 @@ const FreelanceWritingServicesSports = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        To hire writers from our company, all you have to do is
-                        reach out to us and tell us what you need. Our writers
-                        are here to make your work easier and to ensure that you
-                        can successfully meet all of your deadlines. We pride
-                        ourselves on being able to take anything that anyone
-                        comes to us with and turn it into something great. If
-                        you have a project in mind, we can make sure that it
-                        gets done properly and well.
+                        If you would like to hire an expert magazine writer,
+                        simply get in touch with us and tell us what you need.
+                        We will make sure that you get the best writers on
+                        board. We are a company that provides expert magazine
+                        writers to businesses and individuals. If you’re looking
+                        for some great writers to help you put together a blog,
+                        we might be able to make that happen for you. We
+                        specialize in providing trained writers from all over
+                        the world. So. if this seems like something you need,
+                        feel free to contact us for more information about our
+                        services.
                       </div>
                     </div>
                   </div>
@@ -851,7 +870,8 @@ const FreelanceWritingServicesSports = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Do you have experienced sports writers for blog posts?
+                        How do you ensure quality while hiring freelancers for
+                        your team?
                       </button>
                     </h2>
 
@@ -862,16 +882,15 @@ const FreelanceWritingServicesSports = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        We have a team of writers that are experienced in
-                        various domains including sports. They can write
-                        enriching content for your business. We have the best
-                        writers with years of experience in all the main
-                        domains, we write content that is unique, informative,
-                        and interesting. We take pride in writing outstanding
-                        and well-thought-out articles. We value our image and
-                        always deliver quality work within the deadlines. Our
-                        writers know exactly what to write to get a good
-                        reputation in the market.
+                        One of the most important aspects of our business is
+                        writing, and it is a top priority that we hire only the
+                        best writers from around the world. We are committed to
+                        providing our clients with quality content. Before
+                        hiring writers, we conduct rigorous select processes to
+                        make sure that only the best from around the world joins
+                        our team. We also make sure that they know exactly what
+                        they are getting into by applying for a position at our
+                        company.
                       </div>
                     </div>
                   </div>
@@ -890,8 +909,7 @@ const FreelanceWritingServicesSports = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      I am looking for a fantastic sports freelance writer.
-                      Where can I get one?
+                      I want some advice on magazine articles. Can you help?
                     </button>
                   </h2>
 
@@ -902,16 +920,14 @@ const FreelanceWritingServicesSports = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      You can get fantastic sports freelance writers with us. We
-                      have the best writers from across the industry. Our
-                      writers will write the best content for you. They will
-                      produce work that can not be compared with other services.
-                      Our writers will help you build your brand image and
-                      create a strong reputation for your business. We want to
-                      be the ideal choice for our clients and offer them only
-                      top-quality products. Our writers will do their best to
-                      fulfill your needs and make sure everything is written as
-                      per all your requirements.
+                      Our writers can draft the best magazine content for your
+                      company. They come with the best experience to do so. Our
+                      professionals are great with words and know how to convey
+                      a message through them, in an engaging way. They are
+                      highly experienced and have the best writing skills. They
+                      can write by keeping in mind the target audience and their
+                      preferences to make sure that they deliver the best
+                      magazine content for your company.
                     </div>
                   </div>
                 </div>
@@ -924,4 +940,4 @@ const FreelanceWritingServicesSports = () => {
   );
 };
 
-export default FreelanceWritingServicesSports;
+export default FreelanceWritingServicesMagazine;

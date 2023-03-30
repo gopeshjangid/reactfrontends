@@ -62,7 +62,7 @@ class Blog extends Component {
           <section className="blog_sec">
             <div className="container">
               <div className="row">
-                <div className="col-md-9">
+                <div className="col-md-8">
                   {this.state.User && this.state.searchText
                     ? this.state.User.filter((item, index) =>
                         item.title.includes(this.state.searchText)
@@ -86,11 +86,16 @@ class Blog extends Component {
                                   {friend.date}
                                 </span>
                               </div>
-                              <RenderHTML HTML={friend.dec.slice(0, 150)} />
+                              <RenderHTML HTML={friend.dec.slice(0, 50)} />
 
-                              <button type="button" className="blog_sec-btn">
-                                Read More{" "}
-                              </button>
+                              <Link to={`/blog/${friend.slug}`}>
+                                <button
+                                  type="button"
+                                  className="blog_sec-btn m-0"
+                                >
+                                  Read More{" "}
+                                </button>
+                              </Link>
                             </div>
                           </div>
                         );
@@ -118,7 +123,7 @@ class Blog extends Component {
 
                               <RenderHTML HTML={friend.dec.slice(0, 50)} />
 
-                              <Link to={`/onlineManagement/${friend._id}`}>
+                              <Link to={`/blog/${friend.slug}`}>
                                 <button
                                   type="button"
                                   className="blog_sec-btn m-0"
@@ -132,9 +137,9 @@ class Blog extends Component {
                       })}
                 </div>
 
-                <div className="col-md-3 term_sec-3">
+                <div className="col-md-4 term_sec-3">
                   <div className="container p-0">
-                    <div className="block1">
+                    <div className="block1 mx-0">
                       <form>
                         <p className="block_p">Search</p>
                         <input
@@ -161,52 +166,49 @@ class Blog extends Component {
                       </form>
                     </div>
 
-                    <div className="block1">
+                    <div className="block1 mx-0">
                       <h3 className="block-h3">Recent Posts</h3>
-                      <p className="block-p2">
-                        <Link to="" className="block_a">
-                          Online Reputation Management
-                        </Link>
-                      </p>
-                      <p className="block-p2">
-                        <Link to="" className="block_a">
-                          Marketing research case analysis of Google search
-                          engine
-                        </Link>
-                      </p>
-                      <p className="block-p2">
-                        <Link to="" className="block_a">
-                          A 5-Step Guide to Protecting Your Health and
-                          Well-Being While Working from Home
-                        </Link>
-                      </p>
-
-                      <p className="block-p2">
-                        <Link to="" className="block_a">
-                          The Art of Content Writing
-                        </Link>
-                      </p>
-                      <p className="block-p2">
-                        <Link to="" className="block_a">
-                          Tips to write better content that gets you up in the
-                          night.
-                        </Link>
-                      </p>
+                      {this.state.User.map((friend, value) => {
+                        return (
+                          <>
+                            <p className="block-p2">
+                              <Link
+                                to={`/blog/${friend.slug}`}
+                                className="block_a"
+                              >
+                                {friend.title}
+                              </Link>
+                            </p>
+                          </>
+                        );
+                      })}
                     </div>
 
-                    <div className="block1">
+                    <div className="block1 mx-0">
                       <h3 className="block-h3">Recent Comments</h3>
                       <p className="block-p3">No comments to show.</p>
                     </div>
 
-                    <div className="block1">
+                    <div className="block1 mx-0">
                       <h3 className="block-h3">Archives</h3>
-                      <p className="block-p3">February 2022</p>
-                      <p className="block-p3">January 2022</p>
-                      <p className="block-p3">December 2021</p>
+                      {this.state.User.map((friend, value) => {
+                        return (
+                          <>
+                            <p className="block-p3">
+                              {" "}
+                              <Link
+                                to={`/blog/${friend.slug}`}
+                                className="block_a"
+                              >
+                                {friend.date}
+                              </Link>
+                            </p>
+                          </>
+                        );
+                      })}
                     </div>
 
-                    <div className="block1">
+                    <div className="block1 mx-0">
                       <h3 className="block-h3">Categories</h3>
                       <p className="block-p3">Content Writing</p>
                       <p className="block-p3">General</p>

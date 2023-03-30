@@ -54,7 +54,7 @@ const OnlineManagement = () => {
         <section className="blog_sec">
           <div className="container">
             <div className="row">
-              <div className="col-md-9">
+              <div className="col-md-8">
                 <div className="term_sec-9">
                   <img
                     src={urlApi + "/image/" + post?.data?.image}
@@ -67,7 +67,7 @@ const OnlineManagement = () => {
                         {post?.data?.name}{" "}
                       </span>
                       <span className=" col-md-6 text-end  blog-span2 m-0">
-                        September 08,2022
+                        {post?.data?.date}
                       </span>
                     </div>
                     <RenderHTML HTML={post?.data?.dec} />
@@ -75,8 +75,8 @@ const OnlineManagement = () => {
                 </div>
               </div>
 
-              <div className="col-md-3 term_sec-3">
-                <div className="block1">
+              <div className="col-md-4 term_sec-3">
+                <div className="block1 mx-0">
                   <form>
                     <p className="block_p">Search</p>
                     <input type="text" name="search" className="block_search" />
@@ -86,7 +86,7 @@ const OnlineManagement = () => {
                   </form>
                 </div>
 
-                <div className="block1">
+                <div className="block1 mx-0">
                   <h3 className="block-h3">Recent Posts</h3>
                   <p className="block-p2">
                     <Link to="" className="block_a">
@@ -118,19 +118,19 @@ const OnlineManagement = () => {
                   </p>
                 </div>
 
-                <div className="block1">
+                <div className="block1 mx-0">
                   <h3 className="block-h3">Recent Comments</h3>
                   <p className="block-p3">No comments to show.</p>
                 </div>
 
-                <div className="block1">
+                <div className="block1 mx-0">
                   <h3 className="block-h3">Archives</h3>
                   <p className="block-p3">February 2022</p>
                   <p className="block-p3">January 2022</p>
                   <p className="block-p3">December 2021</p>
                 </div>
 
-                <div className="block1">
+                <div className="block1 mx-0">
                   <h3 className="block-h3">Categories</h3>
                   <p className="block-p3">Content Writing</p>
                   <p className="block-p3">General</p>
