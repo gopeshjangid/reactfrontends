@@ -157,10 +157,10 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/viewCart" element={<ViewCart />} />
         <Route path="/success" element={<Success />} />
-        <Route path="/viewdetails/:id" element={<ViewDetails />} />
+        <Route path="/author/:id" element={<ViewDetails />} />
         <Route path="/failed" element={<Failed />} />
         <Route path="/purchasesuccess" element={<PurchaseSuccess />} />
-        <Route path="/onlinemanagement/:id" element={<OnlineManagement />} />
+        <Route path="/blog/:id" element={<OnlineManagement />} />
         <Route path="/ordersuccess" element={<Ordersuccess />} />
         <Route path="/payplesuccess" element={<Payplesuccess />} />
         <Route path="/stripesubscription" element={<StripeSubscription />} />

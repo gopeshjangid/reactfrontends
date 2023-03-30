@@ -39,6 +39,22 @@ const OnlineManagement = () => {
     };
     fetch();
   }, [id]);
+  const [blogData, setBlogData] = useState([]);
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_APIURL}/getBlog`, {
+      method: "GET",
+      mode: "cors",
+      headers: {
+        "Content-type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((res) => res.json(console.log(res)))
+      .then((response) => {
+        setBlogData(response.data);
+        console.log(response.data);
+      });
+  }, []);
 
   const RenderHTML = (props) => (
     <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>
@@ -88,46 +104,29 @@ const OnlineManagement = () => {
 
                 <div className="block1 mx-0">
                   <h3 className="block-h3">Recent Posts</h3>
-                  <p className="block-p2">
-                    <Link to="" className="block_a">
-                      Online Reputation Management
-                    </Link>
-                  </p>
-                  <p className="block-p2">
-                    <Link to="" className="block_a">
-                      Marketing research case analysis of Google search engine
-                    </Link>
-                  </p>
-                  <p className="block-p2">
-                    <Link to="" className="block_a">
-                      A 5-Step Guide to Protecting Your Health and Well-Being
-                      While Working from Home
-                    </Link>
-                  </p>
-
-                  <p className="block-p2">
-                    <Link to="" className="block_a">
-                      The Art of Content Writing
-                    </Link>
-                  </p>
-                  <p className="block-p2">
-                    <Link to="" className="block_a">
-                      Tips to write better content that gets you up in the
-                      night.
-                    </Link>
-                  </p>
-                </div>
-
-                <div className="block1 mx-0">
-                  <h3 className="block-h3">Recent Comments</h3>
-                  <p className="block-p3">No comments to show.</p>
+                  {blogData?.map((friend, i) => {
+                    return (
+                      <p className="block-p2">
+                        <Link to={`/blog/${friend.slug}`} className="block_a">
+                          {friend.title}
+                        </Link>
+                      </p>
+                    );
+                  })}
                 </div>
 
                 <div className="block1 mx-0">
                   <h3 className="block-h3">Archives</h3>
-                  <p className="block-p3">February 2022</p>
-                  <p className="block-p3">January 2022</p>
-                  <p className="block-p3">December 2021</p>
+
+                  {blogData?.map((friend, i) => {
+                    return (
+                      <p className="block-p3">
+                        <Link to={`/blog/${friend.slug}`} className="block_a">
+                          {friend.date}
+                        </Link>
+                      </p>
+                    );
+                  })}
                 </div>
 
                 <div className="block1 mx-0">

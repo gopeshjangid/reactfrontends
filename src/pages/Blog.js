@@ -184,10 +184,10 @@ class Blog extends Component {
                       })}
                     </div>
 
-                    <div className="block1 mx-0">
+                    {/* <div className="block1 mx-0">
                       <h3 className="block-h3">Recent Comments</h3>
                       <p className="block-p3">No comments to show.</p>
-                    </div>
+                    </div> */}
 
                     <div className="block1 mx-0">
                       <h3 className="block-h3">Archives</h3>
