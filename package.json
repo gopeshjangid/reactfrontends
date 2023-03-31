@@ -36,6 +36,7 @@
     "react-paginate": "^8.1.4",
     "react-payment-inputs": "^1.1.9",
     "react-phone-input-2": "^2.15.1",
+    "react-razorpay": "^1.2.0",
     "react-read-more-read-less": "^1.0.7",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.3",

@@ -131,6 +131,9 @@ import ReviewWritingServicesQna from "./ReviewServicesPages/ReviewWritingService
 import ReviewWritingServicesQnaQuora from "./ReviewServicesPages/ReviewWritingServicesQnaQuora";
 import ReviewWritingServicesQnaReddit from "./ReviewServicesPages/ReviewWritingServicesQnaReddit";
 import ReviewWritingServicesQnaOther from "./ReviewServicesPages/ReviewWritingServicesQnaOther";
+import GhostWritingServicesSocialMedia from "./GhostServicesPages/GhostWritingServicesSocialMedia";
+import GhostWritingServicesProfessional from "./GhostServicesPages/GhostWritingServicesProfessional";
+import GhostWritingServicesAfricanAmerican from "./GhostServicesPages/GhostWritingServicesAfricanAmerican";
 
 function App() {
   return (
@@ -455,6 +458,18 @@ function App() {
         <Route
           path="ghostwriting-services/memoir"
           element={<GhostWritingServicesMemoir />}
+        />
+        <Route
+          path="ghostwriting-services/social-media"
+          element={<GhostWritingServicesSocialMedia />}
+        />
+        <Route
+          path="ghostwriting-services/professional"
+          element={<GhostWritingServicesProfessional />}
+        />
+        <Route
+          path="ghostwriting-services/african-american"
+          element={<GhostWritingServicesAfricanAmerican />}
         />
         <Route
           path="product-description-writing"

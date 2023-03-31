@@ -194,7 +194,7 @@ class Services extends Component {
       return;
     }
 
-    console.log(this.state.cartItems.message);
+    console.log(this.state.cartItems);
     console.log(id);
     // console.log(
     //   this.state.cartItems.message?.filter(

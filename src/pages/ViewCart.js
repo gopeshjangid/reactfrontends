@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import useRazorpay from "react-razorpay";
 
 import Loader from "./Loader";
 
@@ -21,6 +22,7 @@ function loadScript(src) {
 
 const ViewCart = () => {
   // const [num, setNum] = useState(0);
+  const Razorpay = useRazorpay();
 
   // const [nums, setNums] = useState(0);
   const navigate = useNavigate();
@@ -599,6 +601,78 @@ const ViewCart = () => {
       });
   };
 
+  async function savePaymentRazorpay(amount) {
+    const tokenID = localStorage.getItem("token");
+
+    var razorpay = new Razorpay({
+      key: "rzp_test_Xa2mSWNFvEWycp",
+    });
+
+    // const res = await loadScript(
+    //   "https://checkout.razorpay.com/v1/checkout.js"
+    // );
+
+    // if (!res) {
+    //   alert("Razorpay SDK failed to load. Are you online?");
+    //   return;
+    // }
+
+    const couponAmount = couponApplied?.message
+      ? couponApplied?.message?.couponType === "Flat"
+        ? couponApplied.message.offAmount
+        : (cartItems.totalPrice * couponApplied.message.offAmount) / 100
+      : 0;
+    const couponName = couponApplied?.message
+      ? couponApplied.message.couponName
+      : "";
+
+    var payload = JSON.stringify({
+      amount: amount,
+    });
+
+    const data = await fetch(
+      `${process.env.REACT_APP_APIURL}/useSaveRazorpayPayment`,
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `${tokenID}`,
+        },
+        body: payload,
+      }
+    ).then((t) => t.json());
+    console.log(data.amount);
+
+    const options = {
+      amount: `${data.amount * 100}`,
+      currency: "INR",
+      email: "kushwa378@gmail.com",
+      contact: "9079808977",
+      notes: {
+        address: "jjjjjjjjjjj",
+      },
+      order_id: data.order.id,
+      method: "card",
+      card: {
+        number: "4111 1111 1111 1111",
+        name: "bablu",
+        expiry_month: 10,
+        expiry_year: 25,
+        cvv: 444,
+      },
+    };
+    // console.log(new window.Razorpay(options));
+    // const paymentObject = new window.Razorpay(options);
+    // paymentObject.open();
+
+    // console.log("Razorpay", new Razorpay());
+    // console.log("abc", razorpay.createPayment(options));
+
+    razorpay.rzrpayInstannce.createPayment(options);
+    console.log("razorpay", razorpay);
+    console.log("options", options);
+  }
+
   return (
     <>
       {Loading ? (
@@ -1116,7 +1190,7 @@ const ViewCart = () => {
                                                       className="modal-title fs-5 text-white"
                                                       id="exampleModalLabel"
                                                     >
-                                                      Choose Subscription method
+                                                      Choose Save Payment Method
                                                       ?
                                                     </h1>
                                                     <button
@@ -1128,12 +1202,30 @@ const ViewCart = () => {
                                                       <i className="fa-solid fa-xmark fs-3 text-white"></i>
                                                     </button>
                                                   </div>
-                                                  <div className="modal-body py-5">
+                                                  <div className="modal-body text-center py-5">
                                                     {" "}
                                                     <button
                                                       type="button"
                                                       onClick={() =>
-                                                        savePayments(friend._id)
+                                                        savePaymentRazorpay(
+                                                          couponApplied?.message
+                                                            ?.offAmount
+                                                            ? couponApplied
+                                                                .message
+                                                                .couponType ===
+                                                              "Flat"
+                                                              ? cartItems.totalPrice -
+                                                                couponApplied
+                                                                  .message
+                                                                  .offAmount
+                                                              : cartItems.totalPrice -
+                                                                (cartItems.totalPrice *
+                                                                  couponApplied
+                                                                    .message
+                                                                    .offAmount) /
+                                                                  100
+                                                            : cartItems.totalPrice
+                                                        )
                                                       }
                                                       // onClick={() =>
                                                       //   this.showRazorpay(

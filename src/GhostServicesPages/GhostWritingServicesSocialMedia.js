@@ -1,8 +1,11 @@
 import React from "react";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Autoplay } from "swiper";
+import "swiper/css";
+import "swiper/css/free-mode";
 import ReviewGetintouch from "../pages/ReviewGetintouch";
 
-const GhostwritingServices = () => {
+const GhostWritingServicesSocialMedia = () => {
   return (
     <div>
       <section className="top_sec p-0">
@@ -73,43 +76,43 @@ const GhostwritingServices = () => {
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Keywords Dense</h3>
+                <h3 className="box-h3">ORM Oriented</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Brand Creators</h3>
+                <h3 className="box-h3">Brand Builders</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Enhance Readership</h3>
+                <h3 className="box-h3">High Engagement</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Detail Centric</h3>
+                <h3 className="box-h3">Diverse Experiences</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Content On Time</h3>
+                <h3 className="box-h3">Timely Completion</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Truly Authentic</h3>
+                <h3 className="box-h3">Authentic Flair</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Sincere Writers</h3>
+                <h3 className="box-h3">Client Recommended</h3>
               </div>
             </div>
           </div>
@@ -120,29 +123,29 @@ const GhostwritingServices = () => {
         <div className="container">
           <div className="row">
             <h2 className="rev_sec-h2">
-              Ghostwriting Services For A New Business Outlook
+              Our SM Ghostwriters Build Your Business From A Name To A Brand
             </h2>
 
             <p className="rev_sec-p">
-              If you acquire GetProWriter’s best ghostwriting services, you are
-              sure to get a ghostwriter who will transform your business
-              outlook. Our writers are experts in their field and can provide
-              you with the high-quality content that you need. We employ an
-              extensive network of talented writers who provide all sorts of
-              writing services, including SEO content, business plans, and more.
+              GetProWriter offers social media ghostwriting services that are
+              sought-after in the industry. Our social media ghostwriters are
+              experienced professionals who know how to capture your unique
+              voice and bring your message to life. We can help you with all
+              aspects of your social media presence. If you’re looking for
+              someone to help you with your social media outreach, your search
+              stops with GetProWriter.
             </p>
+
             <p className="rev_sec-p">
-              GetProWriter is an online service that provides quality
-              ghostwriting services to clients who need help to develop a strong
-              online presence. We specialize in writing unique and well-written
-              content, including but not limited to blogs, press releases,
-              articles, infographics, and more. To ensure the satisfaction of
-              all its clients, we employ professional writers who write for
-              various international publications. With us, it is easy to get top
-              ghostwriters for hire for your business. We are known to have
-              writers who are skilled in writing academic and commercial
-              content. By taking our ghost writer services, you can add new
-              dimensions to your business.
+              Our ghostwriters create brands out of just names. They help you to
+              grow your online presence. Our writers understand the demands of
+              the industry and are highly skilled in creating the most
+              comprehensive, keyword-rich, and effective web pages. As a
+              business owner, you want to make sure that your website is not
+              only appealing to potential customers but also ranks high in
+              search engine results. Our team of writers can help you create
+              content that looks great and helps you to achieve higher search
+              engine rankings.
             </p>
           </div>
         </div>
@@ -152,11 +155,12 @@ const GhostwritingServices = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              The best ghostwriter zone - GetProWriter!
+              Solution-ready social media ghostwriter zone - no alternative to
+              GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Our content writers come with incredible experiences.
+              Our social media content writers are just a click away.
             </p>
 
             <div class="col-md-6">
@@ -174,7 +178,7 @@ const GhostwritingServices = () => {
                       </span>
                       <span style={{ paddingLeft: "5px" }}> </span>
                     </h2>
-                    <h3 class="count_h3"> Content Pieces Delivered</h3>
+                    <h3 class="count_h3">Content Pieces Delivered</h3>
                   </div>
                 </div>
                 <div class="col-sm-6 counter border-bottom border-2">
@@ -189,7 +193,7 @@ const GhostwritingServices = () => {
                       </span>
                       <span style={{ paddingLeft: "5px" }}> </span>
                     </h2>
-                    <h3 class="count_h3"> Words Written</h3>
+                    <h3 class="count_h3">Words Written</h3>
                   </div>
                 </div>
               </div>
@@ -206,7 +210,7 @@ const GhostwritingServices = () => {
                       </span>
                       <span style={{ paddingLeft: "5px" }}> </span>
                     </h2>
-                    <h3 class="count_h3"> Professional Writers</h3>
+                    <h3 class="count_h3">Professional Writers</h3>
                   </div>
                 </div>
                 <div class="col-sm-6 counter ">
@@ -228,27 +232,27 @@ const GhostwritingServices = () => {
             </div>
             <div class="col-md-6">
               <h2 class="count_h2">
-                Talented Ghostwriters To Unleash Your Business Potential
+                Hire A Talented Social Media Ghostwriter To Maximize User
+                Traffic
               </h2>
               <p class="count-p">
-                At GetProWriter, we understand the importance of content. And to
-                unleash the true potential of your business, you must master it.
-                Our ghost writing services will help you achieve that goal and
-                make a lasting impression on your customers. You’re growing your
-                business with the right strategies. But without solid content,
-                your efforts will only take you so far. That’s why GetProWriter
-                is here to help you with our ghost writer services.
+                GetProWriter is all about a team of talented writers to create
+                compelling content to make sure that your website is highly
+                visible. We work with all types of businesses, from small
+                businesses to enterprise companies. We understand that each
+                business is different and has unique content needs. That’s why
+                we offer a variety of social media content and capture the
+                interests of users, ensuring an elevated industry position for
+                your business.
               </p>
               <p class="count-p">
-                With a plethora of content options at your fingertips, you can
-                easily increase web traffic and boost the overall performance of
-                your business. While other businesses are struggling to produce
-                the right kind of content, our ghost writing services take care
-                of all that for you. We have a pool of professional writers on
-                hand who understand the pulse and nature of search engines and
-                social media platforms. If you are interested in writing your
-                own content using our ghostwriters, GetProWriter provides that
-                to you.
+                GetProWriter is where your social media needs are met. We know
+                how important it is for your message to be seen and shared by
+                the right people, so we make sure that your content is targeted
+                and effective. Whether you’re looking to increase your brand
+                awareness, engage with your customers, or drive traffic to your
+                website, we can help you create content that generates the best
+                results.
               </p>
             </div>
           </div>
@@ -259,40 +263,38 @@ const GhostwritingServices = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-              Our Ghostwriting Services For Expanding Audiences
+              Our Social Media Ghostwriting Services Ensure Impact And Response
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Thinking – ghostwriting services near me? Think GPW.
+              Opt for our service to make an industry presence.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Superb Content By Our Qualified Ghostwriters
+                Social Media Content That Is Quality Approved
               </h3>
               <p className="ab_sec2-p rws-p">
-                If you want superb content for your project, our top
-                ghostwriters for hire can help. GetProWriter has the right
-                professionals for your content requirements. Our team of writers
-                is composed of specialists in numerous fields, ensuring that
-                they can deliver the content you need. Our team of qualified
-                ghostwriters are ready to assist you with your content needs.
-                Whether it’s blogging or copywriting, GetProWriter can find the
-                right writer for your project.
+                Our social media ghostwriters are known to create content that
+                ensures an impact on users and a solid response from them. The
+                content is not just interesting, but also educative and
+                informative. This creates a stir on social media, which is what
+                probably you are looking for. The quality of the content
+                produced by our writers is impeccable. The writers make sure to
+                research well before writing any content. They also ensure that
+                the content is free of any grammatical or spelling errors. The
+                content is also original and plagiarism free.
               </p>
               <p className="ab_sec2-p rws-p">
-                Getting custom content for your project isn’t easy, for that we
-                do understand. That’s why we’ve built a network of the best
-                ghostwriters who will create the best content for your project.
-                Our writers at GetProWriter can work on articles, memoirs,
-                ebooks, and many more. Even if you’re pressed with time, you can
-                rest assured that our network of writers at GetProWriter will
-                deliver superb content.
+                Our writers have a good understanding of the various social
+                media platforms. They know what kind of content works well on
+                which platform. This helps them to create content that is apt
+                for the specific platform and helps.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Qualified-writers.webp"
+                src="/writer/img/Social-media-quality.webp"
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -300,63 +302,64 @@ const GhostwritingServices = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Unique-writer.webp"
+                src="/writer/img/Social-media-creative-1-1024x585.webp"
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GPW Ghostwriters Known For Their Unique Writing Flair
+                SM Ghostwriters Who Are Experimental And Creative
               </h3>
               <p className="ab_sec2-p rws-p">
-                Are you thinking – ghostwriters for hire near me? Well,
-                GetProWriter ghostwriters are known for their unique writing
-                flair. This means all the work produced is, grammatically and
-                structurally error-free. Each piece of work is also delivered in
-                a clear and concise manner that can be easily understood by
-                anyone with good English. We take pride in the fact that our
-                services are delivered by professional writers who have a strong
-                command of their subject matter. Whether you need a ghostwriter
-                for a long-term-care planning guidebook or one to write an
-                article on the best medical facilities, we are ready to assist
-                you. You can easily get a ghostwriter from us for high-quality
-                content that is 100% plagiarism-free.
+                Gone are the days of lengthy posts, ads, and campaigns. This is
+                the era of short and instant social media engagement. And our
+                writers ensure just that. They are highly experimental yet
+                creative with their content output. They know how to capture the
+                attention of your audience and keep them engaged. So if you’re
+                looking for someone who can help you create content that is both
+                creative and engaging, then GetProWriter is the right place.
               </p>
               <p className="ab_sec2-p rws-p">
-                Gain a new perspective on your essay, paper or research project.
-                A GetProWriter ghostwriter online for hire can craft a piece
-                that fits you. They understand how you think and write, so they
-                can deliver an essay that is cohesive and well-researched. The
-                final product you receive is uniquely yours – which is why it’s
-                so important to choose an experienced company like us.
+                For our writers, SEO is something that drives their content
+                flow. If you want to make sure that your content is seen by as
+                many people as possible, then you need to hire one of our
+                writers. We guarantee that you will be satisfied with the
+                content that our writers produce. They know how to research
+                keywords and use them effectively in your content. In addition,
+                they also know how to format your content so that it is easy to
+                read and appealing to users.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Ghostwriters Who Are Flexible When It Comes To Editing
+                Social Media Writers With A Blend of Versatility And Focus
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our ghost writers for hire are also flawless editors. They
-                believe in working on a project until it is publishing-ready,
-                making sure that all the details are just right. We guarantee
-                that your book will be error-free when you are ready to publish.
-                Don’t get caught up in the costly process of proofreading and
-                editing after you have published your book. We do that for you.
+                Our social media content writers are versatile yet they are
+                focussed on ensuring the desired results. The content they
+                produce is unique and speaks to the target audience in their
+                language. It also has the required call to action that can
+                prompt customers/viewers/followers to take the desired step. The
+                SEO keywords are also used judiciously so that your website
+                ranks higher on search engine result pages. In short,
+                GetProWriter social media content writers produce content that
+                is not just relevant but also converts!
               </p>
               <p className="ab_sec2-p rws-p">
-                If you want to stay ahead of your competitors, we are willing to
-                help you with any content need. We can take care of the most
-                complex projects, as well as a single article or blog post. We
-                provide online ghost writing services for various businesses.
-                Our ghost writers for hire have the knack to master content for
-                various projects.
+                When it comes to social media marketing, content is the king.
+                And our team of social media experts knows exactly how to create
+                content that will help you achieve your desired results. So GPW
+                is here to help you whether you’re looking to increase brand
+                awareness, drive traffic to your website, or generate leads. Our
+                writers have the content developing strategy you have been
+                looking for!
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Editing-writer.webp"
+                src="/writer/img/Social-media-focus.webp"
                 alt="Online-review"
                 className="rws-img"
               />
@@ -364,62 +367,64 @@ const GhostwritingServices = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Industry-writer.webp"
+                src="/writer/img/Business-reputation-(1).webp"
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Your Industry Reputation Can Be Cemented By Our Writers
+                Elevate Your Business Reputation With Our Social Media
+                Ghostwriting Services
               </h3>
               <p className="ab_sec2-p rws-p">
-                Your industry reputation can now be cemented with our best
-                ghostwriting services. Our team of writers is highly trained in
-                their respective fields and can help you craft an eloquent
-                manuscript that puts your expertise into the spotlight. Whether
-                your business needs a ghostwriter for an upcoming book or white
-                paper or is interested in the full ghostwriting package, we can
-                help. The ghost writers we have with us know how to write
-                compelling copy that brings your mission and vision to life.
+                Elevating your business reputation is now possible by hiring
+                social media writers from GetProWriter. There are a lot of
+                things that can ruin your business reputation. from angry
+                customers to bad press, it only takes one misstep to turn your
+                business upside down. But don’t worry, there is a way to protect
+                your business and ensure that your reputation remains intact –
+                by hiring social media writers from GetProWriter.
               </p>
               <p className="ab_sec2-p rws-p">
-                GetProWriter ghostwriting services have been acquired by clients
-                across the globe. We provide all types of content – from unique
-                and creative articles, to press releases, and marketing
-                materials. If you are interested to hire a ghostwriter online
-                from GetProWriter, then we are surely looking forward to
-                offering our best services to you.
+                Our team of experienced social media writers will help you craft
+                a positive image for your business that will reflect well on you
+                and your company. We’ll make sure that your customers are happy
+                and that your critics are silenced. So if you want to keep your
+                business reputation in good standing, get in touch with us
+                today!
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                If You Need A Ghostwriter For Optimal Content Originality
+                Truly Original Social Media Content For Individuals &
+                Enterprises
               </h3>
               <p className="ab_sec2-p rws-p">
-                The ghost writers in our company are highly appreciated for
-                their ability to deliver original content, no matter how vast
-                the projects are. They know how to capture the essence of your
-                message in a way that is memorable and impactful. They have been
-                in the industry for years, having written many academic papers
-                for clients from all over the world. They know how to handle
-                their jobs professionally so that they can do an excellent job
-                within the given schedule.
+                Be it individual clients or enterprises, our social media
+                content is truly original. It is not only creative but also
+                informative. We make sure that our content always has a message
+                that speaks to the clients’ interests. When it comes to social
+                media, we know what works and what doesn’t. So whether it’s
+                Facebook, Twitter, LinkedIn, or any other platform, we can help
+                you get the most out of it. GetProWriter’s expert writers also
+                help you avoid any common pitfalls that could damage your online
+                reputation.
               </p>
+
               <p className="ab_sec2-p rws-p">
-                Our ghost writers for hire carry a deep understanding of the
-                subject matter and can generate well-researched content. Now, we
-                are not just offering the service of writing but also editing
-                and proofreading. We have been working with various clients from
-                around the globe to offer them a wider range of services
-                including copywriting, article writing, blog writing, and much
-                more.
+                GetProWriter knows the power of good social media content. We
+                create remarkable social media campaign content that generates
+                more leads and sales. Our social media marketing services will
+                help you connect with customers on a deeper level. f you’re
+                looking to take your social media presence to the next level,
+                GetProWriter can help.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Optimal-writers.webp"
+                src="/writer/img/SM-Individuals-Enterprises.webp"
                 alt="Real-review-writer"
                 className="rws-img"
               />
@@ -427,32 +432,33 @@ const GhostwritingServices = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Unrivalled-content.webp"
+                src="/writer/img/Social-media-Expertise.webp"
                 alt="Expertise"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise For Unrivalled Content
+                GetProWriter Expertise Has No Match In The Social Media Niche
+                Leap
               </h3>
               <p className="ab_sec2-p rws-p">
-                Your custom writing project is in good hands. GetProWriter
-                expertise means you will get content that is unrivaled. Our
-                professional writers are passionate about what they do and
-                committed to providing you with a personalized experience that
-                caters to your individual needs.
+                Our writers create content that is designed to engage your
+                audience and promote your brand. Our team of experienced writers
+                will work with you to develop a social media strategy that meets
+                your specific needs. Our ghostwriters want readers to visit your
+                web pages frequently and connect to your offerings. They also
+                want to make you look good in the process. So they’ll work with
+                you to ensure that your website sounds like you. It will have
+                your voice, your vision, and your values.
               </p>
               <p className="ab_sec2-p rws-p">
-                GetProWriter is an excellent content writing company with a team
-                that has been creating content for years. The ghost writers in
-                our team are well-versed in various niches and topics, which
-                means that your project will be taken up by one of the best in
-                the industry. From blog posts to web copy and more, we have the
-                expertise you need. We offer content writing at a professional
-                level and at affordable prices. Your project will be handled by
-                a skillful ghost writer online from our team, who will focus on
-                complete client satisfaction.
+                GetProWriter has social media content experts who will help you
+                to portray the best version of your professional undertakings
+                online. If you need content for your website or any other online
+                platform, we can help. We understand that every business has its
+                own story to tell. And we are here to help you tell your story
+                in the most compelling way possible.
               </p>
             </div>
           </div>
@@ -462,7 +468,7 @@ const GhostwritingServices = () => {
       <section className="ltw_sec">
         <div className="container">
           <div className="row">
-            <h2 className="get_sec-h2">Get started today at in a few clicks</h2>
+            <h2 className="get_sec-h2">Get Started Today At In A Few Clicks</h2>
             <p className="get_sec-p">
               Follow these super simple steps and get started with our services.
             </p>
@@ -519,14 +525,156 @@ const GhostwritingServices = () => {
         </div>
       </section>
 
+      <section className="img_testimonial">
+        <div className="container">
+          <div className="row">
+            <h2 className="writing_sec-h2">SOME OF OUR ESTEEMED KEY CLIENTS</h2>
+            <span className="writing_sec-spa">* * * * *</span>
+
+            <Swiper
+              freeMode={true}
+              loop={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              grabCursor={true}
+              modules={[Autoplay, FreeMode]}
+              className="mySwiper"
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                480: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 15,
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 15,
+                },
+              }}
+            >
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="/writer/img/testimonial/lego.webp"
+                    alt="lego"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="/writer/img/testimonial/Allianz.webp"
+                    alt="Allianz"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="/writer/img/testimonial/Citi.webp"
+                    alt="Citi"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="/writer/img/testimonial/zara-logo.webp"
+                    alt="zara"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="/writer/img/testimonial/loreal-logo.webp"
+                    alt="loreal"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="/writer/img/testimonial/gillette-logo.webp"
+                    alt="gillette"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="/writer/img/testimonial/sap-logo.webp"
+                    alt="sap"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="/writer/img/testimonial/att-logo.webp"
+                    alt="att"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="/writer/img/testimonial/toyota-logo.webp"
+                    alt="toyota"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                {" "}
+                <div className="img-box">
+                  <img
+                    src="/writer/img/testimonial/ikea-logo.webp"
+                    alt="ikea"
+                    className="d-block img-box_image"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+      </section>
+
       <section className="hire_Sec">
         <div className="container">
           <div className="row">
             <h2 className="get_sec-h2">
-              Why Go For Our Ghostwriting Services?
+              Why Hire Our Social Media Ghostwriters?
             </h2>
             <p className="get_sec-p">
-              To let your business grow by leaps and bounds.
+              Maximize your business growth by taking our social media
+              ghostwriters on board.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -538,7 +686,7 @@ const GhostwritingServices = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">Years of industry experience</span>
+                    <span className="spa_h2">Experts in the niche</span>
                   </li>
                 </ol>
               </div>
@@ -553,7 +701,7 @@ const GhostwritingServices = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Meet client expectations at all levels
+                      Understands client needs while crafting content
                     </span>
                   </li>
                 </ol>
@@ -569,7 +717,7 @@ const GhostwritingServices = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Outstanding content on time - every time
+                      On-time content delivery for on-time social media presence
                     </span>
                   </li>
                 </ol>
@@ -577,25 +725,25 @@ const GhostwritingServices = () => {
             </div>
 
             <p className="review1-p">
-              Our expert writers will help any business to grow by leaps and
-              bounds. They can assist you with a wide range of writing services
-              such as content marketing, SEO articles, press releases, web copy,
-              and more. Our writers have years of experience in the industry and
-              are experts in their field. If you need assistance from someone
-              who is reliable and professional, then we’re the right company for
-              you.
+              Our social media ghostwriters have enough expertise in the niche.
+              So, they know very well what kind of content would work best for
+              your brand. Also, they have a clear idea about the target audience
+              you want to attract and engage with your content. This is why they
+              can produce high-quality, engaging, and user-friendly content for
+              your brand. They understand the needs of clients while crafting
+              content. So, you can be assured that the content will be
+              well-received by your target audience.
             </p>
 
             <p className="review1-p">
-              All our writers are highly trained and have years of industry
-              experience. We use a staff of dedicated professionals to ensure
-              that you get the best possible work when you need it. Our writers
-              specialize in business and academic papers and research papers. We
-              also do book reviews, blog posts, articles, etc. The ghost writers
-              in our team create outstanding content as per the set guidelines
-              and ensure efficient project management. They are fully committed
-              to delivering high-quality writing services, which ensure on-time
-              content delivery.
+              Our experienced social media ghostwriters always deliver quality
+              content. With their vast experience in the field, they know how to
+              produce quality content that attracts users. They ensure content
+              delivery timely so that your business does not compromise with its
+              social media presence. If you are looking for a reliable and
+              affordable social media content writing service, then you must
+              hire our social media ghostwriters to achieve your business
+              targets.
             </p>
           </div>
         </div>
@@ -609,21 +757,21 @@ const GhostwritingServices = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  I was looking for ghostwriters near me for our firm and
-                  acquired ghostwriting services from GetProWriter. I feel we
-                  made the best decision. At first, we thought it was going to
-                  be difficult to find someone good enough, but when we found
-                  GetProWriter’s website, they were there to help us instantly.
-                  It was worth every dollar!
+                  Our company's hunt for social media ghostwriters stopped at
+                  GetProWriter. We couldn't be happier! From start to finish our
+                  experience with GetProWriter was fantastic. Their prices are
+                  unbeatable. We've worked with other writing services in the
+                  past and no one comes close to offering the same quality of
+                  writing at such a reasonable budget. Thanks, GPW!
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Brown-Walsh.webp"
+                    src="/writer/img/Wilson-Taylor.webp"
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Brown Walsh</h3>
-                  <p className="testi_box-p">Smarket, Technology Services</p>
+                  <h3 className="testi_box-h3">Wilson Taylor</h3>
+                  <p className="testi_box-p">Marketing Shed, Senior Manager</p>
                 </div>
               </div>
             </div>
@@ -631,24 +779,21 @@ const GhostwritingServices = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  Our company relied on ghost writing services GetProWriter to
-                  help us with a very important marketing campaign. I can’t
-                  thank them enough because they were able to meet our
-                  expectations and deliver exactly what we wanted at the
-                  earliest possible date. Their professionalism, excellent
-                  customer service, and dedication to their work made us feel at
-                  ease throughout the process.
+                  What an outstanding team you have! GetProWriter is the best
+                  way to hire social media writers for your project. There are
+                  so many things that we like about GetProWriter. Here are our
+                  top three reasons - 1) The quality of writing is exceptional.
+                  2) The team is responsive and easy to work with. 3) The prices
+                  are very fair.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Wilson-Anderson.webp"
+                    src="/writer/img/Davies-OBrien.webp"
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Wilson Anderson</h3>
-                  <p className="testi_box-p">
-                    Marketing Hook, Manager - Marketing & Communications
-                  </p>
+                  <h3 className="testi_box-h3"> Davies O'Brien</h3>
+                  <p className="testi_box-p">Socialty, Human Resources</p>
                 </div>
               </div>
             </div>
@@ -712,8 +857,7 @@ const GhostwritingServices = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        I need a ghostwriter. Why should we go for ghostwriting
-                        services of GetProWriter?
+                        How do we hire writers from GetProWriter?{" "}
                       </button>
                     </h2>
 
@@ -724,14 +868,11 @@ const GhostwritingServices = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        {" "}
-                        GetProWriter is a leading ghostwriting company,
-                        providing top-notch content. Our writers are carefully
-                        selected and put through a testing process before being
-                        hired. As clients, you can rest assured that only the
-                        best team of professional writers will be working on
-                        your projects. We cannot wait to offer our wide array of
-                        remarkable services. Reach out today!
+                        To hire writers from GetProWriter, simply visit our
+                        website and send us a query. We will get back to you on
+                        your project. Once you have selected a writer/service on
+                        our platform, you can send us a message through our site
+                        to discuss your project in further detail.
                       </div>
                     </div>
                   </div>
@@ -749,7 +890,8 @@ const GhostwritingServices = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Are online ghostwriting services reliable?
+                        Which is the best platform for social media ghostwriters
+                        online?{" "}
                       </button>
                     </h2>
 
@@ -760,18 +902,14 @@ const GhostwritingServices = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        {" "}
-                        Our ghostwriting services are highly reliable. We have
-                        thousands of happy clients all over the world who
-                        acquired our services. The quality, professionalism, and
-                        accuracy of our work have made us among the favorite
-                        ghostwriting companies in the market today. Our team of
-                        experienced content writers has created content for
-                        websites and social media accounts. We can help with
-                        everything from creating blogs and articles, releasing
-                        promotional materials, and completing social profiles.
-                        Thinking – ghostwriters for hire near me? Let us know
-                        your requirements right away.
+                        GetProWriter is the leading provider of social media
+                        ghostwriting services. Our social media ghostwriters
+                        will help you stand out in the industry. With our vast
+                        experience in social media, we know how to connect with
+                        your target audience and get your message across
+                        effectively. We can help you create the appropriate
+                        content so that you can attract more followers and grow
+                        your business.
                       </div>
                     </div>
                   </div>
@@ -790,8 +928,7 @@ const GhostwritingServices = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      How can I hire ghostwriters near me to help with articles
-                      and social media posts?
+                      Do your writers have enough experience?
                     </button>
                   </h2>
 
@@ -802,15 +939,14 @@ const GhostwritingServices = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      {" "}
-                      Our team of content writers can help with everything,
-                      including articles and social media posts. Our writers
-                      have written thousands of blog posts and articles for
-                      companies of all sizes. They write unique articles that
-                      are relevant to your industry, business model, and target
-                      market. They also use industry-specific keywords in the
-                      titles, subtitles, and text so you appear in search
-                      engines instantly.
+                      Our team of content writers creates enriching content that
+                      will capture your audience’s attention. We can help you to
+                      create content for your website, blog, social media
+                      platforms, or any other online space. If you need help
+                      writing content that accurately reflects your business, it
+                      is us that you should look for. Our writers are
+                      experienced professionals and they create a variety of
+                      content adhering to SEO best practices.
                     </div>
                   </div>
                 </div>
@@ -823,4 +959,4 @@ const GhostwritingServices = () => {
   );
 };
 
-export default GhostwritingServices;
+export default GhostWritingServicesSocialMedia;

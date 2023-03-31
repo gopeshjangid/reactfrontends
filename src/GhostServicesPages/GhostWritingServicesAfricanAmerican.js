@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "../pages/ReviewGetintouch";
 
-const GhostWritingServicesBusiness = () => {
+const GhostWritingServicesAfricanAmerican = () => {
   return (
     <div>
       <section className="top_sec p-0">
@@ -13,14 +13,18 @@ const GhostWritingServicesBusiness = () => {
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1 className="top_Sec-h1 mt-3 p-0">
-                Impactful Business Ghostwriters!
+                Top African American Ghostwriters!
               </h1>
-              <h2 className="top_Sec-h2">Ghostwriters To Redefine Business!</h2>
+              <h2 className="top_Sec-h2">
+                Reliable African American Writers Now|
+              </h2>
               <p className="top_Sec-p">
-                GetProWriter is a well-known company offering ace business
-                ghostwriters to clients worldwide. We offer business
-                ghostwriting services suitable for businesses across various
-                niches.
+                If you are looking for a professional writer who understands the
+                culture of African American communities, GetProWriter is the
+                right place where you can find the best ghostwriters. We work
+                with a team of native speakers and professional writers who have
+                great experience in writing interesting, persuasive, and unique
+                content to help you succeed.
               </p>
             </div>
 
@@ -37,82 +41,83 @@ const GhostWritingServicesBusiness = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Need business content experts? Hire GPW business ghostwriters
-              today!
+              Looking for trusted African American Ghostwriters for your
+              business? Well, GetProWriter is here to help!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Let your business brand stand out with our business ghostwriters.
+              Take your project to incredible heights by taking our African
+              American Ghostwriters on board.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Detail Obsessed</h3>
+                <h3 className="box-h3">Approachable Writers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Keywords Centered</h3>
+                <h3 className="box-h3">Understand Requirements</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Endorsed Expertise</h3>
+                <h3 className="box-h3">Project Specific</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">ORM Conscious</h3>
+                <h3 className="box-h3">Tested Skills</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Incredible Flair</h3>
+                <h3 className="box-h3">Highly Qualifications</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Attracts Users</h3>
+                <h3 className="box-h3">Certified Ghostwriters</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Shaping Brands</h3>
+                <h3 className="box-h3">Narrative Builders</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Transforming Businesses</h3>
+                <h3 className="box-h3">Engaging Flow</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Delivered As Assured</h3>
+                <h3 className="box-h3">Immensely Experienced</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Enterprising Content</h3>
+                <h3 className="box-h3">Meet Deadline</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Diverse Team</h3>
+                <h3 className="box-h3">Authenticity Always</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Client Focussed</h3>
+                <h3 className="box-h3">Vouched By Clients </h3>
               </div>
             </div>
           </div>
@@ -123,27 +128,29 @@ const GhostWritingServicesBusiness = () => {
         <div className="container">
           <div className="row">
             <h2 className="rev_sec-h2">
-              Our Business Ghostwriters Can Take Your Business To Another Level
+              African American Ghostwriters For All Your Instant Writing Needs
             </h2>
 
             <p className="rev_sec-p">
-              When you’re a business owner, you’ve got to wear a lot of hats.
-              There are a million things you have to do every day, and it can be
-              hard to keep up with everything. If you’re feeling overwhelmed,
-              we’ve got your back. At GetProWriter, we work with the world’s
-              best business ghostwriters to help our clients make their visions
-              come alive. Whether you need a case study written or an email
-              crafted, we’ll connect you with an ace writer who can get it done
-              in your brand’s voice so that you can focus on doing what you do
-              best: running your company!
+              You’re a millennial and you have a story to tell. But you don’t
+              have a ton of money and you don’t want to go through the arduous
+              process of writing it yourself. Not everyone has the talent to
+              write well. Some people do have that talent but don’t have time to
+              do so, whether it’s because of their job or their family. That’s
+              why everyone needs a ghostwriter at some point in their life. At
+              GetProWriter, we’ve got you covered. Our writers are household
+              names in the African American community or people who are experts
+              in their craft, like lawyers, doctors, and business owners.
             </p>
 
             <p className="rev_sec-p">
-              If you have a business idea or project that you just don’t know
-              how to communicate in written form, we can help. We’ve written
-              dozens of business plans for big and small companies across the
-              world. We’ve written speeches for top CEOs and we have authored
-              thousands of blog posts on various business-related topics.
+              When you’re looking for a writer to work with, things are not so
+              easy. You may have a publishing company, or you can have a guest
+              blog post here and there, but it never seems to solve your problem
+              of needing a constant stream of great content. Our writers are
+              here to assist you with any and all writing projects. Our team
+              will work with you to create the best content imaginable, at
+              reasonable prices.
             </p>
           </div>
         </div>
@@ -153,11 +160,12 @@ const GhostWritingServicesBusiness = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              Industry’s top business ghostwriter community - GetProWriter!
+              You just have to call GetProWriter for certified and recommended
+              African American Ghostwriters!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Our business content writers are available round the clock.
+              African American Ghostwriters to handle your projects.
             </p>
 
             <div class="col-md-6">
@@ -229,29 +237,29 @@ const GhostWritingServicesBusiness = () => {
             </div>
             <div class="col-md-6">
               <h2 class="count_h2">
-                Take A Skilled Business Ghostwriter On Board
+                Hire Experienced African American Ghostwriters For Incredible
+                Content
               </h2>
               <p class="count-p">
-                Our team has been ghostwriting for businesses for many years.
-                With extensive collective experience, our team is well equipped
-                to write about all the different topics that can help businesses
-                reach their goals. We have worked with clients ranging from
-                single-person startups to multinational companies. No matter
-                what your company’s size is, we can provide you with the right
-                writer for your needs.{" "}
+                GetProWriter has talented African American ghostwriters who
+                create top-notch content for various writing projects. If you’re
+                a bit pressed for time, but still, need to get some killer
+                content, we are ready to help. We happen to have a culturally
+                diverse team of talented ghostwriters who can create the written
+                material that your audience craves. Whether it’s blog content,
+                informational or promotional articles, press releases, ebooks,
+                and more. Once you’ve decided what type of content you need,
+                tell us your requirements. And we’ll find the perfect
+                ghostwriter.
               </p>
               <p class="count-p">
-                Our team has a strict vetting process, so you can be assured
-                that the writer you are getting will be a true professional. We
-                carefully screen every writer that applies to join our team to
-                make sure they meet all of the requirements we expect them to,
-                and we offer training to help bring newer writers up to speed.
-                Ghostwriters are assigned based on their experience in the field
-                you need them to focus on, so you will never get a writer who
-                isn’t qualified to make your business stand out from the rest.
-                If you need a writer for an upcoming marketing project or just
-                want someone who can make sure your blog posts show off your
-                business in a good light, contact us today!{" "}
+                Clients have been hiring writers from GetProWriter because of
+                our commitment to content quality. As an online writing company,
+                we understand that every single article has the potential to
+                impact a reader and shape their opinion for years to come. So
+                rather than focusing on quantity, we actually put a lot more
+                consideration into the value and quality of each piece of
+                content we create.
               </p>
             </div>
           </div>
@@ -262,41 +270,39 @@ const GhostWritingServicesBusiness = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-              Business Ghostwriting Services Endorsed By Clients
+              Our Ghostwriters Ghostwriting Are Known For Their Precision In
+              Writing
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Opt for our ghostwriting service for enhanced industry visibility.
+              Our services give an enterprising edge to your business.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Business Content That Exceeds All Quality Expectations
+                African American Ghostwriters With Verified Skills
               </h3>
               <p className="ab_sec2-p rws-p">
-                GetProWriter has business ghostwriters who deliver content
-                beyond clients’ expectations. Here at GetProWriter, we know that
-                you have a story to share. Whether you’re a small business owner
-                trying to grow your customer base or a self-published author
-                looking to expand your audience, we have the resources to help
-                you tell your story in a way that catches attention and inspires
-                action. Our team of professional writers has years of experience
-                crafting content for businesses and individuals across all
-                sectors, so we know what it takes to get your message across
-                clearly and effectively – no matter who your audience is. We’re
-                here to make sure every word on your page counts!{" "}
+                Are looking for professional writers for your writing project?
+                If you find yourself nodding, that is great because you’ve come
+                to the right place. GetProWriter is here for all your content
+                writing needs. We have African American ghostwriters in our team
+                whose skills have been verified by trusted assessment
+                institutions. We have writers who can write high-quality content
+                that will get your readers’ attention.
               </p>
               <p className="ab_sec2-p rws-p">
-                GetProWriter is an online platform with a meticulously-screened
-                network of business ghostwriters. We don’t ask you to take our
-                word for it. Our clients have been extremely satisfied with the
-                content they’ve received through GetProWriter, and we’re proud
-                to have earned excellent reviews from them.{" "}
+                Whether it is fiction, non-fiction, or poetry we can help. We
+                have professional, native English-speaking ghostwriters who
+                offer their services worldwide. They are experienced in writing
+                eBooks, articles, and much more. GetProWriter connects you with
+                a qualified ghostwriter who is familiar with your topic and can
+                fulfill all your requirements.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Business-Expectations.webp"
+                src="/writer/img/African-american.webp"
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -304,64 +310,60 @@ const GhostWritingServicesBusiness = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Uniqueness.webp"
+                src="/writer/img/African.webp"
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Business Ghostwriters Who Bring Uniqueness To Your Content
+                African American Ghostwriters Who Take The Leap
               </h3>
               <p className="ab_sec2-p rws-p">
-                All GetProWriter writers are fluent English communicators and
-                most have years of experience in their field. You can expect
-                high-quality business writing from every one of them. You’ll
-                find that it’s easy to work with any writer on our platform. You
-                can get in touch with them through GetProWriter, and we’ll make
-                sure you’ll be satisfied with your content.
+                No one wants to publish an article and not be completely sure
+                that it will be read by the desired audience. In other words, no
+                one wants to write content in silence! Content writing is an art
+                and a creative way of communicating one’s ideas is needed to
+                effectively communicate with a larger audience. Our African
+                American ghostwriter community believes it’s possible to
+                stimulate storytelling and creativity through written content
+                experimentation.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our business ghostwriters bring uniqueness to your business
-                content. We know how difficult it can be for companies to get
-                the quality content they need to stay ahead of their
-                competition. Whether you’re looking for blogs, website copy,
-                case studies, or white papers, all of your content needs are
-                covered with GetProWriter. We know what it takes to make your
-                business stand out from the crowd, and we take pride in
-                delivering on our promises.
+                Content is the state of the soul of your website. With our
+                African American writers, you have a chance to stand out from
+                the crowd with distinctive content that will engage your readers
+                and transform them into avid fans of your work.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Business Writers Who Craft Relevant Content Effortlessly
+                Writers Who Know The Ins And Outs of Writing
               </h3>
               <p className="ab_sec2-p rws-p">
-                Whether you’re looking for a brief blurb to post on social media
-                or a detailed case study that will convince potential clients to
-                engage your services, our business writers know how to make sure
-                what they produce is right for you. We make sure to conduct a
-                thorough briefing process, so we can create the most relevant
-                content possible – and we commit to meeting deadlines and
-                staying in close contact with our clients.
+                Have you considered hiring a ghostwriter for your next eBook?
+                Maybe you want to publish a paperback book on Amazon? Well, our
+                ghostwriters know the ins and outs of writing. They have been
+                providing such services for numerous years, and have plenty of
+                expertise in writing different kinds of academic papers, from
+                case studies to research papers, from book reviews to
+                dissertations.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our team of writers has been helping startup and established
-                businesses with anything they need: from case studies to blog
-                posts, from website copy to press releases. With our services
-                and expertise, you can be sure that the content you’re putting
-                out there is relevant and effective. We’ve worked with a variety
-                of industries, and we are comfortable operating within almost
-                any niche or topic. Some of our most successful projects have
-                been in the fields of technology, healthcare, food, lifestyle,
-                retail, etc. We would also be happy to apply our skills to new
-                areas. If you have a requirement, just let us know!
+                You need to write and post engaging content on your social media
+                platforms and website to keep the customer base coming in. But
+                writing consistent content takes time. And with the demands of
+                running a business, nobody has the time. That’s where we come
+                in. Not only are our ghostwriters professional, but they are
+                skilled in understanding the industry and tactics that get
+                results. From freelance blog posts to book writing, we are ready
+                to create the content you need.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Business-writers.webp"
+                src="/writer/img/Writer.webp"
                 alt="Online-review"
                 className="rws-img"
               />
@@ -369,65 +371,61 @@ const GhostWritingServicesBusiness = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Business-presence.webp"
+                src="/writer/img/Image.webp"
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Elevating Business Presence With Remarkable Content
+                Let Your Business Grow With Our African American Ghostwriters
               </h3>
               <p className="ab_sec2-p rws-p">
-                When you’re looking for content that will be informative,
-                persuasive, and engaging, it’s essential to find a writer who
-                can do it all. If you’re struggling to write the content
-                yourself because you just don’t have the time or energy, we can
-                help! Our team is trained to create content that will help your
-                audience connect with you and your brand.
+                The world is continually changing, and so is your current
+                business. Content plays a dynamic and integral role in keeping
+                your business up-to-date with the latest trends in the world
+                around you. Our African American ghostwriters will make sure
+                that your business grows by leaps and bounds with the content
+                they write. Hiring a ghostwriter is not just about getting a
+                professional article that would impress your readers. It is more
+                than that. With the help of our ghostwriters, you will be able
+                to create content that speaks to your target audience.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our writers know how to craft compelling copy that speaks
-                directly to your target audience. We’ll work with you to create
-                a piece of content that highlights your business’s unique voice
-                while also delivering results like increased conversions, better
-                SEO rankings, and a more engaged readership. Our team is made up
-                of passionate writers who love words. They are avid readers,
-                dedicated editors, and keen strategists. Our talent allows us to
-                create content that’s written well, easy to understand, and hits
-                all the right notes.{" "}
+                Your African American ghostwriter is here, ready to create
+                engaging, SEO-optimized content for a fair price. They can write
+                about anything – business, marketing, and more – enabling you to
+                expand your audience and increase your revenue and profits.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Originality Makes Us Lead The Industry League of Writers
+                Originality Guaranteed By GPW’s African American Ghostwriters
               </h3>
               <p className="ab_sec2-p rws-p">
-                At GetProWriter, we believe that content should be original and
-                unique. Your business is unique, and your content should reflect
-                that. We help you stand out from your competitors by creating
-                content that not only helps you reach your goals but does so in
-                a way that is truly yours. Your content is a mirror to your
-                business. And something that reflects you should be as original,
-                creative, and unique as you are.
+                If you need original content that is well-researched and
+                well-written, then our African American Ghostwriters have the
+                quality you’re looking for. Because we have access to writers
+                who understand the nuances of a particular market, we are able
+                to provide clients with effective content on topics including
+                healthcare, politics, and business.
               </p>
 
               <p className="ab_sec2-p rws-p">
-                When it comes to content, the internet is rife with what’s been
-                done before, and this can make it difficult to stand out. But
-                when you work with us, we’ll help you find your voice and use it
-                to speak to your customers in a way that’s just as special as
-                you are. We use your ideas and visions for your business to
-                create content that wows people. Whether it’s a blog post, an ad
-                for your most popular product, or a series of sales pages for
-                your newest offering, we’ll use our expertise and talent to
-                deliver content that speaks.{" "}
+                With content marketing being a major focus of website owners
+                these days, it’s never been more important to have a steady flow
+                of original, compelling content. Using a ghostwriter is one of
+                the best options when looking for an outsider’s view on a
+                particular subject matter. This makes it easier for you to bring
+                your knowledgeable opinions and insights into conversations. And
+                our affordable ghostwriters are ready to help you get started
+                right away.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Originilty.webp"
+                src="/writer/img/Originality-Guaranteed.webp"
                 alt="Real-review-writer"
                 className="rws-img"
               />
@@ -435,31 +433,32 @@ const GhostWritingServicesBusiness = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Expertise.webp"
+                src="/writer/img/Expertise-ghostwriters.webp"
                 alt="Expertise"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise To Add An Extra Feather To Your Business
-                Leap
+                GetProWriter Expertise With African American Ghostwriters
               </h3>
               <p className="ab_sec2-p rws-p">
-                In this day and age, it is very important to have a website or
-                blog that is not only informative but also interesting to read.
-                You need to make sure that your readers are satisfied with what
-                they see on your site so they will keep coming back for more
-                information in the future. This is where our services come into
-                play. We can handle all kinds of topics related to business such
-                as finance, marketing, management, entrepreneurship, etc.
+                Choosing a ghostwriter can be very difficult as there are many
+                that are available online. Many of them claim to have the
+                expertise you’re looking for and offer a range of services, our
+                expertise is something that no one else offers. Our professional
+                pricing is affordable, and unlike other agencies, we always
+                guarantee our work. Furthermore, we never plagiarise work that’s
+                been done by others. You can be sure that once you’re on board
+                with us, you’re always in safe hands.
               </p>
               <p className="ab_sec2-p rws-p">
-                GetProWriter brings expert business ghostwriters onboard who
-                know how to produce superior quality content. Our writers have
-                years of experience writing all types of business content and
-                they know exactly how to create engaging articles that will keep
-                your readers hooked from start to end.
+                We have been offering services for many years and have become
+                trusted members of the community. Many new clients have started
+                using our services. It seems that ghostwriting is something that
+                attracts new customers every day, many of whom want to know more
+                about the service. GPW is proud to be offering services that
+                offer clients what they are looking for in times of wiring.
               </p>
             </div>
           </div>
@@ -670,10 +669,12 @@ const GhostWritingServicesBusiness = () => {
       <section className="hire_Sec">
         <div className="container">
           <div className="row">
-            <h2 className="get_sec-h2">Why Hire Our Business Ghostwriters?</h2>
+            <h2 className="get_sec-h2">
+              Why Hire Our African American Ghostwriters?
+            </h2>
             <p className="get_sec-p">
-              Your business depends largely on great content. We take care of
-              that.
+              Your business will see the trajectory of progress you’ve been
+              dreaming of.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -685,8 +686,22 @@ const GhostWritingServicesBusiness = () => {
                     </span>
                   </li>
                   <li className="in_li">
+                    <span className="spa_h2">Content Experts</span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="box-ol">
+                <ol className="m-0 d-flex align-items-center p-0">
+                  <li className="in_li">
+                    <span className="right_span">
+                      <i aria-hidden="true" className="fas fa-check-circle"></i>
+                    </span>
+                  </li>
+                  <li className="in_li">
                     <span className="spa_h2">
-                      Years of experience in the niche
+                      Recognize potential improvement areas and ideation scope
                     </span>
                   </li>
                 </ol>
@@ -702,24 +717,7 @@ const GhostWritingServicesBusiness = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Writers with a humongous business writing experience
-                    </span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="box-ol">
-                <ol className="m-0 d-flex align-items-center p-0">
-                  <li className="in_li">
-                    <span className="right_span">
-                      <i aria-hidden="true" className="fas fa-check-circle"></i>
-                    </span>
-                  </li>
-                  <li className="in_li">
-                    <span className="spa_h2">
-                      No compromise on quality, no compromise on timely
-                      submissions
+                      Craft content in a timely fashion
                     </span>
                   </li>
                 </ol>
@@ -727,21 +725,25 @@ const GhostWritingServicesBusiness = () => {
             </div>
 
             <p className="review1-p">
-              We understand that every business needs a different type of
-              content, and our writers are well-versed in all types of writing
-              styles. We know what works best for which audience and how to
-              create content accordingly. Our writers have vast knowledge about
-              SEOs and how they work with written materials; thus, we can say
-              with utmost certainty that the content provided by us will help
-              you rank high on search engines like Google or Bing.{" "}
+              We have a team of expert ghostwriters with strong academic and
+              professional backgrounds. These writers are proficient in writing
+              informative, educational, and artistic articles as well as blogs.
+              When you hire our writers, we inform you if one of our experts is
+              an African American writer that you have requested in your paper
+              instructions. Our expert ghostwriter team is broad-based,
+              dedicated to customer care, and talented.
             </p>
 
             <p className="review1-p">
-              Our business ghostwriters never compromise on quality or on
-              submissions on time. Our services are comprehensive and cover all
-              your needs from social media posts, blogs, web page content,
-              newsletters, product descriptions, articles, and reviews to
-              marketing materials like brochures and flyers.
+              Our aim is to help you deliver high-quality text, which will land
+              you success. Our ghostwriters know what to edit and what to add in
+              terms of content. Their experience is unmatched. We will make sure
+              that your project is completed by the right person. We provide
+              reliable quality writing services in a timely fashion. Our writers
+              ensure high-quality, original, and error-free custom-written
+              content. We have a community of writers with skills in different
+              academic fields that will rise to the occasion any time you need
+              one.
             </p>
           </div>
         </div>
@@ -755,22 +757,21 @@ const GhostWritingServicesBusiness = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  I hired business writers from GetProWriter and I am extremely
-                  satisfied with their offerings. They are experts in their
-                  field who provide high-quality papers. With GetProWriter, you
-                  can rest assured that you will get the best quality work
-                  delivered to you in a timely manner.{" "}
+                  We hired African American ghostwriters from GetProWriter for
+                  our project. They did an excellent job. It was much easier
+                  than we thought it would be to find them and they completed
+                  the project on time and with top quality. We highly recommend
+                  anyone looking to hire African American ghostwriters - check
+                  out GetProWriter.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Daniel-Hernandez.webp"
+                    src="/writer/img/pexels-cottonbro-7507786.webp"
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Daniel Hernandez</h3>
-                  <p className="testi_box-p">
-                    Pketing, Administrative assistant
-                  </p>
+                  <h3 className="testi_box-h3">Anna Shvets</h3>
+                  <p className="testi_box-p">WBOC, Manager- Operations</p>
                 </div>
               </div>
             </div>
@@ -778,20 +779,24 @@ const GhostWritingServicesBusiness = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  The main reason why we chose this company was that they offer
-                  affordable prices for their services. It has been a pleasure
-                  working with them as they have been very professional and
-                  helpful throughout the entire process of getting our content
-                  written.
+                  If you are looking for the best African American ghostwriters,
+                  then I suggest going for GetProWriter. They provide
+                  outstanding ghostwriting services to meet your requirements.
+                  The writers handled our writing assignments on tight
+                  deadlines, meeting the required standard of work, attention to
+                  our inquiries, and delivering quality content. They reposed
+                  quickly and have an impressive turnaround time.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Cabdirisaaq-Hogol-Caafi.webp"
+                    src="/writer/img/pexels-cottonbro-5378700-150x150.webp"
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3"> Cabdirisaaq Hogol Caafi</h3>
-                  <p className="testi_box-p">Salent, Software engineer</p>
+                  <h3 className="testi_box-h3"> Tanner Scritchfield</h3>
+                  <p className="testi_box-p">
+                    FragForever, Retailer of scents and attars
+                  </p>
                 </div>
               </div>
             </div>
@@ -855,7 +860,8 @@ const GhostWritingServicesBusiness = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        Where does GetProWriter hire writers from?
+                        Can we hire African American ghostwriters at a fixed
+                        cost per project?
                       </button>
                     </h2>
 
@@ -866,12 +872,16 @@ const GhostWritingServicesBusiness = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        Our writers are the real deal. They’re a diverse group
-                        of talented individuals from all over the world who have
-                        a lot of experience in writing, editing, and content
-                        creation – across a range of mediums and industries.
-                        We’re always looking to expand our team and add new
-                        talent.
+                        You can hire African American ghostwriters from us at a
+                        fixed cost per project. This means you can work with our
+                        team whenever you need to and have access to a team of
+                        writers who know your subject matter and target
+                        demographic. Our African American ghostwriter packages
+                        are offered at different prices. Regardless of whether
+                        you want a ghostwriter that will be working for you on
+                        an ongoing basis or just on one particular project, our
+                        rates are affordable so don’t hesitate to inquire more
+                        about it.
                       </div>
                     </div>
                   </div>
@@ -889,7 +899,7 @@ const GhostWritingServicesBusiness = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Are your writers trained to write business content?
+                        How do you train your writers?{" "}
                       </button>
                     </h2>
 
@@ -900,14 +910,14 @@ const GhostWritingServicesBusiness = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        We have hand-picked our writers from among the best in
-                        the industry, and we have trained them in the art of
-                        writing for businesses. They understand how important
-                        your business is to you, and will work with you to
-                        create the perfect content for your brochure, blog
-                        posts, or articles. GetProWriter can improve your
-                        website copy, ensuring that your site attracts new
-                        customers and keeps existing ones coming back.
+                        All our ghostwriters join our team only if they already
+                        possess substantial writing training. Every writer that
+                        joins our team has to prove his or her skill first. We
+                        see this as an essential filter that should prevent the
+                        contribution of plagiarized or badly written articles.
+                        Because of our comprehensive policy of hiring qualified
+                        and trained writers, you won’t find a better platform
+                        than ours easily.
                       </div>
                     </div>
                   </div>
@@ -926,8 +936,8 @@ const GhostWritingServicesBusiness = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      Can we test your writers before hiring for a bigger
-                      project?
+                      What’s the best online platform to hire African American
+                      ghostwriters?{" "}
                     </button>
                   </h2>
 
@@ -938,14 +948,17 @@ const GhostWritingServicesBusiness = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      Big or small, we’re here for you. Our writers are
-                      available for a wide range of writing projects. Whether
-                      you’ve got a big project, like an essay for your college
-                      application, or a smaller one, like a thank-you note to
-                      your favorite professor, we’ve got it covered. You can
-                      always hire them for a smaller project and see if the
-                      service works for you. Although we are sure you would love
-                      the way our writers create content!
+                      GetProWriter is the best online platform to hire African
+                      American ghostwriters. If you’re looking for a writer who
+                      can expertly craft your African American-themed content,
+                      you’ve come to the right place. We exist to provide
+                      ethical, professional, and quality ghostwriting services
+                      to businesses of all sizes, from start-ups to Fortune 500
+                      companies. Our team is comprised of professional writers
+                      that have experience working with a wide variety of
+                      industries. All of our ghostwriters undergo rigorous
+                      screening in order to ensure that you will receive the
+                      highest quality finished product possible.
                     </div>
                   </div>
                 </div>
@@ -958,4 +971,4 @@ const GhostWritingServicesBusiness = () => {
   );
 };
 
-export default GhostWritingServicesBusiness;
+export default GhostWritingServicesAfricanAmerican;

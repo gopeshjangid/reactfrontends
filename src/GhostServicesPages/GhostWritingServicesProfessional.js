@@ -5,22 +5,20 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "../pages/ReviewGetintouch";
 
-const GhostWritingServicesBusiness = () => {
+const GhostWritingServicesProfessional = () => {
   return (
     <div>
       <section className="top_sec p-0">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1 mt-3 p-0">
-                Impactful Business Ghostwriters!
-              </h1>
-              <h2 className="top_Sec-h2">Ghostwriters To Redefine Business!</h2>
+              <h1 className="top_Sec-h1 mt-3 p-0">Expert Ghostwriters Now!</h1>
+              <h2 className="top_Sec-h2"> Ghostwriters For All Businesses|</h2>
               <p className="top_Sec-p">
-                GetProWriter is a well-known company offering ace business
-                ghostwriters to clients worldwide. We offer business
-                ghostwriting services suitable for businesses across various
-                niches.
+                GetProWriter is a leading ghostwriting service provider. We
+                offer quality-approved ghostwriting services to help you with
+                your content needs. If you’re looking for a professional writer
+                to pen down your content, look no further than GetProWriter.
               </p>
             </div>
 
@@ -37,82 +35,83 @@ const GhostWritingServicesBusiness = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Need business content experts? Hire GPW business ghostwriters
-              today!
+              Do you want the best ghostwriter for your project? Get it at
+              GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Let your business brand stand out with our business ghostwriters.
+              Translate your ideas into convincing narratives with our
+              professional ghostwriters.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Detail Obsessed</h3>
+                <h3 className="box-h3"> Detail Oriented</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Keywords Centered</h3>
+                <h3 className="box-h3">Proven Skills</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Endorsed Expertise</h3>
+                <h3 className="box-h3">Industry’s Best</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">ORM Conscious</h3>
+                <h3 className="box-h3">Quality Research</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Incredible Flair</h3>
+                <h3 className="box-h3">Writing Originality</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Attracts Users</h3>
+                <h3 className="box-h3">Diversified Writing</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Shaping Brands</h3>
+                <h3 className="box-h3">Deadline Driven</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Transforming Businesses</h3>
+                <h3 className="box-h3">Highly Reliable</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Delivered As Assured</h3>
+                <h3 className="box-h3">Secure Services</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Enterprising Content</h3>
+                <h3 className="box-h3">Zero Plagiarism</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Diverse Team</h3>
+                <h3 className="box-h3">Vast Selection</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Client Focussed</h3>
+                <h3 className="box-h3">Top-notch Quality</h3>
               </div>
             </div>
           </div>
@@ -123,27 +122,31 @@ const GhostWritingServicesBusiness = () => {
         <div className="container">
           <div className="row">
             <h2 className="rev_sec-h2">
-              Our Business Ghostwriters Can Take Your Business To Another Level
+              Our Objective Is To Translate Your Ideas Into Reader-Friendly
+              Content
             </h2>
 
             <p className="rev_sec-p">
-              When you’re a business owner, you’ve got to wear a lot of hats.
-              There are a million things you have to do every day, and it can be
-              hard to keep up with everything. If you’re feeling overwhelmed,
-              we’ve got your back. At GetProWriter, we work with the world’s
-              best business ghostwriters to help our clients make their visions
-              come alive. Whether you need a case study written or an email
-              crafted, we’ll connect you with an ace writer who can get it done
-              in your brand’s voice so that you can focus on doing what you do
-              best: running your company!
+              GetProWriter is known to offer ghostwriting services that stand
+              out. Our writers understand your requirements and deliver content
+              as per these with accuracy. Our team of professionals holds vast
+              experience in writing quality content for blogs, articles, website
+              copies, and more. Our services will help you in your endeavors if
+              you are an aspiring author or a business owner who needs help with
+              their content strategies.
             </p>
 
             <p className="rev_sec-p">
-              If you have a business idea or project that you just don’t know
-              how to communicate in written form, we can help. We’ve written
-              dozens of business plans for big and small companies across the
-              world. We’ve written speeches for top CEOs and we have authored
-              thousands of blog posts on various business-related topics.
+              Our writers create content by considering the specific objectives
+              of clients. This approach has allowed us to produce some of the
+              most compelling content in the industry, which is why our clients
+              continue to hire our writers for their content needs. We offer
+              high-quality and plagiarism-free content at affordable prices. You
+              can get your content crafted to precision by our team. We
+              understand your requirements and design content according to the
+              set targets. You can get help with a wide spectrum of content for
+              your business. Our writers make sure that your enterprise content
+              gives a rich user experience.
             </p>
           </div>
         </div>
@@ -153,11 +156,12 @@ const GhostWritingServicesBusiness = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              Industry’s top business ghostwriter community - GetProWriter!
+              A one-stop solution for all your content needs - GetProWriter is
+              here!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Our business content writers are available round the clock.
+              Professional ghostwriters for professional outputs.
             </p>
 
             <div class="col-md-6">
@@ -229,29 +233,27 @@ const GhostWritingServicesBusiness = () => {
             </div>
             <div class="col-md-6">
               <h2 class="count_h2">
-                Take A Skilled Business Ghostwriter On Board
+                Hire A Ghostwriter With Bestselling Writing Standards To Create
+                Content
               </h2>
               <p class="count-p">
-                Our team has been ghostwriting for businesses for many years.
-                With extensive collective experience, our team is well equipped
-                to write about all the different topics that can help businesses
-                reach their goals. We have worked with clients ranging from
-                single-person startups to multinational companies. No matter
-                what your company’s size is, we can provide you with the right
-                writer for your needs.{" "}
+                GetProWriter has a team of qualified writers to create a wide
+                array of content for you. We have a team of writers who are
+                experts in their field and can provide you with high-quality,
+                well-researched, and engaging content. Our network of writers is
+                widespread and we have served thousands of clients all over the
+                world.
               </p>
               <p class="count-p">
-                Our team has a strict vetting process, so you can be assured
-                that the writer you are getting will be a true professional. We
-                carefully screen every writer that applies to join our team to
-                make sure they meet all of the requirements we expect them to,
-                and we offer training to help bring newer writers up to speed.
-                Ghostwriters are assigned based on their experience in the field
-                you need them to focus on, so you will never get a writer who
-                isn’t qualified to make your business stand out from the rest.
-                If you need a writer for an upcoming marketing project or just
-                want someone who can make sure your blog posts show off your
-                business in a good light, contact us today!{" "}
+                GetProWriter is the perfect solution for all your content needs.
+                We can provide you with the content you need to engage your
+                audience, attract new customers, and grow your business. We help
+                you create content that is relevant and informative. Our writers
+                ensure that your content is optimized for search engines so that
+                your customers can easily find you online. We understand how
+                important quality content is for driving traffic to your website
+                and generating leads, so we make sure that all of our content is
+                well-researched and engaging.
               </p>
             </div>
           </div>
@@ -262,41 +264,41 @@ const GhostWritingServicesBusiness = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-              Business Ghostwriting Services Endorsed By Clients
+              Our Ghostwriting Services Are Informative and Effective
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Opt for our ghostwriting service for enhanced industry visibility.
+              Ace professional ghostwriting begins with us.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Business Content That Exceeds All Quality Expectations
+                Content That Sets A Quality Benchmark
               </h3>
               <p className="ab_sec2-p rws-p">
-                GetProWriter has business ghostwriters who deliver content
-                beyond clients’ expectations. Here at GetProWriter, we know that
-                you have a story to share. Whether you’re a small business owner
-                trying to grow your customer base or a self-published author
-                looking to expand your audience, we have the resources to help
-                you tell your story in a way that catches attention and inspires
-                action. Our team of professional writers has years of experience
-                crafting content for businesses and individuals across all
-                sectors, so we know what it takes to get your message across
-                clearly and effectively – no matter who your audience is. We’re
-                here to make sure every word on your page counts!{" "}
+                Our ghostwriters possess the expertise and experience to offer
+                nothing less than the best. When it comes to writing quality,
+                timely delivery, and plagiarism-free content, we have set the
+                standards high. GetProWriter is globally regarded for offering
+                reliable and trustworthy writing services. If you are looking
+                for professional writers with top-notch writing quality, then
+                GetProWriter is where you can find them. In addition to writing
+                web copy that is optimized for search engines, our writers can
+                also help you with developing blog posts, articles, email
+                writing, etc.
               </p>
               <p className="ab_sec2-p rws-p">
-                GetProWriter is an online platform with a meticulously-screened
-                network of business ghostwriters. We don’t ask you to take our
-                word for it. Our clients have been extremely satisfied with the
-                content they’ve received through GetProWriter, and we’re proud
-                to have earned excellent reviews from them.{" "}
+                Our large team of professional writers hails from different
+                niches. This enables us to take on any type of writing project
+                and deliver it within the committed time frame. Our writers
+                prioritize writing quality over everything else. This gives them
+                an edge over other writers when it comes to understanding and
+                executing writing projects.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Business-Expectations.webp"
+                src="/writer/img/Quality-content.webp"
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -304,64 +306,65 @@ const GhostWritingServicesBusiness = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Uniqueness.webp"
+                src="/writer/img/Creativity-Innovation.webp"
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Business Ghostwriters Who Bring Uniqueness To Your Content
+                Our Writers Exhibit Creativity and Innovation
               </h3>
               <p className="ab_sec2-p rws-p">
-                All GetProWriter writers are fluent English communicators and
-                most have years of experience in their field. You can expect
-                high-quality business writing from every one of them. You’ll
-                find that it’s easy to work with any writer on our platform. You
-                can get in touch with them through GetProWriter, and we’ll make
-                sure you’ll be satisfied with your content.
+                For any kind of writing to have an impact on the audience,
+                creativity and innovation are two important aspects. Our
+                ghostwriters work with this approach every time they undertake a
+                project. We know that the readers are always on the lookout for
+                something new, something that can hold their attention and our
+                writers make sure to deliver just that. With a vast experience
+                in writing, they know how to present information engagingly
+                while keeping the quality intact. This is what makes
+                GetProWriter different from others and this is why clients keep
+                coming back to us.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our business ghostwriters bring uniqueness to your business
-                content. We know how difficult it can be for companies to get
-                the quality content they need to stay ahead of their
-                competition. Whether you’re looking for blogs, website copy,
-                case studies, or white papers, all of your content needs are
-                covered with GetProWriter. We know what it takes to make your
-                business stand out from the crowd, and we take pride in
-                delivering on our promises.
+                We know that creating and maintaining effective content can be a
+                challenge. That’s where our team can help. We can create writing
+                pieces to meet your specific business goals. With us, you can be
+                sure to get the best quality content that will help you achieve
+                your desired results.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Business Writers Who Craft Relevant Content Effortlessly
+                Writers With Specialized Knowledge Yet Extremely Versatile
               </h3>
               <p className="ab_sec2-p rws-p">
-                Whether you’re looking for a brief blurb to post on social media
-                or a detailed case study that will convince potential clients to
-                engage your services, our business writers know how to make sure
-                what they produce is right for you. We make sure to conduct a
-                thorough briefing process, so we can create the most relevant
-                content possible – and we commit to meeting deadlines and
-                staying in close contact with our clients.
+                We have writers on board who come with specialized knowledge
+                about various fields. With such dynamic writers, our team
+                ensures adequate versatility when it comes to offering writing
+                services. This means that you can come to us for all your
+                writing needs, be it copywriting, SEO articles, web content,
+                blogs, etc.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our team of writers has been helping startup and established
-                businesses with anything they need: from case studies to blog
-                posts, from website copy to press releases. With our services
-                and expertise, you can be sure that the content you’re putting
-                out there is relevant and effective. We’ve worked with a variety
-                of industries, and we are comfortable operating within almost
-                any niche or topic. Some of our most successful projects have
-                been in the fields of technology, healthcare, food, lifestyle,
-                retail, etc. We would also be happy to apply our skills to new
-                areas. If you have a requirement, just let us know!
+                With a vast experience in the industry, the GetProWriter team
+                has mastered the art of delivering highly versatile and
+                informative content that meets the needs and expectations of our
+                clients. We are always keen on ensuring that our clients get
+                value for their money, and this is only possible through the
+                delivery of quality work. We guarantee you quality work that
+                will take your business to the next level. Our writers also have
+                a deep understanding of the latest trends in their respective
+                niches. We have a team of professionals who are always ready to
+                provide you with the best quality content that will help you
+                achieve a strong online presence.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Business-writers.webp"
+                src="/writer/img/Specialized-extremely.webp"
                 alt="Online-review"
                 className="rws-img"
               />
@@ -369,65 +372,61 @@ const GhostWritingServicesBusiness = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Business-presence.webp"
+                src="/writer/img/Redefine-Ghostwriter.webp"
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Elevating Business Presence With Remarkable Content
+                Redefine Your Business With Our Ghostwriting Services
               </h3>
               <p className="ab_sec2-p rws-p">
-                When you’re looking for content that will be informative,
-                persuasive, and engaging, it’s essential to find a writer who
-                can do it all. If you’re struggling to write the content
-                yourself because you just don’t have the time or energy, we can
-                help! Our team is trained to create content that will help your
-                audience connect with you and your brand.
+                If you are looking to grow your business, then GetProWriter is
+                the solution for you. Our ghostwriters have an extensive
+                experience in writing, and they can help you create content that
+                is both informative and engaging. GetProWriter offers a wide
+                range of services that can help you to expand your business by
+                creating compelling content to attract customers and keep them
+                hooked to your offerings.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our writers know how to craft compelling copy that speaks
-                directly to your target audience. We’ll work with you to create
-                a piece of content that highlights your business’s unique voice
-                while also delivering results like increased conversions, better
-                SEO rankings, and a more engaged readership. Our team is made up
-                of passionate writers who love words. They are avid readers,
-                dedicated editors, and keen strategists. Our talent allows us to
-                create content that’s written well, easy to understand, and hits
-                all the right notes.{" "}
+                Our team of ghostwriters can also help you develop marketing
+                materials that will help you reach a wider audience. To acquire
+                an edge in the industry, GetProWriter is the perfect partner for
+                you. We can help you create content that will reach a wider
+                audience.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Originality Makes Us Lead The Industry League of Writers
+                Plagiarism Free Unique Content For Individuals & Enterprises
               </h3>
               <p className="ab_sec2-p rws-p">
-                At GetProWriter, we believe that content should be original and
-                unique. Your business is unique, and your content should reflect
-                that. We help you stand out from your competitors by creating
-                content that not only helps you reach your goals but does so in
-                a way that is truly yours. Your content is a mirror to your
-                business. And something that reflects you should be as original,
-                creative, and unique as you are.
+                We do not promise content that surpasses all standards of
+                comprehension. What we create is simple, unique, and has the
+                desired effect on readers. Our writing style is geared towards
+                those who appreciate a more straightforward approach to
+                communication. Whether it be an email to a client or website
+                copy for search engine optimization, our goal is always to
+                provide content that is easy to read and understand.
               </p>
 
               <p className="ab_sec2-p rws-p">
-                When it comes to content, the internet is rife with what’s been
-                done before, and this can make it difficult to stand out. But
-                when you work with us, we’ll help you find your voice and use it
-                to speak to your customers in a way that’s just as special as
-                you are. We use your ideas and visions for your business to
-                create content that wows people. Whether it’s a blog post, an ad
-                for your most popular product, or a series of sales pages for
-                your newest offering, we’ll use our expertise and talent to
-                deliver content that speaks.{" "}
+                GetProWriter recognizes that not everyone reads at the same
+                level, so we adjust our writing style accordingly. For instance,
+                when we write for a general audience we use shorter sentences
+                and simpler words to make our message clear. However, when we
+                write for a more technical audience we use longer sentences and
+                more complex words to convey our meaning. Our writing services
+                have proven to be deal makers for both individuals and
+                enterprises.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Originilty.webp"
+                src="/writer/img/Unique-content.webp"
                 alt="Real-review-writer"
                 className="rws-img"
               />
@@ -435,31 +434,30 @@ const GhostWritingServicesBusiness = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-                src="/writer/img/Expertise.webp"
+                src="/writer/img/Expertise-ahead-and-leauge.webp"
                 alt="Expertise"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise To Add An Extra Feather To Your Business
-                Leap
+                GetProWriter Expertise Is What Gets You Ahead In The League Leap
               </h3>
               <p className="ab_sec2-p rws-p">
-                In this day and age, it is very important to have a website or
-                blog that is not only informative but also interesting to read.
-                You need to make sure that your readers are satisfied with what
-                they see on your site so they will keep coming back for more
-                information in the future. This is where our services come into
-                play. We can handle all kinds of topics related to business such
-                as finance, marketing, management, entrepreneurship, etc.
+                Our ghostwriters write intending to enable readers to walk away
+                satisfied with the content they’ve read. If they are able to
+                understand and retain the information we’ve presented, then
+                we’ve done our job. The blend of industry experience, vast
+                experience, and the drive to ensure innovative writing is what
+                defines us. We’re always keen on furthering our areas of
+                expertise, and we have a network of highly experienced writers
+                to support this.
               </p>
               <p className="ab_sec2-p rws-p">
-                GetProWriter brings expert business ghostwriters onboard who
-                know how to produce superior quality content. Our writers have
-                years of experience writing all types of business content and
-                they know exactly how to create engaging articles that will keep
-                your readers hooked from start to end.
+                goal.GetProWriter offers services to ensure that your writing is
+                error-free and gets you ahead in the league. We understand the
+                importance of quality writing, and we’re dedicated to offer
+                remarkable services to materialize your writing objectives.
               </p>
             </div>
           </div>
@@ -670,10 +668,12 @@ const GhostWritingServicesBusiness = () => {
       <section className="hire_Sec">
         <div className="container">
           <div className="row">
-            <h2 className="get_sec-h2">Why Hire Our Business Ghostwriters?</h2>
+            <h2 className="get_sec-h2">
+              Why Hire Our Professional Ghostwriters?
+            </h2>
             <p className="get_sec-p">
-              Your business depends largely on great content. We take care of
-              that.
+              Your content attains perfection with our professional
+              ghostwriters.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -685,8 +685,22 @@ const GhostWritingServicesBusiness = () => {
                     </span>
                   </li>
                   <li className="in_li">
+                    <span className="spa_h2">Highly skilled ghostwriters</span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="box-ol">
+                <ol className="m-0 d-flex align-items-center p-0">
+                  <li className="in_li">
+                    <span className="right_span">
+                      <i aria-hidden="true" className="fas fa-check-circle"></i>
+                    </span>
+                  </li>
+                  <li className="in_li">
                     <span className="spa_h2">
-                      Years of experience in the niche
+                      Work as per the project requirements
                     </span>
                   </li>
                 </ol>
@@ -702,24 +716,7 @@ const GhostWritingServicesBusiness = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Writers with a humongous business writing experience
-                    </span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="box-ol">
-                <ol className="m-0 d-flex align-items-center p-0">
-                  <li className="in_li">
-                    <span className="right_span">
-                      <i aria-hidden="true" className="fas fa-check-circle"></i>
-                    </span>
-                  </li>
-                  <li className="in_li">
-                    <span className="spa_h2">
-                      No compromise on quality, no compromise on timely
-                      submissions
+                      Never compromise on content quality and deadlines
                     </span>
                   </li>
                 </ol>
@@ -727,21 +724,21 @@ const GhostWritingServicesBusiness = () => {
             </div>
 
             <p className="review1-p">
-              We understand that every business needs a different type of
-              content, and our writers are well-versed in all types of writing
-              styles. We know what works best for which audience and how to
-              create content accordingly. Our writers have vast knowledge about
-              SEOs and how they work with written materials; thus, we can say
-              with utmost certainty that the content provided by us will help
-              you rank high on search engines like Google or Bing.{" "}
+              Our professional ghostwriters are highly skilled in their fields.
+              They are creative and experienced individuals who have written a
+              plethora of works. They know how to capture the essence of your
+              story in a way that is both entertaining and informative. Our
+              writers will work with you to ensure that your content is
+              well-written, engaging, and captivating. Our ghostwriters know
+              what a project demands and they are passionate about ensuring that
+              your work is designed as per these.
             </p>
 
             <p className="review1-p">
-              Our business ghostwriters never compromise on quality or on
-              submissions on time. Our services are comprehensive and cover all
-              your needs from social media posts, blogs, web page content,
-              newsletters, product descriptions, articles, and reviews to
-              marketing materials like brochures and flyers.
+              GetProWriter professional ghostwriters never compromise on content
+              quality and deadlines. We have a stringent policy when it comes to
+              plagiarism. We make sure that all our writers produce 100%
+              original content and everything is delivered to you on time.
             </p>
           </div>
         </div>
@@ -755,22 +752,22 @@ const GhostWritingServicesBusiness = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  I hired business writers from GetProWriter and I am extremely
-                  satisfied with their offerings. They are experts in their
-                  field who provide high-quality papers. With GetProWriter, you
-                  can rest assured that you will get the best quality work
-                  delivered to you in a timely manner.{" "}
+                  Superb quality writing! The experts at GetProWriter know how
+                  important it is for your content to be well-written and free
+                  of errors. That's why they go above and beyond to ensure that
+                  your needs are met and that you're happy with the finished
+                  product. You can trust them to get the job done right, no
+                  matter what kind of writing you need. We will hire their
+                  writers again.
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Daniel-Hernandez.webp"
+                    src="/writer/img/Jack-Connor.webp"
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Daniel Hernandez</h3>
-                  <p className="testi_box-p">
-                    Pketing, Administrative assistant
-                  </p>
+                  <h3 className="testi_box-h3">Jack Connor</h3>
+                  <p className="testi_box-p">Commer, Software Engineer</p>
                 </div>
               </div>
             </div>
@@ -778,20 +775,21 @@ const GhostWritingServicesBusiness = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  The main reason why we chose this company was that they offer
-                  affordable prices for their services. It has been a pleasure
-                  working with them as they have been very professional and
-                  helpful throughout the entire process of getting our content
-                  written.
+                  Our company was looking for talented ghostwriters and
+                  GetProWriter appeared just at the right moment. We had a very
+                  tight deadline and the company managed to meet it without
+                  compromising on the quality of the text. We are beyond happy
+                  with the result and we will surely use GetProWriter services
+                  again in the future!
                 </p>
                 <div className="t_sels">
                   <img
-                    src="/writer/img/Cabdirisaaq-Hogol-Caafi.webp"
+                    src="/writer/img/Mason-Robert.webp"
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3"> Cabdirisaaq Hogol Caafi</h3>
-                  <p className="testi_box-p">Salent, Software engineer</p>
+                  <h3 className="testi_box-h3"> Mason Robert</h3>
+                  <p className="testi_box-p">Brandlime, Support Manager</p>
                 </div>
               </div>
             </div>
@@ -855,7 +853,8 @@ const GhostWritingServicesBusiness = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        Where does GetProWriter hire writers from?
+                        Which is the best platform to hire professional
+                        ghostwriters?{" "}
                       </button>
                     </h2>
 
@@ -866,12 +865,17 @@ const GhostWritingServicesBusiness = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        Our writers are the real deal. They’re a diverse group
-                        of talented individuals from all over the world who have
-                        a lot of experience in writing, editing, and content
-                        creation – across a range of mediums and industries.
-                        We’re always looking to expand our team and add new
-                        talent.
+                        For a wide range of writing services, GetProWriter
+                        offers professional ghostwriters with a proven writing
+                        record. If you’re looking for a content writer,
+                        scriptwriter, or any other type of professional writing
+                        service, hire writers from them.
+                        <br />
+                        <br />
+                        GetProWriter is a professional platform that offers a
+                        wide range of writing services for businesses as well as
+                        individuals. Their team of experienced and certified
+                        writers can help you with any type of writing project.
                       </div>
                     </div>
                   </div>
@@ -889,7 +893,7 @@ const GhostWritingServicesBusiness = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Are your writers trained to write business content?
+                        How do we know if your writers are experts?
                       </button>
                     </h2>
 
@@ -900,14 +904,19 @@ const GhostWritingServicesBusiness = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        We have hand-picked our writers from among the best in
-                        the industry, and we have trained them in the art of
-                        writing for businesses. They understand how important
-                        your business is to you, and will work with you to
-                        create the perfect content for your brochure, blog
-                        posts, or articles. GetProWriter can improve your
-                        website copy, ensuring that your site attracts new
-                        customers and keeps existing ones coming back.
+                        GetProWriter has a stringent mechanism for hiring
+                        ghostwriters. We have a dedicated team of HR experts who
+                        screen and evaluate the writing skills of each candidate
+                        before we allow them to work on projects. This ensures
+                        that only the most talented and skilled writers work on
+                        your project. We also have a rigorous quality control
+                        process in place. Only error-free and original content
+                        make it to our clients.
+                        <br />
+                        <br />
+                        You can be assured that when you hire a ghostwriter from
+                        GetProWriter, you will get high-quality, well-written,
+                        and original content.
                       </div>
                     </div>
                   </div>
@@ -926,8 +935,7 @@ const GhostWritingServicesBusiness = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      Can we test your writers before hiring for a bigger
-                      project?
+                      What are the prices for ghostwriting services?{" "}
                     </button>
                   </h2>
 
@@ -938,14 +946,13 @@ const GhostWritingServicesBusiness = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      Big or small, we’re here for you. Our writers are
-                      available for a wide range of writing projects. Whether
-                      you’ve got a big project, like an essay for your college
-                      application, or a smaller one, like a thank-you note to
-                      your favorite professor, we’ve got it covered. You can
-                      always hire them for a smaller project and see if the
-                      service works for you. Although we are sure you would love
-                      the way our writers create content!
+                      We offer ghostwriting services at affordable prices. The
+                      prices of each service vary depending on the type of
+                      writing, the length of the document, and the turnaround
+                      time. Whether you need a writer for a short-term project
+                      or you are looking for ghostwriters to help you with
+                      complex documents, we offer attractive packages that you
+                      cannot deny. Check out our specific services to know more!
                     </div>
                   </div>
                 </div>
@@ -958,4 +965,4 @@ const GhostWritingServicesBusiness = () => {
   );
 };
 
-export default GhostWritingServicesBusiness;
+export default GhostWritingServicesProfessional;
