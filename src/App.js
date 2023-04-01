@@ -155,7 +155,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/register" element={<Register />} />
         <Route path="/reviews" element={<Reviews />} />
-        <Route path="/sample" element={<Sample />} />
+        <Route path="/samples" element={<Sample />} />
         <Route path="/services" element={<Services />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/viewCart" element={<ViewCart />} />

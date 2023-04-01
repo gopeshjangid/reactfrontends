@@ -528,9 +528,6 @@ class Services extends Component {
                               </div>
                             </div>
                             <br />
-                            <button type="button" className="services-btn3">
-                              BUY NOW
-                            </button>
                           </div>
                         </div>
                       </div>
