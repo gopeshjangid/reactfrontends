@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -17,9 +17,16 @@ const Dashboard = () => {
   // const navigate = useNavigate();
   // console.log("qwertyui",orderId)
   //   console.log(searchText);
+
+  const ref = useRef(null);
   const tokenID = localStorage.getItem("token");
+  const [products, setProducts] = useState([]);
   useEffect(() => {
     setIsLoading(true);
+
+    setTimeout(() => {
+      ref.current.click();
+    });
     fetch(`${process.env.REACT_APP_APIURL}/viewOrder`, {
       method: "GET",
       headers: {
@@ -30,9 +37,15 @@ const Dashboard = () => {
       .then((res) => res.json(console.log(res)))
       .then((response) => {
         setViewOrder(response.data.sort().reverse());
+        setProducts(response.data.products);
         setIsLoading(false);
 
+        // const inputElement = React.useRef();
+        // return <input ref={inputElement} />;
+        // inputElement.click();
+        // console.log(inputElement);
         console.log(response.data);
+        console.log(products);
       })
       .catch((error) => {
         console.log(error);
@@ -79,6 +92,10 @@ const Dashboard = () => {
         console.log(err);
       });
   };
+
+  const RenderHTML = (props) => (
+    <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>
+  );
 
   return (
     <>
@@ -185,12 +202,13 @@ const Dashboard = () => {
                             {friend.sub_status === "Active" ? (
                               <tr key={index} className="viewOrderbody">
                                 <td>{index + 1}</td>
-                                <td>{friend.transactionId}</td>
+                                <td>{friend.order_id}</td>
                                 <td>{friend.datetime}</td>
                                 <td>{friend.pay_method}</td>
                                 <td>{friend.type}</td>
                                 <td>{friend.totalAmount}</td>
                                 <td
+                                  ref={ref}
                                   onClick={() => {
                                     setOrderId(friend._id);
                                     setOrderName(
@@ -304,7 +322,7 @@ const Dashboard = () => {
                                             <td>Order Id</td>
                                             <td>:</td>
 
-                                            <td>{friend.transactionId}</td>
+                                            <td>{friend.order_id}</td>
                                           </tr>
                                           <tr>
                                             <td>Date</td>
@@ -335,6 +353,42 @@ const Dashboard = () => {
                                             <td>Status</td>
                                             <td>:</td> <td>{friend.status}</td>
                                           </tr>
+                                          {friend.products.map(
+                                            (product, index) => {
+                                              return (
+                                                <>
+                                                  <h4>Products:{index + 1}</h4>
+                                                  <tr>
+                                                    <td>Title</td>
+                                                    <td>:</td>{" "}
+                                                    <td>{product?.p_title}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Short Title</td>
+                                                    <td>:</td>{" "}
+                                                    <td>
+                                                      {product.p_shortTitle}
+                                                    </td>
+                                                  </tr>
+
+                                                  <tr>
+                                                    <td>Description</td>
+                                                    <td>:</td>{" "}
+                                                    <td>
+                                                      <RenderHTML
+                                                        HTML={product.p_dec}
+                                                      />
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Price</td>
+                                                    <td>:</td>{" "}
+                                                    <td>{product.p_price}</td>
+                                                  </tr>
+                                                </>
+                                              );
+                                            }
+                                          )}
                                         </tbody>
                                       </table>
                                     </div>
@@ -344,12 +398,13 @@ const Dashboard = () => {
                             ) : (
                               <tr key={index} className="viewOrderbody">
                                 <td>{index + 1}</td>
-                                <td>{friend.transactionId}</td>
+                                <td>{friend.order_id}</td>
                                 <td> {friend.datetime}</td>
                                 <td>{friend.pay_method}</td>
                                 <td>{friend.type}</td>
                                 <td>{friend.totalAmount}</td>
                                 <td
+                                  ref={ref}
                                   onClick={() => {
                                     setOrderId(friend._id);
                                     setOrderName(
@@ -425,7 +480,7 @@ const Dashboard = () => {
                                               <td>Order Id</td>
                                               <td>:</td>
 
-                                              <td>{friend.transactionId}</td>
+                                              <td>{friend.order_id}</td>
                                             </tr>
                                             <tr>
                                               <td>Date</td>
@@ -524,7 +579,7 @@ const Dashboard = () => {
                                               <td>Order Id</td>
                                               <td>:</td>
 
-                                              <td>{friend.transactionId}</td>
+                                              <td>{friend.order_id}</td>
                                             </tr>
                                             <tr>
                                               <td>Date</td>
@@ -552,6 +607,53 @@ const Dashboard = () => {
                                               <td>:</td>{" "}
                                               <td>{friend.status}</td>
                                             </tr>
+                                            {friend.products.map(
+                                              (product, index) => {
+                                                return (
+                                                  <>
+                                                    <h4>
+                                                      Products:{index + 1}
+                                                    </h4>
+                                                    <tr>
+                                                      <td>Title</td>
+                                                      <td>:</td>{" "}
+                                                      <td>
+                                                        {product?.p_title}
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Short Title</td>
+                                                      <td>:</td>{" "}
+                                                      <td>
+                                                        {product.p_shortTitle}
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Quantity</td>
+                                                      <td>:</td>{" "}
+                                                      <td>
+                                                        {product.p_quantity}
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Description</td>
+                                                      <td>:</td>{" "}
+                                                      <td>
+                                                        <RenderHTML
+                                                          HTML={product.p_dec}
+                                                        />
+                                                        {product.p_dec}
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Price</td>
+                                                      <td>:</td>{" "}
+                                                      <td>{product.p_price}</td>
+                                                    </tr>
+                                                  </>
+                                                );
+                                              }
+                                            )}
                                           </tbody>
                                         </table>
                                       </div>

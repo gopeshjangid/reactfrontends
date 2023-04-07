@@ -123,7 +123,7 @@ const Login = () => {
                 autoComplete="username"
                 id="fname"
                 name="username"
-                placeholder="Name"
+                placeholder=" Username or E-mail "
                 onChange={handleChange}
                 className="text_set"
               />
@@ -133,7 +133,7 @@ const Login = () => {
               <input
                 type="password"
                 autoComplete="current-password"
-                placeholder="password"
+                placeholder="Password"
                 name="password"
                 onChange={handleChange}
                 className="ct_text-set1"
@@ -169,7 +169,7 @@ const Login = () => {
 
               <p className="text-center m-0 fs-6">
                 <Link className="forgot_p p-0" to="/forgot">
-                  Forget Password?
+                  Forgot Password?
                 </Link>
               </p>
             </form>

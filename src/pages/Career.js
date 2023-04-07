@@ -97,7 +97,7 @@ const Career = () => {
                     );
                   })}
 
-                  <Link to="/dashboard">
+                  <Link to="/contact">
                     <button type="button" className="jot_sec-btn">
                       Join Our Team Today!
                     </button>

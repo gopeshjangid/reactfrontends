@@ -124,7 +124,7 @@ const Register = () => {
     const passwordLength = /^.{6,}$/;
     const regex = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     if (!values.username) {
-      errors.username = "!'Please Enter Your Name'";
+      errors.username = "!'Please Enter Your Username'";
     }
     if (!values.email) {
       errors.email = "!'Please Enter Your Email'";
@@ -195,7 +195,7 @@ const Register = () => {
                   type="text"
                   name="username"
                   autoComplete="username"
-                  placeholder="FullName"
+                  placeholder="Username"
                   onChange={handleChange}
                   className="ct_text-set"
                 />
@@ -204,7 +204,7 @@ const Register = () => {
                 <label className="reg-lbl">E-mail Address</label>
                 <input
                   type="email"
-                  placeholder="Email"
+                  placeholder="E-mail Address"
                   autoComplete="email"
                   name="email"
                   onChange={handleChange}

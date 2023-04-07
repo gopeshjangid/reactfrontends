@@ -601,7 +601,13 @@ const ViewCart = () => {
       });
   };
 
-  async function savePaymentRazorpay(amount) {
+  const [rzrerrorshow, setRzrerrorshow] = useState();
+
+  async function savePaymentRazorpay(amount, id) {
+    console.log("iiii", id);
+    console.log(savePayment);
+    const filterData = savePayment?.filter((cards) => cards._id === id);
+    console.log(filterData);
     const tokenID = localStorage.getItem("token");
 
     var razorpay = new Razorpay({
@@ -641,24 +647,25 @@ const ViewCart = () => {
         body: payload,
       }
     ).then((t) => t.json());
-    console.log(data.amount);
+    console.log(data);
 
     const options = {
       amount: `${data.amount * 100}`,
       currency: "INR",
       email: "kushwa378@gmail.com",
-      contact: "9079808977",
+      contact: "8949352677",
       notes: {
         address: "jjjjjjjjjjj",
       },
+
       order_id: data.order.id,
       method: "card",
       card: {
-        number: "4111 1111 1111 1111",
-        name: "bablu",
-        expiry_month: 10,
-        expiry_year: 25,
-        cvv: 444,
+        number: `${filterData[0].cardNumber}`,
+        name: `${filterData[0].accountHolder}`,
+        expiry_month: filterData[0].mm,
+        expiry_year: filterData[0].yy,
+        cvv: filterData[0].cvv,
       },
     };
     // console.log(new window.Razorpay(options));
@@ -667,8 +674,42 @@ const ViewCart = () => {
 
     // console.log("Razorpay", new Razorpay());
     // console.log("abc", razorpay.createPayment(options));
+    // await setRzrerrorshow(razorpay);
+    // console.log("alkkkkkkkk", rzrerrorshow.rzrpayInstannce._payment);
 
     razorpay.rzrpayInstannce.createPayment(options);
+    razorpay.on("payment.success", function (res) {
+      // swal("Success!", "Your payment is success", "success");
+
+      var data = JSON.stringify({
+        razorpay_payment_id: res.razorpay_payment_id,
+        razorpay_order_id: res.razorpay_order_id,
+        razorpay_signature: res.razorpay_signature,
+      });
+      console.log("sdfgk", data);
+
+      var config = {
+        method: "post",
+        url: `${process.env.REACT_APP_APIURL}/orderRazorpaySuccess`,
+        headers: {
+          Authorization: tokenID,
+          "Content-Type": "application/json",
+        },
+        data: data,
+      };
+
+      axios(config)
+        .then(function (response) {
+          console.log(response.data);
+          window.location.reload(true);
+          // navigate("/PurchaseSuccess");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+      // alert("Transaction successful");
+    });
     console.log("razorpay", razorpay);
     console.log("options", options);
   }
@@ -1145,7 +1186,7 @@ const ViewCart = () => {
                                             <span>{friend.accountHolder}</span>
                                             <br />
                                             <label> Ac/No.:</label>
-                                            <span>{friend.accountNumber}</span>
+                                            <span>{friend.cardNumber}</span>
                                           </div>
 
                                           <div className="col-sm-6">
@@ -1224,7 +1265,8 @@ const ViewCart = () => {
                                                                     .message
                                                                     .offAmount) /
                                                                   100
-                                                            : cartItems.totalPrice
+                                                            : cartItems.totalPrice,
+                                                          friend._id
                                                         )
                                                       }
                                                       // onClick={() =>

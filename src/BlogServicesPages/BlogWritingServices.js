@@ -4,22 +4,23 @@ import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "../pages/ReviewGetintouch";
-// import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet";
 
 const BlogWritingServices = () => {
   return (
     <div>
-      {/* <React.Fragment> */}
-      {/* <Helmet>
-          <title>title</title>
+      {/* <React.Fragment>
+        <Helmet>
+          <title>blogwritingservices</title>
           <link rel="icon" href="/writer/img/logo/gp-writer-loader.png" />
 
           <meta property="og:title" content={"og:hellooertrdz"} />
           <meta
-            property="name"
-            content={"og:Quality Driven Blog Post Writing Service"}
+            name="description"
+            content={"Quality Driven Blog Post Writing Service"}
           />
         </Helmet> */}
+
       <section className="top_sec p-0">
         <div className="container">
           <div className="row align-items-center">

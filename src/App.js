@@ -134,6 +134,13 @@ import ReviewWritingServicesQnaOther from "./ReviewServicesPages/ReviewWritingSe
 import GhostWritingServicesSocialMedia from "./GhostServicesPages/GhostWritingServicesSocialMedia";
 import GhostWritingServicesProfessional from "./GhostServicesPages/GhostWritingServicesProfessional";
 import GhostWritingServicesAfricanAmerican from "./GhostServicesPages/GhostWritingServicesAfricanAmerican";
+import GhostWritingServicesCheap from "./GhostServicesPages/GhostWritingServicesCheap";
+import GhostWritingServicesBrilliant from "./GhostServicesPages/GhostWritingServicesBrilliant";
+import GhostWritingServicesBlog from "./GhostServicesPages/GhostWritingServicesBlog";
+import GhostWritingServicesGhostStory from "./GhostServicesPages/GhostWritingServicesGhostStory";
+import GhostWritingServicesFreelance from "./GhostServicesPages/GhostWritingServicesFreelance";
+import GhostWritingServicesBiography from "./GhostServicesPages/GhostWritingServicesBiography";
+import GhostWritingServicesEbook from "./GhostServicesPages/GhostWritingServicesEbook";
 
 function App() {
   return (
@@ -470,6 +477,34 @@ function App() {
         <Route
           path="ghostwriting-services/african-american"
           element={<GhostWritingServicesAfricanAmerican />}
+        />
+        <Route
+          path="ghostwriting-services/cheap"
+          element={<GhostWritingServicesCheap />}
+        />
+        <Route
+          path="ghostwriting-services/brilliant"
+          element={<GhostWritingServicesBrilliant />}
+        />
+        <Route
+          path="ghostwriting-services/blog"
+          element={<GhostWritingServicesBlog />}
+        />
+        <Route
+          path="ghostwriting-services/ghost-story"
+          element={<GhostWritingServicesGhostStory />}
+        />
+        <Route
+          path="ghostwriting-services/freelance"
+          element={<GhostWritingServicesFreelance />}
+        />
+        <Route
+          path="ghostwriting-services/biography"
+          element={<GhostWritingServicesBiography />}
+        />
+        <Route
+          path="ghostwriting-services/ebook"
+          element={<GhostWritingServicesEbook />}
         />
         <Route
           path="product-description-writing"

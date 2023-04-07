@@ -1,57 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import Placeyourordergetintouch from "./Placeyourordergetintouch";
+import GetinTouch from "./GetinTouch";
 
 const PlaceYourOrder = () => {
-  const initialValue = {
-    username: "",
-    email: "",
-    subject: "",
-    message: "",
-  };
-
-  const [formValue, setFormValue] = useState(initialValue);
-  const [formError, setFormError] = useState({});
-  const [inSubmit, setInSubmit] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValue({ ...formValue, [name]: value });
-  };
-
-  const btnSubmit = (e) => {
-    e.preventDefault();
-    setFormError(valide(formValue));
-    setInSubmit(true);
-  };
-
-  useEffect(() => {
-    console.log(formError);
-    if (Object.keys(formError).length === 0 && inSubmit) {
-      console.log(formValue);
-    }
-  }, [formError]);
-
-  const valide = (values) => {
-    const error = {};
-    const regex = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
-    if (!values.username) {
-      error.username = "!'Please Enter Your Name'";
-    }
-    if (!values.email) {
-      error.email = "!'Please Enter Your Email'";
-    } else if (!regex.test(values.email)) {
-      error.email = "!'This is not Email Format'";
-    }
-    if (!values.subject) {
-      error.subject = "!'Please Enter Your Subject'";
-    }
-    if (!values.message) {
-      error.message = "!'Please Enter Your Message'";
-    }
-    return error;
-  };
   return (
     <div>
       <section className="place_sec">
@@ -63,7 +15,7 @@ const PlaceYourOrder = () => {
 
             <div className="col-md-6">
               <section className="form_sec">
-                <Placeyourordergetintouch />
+                <GetinTouch />
               </section>
             </div>
           </div>
@@ -87,60 +39,8 @@ const PlaceYourOrder = () => {
 
       <section className="place_Sec-2">
         <div className="container">
-          <div className="row">
-            <div className="col-md-6">
-              <h2 className="form_h2">
-                <span className="form_h2-span">Your</span> Question
-              </h2>
-              <form onSubmit={btnSubmit}>
-                <input
-                  type="text"
-                  id="fname"
-                  name="username"
-                  placeholder="FullName"
-                  onChange={handleChange}
-                  className="ct_text-set"
-                />
-                <p style={{ color: "red" }}>{formError.username}</p>
-                <input
-                  type="text"
-                  id="fname"
-                  placeholder="Email"
-                  name="email"
-                  onChange={handleChange}
-                  className="ct_text-set"
-                />
-                <p style={{ color: "red" }}>{formError.email}</p>
-                <input
-                  type="text"
-                  id="fname"
-                  placeholder="Subject"
-                  name="subject"
-                  onChange={handleChange}
-                  className="ct_text-set1"
-                />
-                <p style={{ color: "red" }}>{formError.subject}</p>
-                <textarea
-                  className="form-control form-area ct_text-set1"
-                  rows="8"
-                  onChange={handleChange}
-                  id="message"
-                  placeholder="Message"
-                  name="message"
-                ></textarea>
-                <p style={{ color: "red" }}>{formError.message}</p>
-                <button type="submit" className="ct_btn-set">
-                  Submit
-                </button>{" "}
-                {Object.keys(formError).length === 0 && inSubmit ? (
-                  <span className="Success">Submitted is Successfull</span>
-                ) : (
-                  ""
-                )}
-              </form>
-            </div>
-
-            <div className="col-md-6">
+          <div className="row justify-content-center">
+            <div className="col-md-8">
               <section className="faq_section accordion" id="accordionExample">
                 <div className="faq-inner">
                   <div className="faq-item p-0 bg_set accordion-item">

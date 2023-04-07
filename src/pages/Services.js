@@ -20,8 +20,6 @@ function loadScript(src) {
   });
 }
 
-// const navigate = useNavigate();
-
 class Services extends Component {
   constructor(props) {
     super(props);
@@ -29,6 +27,7 @@ class Services extends Component {
       User: [],
       isAddLoading: false,
       cartItems: [],
+      hello: [],
       stripeSubscription: [],
       noUser: false,
       razorpaSubscription: [],
@@ -47,6 +46,7 @@ class Services extends Component {
   async componentDidMount() {
     this.setState({ isAddLoading: true });
 
+    this.viewCart2();
     this.viewCart();
     const tokenID = localStorage.getItem("token");
 
@@ -90,6 +90,37 @@ class Services extends Component {
     }
   }
 
+  viewCart2 = async () => {
+    const tokenID = localStorage.getItem("token");
+    console.log(tokenID);
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization: `${tokenID}`,
+    };
+    await axios
+      .get(`${process.env.REACT_APP_APIURL}/viewCart`, {
+        headers: headers,
+      })
+      // .then((res) => {
+      //   console.log("buynow items ---------------", res);
+      //   this.setState({ ...this.state, });
+      //   console.log("sdertyuytre", this.state.User);
+      // })
+      .then((response) => {
+        console.log("cart items ---------------", response);
+        this.setState({
+          ...this.state,
+          hello: response.data,
+        });
+
+        console.log("sdertyuytre", this.state.User);
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   viewCart = async () => {
     const tokenID = localStorage.getItem("token");
     console.log(tokenID);
@@ -101,11 +132,21 @@ class Services extends Component {
       .get(`${process.env.REACT_APP_APIURL}/viewCart`, {
         headers: headers,
       })
+      // .then((res) => {
+      //   console.log("buynow items ---------------", res);
+      //   this.setState({ ...this.state, });
+      //   console.log("sdertyuytre", this.state.User);
+      // })
       .then((response) => {
         console.log("cart items ---------------", response);
-        this.setState({ ...this.state, cartItems: response.data });
+        this.setState({
+          ...this.state,
+          cartItems: response.data,
+        });
+
         console.log("sdertyuytre", this.state.User);
       })
+
       .catch((error) => {
         console.log(error);
       });
@@ -229,6 +270,134 @@ class Services extends Component {
         this.viewCart();
 
         this.setState({ ...this.state, cartItems: response.data.message });
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => this.setState({ ...this.state, isAddLoading: false }));
+  };
+
+  buynowhandler = async (id) => {
+    const tokenID = localStorage.getItem("token");
+
+    if (!tokenID) {
+      this.setState({ ...this.state, noUser: true });
+      //  console.log(this.state.User);
+
+      const localStorageProduct = await this.state.User?.filter(
+        (item, index) => item._id === id
+      )[0];
+
+      console.log(localStorageProduct);
+
+      localStorageProduct.quantity = 1;
+      let getAllProduct = JSON.parse(localStorage.getItem("product"));
+      this.setState({ ...this.state, getAllProduct });
+
+      let findOneProduct = getAllProduct?.filter(
+        (item, index) => item._id === id
+      );
+      if (findOneProduct === undefined) {
+        findOneProduct = [];
+      }
+      console.log(findOneProduct);
+      if (findOneProduct.length > 0) {
+        console.log(findOneProduct[0]._id);
+        const Indexobj = getAllProduct.findIndex((obj) => obj._id === id);
+        //   findOneProduct[0].quantity
+        console.log(Indexobj);
+        getAllProduct[Indexobj].quantity = getAllProduct[Indexobj].quantity + 1;
+
+        localStorage.setItem("product", JSON.stringify(getAllProduct));
+        console.log(getAllProduct);
+        let totalPrice = 0;
+        let totalItems = 0;
+        for (let i = 0; i < getAllProduct.length; i++) {
+          totalPrice += getAllProduct[i].price * getAllProduct[i].quantity;
+          totalItems += getAllProduct[i].quantity;
+        }
+        console.log(totalPrice);
+        this.setState({ totalPrice: totalPrice, totalItems: totalItems });
+        console.log(this.state.totalPrice);
+      } else {
+        if (getAllProduct === null) {
+          console.log("pro null condition true");
+          getAllProduct = [];
+          getAllProduct.push(localStorageProduct);
+          localStorage.setItem("product", JSON.stringify(getAllProduct));
+          let getNewAllProduct = JSON.parse(localStorage.getItem("product"));
+          let totalPrice = 0;
+          let totalItems = 0;
+          for (let i = 0; i < getNewAllProduct.length; i++) {
+            totalPrice +=
+              getNewAllProduct[i].price * getNewAllProduct[i].quantity;
+            totalItems += getNewAllProduct[i].quantity;
+          }
+          console.log(totalPrice);
+          this.setState({ totalPrice: totalPrice, totalItems: totalItems });
+        } else {
+          console.log("pro null condition false");
+          getAllProduct.push(localStorageProduct);
+          console.log(getAllProduct);
+          localStorage.setItem("product", JSON.stringify(getAllProduct));
+          console.log(
+            this.state.User?.filter((item, index) => item._id === id)[0]
+          );
+          let totalPrice = 0;
+          let totalItems = 0;
+          for (let i = 0; i < getAllProduct.length; i++) {
+            totalPrice += getAllProduct[i].price * getAllProduct[i].quantity;
+            totalItems += getAllProduct[i].quantity;
+          }
+          console.log(totalPrice);
+          this.setState({ totalPrice: totalPrice, totalItems: totalItems });
+        }
+      }
+      console.log(findOneProduct);
+
+      // localStorage.setItem("", JSON.stringify());
+      return;
+    }
+
+    console.log(this.state.hello);
+    console.log(id);
+    // console.log(
+    //   this.state.cartItems.message?.filter(
+    //     (item, index) => item.productId._id === id
+    //   )
+    // );
+
+    let quantity = 1;
+    if (this.state.hello.message.length > 0) {
+      quantity = this.state.hello.message?.filter(
+        (item, index) => item.productId._id === id
+      )[0]
+        ? this.state.hello.message?.filter(
+            (item, index) => item.productId._id === id
+          )[0].quantity + 1
+        : 1;
+    } else {
+      quantity = 1;
+    }
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization: `${tokenID}`,
+    };
+    const data = { quantity: quantity };
+    this.setState({ ...this.state, isAddLoading: true });
+    await axios
+      .post(`${process.env.REACT_APP_APIURL}/addCart/${id}`, data, {
+        headers: headers,
+      })
+      .then((response) => {
+        console.log(response.data.message.length);
+        this.viewCart2();
+
+        this.setState({ ...this.state, hello: response.data.message });
+
+        if (response.data.message.length > 0) {
+          this.props.navigate("/viewcart");
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -463,6 +632,22 @@ class Services extends Component {
                             >
                               SUBSCRIBE
                             </button>
+                            <br />
+                            {/* <Link to="/viewcart"> */}
+                            <a href="/viewcart">
+                              <button
+                                type="submit"
+                                className="services-btn1"
+                                disabled={this.state.isAddLoading}
+                                onClick={
+                                  () => this.buynowhandler(friend._id)
+                                  // window.location.reload("/viewcart"))
+                                }
+                              >
+                                Buy Now
+                              </button>
+                            </a>
+                            {/* </Link> */}
 
                             <div
                               className="modal fade"

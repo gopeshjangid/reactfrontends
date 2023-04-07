@@ -1,6 +1,9 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+import useProfileShow from "../fetchApi/ProfileShow";
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -17,6 +20,21 @@ function loadScript(src) {
 }
 
 const GuestPayment = () => {
+  const profile = useProfileShow();
+  console.log(profile);
+
+  const location = useLocation();
+
+  const [token, setToken] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setToken(true);
+    } else {
+      setToken(false);
+    }
+  }, [location.pathname]);
+  console.log(token);
   const initialValues = {
     email: "",
     amount: "",
@@ -39,6 +57,8 @@ const GuestPayment = () => {
     e.preventDefault();
     const { email, amount, dec } = user;
 
+    const tokenID = localStorage.getItem("token");
+
     const object = {
       email: email.trim(),
       amount: amount.trim(),
@@ -52,7 +72,11 @@ const GuestPayment = () => {
       dec.trim() === "" ||
       regex1.test(email.trim()) === false
     ) {
-      setFormErrors(validate(user));
+      if (!tokenID) {
+        setFormErrors(validate(user));
+      } else {
+        setFormErrors(validation(user));
+      }
     }
 
     setIsSubmit(true);
@@ -86,11 +110,24 @@ const GuestPayment = () => {
     return errors;
   };
 
+  const validation = (values) => {
+    const errors = {};
+
+    if (!values.amount) {
+      errors.amount = "!'Please Enter Your Amount'";
+    }
+
+    if (!values.dec) {
+      errors.dec = "!'Please Enter Description'";
+    }
+    return errors;
+  };
+
   async function showGuestRazorpay() {
-    // const tokenID = localStorage.getItem("token");
+    const tokenID = localStorage.getItem("token");
     const amount = user.amount;
     console.log(amount);
-    const email = user.email;
+    const email = tokenID ? profile.email : user.email;
     console.log(email);
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
@@ -164,9 +201,11 @@ const GuestPayment = () => {
   }
 
   const GuestStripe = () => {
+    const tokenID = localStorage.getItem("token");
     const amount = user.amount;
     console.log(amount);
-    const email = user.email;
+    const email = tokenID ? profile.email : user.email;
+
     console.log(email);
     axios
       .post(`${process.env.REACT_APP_APIURL}/stripeGuestPayment`, {
@@ -186,9 +225,10 @@ const GuestPayment = () => {
   };
 
   const GuestPaypal = () => {
+    const tokenID = localStorage.getItem("token");
     const amount = user.amount;
     console.log(amount);
-    const email = user.email;
+    const email = tokenID ? profile.email : user.email;
     console.log(email);
     axios
       .post(`${process.env.REACT_APP_APIURL}/PaypalGuestPayment`, {
@@ -220,122 +260,237 @@ const GuestPayment = () => {
           </div>
 
           <div className="col-md-6 p-4">
-            <form className="" onSubmit={handleSubmit}>
-              <div>
-                <label className="as-lbl">Enter Your Email</label>
-                <input
-                  type="email"
-                  id="fname1"
-                  name="email"
-                  // value={email}
-                  onChange={handleChange}
-                  className="as-text_set border rounded bg-white"
-                />
-                <p style={{ color: "red" }}>{formErrors.email}</p>
-              </div>
-              <div>
-                <label className="as-lbl">Enter Your Amount</label>
-                <input
-                  type="number"
-                  id="fname1"
-                  name="amount"
-                  // value={amount}
-                  onChange={handleChange}
-                  className="as-text_set border rounded bg-white"
-                />
-                <p style={{ color: "red" }}>{formErrors.amount}</p>
-              </div>
-              <div>
-                <label className="as-lbl">Enter Your Description</label>
-                <textarea
-                  className="form-control m-0 w-100 bg-white   mt-2 mb-3 form-area ct_text-set1"
-                  rows="5"
-                  name="dec"
-                  id="message"
-                  placeholder="Message"
-                  onChange={handleChange}
-                ></textarea>
-                <p style={{ color: "red" }}>{formErrors.dec}</p>
-              </div>
-              {user.email.trim() === "" ||
-              user.amount.trim() === "" ||
-              user.dec.trim() === "" ? (
-                <button type="submit" className=" as-btn_set m-auto me-1">
-                  Pay Now
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  className=" as-btn_set m-auto me-1"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModalGuest"
+            {token === false ? (
+              <form className="" onSubmit={handleSubmit}>
+                <div>
+                  <label className="as-lbl">Enter Your Email</label>
+                  <input
+                    type="email"
+                    id="fname1"
+                    name="email"
+                    // value={email}
+                    onChange={handleChange}
+                    className="as-text_set border rounded bg-white"
+                  />
+                  <p style={{ color: "red" }}>{formErrors.email}</p>
+                </div>
+                <div>
+                  <label className="as-lbl">Enter Your Amount</label>
+                  <input
+                    type="number"
+                    id="fname1"
+                    name="amount"
+                    // value={amount}
+                    onChange={handleChange}
+                    className="as-text_set border rounded bg-white"
+                  />
+                  <p style={{ color: "red" }}>{formErrors.amount}</p>
+                </div>
+                <div>
+                  <label className="as-lbl">Enter Your Description</label>
+                  <textarea
+                    className="form-control m-0 w-100 bg-white   mt-2 mb-3 form-area ct_text-set1"
+                    rows="5"
+                    name="dec"
+                    id="message"
+                    placeholder="Message"
+                    onChange={handleChange}
+                  ></textarea>
+                  <p style={{ color: "red" }}>{formErrors.dec}</p>
+                </div>
+                {user.email.trim() === "" ||
+                user.amount.trim() === "" ||
+                user.dec.trim() === "" ? (
+                  <button type="submit" className=" as-btn_set m-auto me-1">
+                    Pay Now
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className=" as-btn_set m-auto me-1"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModalGuest"
+                  >
+                    Pay Now
+                  </button>
+                )}
+                <div
+                  className="modal fade"
+                  id="exampleModalGuest"
+                  tabIndex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
                 >
-                  Pay Now
-                </button>
-              )}
-              <div
-                className="modal fade"
-                id="exampleModalGuest"
-                tabIndex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div className="modal-dialog">
-                  <div className="modal-content border-0">
-                    <div
-                      className="modal-header border-0"
-                      style={{ background: "rgb(3, 151, 156)" }}
-                    >
-                      <h1
-                        className="modal-title fs-5 text-white"
-                        id="exampleModalLabel"
+                  <div className="modal-dialog">
+                    <div className="modal-content border-0">
+                      <div
+                        className="modal-header border-0"
+                        style={{ background: "rgb(3, 151, 156)" }}
                       >
-                        GUEST PAYMENT
-                      </h1>
-                      <button
-                        type="button"
-                        className="bg-transparent border-0"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      >
-                        <i className="fa-solid fa-xmark fs-3 text-white"></i>
-                      </button>
-                    </div>
-                    <div className="modal-body text-center py-5">
-                      {" "}
-                      <button
-                        type="button"
-                        onClick={() => GuestStripe()}
-                        className="btn Pay me-1"
-                      >
-                        Pay Stripe
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => GuestPaypal()}
-                        className="btn Pay ms-1"
-                      >
-                        Pay Paypal
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => showGuestRazorpay()}
-                        className="btn Pay ms-1"
-                      >
-                        Pay RazorPay
-                      </button>
+                        <h1
+                          className="modal-title fs-5 text-white"
+                          id="exampleModalLabel"
+                        >
+                          GUEST PAYMENT
+                        </h1>
+                        <button
+                          type="button"
+                          className="bg-transparent border-0"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                        </button>
+                      </div>
+                      <div className="modal-body text-center py-5">
+                        {" "}
+                        <button
+                          type="button"
+                          onClick={() => GuestStripe()}
+                          className="btn Pay me-1"
+                        >
+                          Pay Stripe
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => GuestPaypal()}
+                          className="btn Pay ms-1"
+                        >
+                          Pay Paypal
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => showGuestRazorpay()}
+                          className="btn Pay ms-1"
+                        >
+                          Pay RazorPay
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              {/* {message === "successfully updated" ? (
+                {/* {message === "successfully updated" ? (
         <span className="Success" style={{ color: "#03979c" }}>
           {message}
         </span>
       ) : (
         <span className="Success text danger">{message}</span>
       )} */}
-            </form>
+              </form>
+            ) : (
+              <form className="" onSubmit={handleSubmit}>
+                <div>
+                  <label className="as-lbl">Enter Your Email</label>
+                  <input
+                    type="email"
+                    id="fname1"
+                    value={profile.email}
+                    onChange={handleChange}
+                    className="as-text_set border rounded bg-white"
+                  />
+                </div>
+                <div>
+                  <label className="as-lbl">Enter Your Amount</label>
+                  <input
+                    type="number"
+                    id="fname1"
+                    name="amount"
+                    // value={amount}
+                    onChange={handleChange}
+                    className="as-text_set border rounded bg-white"
+                  />
+                  <p style={{ color: "red" }}>{formErrors.amount}</p>
+                </div>
+                <div>
+                  <label className="as-lbl">Enter Your Description</label>
+                  <textarea
+                    className="form-control m-0 w-100 bg-white   mt-2 mb-3 form-area ct_text-set1"
+                    rows="5"
+                    name="dec"
+                    id="message"
+                    placeholder="Message"
+                    onChange={handleChange}
+                  ></textarea>
+                  <p style={{ color: "red" }}>{formErrors.dec}</p>
+                </div>
+                {user.amount.trim() === "" || user.dec.trim() === "" ? (
+                  <button type="submit" className=" as-btn_set m-auto me-1">
+                    Pay Now
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className=" as-btn_set m-auto me-1"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModalGuest"
+                  >
+                    Pay Now
+                  </button>
+                )}
+                <div
+                  className="modal fade"
+                  id="exampleModalGuest"
+                  tabIndex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog">
+                    <div className="modal-content border-0">
+                      <div
+                        className="modal-header border-0"
+                        style={{ background: "rgb(3, 151, 156)" }}
+                      >
+                        <h1
+                          className="modal-title fs-5 text-white"
+                          id="exampleModalLabel"
+                        >
+                          GUEST PAYMENT
+                        </h1>
+                        <button
+                          type="button"
+                          className="bg-transparent border-0"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                        </button>
+                      </div>
+                      <div className="modal-body text-center py-5">
+                        {" "}
+                        <button
+                          type="button"
+                          onClick={() => GuestStripe()}
+                          className="btn Pay me-1"
+                        >
+                          Pay Stripe
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => GuestPaypal()}
+                          className="btn Pay ms-1"
+                        >
+                          Pay Paypal
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => showGuestRazorpay()}
+                          className="btn Pay ms-1"
+                        >
+                          Pay RazorPay
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* {message === "successfully updated" ? (
+        <span className="Success" style={{ color: "#03979c" }}>
+          {message}
+        </span>
+      ) : (
+        <span className="Success text danger">{message}</span>
+      )} */}
+              </form>
+            )}
           </div>
         </div>
       </div>

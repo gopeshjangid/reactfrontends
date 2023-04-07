@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import PricesGetintouch from "./PricesGetintouch";
+import GetinTouch from "./GetinTouch";
 
 const Prices = () => {
   const [price, setPrice] = useState(0.0);
@@ -33,7 +33,7 @@ const Prices = () => {
 
             <div className="col-md-6">
               <section className="form_sec">
-                <PricesGetintouch />
+                <GetinTouch />
               </section>
             </div>
           </div>

@@ -1,8 +1,24 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import useProfileShow from "../fetchApi/ProfileShow";
 
 const ReviewGetintouch = () => {
+  const profile = useProfileShow();
+  console.log(profile);
+
+  const location = useLocation();
+
+  const [token, setToken] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setToken(true);
+    } else {
+      setToken(false);
+    }
+  }, [location.pathname]);
+  console.log(token);
   const initialValues = {
     username: "",
     email: "",
@@ -77,6 +93,8 @@ const ReviewGetintouch = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const tokenID = localStorage.getItem("token");
     const {
       username,
       email,
@@ -84,72 +102,122 @@ const ReviewGetintouch = () => {
       number,
       message,
       contentType,
-
       countryCode,
     } = User;
 
-    const object = {
-      username: username.trim(),
-      email: email.trim(),
-
-      password: password.trim(),
-      number: number.trim(),
-      message: message.trim(),
-      contentType: contentType.trim(),
-
-      countryCode: countryCode.trim(),
-    };
-
-    setFormErrors(validate(User));
-
+    if (!tokenID) {
+      setFormErrors(validate(User));
+    } else {
+      setFormErrors(validation(User));
+    }
     // add entity - POST
     // e.preventDefault();
     // creates entity
 
     const passwordLength1 = /^.{6,}$/;
     const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
-    if (
-      username.trim() === "" ||
-      email.trim() === "" ||
-      password.trim() === "" ||
-      number.trim() === "" ||
-      message.trim() === "" ||
-      contentType.trim() === "" ||
-      countryCode.trim() === "" ||
-      regex1.test(email.trim()) === false ||
-      passwordLength1.test(password.trim()) === false
-    ) {
-      return;
-    } else {
-      fetch(`${process.env.REACT_APP_APIURL}/getInTouch`, {
-        method: "POST",
-        mode: "cors",
-        body: JSON.stringify(object),
-        headers: {
-          "Content-type": "application/json",
-          Accept: "application/json",
-        },
-      })
-        .then((response) => response.json(console.log(response)))
 
-        .then((json) => {
-          setData({
-            User: json,
-          });
-          if (json.message === "successfully login and order") {
-            localStorage.setItem("token", json.token);
-            navigate("/dashboard");
-          }
-
-          // setMessage(json.message)
-          console.log(json);
+    if (!tokenID) {
+      if (
+        username.trim() === "" ||
+        email.trim() === "" ||
+        password.trim() === "" ||
+        number.trim() === "" ||
+        message.trim() === "" ||
+        contentType.trim() === "" ||
+        countryCode.trim() === "" ||
+        regex1.test(email.trim()) === false ||
+        passwordLength1.test(password.trim()) === false
+      ) {
+        return;
+      } else {
+        const object = {
+          username: username.trim(),
+          email: email.trim(),
+          password: password.trim(),
+          number: number.trim(),
+          message: message.trim(),
+          contentType: contentType.trim(),
+          countryCode: countryCode.trim(),
+        };
+        fetch(`${process.env.REACT_APP_APIURL}/getInTouch`, {
+          method: "POST",
+          mode: "cors",
+          body: JSON.stringify(object),
+          headers: {
+            "Content-type": "application/json",
+            Accept: "application/json",
+          },
         })
-        .catch((err) => {
-          console.log(err);
-        });
-      // setState(valid(json.message));
+          .then((response) => response.json(console.log(response)))
 
-      setIsSubmit(true);
+          .then((json) => {
+            setData({
+              User: json,
+            });
+            if (json.message === "successfully login and order") {
+              localStorage.setItem("token", json.token);
+              navigate("/dashboard");
+            }
+
+            // setMessage(json.message)
+            console.log(json);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        // setState(valid(json.message));
+
+        setIsSubmit(true);
+      }
+    } else {
+      if (
+        number.trim() === "" ||
+        message.trim() === "" ||
+        contentType.trim() === "" ||
+        countryCode.trim() === ""
+      ) {
+        return;
+      } else {
+        const hello = {
+          username: `${profile.username}`,
+          email: `${profile.email}`,
+          password: `${profile.password}`,
+          number: number.trim(),
+          message: message.trim(),
+          contentType: contentType.trim(),
+          countryCode: countryCode.trim(),
+        };
+        fetch(`${process.env.REACT_APP_APIURL}/getInTouch`, {
+          method: "POST",
+          mode: "cors",
+          body: JSON.stringify(hello),
+          headers: {
+            "Content-type": "application/json",
+            Accept: "application/json",
+          },
+        })
+          .then((response) => response.json(console.log(response)))
+
+          .then((json) => {
+            setData({
+              User: json,
+            });
+            if (json.message === "successfully login and order") {
+              localStorage.setItem("token", json.token);
+              navigate("/dashboard");
+            }
+
+            // setMessage(json.message)
+            console.log(json);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        // setState(valid(json.message));
+
+        setIsSubmit(true);
+      }
     }
   };
 
@@ -195,17 +263,11 @@ const ReviewGetintouch = () => {
     if (!values.countryCode) {
       errors.countryCode = "!'Please Choose your countrycode'";
     }
-    // else if (values.number.length < 10) {
-    //   errors.number = "!'Please Enter 10 Character'";
-    // } else if (values.number.length > 10) {
-    //   errors.number = "!'Please Enter 10 Character'";
-    // }
+
     if (!values.message) {
-      errors.message = "!'Please Enter Your message'";
+      errors.message = "!'Please Enter Your deadline'";
     }
-    if (!values.expertLevel) {
-      errors.expertLevel = "!'Please Choose your Expert Level'";
-    }
+
     if (!values.contentType) {
       errors.contentType = "!'Please Choose your AllType'";
     }
@@ -213,101 +275,419 @@ const ReviewGetintouch = () => {
     return errors;
   };
 
+  const validation = (values) => {
+    const errors = {};
+
+    if (!values.number) {
+      errors.number = "!'Please Enter Your Number'";
+    }
+    if (!values.countryCode) {
+      errors.countryCode = "!'Please Choose your countrycode'";
+    }
+
+    if (!values.message) {
+      errors.message = "!'Please Enter Your Message'";
+    }
+
+    if (!values.contentType) {
+      errors.contentType = "!'Please Choose your AllType'";
+    }
+
+    return errors;
+  };
+
+  // const {
+  //   username,
+  //   email,
+  //   password,
+  //   number,
+  //   message,
+  //   contentType,
+
+  //   countryCode,
+  // } = User;
+
+  // const object = {
+  //   username: username.trim(),
+  //   email: email.trim(),
+
+  //   password: password.trim(),
+  //   number: number.trim(),
+  //   message: message.trim(),
+  //   contentType: contentType.trim(),
+
+  //   countryCode: countryCode.trim(),
+  // };
+
+  // // add entity - POST
+  // // e.preventDefault();
+  // // creates entity
+
+  // const passwordLength1 = /^.{6,}$/;
+  // const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
+  // if (
+  //   username.trim() === "" ||
+  //   email.trim() === "" ||
+  //   password.trim() === "" ||
+  //   number.trim() === "" ||
+  //   message.trim() === "" ||
+  //   contentType.trim() === "" ||
+  //   countryCode.trim() === "" ||
+  //   regex1.test(email.trim()) === false ||
+  //   passwordLength1.test(password.trim()) === false
+  // ) {
+  //   return;
+  // } else {
+  //   fetch(`${process.env.REACT_APP_APIURL}/getInTouch`, {
+  //     method: "POST",
+  //     mode: "cors",
+  //     body: JSON.stringify(object),
+  //     headers: {
+  //       "Content-type": "application/json",
+  //       Accept: "application/json",
+  //     },
+  //   })
+  //     .then((response) => response.json(console.log(response)))
+
+  //     .then((json) => {
+  //       setData({
+  //         User: json,
+  //       });
+  //       if (json.message === "successfully login and order") {
+  //         localStorage.setItem("token", json.token);
+  //         navigate("/dashboard");
+  //       }
+
+  //       // setMessage(json.message)
+  //       console.log(json);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  //   // setState(valid(json.message));
+
+  //   setIsSubmit(true);
+  // }
+
+  // useEffect(() => {
+  // 	const res = data?.User?.error;
+  // 	setError(res);
+
+  // }, [])
+
+  // useEffect(() => {
+  //   const res = data?.User?.message;
+  //   setMessage(res);
+  // }, [data]);
+
+  // useEffect(() => {
+  //   console.log(formErrors);
+  //   if (Object.keys(formErrors).length === 0 && isSubmit) {
+  //     console.log(User);
+  //     // fetchData()
+  //   }
+  // }, [formErrors, isSubmit, User]);
+  // const validate = (values) => {
+  //   const errors = {};
+
+  //   const passwordLength = /^.{6,}$/;
+  //   const regex = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
+  //   if (!values.username) {
+  //     errors.username = "!'Please Enter Your Name'";
+  //   }
+  //   if (!values.email) {
+  //     errors.email = "!'Please Enter Your Email'";
+  //   } else if (!regex.test(values.email)) {
+  //     errors.email = "!'This is not Email Format'";
+  //   }
+  //   if (!values.password) {
+  //     errors.password = "!'Please Enter Your Password'";
+  //   } else if (!passwordLength.test(values.password)) {
+  //     errors.password = "!'Please enter maximum 6 character'";
+  //   }
+  //   if (!values.number) {
+  //     errors.number = "!'Please Enter Your Number'";
+  //   }
+  //   if (!values.countryCode) {
+  //     errors.countryCode = "!'Please Choose your countrycode'";
+  //   }
+  //   // else if (values.number.length < 10) {
+  //   //   errors.number = "!'Please Enter 10 Character'";
+  //   // } else if (values.number.length > 10) {
+  //   //   errors.number = "!'Please Enter 10 Character'";
+  //   // }
+  //   if (!values.message) {
+  //     errors.message = "!'Please Enter Your message'";
+  //   }
+  //   if (!values.expertLevel) {
+  //     errors.expertLevel = "!'Please Choose your Expert Level'";
+  //   }
+  //   if (!values.contentType) {
+  //     errors.contentType = "!'Please Choose your AllType'";
+  //   }
+
+  //   return errors;
+  // };
+
   return (
-    <form
-      style={{ padding: "4%" }}
-      className="text-center"
-      onSubmit={handleSubmit}
-    >
-      <h2 className="form_sec-h2">
-        Get In <span className="spa">Touch </span>
-      </h2>
-      <div className="form-inputs d-flex space-between">
-        <div className="Home-Name me-1">
-          <input
-            type="text"
-            name="username"
-            placeholder="Name"
-            onChange={handleChange}
-            className="text_set ms-0 me-0 mt-0"
-          />
-          <p className="mb-0" style={{ color: "red" }}>
-            {formErrors.username}
-          </p>
-        </div>
+    // <form
+    //   style={{ padding: "4%" }}
+    //   className="text-center"
+    //   onSubmit={handleSubmit}
+    // >
+    //   <h2 className="form_sec-h2">
+    //     Get In <span className="spa">Touch </span>
+    //   </h2>
+    //   <div className="form-inputs d-flex space-between">
+    //     <div className="Home-Name me-1">
+    //       <input
+    //         type="text"
+    //         name="username"
+    //         placeholder="Name"
+    //         onChange={handleChange}
+    //         className="text_set ms-0 me-0 mt-0"
+    //       />
+    //       <p className="mb-0" style={{ color: "red" }}>
+    //         {formErrors.username}
+    //       </p>
+    //     </div>
 
-        <div className="Home-Name ms-1">
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            onChange={handleChange}
-            className="text_set ms-0 mt-0"
-          />
-          <p className="mb-0" style={{ color: "red" }}>
-            {formErrors.email}
-          </p>
-        </div>
-      </div>
-      <div className="Home-Name">
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={handleChange}
-          className="text_set ms-0 mt-0"
-        />
-      </div>
-      <p className="mb-0" style={{ color: "red" }}>
-        {formErrors.password}
-      </p>
-      <div className="form-inputs d-flex space-between">
-        <div className="Home-Name me-1">
-          <div className=" position-relative">
-            <select
-              className=" position-absolute h-100 border-0"
-              style={{
-                top: "0px",
-                width: "20%",
-                cursor: "pointer",
-              }}
-              name="countryCode"
-              onChange={handleChange}
-              // name="name"
-              required
-            >
-              <option disabled selected hidden>
-                +00
-              </option>
-              {country?.map((countryitem, value) => {
-                return (
-                  <>
-                    <option value={value}>
-                      {countryitem.dial_code}
-                      &nbsp;{countryitem.name}
-                    </option>
-                  </>
-                );
-              })}
-            </select>
+    //     <div className="Home-Name ms-1">
+    //       <input
+    //         type="email"
+    //         name="email"
+    //         placeholder="Email"
+    //         onChange={handleChange}
+    //         className="text_set ms-0 mt-0"
+    //       />
+    //       <p className="mb-0" style={{ color: "red" }}>
+    //         {formErrors.email}
+    //       </p>
+    //     </div>
+    //   </div>
+    //   <div className="Home-Name">
+    //     <input
+    //       type="password"
+    //       name="password"
+    //       placeholder="Password"
+    //       onChange={handleChange}
+    //       className="text_set ms-0 mt-0"
+    //     />
+    //   </div>
+    //   <p className="mb-0" style={{ color: "red" }}>
+    //     {formErrors.password}
+    //   </p>
+    //   <div className="form-inputs d-flex space-between">
+    //     <div className="Home-Name me-1">
+    //       <div className=" position-relative">
+    //         <select
+    //           className=" position-absolute h-100 border-0"
+    //           style={{
+    //             top: "0px",
+    //             width: "20%",
+    //             cursor: "pointer",
+    //           }}
+    //           name="countryCode"
+    //           onChange={handleChange}
+    //           // name="name"
+    //           required
+    //         >
+    //           <option disabled selected hidden>
+    //             +00
+    //           </option>
+    //           {country?.map((countryitem, value) => {
+    //             return (
+    //               <>
+    //                 <option value={value}>
+    //                   {countryitem.dial_code}
+    //                   &nbsp;{countryitem.name}
+    //                 </option>
+    //               </>
+    //             );
+    //           })}
+    //         </select>
 
+    //         <input
+    //           type="text"
+    //           style={{ paddingLeft: "60px" }}
+    //           name="number"
+    //           placeholder="Number"
+    //           onChange={handleChange}
+    //           className="text_set ms-0 me-0 mt-0"
+    //           aria-label="Username"
+    //           aria-describedby="basic-addon1"
+    //         />
+    //       </div>
+
+    //       <p className="mb-0" style={{ color: "red" }}>
+    //         {formErrors.countryCode}
+    //       </p>
+
+    //       {/* <P className="mb-0"honeInput
+    //         country={"India"}
+    //         enableSearch={true}
+    //         value={phone}
+    //         name="number"
+    //         className="w-100 me-1"
+    //         onChange={(phone) => setPhone(phone)}
+    //       /> */}
+    //       <p className="mb-0" style={{ color: "red" }}>
+    //         {formErrors.number}
+    //       </p>
+    //     </div>
+    //     <div className="Home-Name ms-1">
+    //       <select
+    //         aria-label="Default select example"
+    //         className="form-select rounded-0 text_set ms-0 mt-0"
+    //         onChange={handleChange}
+    //         name="contentType"
+    //         style={{
+    //           cursor: "pointer",
+    //         }}
+    //         required
+    //       >
+    //         <option disabled selected hidden>
+    //           Content Type
+    //         </option>
+    //         {Alltype?.map((Alltypeitem, value) => {
+    //           return (
+    //             <>
+    //               <option value={value}>{Alltypeitem.contentType}</option>
+    //             </>
+    //           );
+    //         })}
+    //       </select>
+
+    //       <p className="mb-0" style={{ color: "red" }}>
+    //         {formErrors.contentType}
+    //       </p>
+    //     </div>
+    //   </div>
+    //   <div className="form-inputs d-flex space-between">
+    //     <div className="Home-Name">
+    //       <textarea
+    //         className="form-control rounded-0 form-area ms-0 mt-0 text_set"
+    //         rows="5"
+    //         id="message"
+    //         placeholder="Message"
+    //         onChange={handleChange}
+    //         name="message"
+    //       ></textarea>
+
+    //       <p className="mb-0" style={{ color: "red" }}>
+    //         {formErrors.message}
+    //       </p>
+    //     </div>
+    //   </div>
+    //   <button type="submit" className="btn_set1 ms-0">
+    //     Register
+    //   </button>{" "}
+    //   {message === "successfully login and order" ? (
+    //     <h3 className="Success text-center" style={{ color: "#03979c" }}>
+    //       {message}
+    //     </h3>
+    //   ) : (
+    //     <h3 className="Success text-danger text-center">{message}</h3>
+    //   )}
+    //   {/* <Link to="/Login"><button type="button" className="btn_set2" onClick={(e) => this.create(e)}>Login</button></Link> */}
+    // </form>
+
+    <>
+      {token === false ? (
+        <form
+          style={{ padding: "4%" }}
+          className="text-center"
+          onSubmit={handleSubmit}
+        >
+          <h2 className="form_sec-h2">
+            Get In <span className="spa">Touch </span>
+          </h2>
+          <div className="form-inputs d-flex space-between">
+            <div className="Home-Name me-1">
+              <input
+                type="text"
+                name="username"
+                placeholder="Name"
+                onChange={handleChange}
+                className="text_set ms-0 me-0 mt-0"
+              />
+              <p className="mb-0" style={{ color: "red" }}>
+                {formErrors.username}
+              </p>
+            </div>
+
+            <div className="Home-Name ms-1">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                onChange={handleChange}
+                className="text_set ms-0 mt-0"
+              />
+              <p className="mb-0" style={{ color: "red" }}>
+                {formErrors.email}
+              </p>
+            </div>
+          </div>
+          <div className="Home-Name">
             <input
-              type="text"
-              style={{ paddingLeft: "60px" }}
-              name="number"
-              placeholder="Number"
+              type="password"
+              name="password"
+              placeholder="Password"
               onChange={handleChange}
-              className="text_set ms-0 me-0 mt-0"
-              aria-label="Username"
-              aria-describedby="basic-addon1"
+              className="text_set ms-0 mt-0"
             />
           </div>
-
           <p className="mb-0" style={{ color: "red" }}>
-            {formErrors.countryCode}
+            {formErrors.password}
           </p>
+          <div className="form-inputs d-flex space-between">
+            <div className="Home-Name me-1">
+              <div className=" position-relative">
+                <select
+                  className=" position-absolute h-100 border-0"
+                  style={{
+                    top: "0px",
+                    width: "20%",
+                    cursor: "pointer",
+                  }}
+                  name="countryCode"
+                  onChange={handleChange}
+                  // name="name"
+                  required
+                >
+                  <option disabled selected hidden>
+                    +00
+                  </option>
+                  {country?.map((countryitem, value) => {
+                    return (
+                      <>
+                        <option value={value}>
+                          {countryitem.dial_code}
+                          &nbsp;{countryitem.name}
+                        </option>
+                      </>
+                    );
+                  })}
+                </select>
 
-          {/* <P className="mb-0"honeInput
+                <input
+                  type="text"
+                  style={{ paddingLeft: "60px" }}
+                  name="number"
+                  placeholder="Number"
+                  onChange={handleChange}
+                  className="text_set ms-0 me-0 mt-0"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+
+              <p className="mb-0" style={{ color: "red" }}>
+                {formErrors.countryCode}
+              </p>
+
+              {/* <P className="mb-0"honeInput
             country={"India"}
             enableSearch={true}
             value={phone}
@@ -315,66 +695,233 @@ const ReviewGetintouch = () => {
             className="w-100 me-1"
             onChange={(phone) => setPhone(phone)}
           /> */}
-          <p className="mb-0" style={{ color: "red" }}>
-            {formErrors.number}
-          </p>
-        </div>
-        <div className="Home-Name ms-1">
-          <select
-            aria-label="Default select example"
-            className="form-select rounded-0 text_set ms-0 mt-0"
-            onChange={handleChange}
-            name="contentType"
-            style={{
-              cursor: "pointer",
-            }}
-            required
-          >
-            <option disabled selected hidden>
-              Content Type
-            </option>
-            {Alltype?.map((Alltypeitem, value) => {
-              return (
-                <>
-                  <option value={value}>{Alltypeitem.contentType}</option>
-                </>
-              );
-            })}
-          </select>
+              <p className="mb-0" style={{ color: "red" }}>
+                {formErrors.number}
+              </p>
+            </div>
+            <div className="Home-Name ms-1">
+              <select
+                aria-label="Default select example"
+                className="form-select rounded-0 text_set ms-0 mt-0"
+                onChange={handleChange}
+                name="contentType"
+                style={{
+                  cursor: "pointer",
+                }}
+                required
+              >
+                <option disabled selected hidden>
+                  Content Type
+                </option>
+                {Alltype?.map((Alltypeitem, value) => {
+                  return (
+                    <>
+                      <option value={value}>{Alltypeitem.contentType}</option>
+                    </>
+                  );
+                })}
+              </select>
 
-          <p className="mb-0" style={{ color: "red" }}>
-            {formErrors.contentType}
-          </p>
-        </div>
-      </div>
-      <div className="form-inputs d-flex space-between">
-        <div className="Home-Name">
-          <textarea
-            className="form-control rounded-0 form-area ms-0 mt-0 text_set"
-            rows="5"
-            id="message"
-            placeholder="Message"
-            onChange={handleChange}
-            name="message"
-          ></textarea>
+              <p className="mb-0" style={{ color: "red" }}>
+                {formErrors.contentType}
+              </p>
+            </div>
+          </div>
+          <div className="form-inputs d-flex space-between">
+            <div className="Home-Name">
+              <textarea
+                className="form-control rounded-0 form-area ms-0 mt-0 text_set"
+                rows="5"
+                id="message"
+                placeholder="Message"
+                onChange={handleChange}
+                name="message"
+              ></textarea>
 
-          <p className="mb-0" style={{ color: "red" }}>
-            {formErrors.message}
-          </p>
-        </div>
-      </div>
-      <button type="submit" className="btn_set1 ms-0">
-        Register
-      </button>{" "}
-      {message === "successfully login and order" ? (
-        <h3 className="Success text-center" style={{ color: "#03979c" }}>
-          {message}
-        </h3>
+              <p className="mb-0" style={{ color: "red" }}>
+                {formErrors.message}
+              </p>
+            </div>
+          </div>
+          <button type="submit" className="btn_set1 ms-0">
+            Register
+          </button>{" "}
+          {message === "successfully login and order" ? (
+            <h3 className="Success text-center" style={{ color: "#03979c" }}>
+              {message}
+            </h3>
+          ) : (
+            <h3 className="Success text-danger text-center">{message}</h3>
+          )}
+          {/* <Link to="/Login"><button type="button" className="btn_set2" onClick={(e) => this.create(e)}>Login</button></Link> */}
+        </form>
       ) : (
-        <h3 className="Success text-danger text-center">{message}</h3>
+        <form
+          style={{ padding: "4%" }}
+          className="text-center"
+          onSubmit={handleSubmit}
+        >
+          <h2 className="form_sec-h2">
+            Get In <span className="spa">Touch </span>
+          </h2>
+          <div className="form-inputs d-flex space-between">
+            <div className="Home-Name me-1">
+              <input
+                type="text"
+                name="username"
+                placeholder="Name"
+                value={profile.username}
+                onChange={handleChange}
+                className="text_set ms-0 me-0 mt-0"
+              />
+              <p className="mb-0" style={{ color: "red" }}>
+                {formErrors.username}
+              </p>
+            </div>
+
+            <div className="Home-Name ms-1">
+              <input
+                type="email"
+                name="email"
+                value={profile.email}
+                placeholder="Email"
+                onChange={handleChange}
+                className="text_set ms-0 mt-0"
+              />
+              <p className="mb-0" style={{ color: "red" }}>
+                {formErrors.email}
+              </p>
+            </div>
+          </div>
+          <div className="Home-Name">
+            <input
+              type="password"
+              name="password"
+              value={profile.password}
+              placeholder="Password"
+              onChange={handleChange}
+              className="text_set ms-0 mt-0"
+            />
+          </div>
+          <p className="mb-0" style={{ color: "red" }}>
+            {formErrors.password}
+          </p>
+          <div className="form-inputs d-flex space-between">
+            <div className="Home-Name me-1">
+              <div className=" position-relative">
+                <select
+                  className=" position-absolute h-100 border-0"
+                  style={{
+                    top: "0px",
+                    width: "20%",
+                    cursor: "pointer",
+                  }}
+                  name="countryCode"
+                  onChange={handleChange}
+                  // name="name"
+                  required
+                >
+                  <option disabled selected hidden>
+                    +00
+                  </option>
+                  {country?.map((countryitem, value) => {
+                    return (
+                      <>
+                        <option value={value}>
+                          {countryitem.dial_code}
+                          &nbsp;{countryitem.name}
+                        </option>
+                      </>
+                    );
+                  })}
+                </select>
+
+                <input
+                  type="text"
+                  style={{ paddingLeft: "60px" }}
+                  name="number"
+                  placeholder="Number"
+                  onChange={handleChange}
+                  className="text_set ms-0 me-0 mt-0"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+
+              <p className="mb-0" style={{ color: "red" }}>
+                {formErrors.countryCode}
+              </p>
+
+              {/* <P className="mb-0"honeInput
+            country={"India"}
+            enableSearch={true}
+            value={phone}
+            name="number"
+            className="w-100 me-1"
+            onChange={(phone) => setPhone(phone)}
+          /> */}
+              <p className="mb-0" style={{ color: "red" }}>
+                {formErrors.number}
+              </p>
+            </div>
+            <div className="Home-Name ms-1">
+              <select
+                aria-label="Default select example"
+                className="form-select rounded-0 text_set ms-0 mt-0"
+                onChange={handleChange}
+                name="contentType"
+                style={{
+                  cursor: "pointer",
+                }}
+                required
+              >
+                <option disabled selected hidden>
+                  Content Type
+                </option>
+                {Alltype?.map((Alltypeitem, value) => {
+                  return (
+                    <>
+                      <option value={value}>{Alltypeitem.contentType}</option>
+                    </>
+                  );
+                })}
+              </select>
+
+              <p className="mb-0" style={{ color: "red" }}>
+                {formErrors.contentType}
+              </p>
+            </div>
+          </div>
+          <div className="form-inputs d-flex space-between">
+            <div className="Home-Name">
+              <textarea
+                className="form-control rounded-0 form-area ms-0 mt-0 text_set"
+                rows="5"
+                id="message"
+                placeholder="Message"
+                onChange={handleChange}
+                name="message"
+              ></textarea>
+
+              <p className="mb-0" style={{ color: "red" }}>
+                {formErrors.message}
+              </p>
+            </div>
+          </div>
+          <button type="submit" className="btn_set1 ms-0">
+            Register
+          </button>{" "}
+          {message === "successfully login and order" ? (
+            <h3 className="Success text-center" style={{ color: "#03979c" }}>
+              {message}
+            </h3>
+          ) : (
+            <h3 className="Success text-danger text-center">{message}</h3>
+          )}
+          {/* <Link to="/Login"><button type="button" className="btn_set2" onClick={(e) => this.create(e)}>Login</button></Link> */}
+        </form>
       )}
-      {/* <Link to="/Login"><button type="button" className="btn_set2" onClick={(e) => this.create(e)}>Login</button></Link> */}
-    </form>
+    </>
   );
 };
 

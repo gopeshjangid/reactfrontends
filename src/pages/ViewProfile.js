@@ -135,12 +135,11 @@ const ViewProfile = () => {
   const initialValues = {
     username: "",
     email: "",
-    password: "",
   };
 
   const [Users, setUsers] = useState(initialValues);
   const [Data, setData] = useState([]);
-  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState();
 
   // const [value, setValue] = useState();
@@ -170,7 +169,7 @@ const ViewProfile = () => {
       )
       .then((json) => {
         setData(json);
-        setUserName(json.data.username);
+        setEmail(json.data.email);
         console.log(Users);
       })
       .catch((err) => {
@@ -193,7 +192,7 @@ const ViewProfile = () => {
     fetch(`${process.env.REACT_APP_APIURL}/updateProfile`, {
       method: "POST",
       mode: "cors",
-      body: JSON.stringify({ NewUserName: userName }),
+      body: JSON.stringify({ newEmail: email }),
       headers: {
         "Content-type": "application/json",
         Authorization: `${tokenId}`,
@@ -271,29 +270,29 @@ const ViewProfile = () => {
             </h5>
             <div className="container tab-pane">
               <br />
-              <div className="row ">
+              <div className="row  align-items-center">
                 <h3 className="as-h3">Set Your Personal Info</h3>
                 <div className="col-md-4 text-center">
-                  <img
-                    src="writer/img/Mira-Whedon.webp"
-                    alt="Mira-Whedon"
-                    className="team_sec-img"
-                  />
-                  <p className="">
-                    <Link to="/">Edit</Link> <Link to="/">Delete</Link>
-                  </p>
+                  <div className="w-50 m-auto ">
+                    <img
+                      src="writer/img/profile-icon-png.png"
+                      alt="Mira-Whedon"
+                      className="team_sec-img w-100 mt-0"
+                    />
+                  </div>
+                  <p className="">{/* <Link to="/">Edit</Link> */}</p>
                 </div>
                 <div className="col-md-7 mb-5">
                   <form onSubmit={handleSubmit}>
                     <div className="me-3">
-                      <label className="as-lbl">FullName</label>
+                      <label className="as-lbl"> Username</label>
                       <input
                         type="text"
                         id="fname1"
                         name="username"
-                        onChange={(e) => setUserName(e.target.value)}
                         className="as-text_set"
-                        value={userName}
+                        value={Data?.data?.username}
+                        disabled
                       />
                       {/* <p style={{ color: "red" }}>{formErrors.username}</p> */}
                     </div>
@@ -303,9 +302,10 @@ const ViewProfile = () => {
                       <input
                         type="text"
                         id="fname2"
+                        onChange={(e) => setEmail(e.target.value)}
                         name="email"
                         className="as-text_set"
-                        value={Data?.data?.email}
+                        value={email}
                       />
                     </div>
 

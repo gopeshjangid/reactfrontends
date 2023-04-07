@@ -182,6 +182,14 @@ const Chat = ({ orderId, orderName }) => {
     selectedChatCompare = selectedChat;
   }, [chatId, selectedChat]);
 
+  var message = document.getElementById("chatInput");
+  message?.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.getElementById("sendMessage").click();
+    }
+  });
+
   const messageSendHandler = (e) => {
     e.preventDefault();
 
@@ -244,7 +252,7 @@ const Chat = ({ orderId, orderName }) => {
         setSelectedImage(false);
         setPdfselected(false);
         setMessageText("");
-        document.getElementById("fileInput").value = "";
+        document.getElementById("chatInput").value = "";
         setLoad(false);
       })
 
@@ -322,11 +330,11 @@ const Chat = ({ orderId, orderName }) => {
         </div>
       </div>
 
-      <form className="chat_msg" onSubmit={messageSendHandler}>
+      <form className="chat_msg">
         <textarea
           className="form-control chat_cm"
           rows="3"
-          // id="chatInput"
+          id="chatInput"
           placeholder="type here...."
           name="text"
           value={messageText}
@@ -336,7 +344,11 @@ const Chat = ({ orderId, orderName }) => {
           {/* {load ? ( */}
           {/* <button className=" border-0   text-white chat_s_btn">SEND</button> */}
           {/* ) : ( */}
-          <button type="submit" className=" border-0 text-white chat_s_btn">
+          <button
+            id="sendMessage"
+            onClick={messageSendHandler}
+            className=" border-0 text-white chat_s_btn"
+          >
             SEND
           </button>
           {/* )} */}
@@ -347,7 +359,7 @@ const Chat = ({ orderId, orderName }) => {
               style={{ cursor: "pointer" }}
               name="file"
               className="choose-file"
-              id="fileInput"
+              id="chatInput"
             />
           </div>
         </div>

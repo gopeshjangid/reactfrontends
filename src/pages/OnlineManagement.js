@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import useBlogData from "../fetchApi/BlogData";
 
 import Loader from "./Loader";
 let urlApi = `${process.env.REACT_APP_APIURL}`;
@@ -10,6 +11,8 @@ let urlApi = `${process.env.REACT_APP_APIURL}`;
 console.log(`${process.env.REACT_APP_APIURL}`);
 
 const OnlineManagement = () => {
+  const Blogs = useBlogData();
+
   const { id } = useParams();
   console.log(id, "id");
 
@@ -39,22 +42,6 @@ const OnlineManagement = () => {
     };
     fetch();
   }, [id]);
-  const [blogData, setBlogData] = useState([]);
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_APIURL}/getBlog`, {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Content-type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then((res) => res.json(console.log(res)))
-      .then((response) => {
-        setBlogData(response.data);
-        console.log(response.data);
-      });
-  }, []);
 
   const RenderHTML = (props) => (
     <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>
@@ -104,7 +91,7 @@ const OnlineManagement = () => {
 
                 <div className="block1 mx-0">
                   <h3 className="block-h3">Recent Posts</h3>
-                  {blogData?.map((friend, i) => {
+                  {Blogs?.map((friend, i) => {
                     return (
                       <p className="block-p2">
                         <Link to={`/blog/${friend.slug}`} className="block_a">
@@ -118,7 +105,7 @@ const OnlineManagement = () => {
                 <div className="block1 mx-0">
                   <h3 className="block-h3">Archives</h3>
 
-                  {blogData?.map((friend, i) => {
+                  {Blogs?.map((friend, i) => {
                     return (
                       <p className="block-p3">
                         <Link to={`/blog/${friend.slug}`} className="block_a">
