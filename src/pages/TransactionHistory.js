@@ -472,7 +472,6 @@ const TransactionHistory = () => {
                   <table className="table mb-0 table-bordered">
                     <thead>
                       <tr>
-                        <th>#</th>
                         <th>Date</th>
                         <th>Transactions ID</th>
                         <th>Status</th>
@@ -484,7 +483,6 @@ const TransactionHistory = () => {
                         credit.map((item, index) => {
                           return (
                             <tr key={index}>
-                              <td>{index + 1}</td>
                               <td>{item.datetime}</td>
                               <td>{item.transactionId}</td>
                               <td>{item.pay_type}</td>
@@ -519,9 +517,8 @@ const TransactionHistory = () => {
                   <table className="table mb-0 table-bordered">
                     <thead>
                       <tr>
-                        <th>#</th>
                         <th>Date</th>
-
+                        <th>Transactions ID</th>
                         <th>Status</th>
                         <th>Amount</th>
                       </tr>
@@ -531,9 +528,8 @@ const TransactionHistory = () => {
                         debit.map((items, index) => {
                           return (
                             <tr key={index}>
-                              <td>{index + 1}</td>
                               <td>{items.datetime}</td>
-                              {/* <td>{items.transactionId}</td> */}
+                              <td>{items.transactionId}</td>
                               <td>{items.pay_type}</td>
                               <td style={{ color: "red", fontWeight: "700" }}>
                                 -{items.wallet}

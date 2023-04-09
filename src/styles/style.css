@@ -8,6 +8,13 @@
   text-align: center;
 }
 
+body {
+  overflow: overlay !important;
+}
+
+.modal-backdrop {
+  height: 0;
+}
 ::selection {
   /* text-shadow: 4px 0px 1px #049899; */
   /* box-shadow: 0px 1px 16px #029786; */

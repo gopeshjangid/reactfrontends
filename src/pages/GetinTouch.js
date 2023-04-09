@@ -226,7 +226,7 @@ const GetinTouch = () => {
             setData({
               User: json,
             });
-            if (json.message === "successfully login and order") {
+            if (json.message === "Order successfully") {
               localStorage.setItem("token", json.token);
               navigate("/dashboard");
             }
@@ -412,7 +412,7 @@ const GetinTouch = () => {
                 </select>
 
                 <input
-                  type="text"
+                  type="number"
                   style={{ paddingLeft: "60px" }}
                   name="number"
                   placeholder="Number"
@@ -606,7 +606,7 @@ const GetinTouch = () => {
                 </select>
 
                 <input
-                  type="text"
+                  type="number"
                   style={{ paddingLeft: "60px" }}
                   name="number"
                   placeholder="Number"
@@ -713,7 +713,7 @@ const GetinTouch = () => {
           <button type="submit" className="btn_set1 ms-0">
             Order Now
           </button>{" "}
-          {message === "successfully login and order" ? (
+          {message === "Order successfully" ? (
             <h3 className="Success text-center" style={{ color: "#03979c" }}>
               {message}
             </h3>

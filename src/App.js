@@ -141,6 +141,10 @@ import GhostWritingServicesGhostStory from "./GhostServicesPages/GhostWritingSer
 import GhostWritingServicesFreelance from "./GhostServicesPages/GhostWritingServicesFreelance";
 import GhostWritingServicesBiography from "./GhostServicesPages/GhostWritingServicesBiography";
 import GhostWritingServicesEbook from "./GhostServicesPages/GhostWritingServicesEbook";
+import SaveCardRazorpayPaymentSuccess from "./pages/SaveCardRazorpayPaymentSuccess";
+import CancelStripe from "./pages/CancelStripe";
+import CancelOrderPaypal from "./pages/CancelOrderPaypal";
+import SubscriptionPaypalfailed from "./pages/SubscriptionPaypalfailed";
 
 function App() {
   return (
@@ -168,12 +172,15 @@ function App() {
         <Route path="/viewCart" element={<ViewCart />} />
         <Route path="/success" element={<Success />} />
         <Route path="/author/:id" element={<ViewDetails />} />
-        <Route path="/failed" element={<Failed />} />
+        <Route path="/fail" element={<Failed />} />
         <Route path="/purchasesuccess" element={<PurchaseSuccess />} />
         <Route path="/blog/:id" element={<OnlineManagement />} />
         <Route path="/ordersuccess" element={<Ordersuccess />} />
         <Route path="/payplesuccess" element={<Payplesuccess />} />
         <Route path="/stripesubscription" element={<StripeSubscription />} />
+        <Route path="/cancel" element={<CancelStripe />} />
+        <Route path="/orderPaypalCancel" element={<CancelOrderPaypal />} />
+        <Route path="/failed" element={<SubscriptionPaypalfailed />} />
         {/* <Route path="/BlogRoute" element={<BlogRoute />} />
         <Route path="/AuthorRoute" element={<AuthorRoute />} /> */}
         <Route
@@ -581,6 +588,10 @@ function App() {
         <Route
           path="review-writing-services/qna/other"
           element={<ReviewWritingServicesQnaOther />}
+        />
+        <Route
+          path="savecardrazorpaypaymentsuccess"
+          element={<SaveCardRazorpayPaymentSuccess />}
         />
       </Routes>
       <Footer />

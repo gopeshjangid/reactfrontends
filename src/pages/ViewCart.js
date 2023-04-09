@@ -428,7 +428,7 @@ const ViewCart = () => {
       .then((response) => {
         sessionStorage.setItem("totalamount", paypal);
         sessionStorage.setItem("pay_id", response.data.id);
-        // window.open(response.data.url, "_self");
+        window.open(response.data.url, "_self");
         console.log(response.data.url);
         setPaypal({
           response,
@@ -601,8 +601,6 @@ const ViewCart = () => {
       });
   };
 
-  const [rzrerrorshow, setRzrerrorshow] = useState();
-
   async function savePaymentRazorpay(amount, id) {
     console.log("iiii", id);
     console.log(savePayment);
@@ -701,8 +699,8 @@ const ViewCart = () => {
       axios(config)
         .then(function (response) {
           console.log(response.data);
-          window.location.reload(true);
-          // navigate("/PurchaseSuccess");
+          // window.location.reload(true);
+          navigate("/savecardrazorpaypaymentsuccess");
         })
         .catch(function (error) {
           console.log(error);
@@ -710,9 +708,21 @@ const ViewCart = () => {
 
       // alert("Transaction successful");
     });
+
+    // if (razorpay.rzrpayInstannce._payment === null) {
+    //   navigate("/failed");
+    // }
     console.log("razorpay", razorpay);
     console.log("options", options);
   }
+
+  const proceedlogoutCheckout = () => {
+    console.log("kjsssssssssss");
+    localStorage.setItem("false", "hiii");
+    if (localStorage.getItem("false")) {
+      navigate("/login");
+    }
+  };
 
   return (
     <>
@@ -932,7 +942,10 @@ const ViewCart = () => {
                             id="offcanvasScrolling"
                             aria-labelledby="offcanvasScrollingLabel"
                           >
-                            <div className="offcanvas-header">
+                            <div
+                              className="offcanvas-header text-white"
+                              style={{ background: "rgb(2, 154, 153)" }}
+                            >
                               <h5
                                 className="offcanvas-title"
                                 id="offcanvasScrollingLabel"
@@ -941,10 +954,12 @@ const ViewCart = () => {
                               </h5>
                               <button
                                 type="button"
-                                className="btn-close text-reset"
+                                className="bg-transparent border-0"
                                 data-bs-dismiss="offcanvas"
                                 aria-label="Close"
-                              ></button>
+                              >
+                                <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                              </button>
                             </div>
                             <div className="offcanvas-body">
                               <table className="shop_table shop_table_responsive">
@@ -1176,20 +1191,20 @@ const ViewCart = () => {
                                   {savePayment?.map((friend, index) => {
                                     return (
                                       <div
-                                        className="col-md-12 p-2 mb-2 rounded"
+                                        className=" p-2 mb-2 rounded"
                                         style={{ background: "#e3e3e3" }}
                                       >
                                         <div className="row align-items-center">
-                                          <div className="col-sm-6 text-start ">
+                                          <div className="col-sm-8 text-start ">
                                             <label>Name:</label>
                                             &nbsp;&nbsp;
                                             <span>{friend.accountHolder}</span>
                                             <br />
-                                            <label> Ac/No.:</label>
+                                            <label> Ac/No.:</label> &nbsp;&nbsp;
                                             <span>{friend.cardNumber}</span>
                                           </div>
 
-                                          <div className="col-sm-6">
+                                          <div className="col-sm-4">
                                             <button
                                               type="button"
                                               className="btn Pay border-0"
@@ -1519,12 +1534,14 @@ const ViewCart = () => {
                             </tbody>
                           </table>
                           <div className="wc-proceed-to-checkout   eael-cart-update-btn">
+                            {/* <Link to="/login"> */}
                             <button
                               className="checkout-button button alt wc-forward"
-                              onClick={() => navigate("/login")}
+                              onClick={() => proceedlogoutCheckout()}
                             >
                               Proceed to Checkout
-                            </button>{" "}
+                            </button>
+                            {/* </Link> */}
                           </div>
                         </div>
                       </div>

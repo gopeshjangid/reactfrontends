@@ -212,7 +212,18 @@ const AccountSettingPaymentMethod = () => {
   };
 
   const [cardHolder, setCardHolder] = useState([]);
+  const [id, setId] = useState([]);
 
+  const updateInputChange = ({ target }) => {
+    setCardNum(target.value);
+    if (validator.isCreditCard(target.value)) {
+      target.value = formatCreditCardNumber(target.value);
+      setCardNum(target.value);
+      setMessage("");
+    } else {
+      setMessage("is not a valid credit card number");
+    }
+  };
   // const inputChange = (e) => {
   //   const { name, value } = e.target;
   //   setEmployerInputData({ ...employerInputData, [name]: value });
@@ -220,6 +231,7 @@ const AccountSettingPaymentMethod = () => {
   const edit = (id) => {
     const filterCard = state?.filter((cards) => cards._id === id);
     // setMessage(json.message);
+    setId(filterCard[0]._id);
     setCardHolder(filterCard[0].accountHolder);
     setCardNum(filterCard[0].cardNumber);
     setExpiryMonth(filterCard[0].mm);
@@ -233,6 +245,7 @@ const AccountSettingPaymentMethod = () => {
     e.preventDefault();
 
     const hello = {
+      id: `${id}`,
       accountHolder: `${cardHolder}`,
       cardNumber: `${cardNum}`,
       mm: `${expiryMonth}`,
@@ -240,8 +253,7 @@ const AccountSettingPaymentMethod = () => {
       cvv: `${cvv}`,
     };
     console.log(hello);
-
-    fetch(`${process.env.REACT_APP_APIURL}/register`, {
+    fetch(`${process.env.REACT_APP_APIURL}/editPaymentMethod`, {
       method: "POST",
       body: JSON.stringify(hello),
       headers: {
@@ -256,10 +268,10 @@ const AccountSettingPaymentMethod = () => {
           User: json,
         });
         console.log(json.message);
-        // if (json.message === "Payment Detail Saved") {
-        //   // localStorage.removeItem("token");
-        //   window.location.reload(true);
-        // }
+        if (json.message === "Card Updated") {
+          // localStorage.removeItem("token");
+          window.location.reload(true);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -486,7 +498,7 @@ const AccountSettingPaymentMethod = () => {
                           data-bs-toggle="modal"
                           data-bs-target="#staticBackdrop"
                         >
-                          Add Payment Method
+                          Add Money to Wallet
                         </button>
                       </Link>
                     </div>
@@ -801,7 +813,7 @@ const AccountSettingPaymentMethod = () => {
                                     placeholder="Card Number"
                                     pattern="[\d| ]{16,22}"
                                     maxLength={19}
-                                    onChange={(e) => setCardNum(e.target.value)}
+                                    onChange={updateInputChange}
                                     value={cardNum}
                                     className="text_set ms-0 mt-0"
                                   />
@@ -875,7 +887,7 @@ const AccountSettingPaymentMethod = () => {
                                 >
                                   Save Payment
                                 </button>{" "}
-                                {message === "Payment Detail Saved" ? (
+                                {message === "Card Updated" ? (
                                   <h3
                                     className="Success text-center"
                                     style={{ color: "#03979c" }}

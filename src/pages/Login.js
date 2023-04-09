@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const Login = () => {
+  const proceedLogin = localStorage.getItem("false");
+  console.log("eeeeeeeee", proceedLogin);
   const initialValues = {
     username: "",
     password: "",
@@ -67,6 +69,17 @@ const Login = () => {
             setIsLoggedin(true);
             localStorage.removeItem("product");
             navigate("/dashboard");
+          }
+
+          if (
+            localStorage.getItem("false") &&
+            json.message === "successfully login"
+          ) {
+            localStorage.setItem("token", json.token);
+            setIsLoggedin(true);
+            localStorage.removeItem("product");
+            localStorage.removeItem("false");
+            navigate("/viewcart");
           }
 
           console.log(json);

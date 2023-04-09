@@ -139,7 +139,7 @@ const ViewProfile = () => {
 
   const [Users, setUsers] = useState(initialValues);
   const [Data, setData] = useState([]);
-  const [email, setEmail] = useState("");
+  const [userName, setUsername] = useState("");
   const [message, setMessage] = useState();
 
   // const [value, setValue] = useState();
@@ -169,7 +169,7 @@ const ViewProfile = () => {
       )
       .then((json) => {
         setData(json);
-        setEmail(json.data.email);
+        setUsername(json.data.username);
         console.log(Users);
       })
       .catch((err) => {
@@ -192,7 +192,7 @@ const ViewProfile = () => {
     fetch(`${process.env.REACT_APP_APIURL}/updateProfile`, {
       method: "POST",
       mode: "cors",
-      body: JSON.stringify({ newEmail: email }),
+      body: JSON.stringify({ NewUserName: userName }),
       headers: {
         "Content-type": "application/json",
         Authorization: `${tokenId}`,
@@ -290,9 +290,9 @@ const ViewProfile = () => {
                         type="text"
                         id="fname1"
                         name="username"
+                        onChange={(e) => setUsername(e.target.value)}
                         className="as-text_set"
-                        value={Data?.data?.username}
-                        disabled
+                        value={userName}
                       />
                       {/* <p style={{ color: "red" }}>{formErrors.username}</p> */}
                     </div>
@@ -302,10 +302,9 @@ const ViewProfile = () => {
                       <input
                         type="text"
                         id="fname2"
-                        onChange={(e) => setEmail(e.target.value)}
                         name="email"
                         className="as-text_set"
-                        value={email}
+                        value={Data?.data?.email}
                       />
                     </div>
 

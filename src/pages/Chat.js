@@ -9,6 +9,7 @@ const ENDPOINT = `${process.env.REACT_APP_APIURL}`;
 var socket, selectedChatCompare;
 
 const Chat = ({ orderId, orderName }) => {
+  const ref = useRef();
   console.log("orderid", orderId);
   // const [id, setId] = useState("");
   const [messages, setMessages] = useState([]);
@@ -330,7 +331,7 @@ const Chat = ({ orderId, orderName }) => {
         </div>
       </div>
 
-      <form className="chat_msg">
+      <form className="chat_msg" onSubmit={messageSendHandler}>
         <textarea
           className="form-control chat_cm"
           rows="3"
@@ -344,13 +345,13 @@ const Chat = ({ orderId, orderName }) => {
           {/* {load ? ( */}
           {/* <button className=" border-0   text-white chat_s_btn">SEND</button> */}
           {/* ) : ( */}
-          <button
+          <input
             id="sendMessage"
-            onClick={messageSendHandler}
+            type="submit"
+            value="SEND"
             className=" border-0 text-white chat_s_btn"
-          >
-            SEND
-          </button>
+          />
+
           {/* )} */}
           <div className="fileDiv border-0 ms-2" id="upload-btn-chat">
             <input

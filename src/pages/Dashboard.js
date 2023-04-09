@@ -14,9 +14,16 @@ const Dashboard = () => {
   const [orderId, setOrderId] = useState("");
   const [orderName, setOrderName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedId, setSelectedId] = useState([]);
+  const [allOreder, setAllOreder] = useState(false);
   // const navigate = useNavigate();
   // console.log("qwertyui",orderId)
   //   console.log(searchText);
+
+  const handleSelectChange = (e) => {
+    console.log(e.target.value);
+    setSelectedId(e.target.value);
+  };
 
   const ref = useRef(null);
   const tokenID = localStorage.getItem("token");
@@ -39,6 +46,7 @@ const Dashboard = () => {
         setViewOrder(response.data.sort().reverse());
         setProducts(response.data.products);
         setIsLoading(false);
+        setAllOreder(true);
 
         // const inputElement = React.useRef();
         // return <input ref={inputElement} />;
@@ -162,13 +170,25 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div className="col-sm-5">
-                    <select className="form-select">
-                      <option>All Orders</option>
-                      <option>Unpaid Orders</option>
+                    <select
+                      className="form-select"
+                      onChange={handleSelectChange}
+                      name="ids"
+                      id="ids"
+                    >
+                      <option onClick={() => setAllOreder(false)}>
+                        All Orders
+                      </option>
+                      <option>Pending</option>
+                      <option>success</option>
                       <option>Cancelled Orders</option>
-                      <option>Order in Process</option>
-                      <option>Completed Orders</option>
-                      <option>Subscriptions</option>
+                      <option>Customize</option>
+                      <option> Ordered</option>
+                      <option>subscription</option>
+                      <option>RazorPay</option>
+                      <option>Stripe</option>
+                      <option>Paypal</option>
+                      <option>Wallet</option>
                     </select>
                   </div>
                 </div>
@@ -183,7 +203,6 @@ const Dashboard = () => {
                       style={{ background: "#029a99" }}
                     >
                       <tr>
-                        <th>#</th>
                         <th>Order Id</th>
                         <th>Date</th>
                         <th>Pay-Method</th>
@@ -196,475 +215,1003 @@ const Dashboard = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {viewOrder?.map((friend, index) => {
-                        return (
-                          <>
-                            {friend.sub_status === "Active" ? (
-                              <tr key={index} className="viewOrderbody">
-                                <td>{index + 1}</td>
-                                <td>{friend.order_id}</td>
-                                <td>{friend.datetime}</td>
-                                <td>{friend.pay_method}</td>
-                                <td>{friend.type}</td>
-                                <td>{friend.totalAmount}</td>
-                                <td
-                                  ref={ref}
-                                  onClick={() => {
-                                    setOrderId(friend._id);
-                                    setOrderName(
-                                      friend.products.map(
-                                        (product) => product.p_title + " "
-                                      )
-                                    );
-                                    setShowChat(true);
-                                  }}
-                                  className="viewOrderChat"
-                                  style={{ cursor: "pointer" }}
-                                >
-                                  Chat
-                                </td>
-                                <td>{friend.status}</td>
-
-                                <td
-                                  data-bs-toggle="modal"
-                                  data-bs-target="#exampleModal"
-                                  style={{ cursor: "pointer" }}
-                                >
-                                  {friend.sub_status}
-                                </td>
-
-                                <div
-                                  className="modal fade"
-                                  id="exampleModal"
-                                  tabIndex="-1"
-                                  aria-labelledby="exampleModalLabel"
-                                  aria-hidden="true"
-                                >
-                                  <div className="modal-dialog">
-                                    <div className="modal-content border-0">
-                                      <div className="">
-                                        <button
-                                          type="button"
-                                          className="btn-close p-3 outline-0"
-                                          data-bs-dismiss="modal"
-                                          aria-label="Close"
-                                        ></button>
-                                      </div>
-                                      <div className="modal-body text-center">
-                                        <h4>
-                                          Are You Sure This Subscription Cancel?
-                                        </h4>
-                                      </div>
-
-                                      {friend.sub_status === "Active" ? (
-                                        <button
-                                          type="button"
-                                          onClick={() =>
-                                            subscriptionCancel(
-                                              friend.sub_id,
-                                              friend._id,
-                                              friend.pay_method
+                      {viewOrder && selectedId
+                        ? viewOrder
+                            .filter((value) => {
+                              return (
+                                value.type.includes(selectedId) ||
+                                value.status.includes(selectedId) ||
+                                value.pay_method.includes(selectedId)
+                              );
+                            })
+                            .map((friend, index) => {
+                              return (
+                                <>
+                                  {friend.sub_status === "Active" ? (
+                                    <tr key={index} className="viewOrderbody">
+                                      <td>{friend.order_id}</td>
+                                      <td>{friend.datetime}</td>
+                                      <td>{friend.pay_method}</td>
+                                      <td>{friend.type}</td>
+                                      <td>{friend.totalAmount}</td>
+                                      <td
+                                        ref={ref}
+                                        onClick={() => {
+                                          setOrderId(friend._id);
+                                          setOrderName(
+                                            friend.products.map(
+                                              (product) => product.p_title + " "
                                             )
-                                          }
-                                          className=" border-0  text-white py-2 fs-4 rounded-0 chat_s_btn"
-                                        >
-                                          Cancel
-                                        </button>
-                                      ) : (
-                                        ""
-                                      )}
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <td>
-                                  <button
-                                    className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
-                                    type="button"
-                                    data-bs-toggle="offcanvas"
-                                    data-bs-target={"#viewdetails" + friend._id}
-                                    aria-controls="offcanvasScrolling"
-                                  >
-                                    View Details
-                                  </button>
-                                  <div
-                                    className="offcanvas viewOrder text-wrap offcanvas-end"
-                                    data-bs-scroll="true"
-                                    data-bs-backdrop="false"
-                                    tabIndex="-1"
-                                    id={"viewdetails" + friend._id}
-                                    aria-labelledby="offcanvasScrollingLabel"
-                                  >
-                                    <div
-                                      className="offcanvas-header text-white"
-                                      style={{ background: "rgb(2, 154, 153)" }}
-                                    >
-                                      <button
-                                        type="button"
-                                        className="bg-transparent border-0"
-                                        data-bs-dismiss="offcanvas"
-                                        aria-label="Close"
-                                      >
-                                        <i className="fa-solid fa-xmark fs-3 text-white"></i>
-                                      </button>
-
-                                      <h5
-                                        className="offcanvas-title"
-                                        id="offcanvasScrollingLabel"
-                                      >
-                                        Order Details
-                                      </h5>
-                                    </div>
-                                    <div className="offcanvas-body">
-                                      <table className="table table-borderless mb-0">
-                                        <tbody>
-                                          <tr>
-                                            <td>Order Id</td>
-                                            <td>:</td>
-
-                                            <td>{friend.order_id}</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Date</td>
-                                            <td>:</td>{" "}
-                                            <td> {friend.datetime}</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Pay-Method</td>
-                                            <td>:</td>
-                                            <td>{friend.pay_method}</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Type</td>
-                                            <td>:</td> <td>{friend.type}</td>
-                                          </tr>
-
-                                          <tr>
-                                            <td>Amount</td>
-                                            <td>:</td>{" "}
-                                            <td>{friend.totalAmount}</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Sub.Cancel</td>
-                                            <td>:</td>
-                                            <td>{friend.sub_status}</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Status</td>
-                                            <td>:</td> <td>{friend.status}</td>
-                                          </tr>
-                                          {friend.products.map(
-                                            (product, index) => {
-                                              return (
-                                                <>
-                                                  <h4>Products:{index + 1}</h4>
-                                                  <tr>
-                                                    <td>Title</td>
-                                                    <td>:</td>{" "}
-                                                    <td>{product?.p_title}</td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Short Title</td>
-                                                    <td>:</td>{" "}
-                                                    <td>
-                                                      {product.p_shortTitle}
-                                                    </td>
-                                                  </tr>
-
-                                                  <tr>
-                                                    <td>Description</td>
-                                                    <td>:</td>{" "}
-                                                    <td>
-                                                      <RenderHTML
-                                                        HTML={product.p_dec}
-                                                      />
-                                                    </td>
-                                                  </tr>
-                                                  <tr>
-                                                    <td>Price</td>
-                                                    <td>:</td>{" "}
-                                                    <td>{product.p_price}</td>
-                                                  </tr>
-                                                </>
-                                              );
-                                            }
-                                          )}
-                                        </tbody>
-                                      </table>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                            ) : (
-                              <tr key={index} className="viewOrderbody">
-                                <td>{index + 1}</td>
-                                <td>{friend.order_id}</td>
-                                <td> {friend.datetime}</td>
-                                <td>{friend.pay_method}</td>
-                                <td>{friend.type}</td>
-                                <td>{friend.totalAmount}</td>
-                                <td
-                                  ref={ref}
-                                  onClick={() => {
-                                    setOrderId(friend._id);
-                                    setOrderName(
-                                      friend.products.map(
-                                        (product) => product.p_title + " "
-                                      )
-                                    );
-                                    setShowChat(true);
-                                  }}
-                                  className="viewOrderChat"
-                                  style={{ cursor: "pointer" }}
-                                >
-                                  Chat
-                                </td>
-                                <td>{friend.status}</td>
-                                <td>
-                                  {" "}
-                                  <Link
-                                    className="bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
-                                    role="button"
-                                    aria-disabled="true"
-                                  >
-                                    {friend.sub_status}
-                                  </Link>
-                                </td>
-                                {friend.type === "Customize" ? (
-                                  <td>
-                                    <button
-                                      className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
-                                      type="button"
-                                      data-bs-toggle="offcanvas"
-                                      data-bs-target={
-                                        "#viewdetails" + friend._id
-                                      }
-                                      aria-controls="offcanvasScrolling"
-                                    >
-                                      View Details
-                                    </button>
-                                    <div
-                                      className="offcanvas viewOrder text-wrap offcanvas-end"
-                                      data-bs-scroll="true"
-                                      data-bs-backdrop="false"
-                                      tabIndex="-1"
-                                      id={"viewdetails" + friend._id}
-                                      aria-labelledby="offcanvasScrollingLabel"
-                                    >
-                                      <div
-                                        className="offcanvas-header text-white"
-                                        style={{
-                                          background: "rgb(2, 154, 153)",
+                                          );
+                                          setShowChat(true);
                                         }}
+                                        className="viewOrderChat"
+                                        style={{ cursor: "pointer" }}
                                       >
-                                        <button
-                                          type="button"
-                                          className="bg-transparent border-0"
-                                          data-bs-dismiss="offcanvas"
-                                          aria-label="Close"
-                                        >
-                                          <i className="fa-solid fa-xmark fs-3 text-white"></i>
-                                        </button>
+                                        Chat
+                                      </td>
+                                      <td>{friend.status}</td>
 
-                                        <h5
-                                          className="offcanvas-title"
-                                          id="offcanvasScrollingLabel"
-                                        >
-                                          Order Details
-                                        </h5>
-                                      </div>
-                                      <div className="offcanvas-body">
-                                        <table className="table table-borderless mb-0">
-                                          <tbody>
-                                            <tr>
-                                              <td>Order Id</td>
-                                              <td>:</td>
+                                      <td
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"
+                                        style={{ cursor: "pointer" }}
+                                      >
+                                        {friend.sub_status}
+                                      </td>
 
-                                              <td>{friend.order_id}</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Date</td>
-                                              <td>:</td>{" "}
-                                              <td> {friend.datetime}</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Pay-Method</td>
-                                              <td>:</td>
-                                              <td>{friend.pay_method}</td>
-                                            </tr>
-
-                                            <tr>
-                                              <td>Amount</td>
-                                              <td>:</td>{" "}
-                                              <td>{friend.totalAmount}</td>
-                                            </tr>
-
-                                            <tr>
-                                              <td>Status</td>
-                                              <td>:</td>{" "}
-                                              <td>{friend.status}</td>
-                                            </tr>
-                                            <h4>Products:</h4>
-                                            <tr>
-                                              <td>Type</td>
-                                              <td>:</td> <td>{friend.type}</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Content Type</td>
-                                              <td>:</td>{" "}
-                                              <td>{friend.contentType}</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Deadline</td>
-                                              <td>:</td>{" "}
-                                              <td>{friend.deadline}</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Expert Level</td>
-                                              <td>:</td>{" "}
-                                              <td>{friend.expertLevel}</td>
-                                            </tr>
-                                          </tbody>
-                                        </table>
-                                      </div>
-                                    </div>
-                                  </td>
-                                ) : (
-                                  <td>
-                                    <button
-                                      className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
-                                      type="button"
-                                      data-bs-toggle="offcanvas"
-                                      data-bs-target={
-                                        "#viewdetails" + friend._id
-                                      }
-                                      aria-controls="offcanvasScrolling"
-                                    >
-                                      View Details
-                                    </button>
-                                    <div
-                                      className="offcanvas viewOrder text-wrap offcanvas-end"
-                                      data-bs-scroll="true"
-                                      data-bs-backdrop="false"
-                                      tabIndex="-1"
-                                      id={"viewdetails" + friend._id}
-                                      aria-labelledby="offcanvasScrollingLabel"
-                                    >
                                       <div
-                                        className="offcanvas-header text-white"
-                                        style={{
-                                          background: "rgb(2, 154, 153)",
-                                        }}
+                                        className="modal fade"
+                                        id="exampleModal"
+                                        tabIndex="-1"
+                                        aria-labelledby="exampleModalLabel"
+                                        aria-hidden="true"
                                       >
-                                        <button
-                                          type="button"
-                                          className="bg-transparent border-0"
-                                          data-bs-dismiss="offcanvas"
-                                          aria-label="Close"
-                                        >
-                                          <i className="fa-solid fa-xmark fs-3 text-white"></i>
-                                        </button>
+                                        <div className="modal-dialog">
+                                          <div className="modal-content border-0">
+                                            <div className="">
+                                              <button
+                                                type="button"
+                                                className="btn-close p-3 outline-0"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"
+                                              ></button>
+                                            </div>
+                                            <div className="modal-body text-center">
+                                              <h4>
+                                                Are You Sure This Subscription
+                                                Cancel?
+                                              </h4>
+                                            </div>
 
-                                        <h5
-                                          className="offcanvas-title"
-                                          id="offcanvasScrollingLabel"
-                                        >
-                                          Order Details
-                                        </h5>
-                                      </div>
-                                      <div className="offcanvas-body">
-                                        <table className="table table-borderless mb-0">
-                                          <tbody>
-                                            <tr>
-                                              <td>Order Id</td>
-                                              <td>:</td>
-
-                                              <td>{friend.order_id}</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Date</td>
-                                              <td>:</td>{" "}
-                                              <td> {friend.datetime}</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Pay-Method</td>
-                                              <td>:</td>
-                                              <td>{friend.pay_method}</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Type</td>
-                                              <td>:</td> <td>{friend.type}</td>
-                                            </tr>
-
-                                            <tr>
-                                              <td>Amount</td>
-                                              <td>:</td>{" "}
-                                              <td>{friend.totalAmount}</td>
-                                            </tr>
-
-                                            <tr>
-                                              <td>Status</td>
-                                              <td>:</td>{" "}
-                                              <td>{friend.status}</td>
-                                            </tr>
-                                            {friend.products.map(
-                                              (product, index) => {
-                                                return (
-                                                  <>
-                                                    <h4>
-                                                      Products:{index + 1}
-                                                    </h4>
-                                                    <tr>
-                                                      <td>Title</td>
-                                                      <td>:</td>{" "}
-                                                      <td>
-                                                        {product?.p_title}
-                                                      </td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td>Short Title</td>
-                                                      <td>:</td>{" "}
-                                                      <td>
-                                                        {product.p_shortTitle}
-                                                      </td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td>Quantity</td>
-                                                      <td>:</td>{" "}
-                                                      <td>
-                                                        {product.p_quantity}
-                                                      </td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td>Description</td>
-                                                      <td>:</td>{" "}
-                                                      <td>
-                                                        <RenderHTML
-                                                          HTML={product.p_dec}
-                                                        />
-                                                        {product.p_dec}
-                                                      </td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td>Price</td>
-                                                      <td>:</td>{" "}
-                                                      <td>{product.p_price}</td>
-                                                    </tr>
-                                                  </>
-                                                );
-                                              }
+                                            {friend.sub_status === "Active" ? (
+                                              <button
+                                                type="button"
+                                                onClick={() =>
+                                                  subscriptionCancel(
+                                                    friend.sub_id,
+                                                    friend._id,
+                                                    friend.pay_method
+                                                  )
+                                                }
+                                                className=" border-0  text-white py-2 fs-4 rounded-0 chat_s_btn"
+                                              >
+                                                Cancel
+                                              </button>
+                                            ) : (
+                                              ""
                                             )}
-                                          </tbody>
-                                        </table>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      <td>
+                                        <button
+                                          className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
+                                          type="button"
+                                          data-bs-toggle="offcanvas"
+                                          data-bs-target={
+                                            "#viewdetails" + friend._id
+                                          }
+                                          aria-controls="offcanvasScrolling"
+                                        >
+                                          View Details
+                                        </button>
+                                        <div
+                                          className="offcanvas viewOrder text-wrap offcanvas-end"
+                                          data-bs-scroll="true"
+                                          data-bs-backdrop="false"
+                                          tabIndex="-1"
+                                          id={"viewdetails" + friend._id}
+                                          aria-labelledby="offcanvasScrollingLabel"
+                                        >
+                                          <div
+                                            className="offcanvas-header text-white pe-4"
+                                            style={{
+                                              background: "rgb(2, 154, 153)",
+                                            }}
+                                          >
+                                            <button
+                                              type="button"
+                                              className="bg-transparent border-0"
+                                              data-bs-dismiss="offcanvas"
+                                              aria-label="Close"
+                                            >
+                                              <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                                            </button>
+
+                                            <h5
+                                              className="offcanvas-title"
+                                              id="offcanvasScrollingLabel"
+                                            >
+                                              Order Details
+                                            </h5>
+                                          </div>
+                                          <div className="offcanvas-body">
+                                            <table className="table table-borderless mb-0">
+                                              <tbody>
+                                                <tr>
+                                                  <td>Order Id</td>
+                                                  <td>:</td>
+
+                                                  <td>{friend.order_id}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Date</td>
+                                                  <td>:</td>{" "}
+                                                  <td> {friend.datetime}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Pay-Method</td>
+                                                  <td>:</td>
+                                                  <td>{friend.pay_method}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Type</td>
+                                                  <td>:</td>{" "}
+                                                  <td>{friend.type}</td>
+                                                </tr>
+
+                                                <tr>
+                                                  <td>Amount</td>
+                                                  <td>:</td>{" "}
+                                                  <td>{friend.totalAmount}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Sub.Cancel</td>
+                                                  <td>:</td>
+                                                  <td>{friend.sub_status}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Status</td>
+                                                  <td>:</td>{" "}
+                                                  <td>{friend.status}</td>
+                                                </tr>
+                                                {friend.products.map(
+                                                  (product, index) => {
+                                                    return (
+                                                      <>
+                                                        <h4>
+                                                          Products:{index + 1}
+                                                        </h4>
+                                                        <tr>
+                                                          <td>Title</td>
+                                                          <td>:</td>{" "}
+                                                          <td>
+                                                            {product?.p_title}
+                                                          </td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Short Title</td>
+                                                          <td>:</td>{" "}
+                                                          <td>
+                                                            {
+                                                              product.p_shortTitle
+                                                            }
+                                                          </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                          <td>Description</td>
+                                                          <td>:</td>{" "}
+                                                          <td>
+                                                            <RenderHTML
+                                                              HTML={
+                                                                product.p_dec
+                                                              }
+                                                            />
+                                                          </td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Price</td>
+                                                          <td>:</td>{" "}
+                                                          <td>
+                                                            {product.p_price}
+                                                          </td>
+                                                        </tr>
+                                                      </>
+                                                    );
+                                                  }
+                                                )}
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  ) : (
+                                    <tr key={index} className="viewOrderbody">
+                                      <td>{friend.order_id}</td>
+                                      <td> {friend.datetime}</td>
+                                      <td>{friend.pay_method}</td>
+                                      <td>{friend.type}</td>
+                                      <td>{friend.totalAmount}</td>
+                                      <td
+                                        ref={ref}
+                                        onClick={() => {
+                                          setOrderId(friend._id);
+                                          setOrderName(
+                                            friend.products.map(
+                                              (product) => product.p_title + " "
+                                            )
+                                          );
+                                          setShowChat(true);
+                                        }}
+                                        className="viewOrderChat"
+                                        style={{ cursor: "pointer" }}
+                                      >
+                                        Chat
+                                      </td>
+                                      <td>{friend.status}</td>
+                                      <td>
+                                        {" "}
+                                        <Link
+                                          className="bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
+                                          role="button"
+                                          aria-disabled="true"
+                                        >
+                                          {friend.sub_status}
+                                        </Link>
+                                      </td>
+                                      {friend.type === "Customize" ? (
+                                        <td>
+                                          <button
+                                            className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
+                                            type="button"
+                                            data-bs-toggle="offcanvas"
+                                            data-bs-target={
+                                              "#viewdetails" + friend._id
+                                            }
+                                            aria-controls="offcanvasScrolling"
+                                          >
+                                            View Details
+                                          </button>
+                                          <div
+                                            className="offcanvas viewOrder text-wrap offcanvas-end"
+                                            data-bs-scroll="true"
+                                            data-bs-backdrop="false"
+                                            tabIndex="-1"
+                                            id={"viewdetails" + friend._id}
+                                            aria-labelledby="offcanvasScrollingLabel"
+                                          >
+                                            <div
+                                              className="offcanvas-header text-white pe-4"
+                                              style={{
+                                                background: "rgb(2, 154, 153)",
+                                              }}
+                                            >
+                                              <button
+                                                type="button"
+                                                className="bg-transparent border-0"
+                                                data-bs-dismiss="offcanvas"
+                                                aria-label="Close"
+                                              >
+                                                <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                                              </button>
+
+                                              <h5
+                                                className="offcanvas-title"
+                                                id="offcanvasScrollingLabel"
+                                              >
+                                                Order Details
+                                              </h5>
+                                            </div>
+                                            <div className="offcanvas-body">
+                                              <table className="table table-borderless mb-0">
+                                                <tbody>
+                                                  <tr>
+                                                    <td>Order Id</td>
+                                                    <td>:</td>
+
+                                                    <td>{friend.order_id}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Date</td>
+                                                    <td>:</td>{" "}
+                                                    <td> {friend.datetime}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Pay-Method</td>
+                                                    <td>:</td>
+                                                    <td>{friend.pay_method}</td>
+                                                  </tr>
+
+                                                  <tr>
+                                                    <td>Amount</td>
+                                                    <td>:</td>{" "}
+                                                    <td>
+                                                      {friend.totalAmount}
+                                                    </td>
+                                                  </tr>
+
+                                                  <tr>
+                                                    <td>Status</td>
+                                                    <td>:</td>{" "}
+                                                    <td>{friend.status}</td>
+                                                  </tr>
+                                                  <h4>Products:</h4>
+                                                  <tr>
+                                                    <td>Type</td>
+                                                    <td>:</td>{" "}
+                                                    <td>{friend.type}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Content Type</td>
+                                                    <td>:</td>{" "}
+                                                    <td>
+                                                      {friend.contentType}
+                                                    </td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Deadline</td>
+                                                    <td>:</td>{" "}
+                                                    <td>{friend.deadline}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Expert Level</td>
+                                                    <td>:</td>{" "}
+                                                    <td>
+                                                      {friend.expertLevel}
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </div>
+                                          </div>
+                                        </td>
+                                      ) : (
+                                        <td>
+                                          <button
+                                            className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
+                                            type="button"
+                                            data-bs-toggle="offcanvas"
+                                            data-bs-target={
+                                              "#viewdetails" + friend._id
+                                            }
+                                            aria-controls="offcanvasScrolling"
+                                          >
+                                            View Details
+                                          </button>
+                                          <div
+                                            className="offcanvas viewOrder text-wrap offcanvas-end"
+                                            data-bs-scroll="true"
+                                            data-bs-backdrop="false"
+                                            tabIndex="-1"
+                                            id={"viewdetails" + friend._id}
+                                            aria-labelledby="offcanvasScrollingLabel"
+                                          >
+                                            <div
+                                              className="offcanvas-header text-white pe-4"
+                                              style={{
+                                                background: "rgb(2, 154, 153)",
+                                              }}
+                                            >
+                                              <button
+                                                type="button"
+                                                className="bg-transparent border-0"
+                                                data-bs-dismiss="offcanvas"
+                                                aria-label="Close"
+                                              >
+                                                <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                                              </button>
+
+                                              <h5
+                                                className="offcanvas-title"
+                                                id="offcanvasScrollingLabel"
+                                              >
+                                                Order Details
+                                              </h5>
+                                            </div>
+                                            <div className="offcanvas-body">
+                                              <table className="table table-borderless mb-0">
+                                                <tbody>
+                                                  <tr>
+                                                    <td>Order Id</td>
+                                                    <td>:</td>
+
+                                                    <td>{friend.order_id}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Date</td>
+                                                    <td>:</td>{" "}
+                                                    <td> {friend.datetime}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Pay-Method</td>
+                                                    <td>:</td>
+                                                    <td>{friend.pay_method}</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Type</td>
+                                                    <td>:</td>{" "}
+                                                    <td>{friend.type}</td>
+                                                  </tr>
+
+                                                  <tr>
+                                                    <td>Amount</td>
+                                                    <td>:</td>{" "}
+                                                    <td>
+                                                      {friend.totalAmount}
+                                                    </td>
+                                                  </tr>
+
+                                                  <tr>
+                                                    <td>Status</td>
+                                                    <td>:</td>{" "}
+                                                    <td>{friend.status}</td>
+                                                  </tr>
+                                                  {friend.products.map(
+                                                    (product, index) => {
+                                                      return (
+                                                        <>
+                                                          <h4>
+                                                            Products:{index + 1}
+                                                          </h4>
+                                                          <tr>
+                                                            <td>Title</td>
+                                                            <td>:</td>{" "}
+                                                            <td>
+                                                              {product?.p_title}
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Short Title</td>
+                                                            <td>:</td>{" "}
+                                                            <td>
+                                                              {
+                                                                product.p_shortTitle
+                                                              }
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Quantity</td>
+                                                            <td>:</td>{" "}
+                                                            <td>
+                                                              {
+                                                                product.p_quantity
+                                                              }
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Description</td>
+                                                            <td>:</td>{" "}
+                                                            <td>
+                                                              <RenderHTML
+                                                                HTML={
+                                                                  product.p_dec
+                                                                }
+                                                              />
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td>Price</td>
+                                                            <td>:</td>{" "}
+                                                            <td>
+                                                              {product.p_price}
+                                                            </td>
+                                                          </tr>
+                                                        </>
+                                                      );
+                                                    }
+                                                  )}
+                                                </tbody>
+                                              </table>
+                                            </div>
+                                          </div>
+                                        </td>
+                                      )}
+                                    </tr>
+                                  )}
+                                </>
+                              );
+                            })
+                        : viewOrder.map((friend, index) => {
+                            return (
+                              <>
+                                {friend.sub_status === "Active" ? (
+                                  <tr key={index} className="viewOrderbody">
+                                    <td>{friend.order_id}</td>
+                                    <td>{friend.datetime}</td>
+                                    <td>{friend.pay_method}</td>
+                                    <td>{friend.type}</td>
+                                    <td>{friend.totalAmount}</td>
+                                    <td
+                                      ref={ref}
+                                      onClick={() => {
+                                        setOrderId(friend._id);
+                                        setOrderName(
+                                          friend.products.map(
+                                            (product) => product.p_title + " "
+                                          )
+                                        );
+                                        setShowChat(true);
+                                      }}
+                                      className="viewOrderChat"
+                                      style={{ cursor: "pointer" }}
+                                    >
+                                      Chat
+                                    </td>
+                                    <td>{friend.status}</td>
+
+                                    <td
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#exampleModal"
+                                      style={{ cursor: "pointer" }}
+                                    >
+                                      {friend.sub_status}
+                                    </td>
+
+                                    <div
+                                      className="modal fade"
+                                      id="exampleModal"
+                                      tabIndex="-1"
+                                      aria-labelledby="exampleModalLabel"
+                                      aria-hidden="true"
+                                    >
+                                      <div className="modal-dialog">
+                                        <div className="modal-content border-0">
+                                          <div className="">
+                                            <button
+                                              type="button"
+                                              className="btn-close p-3 outline-0"
+                                              data-bs-dismiss="modal"
+                                              aria-label="Close"
+                                            ></button>
+                                          </div>
+                                          <div className="modal-body text-center">
+                                            <h4>
+                                              Are You Sure This Subscription
+                                              Cancel?
+                                            </h4>
+                                          </div>
+
+                                          {friend.sub_status === "Active" ? (
+                                            <button
+                                              type="button"
+                                              onClick={() =>
+                                                subscriptionCancel(
+                                                  friend.sub_id,
+                                                  friend._id,
+                                                  friend.pay_method
+                                                )
+                                              }
+                                              className=" border-0  text-white py-2 fs-4 rounded-0 chat_s_btn"
+                                            >
+                                              Cancel
+                                            </button>
+                                          ) : (
+                                            ""
+                                          )}
+                                        </div>
                                       </div>
                                     </div>
-                                  </td>
+
+                                    <td>
+                                      <button
+                                        className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
+                                        type="button"
+                                        data-bs-toggle="offcanvas"
+                                        data-bs-target={
+                                          "#viewdetails" + friend._id
+                                        }
+                                        aria-controls="offcanvasScrolling"
+                                      >
+                                        View Details
+                                      </button>
+                                      <div
+                                        className="offcanvas viewOrder text-wrap offcanvas-end"
+                                        data-bs-scroll="true"
+                                        data-bs-backdrop="false"
+                                        tabIndex="-1"
+                                        id={"viewdetails" + friend._id}
+                                        aria-labelledby="offcanvasScrollingLabel"
+                                      >
+                                        <div
+                                          className="offcanvas-header text-white pe-4"
+                                          style={{
+                                            background: "rgb(2, 154, 153)",
+                                          }}
+                                        >
+                                          <button
+                                            type="button"
+                                            className="bg-transparent border-0"
+                                            data-bs-dismiss="offcanvas"
+                                            aria-label="Close"
+                                          >
+                                            <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                                          </button>
+
+                                          <h5
+                                            className="offcanvas-title"
+                                            id="offcanvasScrollingLabel"
+                                          >
+                                            Order Details
+                                          </h5>
+                                        </div>
+                                        <div className="offcanvas-body">
+                                          <table className="table table-borderless mb-0">
+                                            <tbody>
+                                              <tr>
+                                                <td>Order Id</td>
+                                                <td>:</td>
+
+                                                <td>{friend.order_id}</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Date</td>
+                                                <td>:</td>{" "}
+                                                <td> {friend.datetime}</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Pay-Method</td>
+                                                <td>:</td>
+                                                <td>{friend.pay_method}</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Type</td>
+                                                <td>:</td>{" "}
+                                                <td>{friend.type}</td>
+                                              </tr>
+
+                                              <tr>
+                                                <td>Amount</td>
+                                                <td>:</td>{" "}
+                                                <td>{friend.totalAmount}</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Sub.Cancel</td>
+                                                <td>:</td>
+                                                <td>{friend.sub_status}</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Status</td>
+                                                <td>:</td>{" "}
+                                                <td>{friend.status}</td>
+                                              </tr>
+                                              {friend.products.map(
+                                                (product, index) => {
+                                                  return (
+                                                    <>
+                                                      <h4>
+                                                        Products:{index + 1}
+                                                      </h4>
+                                                      <tr>
+                                                        <td>Title</td>
+                                                        <td>:</td>{" "}
+                                                        <td>
+                                                          {product?.p_title}
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>Short Title</td>
+                                                        <td>:</td>{" "}
+                                                        <td>
+                                                          {product.p_shortTitle}
+                                                        </td>
+                                                      </tr>
+
+                                                      <tr>
+                                                        <td>Description</td>
+                                                        <td>:</td>{" "}
+                                                        <td>
+                                                          <RenderHTML
+                                                            HTML={product.p_dec}
+                                                          />
+                                                        </td>
+                                                      </tr>
+                                                      <tr>
+                                                        <td>Price</td>
+                                                        <td>:</td>{" "}
+                                                        <td>
+                                                          {product.p_price}
+                                                        </td>
+                                                      </tr>
+                                                    </>
+                                                  );
+                                                }
+                                              )}
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                ) : (
+                                  <tr key={index} className="viewOrderbody">
+                                    <td>{friend.order_id}</td>
+                                    <td> {friend.datetime}</td>
+                                    <td>{friend.pay_method}</td>
+                                    <td>{friend.type}</td>
+                                    <td>{friend.totalAmount}</td>
+                                    <td
+                                      ref={ref}
+                                      onClick={() => {
+                                        setOrderId(friend._id);
+                                        setOrderName(
+                                          friend.products.map(
+                                            (product) => product.p_title + " "
+                                          )
+                                        );
+                                        setShowChat(true);
+                                      }}
+                                      className="viewOrderChat"
+                                      style={{ cursor: "pointer" }}
+                                    >
+                                      Chat
+                                    </td>
+                                    <td>{friend.status}</td>
+                                    <td>
+                                      {" "}
+                                      <Link
+                                        className="bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
+                                        role="button"
+                                        aria-disabled="true"
+                                      >
+                                        {friend.sub_status}
+                                      </Link>
+                                    </td>
+                                    {friend.type === "Customize" ? (
+                                      <td>
+                                        <button
+                                          className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
+                                          type="button"
+                                          data-bs-toggle="offcanvas"
+                                          data-bs-target={
+                                            "#viewdetails" + friend._id
+                                          }
+                                          aria-controls="offcanvasScrolling"
+                                        >
+                                          View Details
+                                        </button>
+                                        <div
+                                          className="offcanvas viewOrder text-wrap offcanvas-end"
+                                          data-bs-scroll="true"
+                                          data-bs-backdrop="false"
+                                          tabIndex="-1"
+                                          id={"viewdetails" + friend._id}
+                                          aria-labelledby="offcanvasScrollingLabel"
+                                        >
+                                          <div
+                                            className="offcanvas-header text-white pe-4"
+                                            style={{
+                                              background: "rgb(2, 154, 153)",
+                                            }}
+                                          >
+                                            <button
+                                              type="button"
+                                              className="bg-transparent border-0"
+                                              data-bs-dismiss="offcanvas"
+                                              aria-label="Close"
+                                            >
+                                              <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                                            </button>
+
+                                            <h5
+                                              className="offcanvas-title"
+                                              id="offcanvasScrollingLabel"
+                                            >
+                                              Order Details
+                                            </h5>
+                                          </div>
+                                          <div className="offcanvas-body">
+                                            <table className="table table-borderless mb-0">
+                                              <tbody>
+                                                <tr>
+                                                  <td>Order Id</td>
+                                                  <td>:</td>
+
+                                                  <td>{friend.order_id}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Date</td>
+                                                  <td>:</td>{" "}
+                                                  <td> {friend.datetime}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Pay-Method</td>
+                                                  <td>:</td>
+                                                  <td>{friend.pay_method}</td>
+                                                </tr>
+
+                                                <tr>
+                                                  <td>Amount</td>
+                                                  <td>:</td>{" "}
+                                                  <td>{friend.totalAmount}</td>
+                                                </tr>
+
+                                                <tr>
+                                                  <td>Status</td>
+                                                  <td>:</td>{" "}
+                                                  <td>{friend.status}</td>
+                                                </tr>
+                                                <h4>Products:</h4>
+                                                <tr>
+                                                  <td>Type</td>
+                                                  <td>:</td>{" "}
+                                                  <td>{friend.type}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Content Type</td>
+                                                  <td>:</td>{" "}
+                                                  <td>{friend.contentType}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Deadline</td>
+                                                  <td>:</td>{" "}
+                                                  <td>{friend.deadline}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Expert Level</td>
+                                                  <td>:</td>{" "}
+                                                  <td>{friend.expertLevel}</td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        </div>
+                                      </td>
+                                    ) : (
+                                      <td>
+                                        <button
+                                          className="btn bg-transparent btn text-dark fw-normal p-0 m-0 fs-6 border-0 "
+                                          type="button"
+                                          data-bs-toggle="offcanvas"
+                                          data-bs-target={
+                                            "#viewdetails" + friend._id
+                                          }
+                                          aria-controls="offcanvasScrolling"
+                                        >
+                                          View Details
+                                        </button>
+                                        <div
+                                          className="offcanvas viewOrder text-wrap offcanvas-end"
+                                          data-bs-scroll="true"
+                                          data-bs-backdrop="false"
+                                          tabIndex="-1"
+                                          id={"viewdetails" + friend._id}
+                                          aria-labelledby="offcanvasScrollingLabel"
+                                        >
+                                          <div
+                                            className="offcanvas-header text-white pe-4"
+                                            style={{
+                                              background: "rgb(2, 154, 153)",
+                                            }}
+                                          >
+                                            <button
+                                              type="button"
+                                              className="bg-transparent border-0"
+                                              data-bs-dismiss="offcanvas"
+                                              aria-label="Close"
+                                            >
+                                              <i className="fa-solid fa-xmark fs-3 text-white"></i>
+                                            </button>
+
+                                            <h5
+                                              className="offcanvas-title"
+                                              id="offcanvasScrollingLabel"
+                                            >
+                                              Order Details
+                                            </h5>
+                                          </div>
+                                          <div className="offcanvas-body">
+                                            <table className="table table-borderless mb-0">
+                                              <tbody>
+                                                <tr>
+                                                  <td>Order Id</td>
+                                                  <td>:</td>
+
+                                                  <td>{friend.order_id}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Date</td>
+                                                  <td>:</td>{" "}
+                                                  <td> {friend.datetime}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Pay-Method</td>
+                                                  <td>:</td>
+                                                  <td>{friend.pay_method}</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Type</td>
+                                                  <td>:</td>{" "}
+                                                  <td>{friend.type}</td>
+                                                </tr>
+
+                                                <tr>
+                                                  <td>Amount</td>
+                                                  <td>:</td>{" "}
+                                                  <td>{friend.totalAmount}</td>
+                                                </tr>
+
+                                                <tr>
+                                                  <td>Status</td>
+                                                  <td>:</td>{" "}
+                                                  <td>{friend.status}</td>
+                                                </tr>
+                                                {friend.products.map(
+                                                  (product, index) => {
+                                                    return (
+                                                      <>
+                                                        <h4>
+                                                          Products:{index + 1}
+                                                        </h4>
+                                                        <tr>
+                                                          <td>Title</td>
+                                                          <td>:</td>{" "}
+                                                          <td>
+                                                            {product?.p_title}
+                                                          </td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Short Title</td>
+                                                          <td>:</td>{" "}
+                                                          <td>
+                                                            {
+                                                              product.p_shortTitle
+                                                            }
+                                                          </td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Quantity</td>
+                                                          <td>:</td>{" "}
+                                                          <td>
+                                                            {product.p_quantity}
+                                                          </td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Description</td>
+                                                          <td>:</td>{" "}
+                                                          <td>
+                                                            <RenderHTML
+                                                              HTML={
+                                                                product.p_dec
+                                                              }
+                                                            />
+                                                          </td>
+                                                        </tr>
+                                                        <tr>
+                                                          <td>Price</td>
+                                                          <td>:</td>{" "}
+                                                          <td>
+                                                            {product.p_price}
+                                                          </td>
+                                                        </tr>
+                                                      </>
+                                                    );
+                                                  }
+                                                )}
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        </div>
+                                      </td>
+                                    )}
+                                  </tr>
                                 )}
-                              </tr>
-                            )}
-                          </>
-                        );
-                      })}
+                              </>
+                            );
+                          })}
                     </tbody>
                   </table>
                 </div>

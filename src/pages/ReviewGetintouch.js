@@ -203,7 +203,7 @@ const ReviewGetintouch = () => {
             setData({
               User: json,
             });
-            if (json.message === "successfully login and order") {
+            if (json.message === "Order Successfully") {
               localStorage.setItem("token", json.token);
               navigate("/dashboard");
             }
@@ -909,9 +909,9 @@ const ReviewGetintouch = () => {
             </div>
           </div>
           <button type="submit" className="btn_set1 ms-0">
-            Register
+            Order Now
           </button>{" "}
-          {message === "successfully login and order" ? (
+          {message === "Order Successfully" ? (
             <h3 className="Success text-center" style={{ color: "#03979c" }}>
               {message}
             </h3>

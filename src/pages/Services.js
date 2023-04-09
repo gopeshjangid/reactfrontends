@@ -291,10 +291,10 @@ class Services extends Component {
       console.log(localStorageProduct);
 
       localStorageProduct.quantity = 1;
-      let getAllProduct = JSON.parse(localStorage.getItem("product"));
-      this.setState({ ...this.state, getAllProduct });
+      let getAllrazorpayProduct = JSON.parse(localStorage.getItem("product"));
+      this.setState({ ...this.state, getAllrazorpayProduct });
 
-      let findOneProduct = getAllProduct?.filter(
+      let findOneProduct = getAllrazorpayProduct?.filter(
         (item, index) => item._id === id
       );
       if (findOneProduct === undefined) {
@@ -303,28 +303,35 @@ class Services extends Component {
       console.log(findOneProduct);
       if (findOneProduct.length > 0) {
         console.log(findOneProduct[0]._id);
-        const Indexobj = getAllProduct.findIndex((obj) => obj._id === id);
+        const Indexobj = getAllrazorpayProduct.findIndex(
+          (obj) => obj._id === id
+        );
         //   findOneProduct[0].quantity
         console.log(Indexobj);
-        getAllProduct[Indexobj].quantity = getAllProduct[Indexobj].quantity + 1;
+        getAllrazorpayProduct[Indexobj].quantity =
+          getAllrazorpayProduct[Indexobj].quantity + 1;
 
-        localStorage.setItem("product", JSON.stringify(getAllProduct));
-        console.log(getAllProduct);
+        localStorage.setItem("product", JSON.stringify(getAllrazorpayProduct));
+        console.log(getAllrazorpayProduct);
         let totalPrice = 0;
         let totalItems = 0;
-        for (let i = 0; i < getAllProduct.length; i++) {
-          totalPrice += getAllProduct[i].price * getAllProduct[i].quantity;
-          totalItems += getAllProduct[i].quantity;
+        for (let i = 0; i < getAllrazorpayProduct.length; i++) {
+          totalPrice +=
+            getAllrazorpayProduct[i].price * getAllrazorpayProduct[i].quantity;
+          totalItems += getAllrazorpayProduct[i].quantity;
         }
         console.log(totalPrice);
         this.setState({ totalPrice: totalPrice, totalItems: totalItems });
         console.log(this.state.totalPrice);
       } else {
-        if (getAllProduct === null) {
+        if (getAllrazorpayProduct === null) {
           console.log("pro null condition true");
-          getAllProduct = [];
-          getAllProduct.push(localStorageProduct);
-          localStorage.setItem("product", JSON.stringify(getAllProduct));
+          getAllrazorpayProduct = [];
+          getAllrazorpayProduct.push(localStorageProduct);
+          localStorage.setItem(
+            "product",
+            JSON.stringify(getAllrazorpayProduct)
+          );
           let getNewAllProduct = JSON.parse(localStorage.getItem("product"));
           let totalPrice = 0;
           let totalItems = 0;
@@ -337,17 +344,22 @@ class Services extends Component {
           this.setState({ totalPrice: totalPrice, totalItems: totalItems });
         } else {
           console.log("pro null condition false");
-          getAllProduct.push(localStorageProduct);
-          console.log(getAllProduct);
-          localStorage.setItem("product", JSON.stringify(getAllProduct));
+          getAllrazorpayProduct.push(localStorageProduct);
+          console.log(getAllrazorpayProduct);
+          localStorage.setItem(
+            "product",
+            JSON.stringify(getAllrazorpayProduct)
+          );
           console.log(
             this.state.User?.filter((item, index) => item._id === id)[0]
           );
           let totalPrice = 0;
           let totalItems = 0;
-          for (let i = 0; i < getAllProduct.length; i++) {
-            totalPrice += getAllProduct[i].price * getAllProduct[i].quantity;
-            totalItems += getAllProduct[i].quantity;
+          for (let i = 0; i < getAllrazorpayProduct.length; i++) {
+            totalPrice +=
+              getAllrazorpayProduct[i].price *
+              getAllrazorpayProduct[i].quantity;
+            totalItems += getAllrazorpayProduct[i].quantity;
           }
           console.log(totalPrice);
           this.setState({ totalPrice: totalPrice, totalItems: totalItems });
@@ -652,6 +664,7 @@ class Services extends Component {
                             <div
                               className="modal fade"
                               id={`${"payment_id" + friend._id}`}
+                              style={{ background: "#00000052" }}
                               data-bs-backdrop="static"
                               data-bs-keyboard="false"
                               tabIndex="-1"
