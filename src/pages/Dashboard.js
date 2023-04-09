@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 import Loader from "./Loader";
 import Chat from "./Chat";
@@ -9,13 +9,43 @@ import Chat from "./Chat";
 const Dashboard = () => {
   const [viewOrder, setViewOrder] = useState([]);
   const [Cancelled, setCancelled] = useState("");
-
   const [showChat, setShowChat] = useState(false);
   const [orderId, setOrderId] = useState("");
   const [orderName, setOrderName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [selectedId, setSelectedId] = useState([]);
   const [allOreder, setAllOreder] = useState(false);
+
+  const chatRef = useRef(null);
+
+  const [searchParams] = useSearchParams();
+  const orderIdParam = searchParams.get("orderId");
+
+  useEffect(() => {
+    if (orderIdParam && viewOrder?.length > 0) {
+      setOrderId(orderIdParam);
+      viewOrder?.map((friend) => {
+        if (friend?._id === orderIdParam) {
+          return setOrderName(
+            friend?.products?.map((product) => product.p_title + " ")
+          );
+        } else {
+          return setOrderName("");
+        }
+      });
+      setShowChat(true);
+    }
+  }, [orderIdParam, viewOrder]);
+
+  useEffect(() => {
+    if (showChat) {
+      window.scrollTo({
+        top: chatRef?.current?.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  }, [showChat, chatRef?.current]);
+
   // const navigate = useNavigate();
   // console.log("qwertyui",orderId)
   //   console.log(searchText);
@@ -1216,7 +1246,9 @@ const Dashboard = () => {
                   </table>
                 </div>
 
-                {showChat && <Chat orderId={orderId} orderName={orderName} />}
+                <div ref={chatRef}>
+                  {showChat && <Chat orderId={orderId} orderName={orderName} />}
+                </div>
               </div>
             </div>
           </div>
