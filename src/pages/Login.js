@@ -63,7 +63,7 @@ const Login = () => {
           setData({
             User: json,
           });
-
+          localStorage.setItem("user", JSON.stringify(json.user));
           if (json.message === "successfully login") {
             localStorage.setItem("token", json.token);
             setIsLoggedin(true);

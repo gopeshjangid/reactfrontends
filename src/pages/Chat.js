@@ -185,7 +185,6 @@ const Chat = ({ orderId, orderName }) => {
 
   var message = document.getElementById("chatInput");
 
-
   const messageSendHandler = (e) => {
     e.preventDefault();
 
@@ -258,7 +257,6 @@ const Chat = ({ orderId, orderName }) => {
   };
 
   // const handleChange = (e) => {};
-
   const selectImage = (e) => {
     // if (e.target.files) {
     //   setFile(e.target.files[0]);
@@ -289,6 +287,8 @@ const Chat = ({ orderId, orderName }) => {
     }
   };
 
+  const userDataStorage = JSON.parse(localStorage.getItem("user"));
+
   return (
     <>
       <div className="card card_box mt-5">
@@ -303,23 +303,25 @@ const Chat = ({ orderId, orderName }) => {
           <div className="box-li-view fl_l">
             <ul>
               <ReactScrollToBoottome className="chatBox">
-                {messages.map((item, i) => (
-                  <Message
-                    key={i}
-                    id={item._id}
-                    datetime={item.datetime}
-                    user={item.sender.username + ": "}
-                    message={item.content}
-                    orderId={item.chat.orderId}
-                    type={item.type}
-                    name={item.name}
-                    classs={
-                      item.sender.email === "getproadmin000@gmail.com"
-                        ? "left"
-                        : "right"
-                    }
-                  />
-                ))}
+                {messages.map((item, i) => {
+                  return (
+                    <Message
+                      key={i}
+                      id={item._id}
+                      datetime={item.datetime}
+                      user={item.sender.username + ": "}
+                      message={item.content}
+                      orderId={item.chat.orderId}
+                      type={item.type}
+                      name={item.name}
+                      classs={
+                        item.sender.email === userDataStorage.email
+                          ? "right"
+                          : "left"
+                      }
+                    />
+                  );
+                })}
               </ReactScrollToBoottome>
             </ul>
           </div>
