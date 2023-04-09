@@ -184,12 +184,7 @@ const Chat = ({ orderId, orderName }) => {
   }, [chatId, selectedChat]);
 
   var message = document.getElementById("chatInput");
-  message?.addEventListener("keypress", function (event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      document.getElementById("sendMessage").click();
-    }
-  });
+
 
   const messageSendHandler = (e) => {
     e.preventDefault();
@@ -340,6 +335,12 @@ const Chat = ({ orderId, orderName }) => {
           name="text"
           value={messageText}
           onChange={(e) => setMessageText(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              messageSendHandler(e);
+            }
+          }}
         ></textarea>
         <div className="d-flex">
           {/* {load ? ( */}
