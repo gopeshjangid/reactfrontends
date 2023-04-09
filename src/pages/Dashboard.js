@@ -18,7 +18,7 @@ const Dashboard = () => {
 
   const chatRef = useRef(null);
 
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const orderIdParam = searchParams.get("orderId");
 
   useEffect(() => {
@@ -274,6 +274,10 @@ const Dashboard = () => {
                                             )
                                           );
                                           setShowChat(true);
+                                          setSearchParams({
+                                            ...searchParams,
+                                            orderId: friend._id,
+                                          });
                                         }}
                                         className="viewOrderChat"
                                         style={{ cursor: "pointer" }}
@@ -486,6 +490,10 @@ const Dashboard = () => {
                                             )
                                           );
                                           setShowChat(true);
+                                          setSearchParams({
+                                            ...searchParams,
+                                            orderId: friend._id,
+                                          });
                                         }}
                                         className="viewOrderChat"
                                         style={{ cursor: "pointer" }}
@@ -775,6 +783,10 @@ const Dashboard = () => {
                                           )
                                         );
                                         setShowChat(true);
+                                        setSearchParams({
+                                          ...searchParams,
+                                          orderId: friend._id,
+                                        });
                                       }}
                                       className="viewOrderChat"
                                       style={{ cursor: "pointer" }}
@@ -983,6 +995,10 @@ const Dashboard = () => {
                                           )
                                         );
                                         setShowChat(true);
+                                        setSearchParams({
+                                          ...searchParams,
+                                          orderId: friend._id,
+                                        });
                                       }}
                                       className="viewOrderChat"
                                       style={{ cursor: "pointer" }}
