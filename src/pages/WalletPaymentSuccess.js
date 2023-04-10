@@ -1,6 +1,8 @@
 // import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 const WalletPaymentSuccess = () => {
+  const [searchParams] = useSearchParams();
+  const orderIdParam = searchParams.get("orderId");
   return (
     <div>
       <section className="fp_sec bg-transparent ">
@@ -21,7 +23,7 @@ const WalletPaymentSuccess = () => {
                 </p> */}
                 <br />
 
-                <Link className="" to="/dashboard">
+                <Link className="" to={`/dashboard?orderId=${orderIdParam}`}>
                   <button type="submit" className="fp-btn px-5 m-0">
                     Go Back
                   </button>

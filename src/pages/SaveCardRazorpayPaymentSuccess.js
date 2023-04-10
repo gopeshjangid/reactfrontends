@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const SaveCardRazorpayPaymentSuccess = () => {
+  const [searchParams] = useSearchParams();
+  const orderIdParam = searchParams.get("orderId");
   return (
     <div>
       <section className="fp_sec bg-transparent ">
@@ -19,7 +21,7 @@ const SaveCardRazorpayPaymentSuccess = () => {
                   tracking info
                 </p>
 
-                <Link className="" to="/dashboard">
+                <Link className="" to={`/dashboard?orderId=${orderIdParam}`}>
                   <button type="submit" className="fp-btn px-5 m-0">
                     Continue Shopping
                   </button>

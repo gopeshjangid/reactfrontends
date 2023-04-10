@@ -392,7 +392,9 @@ const ViewCart = () => {
         console.log(response.data);
 
         if (response.data.data === "order Placed") {
-          navigate("/walletpaymentsuccess");
+          navigate(
+            `/walletpaymentsuccess?orderId=${response?.data?.message?._id}`
+          );
         } else {
           setOrderErrorMessage(response.data.data);
         }
@@ -538,7 +540,9 @@ const ViewCart = () => {
       .then((response) => {
         console.log(response.data);
         if (response.data.data === "order Placed") {
-          navigate("/orderwithoutpayment");
+          navigate(
+            `/orderwithoutpayment?orderId=${response?.data?.message?._id}`
+          );
         }
 
         setLoading(false);
@@ -700,7 +704,9 @@ const ViewCart = () => {
         .then(function (response) {
           console.log(response.data);
           // window.location.reload(true);
-          navigate("/savecardrazorpaypaymentsuccess");
+          navigate(
+            `/savecardrazorpaypaymentsuccess?orderId=${response?.data?.message?._id}`
+          );
         })
         .catch(function (error) {
           console.log(error);
