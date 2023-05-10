@@ -586,9 +586,7 @@ class Services extends Component {
                     return (
                       <div className="col-md-4" key={value.toString()}>
                         <div className="services_box">
-                          <h3 className="services_box-h3">
-                            {friend.title} <span className="h3-spa">POSTS</span>
-                          </h3>
+                          <h3 className="services_box-h3">{friend.title}</h3>
 
                           <ul className="services_ul justify-content-center p-0">
                             <li className="services_li-1 ms-0"></li>
