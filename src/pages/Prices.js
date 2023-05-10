@@ -124,7 +124,7 @@ const Prices = () => {
         </div>
       </section>
 
-      <section>
+      {/* <section>
         <div className="container">
           <div className="row">
             <div className="col-md-6">
@@ -203,7 +203,7 @@ const Prices = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section>
         <div className="container">
