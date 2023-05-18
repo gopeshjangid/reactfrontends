@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import GetinTouch from "./getintouch";
+import GetinTouch from "../pages/getintouch";
 // import Link from "next/link";
 import Image from "next/image";
 import getprimg1 from "../images/gpw-img1.png";
@@ -28,6 +28,9 @@ import Katy from "../images/Katy-Wong.webp";
 import technical from "../images/technical-writer.jpg";
 
 const Home = () => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => setLoaded(true), []);
   return (
     <div>
       <section className="top_sec">

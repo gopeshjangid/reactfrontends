@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useParams } from "next/router";
+import { useRouter } from "next/router";
 import axios from "axios";
 import useBlogData from "../fetchApi/BlogData";
 
@@ -12,8 +12,8 @@ console.log(`${process.env.NEXT_PUBLIC_APIURL}`);
 const OnlineManagement = () => {
   const Blogs = useBlogData();
 
-  const { id } = useParams();
-  console.log(id, "id"); 
+  const router = useRouter();
+  const { id } = router.query;
 
   const [post, SetPost] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -40,7 +40,7 @@ const OnlineManagement = () => {
       }
     };
     fetch();
-  });
+  }, []);
 
   const RenderHTML = (props) => (
     <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>

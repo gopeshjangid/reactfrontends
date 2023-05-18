@@ -1,20 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
 const Ordersuccess = () => {
-  const tokenID = localStorage.getItem("token");
+  const [tokenID, setTokenId] = useState("");
+
+  useEffect(() => {
+    setTokenId(localStorage.getItem("token"));
+  }, []);
   const pay_id = sessionStorage.getItem("pay_id");
   const amount = sessionStorage.getItem("TotalAmount");
   const couponName = sessionStorage.getItem("couponName");
   const couponAmount = sessionStorage.getItem("couponAmount");
-  console.log(couponAmount,couponName)
+  console.log(couponAmount, couponName);
   const headers = {
     "Content-Type": "application/json",
     Authorization: `${tokenID}`,
   };
 
-  const data = { totalAmount: parseInt(amount),couponAmount,couponName, pay_id };
+  const data = {
+    totalAmount: parseInt(amount),
+    couponAmount,
+    couponName,
+    pay_id,
+  };
   const router = useRouter();
 
   useEffect(() => {

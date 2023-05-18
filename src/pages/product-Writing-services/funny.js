@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import ReviewGetintouch from "../ReviewGetintouch";
+import ReviewGetintouch from "../reviewgetintouch";
 
 const funny = () => {
   return (
@@ -13,13 +13,14 @@ const funny = () => {
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1 className="top_Sec-h1 mt-3 p-0">
-              Get Funny Descriptions Easily!
+                Get Funny Descriptions Easily!
               </h1>
-              <h2 className="top_Sec-h2">
-              Funny Descriptions For Product|
-              </h2>
+              <h2 className="top_Sec-h2">Funny Descriptions For Product|</h2>
               <p className="top_Sec-p">
-              GetProWriter is a renowned company offering funny product description writing services. We take the time to get to know your company and your products so that we can write a compelling description that will sell your product.
+                GetProWriter is a renowned company offering funny product
+                description writing services. We take the time to get to know
+                your company and your products so that we can write a compelling
+                description that will sell your product.
               </p>
             </div>
 
@@ -36,11 +37,11 @@ const funny = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-            Acquire Funny Product Description Services Easily!
+              Acquire Funny Product Description Services Easily!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-            The experts in funny product descriptions are with us.
+              The experts in funny product descriptions are with us.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
@@ -120,13 +121,26 @@ const funny = () => {
       <section className="rev_sec">
         <div className="container">
           <div className="row">
-            <h2 className="rev_sec-h2">Experts For Funny Product Descriptions</h2>
+            <h2 className="rev_sec-h2">
+              Experts For Funny Product Descriptions
+            </h2>
 
             <p className="rev_sec-p">
-            GetProWriter is known across the industry for offering funny product description writing. We are a team of experts in product writing, technical writing, copywriting, creative writing, etc. Our team members have more than 15 years of experience in all fields of writing and content marketing. As a result, we offer professional articles on any topic or niche related to your business.
+              GetProWriter is known across the industry for offering funny
+              product description writing. We are a team of experts in product
+              writing, technical writing, copywriting, creative writing, etc.
+              Our team members have more than 15 years of experience in all
+              fields of writing and content marketing. As a result, we offer
+              professional articles on any topic or niche related to your
+              business.
             </p>
             <p className="rev_sec-p">
-            Our writers are well-trained professionals with expertise in different types of writing assignments. We have been providing excellent quality services since our inception. We have now become a leading name in the industry. We have an experienced team that is always ready to work on any project you send us at any time of the day or night, even on weekends!
+              Our writers are well-trained professionals with expertise in
+              different types of writing assignments. We have been providing
+              excellent quality services since our inception. We have now become
+              a leading name in the industry. We have an experienced team that
+              is always ready to work on any project you send us at any time of
+              the day or night, even on weekends!
             </p>
           </div>
         </div>
@@ -136,10 +150,12 @@ const funny = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-            GetProWriter is here for funny descriptions of products!
+              GetProWriter is here for funny descriptions of products!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
-            <p className="writing_sec-p">Well-crafted funny descriptions for products.</p>
+            <p className="writing_sec-p">
+              Well-crafted funny descriptions for products.
+            </p>
 
             <div class="col-md-6">
               <h2 class="count_h2">Check us out and see for yourself:</h2>
@@ -209,14 +225,23 @@ const funny = () => {
               </div>
             </div>
             <div class="col-md-6">
-              <h2 class="count_h2">
-              Hire A GPW Funny Description Expert
-              </h2>
+              <h2 class="count_h2">Hire A GPW Funny Description Expert</h2>
               <p class="count-p">
-              You can now hire funny product description writers from us anytime. We work with you to create the perfect description for your product or service, and then we turn it into an effective sales page. We have been helping companies like yours for many years now, and we pride ourselves on our ability to understand what makes your business unique and why it is worth writing about.
+                You can now hire funny product description writers from us
+                anytime. We work with you to create the perfect description for
+                your product or service, and then we turn it into an effective
+                sales page. We have been helping companies like yours for many
+                years now, and we pride ourselves on our ability to understand
+                what makes your business unique and why it is worth writing
+                about.
               </p>
               <p class="count-p">
-              We always ensure that our product descriptions are unique, creative, and informative. We also have a team of writers who have been trained in writing effective product descriptions. The result is professional-looking and informative content that helps you sell your products more effectively. For more information on our services, you may reach out to us anytime.
+                We always ensure that our product descriptions are unique,
+                creative, and informative. We also have a team of writers who
+                have been trained in writing effective product descriptions. The
+                result is professional-looking and informative content that
+                helps you sell your products more effectively. For more
+                information on our services, you may reach out to us anytime.
               </p>
             </div>
           </div>
@@ -227,22 +252,33 @@ const funny = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-            Cheap Funny Product Description Writing Services
+              Cheap Funny Product Description Writing Services
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-            Go for the best writers only with us.
+              Go for the best writers only with us.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Commendable Content For Funny Product Descriptions
+                Commendable Content For Funny Product Descriptions
               </h3>
               <p className="ab_sec2-p rws-p">
-              We are regarded as a commendable company offering the best funny product description services to clients. We are a team of writers and editors with years of experience in writing high-quality content for various clients. Our team is composed of talented professionals who are experts in their respective fields. We have written many articles for our clients on varied topics such as fashion, lifestyle, technology, and even entertainment.
+                We are regarded as a commendable company offering the best funny
+                product description services to clients. We are a team of
+                writers and editors with years of experience in writing
+                high-quality content for various clients. Our team is composed
+                of talented professionals who are experts in their respective
+                fields. We have written many articles for our clients on varied
+                topics such as fashion, lifestyle, technology, and even
+                entertainment.
               </p>
               <p className="ab_sec2-p rws-p">
-              We specialize in providing quality feedback from our clients and offering them the best possible draft. We offer unique and witty quotes that attract customers to your products and services. Our team members are always ready to assist you with all your queries regarding any aspect of our service.
+                We specialize in providing quality feedback from our clients and
+                offering them the best possible draft. We offer unique and witty
+                quotes that attract customers to your products and services. Our
+                team members are always ready to assist you with all your
+                queries regarding any aspect of our service.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -262,25 +298,47 @@ const funny = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Creative Professionals For Funny Descriptions
+                Creative Professionals For Funny Descriptions
               </h3>
               <p className="ab_sec2-p rws-p">
-              We have been regarded by clients for offering funny yet creative product descriptions to clients. We are also known as an expert in this field with years of experience in writing funny product descriptions. Our team of writers will provide you with a variety of product description quotes that can be used for your product or service. These quotes will make your products stand out among the crowd and attract more customers to you.
+                We have been regarded by clients for offering funny yet creative
+                product descriptions to clients. We are also known as an expert
+                in this field with years of experience in writing funny product
+                descriptions. Our team of writers will provide you with a
+                variety of product description quotes that can be used for your
+                product or service. These quotes will make your products stand
+                out among the crowd and attract more customers to you.
               </p>
               <p className="ab_sec2-p rws-p">
-              Our team is well-versed in all types of products, services, and companies. You can also hire us for your company, social media pages, websites, blogs, e-commerce stores, etc. because we have a solid team that can work effectively on your product campaigns. Our motto is to provide our clients with the right product description that will make them stand apart from their competitors.
+                Our team is well-versed in all types of products, services, and
+                companies. You can also hire us for your company, social media
+                pages, websites, blogs, e-commerce stores, etc. because we have
+                a solid team that can work effectively on your product
+                campaigns. Our motto is to provide our clients with the right
+                product description that will make them stand apart from their
+                competitors.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Dedicated And Effective Product Description Writers
+                Dedicated And Effective Product Description Writers
               </h3>
               <p className="ab_sec2-p rws-p">
-              Our product description writers are not only dedicated but are also effective in writing product descriptions for any type of company. We have a team of talented writers who can create an attractive and informative product description that can be used as a marketing tool to promote your business. They have worked with many of the best and most renowned companies in the world.
+                Our product description writers are not only dedicated but are
+                also effective in writing product descriptions for any type of
+                company. We have a team of talented writers who can create an
+                attractive and informative product description that can be used
+                as a marketing tool to promote your business. They have worked
+                with many of the best and most renowned companies in the world.
               </p>
               <p className="ab_sec2-p rws-p">
-              Our professional writers have been working in the same field for a long time and have a good experience with the same. The best thing about writers is that they can easily understand the requirements of the client and write a perfect product description. They are ready to work on your project with no compromise.
+                Our professional writers have been working in the same field for
+                a long time and have a good experience with the same. The best
+                thing about writers is that they can easily understand the
+                requirements of the client and write a perfect product
+                description. They are ready to work on your project with no
+                compromise.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -300,25 +358,47 @@ const funny = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Funny Product Descriptions To Attract More Users
+                Funny Product Descriptions To Attract More Users
               </h3>
               <p className="ab_sec2-p rws-p">
-              We have the most talented writers who could write funny product descriptions to help your company attract more users. We can also provide you with customized product descriptions related to your niche. It will help your company to be more visible in the industry.
+                We have the most talented writers who could write funny product
+                descriptions to help your company attract more users. We can
+                also provide you with customized product descriptions related to
+                your niche. It will help your company to be more visible in the
+                industry.
               </p>
               <p className="ab_sec2-p rws-p">
-              We provide custom content writing services, including blog posts, eBooks, articles, and web content. We are a team of professionals who are experts at writing funny product descriptions for websites, blogs, and social media platforms. Our writers can create great content for your business so you can increase your sales. For more information on our services, kindly reach out to us and tell us what you need.
+                We provide custom content writing services, including blog
+                posts, eBooks, articles, and web content. We are a team of
+                professionals who are experts at writing funny product
+                descriptions for websites, blogs, and social media platforms.
+                Our writers can create great content for your business so you
+                can increase your sales. For more information on our services,
+                kindly reach out to us and tell us what you need.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Original And Funny Ideas For Product Descriptions
+                Original And Funny Ideas For Product Descriptions
               </h3>
               <p className="ab_sec2-p rws-p">
-              Our writers are known to have original and funny ideas for product descriptions. They have been appreciated by clients worldwide. We provide product descriptions that are designed to attract the potential buyer’s attention and create an emotional connection between the customer and the product. Our writers are highly skilled in writing about products, services, people, and events that occur in real life. So, you can be sure that your product description will be professionally written with accuracy and clarity.
+                Our writers are known to have original and funny ideas for
+                product descriptions. They have been appreciated by clients
+                worldwide. We provide product descriptions that are designed to
+                attract the potential buyer’s attention and create an emotional
+                connection between the customer and the product. Our writers are
+                highly skilled in writing about products, services, people, and
+                events that occur in real life. So, you can be sure that your
+                product description will be professionally written with accuracy
+                and clarity.
               </p>
               <p className="ab_sec2-p rws-p">
-              Because our writers are experts in the field of professional writing, they can make your company stand out from the crowd. They have a genuine interest in your business and know how to write effective content that grabs attention and converts visitors into customers.
+                Because our writers are experts in the field of professional
+                writing, they can make your company stand out from the crowd.
+                They have a genuine interest in your business and know how to
+                write effective content that grabs attention and converts
+                visitors into customers.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -338,13 +418,24 @@ const funny = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              GetProWriter Expertise For Funny Product Descriptions
+                GetProWriter Expertise For Funny Product Descriptions
               </h3>
               <p className="ab_sec2-p rws-p">
-              GetProWriter is a specialist in writing product descriptions that make your products stand out. We provide a range of services to help you get the most out of your product descriptions. Our team of writers has many years of experience in this field and we are always ready to help you with any kind of project.
+                GetProWriter is a specialist in writing product descriptions
+                that make your products stand out. We provide a range of
+                services to help you get the most out of your product
+                descriptions. Our team of writers has many years of experience
+                in this field and we are always ready to help you with any kind
+                of project.
               </p>
               <p className="ab_sec2-p rws-p">
-              Get Pro Writer offers high-quality product descriptions at affordable prices. We have been offering this service for many years now and have established ourselves as one of the leading experts in this field. Our writers are highly qualified and experienced professionals who can write whatever type of description you need – from long ones to short ones – it’s all up to you!
+                Get Pro Writer offers high-quality product descriptions at
+                affordable prices. We have been offering this service for many
+                years now and have established ourselves as one of the leading
+                experts in this field. Our writers are highly qualified and
+                experienced professionals who can write whatever type of
+                description you need – from long ones to short ones – it’s all
+                up to you!
               </p>
             </div>
           </div>
@@ -417,137 +508,139 @@ const funny = () => {
             <h2 className="writing_sec-h2">SOME OF OUR ESTEEMED KEY CLIENTS</h2>
             <span className="writing_sec-spa">* * * * *</span>
 
-            <Swiper
-              freeMode={true}
-              loop={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              grabCursor={true}
-              modules={[Autoplay, FreeMode]}
-              className="mySwiper"
-              breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                480: {
-                  slidesPerView: 2,
-                  spaceBetween: 10,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 15,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 15,
-                },
-              }}
-            >
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/lego.webp"
-                    alt="lego"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
-                    alt="Allianz"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
-                    alt="Citi"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
-                    alt="zara"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
+            {loaded && (
+              <Swiper
+                freeMode={true}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                grabCursor={true}
+                modules={[Autoplay, FreeMode]}
+                className="mySwiper"
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  480: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                  },
+                  1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 15,
+                  },
+                }}
+              >
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/lego.webp"
+                      alt="lego"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
+                      alt="Allianz"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
+                      alt="Citi"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
+                      alt="zara"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
 
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
-                    alt="loreal"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
-                    alt="gillette"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
-                    alt="sap"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
-                    alt="att"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
-                    alt="toyota"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
-                    alt="ikea"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
+                      alt="loreal"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
+                      alt="gillette"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
+                      alt="sap"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
+                      alt="att"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
+                      alt="toyota"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
+                      alt="ikea"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            )}
           </div>
         </div>
       </section>
@@ -556,10 +649,10 @@ const funny = () => {
         <div className="container">
           <div className="row">
             <h2 className="get_sec-h2">
-            Why Hire Our Funny Product Description Writers?
+              Why Hire Our Funny Product Description Writers?
             </h2>
             <p className="get_sec-p">
-            So that your product is viewed by more and more users.
+              So that your product is viewed by more and more users.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -571,8 +664,22 @@ const funny = () => {
                     </span>
                   </li>
                   <li className="in_li">
+                    <span className="spa_h2">Industry’s talented writers</span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="box-ol">
+                <ol className="m-0 d-flex align-items-center p-0">
+                  <li className="in_li">
+                    <span className="right_span">
+                      <i aria-hidden="true" className="fas fa-check-circle"></i>
+                    </span>
+                  </li>
+                  <li className="in_li">
                     <span className="spa_h2">
-                    Industry’s talented writers
+                      Funny enough to draw attention
                     </span>
                   </li>
                 </ol>
@@ -588,23 +695,7 @@ const funny = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                    Funny enough to draw attention
-                    </span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="box-ol">
-                <ol className="m-0 d-flex align-items-center p-0">
-                  <li className="in_li">
-                    <span className="right_span">
-                      <i aria-hidden="true" className="fas fa-check-circle"></i>
-                    </span>
-                  </li>
-                  <li className="in_li">
-                    <span className="spa_h2">
-                    Excellent content and delivery
+                      Excellent content and delivery
                     </span>
                   </li>
                 </ol>
@@ -612,11 +703,22 @@ const funny = () => {
             </div>
 
             <p className="review1-p">
-            Hire our funny product description writers so that your product is viewed by more and more users. Our product description writers are highly skilled in writing compelling, informative, and useful descriptions for products. Our focus is on making your product unique and interesting, while we also make sure that it’s well-written and easy to understand.
+              Hire our funny product description writers so that your product is
+              viewed by more and more users. Our product description writers are
+              highly skilled in writing compelling, informative, and useful
+              descriptions for products. Our focus is on making your product
+              unique and interesting, while we also make sure that it’s
+              well-written and easy to understand.
             </p>
 
             <p className="review1-p">
-            We have been writing funny, quirky, and informative product descriptions for many years now and have helped thousands of businesses like yours succeed in their sales figures. We use different techniques to make your product description stand out among others on the market. We write in a way that keeps you interested in reading the whole description, instead of skipping over it to get to the next section of your website.
+              We have been writing funny, quirky, and informative product
+              descriptions for many years now and have helped thousands of
+              businesses like yours succeed in their sales figures. We use
+              different techniques to make your product description stand out
+              among others on the market. We write in a way that keeps you
+              interested in reading the whole description, instead of skipping
+              over it to get to the next section of your website.
             </p>
           </div>
         </div>
@@ -630,7 +732,10 @@ const funny = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                The product description writers from GetProWriter are excellent. They have always delivered content as per our expectations. The quality of the content is good. We are very happy with their work and will continue working with them.
+                  The product description writers from GetProWriter are
+                  excellent. They have always delivered content as per our
+                  expectations. The quality of the content is good. We are very
+                  happy with their work and will continue working with them.
                 </p>
                 <div className="t_sels">
                   <img
@@ -639,9 +744,7 @@ const funny = () => {
                     className="testi_box-img"
                   />
                   <h3 className="testi_box-h3">Hobert L</h3>
-                  <p className="testi_box-p">
-                  CEO, Pro Biz
-                  </p>
+                  <p className="testi_box-p">CEO, Pro Biz</p>
                 </div>
               </div>
             </div>
@@ -649,7 +752,9 @@ const funny = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                GetProWriter has been my go-to resource for copywriting services. Their product description writers always deliver content as per my expectations.
+                  GetProWriter has been my go-to resource for copywriting
+                  services. Their product description writers always deliver
+                  content as per my expectations.
                 </p>
                 <div className="t_sels">
                   <img
@@ -722,7 +827,8 @@ const funny = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        Are there professionals on your team who can write funny products?
+                        Are there professionals on your team who can write funny
+                        products?
                       </button>
                     </h2>
 
@@ -733,7 +839,18 @@ const funny = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                      Our company has many qualified professionals for writing product descriptions. We have writers who specialize in product copy for various categories, from electronics to fashion. Our writers are skilled in creating product descriptions that will stand out and be a source of trust for customers, who can be assured of the quality of the products they order. We make sure that our copywriters are knowledgeable about the product they’re describing and have a passion for writing, but they also know how to connect with customers as though they were fellow shoppers. Our copywriters aren’t just good at their jobs – they love them.
+                        Our company has many qualified professionals for writing
+                        product descriptions. We have writers who specialize in
+                        product copy for various categories, from electronics to
+                        fashion. Our writers are skilled in creating product
+                        descriptions that will stand out and be a source of
+                        trust for customers, who can be assured of the quality
+                        of the products they order. We make sure that our
+                        copywriters are knowledgeable about the product they’re
+                        describing and have a passion for writing, but they also
+                        know how to connect with customers as though they were
+                        fellow shoppers. Our copywriters aren’t just good at
+                        their jobs – they love them.
                       </div>
                     </div>
                   </div>
@@ -762,7 +879,14 @@ const funny = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                      We have more than 5000 writers on our team and all of them are extraordinary. They can write product descriptions to precision. We assure you that you will receive quality work. You can easily get in touch with us via live chat or email. Our customer service representatives will be glad to help you out with any query that you might have about your order or about the quality of our service.
+                        We have more than 5000 writers on our team and all of
+                        them are extraordinary. They can write product
+                        descriptions to precision. We assure you that you will
+                        receive quality work. You can easily get in touch with
+                        us via live chat or email. Our customer service
+                        representatives will be glad to help you out with any
+                        query that you might have about your order or about the
+                        quality of our service.
                       </div>
                     </div>
                   </div>
@@ -781,7 +905,8 @@ const funny = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      Can we hire product writers from your company for a longer time?
+                      Can we hire product writers from your company for a longer
+                      time?
                     </button>
                   </h2>
 
@@ -792,7 +917,14 @@ const funny = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                    Yes. You can always hire product writers from our company for a longer time. Our writers are ready to complete large projects. We provide you with the best writers that can complete your task on time and with high quality. We offer affordable prices to meet your required budget. We will deliver the work before the deadline, making sure that there is no delay. Our work will be written from scratch as per your requirements and instructions.
+                      Yes. You can always hire product writers from our company
+                      for a longer time. Our writers are ready to complete large
+                      projects. We provide you with the best writers that can
+                      complete your task on time and with high quality. We offer
+                      affordable prices to meet your required budget. We will
+                      deliver the work before the deadline, making sure that
+                      there is no delay. Our work will be written from scratch
+                      as per your requirements and instructions.
                     </div>
                   </div>
                 </div>
@@ -802,7 +934,7 @@ const funny = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
 export default funny;

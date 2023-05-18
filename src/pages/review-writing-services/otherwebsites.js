@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import ReviewGetintouch from "../ReviewGetintouch";
+import ReviewGetintouch from "../reviewgetintouch";
 
 const otherwebsites = () => {
   return (
@@ -14,13 +14,15 @@ const otherwebsites = () => {
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1 className="top_Sec-h1 mt-3 p-0">
-              Excellent Other Websites Reviews
+                Excellent Other Websites Reviews
               </h1>
-              <h2 className="top_Sec-h2">
-              Websites Reviews Instantly|
-              </h2>
+              <h2 className="top_Sec-h2">Websites Reviews Instantly|</h2>
               <p className="top_Sec-p">
-              GetProWriter is your best choice if you are looking for other websites reviews writing services. We are a professional writing company offering reliable and high-quality reviews to clients all over the world. Our writers know how to write in accordance with your requirements and expectations.
+                GetProWriter is your best choice if you are looking for other
+                websites reviews writing services. We are a professional writing
+                company offering reliable and high-quality reviews to clients
+                all over the world. Our writers know how to write in accordance
+                with your requirements and expectations.
               </p>
             </div>
 
@@ -37,11 +39,12 @@ const otherwebsites = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-            Other websites reviews writing made easy by GetProWriter!
+              Other websites reviews writing made easy by GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-            Improve presence with best other websites reviews writing services.
+              Improve presence with best other websites reviews writing
+              services.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
@@ -121,13 +124,25 @@ const otherwebsites = () => {
       <section className="rev_sec">
         <div className="container">
           <div className="row">
-            <h2 className="rev_sec-h2">Our Other Websites Reviews Ghostwriters Shape Brands</h2>
+            <h2 className="rev_sec-h2">
+              Our Other Websites Reviews Ghostwriters Shape Brands
+            </h2>
 
             <p className="rev_sec-p">
-            GetProWriter has helped in the shaping of many brands with other websites reviews writing services. GPW is an online writing service that provides quality content for all kinds of businesses and individuals. We provide a wide range of services including reviews, article writing, script writing, blog writing, etc. If you are looking for a reliable company to outsource your content creation needs, then GetProWriter is the right choice for you.
+              GetProWriter has helped in the shaping of many brands with other
+              websites reviews writing services. GPW is an online writing
+              service that provides quality content for all kinds of businesses
+              and individuals. We provide a wide range of services including
+              reviews, article writing, script writing, blog writing, etc. If
+              you are looking for a reliable company to outsource your content
+              creation needs, then GetProWriter is the right choice for you.
             </p>
             <p className="rev_sec-p">
-            GetProWriter is a company that can reshape your brand by providing convincing content. We have been applauded by many clients for our excellent other websites reviews writing services. We have been serving our clients for many years now and we know how vital it is for you to work with a company that is reliable and trustworthy.
+              GetProWriter is a company that can reshape your brand by providing
+              convincing content. We have been applauded by many clients for our
+              excellent other websites reviews writing services. We have been
+              serving our clients for many years now and we know how vital it is
+              for you to work with a company that is reliable and trustworthy.
             </p>
           </div>
         </div>
@@ -137,10 +152,12 @@ const otherwebsites = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-            Skilled writers for compelling other websites reviews!
+              Skilled writers for compelling other websites reviews!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
-            <p className="writing_sec-p">Our website review content experts will be your assets.</p>
+            <p className="writing_sec-p">
+              Our website review content experts will be your assets.
+            </p>
 
             <div class="col-md-6">
               <h2 class="count_h2">Check us out and see for yourself:</h2>
@@ -211,13 +228,24 @@ const otherwebsites = () => {
             </div>
             <div class="col-md-6">
               <h2 class="count_h2">
-              Talented Writers For Interesting Other Websites Reviews
+                Talented Writers For Interesting Other Websites Reviews
               </h2>
               <p class="count-p">
-              You’ve probably heard of the importance of customer reviews, but you might not have considered how important they are for your business. If you’re a small business, reviews are one of the only ways that people can learn about you and what you do. But if website reviews aren’t interesting, then users aren’t going to get in touch with you – which is where GetProWriter does its magic. We help businesses like yours to create engaging website reviews that will drive traffic to your site.
+                You’ve probably heard of the importance of customer reviews, but
+                you might not have considered how important they are for your
+                business. If you’re a small business, reviews are one of the
+                only ways that people can learn about you and what you do. But
+                if website reviews aren’t interesting, then users aren’t going
+                to get in touch with you – which is where GetProWriter does its
+                magic. We help businesses like yours to create engaging website
+                reviews that will drive traffic to your site.
               </p>
               <p class="count-p">
-              We’ll help you make sure your site isn’t just good enough, but great. We go out of the way in making sure your site is optimized for user engagement and conversions, so that visitors can find what they’re looking for and so that they become customers or clients of yours.
+                We’ll help you make sure your site isn’t just good enough, but
+                great. We go out of the way in making sure your site is
+                optimized for user engagement and conversions, so that visitors
+                can find what they’re looking for and so that they become
+                customers or clients of yours.
               </p>
             </div>
           </div>
@@ -228,22 +256,38 @@ const otherwebsites = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-            Other Websites Reviews Writing Service For Enhanced User Response
+              Other Websites Reviews Writing Service For Enhanced User Response
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-            Opt for our other websites reviews writing service today.
+              Opt for our other websites reviews writing service today.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Review Content That Outshines Other Competitors
+                Review Content That Outshines Other Competitors
               </h3>
               <p className="ab_sec2-p rws-p">
-              Are you still looking for top-notch reviews writing services? If you are, then you have come to the right place. We at GetProWriter specialize in website reviews and make sure they are unique and original. Our writers are professionals who know how to write content that will help your website get noticed. Our reviews are always fresh and engaging so that visitors stay longer on your site. This way, you can increase the number of people who come back and make a purchase from your website.
+                Are you still looking for top-notch reviews writing services? If
+                you are, then you have come to the right place. We at
+                GetProWriter specialize in website reviews and make sure they
+                are unique and original. Our writers are professionals who know
+                how to write content that will help your website get noticed.
+                Our reviews are always fresh and engaging so that visitors stay
+                longer on your site. This way, you can increase the number of
+                people who come back and make a purchase from your website.
               </p>
               <p className="ab_sec2-p rws-p">
-              You might get great reviews but are these better than the ones on your competitors’ sites? For that, you need the most sought-after other websites reviews writing services. And you get that only on GetProWriter! When you hire us to write reviews for your website, we will work with you to understand what kind of feedback you want from potential customers. We will also provide suggestions on how to make it more appealing so that more people will read it and maybe even share it with their friends or colleagues. And of course, we will help you to outshine your competitors.
+                You might get great reviews but are these better than the ones
+                on your competitors’ sites? For that, you need the most
+                sought-after other websites reviews writing services. And you
+                get that only on GetProWriter! When you hire us to write reviews
+                for your website, we will work with you to understand what kind
+                of feedback you want from potential customers. We will also
+                provide suggestions on how to make it more appealing so that
+                more people will read it and maybe even share it with their
+                friends or colleagues. And of course, we will help you to
+                outshine your competitors.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -263,25 +307,55 @@ const otherwebsites = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              GPW Ghostwriters For Out-Of-The-Box Reviews
+                GPW Ghostwriters For Out-Of-The-Box Reviews
               </h3>
               <p className="ab_sec2-p rws-p">
-              GetProWriter has the best writers in the business. We work with you to provide custom content that is tailored to your needs and goals. We don’t think of ourselves as just a writing service – we’re a team of professional writers who want to help you succeed. Our writers are experienced, talented professionals who think outside the box, and they can help you get there too.
+                GetProWriter has the best writers in the business. We work with
+                you to provide custom content that is tailored to your needs and
+                goals. We don’t think of ourselves as just a writing service –
+                we’re a team of professional writers who want to help you
+                succeed. Our writers are experienced, talented professionals who
+                think outside the box, and they can help you get there too.
               </p>
               <p className="ab_sec2-p rws-p">
-              GetProWriter is a company that’s committed to helping businesses proposer. We’re not just about writing – we’re about thinking, too. We know that growing a business is hard work, and it takes more than just a great idea to make it happen. That’s why we’ve built a team of professional writers who are ready to help you take your business from good to great. Our writers are experts at thinking creatively and we’ll work with you to find new ways of looking at your business so we can create content that will bring in new customers, increase sales, and improve brand recognition.
+                GetProWriter is a company that’s committed to helping businesses
+                proposer. We’re not just about writing – we’re about thinking,
+                too. We know that growing a business is hard work, and it takes
+                more than just a great idea to make it happen. That’s why we’ve
+                built a team of professional writers who are ready to help you
+                take your business from good to great. Our writers are experts
+                at thinking creatively and we’ll work with you to find new ways
+                of looking at your business so we can create content that will
+                bring in new customers, increase sales, and improve brand
+                recognition.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Websites Reviews Writers Who Are Immensely Determined
+                Websites Reviews Writers Who Are Immensely Determined
               </h3>
               <p className="ab_sec2-p rws-p">
-              If you’re looking for highly determined websites reviews writers, then GetProWriter has them for you. We have a team of professionals who will work hard to ensure that your website gets the kind of exposure it deserves. It doesn’t matter if you have a small business or are part of an international corporation – we can help make sure that your website is noticed by the right people.
+                If you’re looking for highly determined websites reviews
+                writers, then GetProWriter has them for you. We have a team of
+                professionals who will work hard to ensure that your website
+                gets the kind of exposure it deserves. It doesn’t matter if you
+                have a small business or are part of an international
+                corporation – we can help make sure that your website is noticed
+                by the right people.
               </p>
               <p className="ab_sec2-p rws-p">
-              GetProWriter is a company that provides top-notch services in the field of writing. Our highly educated writers can write anything from an academic paper to a website review. Our writers are well versed with the latest trends in the industry and have years of experience in their respective fields. We provide all kinds of services ranging from review writing to SEO writing. We ensure that our clients receive nothing but quality work from us at all times. Our team consists of experts from various fields so we are able to handle any type of project given to us by our clients no matter how difficult it might seem at the first glance.
+                GetProWriter is a company that provides top-notch services in
+                the field of writing. Our highly educated writers can write
+                anything from an academic paper to a website review. Our writers
+                are well versed with the latest trends in the industry and have
+                years of experience in their respective fields. We provide all
+                kinds of services ranging from review writing to SEO writing. We
+                ensure that our clients receive nothing but quality work from us
+                at all times. Our team consists of experts from various fields
+                so we are able to handle any type of project given to us by our
+                clients no matter how difficult it might seem at the first
+                glance.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -301,25 +375,51 @@ const otherwebsites = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Ensure Top Business Performance With Our Reviews Experts
+                Ensure Top Business Performance With Our Reviews Experts
               </h3>
               <p className="ab_sec2-p rws-p">
-              GetProWriter is here not just to offer you phenomenal website reviews. Rather, our team is here to ensure top business performance for your enterprise. We are a group of writers and editors who believe in the power of words. Our dedicated writers will help you create an online presence that is truly unique, memorable, and engaging. We understand that every business has its own unique needs and requirements and we are committed to providing professional services that meet those needs.
+                GetProWriter is here not just to offer you phenomenal website
+                reviews. Rather, our team is here to ensure top business
+                performance for your enterprise. We are a group of writers and
+                editors who believe in the power of words. Our dedicated writers
+                will help you create an online presence that is truly unique,
+                memorable, and engaging. We understand that every business has
+                its own unique needs and requirements and we are committed to
+                providing professional services that meet those needs.
               </p>
               <p className="ab_sec2-p rws-p">
-              You may know that your website needs to be able to keep up with the competition. However, you might not realize just how crucial reviews are for your business’s reputation or how much good reviews can help. We are here to help you develop a plan that takes into account your company’s needs and goals, and then work with you every step of the way until we’ve achieved them all.
+                You may know that your website needs to be able to keep up with
+                the competition. However, you might not realize just how crucial
+                reviews are for your business’s reputation or how much good
+                reviews can help. We are here to help you develop a plan that
+                takes into account your company’s needs and goals, and then work
+                with you every step of the way until we’ve achieved them all.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Original Content For Other Websites Reviews
+                Original Content For Other Websites Reviews
               </h3>
               <p className="ab_sec2-p rws-p">
-              GetProWriter does not just offer remarkable review writing services. We take care of the tiniest detail when it comes to other websites reviews. Therefore, originality is something that is also considered significant in our projects. Our team is here to ensure that your business is presented in a way that will make your customers want to buy from you. That’s why our writers are trained to create unique content that stands out among competitors. GetProWriter is not just another review writing service company – we are here to help you make a mark in the industry.
+                GetProWriter does not just offer remarkable review writing
+                services. We take care of the tiniest detail when it comes to
+                other websites reviews. Therefore, originality is something that
+                is also considered significant in our projects. Our team is here
+                to ensure that your business is presented in a way that will
+                make your customers want to buy from you. That’s why our writers
+                are trained to create unique content that stands out among
+                competitors. GetProWriter is not just another review writing
+                service company – we are here to help you make a mark in the
+                industry.
               </p>
               <p className="ab_sec2-p rws-p">
-              Our review writers come with a wide range of experiences, which means they can write a review that’s specific to your needs. We know that every business is different in its own way, so we make sure our writers are well-versed in the latest trends and industry practices. This way, you get a personalized review that reflects your varied needs.
+                Our review writers come with a wide range of experiences, which
+                means they can write a review that’s specific to your needs. We
+                know that every business is different in its own way, so we make
+                sure our writers are well-versed in the latest trends and
+                industry practices. This way, you get a personalized review that
+                reflects your varied needs.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -339,13 +439,22 @@ const otherwebsites = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              GetProWriter Expertise For Impactful Other Websites Reviews
+                GetProWriter Expertise For Impactful Other Websites Reviews
               </h3>
               <p className="ab_sec2-p rws-p">
-              If you’re wondering what makes GetProWriter so special, it’s our ability to create impact with our content – including reviews. We’ve been able to make a real difference in the lives of our clients with outstanding services. We offer exactly what they need and we take pride in the positive impact we have on their businesses.
+                If you’re wondering what makes GetProWriter so special, it’s our
+                ability to create impact with our content – including reviews.
+                We’ve been able to make a real difference in the lives of our
+                clients with outstanding services. We offer exactly what they
+                need and we take pride in the positive impact we have on their
+                businesses.
               </p>
               <p className="ab_sec2-p rws-p">
-              We are known for creating high-quality content that’s not only well-written but also provides real value to readers. Our clients know that when they come to us for help with their writing needs, they are going to get a piece that not only looks great but gets results.
+                We are known for creating high-quality content that’s not only
+                well-written but also provides real value to readers. Our
+                clients know that when they come to us for help with their
+                writing needs, they are going to get a piece that not only looks
+                great but gets results.
               </p>
             </div>
           </div>
@@ -418,137 +527,139 @@ const otherwebsites = () => {
             <h2 className="writing_sec-h2">SOME OF OUR ESTEEMED KEY CLIENTS</h2>
             <span className="writing_sec-spa">* * * * *</span>
 
-            <Swiper
-              freeMode={true}
-              loop={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              grabCursor={true}
-              modules={[Autoplay, FreeMode]}
-              className="mySwiper"
-              breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                480: {
-                  slidesPerView: 2,
-                  spaceBetween: 10,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 15,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 15,
-                },
-              }}
-            >
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/lego.webp"
-                    alt="lego"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
-                    alt="Allianz"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
-                    alt="Citi"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
-                    alt="zara"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
+            {loaded && (
+              <Swiper
+                freeMode={true}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                grabCursor={true}
+                modules={[Autoplay, FreeMode]}
+                className="mySwiper"
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  480: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                  },
+                  1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 15,
+                  },
+                }}
+              >
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/lego.webp"
+                      alt="lego"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
+                      alt="Allianz"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
+                      alt="Citi"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
+                      alt="zara"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
 
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
-                    alt="loreal"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
-                    alt="gillette"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
-                    alt="sap"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
-                    alt="att"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
-                    alt="toyota"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
-                    alt="ikea"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
+                      alt="loreal"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
+                      alt="gillette"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
+                      alt="sap"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
+                      alt="att"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
+                      alt="toyota"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
+                      alt="ikea"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            )}
           </div>
         </div>
       </section>
@@ -557,10 +668,11 @@ const otherwebsites = () => {
         <div className="container">
           <div className="row">
             <h2 className="get_sec-h2">
-            Why Hire Other Websites Reviews Ghostwriters From Us?
+              Why Hire Other Websites Reviews Ghostwriters From Us?
             </h2>
             <p className="get_sec-p">
-            You can easily focus on your business while we deliver the content of your reviews.
+              You can easily focus on your business while we deliver the content
+              of your reviews.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -572,9 +684,7 @@ const otherwebsites = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">
-                      Highly professional
-                    </span>
+                    <span className="spa_h2">Highly professional</span>
                   </li>
                 </ol>
               </div>
@@ -605,7 +715,7 @@ const otherwebsites = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                    Deliver great quality reviews timely
+                      Deliver great quality reviews timely
                     </span>
                   </li>
                 </ol>
@@ -613,11 +723,25 @@ const otherwebsites = () => {
             </div>
 
             <p className="review1-p">
-            We, at GPW, are extremely professional when it comes to assignments. We know that you need the best when it comes to content, so we allocate the most qualified and capable writers to you. Our writers have years of experience writing for various businesses and have worked with many kinds of clients. They know the significance of receiving an assignment without errors, so they will always get the job done in the right fashion.
+              We, at GPW, are extremely professional when it comes to
+              assignments. We know that you need the best when it comes to
+              content, so we allocate the most qualified and capable writers to
+              you. Our writers have years of experience writing for various
+              businesses and have worked with many kinds of clients. They know
+              the significance of receiving an assignment without errors, so
+              they will always get the job done in the right fashion.
             </p>
 
             <p className="review1-p">
-            Our other websites reviews writers are cooperative and they work in tandem with what clients look for. Our writers have incredible expertise, which means that they will be able to provide you with superior quality content. Our writers have access to the most up-to-date resources so that they can create content that is original and unique. We value our customers’ satisfaction above all else, so we always aim to provide them with what they want. Our team of experts will work hard to ensure that your project is completed on time and according to your specifications.
+              Our other websites reviews writers are cooperative and they work
+              in tandem with what clients look for. Our writers have incredible
+              expertise, which means that they will be able to provide you with
+              superior quality content. Our writers have access to the most
+              up-to-date resources so that they can create content that is
+              original and unique. We value our customers’ satisfaction above
+              all else, so we always aim to provide them with what they want.
+              Our team of experts will work hard to ensure that your project is
+              completed on time and according to your specifications.
             </p>
           </div>
         </div>
@@ -631,7 +755,11 @@ const otherwebsites = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                GetProWriter professionals have done a wonderful job. The reviews have been written in a very structured way and they contain all the necessary information about our website and services. The entire content is really well-drafted and I am sure that it will help our clients to increase sales.
+                  GetProWriter professionals have done a wonderful job. The
+                  reviews have been written in a very structured way and they
+                  contain all the necessary information about our website and
+                  services. The entire content is really well-drafted and I am
+                  sure that it will help our clients to increase sales.
                 </p>
                 <div className="t_sels">
                   <img
@@ -640,9 +768,7 @@ const otherwebsites = () => {
                     className="testi_box-img"
                   />
                   <h3 className="testi_box-h3">Julie Hardy</h3>
-                  <p className="testi_box-p">
-                  Account Executive, Pric
-                  </p>
+                  <p className="testi_box-p">Account Executive, Pric</p>
                 </div>
               </div>
             </div>
@@ -650,7 +776,12 @@ const otherwebsites = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                The quality of work delivered by GPW writers is amazing! They know how to write content that will be effective for SEO purposes while also making sure that it's easy to read and understand by anyone who visits our site. We would highly recommend GPW to any company who are especially looking for review writers. Also, their services are affordable!
+                  The quality of work delivered by GPW writers is amazing! They
+                  know how to write content that will be effective for SEO
+                  purposes while also making sure that it's easy to read and
+                  understand by anyone who visits our site. We would highly
+                  recommend GPW to any company who are especially looking for
+                  review writers. Also, their services are affordable!
                 </p>
                 <div className="t_sels">
                   <img
@@ -734,7 +865,13 @@ const otherwebsites = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                      The best way to improve website content for clients is to go for other websites reviews writing service from GetProWriter. We are an online writing service company providing top-quality reviews and other content to clients at competitive prices. Our company is known to offer excellent customer service and all our clients have been satisfied with our work.
+                        The best way to improve website content for clients is
+                        to go for other websites reviews writing service from
+                        GetProWriter. We are an online writing service company
+                        providing top-quality reviews and other content to
+                        clients at competitive prices. Our company is known to
+                        offer excellent customer service and all our clients
+                        have been satisfied with our work.
                       </div>
                     </div>
                   </div>
@@ -752,7 +889,8 @@ const otherwebsites = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        What is a reliable platform to buy other websites reviews writing service?
+                        What is a reliable platform to buy other websites
+                        reviews writing service?
                       </button>
                     </h2>
 
@@ -763,7 +901,15 @@ const otherwebsites = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                      GetProWriter is a reliable platform to buy other websites reviews writing service. You can opt for GPW without a second thought. It has become one of the best platforms that provide truly fantastic writing services to clients. You can select from an array of services like website reviews, blogs, article content, and many others. The services we offer are highly effective in increasing the traffic of websites and improving rankings on search engines.
+                        GetProWriter is a reliable platform to buy other
+                        websites reviews writing service. You can opt for GPW
+                        without a second thought. It has become one of the best
+                        platforms that provide truly fantastic writing services
+                        to clients. You can select from an array of services
+                        like website reviews, blogs, article content, and many
+                        others. The services we offer are highly effective in
+                        increasing the traffic of websites and improving
+                        rankings on search engines.
                       </div>
                     </div>
                   </div>
@@ -793,7 +939,13 @@ const otherwebsites = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                    Once we hire writers at GetProWriter, all of them regularly go through different sets of training as per their niche. This is necessary to ensure that they are well-versed with what’s happening in the industry. This also helps us to ensure that every writer understands the core concepts of the particular industry vis-a-vis the ever-changing dynamics of the same.
+                      Once we hire writers at GetProWriter, all of them
+                      regularly go through different sets of training as per
+                      their niche. This is necessary to ensure that they are
+                      well-versed with what’s happening in the industry. This
+                      also helps us to ensure that every writer understands the
+                      core concepts of the particular industry vis-a-vis the
+                      ever-changing dynamics of the same.
                     </div>
                   </div>
                 </div>
@@ -803,7 +955,7 @@ const otherwebsites = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
 export default otherwebsites;

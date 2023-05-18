@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import ReviewGetintouch from "../ReviewGetintouch";
+import ReviewGetintouch from "../reviewgetintouch";
 
 const intro = () => {
   return (
@@ -290,7 +290,7 @@ const intro = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-               src=" https://getprowriter.com/writer/img/Creatvie-Intro-blog.webp"
+                src=" https://getprowriter.com/writer/img/Creatvie-Intro-blog.webp"
                 alt="Expertimental-review"
                 className="rws-img"
               />
@@ -346,7 +346,7 @@ const intro = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <img
-               src=" https://getprowriter.com/writer/img/Business-Image.webp"
+                src=" https://getprowriter.com/writer/img/Business-Image.webp"
                 alt="Grow-your-business"
                 className="rws-img"
               />
@@ -502,137 +502,139 @@ const intro = () => {
             <h2 className="writing_sec-h2">SOME OF OUR ESTEEMED KEY CLIENTS</h2>
             <span className="writing_sec-spa">* * * * *</span>
 
-            <Swiper
-              freeMode={true}
-              loop={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              grabCursor={true}
-              modules={[Autoplay, FreeMode]}
-              className="mySwiper"
-              breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                480: {
-                  slidesPerView: 2,
-                  spaceBetween: 10,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 15,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 15,
-                },
-              }}
-            >
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/lego.webp"
-                    alt="lego"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
-                    alt="Allianz"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
-                    alt="Citi"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
-                    alt="zara"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
+            {loaded && (
+              <Swiper
+                freeMode={true}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                grabCursor={true}
+                modules={[Autoplay, FreeMode]}
+                className="mySwiper"
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  480: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                  },
+                  1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 15,
+                  },
+                }}
+              >
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/lego.webp"
+                      alt="lego"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
+                      alt="Allianz"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
+                      alt="Citi"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
+                      alt="zara"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
 
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
-                    alt="loreal"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
-                    alt="gillette"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
-                    alt="sap"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
-                    alt="att"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
-                    alt="toyota"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
-                    alt="ikea"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
+                      alt="loreal"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
+                      alt="gillette"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
+                      alt="sap"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
+                      alt="att"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
+                      alt="toyota"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
+                      alt="ikea"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            )}
           </div>
         </div>
       </section>
@@ -749,7 +751,7 @@ const intro = () => {
                 </p>
                 <div className="t_sels">
                   <img
-                   src=" https://getprowriter.com/writer/img/Frank-Thompson.webp"
+                    src=" https://getprowriter.com/writer/img/Frank-Thompson.webp"
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />

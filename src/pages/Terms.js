@@ -132,10 +132,7 @@ const Terms = () => {
                   Post such verification the Account shall be created.
                 </p>
 
-                <h4 className="term_sec-h4">
-                  {" "}
-                  <li>If you are a Customer:</li>{" "}
-                </h4>
+                <h4 className="term_sec-h4">If you are a Customer:</h4>
 
                 <p className="term_sec-p">
                   If interested, you may register and create an account for
@@ -179,22 +176,18 @@ const Terms = () => {
                 </h3>
 
                 <p className="term_sec-p">
-                  <li className="p_li">
-                    The Client has no rights to or ownership of any content
-                    until they have accepted the order through the Site
-                    interface and funds are removed for that order. ALL
-                    VIOLATIONS BY CLIENTS WILL BE ENFORCED BY SITE.{" "}
-                  </li>
+                  The Client has no rights to or ownership of any content until
+                  they have accepted the order through the Site interface and
+                  funds are removed for that order. ALL VIOLATIONS BY CLIENTS
+                  WILL BE ENFORCED BY SITE.{" "}
                 </p>
 
                 <p className="term_sec-p">
-                  <li className="p_li">
-                    Once accepted, the Client has rights to publish, perform,
-                    display, reproduce, distribute, create derivative works and
-                    sell the delivered and approved content in any type of media
-                    including, but not limited to, print and or online media
-                    throughout the world.{" "}
-                  </li>
+                  Once accepted, the Client has rights to publish, perform,
+                  display, reproduce, distribute, create derivative works and
+                  sell the delivered and approved content in any type of media
+                  including, but not limited to, print and or online media
+                  throughout the world.{" "}
                 </p>
 
                 <h3 className="term_sec-h3">LIMITATION OF LIABILITY</h3>

@@ -33,7 +33,7 @@ const GuestPayment = () => {
     } else {
       setToken(false);
     }
-  }, );
+  });
   console.log(token);
   const initialValues = {
     email: "",

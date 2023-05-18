@@ -1,12 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter,useSearchParams  } from "next/router";
+import { useRouter, useSearchParams } from "next/router";
 import axios from "axios";
 // import { useSearchParams } from "next/router";
 
 const PaypalGuestPaymentSuccess = () => {
   const searchParams = useSearchParams("false");
-  const tokenID = localStorage.getItem("token");
+  const [tokenID, setTokenId] = useState("");
+
+  useEffect(() => {
+    setTokenId(localStorage.getItem("token"));
+  }, []);
   const pay_id = sessionStorage.getItem("pay_id");
   const amount = sessionStorage.getItem("amount");
   const email = sessionStorage.getItem("email");
@@ -97,7 +101,11 @@ export default PaypalGuestPaymentSuccess;
 // const PaypalGuestPaymentSuccess = () => {
 //   const [searchParams, setSearchParams] = useSearchParams();
 
-//   const tokenID = localStorage.getItem("token");
+//   const [tokenID, setTokenId] = useState("");
+
+useEffect(() => {
+  setTokenId(localStorage.getItem("token"));
+}, []);
 //   const pay_id = sessionStorage.getItem("pay_id");
 //   const amount = sessionStorage.getItem("amount");
 //   const email = sessionStorage.getItem("email");

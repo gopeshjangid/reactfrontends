@@ -1,10 +1,14 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
 const PaypalSubscriptionSuccess = () => {
-  const tokenID = localStorage.getItem("token");
+  const [tokenID, setTokenId] = useState("");
+
+  useEffect(() => {
+    setTokenId(localStorage.getItem("token"));
+  }, []);
   const sub_id = sessionStorage.getItem("sub_id");
   const amount = sessionStorage.getItem("amount");
   const productId = sessionStorage.getItem("productId");

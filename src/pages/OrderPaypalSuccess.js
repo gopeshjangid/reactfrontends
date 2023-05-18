@@ -7,7 +7,11 @@ import { useSearchParams } from "next/router";
 const OrderPaypalSuccess = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const tokenID = localStorage.getItem("token");
+  const [tokenID, setTokenId] = useState("");
+
+  useEffect(() => {
+    setTokenId(localStorage.getItem("token"));
+  }, []);
   const pay_id = sessionStorage.getItem("pay_id");
   const paypal = sessionStorage.getItem("totalamount");
   const couponName = sessionStorage.getItem("couponName");
@@ -17,7 +21,12 @@ const OrderPaypalSuccess = () => {
     Authorization: `${tokenID}`,
   };
 
-  const data = { totalamount: parseInt(paypal),couponAmount,couponName, pay_id };
+  const data = {
+    totalamount: parseInt(paypal),
+    couponAmount,
+    couponName,
+    pay_id,
+  };
   const navigate = useNavigate();
 
   useEffect(() => {

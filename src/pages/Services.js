@@ -595,8 +595,6 @@ class Services extends Component {
                             <li className="services_li-2 me-0 d-block"></li>
                           </ul>
 
-                        
-
                           <li className="ol_li">
                             <span className="fs-3 justify-content-center d-flex align-items-center ">
                               <span className="fs-5">Price:</span>
@@ -608,10 +606,7 @@ class Services extends Component {
                             {friend.shortTitle}
                           </h4>
 
-                          <ol
-                            className="p-0"
-                           
-                          >
+                          <ol className="p-0">
                             <li className="ol_li d-flex justify-content-center">
                               <span className="ol_li-spa1 me-2">
                                 <i
@@ -642,7 +637,7 @@ class Services extends Component {
                             >
                               SUBSCRIBE
                             </button> */}
-                       
+
                             {/* <Link href="/viewcart"> */}
                             <a href="/viewcart">
                               <button

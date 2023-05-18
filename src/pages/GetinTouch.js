@@ -1,6 +1,6 @@
 import React from "react";
 //import { useRouter } from 'next/navigation';
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import moment from "moment";
 
 import { useState, useEffect } from "react";
@@ -339,7 +339,7 @@ const GetinTouch = () => {
           onSubmit={handleSubmit}
         >
           <h2 className="form_sec-h2">
-           Place Your  <span className="spa">Order </span>
+            Place Your <span className="spa">Order </span>
           </h2>
           <div className="form-inputs d-flex space-between">
             <div className="Home-Name pe-1">
@@ -515,7 +515,7 @@ const GetinTouch = () => {
             </div>
           </div>
           <button type="submit" className="btn_set1 ms-0">
-          Submit
+            Submit
           </button>{" "}
           {message === "successfully login and order" ? (
             <h3 className="Success text-center" style={{ color: "#03979c" }}>

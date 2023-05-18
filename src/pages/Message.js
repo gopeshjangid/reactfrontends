@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Image from "next/image";
-import paymmsgimg from "../images/35f323bc5b41dc4269001529e3ff1278.gif"
+import paymmsgimg from "../images/35f323bc5b41dc4269001529e3ff1278.gif";
 // import paylogo from "../images/"
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -412,11 +412,7 @@ const Message = ({
         {" "}
         <p className="fw-bold mb-2">{`${user}`}</p>
         <div className="py-2 text-center bg-light">
-          <Image
-            src={paymmsgimg}
-            alt="messagegif"
-            className="w-25"
-          />
+          <Image src={paymmsgimg} alt="messagegif" className="w-25" />
           <h3>Payment Success</h3>
         </div>
         {/* <button

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import { FaStar } from "react-icons/fa";
 // import { Radio, Rating } from "./RatingStyles";
-import { Rating, Radio } from "./RatingStyles";
+import { Rating, Radio } from "./ratingstyles";
 import ReactPaginate from "react-paginate";
 import { hasPointerEvents } from "@testing-library/user-event/dist/utils";
 const PER_PAGE = 10;

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -7,7 +7,11 @@ import { useSearchParams } from "next/router";
 const PendingPaymentPaypalSuccess = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const tokenID = localStorage.getItem("token");
+  const [tokenID, setTokenId] = useState("");
+
+  useEffect(() => {
+    setTokenId(localStorage.getItem("token"));
+  }, []);
   const pay_id = sessionStorage.getItem("pay_id");
   const message = sessionStorage.getItem("totalamount");
   const orderId = sessionStorage.getItem("orderId");

@@ -1,5 +1,5 @@
 import React from "react";
-import ReviewGetintouch from "../ReviewGetintouch";
+import ReviewGetintouch from "../reviewgetintouch";
 
 const brilliant = () => {
   return (

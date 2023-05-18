@@ -4,8 +4,13 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 const StripeSubscription = () => {
-  const tokenID =localStorage.getItem("token");
-  const id = sessionStorage.getItem("id");
+  const [tokenID, setTokenId] = useState("");
+  const [id, setId] = useState("");
+  useEffect(() => {
+    setTokenId(localStorage.getItem("token"));
+    setId(sessionStorage.getItem("id"));
+  }, []);
+
   const headers = {
     "Content-Type": "application/json",
     Authorization: `${tokenID}`,

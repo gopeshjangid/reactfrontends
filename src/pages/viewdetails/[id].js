@@ -1,13 +1,14 @@
 // import "../styles/style.css";
 import React from "react";
 import { useEffect, useState } from "react";
-import { useParams } from "next/router";
+import { useRouter } from "next/router";
 import axios from "axios";
 
-import Loader from "./Loader";
+import Loader from "../Loader";
 const ViewDetails = () => {
   let urlApi = `${process.env.NEXT_PUBLIC_APIURL}`;
-  const { id } = useParams();
+  const router = useRouter();
+  const { id } = router.query;
   console.log(id, "id");
 
   const [posts, SetPosts] = useState([]);
@@ -35,7 +36,7 @@ const ViewDetails = () => {
       }
     };
     fetch();
-  });
+  }, []);
 
   const RenderHTML = (props) => (
     <p dangerouslySetInnerHTML={{ __html: props.HTML }}></p>

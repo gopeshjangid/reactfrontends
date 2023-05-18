@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import ReviewGetintouch from "../ReviewGetintouch";
+import ReviewGetintouch from "../reviewgetintouch";
 
 const flawless = () => {
   return (
@@ -13,14 +13,14 @@ const flawless = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1 mt-3 p-0">
-              Flawless Movie Reviews!
-              </h1>
-              <h2 className="top_Sec-h2">
-              Movie Reviews Made Easy|
-              </h2>
+              <h1 className="top_Sec-h1 mt-3 p-0">Flawless Movie Reviews!</h1>
+              <h2 className="top_Sec-h2">Movie Reviews Made Easy|</h2>
               <p className="top_Sec-p">
-              GetProWriter offers incredible services when it comes to writing a movie review. They have a team of professional writers, who are experts in their field, and they can write anything you need. You can hire them to write movie reviews and their services are available at affordable prices.
+                GetProWriter offers incredible services when it comes to writing
+                a movie review. They have a team of professional writers, who
+                are experts in their field, and they can write anything you
+                need. You can hire them to write movie reviews and their
+                services are available at affordable prices.
               </p>
             </div>
 
@@ -37,11 +37,12 @@ const flawless = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-            Experienced writers for writing a movie review? GetProWriter it is!
+              Experienced writers for writing a movie review? GetProWriter it
+              is!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-            Our movie review ghostwriters for guaranteed readership.
+              Our movie review ghostwriters for guaranteed readership.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
@@ -121,13 +122,29 @@ const flawless = () => {
       <section className="rev_sec">
         <div className="container">
           <div className="row">
-            <h2 className="rev_sec-h2">Our Movie Review Ghostwriters To Define Your Enterprise</h2>
+            <h2 className="rev_sec-h2">
+              Our Movie Review Ghostwriters To Define Your Enterprise
+            </h2>
 
             <p className="rev_sec-p">
-            If you are an enterprise that deals with the movie industry and you are looking for expert writers to craft movie reviews for you, then GetProWriter is here to help. We have been in business for many years and have been helping companies all over the world. You can find professional content writers with us who can help create reviews that capture your audience’s attention and engage them with a compelling narrative. When you need someone to write about movies, you can choose from our team of experts waiting to get started on your project right away.
+              If you are an enterprise that deals with the movie industry and
+              you are looking for expert writers to craft movie reviews for you,
+              then GetProWriter is here to help. We have been in business for
+              many years and have been helping companies all over the world. You
+              can find professional content writers with us who can help create
+              reviews that capture your audience’s attention and engage them
+              with a compelling narrative. When you need someone to write about
+              movies, you can choose from our team of experts waiting to get
+              started on your project right away.
             </p>
             <p className="rev_sec-p">
-            Our staff has worked in all areas of entertainment journalism. We know how important it is to create unique content that will engage readers while also providing them with valuable information they can use in their own lives. Our writers know how hard it can be to find something fresh and exciting every day. We, therefore, do our best not only to provide accurate reviews but also to make sure they are well-written so that people want to read them.
+              Our staff has worked in all areas of entertainment journalism. We
+              know how important it is to create unique content that will engage
+              readers while also providing them with valuable information they
+              can use in their own lives. Our writers know how hard it can be to
+              find something fresh and exciting every day. We, therefore, do our
+              best not only to provide accurate reviews but also to make sure
+              they are well-written so that people want to read them.
             </p>
           </div>
         </div>
@@ -137,10 +154,12 @@ const flawless = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-            Movie reviews are delivered promptly only on GetProWriter!
+              Movie reviews are delivered promptly only on GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
-            <p className="writing_sec-p">Our review writers are familiar with movies across genres.</p>
+            <p className="writing_sec-p">
+              Our review writers are familiar with movies across genres.
+            </p>
 
             <div class="col-md-6">
               <h2 class="count_h2">Check us out and see for yourself:</h2>
@@ -211,15 +230,24 @@ const flawless = () => {
             </div>
             <div class="col-md-6">
               <h2 class="count_h2">
-              Go For A Skilled Movie Review Writer To Attract Audiences
+                Go For A Skilled Movie Review Writer To Attract Audiences
               </h2>
               <p class="count-p">
-              Writing a movie review is not easy. It takes a lot of time, effort, and creativity to create a compelling review that will engage readers and encourage them to come back for more. But our review experts know the magic trick. They can write reviews for you that will instantly attract readers. Their reviews will draw in new audiences and keep them hooked.
+                Writing a movie review is not easy. It takes a lot of time,
+                effort, and creativity to create a compelling review that will
+                engage readers and encourage them to come back for more. But our
+                review experts know the magic trick. They can write reviews for
+                you that will instantly attract readers. Their reviews will draw
+                in new audiences and keep them hooked.
               </p>
               <p class="count-p">
-              Our reviews aren’t just about the plot of the film or the actors involved. They’re about the feeling of being part of something bigger – something that really resonates with people who are like-minded and share your values. That’s why our reviews connect with readers so deeply. Our writers understand what it means to be part of a community, and they know how to write about that experience with passion and authenticity.
-
-
+                Our reviews aren’t just about the plot of the film or the actors
+                involved. They’re about the feeling of being part of something
+                bigger – something that really resonates with people who are
+                like-minded and share your values. That’s why our reviews
+                connect with readers so deeply. Our writers understand what it
+                means to be part of a community, and they know how to write
+                about that experience with passion and authenticity.
               </p>
             </div>
           </div>
@@ -230,22 +258,35 @@ const flawless = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-            Get Movie Reviews Easily With Our Commendable Services
+              Get Movie Reviews Easily With Our Commendable Services
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-            Acquire our services to get the best movie reviews.
+              Acquire our services to get the best movie reviews.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Top Quality Movie Review Content
+                Top Quality Movie Review Content
               </h3>
               <p className="ab_sec2-p rws-p">
-              If you’re looking for top-quality movie reviews, then GetProWriter is your companion. We have writers on board who write interesting reviews that are of optimal quality. We know how important it is to have a good review, especially when it comes to movies. People want to know what they’re getting into before they even watch the movie. And the best way to do that is by reading reviews that are written by someone who has actually seen the movie, and knows what makes it great or terrible.
+                If you’re looking for top-quality movie reviews, then
+                GetProWriter is your companion. We have writers on board who
+                write interesting reviews that are of optimal quality. We know
+                how important it is to have a good review, especially when it
+                comes to movies. People want to know what they’re getting into
+                before they even watch the movie. And the best way to do that is
+                by reading reviews that are written by someone who has actually
+                seen the movie, and knows what makes it great or terrible.
               </p>
               <p className="ab_sec2-p rws-p">
-              You don’t want someone writing about how great a film is, who hasn’t even seen it yet. That’s why we make sure that our review writers see every movie firsthand and can write about them with authority. They do this in a way that will make you want to go see them yourself. If you’d like more information about how we can help you with movie reviews, please feel free to reach out via email or phone.
+                You don’t want someone writing about how great a film is, who
+                hasn’t even seen it yet. That’s why we make sure that our review
+                writers see every movie firsthand and can write about them with
+                authority. They do this in a way that will make you want to go
+                see them yourself. If you’d like more information about how we
+                can help you with movie reviews, please feel free to reach out
+                via email or phone.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -265,25 +306,54 @@ const flawless = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Ghostwriters For Apt Movie Reviews
+                Ghostwriters For Apt Movie Reviews
               </h3>
               <p className="ab_sec2-p rws-p">
-              Are you looking for an apt movie review that will convince your readers to watch the movie? We’ve got you covered. Our writers are equipped to write reviews that entice readers to check out a film and make an informed decision about whether or not they want to go. Our writers are also able to write effective movie reviews that don’t give too much away but still manage to capture the tone and essence of the movie so that readers can decide if it’s right for them.
+                Are you looking for an apt movie review that will convince your
+                readers to watch the movie? We’ve got you covered. Our writers
+                are equipped to write reviews that entice readers to check out a
+                film and make an informed decision about whether or not they
+                want to go. Our writers are also able to write effective movie
+                reviews that don’t give too much away but still manage to
+                capture the tone and essence of the movie so that readers can
+                decide if it’s right for them.
               </p>
               <p className="ab_sec2-p rws-p">
-              When it comes to movie reviews, you want someone who can write something that will convince readers to give the movie a shot. You want your reviewers to be able to capture the heart of the story and explain why it was so good. Our ghostwriters have the knowledge and experience needed to do just that. They know how important it is for a reviewer to be able to tell readers about what makes a movie great, without giving away any spoilers. This can be tricky because sometimes you have to give away necessary details, but our writers have years of experience handling this challenge skillfully.
+                When it comes to movie reviews, you want someone who can write
+                something that will convince readers to give the movie a shot.
+                You want your reviewers to be able to capture the heart of the
+                story and explain why it was so good. Our ghostwriters have the
+                knowledge and experience needed to do just that. They know how
+                important it is for a reviewer to be able to tell readers about
+                what makes a movie great, without giving away any spoilers. This
+                can be tricky because sometimes you have to give away necessary
+                details, but our writers have years of experience handling this
+                challenge skillfully.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Movie Review Writers Who Have Literary Versatility
+                Movie Review Writers Who Have Literary Versatility
               </h3>
               <p className="ab_sec2-p rws-p">
-              We believe that every movie is unique and diverse. And our movie review writers bring this versatility on board while writing a movie review. Our writers are proficient in handling different kinds of movie review tasks. They are also very proficient in writing about different genres of movies and styles of movie reviews.
+                We believe that every movie is unique and diverse. And our movie
+                review writers bring this versatility on board while writing a
+                movie review. Our writers are proficient in handling different
+                kinds of movie review tasks. They are also very proficient in
+                writing about different genres of movies and styles of movie
+                reviews.
               </p>
               <p className="ab_sec2-p rws-p">
-              They can write about anything from the latest blockbuster to an independent film by a debut director. So, whether you need an expert writer to write about an action-packed film or an emotional drama, we have got you covered. Our team of experts who are well-versed with all forms of cinema – ranging from Hollywood films to films that come from different corners of the world. Our ghostwriters are also adept at analyzing various aspects of films like acting performances by actors/actresses, storyline, cinematography, direction, screenplay, etc.
+                They can write about anything from the latest blockbuster to an
+                independent film by a debut director. So, whether you need an
+                expert writer to write about an action-packed film or an
+                emotional drama, we have got you covered. Our team of experts
+                who are well-versed with all forms of cinema – ranging from
+                Hollywood films to films that come from different corners of the
+                world. Our ghostwriters are also adept at analyzing various
+                aspects of films like acting performances by actors/actresses,
+                storyline, cinematography, direction, screenplay, etc.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -303,25 +373,53 @@ const flawless = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Your Business Will Be Everywhere With Our Movie Review Services
+                Your Business Will Be Everywhere With Our Movie Review Services
               </h3>
               <p className="ab_sec2-p rws-p">
-              When you hire a GPW writer to write a movie review, we make sure that your business is visible in the industry. We understand how important it is for you to be visible and how difficult it is to do it on your own. That’s why we have dedicated writers who know how to write interesting and engaging review content. They will help you get noticed by others in the sector.
+                When you hire a GPW writer to write a movie review, we make sure
+                that your business is visible in the industry. We understand how
+                important it is for you to be visible and how difficult it is to
+                do it on your own. That’s why we have dedicated writers who know
+                how to write interesting and engaging review content. They will
+                help you get noticed by others in the sector.
               </p>
               <p className="ab_sec2-p rws-p">
-              Our writers have been writing movie reviews for many years now and they know how to give their readers the information they need without overloading them with unnecessary details. They also know how important it is to keep things interesting even if they are writing about something very serious. GetProWriter understands that not all businesses become famous overnight but they do want their work recognized. If you want enhanced recognition in the industry, then hire review writers from our company.
+                Our writers have been writing movie reviews for many years now
+                and they know how to give their readers the information they
+                need without overloading them with unnecessary details. They
+                also know how important it is to keep things interesting even if
+                they are writing about something very serious. GetProWriter
+                understands that not all businesses become famous overnight but
+                they do want their work recognized. If you want enhanced
+                recognition in the industry, then hire review writers from our
+                company.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Original Writing Flair For All Kinds Of Movie Reviews
+                Original Writing Flair For All Kinds Of Movie Reviews
               </h3>
               <p className="ab_sec2-p rws-p">
-              While writing a movie review is about documenting someone else’s work, our writers know how to maintain originality in writing. When we write a review, we don’t just pen down details as they are or paste plot summaries. Instead, we use our keen eye for detail to find unique aspects of the film that will make it stand out in your mind. We also know that a good movie review needs to be well-written and attractive – so we make sure ours are both.
+                While writing a movie review is about documenting someone else’s
+                work, our writers know how to maintain originality in writing.
+                When we write a review, we don’t just pen down details as they
+                are or paste plot summaries. Instead, we use our keen eye for
+                detail to find unique aspects of the film that will make it
+                stand out in your mind. We also know that a good movie review
+                needs to be well-written and attractive – so we make sure ours
+                are both.
               </p>
               <p className="ab_sec2-p rws-p">
-              If you want to hire someone who can help you get noticed online by providing well-written movie reviews, then GetProWriter should be your go-to company. Our writers know that there is more to film than meets the eye. They have the skills to create unique pieces of writing that will engage readers and promote discussion. Our team understands that each movie has a different tone and style, so we take into account these factors when writing reviews. Our reviewers are experienced enough to deliver quality content every time.
+                If you want to hire someone who can help you get noticed online
+                by providing well-written movie reviews, then GetProWriter
+                should be your go-to company. Our writers know that there is
+                more to film than meets the eye. They have the skills to create
+                unique pieces of writing that will engage readers and promote
+                discussion. Our team understands that each movie has a different
+                tone and style, so we take into account these factors when
+                writing reviews. Our reviewers are experienced enough to deliver
+                quality content every time.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -341,19 +439,23 @@ const flawless = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              GetProWriter Expertise For Reviews With No Match
+                GetProWriter Expertise For Reviews With No Match
               </h3>
               <p className="ab_sec2-p rws-p">
-              GetProWriter expertise is all about standing out. We do not say that there aren’t good rev
-              iew writers in other companies. However, we believe that they probably do not have the power 
-              of the GPW expertise.
+                GetProWriter expertise is all about standing out. We do not say
+                that there aren’t good rev iew writers in other companies.
+                However, we believe that they probably do not have the power of
+                the GPW expertise.
               </p>
               <p className="ab_sec2-p rws-p">
-              We are proud of our team. They are talented, ambitious, and hard-working. We believe that we h
-              ave some of the best writers in the industry. We are sure you will be able to tell the diffe
-              rence between their work and the reviews of other companies’ writers. Our writers are traine
-              d to write reviews that leave an impression on readers – they will make your business look 
-              good and make your customer feel good about your content.</p>
+                We are proud of our team. They are talented, ambitious, and
+                hard-working. We believe that we h ave some of the best writers
+                in the industry. We are sure you will be able to tell the diffe
+                rence between their work and the reviews of other companies’
+                writers. Our writers are traine d to write reviews that leave an
+                impression on readers – they will make your business look good
+                and make your customer feel good about your content.
+              </p>
             </div>
           </div>
         </div>
@@ -425,137 +527,139 @@ const flawless = () => {
             <h2 className="writing_sec-h2">SOME OF OUR ESTEEMED KEY CLIENTS</h2>
             <span className="writing_sec-spa">* * * * *</span>
 
-            <Swiper
-              freeMode={true}
-              loop={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              grabCursor={true}
-              modules={[Autoplay, FreeMode]}
-              className="mySwiper"
-              breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                480: {
-                  slidesPerView: 2,
-                  spaceBetween: 10,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 15,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 15,
-                },
-              }}
-            >
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/lego.webp"
-                    alt="lego"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
-                    alt="Allianz"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
-                    alt="Citi"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
-                    alt="zara"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
+            {loaded && (
+              <Swiper
+                freeMode={true}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                grabCursor={true}
+                modules={[Autoplay, FreeMode]}
+                className="mySwiper"
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  480: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                  },
+                  1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 15,
+                  },
+                }}
+              >
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/lego.webp"
+                      alt="lego"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
+                      alt="Allianz"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
+                      alt="Citi"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
+                      alt="zara"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
 
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
-                    alt="loreal"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
-                    alt="gillette"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
-                    alt="sap"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
-                    alt="att"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
-                    alt="toyota"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
-                    alt="ikea"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
+                      alt="loreal"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
+                      alt="gillette"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
+                      alt="sap"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
+                      alt="att"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
+                      alt="toyota"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
+                      alt="ikea"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            )}
           </div>
         </div>
       </section>
@@ -564,10 +668,10 @@ const flawless = () => {
         <div className="container">
           <div className="row">
             <h2 className="get_sec-h2">
-            Why Hire Our Writing A Movie Review Services?
+              Why Hire Our Writing A Movie Review Services?
             </h2>
             <p className="get_sec-p">
-            Maximize user inflow with our superb content.
+              Maximize user inflow with our superb content.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -579,8 +683,22 @@ const flawless = () => {
                     </span>
                   </li>
                   <li className="in_li">
+                    <span className="spa_h2">Experts in reviewing movies</span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="box-ol">
+                <ol className="m-0 d-flex align-items-center p-0">
+                  <li className="in_li">
+                    <span className="right_span">
+                      <i aria-hidden="true" className="fas fa-check-circle"></i>
+                    </span>
+                  </li>
+                  <li className="in_li">
                     <span className="spa_h2">
-                      Experts in reviewing movies
+                      Consider the needs of clients while working
                     </span>
                   </li>
                 </ol>
@@ -596,23 +714,7 @@ const flawless = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                    Consider the needs of clients while working
-                    </span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="box-ol">
-                <ol className="m-0 d-flex align-items-center p-0">
-                  <li className="in_li">
-                    <span className="right_span">
-                      <i aria-hidden="true" className="fas fa-check-circle"></i>
-                    </span>
-                  </li>
-                  <li className="in_li">
-                    <span className="spa_h2">
-                    Content delivery always as per the assured time
+                      Content delivery always as per the assured time
                     </span>
                   </li>
                 </ol>
@@ -620,11 +722,21 @@ const flawless = () => {
             </div>
 
             <p className="review1-p">
-            Hire movie review experts from GetProWriter as they can help you maximize user inflow with their superb content. We know that creating high-quality content for movies or other entertainment products is not easy.
+              Hire movie review experts from GetProWriter as they can help you
+              maximize user inflow with their superb content. We know that
+              creating high-quality content for movies or other entertainment
+              products is not easy.
             </p>
 
             <p className="review1-p">
-            Our review writers are experts in reviewing movies. They consider the needs of clients while working on projects. Our team understands that you need to get a movie review written quickly, so we work hard to deliver quality work as fast as possible. We never compromise on content quality when it comes to any assignment, including writing a movie review. We know that you want your assignment to be perfect and we are here to help you achieve that.
+              Our review writers are experts in reviewing movies. They consider
+              the needs of clients while working on projects. Our team
+              understands that you need to get a movie review written quickly,
+              so we work hard to deliver quality work as fast as possible. We
+              never compromise on content quality when it comes to any
+              assignment, including writing a movie review. We know that you
+              want your assignment to be perfect and we are here to help you
+              achieve that.
             </p>
           </div>
         </div>
@@ -638,7 +750,12 @@ const flawless = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                We are a company that deals with entertainment projects. Due to the high volume of work, we wanted to try out a movie review writer from GetProWriter. The result? Simply outstanding! GetProWriter is definitely one of the best companies we've worked with. They understand what we want and how to deliver it without any problems whatsoever.
+                  We are a company that deals with entertainment projects. Due
+                  to the high volume of work, we wanted to try out a movie
+                  review writer from GetProWriter. The result? Simply
+                  outstanding! GetProWriter is definitely one of the best
+                  companies we've worked with. They understand what we want and
+                  how to deliver it without any problems whatsoever.
                 </p>
                 <div className="t_sels">
                   <img
@@ -648,7 +765,7 @@ const flawless = () => {
                   />
                   <h3 className="testi_box-h3">Christian Meyer</h3>
                   <p className="testi_box-p">
-                  Fketing, Chief executive officer
+                    Fketing, Chief executive officer
                   </p>
                 </div>
               </div>
@@ -657,7 +774,10 @@ const flawless = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                We needed someone who could write movie reviews for us and we found it in GetProWriter. The team was very responsive and professional. They were able to adapt to all our needs and they delivered high-quality content on time.
+                  We needed someone who could write movie reviews for us and we
+                  found it in GetProWriter. The team was very responsive and
+                  professional. They were able to adapt to all our needs and
+                  they delivered high-quality content on time.
                 </p>
                 <div className="t_sels">
                   <img
@@ -730,7 +850,8 @@ const flawless = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        Can I get a writer from GetProWriter for writing a movie review?
+                        Can I get a writer from GetProWriter for writing a movie
+                        review?
                       </button>
                     </h2>
 
@@ -741,7 +862,16 @@ const flawless = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                      Yes. Getting a writer from GetProWriter for writing a movie review is simple and takes just a few minutes. You can find the right writer by visiting our website. We have many writers available for writing movie reviews so that you can pick the one that best suits your needs. Once you’ve chosen someone, all you have to do is tell them what type of project you expect them to work on and other details. Upon agreeing to the terms, you can simply sit back and relax while your writer gets to work.
+                        Yes. Getting a writer from GetProWriter for writing a
+                        movie review is simple and takes just a few minutes. You
+                        can find the right writer by visiting our website. We
+                        have many writers available for writing movie reviews so
+                        that you can pick the one that best suits your needs.
+                        Once you’ve chosen someone, all you have to do is tell
+                        them what type of project you expect them to work on and
+                        other details. Upon agreeing to the terms, you can
+                        simply sit back and relax while your writer gets to
+                        work.
                       </div>
                     </div>
                   </div>
@@ -759,7 +889,8 @@ const flawless = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Is it a good idea to hire ghostwriters for movie reviews?
+                        Is it a good idea to hire ghostwriters for movie
+                        reviews?
                       </button>
                     </h2>
 
@@ -770,12 +901,17 @@ const flawless = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                      It’s definitely a good idea to hire ghostwriters for movie reviews. The reason is that most people will not appreciate a movie review from someone who does not specialize in it. That’s why we think it’s important to hire ghostwriters for movie reviews. And the best place to hire them would be GetProWriter!
-
-Our writers are all experts in their fields, which means that you won’t find any spelling errors or grammatical mistakes in their work. They also have an excellent track record of delivering high-quality work on time.
+                        It’s definitely a good idea to hire ghostwriters for
+                        movie reviews. The reason is that most people will not
+                        appreciate a movie review from someone who does not
+                        specialize in it. That’s why we think it’s important to
+                        hire ghostwriters for movie reviews. And the best place
+                        to hire them would be GetProWriter! Our writers are all
+                        experts in their fields, which means that you won’t find
+                        any spelling errors or grammatical mistakes in their
+                        work. They also have an excellent track record of
+                        delivering high-quality work on time.
                       </div>
-
-
                     </div>
                   </div>
                 </div>
@@ -793,7 +929,8 @@ Our writers are all experts in their fields, which means that you won’t find a
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                     How many review writers do you have currently on your team?
+                      How many review writers do you have currently on your
+                      team?
                     </button>
                   </h2>
 
@@ -804,9 +941,16 @@ Our writers are all experts in their fields, which means that you won’t find a
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      IWe currently have 5000 writers on our team who specialize in various niches. Our team would only grow with time. All these writers are among the best in the industry and come from various parts of the world.
-
-Our writers are well-versed with all kinds of writing styles and formats and movie review is only a part of it. These also include technical writing, blogs, copy-writing, emails, memoir writing, and so on. They have years of experience as writers and have written for many clients across different industries.
+                      IWe currently have 5000 writers on our team who specialize
+                      in various niches. Our team would only grow with time. All
+                      these writers are among the best in the industry and come
+                      from various parts of the world. Our writers are
+                      well-versed with all kinds of writing styles and formats
+                      and movie review is only a part of it. These also include
+                      technical writing, blogs, copy-writing, emails, memoir
+                      writing, and so on. They have years of experience as
+                      writers and have written for many clients across different
+                      industries.
                     </div>
                   </div>
                 </div>
@@ -816,7 +960,7 @@ Our writers are well-versed with all kinds of writing styles and formats and mov
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
 export default flawless;

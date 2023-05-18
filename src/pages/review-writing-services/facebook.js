@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import ReviewGetintouch from "../ReviewGetintouch";
+import ReviewGetintouch from "../reviewgetintouch";
 
 const facebook = () => {
   return (
@@ -15,11 +15,13 @@ const facebook = () => {
               <h1 className="top_Sec-h1 mt-3 p-0">
                 Attractive Facebook Reviews!
               </h1>
-              <h2 className="top_Sec-h2">
-              Buy Facebook Marketplace Reviews|
-              </h2>
+              <h2 className="top_Sec-h2">Buy Facebook Marketplace Reviews|</h2>
               <p className="top_Sec-p">
-              GetProWriter is known to redefine Facebook reviews by providing extraordinary content to clients. We are a team of professional writers with many years of experience in the industry. Our writers will craft your content in a way that will make you stand out from the crowd.
+                GetProWriter is known to redefine Facebook reviews by providing
+                extraordinary content to clients. We are a team of professional
+                writers with many years of experience in the industry. Our
+                writers will craft your content in a way that will make you
+                stand out from the crowd.
               </p>
             </div>
 
@@ -36,11 +38,11 @@ const facebook = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-            Buy 5 Star Facebook Reviews Writers On GetProWriter!
+              Buy 5 Star Facebook Reviews Writers On GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-            Compelling Facebook reviews to drive your business.
+              Compelling Facebook reviews to drive your business.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
@@ -120,13 +122,24 @@ const facebook = () => {
       <section className="rev_sec">
         <div className="container">
           <div className="row">
-            <h2 className="rev_sec-h2">Facebook Reviews Writers To Strengthen Foundations</h2>
+            <h2 className="rev_sec-h2">
+              Facebook Reviews Writers To Strengthen Foundations
+            </h2>
 
             <p className="rev_sec-p">
-            The Facebook reviews written by our writers have helped strengthen the foundations for many enterprises. The guidelines we receive help us build our work and ensure that we are providing the highest quality service possible to our clients.
+              The Facebook reviews written by our writers have helped strengthen
+              the foundations for many enterprises. The guidelines we receive
+              help us build our work and ensure that we are providing the
+              highest quality service possible to our clients.
             </p>
             <p className="rev_sec-p">
-            We strive to provide an exceptional experience for every client and their feedback is what helps us stay on track in making sure that each client gets exactly what they need from us. We take great pride in the fact that our services have helped so many enterprises grow and flourish and we will continue to work hard to ensure this for many others. So, what are you waiting for? Reach out to us for excellent Facebook marketplace reviews.
+              We strive to provide an exceptional experience for every client
+              and their feedback is what helps us stay on track in making sure
+              that each client gets exactly what they need from us. We take
+              great pride in the fact that our services have helped so many
+              enterprises grow and flourish and we will continue to work hard to
+              ensure this for many others. So, what are you waiting for? Reach
+              out to us for excellent Facebook marketplace reviews.
             </p>
           </div>
         </div>
@@ -136,10 +149,12 @@ const facebook = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-            Top Social Media Review Writers On GetProWriter!
+              Top Social Media Review Writers On GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
-            <p className="writing_sec-p">Well-crafted reviews for your Facebook business accounts.</p>
+            <p className="writing_sec-p">
+              Well-crafted reviews for your Facebook business accounts.
+            </p>
 
             <div class="col-md-6">
               <h2 class="count_h2">Check us out and see for yourself:</h2>
@@ -209,14 +224,23 @@ const facebook = () => {
               </div>
             </div>
             <div class="col-md-6">
-              <h2 class="count_h2">
-              Go For A GPW Facebook Reviews Expert
-              </h2>
+              <h2 class="count_h2">Go For A GPW Facebook Reviews Expert</h2>
               <p class="count-p">
-              GPW Facebook review expert means timely work with no compromise on quality. We are a team of highly skilled and experienced professionals who provide Facebook marketplace reviews for all businesses. We understand that every business is unique and we customize our services to suit the needs of your business. Our aim is to provide top-notch service to our clients and make them happy.
+                GPW Facebook review expert means timely work with no compromise
+                on quality. We are a team of highly skilled and experienced
+                professionals who provide Facebook marketplace reviews for all
+                businesses. We understand that every business is unique and we
+                customize our services to suit the needs of your business. Our
+                aim is to provide top-notch service to our clients and make them
+                happy.
               </p>
               <p class="count-p">
-              We are the best in the business and we have been so for some years now. We have a team of experts that works tirelessly to make sure that your Facebook page is always up-to-date, and filled with reviews that attract users. Our commitment is to offer the best writing services to clients who put their trust in us.
+                We are the best in the business and we have been so for some
+                years now. We have a team of experts that works tirelessly to
+                make sure that your Facebook page is always up-to-date, and
+                filled with reviews that attract users. Our commitment is to
+                offer the best writing services to clients who put their trust
+                in us.
               </p>
             </div>
           </div>
@@ -227,22 +251,33 @@ const facebook = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-            Affordable Reviews On Facebook Services
+              Affordable Reviews On Facebook Services
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-            Buy positive reviews on Facebook for the right industry mark.
+              Buy positive reviews on Facebook for the right industry mark.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Quality Driven Facebook Reviews
+                Quality Driven Facebook Reviews
               </h3>
               <p className="ab_sec2-p rws-p">
-              Positive reviews on Facebook must be driven by quality and we take care of that. Our professionals are incredibly talented and are known for writing Facebook reviews that are exceptional. Also, we have very strict guidelines for each review so that it is authentic and written by keeping the service specifications in mind.
+                Positive reviews on Facebook must be driven by quality and we
+                take care of that. Our professionals are incredibly talented and
+                are known for writing Facebook reviews that are exceptional.
+                Also, we have very strict guidelines for each review so that it
+                is authentic and written by keeping the service specifications
+                in mind.
               </p>
               <p className="ab_sec2-p rws-p">
-              Facebook marketplace reviews are the first thing that potential customers see when they search for a business and they can make or break the reputation of your brand. We know how much you care about your business, so we take care of it for you. Our writers are experienced in creating compelling Facebook shop reviews that will drive traffic to your business, increase sales, and keep clients coming back time and again.
+                Facebook marketplace reviews are the first thing that potential
+                customers see when they search for a business and they can make
+                or break the reputation of your brand. We know how much you care
+                about your business, so we take care of it for you. Our writers
+                are experienced in creating compelling Facebook shop reviews
+                that will drive traffic to your business, increase sales, and
+                keep clients coming back time and again.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -262,25 +297,48 @@ const facebook = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Creative Reviews On Facebook
+                Creative Reviews On Facebook
               </h3>
               <p className="ab_sec2-p rws-p">
-              Your writers can write Facebook marketplace reviews that are highly creative. They have a lot of experience in writing reviews, so they know what makes a review effective. They have been writing Facebook reviews for some years now. We offer a range of services from simple reviews and text posts to fully-fledged blogs. Our writers are committed to providing quality work, so you can be assured that your content will be well-written.
+                Your writers can write Facebook marketplace reviews that are
+                highly creative. They have a lot of experience in writing
+                reviews, so they know what makes a review effective. They have
+                been writing Facebook reviews for some years now. We offer a
+                range of services from simple reviews and text posts to
+                fully-fledged blogs. Our writers are committed to providing
+                quality work, so you can be assured that your content will be
+                well-written.
               </p>
               <p className="ab_sec2-p rws-p">
-              Facebook shop reviews are among the dominant social media pieces that drive traffic. These user-generated reviews are often used as a way for consumers to find out more about a product or service before making a purchase. And when we look at writing review on Facebook page, all of these become our guiding principles.
+                Facebook shop reviews are among the dominant social media pieces
+                that drive traffic. These user-generated reviews are often used
+                as a way for consumers to find out more about a product or
+                service before making a purchase. And when we look at writing
+                review on Facebook page, all of these become our guiding
+                principles.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Versatile Reviews On Facebook
+                Versatile Reviews On Facebook
               </h3>
               <p className="ab_sec2-p rws-p">
-              Writing review on Facebook page is not easy. You may have hundreds of Facebook marketplace reviews for your business. But does each one look the same? For most businesses, the answer is no. As a business owner, you want to make sure that you’re doing everything you can to attract new customers and keep existing ones happy. But if all your Facebook posts are just plain text with a link back to your website, there’s a good chance that no one will see them.
+                Writing review on Facebook page is not easy. You may have
+                hundreds of Facebook marketplace reviews for your business. But
+                does each one look the same? For most businesses, the answer is
+                no. As a business owner, you want to make sure that you’re doing
+                everything you can to attract new customers and keep existing
+                ones happy. But if all your Facebook posts are just plain text
+                with a link back to your website, there’s a good chance that no
+                one will see them.
               </p>
               <p className="ab_sec2-p rws-p">
-              That’s where we come in. Our writers take time to create each review to aptly show the true essence of your business. This shows potential customers that you’re putting in the hard work to grow your business and that’s why they’ll choose your company over others.
+                That’s where we come in. Our writers take time to create each
+                review to aptly show the true essence of your business. This
+                shows potential customers that you’re putting in the hard work
+                to grow your business and that’s why they’ll choose your company
+                over others.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -300,25 +358,45 @@ const facebook = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Facebook Reviews To Boost Reputation
+                Facebook Reviews To Boost Reputation
               </h3>
               <p className="ab_sec2-p rws-p">
-              When you rely on GetProWriter to boost your business reputation, we make sure to get you Facebook shop reviews that help. That’s because we’re not just about getting reviews – we’re about getting the right reviews. We know that the public eye is increasingly skeptical of advertising and marketing, so we only hire writers who are truly interested in building your brand with the best reviews.
+                When you rely on GetProWriter to boost your business reputation,
+                we make sure to get you Facebook shop reviews that help. That’s
+                because we’re not just about getting reviews – we’re about
+                getting the right reviews. We know that the public eye is
+                increasingly skeptical of advertising and marketing, so we only
+                hire writers who are truly interested in building your brand
+                with the best reviews.
               </p>
               <p className="ab_sec2-p rws-p">
-              We’ve helped many businesses use our unique philosophy of customer service and content communication to grow their customer base, increase revenue, and improve brand loyalty. When you need a boost in your business reputation, we’re here for you. Simply reach out to us with your needs and we will suggest to you the best way forward.
+                We’ve helped many businesses use our unique philosophy of
+                customer service and content communication to grow their
+                customer base, increase revenue, and improve brand loyalty. When
+                you need a boost in your business reputation, we’re here for
+                you. Simply reach out to us with your needs and we will suggest
+                to you the best way forward.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <h3 className="ab_sec2-h3 rws-h3">
-              Original Facebook Reviews
-              </h3>
+              <h3 className="ab_sec2-h3 rws-h3">Original Facebook Reviews</h3>
               <p className="ab_sec2-p rws-p">
-              All professionals working with GetProWriter are known to give what you expect when you buy 5 star Facebook reviews – to be truly original. We understand that it’s important to give your audience an authentic experience, which is why we ensure that all of our reviewers write reviews that are 100% original.
+                All professionals working with GetProWriter are known to give
+                what you expect when you buy 5 star Facebook reviews – to be
+                truly original. We understand that it’s important to give your
+                audience an authentic experience, which is why we ensure that
+                all of our reviewers write reviews that are 100% original.
               </p>
               <p className="ab_sec2-p rws-p">
-              We know you work hard, and we want to make sure you’re getting the best possible service. If you’ve worked with us before, you know that our writers have written Facebook marketplace reviews for many leading clients. Our writers are experts at creating content that is unique, engaging, and faithful to your brand. We’ll make sure that every review will get people talking about your business. All you have to do is reach out to us with your company’s review requirements.
+                We know you work hard, and we want to make sure you’re getting
+                the best possible service. If you’ve worked with us before, you
+                know that our writers have written Facebook marketplace reviews
+                for many leading clients. Our writers are experts at creating
+                content that is unique, engaging, and faithful to your brand.
+                We’ll make sure that every review will get people talking about
+                your business. All you have to do is reach out to us with your
+                company’s review requirements.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -338,13 +416,23 @@ const facebook = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Facebook Reviews With GetProWriter Expertise
+                Facebook Reviews With GetProWriter Expertise
               </h3>
               <p className="ab_sec2-p rws-p">
-              GetProWriter expertise is about content that speaks volumes about your business. With have a team of professional writers and we have the ability to provide you with content that will be sure to engage your target audience. Our writers have experience in writing content for many different industries.
+                GetProWriter expertise is about content that speaks volumes
+                about your business. With have a team of professional writers
+                and we have the ability to provide you with content that will be
+                sure to engage your target audience. Our writers have experience
+                in writing content for many different industries.
               </p>
               <p className="ab_sec2-p rws-p">
-              GetProWriter specializes in providing writing services to a varied clientele. We have been highly regarded for our content, especially Facebook page reviews. We work with our clients not just to create content, but to add a magical flavor to their narratives so that they remain the first choice of customers online. So, if you’ve got a business and you want it to succeed, then acquire our services to make that happen.
+                GetProWriter specializes in providing writing services to a
+                varied clientele. We have been highly regarded for our content,
+                especially Facebook page reviews. We work with our clients not
+                just to create content, but to add a magical flavor to their
+                narratives so that they remain the first choice of customers
+                online. So, if you’ve got a business and you want it to succeed,
+                then acquire our services to make that happen.
               </p>
             </div>
           </div>
@@ -417,137 +505,139 @@ const facebook = () => {
             <h2 className="writing_sec-h2">SOME OF OUR ESTEEMED KEY CLIENTS</h2>
             <span className="writing_sec-spa">* * * * *</span>
 
-            <Swiper
-              freeMode={true}
-              loop={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              grabCursor={true}
-              modules={[Autoplay, FreeMode]}
-              className="mySwiper"
-              breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                480: {
-                  slidesPerView: 2,
-                  spaceBetween: 10,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 15,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 15,
-                },
-              }}
-            >
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/lego.webp"
-                    alt="lego"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
-                    alt="Allianz"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
-                    alt="Citi"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
-                    alt="zara"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
+            {loaded && (
+              <Swiper
+                freeMode={true}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                grabCursor={true}
+                modules={[Autoplay, FreeMode]}
+                className="mySwiper"
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  480: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                  },
+                  1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 15,
+                  },
+                }}
+              >
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/lego.webp"
+                      alt="lego"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
+                      alt="Allianz"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
+                      alt="Citi"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
+                      alt="zara"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
 
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
-                    alt="loreal"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
-                    alt="gillette"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
-                    alt="sap"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
-                    alt="att"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
-                    alt="toyota"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
-                    alt="ikea"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
+                      alt="loreal"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
+                      alt="gillette"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
+                      alt="sap"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
+                      alt="att"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
+                      alt="toyota"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
+                      alt="ikea"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            )}
           </div>
         </div>
       </section>
@@ -556,10 +646,10 @@ const facebook = () => {
         <div className="container">
           <div className="row">
             <h2 className="get_sec-h2">
-            Why Hire Our Facebook Reviews Writers?
+              Why Hire Our Facebook Reviews Writers?
             </h2>
             <p className="get_sec-p">
-            To enable your business to achieve new heights.
+              To enable your business to achieve new heights.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -571,9 +661,7 @@ const facebook = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">
-                    Industry experts for reviews
-                    </span>
+                    <span className="spa_h2">Industry experts for reviews</span>
                   </li>
                 </ol>
               </div>
@@ -588,7 +676,7 @@ const facebook = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                    Prioritize client requirements
+                      Prioritize client requirements
                     </span>
                   </li>
                 </ol>
@@ -603,20 +691,28 @@ const facebook = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">
-                    Flawless reviews on time
-                    </span>
+                    <span className="spa_h2">Flawless reviews on time</span>
                   </li>
                 </ol>
               </div>
             </div>
 
             <p className="review1-p">
-            Our Facebook review writers will enable your business to achieve new heights. They have an eye for detail and are ready to help you create the perfect Facebook page reviews that will bring in new customers and keep them coming back for more. No matter what type of business you have, we can help make sure it gets noticed by turning any customer experience into a positive one.
+              Our Facebook review writers will enable your business to achieve
+              new heights. They have an eye for detail and are ready to help you
+              create the perfect Facebook page reviews that will bring in new
+              customers and keep them coming back for more. No matter what type
+              of business you have, we can help make sure it gets noticed by
+              turning any customer experience into a positive one.
             </p>
 
             <p className="review1-p">
-            Our reviewers are industry experts and their experience is unmatched. They are here to help you with your project, and the most important thing to them is your satisfaction. They make sure that all assignments are created flawlessly and delivered on time. When you hire us, we’ll get it right the first time. We know exactly how to make your business look great.
+              Our reviewers are industry experts and their experience is
+              unmatched. They are here to help you with your project, and the
+              most important thing to them is your satisfaction. They make sure
+              that all assignments are created flawlessly and delivered on time.
+              When you hire us, we’ll get it right the first time. We know
+              exactly how to make your business look great.
             </p>
           </div>
         </div>
@@ -630,7 +726,11 @@ const facebook = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                We decided to buy 5 star Facebook reviews from GPW and their writers did a wonderful job. The team was very responsive and helpful. They provided us with quality content that we could publish and even went above and beyond to help us make sure the tone was exactly what we needed. Thanks!
+                  We decided to buy 5 star Facebook reviews from GPW and their
+                  writers did a wonderful job. The team was very responsive and
+                  helpful. They provided us with quality content that we could
+                  publish and even went above and beyond to help us make sure
+                  the tone was exactly what we needed. Thanks!
                 </p>
                 <div className="t_sels">
                   <img
@@ -638,10 +738,8 @@ const facebook = () => {
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">	Elizabeth Stunner</h3>
-                  <p className="testi_box-p">
-                  Assistant Engineer, Scouth
-                  </p>
+                  <h3 className="testi_box-h3"> Elizabeth Stunner</h3>
+                  <p className="testi_box-p">Assistant Engineer, Scouth</p>
                 </div>
               </div>
             </div>
@@ -649,7 +747,11 @@ const facebook = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                I had to get 500 Facebook reviews done for my clients, but there was no way my team members could get to them all by themselves. We turned to GetProWriter review writers and they were able to give us amazing review content in a timely manner.
+                  I had to get 500 Facebook reviews done for my clients, but
+                  there was no way my team members could get to them all by
+                  themselves. We turned to GetProWriter review writers and they
+                  were able to give us amazing review content in a timely
+                  manner.
                 </p>
                 <div className="t_sels">
                   <img
@@ -733,7 +835,15 @@ const facebook = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                      Hiring a Facebook reviews writer from GetProWriter is simple. You may start with our website query tab and submit your project details. You may also chat with one of our team members right away. Our team is available 24/7 to help you through the process. Once we have your details, we’ll reach out to you with a proposal. If you like what you see and want to move forward, we will then send over a contract for signature before finalizing your order.
+                        Hiring a Facebook reviews writer from GetProWriter is
+                        simple. You may start with our website query tab and
+                        submit your project details. You may also chat with one
+                        of our team members right away. Our team is available
+                        24/7 to help you through the process. Once we have your
+                        details, we’ll reach out to you with a proposal. If you
+                        like what you see and want to move forward, we will then
+                        send over a contract for signature before finalizing
+                        your order.
                       </div>
                     </div>
                   </div>
@@ -762,7 +872,14 @@ const facebook = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                      There are many platforms to buy Facebook reviews from, but the best would definitely be GetProWriter. The reason for this is that we have a huge base of clients who are satisfied with our services. Our writers have been creating content for many years and the services we offer are top-notch. You can order your review from them with complete confidence that it will be delivered on time and with no errors.
+                        There are many platforms to buy Facebook reviews from,
+                        but the best would definitely be GetProWriter. The
+                        reason for this is that we have a huge base of clients
+                        who are satisfied with our services. Our writers have
+                        been creating content for many years and the services we
+                        offer are top-notch. You can order your review from them
+                        with complete confidence that it will be delivered on
+                        time and with no errors.
                       </div>
                     </div>
                   </div>
@@ -792,7 +909,13 @@ const facebook = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                    Yes. It’s a good idea to buy Facebook reviews only if the reviews match your brand voice. And with GPW, you can be assured of that. Our team of experts will make sure that every review you get is on-brand and consistent with your image. Your customers will feel like they’re getting an authentic experience and not just a bunch of ordinary reviews.
+                      Yes. It’s a good idea to buy Facebook reviews only if the
+                      reviews match your brand voice. And with GPW, you can be
+                      assured of that. Our team of experts will make sure that
+                      every review you get is on-brand and consistent with your
+                      image. Your customers will feel like they’re getting an
+                      authentic experience and not just a bunch of ordinary
+                      reviews.
                     </div>
                   </div>
                 </div>
@@ -802,7 +925,7 @@ const facebook = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
 export default facebook;

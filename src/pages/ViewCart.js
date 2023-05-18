@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import{ useRouter } from "next/router";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import axios from "axios";
 import useRazorpay from "react-razorpay";
@@ -239,8 +239,8 @@ const ViewCart = () => {
         (item, index) => item.productId._id === id
       )[0]
         ? cartItems.message?.filter(
-          (item, index) => item.productId._id === id
-        )[0].quantity + 1
+            (item, index) => item.productId._id === id
+          )[0].quantity + 1
         : 1;
     } else {
       quantity = 1;
@@ -280,8 +280,8 @@ const ViewCart = () => {
         cartItems.message?.filter((item, index) => item.productId._id === id)[0]
           .quantity > 1
           ? cartItems.message?.filter(
-            (item, index) => item.productId._id === id
-          )[0].quantity - 1
+              (item, index) => item.productId._id === id
+            )[0].quantity - 1
           : 0;
     } else {
       quantity = 1;
@@ -359,7 +359,11 @@ const ViewCart = () => {
   };
 
   const walletUpdateHandler = async (newTotal) => {
-    const tokenID = localStorage.getItem("token");
+    const [tokenID, setTokenId] = useState("");
+
+    useEffect(() => {
+      setTokenId(localStorage.getItem("token"));
+    }, []);
 
     const headers = {
       "Content-Type": "application/json",
@@ -450,7 +454,8 @@ const ViewCart = () => {
     axios
       .post(`${process.env.REACT_APP_APIURL}/orderPaypal`, {
         totalamount: totalAmount,
-        couponAmount, couponName
+        couponAmount,
+        couponName,
       })
       .then((response) => {
         sessionStorage.setItem("totalamount", paypal);
@@ -912,18 +917,18 @@ const ViewCart = () => {
                                     <span className="woocommerce-Price-amount amount">
                                       <bdi>
                                         {couponApplied.message.couponType ===
-                                          "Flat"
+                                        "Flat"
                                           ? "Flat "
                                           : `(${couponApplied.message.offAmount}%) `}
                                         <span className="woocommerce-Price-currencySymbol">
                                           $
                                         </span>
                                         {couponApplied.message.couponType ===
-                                          "Flat"
+                                        "Flat"
                                           ? couponApplied.message.offAmount
                                           : (cartItems.totalPrice *
-                                            couponApplied.message.offAmount) /
-                                          100}
+                                              couponApplied.message.offAmount) /
+                                            100}
                                       </bdi>
                                     </span>
                                   </td>
@@ -942,12 +947,12 @@ const ViewCart = () => {
                                           ? couponApplied.message.couponType ===
                                             "Flat"
                                             ? cartItems.totalPrice -
-                                            couponApplied.message.offAmount
+                                              couponApplied.message.offAmount
                                             : cartItems.totalPrice -
-                                            (cartItems.totalPrice *
-                                              couponApplied.message
-                                                .offAmount) /
-                                            100
+                                              (cartItems.totalPrice *
+                                                couponApplied.message
+                                                  .offAmount) /
+                                                100
                                           : cartItems.totalPrice}
                                       </bdi>
                                     </span>
@@ -1023,9 +1028,9 @@ const ViewCart = () => {
                                               .couponType === "Flat"
                                               ? couponApplied.message.offAmount
                                               : (cartItems.totalPrice *
-                                                couponApplied.message
-                                                  .offAmount) /
-                                              100}
+                                                  couponApplied.message
+                                                    .offAmount) /
+                                                100}
                                           </bdi>
                                         </span>
                                       </td>
@@ -1042,15 +1047,15 @@ const ViewCart = () => {
                                             </span>
                                             {couponApplied?.message?.offAmount
                                               ? couponApplied.message
-                                                .couponType === "Flat"
+                                                  .couponType === "Flat"
                                                 ? cartItems.totalPrice -
-                                                couponApplied.message
-                                                  .offAmount
-                                                : cartItems.totalPrice -
-                                                (cartItems.totalPrice *
                                                   couponApplied.message
-                                                    .offAmount) /
-                                                100
+                                                    .offAmount
+                                                : cartItems.totalPrice -
+                                                  (cartItems.totalPrice *
+                                                    couponApplied.message
+                                                      .offAmount) /
+                                                    100
                                               : cartItems.totalPrice}
                                           </bdi>
                                         </span>
@@ -1098,14 +1103,14 @@ const ViewCart = () => {
                                         walletUpdateHandler(
                                           couponApplied?.message?.offAmount
                                             ? couponApplied.message
-                                              .couponType === "Flat"
+                                                .couponType === "Flat"
                                               ? cartItems.totalPrice -
-                                              couponApplied.message.offAmount
+                                                couponApplied.message.offAmount
                                               : cartItems.totalPrice -
-                                              (cartItems.totalPrice *
-                                                couponApplied.message
-                                                  .offAmount) /
-                                              100
+                                                (cartItems.totalPrice *
+                                                  couponApplied.message
+                                                    .offAmount) /
+                                                  100
                                             : cartItems.totalPrice
                                         )
                                       }
@@ -1121,14 +1126,14 @@ const ViewCart = () => {
                                         payWithStrip(
                                           couponApplied?.message?.offAmount
                                             ? couponApplied.message
-                                              .couponType === "Flat"
+                                                .couponType === "Flat"
                                               ? cartItems.totalPrice -
-                                              couponApplied.message.offAmount
+                                                couponApplied.message.offAmount
                                               : cartItems.totalPrice -
-                                              (cartItems.totalPrice *
-                                                couponApplied.message
-                                                  .offAmount) /
-                                              100
+                                                (cartItems.totalPrice *
+                                                  couponApplied.message
+                                                    .offAmount) /
+                                                  100
                                             : cartItems.totalPrice
                                         )
                                       }
@@ -1148,14 +1153,14 @@ const ViewCart = () => {
                                         payWithPaypal(
                                           couponApplied?.message?.offAmount
                                             ? couponApplied.message
-                                              .couponType === "Flat"
+                                                .couponType === "Flat"
                                               ? cartItems.totalPrice -
-                                              couponApplied.message.offAmount
+                                                couponApplied.message.offAmount
                                               : cartItems.totalPrice -
-                                              (cartItems.totalPrice *
-                                                couponApplied.message
-                                                  .offAmount) /
-                                              100
+                                                (cartItems.totalPrice *
+                                                  couponApplied.message
+                                                    .offAmount) /
+                                                  100
                                             : cartItems.totalPrice
                                         )
                                       }
@@ -1169,14 +1174,14 @@ const ViewCart = () => {
                                         showRazorpay(
                                           couponApplied?.message?.offAmount
                                             ? couponApplied.message
-                                              .couponType === "Flat"
+                                                .couponType === "Flat"
                                               ? cartItems.totalPrice -
-                                              couponApplied.message.offAmount
+                                                couponApplied.message.offAmount
                                               : cartItems.totalPrice -
-                                              (cartItems.totalPrice *
-                                                couponApplied.message
-                                                  .offAmount) /
-                                              100
+                                                (cartItems.totalPrice *
+                                                  couponApplied.message
+                                                    .offAmount) /
+                                                  100
                                             : cartItems.totalPrice
                                         )
                                       }
@@ -1200,15 +1205,15 @@ const ViewCart = () => {
                                           orderwithoutPayment(
                                             couponApplied?.message?.offAmount
                                               ? couponApplied.message
-                                                .couponType === "Flat"
+                                                  .couponType === "Flat"
                                                 ? cartItems.totalPrice -
-                                                couponApplied.message
-                                                  .offAmount
-                                                : cartItems.totalPrice -
-                                                (cartItems.totalPrice *
                                                   couponApplied.message
-                                                    .offAmount) /
-                                                100
+                                                    .offAmount
+                                                : cartItems.totalPrice -
+                                                  (cartItems.totalPrice *
+                                                    couponApplied.message
+                                                      .offAmount) /
+                                                    100
                                               : cartItems.totalPrice
                                           )
                                         }
@@ -1242,16 +1247,18 @@ const ViewCart = () => {
                                               type="button"
                                               className="btn Pay border-0"
                                               data-bs-toggle="modal"
-                                              data-bs-target={`${"#payment_id" + friend._id
-                                                }`}
+                                              data-bs-target={`${
+                                                "#payment_id" + friend._id
+                                              }`}
                                             >
                                               Pay Now
                                             </button>
 
                                             <div
                                               className="modal fade"
-                                              id={`${"payment_id" + friend._id
-                                                }`}
+                                              id={`${
+                                                "payment_id" + friend._id
+                                              }`}
                                               data-bs-backdrop="static"
                                               data-bs-keyboard="false"
                                               tabIndex="-1"
@@ -1298,19 +1305,19 @@ const ViewCart = () => {
                                                           couponApplied?.message
                                                             ?.offAmount
                                                             ? couponApplied
-                                                              .message
-                                                              .couponType ===
+                                                                .message
+                                                                .couponType ===
                                                               "Flat"
                                                               ? cartItems.totalPrice -
-                                                              couponApplied
-                                                                .message
-                                                                .offAmount
-                                                              : cartItems.totalPrice -
-                                                              (cartItems.totalPrice *
                                                                 couponApplied
                                                                   .message
-                                                                  .offAmount) /
-                                                              100
+                                                                  .offAmount
+                                                              : cartItems.totalPrice -
+                                                                (cartItems.totalPrice *
+                                                                  couponApplied
+                                                                    .message
+                                                                    .offAmount) /
+                                                                  100
                                                             : cartItems.totalPrice,
                                                           friend._id
                                                         )

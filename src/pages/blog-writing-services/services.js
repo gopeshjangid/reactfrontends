@@ -4,29 +4,29 @@ import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import Image from "next/image";
-import Qualityblog from "../../images/Quality-blog-post.webp"
-import  EffectiveContent from "../../images/Effective-blog-writer.webp"
-import Qualityfyblog from "../../images/Qualified-blog-writer-enter.webp"
-import bosttriffic from "../../images/Boost-Traffic.webp"
-import  makeitGenuine from "../../images/Genuine-post-geneius.webp"
-import  skillexper from "../../images/skill-Expertise-4.webp"
-import make from "../../images/Make-a-request.webp"
-import letus from "../../images/Let-us-write-your.webp"
-import getcontent from "../../images/Get-your-content-copy.webp"
-import lego from "../../images/testimonial/lego.webp"
-import Allianz from "../../images/testimonial/Allianz.webp"
-import Citi from "../../images/testimonial/Citi.webp"
-import zara from "../../images/testimonial/zara-logo.webp"
-import loreal from "../../images/testimonial/loreal-logo.webp"
-import gillette from "../../images/testimonial/gillette-logo.webp"
-import sap from "../../images/testimonial/sap-logo.webp"
-import att from "../../images/testimonial/att-logo.webp"
-import toyota from "../../images/testimonial/toyota-logo.webp"
-import ikea from "../../images/testimonial/ikea-logo.webp"
-import DanielPresley from "../../images/Daniel-Presley1.webp"
-import LucyGrace from "../../images/Lucy-Grace1.webp"
+import Qualityblog from "../../images/Quality-blog-post.webp";
+import EffectiveContent from "../../images/Effective-blog-writer.webp";
+import Qualityfyblog from "../../images/Qualified-blog-writer-enter.webp";
+import bosttriffic from "../../images/Boost-Traffic.webp";
+import makeitGenuine from "../../images/Genuine-post-geneius.webp";
+import skillexper from "../../images/skill-Expertise-4.webp";
+import make from "../../images/Make-a-request.webp";
+import letus from "../../images/Let-us-write-your.webp";
+import getcontent from "../../images/Get-your-content-copy.webp";
+import lego from "../../images/testimonial/lego.webp";
+import Allianz from "../../images/testimonial/Allianz.webp";
+import Citi from "../../images/testimonial/Citi.webp";
+import zara from "../../images/testimonial/zara-logo.webp";
+import loreal from "../../images/testimonial/loreal-logo.webp";
+import gillette from "../../images/testimonial/gillette-logo.webp";
+import sap from "../../images/testimonial/sap-logo.webp";
+import att from "../../images/testimonial/att-logo.webp";
+import toyota from "../../images/testimonial/toyota-logo.webp";
+import ikea from "../../images/testimonial/ikea-logo.webp";
+import DanielPresley from "../../images/Daniel-Presley1.webp";
+import LucyGrace from "../../images/Lucy-Grace1.webp";
 
-import ReviewGetintouch from "../ReviewGetintouch";
+import ReviewGetintouch from "../reviewgetintouch";
 // import { renderToString } from "react-dom/server";
 import { Helmet } from "react-helmet";
 // import { Helmet, HelmetProvider, HelmetData } from "react-helmet-async";
@@ -439,11 +439,7 @@ const services = () => {
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <Image
-                src={skillexper}
-                alt="Expertise"
-                className="rws-img"
-              />
+              <Image src={skillexper} alt="Expertise" className="rws-img" />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
@@ -534,137 +530,139 @@ const services = () => {
             <h2 className="writing_sec-h2">SOME OF OUR ESTEEMED KEY CLIENTS</h2>
             <span className="writing_sec-spa">* * * * *</span>
 
-            <Swiper
-              freeMode={true}
-              loop={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              grabCursor={true}
-              modules={[Autoplay, FreeMode]}
-              className="mySwiper"
-              breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                480: {
-                  slidesPerView: 2,
-                  spaceBetween: 10,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 15,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 15,
-                },
-              }}
-            >
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <Image
-                    src={lego}
-                    alt="lego"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <Image
-                    src={Allianz}
-                    alt="Allianz"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <Image
-                    src={Citi}
-                    alt="Citi"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <Image
-                    src={zara}
-                    alt="zara"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
+            {loaded && (
+              <Swiper
+                freeMode={true}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                grabCursor={true}
+                modules={[Autoplay, FreeMode]}
+                className="mySwiper"
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  480: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                  },
+                  1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 15,
+                  },
+                }}
+              >
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <Image
+                      src={lego}
+                      alt="lego"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <Image
+                      src={Allianz}
+                      alt="Allianz"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <Image
+                      src={Citi}
+                      alt="Citi"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <Image
+                      src={zara}
+                      alt="zara"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
 
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <Image
-                    src={loreal}
-                    alt="loreal"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <Image
-                    src={gillette}
-                    alt="gillette"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <Image
-                    src={sap}
-                    alt="sap"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <Image
-                    src={att}
-                    alt="att"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <Image
-                    src={toyota}
-                    alt="toyota"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <Image
-                    src={ikea}
-                    alt="ikea"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <Image
+                      src={loreal}
+                      alt="loreal"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <Image
+                      src={gillette}
+                      alt="gillette"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <Image
+                      src={sap}
+                      alt="sap"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <Image
+                      src={att}
+                      alt="att"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <Image
+                      src={toyota}
+                      alt="toyota"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <Image
+                      src={ikea}
+                      alt="ikea"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            )}
           </div>
         </div>
       </section>

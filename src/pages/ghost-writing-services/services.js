@@ -1,6 +1,6 @@
 import React from "react";
 
-import ReviewGetintouch from "../ReviewGetintouch";
+import ReviewGetintouch from "../reviewgetintouch";
 
 const services = () => {
   return (

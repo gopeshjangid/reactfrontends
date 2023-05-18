@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import ReviewGetintouch from "../ReviewGetintouch";
+import ReviewGetintouch from "../reviewgetintouch";
 
 const topFiction = () => {
   return (
@@ -12,16 +12,15 @@ const topFiction = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1 mt-3 p-0">
-                Top Fiction Ghostwriters!
-
-              </h1>
-              <h2 className="top_Sec-h2">
-                Hire Non Fiction Ghostwriter|
-              </h2>
+              <h1 className="top_Sec-h1 mt-3 p-0">Top Fiction Ghostwriters!</h1>
+              <h2 className="top_Sec-h2">Hire Non Fiction Ghostwriter|</h2>
               <p className="top_Sec-p">
-                GetProWriter is a reckoned name when it comes to the industry’s leading fiction ghostwriters for hire. Our team of leading ghostwriters can provide you with the best quality as well as affordable fiction writing services. We also take care that your thoughts and ideas are not lost throughout the writing process and we make sure that you get what you had in mind.
-
+                GetProWriter is a reckoned name when it comes to the industry’s
+                leading fiction ghostwriters for hire. Our team of leading
+                ghostwriters can provide you with the best quality as well as
+                affordable fiction writing services. We also take care that your
+                thoughts and ideas are not lost throughout the writing process
+                and we make sure that you get what you had in mind.
               </p>
             </div>
 
@@ -38,11 +37,13 @@ const topFiction = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Want the best fiction ghostwriters in the industry? Hire from GetProWriter!
+              Want the best fiction ghostwriters in the industry? Hire from
+              GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Our non fiction ghostwriters convince readers to read the content time and again.
+              Our non fiction ghostwriters convince readers to read the content
+              time and again.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
@@ -122,12 +123,28 @@ const topFiction = () => {
       <section className="rev_sec">
         <div className="container">
           <div className="row">
-            <h2 className="rev_sec-h2">Our Fiction Ghostwriters Are Here To Pen Down Imaginations Into Narratives</h2>
+            <h2 className="rev_sec-h2">
+              Our Fiction Ghostwriters Are Here To Pen Down Imaginations Into
+              Narratives
+            </h2>
 
             <p className="rev_sec-p">
-              Our team of fiction and non fiction ghostwriters for hire is here to pen down imaginations into narratives. We provide resources, experience, and expertise in writing fiction novels, short stories, and other creative writing pieces. We believe that writing should be an adventure and our ghostwriters will help you navigate the journey from a rough draft to the final product.</p>
+              Our team of fiction and non fiction ghostwriters for hire is here
+              to pen down imaginations into narratives. We provide resources,
+              experience, and expertise in writing fiction novels, short
+              stories, and other creative writing pieces. We believe that
+              writing should be an adventure and our ghostwriters will help you
+              navigate the journey from a rough draft to the final product.
+            </p>
             <p className="rev_sec-p">
-              In a world where great stories are hard to come by, our fiction ghostwriters are here to help you. Our team of experienced and certified ghostwriters will work with your ideas and thoughts to create the masterpiece you have always dreamed of. If you have ever wanted to write a book, but don’t know how to do that, then contact us today and let our professional ghostwriters help you create a book that you can proudly call yours.</p>
+              In a world where great stories are hard to come by, our fiction
+              ghostwriters are here to help you. Our team of experienced and
+              certified ghostwriters will work with your ideas and thoughts to
+              create the masterpiece you have always dreamed of. If you have
+              ever wanted to write a book, but don’t know how to do that, then
+              contact us today and let our professional ghostwriters help you
+              create a book that you can proudly call yours.
+            </p>
           </div>
         </div>
       </section>
@@ -136,10 +153,13 @@ const topFiction = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              The most sought-after fiction ghostwriters - available only on GetProWriter!
+              The most sought-after fiction ghostwriters - available only on
+              GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
-            <p className="writing_sec-p">Fiction ghostwriters for a variety of writing requirements.</p>
+            <p className="writing_sec-p">
+              Fiction ghostwriters for a variety of writing requirements.
+            </p>
 
             <div class="col-md-6">
               <h2 class="count_h2">Check us out and see for yourself:</h2>
@@ -210,12 +230,27 @@ const topFiction = () => {
             </div>
             <div class="col-md-6">
               <h2 class="count_h2">
-                GPW Fiction and Non Fiction Ghostwriters Will Ensure Vast Readership
+                GPW Fiction and Non Fiction Ghostwriters Will Ensure Vast
+                Readership
               </h2>
               <p class="count-p">
-                Our ghostwriters will match your voice and elevate your story, helping you reach the right audience. At GPW, we make sure that our clients get the readers they want. Our professional writers know how to create content that is engaging, innovative, and attention-grabbing, and we deliver it in a timely fashion. When you need ghostwriting services for any work of fiction, we’ll help you achieve your goals and grab the audience’s attention in the right manner. </p>
+                Our ghostwriters will match your voice and elevate your story,
+                helping you reach the right audience. At GPW, we make sure that
+                our clients get the readers they want. Our professional writers
+                know how to create content that is engaging, innovative, and
+                attention-grabbing, and we deliver it in a timely fashion. When
+                you need ghostwriting services for any work of fiction, we’ll
+                help you achieve your goals and grab the audience’s attention in
+                the right manner.{" "}
+              </p>
               <p class="count-p">
-                Our professional fiction and non fiction ghostwriters for hire are eager to take on your vision for a story and develop it into a novel with the potential for great success. We understand that writing can be daunting, especially when it’s something that you’ve never done before. We are here to make things easier for you, to give your ideas the platform they deserve. </p>
+                Our professional fiction and non fiction ghostwriters for hire
+                are eager to take on your vision for a story and develop it into
+                a novel with the potential for great success. We understand that
+                writing can be daunting, especially when it’s something that
+                you’ve never done before. We are here to make things easier for
+                you, to give your ideas the platform they deserve.{" "}
+              </p>
             </div>
           </div>
         </div>
@@ -237,9 +272,23 @@ const topFiction = () => {
                 Acquire our service today to produce unmatched works of fiction.
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our ghostwriting services are designed to help you produce unmatched works of fiction with whatever ideas you have in mind. We’ll take your concepts and turn them into such captivating narratives that your audience will be craving for more by the time they reach the end of the first chapter. If you don’t have any ideas, that’s fine too – we’ll come up with something for you! Whether it’s a romance novel about vampires or a non-fiction book about how to be a better accountant, we’ll find a way to make it work. </p>
+                Our ghostwriting services are designed to help you produce
+                unmatched works of fiction with whatever ideas you have in mind.
+                We’ll take your concepts and turn them into such captivating
+                narratives that your audience will be craving for more by the
+                time they reach the end of the first chapter. If you don’t have
+                any ideas, that’s fine too – we’ll come up with something for
+                you! Whether it’s a romance novel about vampires or a
+                non-fiction book about how to be a better accountant, we’ll find
+                a way to make it work.{" "}
+              </p>
               <p className="ab_sec2-p rws-p">
-                Our ghostwriting services can help you put your ideas on the page and create works of fiction that will leave your readers breathless. Whether you want to write a collection of short stories, a novel, or even a screenplay, our experts can work with you to bring your vision to life.  </p>
+                Our ghostwriting services can help you put your ideas on the
+                page and create works of fiction that will leave your readers
+                breathless. Whether you want to write a collection of short
+                stories, a novel, or even a screenplay, our experts can work
+                with you to bring your vision to life.{" "}
+              </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
@@ -261,11 +310,23 @@ const topFiction = () => {
                 Fiction Ghostwriting Services That Start From The Marvellous
               </h3>
               <p className="ab_sec2-p rws-p">
-
-                Our ghostwriters understand the process of writing. We know how to help you develop your ideas and find the right words to help your work shine. The process is simple: our writers will help you develop your ideas, and then find the right words to help your work shine. We make sure that the writing process is fun and stress-free, from start to finish.
+                Our ghostwriters understand the process of writing. We know how
+                to help you develop your ideas and find the right words to help
+                your work shine. The process is simple: our writers will help
+                you develop your ideas, and then find the right words to help
+                your work shine. We make sure that the writing process is fun
+                and stress-free, from start to finish.
               </p>
               <p className="ab_sec2-p rws-p">
-                We have thousands of writers, from all backgrounds and experience levels, who have projects in every genre imaginable. We know how hard it can be to work on your writing alone, so we’ll be there with you through every step of the process to offer guidance and support. Our fiction and non fiction ghostwriters know what it takes to get your story written. What starts as a great idea can sometimes become an overwhelming mess of words and paragraphs—and that’s where we come in.</p>
+                We have thousands of writers, from all backgrounds and
+                experience levels, who have projects in every genre imaginable.
+                We know how hard it can be to work on your writing alone, so
+                we’ll be there with you through every step of the process to
+                offer guidance and support. Our fiction and non fiction
+                ghostwriters know what it takes to get your story written. What
+                starts as a great idea can sometimes become an overwhelming mess
+                of words and paragraphs—and that’s where we come in.
+              </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
@@ -273,9 +334,25 @@ const topFiction = () => {
                 Fiction Ghostwriters Who Are Not Afraid To Make It Loud
               </h3>
               <p className="ab_sec2-p rws-p">
-                Fiction ghostwriting services involve a delicate process. We help you develop your work in a way that will make it shine, whether you’re writing a novel or just starting out with short stories. For those who are just starting out in the writing world, we help them take the first steps towards crafting a great story. We believe in the power of storytelling, which is why our goal is to make sure you have everything you need to succeed.</p>
+                Fiction ghostwriting services involve a delicate process. We
+                help you develop your work in a way that will make it shine,
+                whether you’re writing a novel or just starting out with short
+                stories. For those who are just starting out in the writing
+                world, we help them take the first steps towards crafting a
+                great story. We believe in the power of storytelling, which is
+                why our goal is to make sure you have everything you need to
+                succeed.
+              </p>
               <p className="ab_sec2-p rws-p">
-                For many clients, we provide support and advice on how to make your writing even better. Sometimes all you need is someone else to help you see it from another angle. And our writers are not afraid to experiment. Our ghostwriters have been helping people tell their stories for over a decade. We’ve tackled everything from historical fiction to romance novels and everything in between, and we’d love to walk with you through the process of bringing your book to life.</p>
+                For many clients, we provide support and advice on how to make
+                your writing even better. Sometimes all you need is someone else
+                to help you see it from another angle. And our writers are not
+                afraid to experiment. Our ghostwriters have been helping people
+                tell their stories for over a decade. We’ve tackled everything
+                from historical fiction to romance novels and everything in
+                between, and we’d love to walk with you through the process of
+                bringing your book to life.
+              </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
@@ -294,12 +371,24 @@ const topFiction = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise Is Giving Tough Competition To Other Fiction Writers
+                GetProWriter Expertise Is Giving Tough Competition To Other
+                Fiction Writers
               </h3>
               <p className="ab_sec2-p rws-p">
-                Looking for unique and persuasive content that keeps readers interested? Do you need a little extra help to find the right words to express your ideas? You’ve come to the right place. You’ll get exactly what you need from our talented writers and editors, who are ready to pitch in when you’re short on time or can’t quite nail down the best way to position your project.</p>
+                Looking for unique and persuasive content that keeps readers
+                interested? Do you need a little extra help to find the right
+                words to express your ideas? You’ve come to the right place.
+                You’ll get exactly what you need from our talented writers and
+                editors, who are ready to pitch in when you’re short on time or
+                can’t quite nail down the best way to position your project.
+              </p>
               <p className="ab_sec2-p rws-p">
-                We’re not here to brag about our experience or GPW style – we’ll let our work speak for itself. But just know that when you work with us, you’re getting more than just some words on a page. You’re getting an experienced writer who knows what they’re doing and exactly what your project needs. </p>
+                We’re not here to brag about our experience or GPW style – we’ll
+                let our work speak for itself. But just know that when you work
+                with us, you’re getting more than just some words on a page.
+                You’re getting an experienced writer who knows what they’re
+                doing and exactly what your project needs.{" "}
+              </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
@@ -307,9 +396,24 @@ const topFiction = () => {
                 Your Fiction Pieces Will Now Be Crafted To Precision
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our fiction ghostwriters will work with you to create an original piece of work based on your vision of what happens next! We have been working in the sphere of writing services in a variety of niches for many years and have gained valuable experience. Our service provides the best fiction ghostwriting services on the market. We work with the best professionals and guarantee their creativity, uniqueness, and high quality.</p>
+                Our fiction ghostwriters will work with you to create an
+                original piece of work based on your vision of what happens
+                next! We have been working in the sphere of writing services in
+                a variety of niches for many years and have gained valuable
+                experience. Our service provides the best fiction ghostwriting
+                services on the market. We work with the best professionals and
+                guarantee their creativity, uniqueness, and high quality.
+              </p>
               <p className="ab_sec2-p rws-p">
-                We guarantee that your text will be written by true professionals with the knowledge and relevant skills. So you can be sure that your paper will be written by a real expert in your subject area. Every text is completely unique and contains no plagiarism at all. All our texts are checked with anti-plagiarism software before they are delivered to customers. Also, every paper is thoroughly proofread to make sure there are no mistakes or typos. </p>
+                We guarantee that your text will be written by true
+                professionals with the knowledge and relevant skills. So you can
+                be sure that your paper will be written by a real expert in your
+                subject area. Every text is completely unique and contains no
+                plagiarism at all. All our texts are checked with
+                anti-plagiarism software before they are delivered to customers.
+                Also, every paper is thoroughly proofread to make sure there are
+                no mistakes or typos.{" "}
+              </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <img
@@ -331,9 +435,20 @@ const topFiction = () => {
                 Our Writers Are Extensively Experience And Extremely Well-Read
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our writers boast a wide range of experience and expertise, so you know that your content will be written by someone who can provide you with the right level of knowledge. Not only do our writers have unmatched experience and knowledge, but they are also avid readers. This gives them an extra edge when it comes to creating engaging and compelling content.</p>
+                Our writers boast a wide range of experience and expertise, so
+                you know that your content will be written by someone who can
+                provide you with the right level of knowledge. Not only do our
+                writers have unmatched experience and knowledge, but they are
+                also avid readers. This gives them an extra edge when it comes
+                to creating engaging and compelling content.
+              </p>
               <p className="ab_sec2-p rws-p">
-                The writers at GetProWriter understand that you want to make your project stand out among the other entries, but we don’t take a boastful approach. When you work with our team, you get a grounded, professional writer who knows how to highlight what makes your project special without going over the top.</p>
+                The writers at GetProWriter understand that you want to make
+                your project stand out among the other entries, but we don’t
+                take a boastful approach. When you work with our team, you get a
+                grounded, professional writer who knows how to highlight what
+                makes your project special without going over the top.
+              </p>
             </div>
           </div>
         </div>
@@ -405,137 +520,139 @@ const topFiction = () => {
             <h2 className="writing_sec-h2">SOME OF OUR ESTEEMED KEY CLIENTS</h2>
             <span className="writing_sec-spa">* * * * *</span>
 
-            <Swiper
-              freeMode={true}
-              loop={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              grabCursor={true}
-              modules={[Autoplay, FreeMode]}
-              className="mySwiper"
-              breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                480: {
-                  slidesPerView: 2,
-                  spaceBetween: 10,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 15,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 15,
-                },
-              }}
-            >
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/lego.webp"
-                    alt="lego"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
-                    alt="Allianz"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
-                    alt="Citi"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
-                    alt="zara"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
+            {loaded && (
+              <Swiper
+                freeMode={true}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                grabCursor={true}
+                modules={[Autoplay, FreeMode]}
+                className="mySwiper"
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  480: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                  },
+                  1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 15,
+                  },
+                }}
+              >
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/lego.webp"
+                      alt="lego"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
+                      alt="Allianz"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
+                      alt="Citi"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
+                      alt="zara"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
 
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
-                    alt="loreal"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
-                    alt="gillette"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
-                    alt="sap"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
-                    alt="att"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
-                    alt="toyota"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
-                    alt="ikea"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
+                      alt="loreal"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
+                      alt="gillette"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
+                      alt="sap"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
+                      alt="att"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
+                      alt="toyota"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
+                      alt="ikea"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            )}
           </div>
         </div>
       </section>
@@ -543,9 +660,7 @@ const topFiction = () => {
       <section className="hire_Sec">
         <div className="container">
           <div className="row">
-            <h2 className="get_sec-h2">
-              Why Hire Our Fiction Ghostwriters?
-            </h2>
+            <h2 className="get_sec-h2">Why Hire Our Fiction Ghostwriters?</h2>
             <p className="get_sec-p">
               Your ambitions are our ambitions and we deliver what you imagine.
             </p>
@@ -559,9 +674,7 @@ const topFiction = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">
-                      Mature writing styles
-                    </span>
+                    <span className="spa_h2">Mature writing styles</span>
                   </li>
                 </ol>
               </div>
@@ -575,9 +688,7 @@ const topFiction = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">
-                      Diverse writing experiences
-                    </span>
+                    <span className="spa_h2">Diverse writing experiences</span>
                   </li>
                 </ol>
               </div>
@@ -600,10 +711,23 @@ const topFiction = () => {
             </div>
 
             <p className="review1-p">
-              We believe that your ambitions are our ambitions, and the only thing we are more excited about than seeing you achieve your goals is helping you get there. We’re not just here to write for you; we’re here to help you achieve your goals. Our writers are highly skilled and our content is delivered on time. We’ve got writers with diverse backgrounds because we think it’s important to have a team that represents the world we live in. We don’t want to limit ourselves to any one type of individual. </p>
+              We believe that your ambitions are our ambitions, and the only
+              thing we are more excited about than seeing you achieve your goals
+              is helping you get there. We’re not just here to write for you;
+              we’re here to help you achieve your goals. Our writers are highly
+              skilled and our content is delivered on time. We’ve got writers
+              with diverse backgrounds because we think it’s important to have a
+              team that represents the world we live in. We don’t want to limit
+              ourselves to any one type of individual.{" "}
+            </p>
 
             <p className="review1-p">
-              We are known to deliver fiction writing on time and as per your expectations. Our writers are capable of writing stories in different genres while maintaining the same level of quality. If you’re looking out for a writer to write stories, give us a chance to serve you.</p>
+              We are known to deliver fiction writing on time and as per your
+              expectations. Our writers are capable of writing stories in
+              different genres while maintaining the same level of quality. If
+              you’re looking out for a writer to write stories, give us a chance
+              to serve you.
+            </p>
           </div>
         </div>
       </section>
@@ -616,7 +740,11 @@ const topFiction = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  We were thrilled with the quality of the work we got from GetProWriter. We are happy to recommend them to other businesses who are looking for content and ghostwriters, especially for fiction. </p>
+                  We were thrilled with the quality of the work we got from
+                  GetProWriter. We are happy to recommend them to other
+                  businesses who are looking for content and ghostwriters,
+                  especially for fiction.{" "}
+                </p>
                 <div className="t_sels">
                   <img
                     src="https://getprowriter.com/writer/img/Sirine-Lwaty.webp"
@@ -624,9 +752,7 @@ const topFiction = () => {
                     className="testi_box-img"
                   />
                   <h3 className="testi_box-h3">Sirine Lwaty</h3>
-                  <p className="testi_box-p">
-                    Smarketing, Manager
-                  </p>
+                  <p className="testi_box-p">Smarketing, Manager</p>
                 </div>
               </div>
             </div>
@@ -634,7 +760,11 @@ const topFiction = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  We could not be more pleased with the work that was done on our project by GetProWriter. Our team was happy with their services. If you are looking for excellent writing services then try GetProWriter right now.</p>
+                  We could not be more pleased with the work that was done on
+                  our project by GetProWriter. Our team was happy with their
+                  services. If you are looking for excellent writing services
+                  then try GetProWriter right now.
+                </p>
                 <div className="t_sels">
                   <img
                     src="https://getprowriter.com/writer/img/Dody-El-Dragy.webp"
@@ -706,7 +836,8 @@ const topFiction = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        How do we know that GetProWriter fiction ghostwriters are successful?
+                        How do we know that GetProWriter fiction ghostwriters
+                        are successful?
                       </button>
                     </h2>
 
@@ -717,7 +848,13 @@ const topFiction = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        GetProWriter fiction ghostwriters have been hired by thousands of clients globally. They have produced remarkable output. We feel that our writers are successful because they have been in the industry for many years now and our collaborations have only increased with time.</div>
+                        GetProWriter fiction ghostwriters have been hired by
+                        thousands of clients globally. They have produced
+                        remarkable output. We feel that our writers are
+                        successful because they have been in the industry for
+                        many years now and our collaborations have only
+                        increased with time.
+                      </div>
                     </div>
                   </div>
 
@@ -745,7 +882,12 @@ const topFiction = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        Yes. If you have the ideas in your mind and want a ghostwriter to help with your fiction novel, then it is absolutely alright. It is fine to have someone help you with the right words. A ghostwriter is the best companion to help you when you want assistance to create.
+                        Yes. If you have the ideas in your mind and want a
+                        ghostwriter to help with your fiction novel, then it is
+                        absolutely alright. It is fine to have someone help you
+                        with the right words. A ghostwriter is the best
+                        companion to help you when you want assistance to
+                        create.
                       </div>
                     </div>
                   </div>
@@ -764,7 +906,8 @@ const topFiction = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      How do we know that the ghostwriters we hire from you are legitimate?
+                      How do we know that the ghostwriters we hire from you are
+                      legitimate?
                     </button>
                   </h2>
 
@@ -775,7 +918,11 @@ const topFiction = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      All our fiction ghostwriters have passed the qualification and certification test from different certifying institutions. They are experienced in their field and have been doing this for a long time. In short, they are absolutely legitimate for any ghostwriting project.
+                      All our fiction ghostwriters have passed the qualification
+                      and certification test from different certifying
+                      institutions. They are experienced in their field and have
+                      been doing this for a long time. In short, they are
+                      absolutely legitimate for any ghostwriting project.
                     </div>
                   </div>
                 </div>
@@ -785,7 +932,7 @@ const topFiction = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
 export default topFiction;

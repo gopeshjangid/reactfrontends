@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { useState,useEffect } from "react";
-import GetinTouch from "./GetinTouch";
+import { useState, useEffect } from "react";
+import GetinTouch from "./getintouch";
 
 const Prices = () => {
   // const [price, setPrice] = useState(0.0);
@@ -18,11 +18,9 @@ const Prices = () => {
     setDeactive(exy.target.value);
   }
 
-
-  
   const [images, setImages] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_APIURL}/getAllPrices`, {
       method: "GET",
       mode: "cors",
@@ -36,7 +34,7 @@ const Prices = () => {
       .catch((err) => {
         console.log(err);
       });
-  },[])
+  }, []);
 
   return (
     <div>
@@ -119,19 +117,18 @@ const Prices = () => {
               </thead>
 
               <tbody style={{ border: "none" }}>
-                {images.map((item)=>{
-                  return(
+                {images.map((item) => {
+                  return (
                     <>
-                <tr>
-                  <td>{item.name}</td>
-                  <td>{item.oneDay}</td>
-                  <td>{item.twoDay}</td>
-                  <td>{item.fiveDay}</td>   
-                </tr>
-            
-                </>
-                )
-              })}
+                      <tr>
+                        <td>{item.name}</td>
+                        <td>{item.oneDay}</td>
+                        <td>{item.twoDay}</td>
+                        <td>{item.fiveDay}</td>
+                      </tr>
+                    </>
+                  );
+                })}
                 <tr></tr>
               </tbody>
             </table>

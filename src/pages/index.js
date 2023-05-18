@@ -1,5 +1,8 @@
+import dynamic from "next/dynamic";
 import Head from "next/head";
-
+const HomeComponent = dynamic(() => import("../Components/home"), {
+  ssr: true,
+});
 //import Home from "next/home";
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -61,7 +64,7 @@ export default function Home() {
         />
         <script type="application/ld+json" class="aioseo-schema"></script>
       </Head>
-       <p>hello</p>
+      <HomeComponent />
     </>
   );
 }

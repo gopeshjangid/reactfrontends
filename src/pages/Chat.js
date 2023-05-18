@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import socketIO from "socket.io-client";
-import Message from "./Message";
+import Message from "./message";
 import ReactScrollToBoottome from "react-scroll-to-bottom";
 import axios from "axios";
 
@@ -24,6 +24,7 @@ const Chat = ({ orderId, orderName }) => {
   const [selectedImage, setSelectedImage] = useState(false);
   const [pdfselected, setPdfselected] = useState(false);
   const [docsSelected, setDocsSelected] = useState(false);
+  const [userDataStorage, setUserStorage] = useState({});
   const [load, setLoad] = useState(false);
 
   const socket = useRef();
@@ -184,7 +185,6 @@ const Chat = ({ orderId, orderName }) => {
 
     selectedChatCompare = selectedChat;
   }, [chatId, selectedChat]);
-  
 
   const messageSendHandler = (e) => {
     e.preventDefault();
@@ -288,9 +288,11 @@ const Chat = ({ orderId, orderName }) => {
     }
   };
 
-  // const userDataStorage = typeof  localStorage!= undefined && localStorage.getItem("user") &&  JSON.parse(localStorage.getItem("user"));
+  useEffect(() => {
+    setUserStorage(JSON.parse(localStorage.getItem("user")));
+  }, []);
 
- // console.log("UserEmail", userDataStorage.email);
+  // console.log("UserEmail", f.email);
 
   return (
     <>
@@ -318,7 +320,7 @@ const Chat = ({ orderId, orderName }) => {
                       type={item.type}
                       name={item.name}
                       classs={
-                        item.sender.email === userDataStorage.email
+                        item.sender.email === userDataStorage?.email
                           ? "right"
                           : "left"
                       }

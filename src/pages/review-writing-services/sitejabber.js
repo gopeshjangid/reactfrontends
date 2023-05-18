@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import ReviewGetintouch from "../ReviewGetintouch";
+import ReviewGetintouch from "../reviewgetintouch";
 
 const sitejabber = () => {
   return (
@@ -14,13 +14,17 @@ const sitejabber = () => {
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1 className="top_Sec-h1 mt-3 p-0">
-              Attractive Sitejabber Reviews!
+                Attractive Sitejabber Reviews!
               </h1>
               <h2 className="top_Sec-h2">
-              Effective Sitejabber Reviews Writing Services|
+                Effective Sitejabber Reviews Writing Services|
               </h2>
               <p className="top_Sec-p">
-              GetProWriter is the name you are looking for if you want to buy incredible sitejabber reviews. We have a team of dedicated professional writers who have been writing content on various sites for years. You can be assured of getting positive reviews from us.
+                GetProWriter is the name you are looking for if you want to buy
+                incredible sitejabber reviews. We have a team of dedicated
+                professional writers who have been writing content on various
+                sites for years. You can be assured of getting positive reviews
+                from us.
               </p>
             </div>
 
@@ -37,11 +41,11 @@ const sitejabber = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-            Want top-quality Sitejabber reviews? Buy from GetProWriter!
+              Want top-quality Sitejabber reviews? Buy from GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-            Catchy Sitejabber reviews to improve your business image.
+              Catchy Sitejabber reviews to improve your business image.
             </p>
             <div className="col-md-3">
               <div className="wr-b">
@@ -121,13 +125,31 @@ const sitejabber = () => {
       <section className="rev_sec">
         <div className="container">
           <div className="row">
-            <h2 className="rev_sec-h2">Our Sitejabber Review Ghostwriters Are Perfect For Businesses</h2>
+            <h2 className="rev_sec-h2">
+              Our Sitejabber Review Ghostwriters Are Perfect For Businesses
+            </h2>
 
             <p className="rev_sec-p">
-            GetProWriter ghostwriters are qualified and trained to write top-notch sitejabber reviews for businesses. At GetProWriter, we believe that every business has something unique to offer, and we want to help you share that with others. We know how important it is to get a positive review on your website so you can attract more customers, but many businesses don’t know where to start. With us, your sitejabber reviews will always be written by a professional, because we’ve created a system of checks and balances to ensure that only the most qualified applicants work on your project. Our team works hard to hire only the best writers, and they’re constantly monitored to make sure they’re meeting our high standards.
+              GetProWriter ghostwriters are qualified and trained to write
+              top-notch sitejabber reviews for businesses. At GetProWriter, we
+              believe that every business has something unique to offer, and we
+              want to help you share that with others. We know how important it
+              is to get a positive review on your website so you can attract
+              more customers, but many businesses don’t know where to start.
+              With us, your sitejabber reviews will always be written by a
+              professional, because we’ve created a system of checks and
+              balances to ensure that only the most qualified applicants work on
+              your project. Our team works hard to hire only the best writers,
+              and they’re constantly monitored to make sure they’re meeting our
+              high standards.
             </p>
             <p className="rev_sec-p">
-            Our team of ghostwriters will work with you closely from start to finish in order to ensure that your sitejabber reviews are written in a way that really shines a light on what makes your company different. We understand how necessary it is for our clients to stand out from the crowd and we’re here to help make sure that happens.
+              Our team of ghostwriters will work with you closely from start to
+              finish in order to ensure that your sitejabber reviews are written
+              in a way that really shines a light on what makes your company
+              different. We understand how necessary it is for our clients to
+              stand out from the crowd and we’re here to help make sure that
+              happens.
             </p>
           </div>
         </div>
@@ -137,10 +159,12 @@ const sitejabber = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-            Publish-ready Sitejabber Reviews only by GetProWriter!
+              Publish-ready Sitejabber Reviews only by GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
-            <p className="writing_sec-p">Buy sitejabber reviews for remarkable content.</p>
+            <p className="writing_sec-p">
+              Buy sitejabber reviews for remarkable content.
+            </p>
 
             <div class="col-md-6">
               <h2 class="count_h2">Check us out and see for yourself:</h2>
@@ -211,13 +235,26 @@ const sitejabber = () => {
             </div>
             <div class="col-md-6">
               <h2 class="count_h2">
-              For the best output, opt for GPW to buy sitejabber reviews
+                For the best output, opt for GPW to buy sitejabber reviews
               </h2>
               <p class="count-p">
-              To ghostwrite reviews, one must be a true professional. And GetProWriter makes that happen. When you buy sitejabber reviews from us, we make sure to offer the best to you. We have a team of terrific writers who know the ins and outs of this business. They are all professionals who know how to deliver quality work and they have experience in ghostwriting reviews for clients in different industries.
+                To ghostwrite reviews, one must be a true professional. And
+                GetProWriter makes that happen. When you buy sitejabber reviews
+                from us, we make sure to offer the best to you. We have a team
+                of terrific writers who know the ins and outs of this business.
+                They are all professionals who know how to deliver quality work
+                and they have experience in ghostwriting reviews for clients in
+                different industries.
               </p>
               <p class="count-p">
-              Our writers are dedicated to their work and will ensure that every detail is covered when writing your review. They will also ensure that your voice is reflected in the review so as to give it an authentic feel. GetProWriter will always be there for you if you need any help or guidance during the process of writing your review. Our customer support team is available to you so that you can get answers whenever any question comes up during our collaboration process.
+                Our writers are dedicated to their work and will ensure that
+                every detail is covered when writing your review. They will also
+                ensure that your voice is reflected in the review so as to give
+                it an authentic feel. GetProWriter will always be there for you
+                if you need any help or guidance during the process of writing
+                your review. Our customer support team is available to you so
+                that you can get answers whenever any question comes up during
+                our collaboration process.
               </p>
             </div>
           </div>
@@ -228,22 +265,34 @@ const sitejabber = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-            Sitejabber Reviews Writing Services For Greater Audiences
+              Sitejabber Reviews Writing Services For Greater Audiences
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-            Our service is where your worry ends.
+              Our service is where your worry ends.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Sitejabber Reviews’ Content Of Impressive Quality
+                Sitejabber Reviews’ Content Of Impressive Quality
               </h3>
               <p className="ab_sec2-p rws-p">
-              When you buy sitejabber reviews from GPW, you’re signing up for impressive quality content. The reason we say “impressive” is because we’re not just talking about any old content – we’re talking about the kind of content that will guarantee your website ranking on search engines’ top results.
+                When you buy sitejabber reviews from GPW, you’re signing up for
+                impressive quality content. The reason we say “impressive” is
+                because we’re not just talking about any old content – we’re
+                talking about the kind of content that will guarantee your
+                website ranking on search engines’ top results.
               </p>
               <p className="ab_sec2-p rws-p">
-              As you probably know, many search engines use sitejabber reviews to determine how well your website ranks. For instance, if people are saying positive things about your site, then it’s likely to show up on Google search’s first page. In the same way, if they have posted negative reviews about your company, then it will impact your position. And that’s where GPW comes in. We can make sure that what is said about your website is positive so that your site stays in its prime position at the top of search engines’ results pages.
+                As you probably know, many search engines use sitejabber reviews
+                to determine how well your website ranks. For instance, if
+                people are saying positive things about your site, then it’s
+                likely to show up on Google search’s first page. In the same
+                way, if they have posted negative reviews about your company,
+                then it will impact your position. And that’s where GPW comes
+                in. We can make sure that what is said about your website is
+                positive so that your site stays in its prime position at the
+                top of search engines’ results pages.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -263,25 +312,54 @@ const sitejabber = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Review Ghostwriters With Extensive Domain Experience
+                Review Ghostwriters With Extensive Domain Experience
               </h3>
               <p className="ab_sec2-p rws-p">
-              Writing sitejabber reviews is not easy. And apart from many things, it demands niche expertise. Our ghostwriters have extensive domain experience in writing sitejabber reviews. We understand the importance of quality content for your sitejabber review, and that’s why we offer a wide range of services to cater to your needs. Whether you need a complete overhaul of the content or just want some tweaks to make it more readable and engaging, we are here for you.
+                Writing sitejabber reviews is not easy. And apart from many
+                things, it demands niche expertise. Our ghostwriters have
+                extensive domain experience in writing sitejabber reviews. We
+                understand the importance of quality content for your sitejabber
+                review, and that’s why we offer a wide range of services to
+                cater to your needs. Whether you need a complete overhaul of the
+                content or just want some tweaks to make it more readable and
+                engaging, we are here for you.
               </p>
               <p className="ab_sec2-p rws-p">
-              Our writers are well-versed with the writing styles and tone that are expected for sitejabber reviews. They can write about any business in any industry with ease and comfort. You can trust us to deliver quality content with no plagiarism or grammatical errors. We write content in a way that’s easy and enjoyable for customers to read. We’ve got years of experience in the industry, so we know what works and what doesn’t. We are experts in review writing, and we believe in creating original work every time.
+                Our writers are well-versed with the writing styles and tone
+                that are expected for sitejabber reviews. They can write about
+                any business in any industry with ease and comfort. You can
+                trust us to deliver quality content with no plagiarism or
+                grammatical errors. We write content in a way that’s easy and
+                enjoyable for customers to read. We’ve got years of experience
+                in the industry, so we know what works and what doesn’t. We are
+                experts in review writing, and we believe in creating original
+                work every time.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Sitejabber Reviews’ Writers Who Are Versatile
+                Sitejabber Reviews’ Writers Who Are Versatile
               </h3>
               <p className="ab_sec2-p rws-p">
-              When you are looking for good sitejabber reviews, you may be looking at these for any kind of business. While many might promise just solid reviews, we promise all of that with more versatility in writing. We can write on anything for a sitejabber review. We have a team that is dedicated to ensuring that whatever you need is met and exceeded. We will ensure that your business gets the best reviews possible, which will help to increase your sales and improve your overall standing within the industry.
+                When you are looking for good sitejabber reviews, you may be
+                looking at these for any kind of business. While many might
+                promise just solid reviews, we promise all of that with more
+                versatility in writing. We can write on anything for a
+                sitejabber review. We have a team that is dedicated to ensuring
+                that whatever you need is met and exceeded. We will ensure that
+                your business gets the best reviews possible, which will help to
+                increase your sales and improve your overall standing within the
+                industry.
               </p>
               <p className="ab_sec2-p rws-p">
-              When it comes to buying sitejabber reviews, you must always go for reliable ghostwriters who produce versatile content. It should not be repetitive. The best way to get quality sitejabber reviews is by going through companies that have a good reputation in the industry. This will ensure that they will deliver high-quality work on time and within your budget. And GetProWriter is your best option!
+                When it comes to buying sitejabber reviews, you must always go
+                for reliable ghostwriters who produce versatile content. It
+                should not be repetitive. The best way to get quality sitejabber
+                reviews is by going through companies that have a good
+                reputation in the industry. This will ensure that they will
+                deliver high-quality work on time and within your budget. And
+                GetProWriter is your best option!
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -301,25 +379,52 @@ const sitejabber = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Let Your Business Shine With Our Reviews
+                Let Your Business Shine With Our Reviews
               </h3>
               <p className="ab_sec2-p rws-p">
-              When you buy sitejabber reviews from our company, we make sure that your business shines. We know how important it is to get good reviews on your sitejabber listing, and we are here to help you do just that. We have professionals who work with individual clients to know their exact requirements and ensure that they receive the best possible results when it comes to getting more positive reviews.
+                When you buy sitejabber reviews from our company, we make sure
+                that your business shines. We know how important it is to get
+                good reviews on your sitejabber listing, and we are here to help
+                you do just that. We have professionals who work with individual
+                clients to know their exact requirements and ensure that they
+                receive the best possible results when it comes to getting more
+                positive reviews.
               </p>
               <p className="ab_sec2-p rws-p">
-              Our company has been operating for many years and we have helped thousands of businesses get positive feedback on their sitejabber listings. We understand what it takes to get good reviews on this website, which is why we patiently attend to every new client so that they can learn more about what we do and how we do it before making a decision about whether or not they want us as their partner for getting more positive reviews for their business.
+                Our company has been operating for many years and we have helped
+                thousands of businesses get positive feedback on their
+                sitejabber listings. We understand what it takes to get good
+                reviews on this website, which is why we patiently attend to
+                every new client so that they can learn more about what we do
+                and how we do it before making a decision about whether or not
+                they want us as their partner for getting more positive reviews
+                for their business.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              Original Reviews For Original Brands
+                Original Reviews For Original Brands
               </h3>
               <p className="ab_sec2-p rws-p">
-              Our experts craft sitejabber reviews that are original and convincing. Our team of expert copywriters will craft a review for your business that will make you stand out in the sector. Just tell us what you want to say about your company, and our writers will take it from there. We know how hard it is to write reviews that both make sense and sound natural, so we specialize in getting those two things right – you’ll be impressed with how well they resonate with your target audience.
+                Our experts craft sitejabber reviews that are original and
+                convincing. Our team of expert copywriters will craft a review
+                for your business that will make you stand out in the sector.
+                Just tell us what you want to say about your company, and our
+                writers will take it from there. We know how hard it is to write
+                reviews that both make sense and sound natural, so we specialize
+                in getting those two things right – you’ll be impressed with how
+                well they resonate with your target audience.
               </p>
               <p className="ab_sec2-p rws-p">
-              GPW is here to take care of all your sitejabber review needs. We know that having a good reputation online is key to running a successful business, and we’re here to help you build yours. We will make sure that when you get abundant positive reviews to post it in the required space online. Whether you’re a new company or an established one, we’ll work with you to make sure that your page is full of positive and naturally crafted reviews – so you can focus on running your business.
+                GPW is here to take care of all your sitejabber review needs. We
+                know that having a good reputation online is key to running a
+                successful business, and we’re here to help you build yours. We
+                will make sure that when you get abundant positive reviews to
+                post it in the required space online. Whether you’re a new
+                company or an established one, we’ll work with you to make sure
+                that your page is full of positive and naturally crafted reviews
+                – so you can focus on running your business.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -339,13 +444,25 @@ const sitejabber = () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-              GetProWriter Expertise for the best sitejabber reviews
+                GetProWriter Expertise for the best sitejabber reviews
               </h3>
               <p className="ab_sec2-p rws-p">
-              Our writers have the required skill to write fantastic sitejabber reviews for your company. Our team of professional writers has years of experience writing various types of content, including reviews. We understand the importance of quality and accuracy when it comes to website content, which is why we take pride in our ability to deliver only the best.
+                Our writers have the required skill to write fantastic
+                sitejabber reviews for your company. Our team of professional
+                writers has years of experience writing various types of
+                content, including reviews. We understand the importance of
+                quality and accuracy when it comes to website content, which is
+                why we take pride in our ability to deliver only the best.
               </p>
               <p className="ab_sec2-p rws-p">
-              The goal of our service is to help you achieve your marketing goals by providing you with quality reviews that will help increase your online presence and improve your online reputation. Our team has proven itself as one of the best writing services on this platform because we make sure that every single order we receive is completed within a given timeframe. We understand how important deadlines are, so we never miss them.
+                The goal of our service is to help you achieve your marketing
+                goals by providing you with quality reviews that will help
+                increase your online presence and improve your online
+                reputation. Our team has proven itself as one of the best
+                writing services on this platform because we make sure that
+                every single order we receive is completed within a given
+                timeframe. We understand how important deadlines are, so we
+                never miss them.
               </p>
             </div>
           </div>
@@ -418,137 +535,139 @@ const sitejabber = () => {
             <h2 className="writing_sec-h2">SOME OF OUR ESTEEMED KEY CLIENTS</h2>
             <span className="writing_sec-spa">* * * * *</span>
 
-            <Swiper
-              freeMode={true}
-              loop={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              grabCursor={true}
-              modules={[Autoplay, FreeMode]}
-              className="mySwiper"
-              breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                480: {
-                  slidesPerView: 2,
-                  spaceBetween: 10,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 15,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 15,
-                },
-              }}
-            >
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/lego.webp"
-                    alt="lego"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
-                    alt="Allianz"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
-                    alt="Citi"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
-                    alt="zara"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
+            {loaded && (
+              <Swiper
+                freeMode={true}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                grabCursor={true}
+                modules={[Autoplay, FreeMode]}
+                className="mySwiper"
+                breakpoints={{
+                  0: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  480: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 15,
+                  },
+                  1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 15,
+                  },
+                }}
+              >
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/lego.webp"
+                      alt="lego"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
+                      alt="Allianz"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
+                      alt="Citi"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
+                      alt="zara"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
 
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
-                    alt="loreal"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
-                    alt="gillette"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
-                    alt="sap"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
-                    alt="att"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
-                    alt="toyota"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                {" "}
-                <div className="img-box">
-                  <img
-                    src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
-                    alt="ikea"
-                    className="d-block img-box_image"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
+                      alt="loreal"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
+                      alt="gillette"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
+                      alt="sap"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
+                      alt="att"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
+                      alt="toyota"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  {" "}
+                  <div className="img-box">
+                    <img
+                      src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
+                      alt="ikea"
+                      className="d-block img-box_image"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            )}
           </div>
         </div>
       </section>
@@ -557,11 +676,9 @@ const sitejabber = () => {
         <div className="container">
           <div className="row">
             <h2 className="get_sec-h2">
-            Why Hire Our Sitejabber Review Writers?
+              Why Hire Our Sitejabber Review Writers?
             </h2>
-            <p className="get_sec-p">
-            Let your business grow exponentially.
-            </p>
+            <p className="get_sec-p">Let your business grow exponentially.</p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
               <div className="box-ol">
@@ -572,8 +689,22 @@ const sitejabber = () => {
                     </span>
                   </li>
                   <li className="in_li">
+                    <span className="spa_h2">Niche experts</span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="box-ol">
+                <ol className="m-0 d-flex align-items-center p-0">
+                  <li className="in_li">
+                    <span className="right_span">
+                      <i aria-hidden="true" className="fas fa-check-circle"></i>
+                    </span>
+                  </li>
+                  <li className="in_li">
                     <span className="spa_h2">
-                    Niche experts
+                      Work as per demands of clients
                     </span>
                   </li>
                 </ol>
@@ -589,24 +720,7 @@ const sitejabber = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                    Work as per demands of clients
-                    </span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="box-ol">
-                <ol className="m-0 d-flex align-items-center p-0">
-                  <li className="in_li">
-                    <span className="right_span">
-                      <i aria-hidden="true" className="fas fa-check-circle"></i>
-                    </span>
-                  </li>
-                  <li className="in_li">
-                    <span className="spa_h2">
-                      
-On-Always deliver reviews on time
+                      On-Always deliver reviews on time
                     </span>
                   </li>
                 </ol>
@@ -614,11 +728,22 @@ On-Always deliver reviews on time
             </div>
 
             <p className="review1-p">
-            Our sitejabber reviews will help your business to grow exponentially. The sitejabber reviews created by our writers will help you increase your social media presence, which is very important for an online business. Since sitejabber reviews affect the rankings of your website on the Google search engine, we know the validity and need for such content.
+              Our sitejabber reviews will help your business to grow
+              exponentially. The sitejabber reviews created by our writers will
+              help you increase your social media presence, which is very
+              important for an online business. Since sitejabber reviews affect
+              the rankings of your website on the Google search engine, we know
+              the validity and need for such content.
             </p>
 
             <p className="review1-p">
-            Our team of writers is niche experts. They’ll write your sitejabber reviews and always deliver them on time. We know that you need reviews that feel personal, but not in a way that makes you look like you’re trying too hard. We know that you want to sound like the expert in your field and not just someone who sounds like they a novice. We have worked with hundreds of clients and we’ve delivered quality content every time.
+              Our team of writers is niche experts. They’ll write your
+              sitejabber reviews and always deliver them on time. We know that
+              you need reviews that feel personal, but not in a way that makes
+              you look like you’re trying too hard. We know that you want to
+              sound like the expert in your field and not just someone who
+              sounds like they a novice. We have worked with hundreds of clients
+              and we’ve delivered quality content every time.
             </p>
           </div>
         </div>
@@ -632,7 +757,12 @@ On-Always deliver reviews on time
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                GetProWriter did an excellent job for me by drafting the reviews I wanted. They delivered the work in a timely manner, with great quality and attention to detail. They also completed all of their tasks on time, which was very important. I would definitely recommend them to others looking for review ghostwriters.
+                  GetProWriter did an excellent job for me by drafting the
+                  reviews I wanted. They delivered the work in a timely manner,
+                  with great quality and attention to detail. They also
+                  completed all of their tasks on time, which was very
+                  important. I would definitely recommend them to others looking
+                  for review ghostwriters.
                 </p>
                 <div className="t_sels">
                   <img
@@ -640,10 +770,8 @@ On-Always deliver reviews on time
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">	Lisa Smith</h3>
-                  <p className="testi_box-p">
-                  Brand Manager, Meding
-                  </p>
+                  <h3 className="testi_box-h3"> Lisa Smith</h3>
+                  <p className="testi_box-p">Brand Manager, Meding</p>
                 </div>
               </div>
             </div>
@@ -651,7 +779,11 @@ On-Always deliver reviews on time
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                Our company hired GPW professionals to write sitejabber reviews for us. The writer they assigned to our project was very professional, responsive, and diligent. We are very happy with the reviews they wrote for us and would recommend them to anyone who is looking for high-quality content.
+                  Our company hired GPW professionals to write sitejabber
+                  reviews for us. The writer they assigned to our project was
+                  very professional, responsive, and diligent. We are very happy
+                  with the reviews they wrote for us and would recommend them to
+                  anyone who is looking for high-quality content.
                 </p>
                 <div className="t_sels">
                   <img
@@ -659,7 +791,7 @@ On-Always deliver reviews on time
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">	Tom Houston</h3>
+                  <h3 className="testi_box-h3"> Tom Houston</h3>
                   <p className="testi_box-p">SEO Manager, Financy</p>
                 </div>
               </div>
@@ -735,7 +867,13 @@ On-Always deliver reviews on time
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                      The best sitejabber review writers are definitely found at GetProWriter. GetProWriter helps you to hire the best writers to write your sitejabber reviews. Simply sign up and you’ll be able to choose from a variety of writers who have been hand-selected by our team. You can request a proposal from them and we’ll get back to you shortly with all the details about the project and the cost.
+                        The best sitejabber review writers are definitely found
+                        at GetProWriter. GetProWriter helps you to hire the best
+                        writers to write your sitejabber reviews. Simply sign up
+                        and you’ll be able to choose from a variety of writers
+                        who have been hand-selected by our team. You can request
+                        a proposal from them and we’ll get back to you shortly
+                        with all the details about the project and the cost.
                       </div>
                     </div>
                   </div>
@@ -753,7 +891,8 @@ On-Always deliver reviews on time
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Which platform should I go for if I want to buy sitejabber reviews online?
+                        Which platform should I go for if I want to buy
+                        sitejabber reviews online?
                       </button>
                     </h2>
 
@@ -764,7 +903,13 @@ On-Always deliver reviews on time
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                      If you’re looking for a place to hire sitejabber review writers online, then look no further than GPW. We have writers who specialize in all kinds of subjects and topics. You can be assured that our writers are thoroughly tested and reliable as we only hire people who have proven themselves to be experts in their fields. So, buy sitejabber reviews from us now.
+                        If you’re looking for a place to hire sitejabber review
+                        writers online, then look no further than GPW. We have
+                        writers who specialize in all kinds of subjects and
+                        topics. You can be assured that our writers are
+                        thoroughly tested and reliable as we only hire people
+                        who have proven themselves to be experts in their
+                        fields. So, buy sitejabber reviews from us now.
                       </div>
                     </div>
                   </div>
@@ -794,7 +939,12 @@ On-Always deliver reviews on time
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                    Yes. There is no issue with ghostwriting reviews as long as the writing is original and convincing. And our writers do just that. All these writers are talented and experienced so they know how to craft reviews that will make people trust your brand and give them all the information they need before making a decision.
+                      Yes. There is no issue with ghostwriting reviews as long
+                      as the writing is original and convincing. And our writers
+                      do just that. All these writers are talented and
+                      experienced so they know how to craft reviews that will
+                      make people trust your brand and give them all the
+                      information they need before making a decision.
                     </div>
                   </div>
                 </div>
@@ -804,7 +954,7 @@ On-Always deliver reviews on time
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
 export default sitejabber;

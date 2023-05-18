@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import axios from "axios";
-import ExtraCredit from "./ExtraCredit";
+import ExtraCredit from "./extracredit";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Loader from "./Loader";

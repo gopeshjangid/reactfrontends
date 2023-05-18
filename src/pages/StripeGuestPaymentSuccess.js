@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 
 const StripeGuestPaymentSuccess = () => {
-  const tokenID = localStorage.getItem("token");
+  const [tokenID, setTokenId] = useState("");
+
+  useEffect(() => {
+    setTokenId(localStorage.getItem("token"));
+  }, []);
   const pay_id = sessionStorage.getItem("pay_id");
   const email = sessionStorage.getItem("email");
   const headers = {

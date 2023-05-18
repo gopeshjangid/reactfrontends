@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import{  useRouter } from "next/router";
+import { useRouter } from "next/router";
 import Link from "next/link";
 const Success = () => {
-  const tokenID = localStorage.getItem("token");
+  const [tokenID, setTokenId] = useState("");
+
+  useEffect(() => {
+    setTokenId(localStorage.getItem("token"));
+  }, []);
   const pay_id = sessionStorage.getItem("pay_id");
   const amount = sessionStorage.getItem("wallet");
   const headers = {

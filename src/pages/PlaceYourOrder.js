@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import GetinTouch from "./GetinTouch";
+import GetinTouch from "./getintouch";
 
 const PlaceYourOrder = () => {
   return (
