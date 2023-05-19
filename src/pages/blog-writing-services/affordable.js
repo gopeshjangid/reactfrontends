@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import ReviewGetintouch from "../reviewgetintouch";
+import ReviewGetintouch from "../../Components/reviewgetintouch";
 const affordable = () => {
   const [loaded, setLoaded] = useState(false);
 

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import sucpurimg from "../images/Successful-purchase.gif"
+import sucpurimg from "../images/Successful-purchase.gif";
 // import {  useSearchParams } from "next/router";
 const WalletPaymentSuccess = () => {
   // const [searchParams,orderId] = useSearchParams();
@@ -26,9 +26,9 @@ const WalletPaymentSuccess = () => {
                 <br />
 
                 {/* <Link className="" href={`/dashboard?orderId=${orderIdParam}`}> */}
-                  <button type="submit" className="fp-btn px-5 m-0">
-                    Go Back
-                  </button>
+                <button type="submit" className="fp-btn px-5 m-0">
+                  Go Back
+                </button>
                 {/* </Link> */}
 
                 <br />

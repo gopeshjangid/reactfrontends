@@ -23,7 +23,7 @@ const Success = () => {
       router.push("/");
     } else {
       axios
-        .post(`${process.env.REACT_APP_APIURL}/rechargeWallet`, data, {
+        .post(`${process.env.NEXT_PUBLIC_APIURL}/rechargeWallet`, data, {
           headers: headers,
         })
         .then((res) => {

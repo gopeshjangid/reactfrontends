@@ -1,44 +1,42 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { useNavigate } from "next/router";
 import axios from "axios";
-import { useSearchParams } from "next/router";
+import { useRouter } from "next/router";
 
 const OrderPaypalSuccess = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const router = useRouter();
 
   const [tokenID, setTokenId] = useState("");
 
   useEffect(() => {
     setTokenId(localStorage.getItem("token"));
   }, []);
-  const pay_id = sessionStorage.getItem("pay_id");
-  const paypal = sessionStorage.getItem("totalamount");
-  const couponName = sessionStorage.getItem("couponName");
-  const couponAmount = sessionStorage.getItem("couponAmount");
-  const headers = {
-    "Content-Type": "application/json",
-    Authorization: `${tokenID}`,
-  };
-
-  const data = {
-    totalamount: parseInt(paypal),
-    couponAmount,
-    couponName,
-    pay_id,
-  };
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (!sessionStorage.getItem("totalamount")) {
-      navigate("/");
+      router.push("/");
     } else {
-      let a = searchParams.get("paymentId");
-      let b = searchParams.get("PayerID");
+      const pay_id = sessionStorage.getItem("pay_id");
+      const paypal = sessionStorage.getItem("totalamount");
+      const couponName = sessionStorage.getItem("couponName");
+      const couponAmount = sessionStorage.getItem("couponAmount");
+      const headers = {
+        "Content-Type": "application/json",
+        Authorization: `${tokenID}`,
+      };
+
+      const data = {
+        totalamount: parseInt(paypal),
+        couponAmount,
+        couponName,
+        pay_id,
+      };
+      let a = router.query.paymentId;
+      let b = router.query.PayerID;
       console.log("a=====", a);
       console.log("b=====", b);
       axios
-        .post(`${process.env.REACT_APP_APIURL}/PaypalOrderSuccess`, data, {
+        .post(`${process.env.NEXT_PUBLIC_APIURL}/PaypalOrderSuccess`, data, {
           headers: headers,
         })
         .then((res) => {
@@ -51,7 +49,7 @@ const OrderPaypalSuccess = () => {
           console.log(err);
         });
     }
-  }, []);
+  }, [tokenID]);
   return (
     <section className="fp_sec bg-transparent ">
       <div className="container">

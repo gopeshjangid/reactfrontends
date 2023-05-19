@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-import forpass from "../images/forgot-password.jpg"
-import { useState, useEffect } from "react";
+import forpass from "../images/forgot-password.jpg";
+
 
 const Forgot = () => {
   const router = useRouter();
@@ -37,7 +37,7 @@ const Forgot = () => {
     if (email.trim() === "" || regex1.test(email.trim()) === false) {
       return;
     } else {
-      fetch(`${process.env.REACT_APP_APIURL}/password-reset`, {
+      fetch(`${process.env.NEXT_PUBLIC_APIURL}/password-reset`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),

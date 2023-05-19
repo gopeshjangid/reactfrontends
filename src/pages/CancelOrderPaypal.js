@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import paymentImg from "../images/payment-error-info-message-smartphone-customer-cross-marks-failure_106788-2322.webp" 
+import paymentImg from "../images/payment-error-info-message-smartphone-customer-cross-marks-failure_106788-2322.webp";
 const CancelOrderPaypal = () => {
   return (
     <div>
@@ -34,10 +34,7 @@ const CancelOrderPaypal = () => {
             </div>
 
             <div className="col-md-6">
-              <Image
-                src={paymentImg}
-                className="fp-img m-0 w-100"
-              />
+              <Image src={paymentImg} className="fp-img m-0 w-100" />
             </div>
           </div>
         </div>

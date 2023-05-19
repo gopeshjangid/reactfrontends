@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import ReviewGetintouch from "../reviewgetintouch";
+import ReviewGetintouch from "../../Components/reviewgetintouch";
 
 const twitter = () => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => setLoaded(true), []);
   return (
     <div>
       <section className="top_sec p-0">

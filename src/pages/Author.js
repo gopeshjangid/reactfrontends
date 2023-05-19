@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Loader from "./Loader";
+import Loader from "../Components/Loader";
 
 import ReactPaginate from "react-paginate";
 import Link from "next/link";
@@ -53,7 +53,6 @@ function Author() {
           <div className="container">
             <div className="row">
               <h2 className="team_sec-h2">Meet our Authors</h2>
-             
 
               {images.slice(offset, offset + PER_PAGE).map((friend) => (
                 <div className="col-md-3" key={friend._id}>

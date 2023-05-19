@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/router";
+import { useRouter } from "next/router";
 import axios from "axios";
-// import { useSearchParams } from "next/router";
+// import { useRouter } from "next/router";
 
 const PaypalGuestPaymentSuccess = () => {
-  const searchParams = useSearchParams("false");
   const [tokenID, setTokenId] = useState("");
-
+  const router = useRouter();
   useEffect(() => {
     setTokenId(localStorage.getItem("token"));
   }, []);
@@ -22,19 +21,18 @@ const PaypalGuestPaymentSuccess = () => {
   console.log("email", email);
 
   const data = { amount: parseInt(amount), pay_id, email };
-  const router = useRouter();
 
   useEffect(() => {
     if (!sessionStorage.getItem("amount")) {
       router.push("/");
     } else {
-      let a = searchParams.get("paymentId");
-      let b = searchParams.get("PayerID");
+      let a = router.query.paymentId;
+      let b = router.query.PayerID;
       console.log("a=====", a);
       console.log("b=====", b);
       axios
         .post(
-          `${process.env.REACT_APP_APIURL}/PaypalGuestPaymentSuccess`,
+          `${process.env.NEXT_PUBLIC_APIURL}/PaypalGuestPaymentSuccess`,
           data,
           {
             headers: headers,
@@ -95,7 +93,7 @@ export default PaypalGuestPaymentSuccess;
 // import Link from "next/link";
 // import { useRouter } from "next/router";
 // import axios from "axios";
-// import { useSearchParams } from "next/router";
+// import { useRouter } from "next/router";
 //
 
 // const PaypalGuestPaymentSuccess = () => {
@@ -127,7 +125,7 @@ useEffect(() => {
 //       console.log("a=====", a);
 //       console.log("b=====", b);
 //       axios
-//         .post(`${process.env.REACT_APP_APIURL}/PaypalGuestPaymentSuccess`, data, {
+//         .post(`${process.env.NEXT_PUBLIC_APIURL}/PaypalGuestPaymentSuccess`, data, {
 //           headers: headers,
 //         })
 //         .then((res) => {

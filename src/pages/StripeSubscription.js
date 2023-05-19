@@ -25,7 +25,7 @@ const StripeSubscription = () => {
     } else {
       axios
         .post(
-          `${process.env.REACT_APP_APIURL}/StripeSubscriptionSuccess`,
+          `${process.env.NEXT_PUBLIC_APIURL}/StripeSubscriptionSuccess`,
           data,
           {
             headers: headers,

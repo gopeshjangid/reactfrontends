@@ -5,7 +5,7 @@ import Link from "next/link";
 import axios from "axios";
 import useRazorpay from "react-razorpay";
 
-import Loader from "./Loader";
+import Loader from "../Components/Loader";
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -67,14 +67,17 @@ const ViewCart = () => {
       amount: amount,
     });
 
-    const data = await fetch(`${process.env.REACT_APP_APIURL}/orderRazorpay`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `${tokenID}`,
-      },
-      body: payload,
-    }).then((t) => t.json());
+    const data = await fetch(
+      `${process.env.NEXT_PUBLIC_APIURL}/orderRazorpay`,
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `${tokenID}`,
+        },
+        body: payload,
+      }
+    ).then((t) => t.json());
     console.log(data);
     const options = {
       key: "rzp_test_q3Ox5lXRKYuuFx",
@@ -95,7 +98,7 @@ const ViewCart = () => {
 
         var config = {
           method: "post",
-          url: `${process.env.REACT_APP_APIURL}/orderRazorpaySuccess`,
+          url: `${process.env.NEXT_PUBLIC_APIURL}/orderRazorpaySuccess`,
           headers: {
             Authorization: tokenID,
             "Content-Type": "application/json",
@@ -133,7 +136,7 @@ const ViewCart = () => {
     // creates entity
     const tokenID = localStorage.getItem("token");
     console.log("hello", tokenID);
-    fetch(`${process.env.REACT_APP_APIURL}/viewProfile`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/viewProfile`, {
       method: "GET",
       mode: "cors",
 
@@ -154,7 +157,7 @@ const ViewCart = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_APIURL}/getServices`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/getServices`, {
       method: "GET",
       mode: "cors",
 
@@ -209,7 +212,7 @@ const ViewCart = () => {
         Authorization: `${tokenID}`,
       };
       await axios
-        .get(`${process.env.REACT_APP_APIURL}/viewCart`, {
+        .get(`${process.env.NEXT_PUBLIC_APIURL}/viewCart`, {
           headers: headers,
         })
         .then((response) => {
@@ -252,7 +255,7 @@ const ViewCart = () => {
     const data = { quantity: quantity };
     // setIsAddLoading(true);
     await axios
-      .post(`${process.env.REACT_APP_APIURL}/addCart/${id}`, data, {
+      .post(`${process.env.NEXT_PUBLIC_APIURL}/addCart/${id}`, data, {
         headers: headers,
       })
 
@@ -293,7 +296,7 @@ const ViewCart = () => {
     const data = { quantity: quantity };
     // setIsAddLoading(true);
     await axios
-      .post(`${process.env.REACT_APP_APIURL}/addCart/${id}`, data, {
+      .post(`${process.env.NEXT_PUBLIC_APIURL}/addCart/${id}`, data, {
         headers: headers,
       })
       .then((response) => {
@@ -316,7 +319,7 @@ const ViewCart = () => {
     setIsAddLoading(true);
     await axios
       .post(
-        `${process.env.REACT_APP_APIURL}/deleteCart/${id}`,
+        `${process.env.NEXT_PUBLIC_APIURL}/deleteCart/${id}`,
         {},
         {
           headers: headers,
@@ -334,7 +337,7 @@ const ViewCart = () => {
 
   const checkCoupon = async () => {
     await axios
-      .post(`${process.env.REACT_APP_APIURL}/getCoupon`, {
+      .post(`${process.env.NEXT_PUBLIC_APIURL}/getCoupon`, {
         applyCouponName: couponText,
       })
       .then((response) => {
@@ -382,7 +385,7 @@ const ViewCart = () => {
 
     await axios
       .post(
-        `${process.env.REACT_APP_APIURL}/useWallet/`,
+        `${process.env.NEXT_PUBLIC_APIURL}/useWallet/`,
         {
           totalAmount,
           couponAmount,
@@ -420,7 +423,7 @@ const ViewCart = () => {
       ? couponApplied.message.couponName
       : "";
     axios
-      .post(`${process.env.REACT_APP_APIURL}/orderStripe`, {
+      .post(`${process.env.NEXT_PUBLIC_APIURL}/orderStripe`, {
         TotalAmount: totalAmount,
         couponAmount,
         couponName,
@@ -452,7 +455,7 @@ const ViewCart = () => {
       ? couponApplied.message.couponName
       : "";
     axios
-      .post(`${process.env.REACT_APP_APIURL}/orderPaypal`, {
+      .post(`${process.env.NEXT_PUBLIC_APIURL}/orderPaypal`, {
         totalamount: totalAmount,
         couponAmount,
         couponName,
@@ -558,7 +561,7 @@ const ViewCart = () => {
       : "";
     await axios
       .post(
-        `${process.env.REACT_APP_APIURL}/withoutPaymentOrder/`,
+        `${process.env.NEXT_PUBLIC_APIURL}/withoutPaymentOrder/`,
         {
           totalAmount,
           couponAmount,
@@ -597,7 +600,7 @@ const ViewCart = () => {
       Authorization: `${tokenID}`,
     };
     axios
-      .get(`${process.env.REACT_APP_APIURL}/fetchPaymentMethod`, {
+      .get(`${process.env.NEXT_PUBLIC_APIURL}/fetchPaymentMethod`, {
         headers: headers,
       })
       .then((res) => {
@@ -620,7 +623,7 @@ const ViewCart = () => {
 
     axios
       .post(
-        `${process.env.REACT_APP_APIURL}/useSavePaymentMethod`,
+        `${process.env.NEXT_PUBLIC_APIURL}/useSavePaymentMethod`,
         {
           id: savePaymentId,
         },
@@ -671,7 +674,7 @@ const ViewCart = () => {
     });
 
     const data = await fetch(
-      `${process.env.REACT_APP_APIURL}/useSaveRazorpayPayment`,
+      `${process.env.NEXT_PUBLIC_APIURL}/useSaveRazorpayPayment`,
       {
         method: "POST",
         headers: {
@@ -724,7 +727,7 @@ const ViewCart = () => {
 
       var config = {
         method: "post",
-        url: `${process.env.REACT_APP_APIURL}/orderRazorpaySuccess`,
+        url: `${process.env.NEXT_PUBLIC_APIURL}/orderRazorpaySuccess`,
         headers: {
           Authorization: tokenID,
           "Content-Type": "application/json",

@@ -2,24 +2,23 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import axios from "axios";
-import { useSearchParams } from "next/router";
+import { useRouter } from "next/router";
 
 const PendingPaymentPaypalSuccess = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-
   const [tokenID, setTokenId] = useState("");
-
+  const [message, setmessage] = useState("");
+  const [orderId, setorderId] = useState("");
+  const [pay_id, setpay_id] = useState("");
   useEffect(() => {
     setTokenId(localStorage.getItem("token"));
+    setpay_id(sessionStorage.getItem("pay_id"));
+    setorderId(sessionStorage.getItem("orderId"));
+    setmessage(sessionStorage.getItem("totalamount"));
   }, []);
-  const pay_id = sessionStorage.getItem("pay_id");
-  const message = sessionStorage.getItem("totalamount");
-  const orderId = sessionStorage.getItem("orderId");
   const headers = {
     "Content-Type": "application/json",
-    Authorization: `$`,
+    Authorization: `${tokenID}`,
   };
-  console.log("message", message);
 
   const data = { totalamount: parseInt(message), pay_id, orderId };
   const router = useRouter();
@@ -28,13 +27,13 @@ const PendingPaymentPaypalSuccess = () => {
     if (!sessionStorage.getItem("totalamount")) {
       router.push("/");
     } else {
-      let a = searchParams.get("paymentId");
-      let b = searchParams.get("PayerID");
+      let a = router.query.paymentId;
+      let b = router.query.PayerID;
       console.log("a=====", a);
       console.log("b=====", b);
       axios
         .post(
-          `${process.env.REACT_APP_APIURL}/PendingPaymentPaypalSuccess`,
+          `${process.env.NEXT_PUBLIC_APIURL}/PendingPaymentPaypalSuccess`,
           data,
           {
             headers: headers,
@@ -51,7 +50,7 @@ const PendingPaymentPaypalSuccess = () => {
           console.log(err);
         });
     }
-  }, []);
+  }, [tokenID]);
   return (
     <section className="fp_sec bg-transparent ">
       <div className="container">

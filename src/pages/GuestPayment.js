@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useState, useEffect } from "react";
+
 // import { useLocation } from "next/router";
 
 import useProfileShow from "../fetchApi/ProfileShow";
@@ -143,7 +143,7 @@ const GuestPayment = () => {
     });
 
     const data = await fetch(
-      `${process.env.REACT_APP_APIURL}/razorpayPayment`,
+      `${process.env.NEXT_PUBLIC_APIURL}/razorpayPayment`,
       {
         method: "POST",
         headers: {
@@ -173,7 +173,7 @@ const GuestPayment = () => {
 
         const config = {
           method: "post",
-          url: `${process.env.REACT_APP_APIURL}/razorpayGuestPaymentSuccess`,
+          url: `${process.env.NEXT_PUBLIC_APIURL}/razorpayGuestPaymentSuccess`,
           headers: {
             // Authorization: tokenID,
             "Content-Type": "application/json",
@@ -208,7 +208,7 @@ const GuestPayment = () => {
 
     console.log(email);
     axios
-      .post(`${process.env.REACT_APP_APIURL}/stripeGuestPayment`, {
+      .post(`${process.env.NEXT_PUBLIC_APIURL}/stripeGuestPayment`, {
         wallet: amount,
         email: email,
       })
@@ -231,7 +231,7 @@ const GuestPayment = () => {
     const email = tokenID ? profile.email : user.email;
     console.log(email);
     axios
-      .post(`${process.env.REACT_APP_APIURL}/PaypalGuestPayment`, {
+      .post(`${process.env.NEXT_PUBLIC_APIURL}/PaypalGuestPayment`, {
         amount: amount,
         email: email,
       })

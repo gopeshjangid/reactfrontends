@@ -1,6 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import validator from "validator";
 import axios from "axios";
@@ -91,7 +89,7 @@ const AccountSettingPaymentMethod = () => {
     ) {
       return;
     } else {
-      fetch(`${process.env.REACT_APP_APIURL}/savePaymentMethod`, {
+      fetch(`${process.env.NEXT_PUBLIC_APIURL}/savePaymentMethod`, {
         method: "POST",
         body: JSON.stringify(object),
         headers: {
@@ -168,7 +166,7 @@ const AccountSettingPaymentMethod = () => {
   const [cvv, setCvv] = useState("");
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_APIURL}/fetchPaymentMethod`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/fetchPaymentMethod`, {
       method: "GET",
 
       headers: {
@@ -190,7 +188,7 @@ const AccountSettingPaymentMethod = () => {
   const removeHandler = (id) => {
     axios
       .post(
-        `${process.env.REACT_APP_APIURL}/deletePaymentMethod/${id}`,
+        `${process.env.NEXT_PUBLIC_APIURL}/deletePaymentMethod/${id}`,
         {},
         {
           headers: {
@@ -252,7 +250,7 @@ const AccountSettingPaymentMethod = () => {
       cvv: `${cvv}`,
     };
     console.log(hello);
-    fetch(`${process.env.REACT_APP_APIURL}/editPaymentMethod/${id}`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/editPaymentMethod/${id}`, {
       method: "POST",
       body: JSON.stringify(hello),
       headers: {

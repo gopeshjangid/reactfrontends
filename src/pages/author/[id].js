@@ -1,10 +1,10 @@
 // import "../styles/style.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 
-import Loader from "../Loader";
+import Loader from "../../Components/Loader";
 const ViewDetails = () => {
   let urlApi = `${process.env.NEXT_PUBLIC_APIURL}`;
   const router = useRouter();

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Useourimg from "../images/Use-our-simple-interface.webp"
-import Ourquaimg from "../images/Our-qualified-writers.webp"
-import Reachmoreimg from "../images/Reach-more-customers.webp"
+import Useourimg from "../images/Use-our-simple-interface.webp";
+import Ourquaimg from "../images/Our-qualified-writers.webp";
+import Reachmoreimg from "../images/Reach-more-customers.webp";
 const HowItworks = () => {
   return (
     <div>
@@ -22,10 +22,7 @@ const HowItworks = () => {
             </h2>
 
             <div className="col-md-6">
-              <Image
-                src={Useourimg}
-                className="work_sec-img"
-              />
+              <Image src={Useourimg} className="work_sec-img" />
             </div>
 
             <div className="col-md-6">
@@ -53,10 +50,7 @@ const HowItworks = () => {
             <h2 className="work_sec-h2"> </h2>
 
             <div className="col-md-6">
-              <Image
-                src={Ourquaimg}
-                className="work_sec-img"
-              />
+              <Image src={Ourquaimg} className="work_sec-img" />
             </div>
 
             <div className="col-md-6">
@@ -82,10 +76,7 @@ const HowItworks = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-6">
-              <Image
-                src={Reachmoreimg}
-                className="work_sec-img"
-              />
+              <Image src={Reachmoreimg} className="work_sec-img" />
             </div>
 
             <div className="col-md-6">

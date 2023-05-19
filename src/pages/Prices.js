@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+
 import GetinTouch from "./getintouch";
 
 const Prices = () => {

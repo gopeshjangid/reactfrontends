@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
@@ -26,13 +26,17 @@ import ikea from "../../images/testimonial/ikea-logo.webp";
 import DanielPresley from "../../images/Daniel-Presley1.webp";
 import LucyGrace from "../../images/Lucy-Grace1.webp";
 
-import ReviewGetintouch from "../reviewgetintouch";
+import ReviewGetintouch from "../../Components/reviewgetintouch";
 // import { renderToString } from "react-dom/server";
 import { Helmet } from "react-helmet";
 // import { Helmet, HelmetProvider, HelmetData } from "react-helmet-async";
 // const helmetData = new HelmetData({});
 
 const services = () => {
+  4;
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => setLoaded(true), []);
   return (
     <div>
       <Helmet>

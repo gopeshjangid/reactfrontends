@@ -27,7 +27,7 @@ const PaypalSubscriptionSuccess = () => {
     } else {
       axios
         .post(
-          `${process.env.REACT_APP_APIURL}/payplesubscriptionsuccess`,
+          `${process.env.NEXT_PUBLIC_APIURL}/payplesubscriptionsuccess`,
           data,
           {
             headers: headers,

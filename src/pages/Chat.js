@@ -35,7 +35,7 @@ const Chat = ({ orderId, orderName }) => {
 
     var config = {
       method: "post",
-      url: `${process.env.REACT_APP_APIURL}/chat`,
+      url: `${process.env.NEXT_PUBLIC_APIURL}/chat`,
       headers: {
         authorization: token,
       },
@@ -97,7 +97,7 @@ const Chat = ({ orderId, orderName }) => {
 
     var config = {
       method: "get",
-      url: `${process.env.REACT_APP_APIURL}/message/${chatId}`,
+      url: `${process.env.NEXT_PUBLIC_APIURL}/message/${chatId}`,
       headers: {
         Authorization: token,
       },
@@ -116,7 +116,7 @@ const Chat = ({ orderId, orderName }) => {
   const getUser = async () => {
     const tokenID = localStorage.getItem("token");
     console.log("hello", tokenID);
-    fetch(`${process.env.REACT_APP_APIURL}/viewProfile`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/viewProfile`, {
       method: "GET",
       mode: "cors",
 
@@ -228,7 +228,7 @@ const Chat = ({ orderId, orderName }) => {
 
     var config = {
       method: "post",
-      url: `${process.env.REACT_APP_APIURL}/message`,
+      url: `${process.env.NEXT_PUBLIC_APIURL}/message`,
       headers: {
         authorization: token,
         "Content-Type": "application/json",

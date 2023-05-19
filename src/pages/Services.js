@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Link from "next/link";
 
 import axios from "axios";
-import Loader from "./Loader";
+import Loader from "../Components/Loader";
 // import usePaymentMethod from "../fetchApi/PaymentMethod";
 // import { User } from "@auth0/auth0-react";
 
@@ -129,7 +129,7 @@ class Services extends Component {
       Authorization: `${tokenID}`,
     };
     await axios
-      .get(`${process.env.REACT_APP_APIURL}/viewCart`, {
+      .get(`${process.env.NEXT_PUBLIC_APIURL}/viewCart`, {
         headers: headers,
       })
       // .then((res) => {
@@ -262,7 +262,7 @@ class Services extends Component {
     const data = { quantity: quantity };
     this.setState({ ...this.state, isAddLoading: true });
     await axios
-      .post(`${process.env.REACT_APP_APIURL}/addCart/${id}`, data, {
+      .post(`${process.env.NEXT_PUBLIC_APIURL}/addCart/${id}`, data, {
         headers: headers,
       })
       .then((response) => {
@@ -398,7 +398,7 @@ class Services extends Component {
     const data = { quantity: quantity };
     this.setState({ ...this.state, isAddLoading: true });
     await axios
-      .post(`${process.env.REACT_APP_APIURL}/addCart/${id}`, data, {
+      .post(`${process.env.NEXT_PUBLIC_APIURL}/addCart/${id}`, data, {
         headers: headers,
       })
       .then((response) => {
@@ -434,7 +434,7 @@ class Services extends Component {
     // });
 
     const data = await fetch(
-      `${process.env.REACT_APP_APIURL}/razorpayCreateSubscription/${id}`,
+      `${process.env.NEXT_PUBLIC_APIURL}/razorpayCreateSubscription/${id}`,
       {
         method: "POST",
         headers: {
@@ -463,7 +463,7 @@ class Services extends Component {
 
         var config = {
           method: "post",
-          url: `${process.env.REACT_APP_APIURL}/verifySubscriptionPayment`,
+          url: `${process.env.NEXT_PUBLIC_APIURL}/verifySubscriptionPayment`,
           headers: {
             Authorization: `${tokenID}`,
             "Content-Type": "application/json",
@@ -504,7 +504,7 @@ class Services extends Component {
     console.log("token", token);
     axios
       .post(
-        `${process.env.REACT_APP_APIURL}/stripeSubscription/${id}`,
+        `${process.env.NEXT_PUBLIC_APIURL}/stripeSubscription/${id}`,
         {},
 
         {
@@ -534,7 +534,7 @@ class Services extends Component {
 
     axios
       .post(
-        `${process.env.REACT_APP_APIURL}/PaypalSubscription/${id}`,
+        `${process.env.NEXT_PUBLIC_APIURL}/PaypalSubscription/${id}`,
         {},
 
         {

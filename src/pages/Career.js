@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Link from "next/link";
 
-import Loader from "./Loader";
+import Loader from "../Components/Loader";
 
 const Career = () => {
   const [career, setCareer] = useState([]);

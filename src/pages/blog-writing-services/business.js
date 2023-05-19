@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import ReviewGetintouch from "../reviewgetintouch";
+import ReviewGetintouch from "../../Components/reviewgetintouch";
 import Image from "next/image";
 import Professionals from "../../images/Professionals-For-Business-Blog-Posts.webp";
 import EmpowerBusinesses from "../../images/Empower-Businesses-post.webp";

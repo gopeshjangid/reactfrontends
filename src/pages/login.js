@@ -1,12 +1,12 @@
-import React from "react";
-import {  useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+
 const Login = () => {
   // const proceedLogin = localStorage.getItem("false");
   // console.log("eeeeeeeee", proceedLogin);
   const initialValues = {
-    username: "", 
+    username: "",
     password: "",
   };
 
@@ -46,7 +46,7 @@ const Login = () => {
       return;
     } else {
       setIsLoggedin(true);
-      fetch(`${process.env.REACT_APP_APIURL}/login`, {
+      fetch(`${process.env.NEXT_PUBLIC_APIURL}/login`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),

@@ -43,7 +43,7 @@ const Contact = () => {
     ) {
       return;
     } else {
-      fetch(`${process.env.REACT_APP_APIURL}/contact-us`, {
+      fetch(`${process.env.NEXT_PUBLIC_APIURL}/contact-us`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),
@@ -78,7 +78,7 @@ const Contact = () => {
     }
   }, [formErrors]);
 
-  const validate = (values) => {                                                        
+  const validate = (values) => {
     const errors = {};
     const regex = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
     if (!values.fullName) {

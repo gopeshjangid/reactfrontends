@@ -1,8 +1,8 @@
-import React from "react";
-import ourMession from "../images/ab_img.webp"
-import Mira from "../images/Mira-Whedon.webp"
-import JACK from "../images/Jack-Thomas.webp"
-import Christopher from "../images/Christopher-Smith.webp"
+import React, { useEffect, useState } from "react";
+import ourMession from "../images/ab_img.webp";
+import Mira from "../images/Mira-Whedon.webp";
+import JACK from "../images/Jack-Thomas.webp";
+import Christopher from "../images/Christopher-Smith.webp";
 import Image from "next/image";
 
 class About extends React.Component {
@@ -43,11 +43,7 @@ class About extends React.Component {
               </div>
 
               <div className="col-md-6">
-                <Image
-                  src={ourMession}
-                  alt="ab_img"
-                  className="ab_Sec2-img"
-                />
+                <Image src={ourMession} alt="ab_img" className="ab_Sec2-img" />
               </div>
             </div>
           </div>
@@ -141,11 +137,7 @@ class About extends React.Component {
 
               <div className="col-md-4">
                 <div className="team_box">
-                  <Image
-                    src={JACK}
-                    alt="Jack"
-                    className="team_sec-img"
-                  />
+                  <Image src={JACK} alt="Jack" className="team_sec-img" />
                   <h2 className="team_second-h2">JACK THOMAS</h2>
                   <p className="team_second-p">DIRECTOR OF CONTENT STRATEGY</p>
                   <p className="team_second-p2">
@@ -167,11 +159,7 @@ class About extends React.Component {
 
               <div className="col-md-4">
                 <div className="team_box">
-                  <Image
-                    src={Mira}
-                    alt="Mira"
-                    className="team_sec-img"
-                  />
+                  <Image src={Mira} alt="Mira" className="team_sec-img" />
                   <h2 className="team_second-h2">MIRA WHEDON</h2>
                   <p className="team_second-p">CONTENT SUCCESS MANAGER</p>
                   <p className="team_second-p2">

@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter, useLocation } from "next/router";
-import { useState, useEffect } from "react";
 import useProfileShow from "../fetchApi/ProfileShow";
 
 const ReviewGetintouch = () => {
@@ -49,7 +48,7 @@ const ReviewGetintouch = () => {
   };
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_APIURL}/getAllContentType`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/getAllContentType`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -74,7 +73,7 @@ const ReviewGetintouch = () => {
   // 	}
   // },[])
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_APIURL}/getCountryCode`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/getCountryCode`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -140,7 +139,7 @@ const ReviewGetintouch = () => {
           contentType: contentType.trim(),
           countryCode: countryCode.trim(),
         };
-        fetch(`${process.env.REACT_APP_APIURL}/getInTouch`, {
+        fetch(`${process.env.NEXT_PUBLIC_APIURL}/getInTouch`, {
           method: "POST",
           mode: "cors",
           body: JSON.stringify(object),
@@ -188,7 +187,7 @@ const ReviewGetintouch = () => {
           contentType: contentType.trim(),
           countryCode: countryCode.trim(),
         };
-        fetch(`${process.env.REACT_APP_APIURL}/getInTouch`, {
+        fetch(`${process.env.NEXT_PUBLIC_APIURL}/getInTouch`, {
           method: "POST",
           mode: "cors",
           body: JSON.stringify(hello),
@@ -338,7 +337,7 @@ const ReviewGetintouch = () => {
   // ) {
   //   return;
   // } else {
-  //   fetch(`${process.env.REACT_APP_APIURL}/getInTouch`, {
+  //   fetch(`${process.env.NEXT_PUBLIC_APIURL}/getInTouch`, {
   //     method: "POST",
   //     mode: "cors",
   //     body: JSON.stringify(object),

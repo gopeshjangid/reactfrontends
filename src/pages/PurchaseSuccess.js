@@ -1,7 +1,7 @@
-  import React from "react";
+import React, { useEffect, useState } from "react";
 // import Link from "next/link";
 import Image from "next/image";
-import Successpurch from "../images/Successful-purchase.gif"
+import Successpurch from "../images/Successful-purchase.gif";
 const PurchaseSuccess = () => {
   return (
     <div>
@@ -21,9 +21,9 @@ const PurchaseSuccess = () => {
                 </p>
 
                 {/* <Link className="" href="/transactionhistory"> */}
-                  <button type="submit" className="fp-btn px-5 m-0">
-                    Continue Shopping
-                  </button>
+                <button type="submit" className="fp-btn px-5 m-0">
+                  Continue Shopping
+                </button>
                 {/* </Link> */}
 
                 <br />

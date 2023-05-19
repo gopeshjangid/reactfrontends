@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Loader from "./Loader";
+import Loader from "../Components/Loader";
 
 let urlApi = `${process.env.NEXT_PUBLIC_APIURL}`;
 

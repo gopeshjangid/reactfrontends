@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 //import { useRouter } from 'next/navigation';
 import { useRouter } from "next/router";
 import moment from "moment";
 
-import { useState, useEffect } from "react";
 import useProfileShow from "../fetchApi/ProfileShow";
 
 const GetinTouch = () => {
@@ -52,7 +51,7 @@ const GetinTouch = () => {
   };
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_APIURL}/getAllExpertLevel`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/getAllExpertLevel`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -72,7 +71,7 @@ const GetinTouch = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_APIURL}/getAllContentType`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/getAllContentType`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -90,7 +89,7 @@ const GetinTouch = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_APIURL}/getCountryCode`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/getCountryCode`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -158,7 +157,7 @@ const GetinTouch = () => {
           expertLevel: expertLevel.trim(),
           countryCode: countryCode.trim(),
         };
-        fetch(`${process.env.REACT_APP_APIURL}/getInTouch`, {
+        fetch(`${process.env.NEXT_PUBLIC_APIURL}/getInTouch`, {
           method: "POST",
           mode: "cors",
           body: JSON.stringify(object),
@@ -209,7 +208,7 @@ const GetinTouch = () => {
           countryCode: countryCode.trim(),
         };
         const token = localStorage.getItem("token");
-        fetch(`${process.env.REACT_APP_APIURL}/getInTouch`, {
+        fetch(`${process.env.NEXT_PUBLIC_APIURL}/getInTouch`, {
           method: "POST",
           mode: "cors",
           body: JSON.stringify(hello),

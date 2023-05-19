@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -51,7 +50,7 @@ const ViewProfile = () => {
     ) {
       return;
     } else {
-      fetch(`${process.env.REACT_APP_APIURL}/changePassword`, {
+      fetch(`${process.env.NEXT_PUBLIC_APIURL}/changePassword`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object, {
@@ -152,7 +151,7 @@ const ViewProfile = () => {
   useEffect(() => {
     const tokenID = localStorage.getItem("token");
     console.log("hello", tokenID);
-    fetch(`${process.env.REACT_APP_APIURL}/viewProfile`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/viewProfile`, {
       method: "GET",
       mode: "cors",
 
@@ -190,7 +189,7 @@ const ViewProfile = () => {
     // setFormErrors(validate(Users));
     const tokenId = localStorage.getItem("token");
     console.log("namastey", tokenId);
-    fetch(`${process.env.REACT_APP_APIURL}/updateProfile`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/updateProfile`, {
       method: "POST",
       mode: "cors",
       body: JSON.stringify({ NewUserName: userName }),

@@ -1,5 +1,5 @@
-import React from "react";
-import ReviewGetintouch from "../reviewgetintouch";
+import React, { useEffect, useState } from "react";
+import ReviewGetintouch from "../../Components/reviewgetintouch";
 
 const brilliant = () => {
   return (

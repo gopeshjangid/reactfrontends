@@ -39,7 +39,7 @@ const Message = ({
   const [PendingStatus, setPendingStatus] = useState(true);
   if (type === "link") {
     const tokenID = localStorage.getItem("token");
-    fetch(`${process.env.REACT_APP_APIURL}/viewOrder`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/viewOrder`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -85,7 +85,7 @@ const Message = ({
     });
 
     const data = await fetch(
-      `${process.env.REACT_APP_APIURL}/PendingPaymentRazorpay`,
+      `${process.env.NEXT_PUBLIC_APIURL}/PendingPaymentRazorpay`,
       {
         method: "POST",
         headers: {
@@ -153,7 +153,7 @@ const Message = ({
 
     await axios
       .post(
-        `${process.env.REACT_APP_APIURL}/PendingPaymentStripe/`,
+        `${process.env.NEXT_PUBLIC_APIURL}/PendingPaymentStripe/`,
         {
           totalAmount: message,
           orderId,
@@ -192,7 +192,7 @@ const Message = ({
 
     await axios
       .post(
-        `${process.env.REACT_APP_APIURL}/PendingPaymentPaypal/`,
+        `${process.env.NEXT_PUBLIC_APIURL}/PendingPaymentPaypal/`,
         {
           totalamount: message,
           orderId,

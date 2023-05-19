@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import Link from "next/link";
- import Link from "next/link";
-import Loader from "./Loader";
+import Link from "next/link";
+import Loader from "../Components/Loader";
 let urlApi = `${process.env.NEXT_PUBLIC_APIURL}`;
 
 class Blog extends Component {

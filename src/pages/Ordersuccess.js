@@ -31,7 +31,7 @@ const Ordersuccess = () => {
       router.push("/");
     } else {
       axios
-        .post(`${process.env.REACT_APP_APIURL}/orderStripeSuccess`, data, {
+        .post(`${process.env.NEXT_PUBLIC_APIURL}/orderStripeSuccess`, data, {
           headers: headers,
         })
         .then((res) => {

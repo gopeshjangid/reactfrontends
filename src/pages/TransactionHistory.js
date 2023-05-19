@@ -4,7 +4,7 @@ import axios from "axios";
 import ExtraCredit from "./extracredit";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Loader from "./Loader";
+import Loader from "../Components/Loader";
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -39,7 +39,7 @@ const TransactionHistory = () => {
     const getToken = localStorage.getItem("token");
     const tokenID = localStorage.getItem("token");
     console.log("hello+++++++++++", tokenID);
-    fetch(`${process.env.REACT_APP_APIURL}/viewProfile`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/viewProfile`, {
       method: "GET",
       mode: "cors",
 
@@ -93,7 +93,7 @@ const TransactionHistory = () => {
     });
 
     const data = await fetch(
-      `${process.env.REACT_APP_APIURL}/razorpayPayment`,
+      `${process.env.NEXT_PUBLIC_APIURL}/razorpayPayment`,
       {
         method: "POST",
         headers: {
@@ -123,7 +123,7 @@ const TransactionHistory = () => {
 
         var config = {
           method: "post",
-          url: `${process.env.REACT_APP_APIURL}/razorpay-is-completed`,
+          url: `${process.env.NEXT_PUBLIC_APIURL}/razorpay-is-completed`,
           headers: {
             Authorization: tokenID,
             "Content-Type": "application/json",
@@ -151,7 +151,7 @@ const TransactionHistory = () => {
   useEffect(() => {
     setIsLoading(true);
     const tokenID = localStorage.getItem("token");
-    fetch(`${process.env.REACT_APP_APIURL}/walletTransactionHistory`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/walletTransactionHistory`, {
       method: "GET",
       mode: "cors",
       headers: {
@@ -173,7 +173,7 @@ const TransactionHistory = () => {
   const walletRecharge = () => {
     setIsLoading(true);
     axios
-      .post(`${process.env.REACT_APP_APIURL}/payment`, {
+      .post(`${process.env.NEXT_PUBLIC_APIURL}/payment`, {
         wallet: amount,
       })
       .then((response) => {
@@ -189,7 +189,7 @@ const TransactionHistory = () => {
   const payWithPaypal = () => {
     setIsLoading(true);
     axios
-      .post(`${process.env.REACT_APP_APIURL}/PaypalPayment`, {
+      .post(`${process.env.NEXT_PUBLIC_APIURL}/PaypalPayment`, {
         wallet: paypal,
       })
       .then((response) => {

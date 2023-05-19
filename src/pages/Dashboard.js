@@ -1,9 +1,8 @@
-import React from "react";
-import { useState, useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
-import { useSearchParams } from "next/router";
+import { useRouter } from "next/router";
 import Link from "next/link";
-import Loader from "./Loader";
+import Loader from "../Components/Loader";
 import Chat from "./chat";
 
 const Dashboard = () => {
@@ -18,8 +17,8 @@ const Dashboard = () => {
 
   const chatRef = useRef(null);
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  const orderIdParam = searchParams.get("orderId");
+  const { query } = useRouter();
+  const orderIdParam = query.orderId;
 
   console.log("sdrtyu", orderIdParam);
 
@@ -74,7 +73,7 @@ const Dashboard = () => {
     setTimeout(() => {
       ref?.current?.click();
     });
-    fetch(`${process.env.REACT_APP_APIURL}/viewOrder`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/viewOrder`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -114,7 +113,7 @@ const Dashboard = () => {
     console.log("pay_method", pay_method);
     axios
       .post(
-        `${process.env.REACT_APP_APIURL}/CancelStripeSubcription`,
+        `${process.env.NEXT_PUBLIC_APIURL}/CancelStripeSubcription`,
         JSON.stringify({
           sub_id: id,
           mainOrderId: mainOrderId,

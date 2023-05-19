@@ -23,7 +23,7 @@ const StripeGuestPaymentSuccess = () => {
     () => {
       axios
         .post(
-          `${process.env.REACT_APP_APIURL}/stripeGuestPaymentSuccess`,
+          `${process.env.NEXT_PUBLIC_APIURL}/stripeGuestPaymentSuccess`,
           data,
           {
             headers: headers,

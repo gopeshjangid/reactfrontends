@@ -1,31 +1,31 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import axios from "axios";
-import { useRouter, useSearchParams } from "next/router";
+import { useRouter } from "next/router";
 
 const Payplesuccess = () => {
-  const [searchParams] = useSearchParams();
   const [tokenID, setTokenId] = useState("");
 
   useEffect(() => {
     setTokenId(localStorage.getItem("token"));
   }, []);
-  const pay_id = sessionStorage.getItem("pay_id");
-  const paypal = sessionStorage.getItem("wallet");
-  const headers = {
-    "Content-Type": "application/json",
-    Authorization: `${tokenID}`,
-  };
 
-  const data = { wallet: parseInt(paypal), pay_id };
   const router = useRouter();
 
   useEffect(() => {
     if (!sessionStorage.getItem("wallet")) {
       router.push("/");
     } else {
-      let a = searchParams.get("paymentId");
-      let b = searchParams.get("PayerID");
+      const pay_id = sessionStorage.getItem("pay_id");
+      const paypal = sessionStorage.getItem("wallet");
+      const headers = {
+        "Content-Type": "application/json",
+        Authorization: `${tokenID}`,
+      };
+
+      const data = { wallet: parseInt(paypal), pay_id };
+      let a = router.query.paymentId;
+      let b = router.query.PayerID;
       console.log("a=====", a);
       console.log("b=====", b);
       axios
@@ -42,7 +42,7 @@ const Payplesuccess = () => {
           console.log(err);
         });
     }
-  }, []);
+  }, [tokenID]);
   return (
     <section className="fp_sec bg-transparent ">
       <div className="container">

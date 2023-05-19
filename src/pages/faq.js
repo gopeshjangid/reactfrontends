@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Loader from "./Loader";
+import Loader from "../Components/Loader";
 
 class faq extends Component {
   constructor(props) {

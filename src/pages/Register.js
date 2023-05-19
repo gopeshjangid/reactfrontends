@@ -1,9 +1,8 @@
-  import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 // import Loader from "./Loader";
-import { useState, useEffect } from "react";
 
 const Register = () => {
   const initialValues = {
@@ -68,7 +67,7 @@ const Register = () => {
     ) {
       return;
     } else {
-      fetch(`${process.env.REACT_APP_APIURL}/register`, {
+      fetch(`${process.env.NEXT_PUBLIC_APIURL}/register`, {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(object),

@@ -24,7 +24,7 @@ const PendingPaymentStripeSuccess = () => {
     () => {
       axios
         .post(
-          `${process.env.REACT_APP_APIURL}/PendingPaymentStripeSuccess`,
+          `${process.env.NEXT_PUBLIC_APIURL}/PendingPaymentStripeSuccess`,
           data,
           {
             headers: headers,

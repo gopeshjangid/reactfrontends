@@ -1,9 +1,9 @@
-import React from "react";
-import{ useSearchParams } from "next/router";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 const OrderWithoutPayment = () => {
-  const [searchParams] = useSearchParams();
-  const orderIdParam = searchParams.get("orderId");
+  const { query } = useRouter();
+  const orderIdParam = query.orderId;
   return (
     <div>
       <section className="fp_sec bg-transparent ">

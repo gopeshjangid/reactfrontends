@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import ReviewGetintouch from "../reviewgetintouch";
+import ReviewGetintouch from "../../Components/reviewgetintouch";
 import Image from "next/image";
 import WillAttract from "../../images/Blogs-That-Will-Attract.webp";
 import Creative from "../../images/Creative-Bloggers-For-Birthday.webp";
