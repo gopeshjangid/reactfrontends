@@ -4,6 +4,7 @@ import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "../../Components/reviewgetintouch";
+import Head from "next/head";
 
 const gratitude = () => {
   const [loaded, setLoaded] = useState(false);
@@ -13,6 +14,66 @@ const gratitude = () => {
   return (
     <div>
       <section className="top_sec p-0">
+        <Head>
+          <title>gratitude blog post - Get Pro Writer</title>
+
+          <meta
+            name="description"
+            content="Hire experienced blog post writer to write your gratitude post at the best price. Add a blog post to your week."
+          />
+          <meta
+            name="robots"
+            content="noindex, nofollow, max-image-preview:large"
+          />
+          <link
+            rel="canonical"
+            href="https://getprowriter.com/blog-writing-services/gratitude/"
+          />
+          <meta name="generator" content="All in One SEO (AIOSEO) 4.2.3.1 " />
+          <meta property="og:locale" content="en_US" />
+          <meta
+            property="og:site_name"
+            content="Get Pro Writer - Content That Brings Wow Reaction"
+          />
+          <meta property="og:type" content="article" />
+          <meta
+            property="og:title"
+            content="gratitude blog post - Get Pro Writer"
+          />
+          <meta
+            property="og:description"
+            content="Hire experienced blog post writer to write your gratitude post at the best price. Add a blog post to your week."
+          />
+          <meta
+            property="og:url"
+            content="https://getprowriter.com/blog-writing-services/gratitude/"
+          />
+          <meta
+            property="og:image"
+            content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
+          />
+          <meta
+            property="article:published_time"
+            content="2022-09-20T07:11:12+00:00"
+          />
+          <meta
+            property="article:modified_time"
+            content="2022-09-20T07:16:22+00:00"
+          />
+          <meta name="twitter:card" content="summary" />
+          <meta
+            name="twitter:title"
+            content="gratitude blog post - Get Pro Writer"
+          />
+          <meta
+            name="twitter:description"
+            content="Hire experienced blog post writer to write your gratitude post at the best price. Add a blog post to your week."
+          />
+          <meta
+            name="twitter:image"
+            content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
+          />
+        </Head>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">

@@ -26,6 +26,7 @@ import toyota from "../../images/testimonial/toyota-logo.webp";
 import ikea from "../../images/testimonial/ikea-logo.webp";
 import justin from "../../images/Justin-T.webp";
 import henry from "../../images/Henry-David.webp";
+import Head from "next/head";
 
 const birthday = () => {
   const [loaded, setLoaded] = useState(false);
@@ -34,6 +35,66 @@ const birthday = () => {
   return (
     <div>
       <section className="top_sec p-0">
+        <Head>
+          <title>birthday blog post - Get Pro Writer</title>
+
+          <meta
+            name="description"
+            content="If you are looking for a birthday blog post writer, we can help. We offer professional writers at affordable rates."
+          />
+          <meta
+            name="robots"
+            content="noindex, nofollow, max-image-preview:large"
+          />
+          <link
+            rel="canonical"
+            href="https://getprowriter.com/blog-writing-services/birthday/"
+          />
+          <meta name="generator" content="All in One SEO (AIOSEO) 4.2.3.1 " />
+          <meta property="og:locale" content="en_US" />
+          <meta
+            property="og:site_name"
+            content="Get Pro Writer - Content That Brings Wow Reaction"
+          />
+          <meta property="og:type" content="article" />
+          <meta
+            property="og:title"
+            content="birthday blog post - Get Pro Writer"
+          />
+          <meta
+            property="og:description"
+            content="If you are looking for a birthday blog post writer, we can help. We offer professional writers at affordable rates."
+          />
+          <meta
+            property="og:url"
+            content="https://getprowriter.com/blog-writing-services/birthday/"
+          />
+          <meta
+            property="og:image"
+            content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
+          />
+          <meta
+            property="article:published_time"
+            content="2022-09-07T04:56:20+00:00"
+          />
+          <meta
+            property="article:modified_time"
+            content="2022-09-07T05:11:48+00:00"
+          />
+          <meta name="twitter:card" content="summary" />
+          <meta
+            name="twitter:title"
+            content="birthday blog post - Get Pro Writer"
+          />
+          <meta
+            name="twitter:description"
+            content="If you are looking for a birthday blog post writer, we can help. We offer professional writers at affordable rates."
+          />
+          <meta
+            name="twitter:image"
+            content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
+          />
+        </Head>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">

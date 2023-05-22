@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Head from "next/head";
 
 const Login = () => {
   // const proceedLogin = localStorage.getItem("false");
@@ -124,6 +125,55 @@ const Login = () => {
         <Loader />
       ) : ( */}
       <section className="reg_sec">
+        <Head>
+          <title>Login - Get Pro Writer</title>
+
+          <meta
+            name="description"
+            content="Login to use our content writing services. You tell us what you need, we deliver it on time."
+          />
+          <meta
+            name="robots"
+            content="noindex, nofollow, max-image-preview:large"
+          />
+          <link rel="canonical" href="https://getprowriter.com/login/" />
+          <meta name="generator" content="All in One SEO (AIOSEO) 4.2.3.1 " />
+          <meta property="og:locale" content="en_US" />
+          <meta
+            property="og:site_name"
+            content="Get Pro Writer - Content That Brings Wow Reaction"
+          />
+          <meta property="og:type" content="article" />
+          <meta property="og:title" content="Login - Get Pro Writer" />
+          <meta
+            property="og:description"
+            content="Login to use our content writing services. You tell us what you need, we deliver it on time."
+          />
+          <meta property="og:url" content="https://getprowriter.com/login/" />
+          <meta
+            name="twitter:image"
+            content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
+          />
+          <meta
+            property="article:published_time"
+            content="2022-01-10T06:41:20+00:00"
+          />
+          <meta
+            property="article:modified_time"
+            content="2022-04-15T10:54:07+00:00"
+          />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:title" content="Login - Get Pro Writer" />
+          <meta
+            name="twitter:description"
+            content="Login to use our content writing services. You tell us what you need, we deliver it on time."
+          />
+          <meta
+            name="twitter:image"
+            content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
+          />
+        </Head>
+
         <div className="container">
           <div className="row justify-content-center">
             <form method="POST" className="login-form" onSubmit={handleSubmit}>

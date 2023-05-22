@@ -32,7 +32,7 @@ const OrderWithoutPayment = () => {
 
             <div className="col-md-5">
               <img
-                src="writer/img/Successful-purchase.gif"
+                src="https://getprowriter.com/writer/img/Successful-purchase.gif"
                 alt="Successful-purchase"
                 className="fp-img m-0 w-100"
               />

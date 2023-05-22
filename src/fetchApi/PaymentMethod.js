@@ -6,7 +6,7 @@ const PaymentMethod = () => {
   const [state, setState] = useState([]);
   const tokenID = localStorage.getItem("token");
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_APIURL}/fetchPaymentMethod`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/fetchPaymentMethod`, {
       method: "GET",
 
       headers: {

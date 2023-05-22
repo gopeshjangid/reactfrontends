@@ -5,6 +5,7 @@ import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "../../Components/reviewgetintouch";
+import Head from "next/head";
 
 const flawless = () => {
   const [loaded, setLoaded] = useState(false);
@@ -13,6 +14,66 @@ const flawless = () => {
   return (
     <div>
       <section className="top_sec p-0">
+        <Head>
+          <title>writing a movie review - Get Pro Writer</title>
+
+          <meta
+            name="description"
+            content="Flawless Movie Reviews! GetProWriter offers incredible services when it comes to writing a movie review. They have a team of professional writers, who are experts in their field, and they can write anything you need. You can hire them to write movie reviews and their services are available at affordable prices. Get In Touch Select"
+          />
+          <meta
+            name="robots"
+            content="noindex, nofollow, max-image-preview:large"
+          />
+          <link
+            rel="canonical"
+            href="https://getprowriter.com/review-writing-services/movie/"
+          />
+          <meta name="generator" content="All in One SEO (AIOSEO) 4.2.3.1 " />
+          <meta property="og:locale" content="en_US" />
+          <meta
+            property="og:site_name"
+            content="Get Pro Writer - Content That Brings Wow Reaction"
+          />
+          <meta property="og:type" content="article" />
+          <meta
+            property="og:title"
+            content="writing a movie review - Get Pro Writer"
+          />
+          <meta
+            property="og:description"
+            content="Flawless Movie Reviews! GetProWriter offers incredible services when it comes to writing a movie review. They have a team of professional writers, who are experts in their field, and they can write anything you need. You can hire them to write movie reviews and their services are available at affordable prices. Get In Touch Select"
+          />
+          <meta
+            property="og:url"
+            content="https://getprowriter.com/review-writing-services/movie/"
+          />
+          <meta
+            property="og:image"
+            content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
+          />
+          <meta
+            property="article:published_time"
+            content="2022-05-28T05:00:52+00:00"
+          />
+          <meta
+            property="article:modified_time"
+            content="2022-05-28T05:06:59+00:00"
+          />
+          <meta name="twitter:card" content="summary" />
+          <meta
+            name="twitter:title"
+            content="writing a movie review - Get Pro Writer"
+          />
+          <meta
+            name="twitter:description"
+            content="Flawless Movie Reviews! GetProWriter offers incredible services when it comes to writing a movie review. They have a team of professional writers, who are experts in their field, and they can write anything you need. You can hire them to write movie reviews and their services are available at affordable prices. Get In Touch Select"
+          />
+          <meta
+            name="twitter:image"
+            content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
+          />
+        </Head>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">

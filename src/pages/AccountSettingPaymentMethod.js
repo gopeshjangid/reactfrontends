@@ -3,7 +3,6 @@ import Link from "next/link";
 import validator from "validator";
 import axios from "axios";
 import { formatCreditCardNumber } from "../utils/utils";
-
 const AccountSettingPaymentMethod = () => {
   const initialValues = {
     accountHolder: "",
@@ -19,7 +18,7 @@ const AccountSettingPaymentMethod = () => {
   const [message, setMessage] = useState();
   const [data, setData] = useState();
   const [state, setState] = useState([]);
-
+  const [tokenID, setTokenId] = useState();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...User, [name]: value });
@@ -306,14 +305,14 @@ const AccountSettingPaymentMethod = () => {
                 <Link
                   className="nav-link active"
                   data-bs-toggle="pill"
-                  href="/accountsettingpaymentmethod"
+                  href="/account-setting-payment-method"
                 >
                   Payment Methods
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" href="/transactionhistory">
+                <Link className="nav-link" href="/transaction-history">
                   Credits
                 </Link>
               </li>
@@ -488,7 +487,7 @@ const AccountSettingPaymentMethod = () => {
                       </div>
                     </div>
                     <div className="d-grid">
-                      <Link href="/transactionhistory">
+                      <Link href="/transaction-history">
                         <button
                           type="button"
                           className="btn w-100 btn-success border-0 btn-block user_addm"
@@ -659,7 +658,7 @@ const AccountSettingPaymentMethod = () => {
                       </div>
                     </div>
                     <div className="d-grid">
-                      <Link href="/transactionhistory">
+                      <Link href="/transaction-history">
                         <button
                           type="button"
                           className="btn border-0 mb-0 btn-success w-100 btn-block"

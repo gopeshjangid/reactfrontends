@@ -1,11 +1,13 @@
 import React from "react";
-import loader from "../images/gp-writer-complete.png"
+import Image from "next/image";
+
+import loader from "../images/gp-writer-loader.png"
 const Loader = () => {
   return (
     <div className="main-loader">
       <div className="loader">
         {" "}
-        <img src={loader} alt="logo-loader" />
+        <Image src={loader} alt="logo-loader" />
       </div>
     </div>
   );

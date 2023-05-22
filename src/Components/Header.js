@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import{ useLocation, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import { useState } from "react";
-import "../styles/style.css";
-import Logo from "../pages/images/gp-writer-complete.png";
+import Image from "next/image";
+
+import Logo from "../images/gp-writer-complete.png";
 // import { Navigate } from 'next/router';
 
 const Header = () => {
@@ -19,15 +20,13 @@ const Header = () => {
   //     setIsLoggedin(false);
   //   };
 
-  const location = useLocation();
-
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setIsLoggedin(true);
     } else {
       setIsLoggedin(false);
     }
-  }, [location.pathname]);
+  }, [router.pathname]);
 
   console.log("check ====", isLoggedin);
 
@@ -48,23 +47,24 @@ const Header = () => {
 
   // if (!isLoggedin) {
   //   // user is not authenticated
-  //   return <Navigate to="/login" />;
+  //   return <Navigate href="/login" />;
   // }
 
   return (
     <div>
-      <section>
+      <section className="headbar_next">
         <div className="container">
           <nav className="navbar navbar-expand-sm  navbar-dark">
             <Link
               className="navbar-brand logo pe-0 "
               style={{ width: "25%" }}
-              to="/"
+              href="/"
             >
-              <img
+              <Image
                 src={Logo}
                 alt="gp-writer-complete"
-                style={{ width: "100%" }}
+                height={65}
+                width={300}
               />
             </Link>
             <button
@@ -78,39 +78,40 @@ const Header = () => {
             <div className="collapse navbar-collapse" id="collapsibleNavbar">
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item pad">
-                  <Link className="nav-link set" to="/services">
+                  <Link className="nav-link set" href="/services">
                     Services
                   </Link>
                 </li>
                 <li className="nav-item pad">
-                  <Link className="nav-link set" to="/prices">
+                  <Link className="nav-link set" href="/prices">
                     Prices
                   </Link>
                 </li>
                 <li className="nav-item pad">
-                  <Link className="nav-link set" to="/samples">
+                  <Link className="nav-link set" href="/samples">
                     Samples
                   </Link>
                 </li>
                 <li className="nav-item pad">
-                  <Link className="nav-link set" to="/how-it-works">
+                  <Link className="nav-link set" href="/how-it-works">
                     How It Works
                   </Link>
                 </li>
                 <li className="nav-item pad">
-                  <Link className="nav-link set" to="/reviews">
+                  <Link className="nav-link set" href="/reviews">
                     Reviews
                   </Link>
                 </li>
                 <li className="nav-item pad">
-                  <Link className="nav-link set" to="/place-your-order">
+                  <Link className="nav-link set" href="/place-your-order">
                     Place Your Order
                   </Link>
                 </li>
+
                 <li className="nav-item dropdown pad">
                   <Link
                     className="nav-link dropdown-toggle set"
-                    to="/"
+                    href="/"
                     role="button"
                     data-bs-toggle="dropdown"
                   >
@@ -118,27 +119,27 @@ const Header = () => {
                   </Link>
                   <ul className="dropdown-menu">
                     <li>
-                      <Link className="dropdown-item" to="/viewCart">
-                        View cart
+                      <Link className="dropdown-item" href="/viewCart">
+                        View Cart
                       </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/guestpayment">
+                      <Link className="dropdown-item" href="/guestpayment">
                         Guest Payment
                       </Link>
                     </li>
-                    {/* <li><Link className="dropdown-item"  to="/login">Login</Link></li> */}
+                    {/* <li><Link className="dropdown-item"  href="/login">Login</Link></li> */}
 
                     {isLoggedin === false ? (
                       <>
                         <li>
-                          <Link className="dropdown-item" to="/register">
+                          <Link className="dropdown-item" href="/register">
                             Register
                           </Link>
                         </li>
 
                         <li>
-                          <Link className="dropdown-item" to="/login">
+                          <Link className="dropdown-item" href="/login">
                             Log in
                           </Link>
                         </li>
@@ -146,7 +147,7 @@ const Header = () => {
                     ) : (
                       <>
                         <li>
-                          <Link className="dropdown-item" to="/dashboard">
+                          <Link className="dropdown-item" href="/dashboard">
                             Dashboard
                           </Link>
                         </li>
@@ -154,7 +155,7 @@ const Header = () => {
                         <li>
                           <Link
                             className="dropdown-item"
-                            to="/"
+                            href="/"
                             onClick={logout}
                           >
                             Log out

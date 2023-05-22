@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import GetinTouch from "../pages/getintouch";
+import GetinTouch from "../pages/get-in-touch";
 // import Link from "next/link";
 import Image from "next/image";
 import getprimg1 from "../images/gpw-img1.png";

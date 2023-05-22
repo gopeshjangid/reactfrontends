@@ -21,7 +21,7 @@ function loadScript(src) {
   });
 }
 
-const ViewCart = () => {
+const viewCart = () => {
   // const [num, setNum] = useState(0);
   const Razorpay = useRazorpay();
 
@@ -80,7 +80,7 @@ const ViewCart = () => {
     ).then((t) => t.json());
     console.log(data);
     const options = {
-      key: "rzp_test_q3Ox5lXRKYuuFx",
+      key: "rzp_live_DbkICpMn91oJVO",
       currency: data.order.currency,
       amount: data.amount.toString(),
       order_id: data.order.id,
@@ -648,7 +648,7 @@ const ViewCart = () => {
     const tokenID = localStorage.getItem("token");
 
     var razorpay = new Razorpay({
-      key: "rzp_test_q3Ox5lXRKYuuFx",
+      key: "rzp_live_DbkICpMn91oJVO",
     });
 
     // const res = await loadScript(
@@ -1089,7 +1089,7 @@ const ViewCart = () => {
                                       style={{ cursor: "pointer" }}
                                       data-bs-dismiss="modal"
                                       onClick={() =>
-                                        router.push("/transactionhistory")
+                                        router.push("/transaction-history")
                                       }
                                     >
                                       Add now!
@@ -1598,4 +1598,4 @@ const ViewCart = () => {
   );
 };
 
-export default ViewCart;
+export default viewCart;

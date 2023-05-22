@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "../../Components/reviewgetintouch";
 
-const techni = () => {
+const techni= () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => setLoaded(true), []);
@@ -935,4 +935,4 @@ const techni = () => {
   );
 };
 
-export default Techni;
+export default techni;

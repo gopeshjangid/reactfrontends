@@ -4,6 +4,7 @@ import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "../../Components/reviewgetintouch";
+import Head from "next/head";
 
 const famous = () => {
   const [loaded, setLoaded] = useState(false);
@@ -13,6 +14,67 @@ const famous = () => {
   return (
     <div>
       <section className="top_sec p-0">
+        <Head>
+          <title>famous blog posts - Get Pro Writer</title>
+
+          <meta
+            name="description"
+            content="Are you struggling to write your blog regularly? Our expert writers will write famous blog posts for you."
+          />
+          <meta
+            name="robots"
+            content="noindex, nofollow, max-image-preview:large"
+          />
+          <link
+            rel="canonical"
+            href="https://getprowriter.com/blog-writing-services/famous/"
+          />
+          <meta name="generator" content="All in One SEO (AIOSEO) 4.2.3.1 " />
+          <meta property="og:locale" content="en_US" />
+          <meta
+            property="og:site_name"
+            content="Get Pro Writer - Content That Brings Wow Reaction"
+          />
+          <meta property="og:type" content="article" />
+          <meta
+            property="og:title"
+            content="famous blog posts - Get Pro Writer"
+          />
+          <meta
+            property="og:description"
+            content="Are you struggling to write your blog regularly? Our expert writers will write famous blog posts for you."
+          />
+          <meta
+            property="og:url"
+            content="https://getprowriter.com/blog-writing-services/famous/"
+          />
+          <meta
+            property="og:image"
+            content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
+          />
+          <meta
+            property="article:published_time"
+            content="2022-06-28T08:43:03+00:00"
+          />
+          <meta
+            property="article:modified_time"
+            content="2022-06-28T08:46:05+00:00"
+          />
+          <meta name="twitter:card" content="summary" />
+          <meta
+            name="twitter:title"
+            content="famous blog posts - Get Pro Writer"
+          />
+          <meta
+            name="twitter:description"
+            content="Are you struggling to write your blog regularly? Our expert writers will write famous blog posts for you."
+          />
+          <meta
+            name="twitter:image"
+            content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
+          />
+        </Head>
+
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">

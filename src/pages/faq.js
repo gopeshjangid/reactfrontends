@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Loader from "../Components/Loader";
+import Head from "next/head";
 
 class faq extends Component {
   constructor(props) {
@@ -65,7 +66,63 @@ class faq extends Component {
           <Loader />
         ) : (
           <>
+          <Head>
+                <title>FAQ - Get Pro Writer</title>
+
+                <meta
+                  name="description"
+                  content="Our FAQs have your answers. If the FAQs don&#039;t have what you&#039;re looking for, we&#039;ll get back to you as soon as possible."
+                />
+                <meta
+                  name="robots"
+                  content="noindex, nofollow, max-image-preview:large"
+                />
+                <link rel="canonical" href="https://getprowriter.com/faq/" />
+                <meta
+                  name="generator"
+                  content="All in One SEO (AIOSEO) 4.2.3.1 "
+                />
+                <meta property="og:locale" content="en_US" />
+                <meta
+                  property="og:site_name"
+                  content="Get Pro Writer - Content That Brings Wow Reaction"
+                />
+                <meta property="og:type" content="article" />
+                <meta property="og:title" content="FAQ - Get Pro Writer" />
+                <meta
+                  property="og:description"
+                  content="Our FAQs have your answers. If the FAQs don&#039;t have what you&#039;re looking for, we&#039;ll get back to you as soon as possible."
+                />
+                <meta
+                  property="og:url"
+                  content="https://getprowriter.com/faq/"
+                />
+                <meta
+                  property="og:image"
+                  content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
+                />
+                <meta
+                  property="article:published_time"
+                  content="2021-12-23T11:44:10+00:00"
+                />
+                <meta
+                  property="article:modified_time"
+                  content="2022-04-15T06:27:10+00:00"
+                />
+                <meta name="twitter:card" content="summary" />
+                <meta name="twitter:title" content="FAQ - Get Pro Writer" />
+                <meta
+                  name="twitter:description"
+                  content="Our FAQs have your answers. If the FAQs don&#039;t have what you&#039;re looking for, we&#039;ll get back to you as soon as possible."
+                />
+                <meta
+                  name="twitter:image"
+                  content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
+                />
+              </Head>
             <section className="faq_sec d-flex justify-content-center align-items-center">
+              
+
               <div className="container">
                 <h2 className="faq_sec-h2 p-0">
                   Frequently Asked Questions{" "}
@@ -88,7 +145,7 @@ class faq extends Component {
                         return (
                           <div
                             className="faq-item p-0 bg_set accordion-item"
-                            // onClick={this.handleToggleVisibility}
+                          onClick={this.handleToggleVisibility}
                             key={friend._id}
                           >
                             <h2

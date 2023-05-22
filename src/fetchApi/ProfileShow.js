@@ -6,7 +6,7 @@ const ProfileShow = () => {
   useEffect(() => {
     const tokenID = localStorage.getItem("token");
     console.log("hello", tokenID);
-    fetch(`${process.env.REACT_APP_APIURL}/viewProfile`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/viewProfile`, {
       method: "GET",
       headers: {
         "Content-type": "application/json",

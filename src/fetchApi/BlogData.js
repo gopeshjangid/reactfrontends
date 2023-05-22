@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const BlogData = () => {
   const [blogData, setBlogData] = useState([]);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_APIURL}/getBlog`, {
+    fetch(`${process.env.NEXT_PUBLIC_APIURL}/getBlog`, {
       method: "GET",
       mode: "cors",
       headers: {

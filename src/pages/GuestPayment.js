@@ -155,7 +155,7 @@ const GuestPayment = () => {
     ).then((t) => t.json());
     console.log(data);
     const options = {
-      key: "rzp_test_q3Ox5lXRKYuuFx",
+      key: "rzp_live_DbkICpMn91oJVO",
       currency: data.order.currency,
       amount: data.amount.toString(),
       order_id: data.order.id,
