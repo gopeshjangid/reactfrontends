@@ -5,8 +5,31 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "../../Components/reviewgetintouch";
 import Head from "next/head";
+import Image from "next/image";
+import Unmatched    from "../../images/Unmatched-quality.webp"
+import Creative from "../../images/Creative-content.webp"
+import Blog from "../../images/Blog-post-content.webp"
+import blogpost from "../../images/Blog-post-business.webp"
+import Authentic from "../../images/Authentic-blog-post.webp"
+import Expertise from "../../images/Expertise-7.webp"
+import make from "../../images/Make-a-request.webp"
+import letus from "../../images/Let-us-write-your.webp"
+import Getyour from "../../images/Get-your-content-copy.webp"
+import lego from "../../images/testimonial/lego.webp";
+import Allianz from "../../images/testimonial/Allianz.webp";
+import Citi from "../../images/testimonial/Citi.webp";
+import zara from "../../images/testimonial/zara-logo.webp";
+import loreal from "../../images/testimonial/loreal-logo.webp";
+import gillette from "../../images/testimonial/gillette-logo.webp";
+import sap from "../../images/testimonial/sap-logo.webp";
+import att from "../../images/testimonial/att-logo.webp";
+import toyota from "../../images/testimonial/toyota-logo.webp";
+import ikea from "../../images/testimonial/ikea-logo.webp";
+import Jacky  from "../../images/Jacky-Hampshire.webp";
+import Julia   from "../../images/Julia-Hues.webp";
 
-const Short = () => {
+
+const short = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => setLoaded(true), []);
@@ -347,16 +370,16 @@ const Short = () => {
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Unmatched-quality.webp"
+              <Image
+              src={Unmatched}
                 alt="No-match-review"
                 className="rws-img"
               />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Creative-content.webp"
+              <Image
+              src={Creative}
                 alt="Expertimental-review"
                 className="rws-img"
               />
@@ -404,16 +427,16 @@ const Short = () => {
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Blog-post-content.webp"
+              <Image
+              src={Blog}
                 alt="Online-review"
                 className="rws-img"
               />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src=" https://getprowriter.com/writer/img/Blog-post-business.webp"
+              <Image
+               src={blogpost}
                 alt="Grow-your-business"
                 className="rws-img"
               />
@@ -462,16 +485,16 @@ const Short = () => {
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src=" https://getprowriter.com/writer/img/Authentic-blog-post.webp"
+              <Image
+              src={Authentic}
                 alt="Real-review-writer"
                 className="rws-img"
               />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Expertise-7.webp"
+              <Image
+               src={Expertise}
                 alt="Expertise"
                 className="rws-img"
               />
@@ -514,8 +537,8 @@ const Short = () => {
               <div className="get_sec-box">
                 <h2 className="get_sec-box_h2">STEP 1</h2>
                 <h3 className="get_sec-box_h3">Make a request</h3>
-                <img
-                  src=" https://getprowriter.com/writer/img/Make-a-request.webp"
+                <Image
+                src={make}
                   alt="Make-a-request"
                   className="get_sec-box_img"
                 />
@@ -530,8 +553,8 @@ const Short = () => {
               <div className="get_sec-box">
                 <h2 className="get_sec-box_h2">STEP 2</h2>
                 <h3 className="get_sec-box_h3">Let us write your content</h3>
-                <img
-                  src=" https://getprowriter.com/writer/img/Let-us-write-your-content.webp"
+                <Image
+                  src={letus}
                   alt="Let-us-write-your-content"
                   className="get_sec-box_img"
                 />
@@ -546,8 +569,8 @@ const Short = () => {
               <div className="get_sec-box">
                 <h2 className="get_sec-box_h2">STEP 3</h2>
                 <h3 className="get_sec-box_h3">Get your content copy</h3>
-                <img
-                  src="https://getprowriter.com/writer/img/Get-your-content-copy.webp"
+                <Image
+                src={Getyour}
                   alt="Get-your-content-copy"
                   className="get_sec-box_img"
                 />
@@ -600,8 +623,8 @@ const Short = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src=" https://getprowriter.com/writer/img/testimonial/lego.webp"
+                    <Image
+                    src={lego}
                       alt="lego"
                       className="d-block img-box_image"
                     />
@@ -610,8 +633,8 @@ const Short = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
+                    <Image
+                    src={Allianz}
                       alt="Allianz"
                       className="d-block img-box_image"
                     />
@@ -620,8 +643,8 @@ const Short = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
+                    <Image
+                    src={Citi}
                       alt="Citi"
                       className="d-block img-box_image"
                     />
@@ -630,8 +653,8 @@ const Short = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
+                    <Image
+                    src={zara}
                       alt="zara"
                       className="d-block img-box_image"
                     />
@@ -641,8 +664,8 @@ const Short = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src=" https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
+                    <Image
+                    src={loreal}
                       alt="loreal"
                       className="d-block img-box_image"
                     />
@@ -651,8 +674,8 @@ const Short = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
+                    <Image
+                    src={gillette}
                       alt="gillette"
                       className="d-block img-box_image"
                     />
@@ -661,8 +684,8 @@ const Short = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
+                    <Image
+                    src={sap}
                       alt="sap"
                       className="d-block img-box_image"
                     />
@@ -671,8 +694,8 @@ const Short = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
+                    <Image
+                    src={att}
                       alt="att"
                       className="d-block img-box_image"
                     />
@@ -681,8 +704,8 @@ const Short = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
+                    <Image
+                    src={toyota}
                       alt="toyota"
                       className="d-block img-box_image"
                     />
@@ -691,8 +714,8 @@ const Short = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
+                    <Image
+                    src={ikea}
                       alt="ikea"
                       className="d-block img-box_image"
                     />
@@ -795,8 +818,8 @@ const Short = () => {
                   professional, which is exactly what we were looking for.
                 </p>
                 <div className="t_sels">
-                  <img
-                    src="https://getprowriter.com/writer/img/Jacky-Hampshire.webp"
+                  <Image
+                  src={Jacky}
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
@@ -815,8 +838,8 @@ const Short = () => {
                   sound natural and interesting.
                 </p>
                 <div className="t_sels">
-                  <img
-                    src="https://getprowriter.com/writer/img/Julia-Hues.webp"
+                  <Image
+                    src={Julia}
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />

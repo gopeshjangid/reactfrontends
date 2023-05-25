@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import Image from "next/image";
+import paymt from "../images/Payment-Information-cuate.png"
 // import { useLocation } from "next/router";
 
 import useProfileShow from "../fetchApi/ProfileShow";
@@ -252,8 +253,8 @@ const GuestPayment = () => {
       <div className="container">
         <div className="row  align-items-center bg-white">
           <div className="col-md-6 text-center">
-            <img
-              src="https://getprowriter.com/writer/img/Payment-Information-cuate.png"
+            <Image
+              src={paymt}
               className="fp-img"
               alt=""
             />

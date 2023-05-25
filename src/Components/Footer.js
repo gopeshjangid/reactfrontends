@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
+import Script from "next/script";
 
 const Footer = () => {
+  const Tawk_API = Tawk_API || {},
+  Tawk_LoadStart = new Date();
+
+  function Tawk() {
+    var s1 = document.createElement("Script"),
+    s0 = document.getElementsByTagName("Script")[0];
+    s1.async = true;
+    s1.src = "https://embed.tawk.to/622c1c331ffac05b1d7e3176/1ftu4sckk";
+    s1.charset = "UTF-8";
+    s1.setAttribute("crossorigin", "*");
+    s0.parentNode.insertBefore(s1, s0); 
+  }
+  useEffect(()=>{
+    Tawk();
+  },[]);
+
+
   return (
     <div>
-
-
-
       <section className="footer_sec py-4">
         <nav className=" navbar-expand-sm f_menunavbar-dark">
           <div className="container">
@@ -62,6 +77,9 @@ const Footer = () => {
           </div>
         </nav>
       </section>
+
+  
+
     </div>
   );
 };

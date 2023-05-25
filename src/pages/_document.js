@@ -23,7 +23,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     
 
         <link
@@ -72,7 +72,7 @@ export default function Document() {
         {/* <Script
           type="text/javascript"
           src="https://checkout.razorpay.com/v1/razorpay.js"
-        ></Script> */}
+        ></Script> */ }
       </body>
     </Html>
   );

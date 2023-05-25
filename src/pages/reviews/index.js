@@ -5,6 +5,8 @@ import { FaStar } from "react-icons/fa";
 // import { Radio, Rating } from "./RatingStyles";
 import { Rating, Radio } from "../../Components/ratingstyles";
 import ReactPaginate from "react-paginate";
+import Image from "next/image";
+import custreview from "../../images/Customer-reviews.jpg"
 import { hasPointerEvents } from "@testing-library/user-event/dist/utils";
 import Head from "next/head";
 const PER_PAGE = 10;
@@ -302,11 +304,11 @@ const reviews = () => {
           <meta
             name="twitter:image"
             content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
-          />
+          /> 
         </Head>
 
         <img
-          src="https://getprowriter.com/writer/img/Customer-reviews-1536x480.jpg"
+          src={custreview }
           className="w-100"
           alt="Customer-reviews"
         />
