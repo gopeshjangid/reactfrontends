@@ -307,8 +307,8 @@ const reviews = () => {
           /> 
         </Head>
 
-        <img
-          src={custreview }
+        <Image
+          src={custreview}
           className="w-100"
           alt="Customer-reviews"
         />

@@ -274,7 +274,7 @@ const ViewProfile = () => {
                 <h3 className="as-h3">Set Your Personal Info</h3>
                 <div className="col-md-4 text-center">
                   <div className="w-50 m-auto ">
-                    <img
+                    <Image
                       src="https://getprowriter.com/writer/img/profile-icon-png.png"
                       alt="Mira-Whedon"
                       className="team_sec-img w-100 mt-0"

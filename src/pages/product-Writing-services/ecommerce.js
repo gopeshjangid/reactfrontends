@@ -443,8 +443,8 @@ const ecommerce = () => {
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/More-User-Flow-600x400.webp"
+              <Image
+              src={More}
                 alt="Grow-your-business"
                 className="rws-img"
               />

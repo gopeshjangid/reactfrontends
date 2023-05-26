@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
+import complete from "../images/Completed-pana.png";
 const Ordersuccess = () => {
   const [tokenID, setTokenId] = useState("");
 
@@ -72,8 +74,9 @@ const Ordersuccess = () => {
           </div>
 
           <div className="col-md-4">
-            <img
-              src="https://getprowriter.com/writer/img/Completed-pana.png"
+          <Image
+             src={complete}
+          
               alt="Completed-pana"
               className="fp-img m-0 w-100"
             />

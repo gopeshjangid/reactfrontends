@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/router";
-
+import Image from "next/image";
+import complete from "../images/Completed-pana.png";
 const Payplesuccess = () => {
   const [tokenID, setTokenId] = useState("");
 
@@ -69,8 +70,10 @@ const Payplesuccess = () => {
           </div>
 
           <div className="col-md-4">
-            <img
-              src="https://getprowriter.com/writer/img/Completed-pana.png"
+          <Image
+             src={complete}
+
+          
               alt="Completed-pana"
               className="fp-img m-0 w-100"
             />

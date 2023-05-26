@@ -4,7 +4,8 @@ import Link from "next/link";
 
 import Loader from "../../Components/Loader";
 import Head from "next/head";
-
+import Image from "next/image";
+import careers from "../../images/career-img.webp"
 const career = () => {
   const [career, setCareer] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -98,8 +99,8 @@ const career = () => {
           </section>
           <div className="container">
             <div className="row">
-              <img
-                src="https://getprowriter.com/writer/img/Getprowriter-Content-Writers.webp"
+              <Image
+                src={careers}
                 alt="Getprowriter"
                 className="career_sec-img"
               />

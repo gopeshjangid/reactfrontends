@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-
+import Image from "next/image";
+import complete from "../images/Completed-pana.png";
 const StripeGuestPaymentSuccess = () => {
   const [tokenID, setTokenId] = useState("");
 
@@ -75,8 +76,9 @@ const StripeGuestPaymentSuccess = () => {
           </div>
 
           <div className="col-md-4">
-            <img
-              src="https://getprowriter.com/writer/img/Completed-pana.png"
+          <Image
+             src={complete}
+          
               alt="Complete-pana"
               className="fp-img m-0 w-100"
             />
