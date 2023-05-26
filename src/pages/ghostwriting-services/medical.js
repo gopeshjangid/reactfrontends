@@ -5,6 +5,28 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "../../Components/reviewgetintouch";
 import Head from "next/head";
+import Image from "next/image";
+import Trained   from "../../images/Trained-medical-writer.webp"
+import Creative  from "../../images/Creative-minds.webp"
+import Extensive from "../../images/Extensive-knowledge-in-the-medical-niche.webp"
+import Medical from "../../images/Medical-ghostwriters-services.webp"
+import Originality  from "../../images/Originality-in-medical-ghostwriting.webp"
+import Expertise from "../../images/Expertise-for-unmatched-medical.webp"
+import make from "../../images/Make-a-request.webp"
+import letus from "../../images/Let-us-write-your.webp"
+import Getyour from "../../images/Get-your-content-copy.webp"
+import lego from "../../images/testimonial/lego.webp";
+import Allianz from "../../images/testimonial/Allianz.webp";
+import Citi from "../../images/testimonial/Citi.webp";
+import zara from "../../images/testimonial/zara-logo.webp";
+import loreal from "../../images/testimonial/loreal-logo.webp";
+import gillette from "../../images/testimonial/gillette-logo.webp";
+import sap from "../../images/testimonial/sap-logo.webp";
+import att from "../../images/testimonial/att-logo.webp";
+import toyota from "../../images/testimonial/toyota-logo.webp";
+import ikea from "../../images/testimonial/ikea-logo.webp";
+import Robert from "../../images/Robert-Wilson.webp";
+import Johnson from "../../images/Johnson-Smith.webp";
 
 const medical = () => {
   const [loaded, setLoaded] = useState(false);
@@ -366,16 +388,16 @@ const medical = () => {
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Trained-medical-writer.webp"
+              <Image
+              src={Trained}
                 alt="No-match-review"
                 className="rws-img"
               />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Creative-minds.webp"
+              <Image
+              src={Creative}
                 alt="Expertimental-review"
                 className="rws-img"
               />
@@ -432,16 +454,16 @@ const medical = () => {
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Extensive-knowledge-in-the-medical-niche.webp"
+              <Image
+              src={Extensive}
                 alt="Online-review"
                 className="rws-img"
               />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Medical-ghostwriters-services.webp"
+              <Image
+              src={Medical}
                 alt="Grow-your-business"
                 className="rws-img"
               />
@@ -498,16 +520,16 @@ const medical = () => {
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Originality-in-medical-ghostwriting.webp"
+              <Image
+              src={Originality}
                 alt="Real-review-writer"
                 className="rws-img"
               />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Expertise-for-unmatched-medical.webp"
+              <Image
+              src={Expertise}
                 alt="Expertise"
                 className="rws-img"
               />
@@ -552,8 +574,8 @@ const medical = () => {
               <div className="get_sec-box">
                 <h2 className="get_sec-box_h2">STEP 1</h2>
                 <h3 className="get_sec-box_h3">Make a request</h3>
-                <img
-                  src="https://getprowriter.com/writer/img/Make-a-request.webp"
+                <Image
+                src={make}
                   alt="Make-a-request"
                   className="get_sec-box_img"
                 />
@@ -568,8 +590,8 @@ const medical = () => {
               <div className="get_sec-box">
                 <h2 className="get_sec-box_h2">STEP 2</h2>
                 <h3 className="get_sec-box_h3">Let us write your content</h3>
-                <img
-                  src="https://getprowriter.com/writer/img/Let-us-write-your-content.webp"
+                <Image
+                src={letus}
                   alt="Let-us-write-your-content"
                   className="get_sec-box_img"
                 />
@@ -584,8 +606,8 @@ const medical = () => {
               <div className="get_sec-box">
                 <h2 className="get_sec-box_h2">STEP 3</h2>
                 <h3 className="get_sec-box_h3">Get your content copy</h3>
-                <img
-                  src="https://getprowriter.com/writer/img/Get-your-content-copy.webp"
+                <Image
+                src={Getyour}
                   alt="Get-your-content-copy"
                   className="get_sec-box_img"
                 />
@@ -638,8 +660,8 @@ const medical = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/lego.webp"
+                    <Image
+                    src={lego}
                       alt="lego"
                       className="d-block img-box_image"
                     />
@@ -648,8 +670,8 @@ const medical = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
+                    <Image
+                    src={Allianz}
                       alt="Allianz"
                       className="d-block img-box_image"
                     />
@@ -658,8 +680,8 @@ const medical = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
+                    <Image
+                    src={Citi}
                       alt="Citi"
                       className="d-block img-box_image"
                     />
@@ -668,8 +690,8 @@ const medical = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
+                    <Image
+                    src={zara}
                       alt="zara"
                       className="d-block img-box_image"
                     />
@@ -679,8 +701,8 @@ const medical = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
+                    <Image
+                    src={loreal}
                       alt="loreal"
                       className="d-block img-box_image"
                     />
@@ -689,8 +711,8 @@ const medical = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
+                    <Image
+                    src={gillette}
                       alt="gillette"
                       className="d-block img-box_image"
                     />
@@ -699,8 +721,8 @@ const medical = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
+                    <Image
+                    src={sap}
                       alt="sap"
                       className="d-block img-box_image"
                     />
@@ -709,8 +731,8 @@ const medical = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
+                    <Image
+                    src={att}
                       alt="att"
                       className="d-block img-box_image"
                     />
@@ -719,8 +741,8 @@ const medical = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
+                    <Image
+                    src={toyota}
                       alt="toyota"
                       className="d-block img-box_image"
                     />
@@ -729,8 +751,8 @@ const medical = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
+                    <Image
+                    src={ikea}
                       alt="ikea"
                       className="d-block img-box_image"
                     />
@@ -838,8 +860,8 @@ const medical = () => {
                   publication. The company exceeded our expectations!
                 </p>
                 <div className="t_sels">
-                  <img
-                    src="https://getprowriter.com/writer/img/Robert-Wilson.webp"
+                  <Image
+                  src={Robert}
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
@@ -860,8 +882,8 @@ const medical = () => {
                   we wanted and it was delivered on time.
                 </p>
                 <div className="t_sels">
-                  <img
-                    src="https://getprowriter.com/writer/img/Johnson-Smith.webp"
+                  <Image
+                  src={Johnson}
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />

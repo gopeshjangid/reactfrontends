@@ -1,6 +1,28 @@
 import React, { useEffect, useState } from "react";
 import ReviewGetintouch from "../../Components/reviewgetintouch";
 import Head from "next/head";
+import Image from "next/image";
+import Brilliant   from "../../images/Brilliant-writer.webp"
+import truly  from "../../images/Brilliant-truly-creative-writer.webp"
+import Expermintal from "../../images/Expermintal-writer.webp"
+import Ghostwriter from "../../images/Ghostwriter.webp"
+import Writer  from "../../images/Writer-1.webp"
+import Expertise from "../../images/Guaranteed-writing.webp"
+import make from "../../images/Make-a-request.webp"
+import letus from "../../images/Let-us-write-your.webp"
+import Getyour from "../../images/Get-your-content-copy.webp"
+import lego from "../../images/testimonial/lego.webp";
+import Allianz from "../../images/testimonial/Allianz.webp";
+import Citi from "../../images/testimonial/Citi.webp";
+import zara from "../../images/testimonial/zara-logo.webp";
+import loreal from "../../images/testimonial/loreal-logo.webp";
+import gillette from "../../images/testimonial/gillette-logo.webp";
+import sap from "../../images/testimonial/sap-logo.webp";
+import att from "../../images/testimonial/att-logo.webp";
+import toyota from "../../images/testimonial/toyota-logo.webp";
+import ikea from "../../images/testimonial/ikea-logo.webp";
+import Oliver from "../../images/Oliver-jake.webp";
+import Timothee from "../../images/Timothee-Cooper.webp";
 
 const brilliant = () => {
   return (
@@ -353,16 +375,16 @@ const brilliant = () => {
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Brilliant-writer.webp"
+              <Image
+              src={Brilliant}
                 alt="No-match-review"
                 className="rws-img"
               />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Brilliant-truly-creative-writer.webp"
+              <Image
+              src={truly}
                 alt="Expertimental-review"
                 className="rws-img"
               />
@@ -417,16 +439,16 @@ const brilliant = () => {
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Expermintal-writer.webp"
+              <Image
+              src={Expermintal}
                 alt="Online-review"
                 className="rws-img"
               />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Ghostwriter.webp"
+              <Image
+              src={Ghostwriter}
                 alt="Grow-your-business"
                 className="rws-img"
               />
@@ -487,16 +509,16 @@ const brilliant = () => {
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Writer-1.webp"
+              <Image
+              src={Writer}
                 alt="Real-review-writer"
                 className="rws-img"
               />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Guaranteed-writing.webp"
+              <Image
+              src={Expertise}
                 alt="Expertise"
                 className="rws-img"
               />
@@ -543,8 +565,8 @@ const brilliant = () => {
               <div className="get_sec-box">
                 <h2 className="get_sec-box_h2">STEP 1</h2>
                 <h3 className="get_sec-box_h3">Make a request</h3>
-                <img
-                  src="https://getprowriter.com/writer/img/Make-a-request.webp"
+                <Image
+                  src={make}
                   alt="Make-a-request"
                   className="get_sec-box_img"
                 />
@@ -559,8 +581,8 @@ const brilliant = () => {
               <div className="get_sec-box">
                 <h2 className="get_sec-box_h2">STEP 2</h2>
                 <h3 className="get_sec-box_h3">Let us write your content</h3>
-                <img
-                  src="https://getprowriter.com/writer/img/Let-us-write-your-content.webp"
+                <Image
+                src={letus}
                   alt="Let-us-write-your-content"
                   className="get_sec-box_img"
                 />
@@ -575,8 +597,8 @@ const brilliant = () => {
               <div className="get_sec-box">
                 <h2 className="get_sec-box_h2">STEP 3</h2>
                 <h3 className="get_sec-box_h3">Get your content copy</h3>
-                <img
-                  src="https://getprowriter.com/writer/img/Get-your-content-copy.webp"
+                <Image
+                src={Getyour}
                   alt="Get-your-content-copy"
                   className="get_sec-box_img"
                 />
@@ -689,8 +711,8 @@ const brilliant = () => {
                   and grow our customer base.
                 </p>
                 <div className="t_sels">
-                  <img
-                    src="https://getprowriter.com/writer/img/Oliver-jake.webp"
+                  <Image
+                  src={Oliver}
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
@@ -710,8 +732,8 @@ const brilliant = () => {
                   get their articles written by a ghostwriter.
                 </p>
                 <div className="t_sels">
-                  <img
-                    src="https://getprowriter.com/writer/img/Timothee-Cooper.webp"
+                  <Image
+                  src={Timothee}
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />

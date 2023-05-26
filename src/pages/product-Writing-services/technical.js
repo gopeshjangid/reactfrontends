@@ -5,6 +5,28 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "../../Components/reviewgetintouch";
 import Head from "next/head";
+import Image from "next/image";
+import Quality   from "../../images/No-match-to-its-quality.webp"
+import Creative  from "../../images/Creative-outlook.webp"
+import Blog from "../../images/Blog-writer-diversity.webp"
+import Business from "../../images/Business-standing.webp"
+import Originality  from "../../images/Originality-and-Uniqueness.webp"
+import Expertise from "../../images/Expertise-Reader-Clients.webp"
+import make from "../../images/Make-a-request.webp"
+import letus from "../../images/Let-us-write-your.webp"
+import Getyour from "../../images/Get-your-content-copy.webp"
+import lego from "../../images/testimonial/lego.webp";
+import Allianz from "../../images/testimonial/Allianz.webp";
+import Citi from "../../images/testimonial/Citi.webp";
+import zara from "../../images/testimonial/zara-logo.webp";
+import loreal from "../../images/testimonial/loreal-logo.webp";
+import gillette from "../../images/testimonial/gillette-logo.webp";
+import sap from "../../images/testimonial/sap-logo.webp";
+import att from "../../images/testimonial/att-logo.webp";
+import toyota from "../../images/testimonial/toyota-logo.webp";
+import ikea from "../../images/testimonial/ikea-logo.webp";
+import Lee from "../../images/Lee-White.webp";
+import Sophie from "../../images/Sophie-Smith.webp";
 
 const technical = () => {
   const [loaded, setLoaded] = useState(false);

@@ -5,6 +5,28 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import ReviewGetintouch from "../../Components/reviewgetintouch";
 import Head from "next/head";
+import Image from "next/image";
+import Best   from "../../images/Best-Ghostwriters.webp"
+import Creative  from "../../images/Creative-and-Excellence.webp"
+import Freelance from "../../images/Freelance-writers.webp"
+import Redefine from "../../images/Redefine-Business-ghostwriters.webp"
+import ghostwriters  from "../../images/Freelance-ghostwriters-Error-free-content.webp"
+import Individuals from "../../images/Individuals-and-Organizations.webp"
+import make from "../../images/Make-a-request.webp"
+import letus from "../../images/Let-us-write-your.webp"
+import Getyour from "../../images/Get-your-content-copy.webp"
+import lego from "../../images/testimonial/lego.webp";
+import Allianz from "../../images/testimonial/Allianz.webp";
+import Citi from "../../images/testimonial/Citi.webp";
+import zara from "../../images/testimonial/zara-logo.webp";
+import loreal from "../../images/testimonial/loreal-logo.webp";
+import gillette from "../../images/testimonial/gillette-logo.webp";
+import sap from "../../images/testimonial/sap-logo.webp";
+import att from "../../images/testimonial/att-logo.webp";
+import toyota from "../../images/testimonial/toyota-logo.webp";
+import ikea from "../../images/testimonial/ikea-logo.webp";
+import David from "../../images/David-Thomas.webp";
+import Tremblay from "../../images/Tremblay-Jones.webp";
 
 const freelance = () => {
   const [loaded, setLoaded] = useState(false);
@@ -364,16 +386,16 @@ const freelance = () => {
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Best-Ghostwriters.webp"
+              <Image
+              src={Best}
                 alt="No-match-review"
                 className="rws-img"
               />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Creative-and-Excellence.webp"
+              <Image
+              src={Creative}
                 alt="Expertimental-review"
                 className="rws-img"
               />
@@ -430,16 +452,16 @@ const freelance = () => {
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Freelance-writers.webp"
+              <Image
+              src={Freelance}
                 alt="Online-review"
                 className="rws-img"
               />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Redefine-Business-ghostwriters.webp"
+              <Image
+              src={Redefine}
                 alt="Grow-your-business"
                 className="rws-img"
               />
@@ -498,16 +520,16 @@ const freelance = () => {
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Freelance-ghostwriters-Error-free-content.webp"
+              <Image
+              src={ghostwriters}
                 alt="Real-review-writer"
                 className="rws-img"
               />
             </div>
 
             <div className="col-md-6 rws_Sec-6">
-              <img
-                src="https://getprowriter.com/writer/img/Individuals-and-Organizations.webp"
+              <Image
+              src={Individuals}
                 alt="Expertise"
                 className="rws-img"
               />
@@ -554,8 +576,8 @@ const freelance = () => {
               <div className="get_sec-box">
                 <h2 className="get_sec-box_h2">STEP 1</h2>
                 <h3 className="get_sec-box_h3">Make a request</h3>
-                <img
-                  src="https://getprowriter.com/writer/img/Make-a-request.webp"
+                <Image
+                src={make}
                   alt="Make-a-request"
                   className="get_sec-box_img"
                 />
@@ -570,8 +592,8 @@ const freelance = () => {
               <div className="get_sec-box">
                 <h2 className="get_sec-box_h2">STEP 2</h2>
                 <h3 className="get_sec-box_h3">Let us write your content</h3>
-                <img
-                  src="https://getprowriter.com/writer/img/Let-us-write-your-content.webp"
+                <Image
+                src={letus}
                   alt="Let-us-write-your-content"
                   className="get_sec-box_img"
                 />
@@ -586,8 +608,8 @@ const freelance = () => {
               <div className="get_sec-box">
                 <h2 className="get_sec-box_h2">STEP 3</h2>
                 <h3 className="get_sec-box_h3">Get your content copy</h3>
-                <img
-                  src="https://getprowriter.com/writer/img/Get-your-content-copy.webp"
+                <Image
+                src={Getyour}
                   alt="Get-your-content-copy"
                   className="get_sec-box_img"
                 />
@@ -640,8 +662,8 @@ const freelance = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/lego.webp"
+                    <Image
+                    src={lego}
                       alt="lego"
                       className="d-block img-box_image"
                     />
@@ -650,8 +672,8 @@ const freelance = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/Allianz.webp"
+                    <Image
+                    src={Allianz}
                       alt="Allianz"
                       className="d-block img-box_image"
                     />
@@ -660,8 +682,8 @@ const freelance = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/Citi.webp"
+                    <Image
+                    src={Citi}
                       alt="Citi"
                       className="d-block img-box_image"
                     />
@@ -670,8 +692,8 @@ const freelance = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/zara-logo.webp"
+                    <Image
+                    src={zara}
                       alt="zara"
                       className="d-block img-box_image"
                     />
@@ -681,8 +703,8 @@ const freelance = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/loreal-logo.webp"
+                    <Image
+                    src={loreal}
                       alt="loreal"
                       className="d-block img-box_image"
                     />
@@ -691,8 +713,8 @@ const freelance = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/gillette-logo.webp"
+                    <Image
+                    src={gillette}
                       alt="gillette"
                       className="d-block img-box_image"
                     />
@@ -701,8 +723,8 @@ const freelance = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/sap-logo.webp"
+                    <Image
+                    src={sap}
                       alt="sap"
                       className="d-block img-box_image"
                     />
@@ -711,8 +733,8 @@ const freelance = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/att-logo.webp"
+                    <Image
+                    src={att}
                       alt="att"
                       className="d-block img-box_image"
                     />
@@ -721,8 +743,8 @@ const freelance = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/toyota-logo.webp"
+                    <Image
+                    src={toyota}
                       alt="toyota"
                       className="d-block img-box_image"
                     />
@@ -731,8 +753,8 @@ const freelance = () => {
                 <SwiperSlide>
                   {" "}
                   <div className="img-box">
-                    <img
-                      src="https://getprowriter.com/writer/img/testimonial/ikea-logo.webp"
+                    <Image
+                    src={ikea}
                       alt="ikea"
                       className="d-block img-box_image"
                     />
@@ -837,8 +859,8 @@ const freelance = () => {
                   give GetProWriter a try and the results were amazing.
                 </p>
                 <div className="t_sels">
-                  <img
-                    src="https://getprowriter.com/writer/img/David-Thomas.webp"
+                  <Image
+                  src={David}
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
@@ -859,8 +881,8 @@ const freelance = () => {
                   helped us get ahead of our deadlines.
                 </p>
                 <div className="t_sels">
-                  <img
-                    src="https://getprowriter.com/writer/img/Tremblay-Jones.webp"
+                  <Image
+                  src={Tremblay}
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />

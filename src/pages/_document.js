@@ -14,8 +14,6 @@ export default function Document() {
     s1.setAttribute("crossorigin", "*");
     s0.parentNode.insertBefore(s1, s0);
   }
-
-
   useEffect(() => {
     Tawk();
   }, []);
