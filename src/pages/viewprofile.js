@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import { useRouter } from "next/router";
 import Link from "next/link";
 // import Image from "next/image";
@@ -274,11 +273,11 @@ const ViewProfile = () => {
                 <h3 className="as-h3">Set Your Personal Info</h3>
                 <div className="col-md-4 text-center">
                   <div className="w-50 m-auto ">
-                    <Image
-                      src="https://getprowriter.com/writer/img/profile-icon-png.png"
+                    {/* <Image
+                      src={miraimg}
                       alt="Mira-Whedon"
                       className="team_sec-img w-100 mt-0"
-                    />
+                    /> */}
                   </div>
                   <p className="">{/* <Link href="/">Edit</Link> */}</p>
                 </div>
