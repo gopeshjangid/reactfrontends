@@ -10,7 +10,7 @@ import Image from "next/image";
 import Shop from "../../images/Shop-review.webp";
 import Writer from "../../images/Writer-review.webp";
 import Review from "../../images/Review-writer-focus.webp";
-import Business from "../../images/Business-Reputation.webp";
+import Business from "../../images/Business-reputation.webp";
 import Original from "../../images/Original-review-1.webp";
 import High from "../../images/High-quality-review.webp";
 import make from "../../images/Make-a-request.webp"
