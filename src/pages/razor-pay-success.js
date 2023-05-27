@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-
+import Image from "next/image";
+import Success from "../images/Successful-purchase.gif"
 const RazorPaySuccess = () => {
   return (
     <div>
@@ -35,8 +36,8 @@ const RazorPaySuccess = () => {
             </div>
 
             <div className="col-md-5">
-              <img
-                src="https://getprowriter.com/writer/img/Successful-purchase.gif"
+            <Image
+              src={Success}
                 alt="Successful-purchase"
                 className="fp-img m-0 w-100"
               />

@@ -6,11 +6,11 @@ import "swiper/css/free-mode";
 import ReviewGetintouch from "../../Components/reviewgetintouch";
 import Head from "next/head";
 import Image from "next/image";
-import Quality   from "../../images/Superb-quality.webp"
-import Innovation  from "../../images/Innovation-content.webp"
+import Quality from "../../images/Superb-Quality.webp"
+import Innovation from "../../images/Innovation-content.webp"
 import Diversity from "../../images/Diversity-and-perfection.webp"
 import Never from "../../images/Never-go-wrong.webp"
-import Originality  from "../../images/Originality-1.webp"
+import Originality from "../../images/Originality-1.webp"
 import Expertise from "../../images/Everything-possible.webp"
 import make from "../../images/Make-a-request.webp"
 import letus from "../../images/Let-us-write-your.webp"

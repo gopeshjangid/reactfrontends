@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
+import Success from "../images/Successful-purchase.gif"
 const SaveCardRazorpayPaymentSuccess = () => {
   const { query } = useRouter();
   const orderIdParam = query.orderId;
@@ -37,8 +39,8 @@ const SaveCardRazorpayPaymentSuccess = () => {
             </div>
 
             <div className="col-md-5">
-              <img
-                src="https://getprowriter.com/writer/img/Successful-purchase.gif"
+              <Image
+              src={Success}
                 alt="Successful-purchase"
                 className="fp-img m-0 w-100"
               />

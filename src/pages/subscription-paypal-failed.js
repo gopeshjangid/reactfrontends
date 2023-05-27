@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-
+import Image from "next/image";
+import Payment from "../images/payment-error-info-message-smartphone-customer-cross-marks-failure_106788-2322.webp"
 const SubscriptionPaypalfailed = () => {
   return (
     <div>
@@ -33,8 +34,8 @@ const SubscriptionPaypalfailed = () => {
             </div>
 
             <div className="col-md-6">
-              <img
-                src="https://getprowriter.com/writer/img/payment-error-info-message-smartphone-customer-cross-marks-failure_106788-2322.webp"
+              <Image
+                src={Payment}
                 className="fp-img m-0 w-100"
               />
             </div>
