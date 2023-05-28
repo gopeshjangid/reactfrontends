@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-// import Image from "next/image";
-// import miraimg from "../images/profile-icon-png.png"
-const ViewProfile = () => {
+import Image from "next/image";
+import viewimg from "../images/icon-profile-img.webp"
+const viewprofile = () => {
   const router = useRouter();
 
   const initialValue = {
@@ -273,11 +273,11 @@ const ViewProfile = () => {
                 <h3 className="as-h3">Set Your Personal Info</h3>
                 <div className="col-md-4 text-center">
                   <div className="w-50 m-auto ">
-                    {/* <Image
-                      src={miraimg}
+                    <Image
+                      src={viewimg}
                       alt="Mira-Whedon"
                       className="team_sec-img w-100 mt-0"
-                    /> */}
+                    />
                   </div>
                   <p className="">{/* <Link href="/">Edit</Link> */}</p>
                 </div>
@@ -382,4 +382,4 @@ const ViewProfile = () => {
   );
 };
 
-export default ViewProfile;
+export default viewprofile;
