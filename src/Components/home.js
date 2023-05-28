@@ -4,7 +4,7 @@ import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import GetinTouch from "../pages/get-in-touch";
-// import Link from "next/link";
+import Link from "next/link";
 import Image from "next/image";
 import getprimg1 from "../images/gpw-img1.png";
 import getprimg2 from "../images/gpw-img2.png";
@@ -701,6 +701,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
+            <Link href="/reviews">
             <h6 className="text-center">
               <button
                 type="button"
@@ -710,6 +711,7 @@ const Home = () => {
                 All Testimonials
               </button>
             </h6>
+            </Link>
             <p className="down_p">
               45.2{" "}
               <span className="down_p-spa">
@@ -739,9 +741,11 @@ const Home = () => {
                 knowledge of our service offerings and the skills of our content
                 writers.
               </p>
+              <Link href="/faq">
               <button type="button" className=" btn-read">
                 Read More
               </button>
+              </Link>
             </div>
 
             <div className="col-md-6">

@@ -3,50 +3,112 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import ReviewGetintouch from "../../Components/reviewgetintouch";
+import ReviewGetintouch from "../../../Components/reviewgetintouch";
+import Head from "next/head";
 import Image from "next/image";
-import Technical    from "../../images/Technical-blog-post.webp"
-import Creativity from "../../images/Crestivity-technical-blog-post.webp"
-import Diverse from "../../images/Diverse-technical-blog-post.webp"
-import Boost from "../../images/Boost-Business-image.webp"
-import Original from "../../images/Original-technical-blog-post.webp"
-import Expertise from "../../images/Expertise-blog-post (1).webp"
-import make from "../../images/Make-a-request.webp"
-import letus from "../../images/Let-us-write-your.webp"
-import Getyour from "../../images/Get-your-content-copy.webp"
-import lego from "../../images/testimonial/lego.webp";
-import Allianz from "../../images/testimonial/Allianz.webp";
-import Citi from "../../images/testimonial/Citi.webp";
-import zara from "../../images/testimonial/zara-logo.webp";
-import loreal from "../../images/testimonial/loreal-logo.webp";
-import gillette from "../../images/testimonial/gillette-logo.webp";
-import sap from "../../images/testimonial/sap-logo.webp";
-import att from "../../images/testimonial/att-logo.webp";
-import toyota from "../../images/testimonial/toyota-logo.webp";
-import ikea from "../../images/testimonial/ikea-logo.webp";
-import Daisy  from "../../images/Daisy-McDonald.webp";
-import Andrew   from "../../images/Andrew-Hilfiger.webp";
+import Quality from "../../../images/Quality-Guided.webp";
+import Different from "../../../images/Different-writers.webp";
+import Focussed from "../../../images/Focussed-writers.webp";
+import Incredible from "../../../images/Incredible-writers.webp";
+import Original from "../../../images/Quality.webp";
+import Expertise from "../../../images/Expertise-3.webp";
+import make from "../../../images/Make-a-request.webp"
+import letus from "../../../images/Let-us-write-your.webp"
+import Getyour from "../../../images/Get-your-content-copy.webp"
+import lego from "../../../images/testimonial/lego.webp";
+import Allianz from "../../../images/testimonial/Allianz.webp";
+import Citi from "../../../images/testimonial/Citi.webp";
+import zara from "../../../images/testimonial/zara-logo.webp";
+import loreal from "../../../images/testimonial/loreal-logo.webp";
+import gillette from "../../../images/testimonial/gillette-logo.webp";
+import sap from "../../../images/testimonial/sap-logo.webp";
+import att from "../../../images/testimonial/att-logo.webp";
+import toyota from "../../../images/testimonial/toyota-logo.webp";
+import ikea from "../../../images/testimonial/ikea-logo.webp";
+import Norma from "../../../images/Norma-Rodas.webp";
+import Oscar from "../../../images/Oscar-Ascona.webp";
 
-
-const techni= () => {
+const other = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => setLoaded(true), []);
   return (
     <div>
       <section className="top_sec p-0">
+        <Head>
+          <title>Other QnA Writing Service - Get Pro Writer</title>
+
+          <meta
+            name="description"
+            content="If you need one of the best QnA writing service providers, we are right here to help you. GetProwriter is the trusted provider of expert writers."
+          />
+          <meta
+            name="robots"
+            content="noindex, nofollow, max-image-preview:large"
+          />
+          <link
+            rel="canonical"
+            href="https://getprowriter.com/review-writing-services/qna/other/"
+          />
+          <meta name="generator" content="All in One SEO (AIOSEO) 4.2.3.1 " />
+          <meta property="og:locale" content="en_US" />
+          <meta
+            property="og:site_name"
+            content="Get Pro Writer - Content That Brings Wow Reaction"
+          />
+          <meta property="og:type" content="article" />
+          <meta
+            property="og:title"
+            content="Other QnA Writing Service - Get Pro Writer"
+          />
+          <meta
+            property="og:description"
+            content="If you need one of the best QnA writing service providers, we are right here to help you. GetProwriter is the trusted provider of expert writers."
+          />
+          <meta
+            property="og:url"
+            content="https://getprowriter.com/review-writing-services/qna/other/"
+          />
+          <meta
+            property="og:image"
+            content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
+          />
+          <meta
+            property="article:published_time"
+            content="2022-06-15T08:52:18+00:00"
+          />
+          <meta
+            property="article:modified_time"
+            content="2022-06-15T08:59:36+00:00"
+          />
+          <meta name="twitter:card" content="summary" />
+          <meta
+            name="twitter:title"
+            content="Other QnA Writing Service - Get Pro Writer"
+          />
+          <meta
+            name="twitter:description"
+            content="If you need one of the best QnA writing service providers, we are right here to help you. GetProwriter is the trusted provider of expert writers."
+          />
+          <meta
+            name="twitter:image"
+            content="https://getprowriter.com/static/media/gp-writer-complete.27da0b023e5c7ba342e7.png"
+          />
+        </Head>
+
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1 className="top_Sec-h1 mt-3 p-0">
-                Amazing Technical Blog Post!
+                Affordable Other QnA Service!
               </h1>
-              <h2 className="top_Sec-h2"> Moving Technical Blog Post|</h2>
+              <h2 className="top_Sec-h2">Top Other QnA Writing Services</h2>
               <p className="top_Sec-p">
-                GetProWriter is one of the most promising companies offering
-                technical blog post services. Our company offers quality
-                assistance with all kinds of content creation tasks that will
-                help your business grow and attract more visitors.
+                GetProWriter is a leading provider of QnA services. We have been
+                offering our services to clients for many years now. Our team of
+                writers is highly qualified and experienced in various fields.
+                We offer a wide range of QnA solutions as well as blog posts,
+                website content, press releases, social media posts, and more.
               </p>
             </div>
 
@@ -63,81 +125,81 @@ const techni= () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Want Top Technical Blog Post Services? Reach Out To GetProWriter!
+              Need Highly Qualified QnA Writers? Call GetProWriter Now!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              To grow instantly, acquire our technical blog post services.
+              Expand your business with our Other QnA writing service
             </p>
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Technical Experts</h3>
+                <h3 className="box-h3">Knowledgeable Writers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Experienced Bloggers</h3>
+                <h3 className="box-h3">QnA For All</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Niche Knowledge</h3>
+                <h3 className="box-h3">Skilled Team</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Effective Blogs</h3>
+                <h3 className="box-h3">Online Trends</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Sincere Writers</h3>
+                <h3 className="box-h3">Terminology Mastered</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Timely Execution</h3>
+                <h3 className="box-h3">Adequate ORM</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Brand Boosting</h3>
+                <h3 className="box-h3">Edify Brands</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Attractive Content</h3>
+                <h3 className="box-h3">Crisp Answers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Quality Blogs</h3>
+                <h3 className="box-h3">Tested QnA</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Top Writers</h3>
+                <h3 className="box-h3">Content Masters</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Impressive Style</h3>
+                <h3 className="box-h3">Original Ideation</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Joyful Clients</h3>
+                <h3 className="box-h3">Extensive Clientele</h3>
               </div>
             </div>
           </div>
@@ -147,25 +209,22 @@ const techni= () => {
       <section className="rev_sec">
         <div className="container">
           <div className="row">
-            <h2 className="rev_sec-h2">
-              Technical Blog Posts To Redefine Businesses
-            </h2>
+            <h2 className="rev_sec-h2">GPW’s Best Other QnA Writing Service</h2>
 
             <p className="rev_sec-p">
-              We, at GetProWriter, never compromise on quality. Every single
-              writer in our team is carefully selected before being hired and
-              trained extensively on customer service skills as well as writing
-              techniques. This ensures that every client receives high-quality
-              work from GetProWriter writers at all times without fail.
+              GetProWriter is your companion when you need any kind of QnA
+              services. We are a team of experts in the field that can help you
+              out with any kind of writing project. We have the experience and
+              expertise to make sure that your project is completed on time and
+              in accordance with the highest quality standards without any
+              mistakes.
             </p>
             <p className="rev_sec-p">
-              If you are looking for a quality content writer for technical blog
-              writing sites, we can help. From technical blog posts to ebooks,
-              our writers have proven experience in writing on various topics.
-              We have a team of professional writers who are experts in their
-              fields and are able to deliver quality work within the stipulated
-              time frame. When you need a blogger to write a technical blog post
-              for you, simply give us a call!
+              You can ask us for anything from simple QnA, blog posts, and
+              articles to complex technical content and even books. We can write
+              about anything from technology to politics, from sports to
+              fashion, from business topics to entertainment news. Just let us
+              know what you need, and we will do our best to provide it.
             </p>
           </div>
         </div>
@@ -175,11 +234,11 @@ const techni= () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              Supreme Quality Writers Only On GetProWriter
+              All QnA Solutions Only On GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Give a call now to hire writers for your technical blog posts.
+              Our QnA writers are from diverse backgrounds.
             </p>
 
             <div class="col-md-6">
@@ -250,23 +309,22 @@ const techni= () => {
               </div>
             </div>
             <div class="col-md-6">
-              <h2 class="count_h2">Skilled Writers For Technical Blog Posts</h2>
+              <h2 class="count_h2">
+                GPW Other QnA Writing Service For High User Movement
+              </h2>
               <p class="count-p">
-                We have highly skilled writers for all projects, including
-                technical blog posts. When it comes to writing blog posts, our
-                writers understand that every company has a unique business
-                model and marketing strategy. Therefore, when you hire
-                GetProWriter as your content writer for technical blog writing
-                sites, you can be sure that our team will research and
-                understand your business before writing about it.
+                GetProWriter QnA writing service will help you attract more
+                customers with time. The GPW QnA writing service is one of the
+                best ways to get more traffic to your website. The reason for
+                this is simple: people use these sites when they have questions
+                about something, so if you can answer their questions, they’ll
+                be coming back to your site again and again.
               </p>
               <p class="count-p">
-                Our experts also make sure to write about key aspects of your
-                business model in a way that readers can easily relate to. We
-                have been providing high-quality technical blog post services
-                for many years and have gained immense experience in this field
-                over this period of time. If you need to hire a content writer
-                from our team, all you have to do is send us your requirements!
+                We have many years of experience in the field and we love
+                helping people out with their writing needs. We know your time
+                is valuable, so we’ll make sure that every word counts. Reach
+                out to us today to send us your requirements.
               </p>
             </div>
           </div>
@@ -277,37 +335,36 @@ const techni= () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-              Technical Blog Post For More Audiences
+              Other QnA Writing Service For Greater Impact
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Go for our services for excellent technical blog posts.
+              Go for our other QnA writing service for instant business growth.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Industry’s Best Technical Blog Posts
+                Quality Guided Other QnA Content
               </h3>
               <p className="ab_sec2-p rws-p">
-                GetProWriter has the industry’s best writers to create technical
-                blog posts for you. Our company has an experienced team of
-                writers who are always ready to help you with your projects. We,
-                at GetProWriter, offer many benefits that make it a good choice
-                for everyone who needs a professional writing service.
+                GetProWriter is all about quality, which is why we know you’ll
+                be thrilled with our QnA content. We know how important it is to
+                have a team that can deliver high-quality content for your
+                business – and we’re here to help. Our team of writers is among
+                the best in the industry and all our writers are ready to answer
+                your questions and provide you with the answers you need.
               </p>
               <p className="ab_sec2-p rws-p">
-                GetProWriter employs only highly qualified writers who have
-                years of experience in various fields. This means that you can
-                be sure that your project will be done by professional writers
-                who know exactly how to make your work sound interesting and
-                appealing to readers without compromising its quality. Our
-                technical blog post writers are highly qualified and are
-                specialists in different industries and niches.
+                We’re so committed to quality that we’ve developed a unique
+                system for hiring writers. The first step is a thorough vetting
+                process, which involves an extensive background check, an
+                assessment of writing skills, and a test of writing ability.
+                Also, we appoint only experienced writers for various projects.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <Image
-              src={Technical}
+              src={Quality}
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -315,61 +372,56 @@ const techni= () => {
 
             <div className="col-md-6 rws_Sec-6">
               <Image
-              src={Creativity}
+              src={Different}
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Creativity-Driven Technical Blog Post
+                Writers With Different Perspectives For Other QnA
               </h3>
               <p className="ab_sec2-p rws-p">
-                We know exactly how important it is for companies to keep their
-                customers updated on what’s going on in the industry. It is also
-                critical for them to do so using quality content writers for
-                technical blog writing sites who can produce well-researched
-                articles that are fresh and interesting every time they publish
-                new material online. And that’s why we are here to help you out.
-                All our writers are immensely creative.
+                We know that any kind of QnA will demand different perspectives.
+                That is what we are dedicated to offering at GetProWriter. We
+                are the best match for you because we have a team of writers
+                with diverse backgrounds, interests, and skills. We would be
+                happy to help you with your QnA or any other type of assignment.
               </p>
               <p className="ab_sec2-p rws-p">
-                We have created our own quality control system so that every
-                customer gets what he needs from his order. This ensures that
-                every article meets the highest standards and is perfectly
-                optimized for search engines such as Google and Bing. So, you
-                can hire writers to write original articles for you or redraft
-                the existing ones on your website.
+                GetProWriter is here to offer only the best quality work. We
+                have writers with us who are trained to write QnA, high-quality
+                articles, blogs, and other content for clients. Our writers are
+                highly skilled and passionate about their craft. All our writers
+                go through a rigorous screening process before they join our
+                team, ensuring that only the best of the best make it through
+                the hiring process.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Diverse Writers For Technical Blog Post Services
+                Focussed Writers For GPW Other QnA Writing Service
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our GetProWriter team has writers with a diverse range of
-                industry experiences. From the world’s largest financial
-                institutions to high-growth startups, our writers have worked at
-                companies ranging from small businesses to huge companies. Our
-                team creates content that’s on-brand and resonates with clients’
-                target audiences.
+                We don’t just hire writers who are talented. In fact, we look
+                for focus more than anything else. When you hire writers from
+                us, you know that they’re going to be able to give you the kind
+                of work that’s going to make all the difference. We know that if
+                we can find someone who can focus on what matters most, then
+                everything else will fall into place.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our writers understand how to craft content for technical blog
-                writing sites that are not only engaging and informative but
-                also fit within your brand guidelines. Each writer on our team
-                is an expert in their field and has years of experience working
-                in various industries. We’ve worked with clients across multiple
-                industries, including technology, financial services,
-                healthcare, lifestyle, etc. Hence, our team can deliver
-                excellent content that is 100% unique and tailored to your
-                specific needs.
+                We do this by finding writers who are willing to put in the time
+                and effort needed to make sure that their writing is as good as
+                it can possibly be. And when we say “put in the time,” we mean
+                it. Hence, when you get your final copy, you’ll know that it was
+                crafted with care and precision.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <Image
-             src={ Diverse}
+              src={Focussed}
                 alt="Online-review"
                 className="rws-img"
               />
@@ -377,52 +429,51 @@ const techni= () => {
 
             <div className="col-md-6 rws_Sec-6">
               <Image
-              src={Boost}
+              src={Incredible}
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Boosting Businesses With Our Technical Blog Posts
+                Empowering Businesses With Incredible Other QnA Writing Services
               </h3>
               <p className="ab_sec2-p rws-p">
-                Our writers have extensive knowledge about the services clients
-                from different industries offer. They will work with you to make
-                sure that your content is as per your audience and written in a
-                way that makes it easy to read. Our team of writers is here to
-                help you write technical marketing copy that will make your
-                customers want to buy from you. This will automatically boost
-                your business image in the industry.
+                Our other QnA writing services have really empowered businesses.
+                We have written QnA for Amazon and various other platforms for
+                them. We have delivered our services in a very professional
+                manner and we are proud to say that our clients have been
+                satisfied with the work we have done for them.
               </p>
               <p className="ab_sec2-p rws-p">
-                As a content writing services company, we know how important it
-                is to use your keywords effectively in order to rank highly on
-                search engines. We always create compelling content for
-                technical blog writing sites or other platforms. For us,
-                maintaining the highest quality in writing is something we never
-                compromise on. Also, all our services are affordable.
+                Needless to say, we are a team of trained writers and all our
+                professionals know how to write in different styles. They can
+                write anything – from simple QnAs to complex business blogs. So,
+                our writers will go out of the way to give you content that is
+                well-crafted. The main purpose of this is to make your business
+                stand out from the rest. Our writers are very passionate about
+                writing and they will give you attractive QnA content.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Original Tone In Every Technical Blog Post
+                Originality In All Other QnA Content
               </h3>
               <p className="ab_sec2-p rws-p">
-                When we write technical blog posts for you, we make sure that
-                everything we put into words is original. This is the best way
-                to ensure that your blog post will be of high quality and that
-                people will not have any issues with it.
+                Our writers have written for thousands of clients. And they have
+                maintained originality in tone and style in every single
+                project. We’ve worked with clients from all over the world,
+                learning how to adapt to their brand voice and write
+                accordingly. Our team is made up of experts in multiple fields
+                who can adapt to any situation and deliver high-quality work
+                that will make you go ahead in the competition.
               </p>
               <p className="ab_sec2-p rws-p">
-                Writing technical blogs is not a one-man show. It requires a
-                team of professionals who are experts in their respective
-                fields. Our writers have years of experience in writing and
-                editing technical blogs, which means that they know the key
-                elements of a good technical blog post. If you want to know more
-                about our services, or if you simply want to find out how much
-                they cost, you can visit our website.
+                We take pride in our reputation for writing high-quality content
+                that always sounds original. Our writers are knowledgeable and
+                they know about the subjects they write about. They always make
+                sure to infuse their enthusiasm into every word they write.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
@@ -442,22 +493,25 @@ const techni= () => {
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise Driven Technical Blog Post
+                GetProWriter Expertise For Unrivalled Other QnA Content
               </h3>
               <p className="ab_sec2-p rws-p">
-                GetProWriter expertise is all about delivering content that is
-                highly impressive and stands out. We don’t use any readymade
-                content or templates to write blog posts because it is an
-                important part of your business and it should be unique.
+                If you want to make sure your company sounds unique and
+                professional in your QnA section, then we have the solution. We
+                are a team of writers who can help you out with anything from
+                QnA, writing blog posts, and articles to crafting emails. Our
+                writers are highly skilled at creating content that is
+                interesting and engaging for your customers. We also have a
+                support team that is available to take your queries round the
+                clock.
               </p>
               <p className="ab_sec2-p rws-p">
-                GetProWriter expertise is unique. In order to ensure that the
-                content is original and has not been published anywhere else, we
-                take appropriate measures to make sure that the content does not
-                look anything like something published elsewhere on the
-                internet. Our writers go through every word written in the piece
-                before we send it to you so that you get nothing but the best
-                quality work from us.
+                GetProWriter is a professional QnA content writing company,
+                providing top-notch content writing services to clients
+                globally. Our company is known for its professionalism, quality,
+                and affordability. We have been providing services for many
+                years now. Our company, GetProWriter, has become one of the top
+                writing service providers today.
               </p>
             </div>
           </div>
@@ -594,7 +648,7 @@ const techni= () => {
                   {" "}
                   <div className="img-box">
                     <Image
-                       src={zara}
+                    src={zara}
                       alt="zara"
                       className="d-block img-box_image"
                     />
@@ -625,7 +679,7 @@ const techni= () => {
                   {" "}
                   <div className="img-box">
                     <Image
-                      src={sap}
+                    src={sap}
                       alt="sap"
                       className="d-block img-box_image"
                     />
@@ -670,11 +724,9 @@ const techni= () => {
       <section className="hire_Sec">
         <div className="container">
           <div className="row">
-            <h2 className="get_sec-h2">
-              Why Hire Our Technical Blog Post Writers?
-            </h2>
+            <h2 className="get_sec-h2">Why Hire Our Other QnA Ghostwriters?</h2>
             <p className="get_sec-p">
-              To enable businesses to shine in the industry.
+              Help your enterprise gain popularity in any domain.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -686,22 +738,8 @@ const techni= () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">Technical niche experts</span>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="box-ol">
-                <ol className="m-0 d-flex align-items-center p-0">
-                  <li className="in_li">
-                    <span className="right_span">
-                      <i aria-hidden="true" className="fas fa-check-circle"></i>
-                    </span>
-                  </li>
-                  <li className="in_li">
                     <span className="spa_h2">
-                      Sincere writers with extensive experience
+                      Social media/platforms experts
                     </span>
                   </li>
                 </ol>
@@ -717,7 +755,23 @@ const techni= () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Flawless bloggers for outstanding content
+                      Work creatively to meet the needs of clients
+                    </span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="box-ol">
+                <ol className="m-0 d-flex align-items-center p-0">
+                  <li className="in_li">
+                    <span className="right_span">
+                      <i aria-hidden="true" className="fas fa-check-circle"></i>
+                    </span>
+                  </li>
+                  <li className="in_li">
+                    <span className="spa_h2">
+                      Submit content on time as per the guidelines
                     </span>
                   </li>
                 </ol>
@@ -725,22 +779,20 @@ const techni= () => {
             </div>
 
             <p className="review1-p">
-              Blogging is a great way to market your business and interact with
-              your customers. However, writing blogs can be difficult. It takes
-              time and effort to do it well. Not everyone has the time or skill
-              to create quality blog posts. If you’re looking for blog writers,
-              we can help you out! We can create blog posts on any topic from
-              scratch or even edit already written articles according to your
-              requirements.
+              Our content writers are experts in creating engaging and
+              informative answers that will help you expand your popularity. We
+              also use SEO techniques to make sure that your content ranks high
+              on search engines such as Google and Bing.
             </p>
 
             <p className="review1-p">
-              Our technical blog post writers will help your business to make a
-              mark in the industry. We’ll write blog posts and articles that are
-              informative, interesting, and easy for readers to understand. We
-              believe that it doesn’t matter if you are an expert writer or not;
-              if you have something to say, we will make sure that everyone
-              hears it.
+              We have social media experts who are creative. They can create
+              compelling QnA content. We can help you get started with QnA
+              content on social media or we can take your current QnA content
+              and make it better. Our experts will help you craft compelling
+              answers that will get you the results you want, all while making
+              sure your brand stays consistent across channels. We always submit
+              our work as per the deadlines.
             </p>
           </div>
         </div>
@@ -754,19 +806,20 @@ const techni= () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  Our technical blog post writing requirements were easily taken
-                  care of by GetProWriter. Their writers are simply amazing. We
-                  were able to get the best out of our website as it was able to
-                  attract more visitors than before.
+                  We wanted to hire a writer for Amazon QnA and opted for
+                  GetProWriter. The company has exceeded our expectations. The
+                  writer we got was excellent and the quality of her work was
+                  top-notch. She met all of our deadlines, which is something
+                  that can be difficult with writers.
                 </p>
                 <div className="t_sels">
                   <Image
-                  src={Daisy}
+                  src={Norma}
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Daisy McDonald</h3>
-                  <p className="testi_box-p">Marketing Intern, Brandrain</p>
+                  <h3 className="testi_box-h3"> Norma Rodas</h3>
+                  <p className="testi_box-p">Marketing specialist, Selling</p>
                 </div>
               </div>
             </div>
@@ -774,20 +827,21 @@ const techni= () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  I am a consultant for a software development company. The
-                  company's technical blog posts were not getting the attention
-                  they deserved. When I started looking for ways to improve, I
-                  came across GetProWriter. I contacted them. They were very
-                  responsive and we started working with them immediately.
+                  I interviewed several writers but the team at GetProWriter
+                  stood out from the rest. They are professional, friendly, and
+                  experienced in their field. Their work is excellent and they
+                  have always delivered on time.
                 </p>
                 <div className="t_sels">
                   <Image
-                  src={Andrew}
+                  src={Oscar}
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Andrew Hilfiger</h3>
-                  <p className="testi_box-p">Smo Executive, Commer</p>
+                  <h3 className="testi_box-h3">Oscar Ascona</h3>
+                  <p className="testi_box-p">
+                    Chief financial officer, Entrade
+                  </p>
                 </div>
               </div>
             </div>
@@ -851,7 +905,7 @@ const techni= () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        How can I check GetProWriter samples?
+                        Do you offer QnA for Amazon?
                       </button>
                     </h2>
 
@@ -862,13 +916,12 @@ const techni= () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        GetProWriter samples are available on our website. If
-                        you want a specific sample that is not listed on the
-                        site, you can always send us your requirements and we
-                        will send a sample that matches. Please note that all
-                        our samples are copyright protected. Using these samples
-                        commercially or for any other purpose will have legal
-                        implications.
+                        Yes, we offer QnA for Amazon and many other platforms.
+                        Our QnA service is completely customizable. We will work
+                        with you to make sure that the questions you want to be
+                        answered are addressed and that the answers are clear
+                        and helpful. We can even help you create the content for
+                        a QnA section on your website.
                       </div>
                     </div>
                   </div>
@@ -886,7 +939,7 @@ const techni= () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        How to hire a freelancer for technical blog posts?
+                        Is there a way to see the samples for your writers?
                       </button>
                     </h2>
 
@@ -897,16 +950,13 @@ const techni= () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        Hiring a freelancer for technical blog posts or any
-                        other content requirement is easy. You need to contact a
-                        company that offers writers. Since finding a promising
-                        and reliable company can be difficult, here is our easy
-                        recommendation – GetProWriter. We are a freelance
-                        writing website where you can find the best writers on
-                        the market. We have been in business for many years now
-                        and with our writers, we have been able to build an
-                        impressive list of clients who are satisfied with our
-                        services.
+                        Yes. We can send you samples of our work if you’d like
+                        to see what we’re capable of before committing to a full
+                        project. Just let us know what you’re looking for and
+                        we’ll get those over to you right away. We’ll also give
+                        you a quote so that if everything works out, we can move
+                        forward with your project. Once you agree to our quote,
+                        we can start the project right away.
                       </div>
                     </div>
                   </div>
@@ -925,8 +975,8 @@ const techni= () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      I need a blogger with a thorough understanding of the UK
-                      market. Do you have any?
+                      How do we know we have got the perfect writer for our
+                      project?
                     </button>
                   </h2>
 
@@ -937,15 +987,16 @@ const techni= () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      Yes. We have bloggers all over the world, including many
-                      who are thorough with an understanding of the UK market.
-                      You can hire them instantly through our website. These
-                      experts are highly skilled writers and they know what it
-                      takes to write content that is engaging and appealing to
-                      readers. They also have a solid understanding of SEO
-                      principles, so they can make sure that your content will
-                      be read by as many people as possible through search
-                      engines.
+                      If you want the perfect writer for your project, then
+                      leave the allocating process to us. We will hire only the
+                      best available writers for your task. We are a team of
+                      professional writers with extensive experience in various
+                      types of writing. Our writers have been carefully selected
+                      and trained to ensure that they can provide the services
+                      you need. We understand that every client has different
+                      requirements, so we ensure that our writers are well
+                      versed in all fields of writing and can handle any type of
+                      project.
                     </div>
                   </div>
                 </div>
@@ -958,4 +1009,4 @@ const techni= () => {
   );
 };
 
-export default techni;
+export default other;

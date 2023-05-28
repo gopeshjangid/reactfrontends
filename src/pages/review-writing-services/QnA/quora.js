@@ -3,32 +3,32 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import ReviewGetintouch from "../../Components/reviewgetintouch";
+import ReviewGetintouch from "../../../Components/reviewgetintouch";
 import Head from "next/head";
 import Image from "next/image";
-import Freelance   from "../../images/Freelance-White-Paper-Writers-With-Impeccable-Quality.webp"
-import White  from "../../images/White-Paper-Experts-With-Immense-Creativity.webp"
-import how from "../../images/how-to-become-a-technical-writer.jpg"
-import istockphoto from "../../images/istockphoto-1280254514-170667a.jpg"
-import Industry  from "../../images/Industry-Experienced-Writers-With-GPW.webp"
-import GetProWriter from "../../images/GetProWriter-Expertise-For-Best-White-Papers.webp"
-import make from "../../images/Make-a-request.webp"
-import letus from "../../images/Let-us-write-your.webp"
-import Getyour from "../../images/Get-your-content-copy.webp"
-import lego from "../../images/testimonial/lego.webp";
-import Allianz from "../../images/testimonial/Allianz.webp";
-import Citi from "../../images/testimonial/Citi.webp";
-import zara from "../../images/testimonial/zara-logo.webp";
-import loreal from "../../images/testimonial/loreal-logo.webp";
-import gillette from "../../images/testimonial/gillette-logo.webp";
-import sap from "../../images/testimonial/sap-logo.webp";
-import att from "../../images/testimonial/att-logo.webp";
-import toyota from "../../images/testimonial/toyota-logo.webp";
-import ikea from "../../images/testimonial/ikea-logo.webp";
-import Joe from "../../images/Joe-Dan.webp";
-import John from "../../images/John-Cooper.webp";
+import Quality from "../../../images/Quora-QnA.webp";
+import QNA from "../../../images/QNA.webp";
+import Quora from "../../../images/Quora-writer.webp";
+import Business from "../../../images/Business-up.webp";
+import Original from "../../../images/Original-content-1.webp";
+import Expertise from "../../../images/Expertise-writer.webp";
+import make from "../../../images/Make-a-request.webp"
+import letus from "../../../images/Let-us-write-your.webp"
+import Getyour from "../../../images/Get-your-content-copy.webp"
+import lego from "../../../images/testimonial/lego.webp";
+import Allianz from "../../../images/testimonial/Allianz.webp";
+import Citi from "../../../images/testimonial/Citi.webp";
+import zara from "../../../images/testimonial/zara-logo.webp";
+import loreal from "../../../images/testimonial/loreal-logo.webp";
+import gillette from "../../../images/testimonial/gillette-logo.webp";
+import sap from "../../../images/testimonial/sap-logo.webp";
+import att from "../../../images/testimonial/att-logo.webp";
+import toyota from "../../../images/testimonial/toyota-logo.webp";
+import ikea from "../../../images/testimonial/ikea-logo.webp";
+import Jessica from "../../../images/Jessica-Turner.webp";
+import Oliver from "../../../images/Oliver-Stacey.webp";
 
-const whitepaper = () => {
+const quora = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => setLoaded(true), []);
@@ -36,11 +36,11 @@ const whitepaper = () => {
     <div>
       <section className="top_sec p-0">
         <Head>
-          <title>freelance white paper writer - Get Pro Writer</title>
+          <title>Quora QnA Writing Service - Get Pro Writer</title>
 
           <meta
             name="description"
-            content="Getprowriter.com – Freelance white paper writer for startups, small business owners and established companies."
+            content="GetProwriter.com is a top rated website which offers premium quality answers to Quora questions. Get your Quality Quora answers right now."
           />
           <meta
             name="robots"
@@ -48,7 +48,7 @@ const whitepaper = () => {
           />
           <link
             rel="canonical"
-            href="https://getprowriter.com/freelance-writing-services/white-paper/"
+            href="https://getprowriter.com/review-writing-services/qna/quora/"
           />
           <meta name="generator" content="All in One SEO (AIOSEO) 4.2.3.1 " />
           <meta property="og:locale" content="en_US" />
@@ -59,15 +59,15 @@ const whitepaper = () => {
           <meta property="og:type" content="article" />
           <meta
             property="og:title"
-            content="freelance white paper writer - Get Pro Writer"
+            content="Quora QnA Writing Service - Get Pro Writer"
           />
           <meta
             property="og:description"
-            content="Getprowriter.com – Freelance white paper writer for startups, small business owners and established companies."
+            content="GetProwriter.com is a top rated website which offers premium quality answers to Quora questions. Get your Quality Quora answers right now."
           />
           <meta
             property="og:url"
-            content="https://getprowriter.com/freelance-writing-services/white-paper/"
+            content="https://getprowriter.com/review-writing-services/qna/quora/"
           />
           <meta
             property="og:image"
@@ -75,20 +75,20 @@ const whitepaper = () => {
           />
           <meta
             property="article:published_time"
-            content="2022-09-24T08:34:29+00:00"
+            content="2022-06-14T06:11:17+00:00"
           />
           <meta
             property="article:modified_time"
-            content="2022-09-24T08:41:34+00:00"
+            content="2022-06-23T08:15:01+00:00"
           />
           <meta name="twitter:card" content="summary" />
           <meta
             name="twitter:title"
-            content="freelance white paper writer - Get Pro Writer"
+            content="Quora QnA Writing Service - Get Pro Writer"
           />
           <meta
             name="twitter:description"
-            content="Getprowriter.com – Freelance white paper writer for startups, small business owners and established companies."
+            content="GetProwriter.com is a top rated website which offers premium quality answers to Quora questions. Get your Quality Quora answers right now."
           />
           <meta
             name="twitter:image"
@@ -100,14 +100,15 @@ const whitepaper = () => {
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1 className="top_Sec-h1 mt-3 p-0">
-                Freelance White Paper Now!
+                Quora QnA Service Simplified
               </h1>
-              <h2 className="top_Sec-h2"> White Paper Services Now|</h2>
+              <h2 className="top_Sec-h2">Quora QnA Writing Service Now|</h2>
               <p className="top_Sec-p">
-                GetProWriter is known in the industry for offering excellent
-                writing services, including white paper writer services. As a
-                writing service company, we offer different kinds of services,
-                including blogs, articles, web content, and more.
+                GetProWriter has become the first choice for many clients
+                looking for Quora QnA writing service. This is because we focus
+                on delivering high-quality content that is not only error-free
+                and plagiarism-free but also optimized so as to get more traffic
+                to your site.
               </p>
             </div>
 
@@ -124,81 +125,81 @@ const whitepaper = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2">
-              Excellent White Paper Writers With GetProWriter!
+              Looking For Ace QnA Writers? Call GetProWriter Now!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Enriching content to enhance businesses.
+              Improve your business outreach with our Quora QnA Writing Service
             </p>
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3"> Outstanding Content</h3>
+                <h3 className="box-h3">In-depth Knowledge</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Phenomenal Writers</h3>
+                <h3 className="box-h3">Best Writers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3"> Superb Blogs</h3>
+                <h3 className="box-h3">Skilled Professionals</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Moving Keywords</h3>
+                <h3 className="box-h3">Quora Trends</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3"> Industry Best</h3>
+                <h3 className="box-h3">Right Terminology</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Online Reputation</h3>
+                <h3 className="box-h3">Apt ORM</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Brand Image</h3>
+                <h3 className="box-h3">Uplift Brands</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Original Posts</h3>
+                <h3 className="box-h3">Concise Answers</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Experienced Writers</h3>
+                <h3 className="box-h3">Remarkable QnA</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Genuine Posts</h3>
+                <h3 className="box-h3">On-time Delivery</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Relevant Topics</h3>
+                <h3 className="box-h3">Authenticity Maintained</h3>
               </div>
             </div>
 
             <div className="col-md-3">
               <div className="wr-b">
-                <h3 className="box-h3">Satisfied Clients</h3>
+                <h3 className="box-h3">Clients Impressed</h3>
               </div>
             </div>
           </div>
@@ -209,24 +210,24 @@ const whitepaper = () => {
         <div className="container">
           <div className="row">
             <h2 className="rev_sec-h2">
-              Experienced Freelance White Paper Writers
+              GPW Quora QnA Writing Service For Brand Visibility
             </h2>
 
             <p className="rev_sec-p">
-              If you need a white paper to be written, you must hire writers
-              from us. A white paper is a complex type of writing and it
-              requires skills and experience. You should never think about
-              writing your white paper because this piece of writing requires
-              extensive research on a specific topic. The writer has to read the
-              topic-related articles, books, etc., to understand the topic well
-              and collect enough information for a quality white paper.
+              Quora is the right place to work on your brand viability. And with
+              our effective Quora QnA writing service, you will stand out. Quora
+              has become a go-to place for people who want to learn about
+              various topics in their professional and personal lives. From how
+              to do something better, to what are some best practices for a
+              particular industry, Quora has it all!
             </p>
             <p className="rev_sec-p">
-              When it comes to the formal writing of white papers, many would
-              seek the best service providers in this regard. We understand the
-              need for one to be able to be in control of all aspects related to
-              white papers. We offer an outstanding service that is unparalleled
-              in quality and on-time delivery.
+              If you want your brand to be seen by more people then our QnA
+              service is the perfect solution for you. We provide quality
+              content that will help you build your brand and make it accessible
+              for everyone. Quora QnA writing is an excellent way of getting
+              your business noticed online, and with GetProWriter, your content
+              will be delivered within the given deadline.
             </p>
           </div>
         </div>
@@ -236,11 +237,11 @@ const whitepaper = () => {
         <div class="container">
           <div class="row ">
             <h2 className="writing_sec-h2  mt-5 rws-h2 p-0">
-              Highly Capable Writers On GetProWriter!
+              All QnA Solutions In One Platform - GetProWriter!
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Well-written white papers for your business.
+              Our content writers are picked from across the world.
             </p>
 
             <div class="col-md-6">
@@ -312,24 +313,22 @@ const whitepaper = () => {
             </div>
             <div class="col-md-6">
               <h2 class="count_h2">
-                Hire Our Freelance Writing Experts Anytime
+                Unmatched Quora QnA Writing Service For More Users
               </h2>
               <p class="count-p">
-                If you need help with your assignment, you can hire a white
-                paper expert from us anytime. We are a group of professional
-                writers who can write high-quality white papers for you. We have
-                a team of white paper experts who are well-versed with all the
-                aspects of white papers. Each member of our team is well
-                conversant with different fields and can help you with your
-                assignment on any topic.
+                Quora is not only a great way to gain an understanding of how to
+                market yourself and your products, but it can also be used as a
+                way to connect with potential customers and clients. However,
+                many business owners don’t know how to make the most of this
+                platform. That’s where we come in!
               </p>
               <p class="count-p">
-                Our experts are available 24/7 to cater to your needs. What
-                makes us different from other online companies offering similar
-                services is the high level of commitment we bring to the table.
-                We work round-the-clock to ensure that you get the best possible
-                service in the least possible time so that you are not delayed
-                with your project deadlines.
+                Our team of experts will help you create an account and fill it
+                with content that will attract new followers who are interested
+                in what you have to offer. If you acquire Quora QnA writing
+                service from the right platform, your job of attracting users
+                will become easy. And GPW is here to serve you. So, give us a
+                call today!
               </p>
             </div>
           </div>
@@ -340,37 +339,37 @@ const whitepaper = () => {
         <div className="container">
           <div className="row">
             <h2 className="writing_sec-h2 rws-h2 p-0">
-              Reasonable Freelance White Paper Services
+              Quora QnA Writing Service For Guaranteed Influence
             </h2>
             <span className="writing_sec-spa">* * * * *</span>
             <p className="writing_sec-p">
-              Enhanced industry image with white papers.
+              Acquire our Quora QnA writing service to push your business.
             </p>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Freelance White Paper Writers With Impeccable Quality
+                Quality Assured Quora QnA Content
               </h3>
               <p className="ab_sec2-p rws-p">
-                The white papers that our writers draft are of impeccable
-                quality. We have a team of professional and expert writers who
-                can assist you in your academic work. They have worked with many
-                clients all over the world to provide them with the most
-                superior quality papers.
+                When you acquire Quora QnA writing service from us, we only
+                appoint skilled and experienced writers. Hence, the quality is
+                always taken care of. Our team of expert writers is always ready
+                to deliver exactly what you need. They are diligent & committed,
+                and they possess excellent communication skills. They will also
+                ensure that your questions and answers are delivered on time and
+                within your budget.
               </p>
               <p className="ab_sec2-p rws-p">
-                The papers are original and authentic and are written following
-                all the set rules of various institutions. We also accept urgent
-                orders so if you want an urgent order, we can complete it for
-                you within a given time frame at a reasonable price. Our writers
-                employ all the techniques and strategies that will make your
-                paper original, free from plagiarism, error-free, and 100%
-                correct in its citation style. We will never let you down.
+                We have a rigorous hiring process that involves multiple rounds
+                of testing and interviews. This ensures that our writers are up
+                to the task. Our writers are experts in their fields and know
+                how to get the best out of themselves. So, GPW is quality driven
+                for all projects.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <Image
-              src={Freelance}
+              src={Quality}
                 alt="No-match-review"
                 className="rws-img"
               />
@@ -378,61 +377,56 @@ const whitepaper = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <Image
-              src={White}
+              src={QNA}
                 alt="Expertimental-review"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                White Paper Experts With Immense Creativity
+                Out-Of-The-Box Thinkers For Quora QnA Writing Service
               </h3>
               <p className="ab_sec2-p rws-p">
-                As a company, we have creative writers who produce outstanding
-                work. Some of them write blog articles, others write product
-                descriptions, and some even write white papers and reports. We
-                have a dedicated team that makes sure that every piece of
-                content is readable and well-structured. We’ve built a team of
-                professional writers that is sincere in all undertakings.
+                For our Quora QnA writing service, we have professionals who
+                think out of the box. They will help you to get the best answers
+                to your questions and will also make sure that your question is
+                answered by the right people. Our experts will also make sure
+                that your question is answered in a professional way.
               </p>
               <p className="ab_sec2-p rws-p">
-                When it comes time for each new assignment that comes along,
-                whether it’s a feature article or a blog post, or some other
-                kind of writing, our writers deliver nothing but excellence. No
-                matter how difficult or demanding the task is, no matter what
-                kind of audience will be reading it or how much time is
-                available to complete it, everything that comes out of the
-                writer’s hands is commendable.
+                They are well aware of the QnA rules and regulations and they
+                will abide by them while writing your answers. We ensure that
+                all the answers which are written by our experts are 100%
+                original and plagiarism free. We provide excellent services at
+                affordable prices with quick delivery time. So, when you need
+                someone to write your Quora QnA, simply give us a call.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                White Papers Written With Precision
+                Versatile Writers For Quora QnA Writing Service
               </h3>
               <p className="ab_sec2-p rws-p">
-                We are extra careful about appointing only experienced writers
-                for highly complex writing needs. When it comes to writing white
-                papers, we never compromise on quality. If you are looking for a
-                white paper writer, you can rely on our team. Our writers
-                deliver only outstanding white paper content, which is why our
-                clients have been coming back to us again and again for all of
-                their white paper writing needs.
+                All our Quora QnA writers are versatile and they come with
+                diverse experiences. We have different kinds of writers who are
+                experts in different fields. Our writers are also experienced in
+                writing about topics related to business, finance, health,
+                education, and more. Our team of writers is able to write
+                articles that are informative as well as engaging.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our clients are constantly satisfied with the quality of content
-                we provide for them; they recommend our services to others as
-                well. We are very careful in appointing the right writer for
-                each project and pay special attention to this aspect when
-                selecting writers. Our professionals are highly qualified and
-                have years of experience under their belts. They can be trusted
-                with work of any kind because they are dedicated to delivering
-                quality work.
+                Our QnA writers make sure that they cross-verify their content
+                before submission. We want to ensure that the content we are
+                providing is accurate, relevant, and helpful to our readers.
+                This way, we can help customers make better decisions regarding
+                their business and personal lives. So, if you haven’t yet
+                checked our services and samples, reach out to us today.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <Image
-              src={how}
+              src={Quora}
                 alt="Online-review"
                 className="rws-img"
               />
@@ -440,60 +434,56 @@ const whitepaper = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <Image
-              src={istockphoto}
+              src={Business}
                 alt="Grow-your-business"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Attractive Content For White Papers
+                Your Business Goes Up With Our Quora QnA Service
               </h3>
               <p className="ab_sec2-p rws-p">
-                The content that we write for white papers is attractive and it
-                convinces the readers of our message. The white paper needs to
-                be written in a professional tone. Such a professional tone can
-                be achieved by using crisp, succinct writing, avoiding clichés
-                and buzz words, and including examples to support your ideas.
+                Our team of writers is highly trained individuals who have been
+                in this industry for years now. When you hire writers from our
+                company, their content will elevate your business. We have a
+                team of professional writers who have been writing for different
+                businesses since our company’s inception. Our writers know how
+                to write the right content that will help you meet your
+                objectives.
               </p>
               <p className="ab_sec2-p rws-p">
-                Professional writing also contains no misspellings or
-                grammatical errors. It does not use casual expressions that are
-                not clear to everyone reading it. Our white paper writers are
-                among the best in the industry. All of them possess significant
-                experience writing research papers, term papers, dissertations,
-                essays, and other academic assignments. Our writers undergo a
-                rigorous hiring process that includes testing their ability to
-                adhere to deadlines and write according to various word counts
-                and citation styles.
+                They will create the right tone, style, and format that will
+                help you reach your target audience and exceed their
+                expectations. We understand the importance of having good
+                quality content on Quora or your website which is why we only
+                hire talented people who are passionate about writing.
               </p>
             </div>
 
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                Industry Experienced Writers With GPW
+                Original Voice For Quora QnA Writing Service
               </h3>
               <p className="ab_sec2-p rws-p">
-                We have industry-experienced writers in our team to write white
-                papers for clients. We can provide you with white papers on any
-                topic as per your requirement and within the time frame. Our
-                writers are proficient at developing topics for different types
-                of white papers, such as tips for running a successful online
-                business, SEO techniques, the latest search engine optimization
-                trends, etc.
+                Our writers have created QnA content for thousands of clients
+                and they have maintained originality in every single written
+                piece. Our company, GetProWriter, has been in the business of
+                making content for many years now. So, we have a well-developed
+                system to ensure that our writers can produce the highest
+                quality work.
               </p>
               <p className="ab_sec2-p rws-p">
-                The main goal of a white paper is to convince your target
-                audience to do business with you. To do this, you need to
-                present your company as being credible, trustworthy, and an
-                expert in the field. We are capable of writing white papers
-                covering all areas of business, such as legal issues, accounting
-                procedures, advertising, management techniques, and so forth.
+                We’ve worked with some of the biggest companies in the world and
+                we’ve never failed to deliver on time or meet our clients’
+                expectations. We handpick our writers so that there is no scope
+                for mediocrity. When you’re looking for a reliable company to
+                handle your content needs, GetProWriter is who you should call.
               </p>
             </div>
             <div className="col-md-6 rws_Sec-6">
               <Image
-              src={Industry}
+              src={Original}
                 alt="Real-review-writer"
                 className="rws-img"
               />
@@ -501,31 +491,30 @@ const whitepaper = () => {
 
             <div className="col-md-6 rws_Sec-6">
               <Image
-              src={GetProWriter}
+              src={Expertise}
                 alt="Expertise"
                 className="rws-img"
               />
             </div>
             <div className="col-md-6 rws_Sec-6">
               <h3 className="ab_sec2-h3 rws-h3">
-                GetProWriter Expertise For Best White Papers
+                GetProWriter Expertise To Stand Out With Our Quora QnA
               </h3>
               <p className="ab_sec2-p rws-p">
-                When you partner with us to provide services or products to your
-                customers, we can help you ensure that the information you’re
-                providing them is accurate and up-to-date. The white papers that
-                our writers draft are always the most relevant for your
-                industry, making sure that you have a leg up on your
-                competition, even before they know what’s going on.
+                Simply hiring a Quora QnA professional will not help you. You
+                need something extraordinary to visibly stand out in Quora. And
+                that’s where you need GPW expertise. We make sure that the
+                content you post on Quora is engaging and helpful so that it
+                attracts more readers and leads to more traffic for your
+                website.
               </p>
               <p className="ab_sec2-p rws-p">
-                Our writers know the ins and outs of your field, so it’s easy
-                for them to make sure that the content is engaging and
-                accessible to a wide audience. With our services, you’re never
-                left wondering whether or not your customers are getting the
-                best information possible. Our writers have worked with numerous
-                industries, so we know how to incorporate your specific needs
-                into a white paper that will increase traffic and sales.
+                We also ensure that the links embedded in your answers are
+                relevant and take users directly to the page they are looking
+                for. Another key aspect of our services is making sure that the
+                content we post on Quora is SEO optimized. This ensures that
+                your posts rank high in search results, which in turn helps
+                increase your reach online.
               </p>
             </div>
           </div>
@@ -546,7 +535,7 @@ const whitepaper = () => {
                 <h2 className="get_sec-box_h2">STEP 1</h2>
                 <h3 className="get_sec-box_h3">Make a request</h3>
                 <Image
-                  src={make}
+                src={make}
                   alt="Make-a-request"
                   className="get_sec-box_img"
                 />
@@ -738,11 +727,9 @@ const whitepaper = () => {
       <section className="hire_Sec">
         <div className="container">
           <div className="row">
-            <h2 className="get_sec-h2">
-              Why Hire Our Freelance White Paper Writers?
-            </h2>
+            <h2 className="get_sec-h2">Why Hire Our Quora QnA Ghostwriters?</h2>
             <p className="get_sec-p">
-              To let your business take off in the right way.
+              So that your business becomes everyone’s first choice.
             </p>
             <span className="writing_sec-spa">* * * * *</span>
             <div className="col-md-4">
@@ -754,7 +741,7 @@ const whitepaper = () => {
                     </span>
                   </li>
                   <li className="in_li">
-                    <span className="spa_h2">White paper experts</span>
+                    <span className="spa_h2">Truly experts in Quora</span>
                   </li>
                 </ol>
               </div>
@@ -769,7 +756,7 @@ const whitepaper = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Work effectively as per the set structures
+                      Design content as per the trends in Quora
                     </span>
                   </li>
                 </ol>
@@ -785,7 +772,7 @@ const whitepaper = () => {
                   </li>
                   <li className="in_li">
                     <span className="spa_h2">
-                      Original content as per the latest industry trends
+                      Timely content delivery with zero errors
                     </span>
                   </li>
                 </ol>
@@ -793,21 +780,20 @@ const whitepaper = () => {
             </div>
 
             <p className="review1-p">
-              Our writers are located across the world. They come with unmatched
-              experience in writing thousands of white papers, case studies, and
-              marketing materials for major companies. We are familiar with all
-              kinds of papers and can deliver them on time. Our experts can work
-              with different types of papers including those that need
-              statistical analysis, those that require case studies, and also
-              those that ask for methodological explanations.
+              Hiring writers from GetProWriter for Quora QnA means that your
+              business becomes everyone’s first choice. When you hire quality
+              writers to answer your customers’ questions, you’re showing them
+              you care about providing an excellent experience.
             </p>
 
             <p className="review1-p">
-              In addition to being experts in white papers, we also offer
-              editing and proofreading services to ensure quality when it comes
-              to content and language. We can offer a truly global perspective
-              on many topics and industries. We also offer a 24/7 support
-              system, so you will always be able to contact us if we are needed.
+              Our writers are Quora experts and they write content as per the
+              trends. They have a knack for finding the right questions to
+              answer and creating engaging answers that will help you get more
+              traffic. They go through the site daily looking for the most
+              relevant content and then create QnA sections that connect to
+              users. They also ensure timely delivery of all content. So, send
+              us your requirements today to have an amazing Quora presence!
             </p>
           </div>
         </div>
@@ -821,20 +807,20 @@ const whitepaper = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  We have been working with GetProWriter for a year now and we
-                  are happy with their writing services. The writers always meet
-                  our deadlines and provide quality content in the niche that we
-                  ask them to write about. The quality of writing is high and
-                  the price is affordable.
+                  We needed writers for our Quora QnA and we came across
+                  GetProWriter. The results are unbelievable. The writers are
+                  extremely talented and have an excellent command of the
+                  language. We highly recommend them to anyone who needs quality
+                  content in a short period of time.
                 </p>
                 <div className="t_sels">
                   <Image
-                  src={Joe}
+                  src={Jessica}
                     alt="Carmen-Mendez-Istillarte"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">Joe Dan</h3>
-                  <p className="testi_box-p">SEO Analyst, NEEL</p>
+                  <h3 className="testi_box-h3">Jessica Turner</h3>
+                  <p className="testi_box-p">Chief People Officer, Prics</p>
                 </div>
               </div>
             </div>
@@ -842,19 +828,19 @@ const whitepaper = () => {
             <div className="col-md-6 d-flex">
               <div className="testi_box">
                 <p className="testi_box-p">
-                  Before I started working with GetProWriter, I had to deal with
-                  a lot of writing issues. I was worried and didn't know what to
-                  do with my clients’ writing assignments. Finally, I found
-                  GetProWriter and they did everything I asked them to do.
+                  My hunting for QnA writers ended with GetProWriter. I wanted
+                  them to answer questions on topics like "What is the best way
+                  to lose weight?" or "How do I get a job in marketing?”. They
+                  did a phenomenal job!
                 </p>
                 <div className="t_sels">
                   <Image
-                  src={John}
+                  src={Oliver}
                     alt="Marcela-Vella"
                     className="testi_box-img"
                   />
-                  <h3 className="testi_box-h3">John Cooper</h3>
-                  <p className="testi_box-p">SEO Manager, Bloxx</p>
+                  <h3 className="testi_box-h3"> Oliver Stacey</h3>
+                  <p className="testi_box-p">Drafter, Corphic</p>
                 </div>
               </div>
             </div>
@@ -918,7 +904,7 @@ const whitepaper = () => {
                         aria-expanded="false"
                         aria-controls="collapseOne"
                       >
-                        Do you have white paper writers with GetProWriter?
+                        How can we hire experienced writers from GetProWriter?
                       </button>
                     </h2>
 
@@ -929,15 +915,14 @@ const whitepaper = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        {" "}
-                        Yes. As a company, we have excellent white paper writers
-                        with us. We are here to help you in writing papers of
-                        any kind. We can deliver your paper before the deadline,
-                        and we do not rest until you are satisfied with the
-                        result. We know that writing white papers is not an easy
-                        task. That is why we have hired the best-in-class
-                        writers for this purpose. Our writers are highly
-                        qualified and skilled in writing white papers.
+                        To hire experienced writers from GetProWriter, you need
+                        not worry. It is because all our writers are highly
+                        experienced. We employ only the best professionals who
+                        have years of experience in content writing. We have a
+                        team of over 5000+ professional writers who can handle
+                        any type of job for you. All our writers are talented
+                        and skilled enough to deliver the best quality content
+                        for your business.
                       </div>
                     </div>
                   </div>
@@ -955,8 +940,7 @@ const whitepaper = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Can we look at the white paper samples written by your
-                        writers?
+                        How can we improve our business presence on Quora?
                       </button>
                     </h2>
 
@@ -967,14 +951,16 @@ const whitepaper = () => {
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
-                        {" "}
-                        Of course. All our white paper samples are available on
-                        our website. You can view them and decide on your
-                        project. We have internationally acclaimed writers with
-                        us. We make sure that when you order a paper from us, it
-                        will be well written. Our writers are knowledgeable
-                        about the subject and provide you with a white paper
-                        that is well-researched and original.
+                        To improve your business presence on Quora, all you need
+                        to do is hire a top Quora QnA writer. And that’s
+                        possible with GetProWriter. We will find you a suitable
+                        writer who can create engaging content that will
+                        increase your credibility, authority, and conversion
+                        rate. You just have to provide us with the answers you
+                        want to be answered in your niche and we’ll do the rest.
+                        We make sure that our writers write high-quality content
+                        that has a strong call to action so that your users
+                        complete their purchases.
                       </div>
                     </div>
                   </div>
@@ -993,8 +979,7 @@ const whitepaper = () => {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      Is it possible to hire writers from your company for bulk
-                      writing work?
+                      What is your selection criterion for hiring writers?
                     </button>
                   </h2>
 
@@ -1005,14 +990,13 @@ const whitepaper = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div className="accordion-body">
-                      Yes, we take bulk writing work and our white paper writers
-                      are simply outstanding. They can help you with any kind of
-                      assignment. Our writers are experienced and have a lot of
-                      knowledge in their respective fields. It is very easy to
-                      place an order as all you need to do is to tell us what
-                      you need and we will deliver it within the deadline. We
-                      never compromise on quality and all the papers are checked
-                      thoroughly before sending across.
+                      We have a stringent selection process in place to hire
+                      writers in any niche. We believe that it is necessary for
+                      our writers to be able to communicate on a professional
+                      level and therefore we require them to pass a written test
+                      that shows their ability to do so. Our writers must also
+                      demonstrate their skills to write content that is
+                      relevant, engaging, and error-free.
                     </div>
                   </div>
                 </div>
@@ -1025,4 +1009,4 @@ const whitepaper = () => {
   );
 };
 
-export default whitepaper;
+export default quora;
