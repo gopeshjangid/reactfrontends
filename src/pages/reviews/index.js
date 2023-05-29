@@ -64,8 +64,9 @@ const reviews = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    e.target.reset();
     const { title, description, username, email, rating } = User;
-
+   
     const object = {
       username: username.trim(),
       email: email.trim(),
@@ -553,6 +554,8 @@ const reviews = () => {
                       {formErrors.email}
                     </p>
                   </div>
+
+                  
                   <button
                     type="submit"
                     className="glsr-button p-3 mt-3 text-white button border-0  "
