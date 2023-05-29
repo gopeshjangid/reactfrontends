@@ -25,9 +25,10 @@ const viewprofile = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    e.target.reset();
     const tokenID = localStorage.getItem("token");
     const { currentPassword, newPassword, confirmPassword } = User;
-
+     
     const object = {
       currentPassword: currentPassword.trim(),
       newPassword: newPassword.trim(),
