@@ -21,13 +21,15 @@ const contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { fullName, email, subject, message } = User;
-
+    e.target.reset();
     const object = {
       fullName: fullName.trim(),
       email: email.trim(),
       subject: subject.trim(),
       message: message.trim(),
     };
+
+   
 
     setFormErrors(validate(User));
 
@@ -271,6 +273,7 @@ const contact = () => {
               <button type="submit" className="ct_btn-set">
                 Submit
               </button>{" "}
+               
               {Object.keys(formErrors).length === 0 && isSubmit ? (
                 <span className="Success" style={{ color: "#03989f" }}>
                   Submitted is Successfull
