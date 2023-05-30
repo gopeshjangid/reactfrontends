@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import pagenot from "../images/page-not-found-img.jpg"
+import pagenot from "../images/OIP- page.webp"
 const pagenotfound = () => {
   return (
     <div className="container">

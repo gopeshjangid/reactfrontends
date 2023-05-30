@@ -70,10 +70,6 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        {/* <Script
-          type="text/javascript"
-          src="https://checkout.razorpay.com/v1/razorpay.js"
-        ></Script> */ }
       </body>
     </Html>
   );

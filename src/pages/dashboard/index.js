@@ -138,7 +138,7 @@ const dashboard = () => {
       })
       .catch((err) => {
         console.log(err);
-      });
+      },[orderId]);
   };
 
   const RenderHTML = (props) => (

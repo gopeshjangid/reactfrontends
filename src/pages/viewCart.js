@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect,useState } from "react";
+// import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import axios from "axios";
@@ -81,7 +81,7 @@ const viewCart = () => {
     console.log(data);
     const options = {
       key: "rzp_live_DbkICpMn91oJVO",
-      currency: data.order.currency,
+       currency: data.order.currency,
       amount: data.amount.toString(),
       order_id: data.order.id,
       name: "Order",
@@ -888,7 +888,7 @@ const viewCart = () => {
                           {coupons.message === null && "!'Invalid Coupon'"}
                         </div>
 
-                        <Link href="/Services">
+                        <Link href="/services">
                           <i
                             aria-hidden="true"
                             className="fas fa-chevron-left"
@@ -1531,7 +1531,7 @@ const viewCart = () => {
                     </div>
                     <div className="coupon-wrap row">
                       <div className="coupon-inner col-md-6">
-                        <Link href="/Services">
+                        <Link href="/services">
                           <i
                             aria-hidden="true"
                             className="fas fa-chevron-left"
