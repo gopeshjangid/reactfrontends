@@ -71,7 +71,7 @@ const pagenotfound = () => {
                 style={{ color: "white", textDecoration: "none" }}
                 href="https://getprowriter.com/place-your-order"
               >
-                ORDER AN ASSIGNMENT
+               PLACE YOUR ORDER
               </a>
             </button>
           </div>
