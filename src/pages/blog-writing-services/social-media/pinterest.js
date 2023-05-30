@@ -7,7 +7,7 @@ import ReviewGetintouch from "../../../Components/reviewgetintouch";
 import Head from "next/head";
 import Image from "next/image";
 import Quality from "../../../images/Quality-blogs-pinterest.webp"
-import Creative from "../../../images/Creative-professionals.webp"
+import Creative from "../../../images/Creative-Professionals.webp"
 import Dedicated from "../../../images/Dedicated-writer.webp"
 import Impressive from "../../../images/Impressive-pinterest-blog-post.webp"
 import Optimal from "../../../images/Quality.webp"
