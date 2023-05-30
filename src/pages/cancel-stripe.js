@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Cancel from "../../images/payment-error-stripe.webp"
+import Cancel from "../images/payment-error-stripe.webp"
 const CancelStripe = () => {
   return (
     <div>
