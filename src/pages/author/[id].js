@@ -16,7 +16,7 @@ const ViewDetails = () => {
   useEffect(() => {
     setIsLoading(true);
     const tokenID = localStorage.getItem("token");
-    console.log("id", id);
+    // console.log("id", id);
     const fetch = async () => {
       try {
         const { data } = await axios.get(
@@ -29,7 +29,7 @@ const ViewDetails = () => {
           }
         );
         SetPosts(data);
-        console.log(data);
+        // console.log(data);
         setIsLoading(false);
       } catch (err) {
         console.error(err);

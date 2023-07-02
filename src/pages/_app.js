@@ -3,7 +3,7 @@ import Head from "next/head";
 import "../styles/style.css";
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
-
+// import 'bootstrap/dist/css/bootstrap.css'
 export default function App({ Component, pageProps }) {
   return (
     <>

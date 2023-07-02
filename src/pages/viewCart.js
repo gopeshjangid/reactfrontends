@@ -230,11 +230,11 @@ const viewCart = () => {
   const addTocarthandler = async (id) => {
     const tokenID = localStorage.getItem("token");
 
-    console.log(cartItems);
-    console.log(id);
-    console.log(
-      cartItems.message?.filter((item, index) => item.productId._id === id)
-    );
+    // console.log(cartItems);
+    // console.log(id);
+    // console.log(
+    //   cartItems.message?.filter((item, index) => item.productId._id === id)
+    // );
 
     let quantity = 1;
     if (cartItems.message.length > 0) {
@@ -433,6 +433,7 @@ const viewCart = () => {
 
         sessionStorage.setItem("couponAmount", couponAmount);
         sessionStorage.setItem("couponName", couponName);
+        sessionStorage.setItem("wallet", amount);
         sessionStorage.setItem("pay_id", response.data.id);
         window.open(response.data.url, "_self");
         setAmount({

@@ -37,7 +37,7 @@ const Home = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h1 className="top_Sec-h1 mt-2 p-0">Add fire to your content!</h1>
+              <h1 className="top_Sec-h1 mt-2 p-0">Add fire to your content!.</h1>
               <h2 className="top_Sec-h2">Product Description Writing</h2>
               <p className="top_Sec-p">
                 Get Quality Content For Your Business - Every Time: Hire a

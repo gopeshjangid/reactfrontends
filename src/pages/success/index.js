@@ -8,7 +8,7 @@ const Success = () => {
   useEffect(() => {
     setTokenId(localStorage.getItem("token"));
   }, []);
-  
+
   const router = useRouter();
 
   useEffect(() => {
@@ -16,17 +16,23 @@ const Success = () => {
       router.push("/");
     } else {
       const pay_id = sessionStorage.getItem("pay_id");
-  const amount = sessionStorage.getItem("wallet");
-  const headers = {
-    "Content-Type": "application/json",
-    Authorization: `${tokenID}`,
-  };
+      const amount = sessionStorage.getItem("wallet");
+      const headers = {
+        "Content-Type": "application/json",
+        Authorization: `${tokenID}`,
+      };
+      const data = { wallet: parseInt(amount), pay_id };
+      axios(`${process.env.NEXT_PUBLIC_APIURL}/orderStripeSuccess`, {
+        method:'POST',
+        data,
+        headers: headers
+      })
+      axios(`${process.env.NEXT_PUBLIC_APIURL}/rechargeWallet`, {
+        method: 'POST',
+        data,
+        headers: headers
+      })
 
-  const data = { wallet: parseInt(amount), pay_id };
-      axios
-        .post(`${process.env.NEXT_PUBLIC_APIURL}/rechargeWallet`, data, {
-          headers: headers,
-        })
         .then((res) => {
           console.log(res);
 
