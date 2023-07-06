@@ -27,19 +27,18 @@ const forgot = () => {
 
     const { email } = formValues;
     const object = {
-      email: email.trim(),
+      email: email?.trim(),
     };
     setFormErrors(validate(formValues));
     // add entity - POST
     // e.preventDefault();
     // creates entity
     const regex1 = /^[^@]+@(yahoo|gmail|mail)\.(com)$/i;
-    if (email.trim() === "" || regex1.test(email.trim()) === false) {
+    if (email?.trim() === "" || regex1.test(email?.trim()) === false) {
       return;
     } else {
       fetch(`${process.env.NEXT_PUBLIC_APIURL}/password-reset`, {
         method: "POST",
-        mode: "cors",
         body: JSON.stringify(object),
         headers: {
           "Content-type": "application/json",
